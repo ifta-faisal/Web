@@ -15,8 +15,8 @@
     list-style: none;
     width: 20px;
     height: 20px;
-    background: rgba(249, 115, 22, 0.15); /* Orange-500 with low opacity */
-    box-shadow: 0 0 20px rgba(249, 115, 22, 0.4);
+    background: rgba(192, 86, 42, 0.12); /* Bollsket orange */
+    box-shadow: 0 0 20px rgba(192, 86, 42, 0.3);
     animation: animate 25s linear infinite;
     bottom: -150px;
     border-radius: 50%;

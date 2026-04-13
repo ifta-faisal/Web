@@ -1,15 +1,16 @@
 import React, { useState } from "react";
 import { Rocket, Zap, MapPin, Eye, ChevronRight, Calendar, Award } from "lucide-react";
+import BackToHome from './BackToHome';
 
 // ===== Import Local Images =====
-import project1 from "../assets/images/project1.jpeg";
-import project2 from "../assets/images/project2.jpeg";
-import project3 from "../assets/images/project3.jpeg";
-import project4 from "../assets/images/project4.jpeg";
-import project5 from "../assets/images/project5.jpeg";
-import project6 from "../assets/images/project6.jpeg";
-import project7 from "../assets/images/project7.jpeg";
-import project8 from "../assets/images/project8.jpeg";
+import project1 from "../assets/images/Project/project1.jpeg";
+import project2 from "../assets/images/Project/project2.jpeg";
+import project3 from "../assets/images/Project/project3.jpeg";
+import project4 from "../assets/images/Project/project4.jpeg";
+import project5 from "../assets/images/Project/project5.jpeg";
+import project6 from "../assets/images/Project/project6.jpeg";
+import project7 from "../assets/images/Project/project7.jpeg";
+import project8 from "../assets/images/Project/project8.jpeg";
 import project9 from "../assets/images/drone2.jpeg";
 
 const Projects = () => {
@@ -90,10 +91,10 @@ const Projects = () => {
     },
     {
       id: 8,
-      name: "Competition Proto",
-      description: "Compact prototype drone for competition testing.",
+      name: "Workshop",
+      description: "UART member taking Workshop about UAV.",
       image: project8,
-      category: "competition",
+      category: "Workshop",
       year: "2024",
       status: "Testing",
       tags: ["Competition", "Prototype"]
@@ -124,31 +125,28 @@ const Projects = () => {
   const getStatusColor = (status) => {
     switch (status) {
       case 'Active': return 'bg-green-500';
-      case 'Testing': return 'bg-orange-500';
-      case 'Completed': return 'bg-blue-500';
+      case 'Testing': return 'bg-primary';
+      case 'Completed': return 'bg-primary';
       default: return 'bg-gray-500';
     }
   };
 
   return (
-    <section id="projects" className="py-16 sm:py-20 lg:py-24 bg-transparent relative overflow-hidden">
-      {/* Animated background elements */}
-      <div className="absolute inset-0 opacity-10 pointer-events-none">
-        <div className="absolute top-20 left-4 sm:left-10 w-56 sm:w-72 h-56 sm:h-72 bg-blue-500 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-20 right-4 sm:right-10 w-80 sm:w-96 h-80 sm:h-96 bg-orange-500 rounded-full blur-3xl"></div>
-      </div>
+    <section id="projects" className="min-h-screen pt-32 pb-24 relative overflow-hidden bg-transparent">
+      <div className="absolute top-0 right-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-primary rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" />
+      <div className="absolute bottom-0 left-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-accent rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" style={{ animationDelay: '2s' }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1 sm:py-2 bg-orange-400/20 backdrop-blur-sm border border-orange-400/30 rounded-full text-orange-400 text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
+          <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1 sm:py-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full text-primary text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
             <Rocket className="w-3 h-3 sm:w-4 sm:h-4" />
             <span>Our Innovation Lab</span>
           </div>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6">
-            Featured <span className="text-orange-400">Projects</span>
+          <h2 className="ju-reveal text-3xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6">
+            Featured <span className="text-primary">Projects</span>
           </h2>
-          <p className="text-sm sm:text-lg text-gray-300 max-w-xl sm:max-w-3xl mx-auto leading-relaxed">
+          <p className="ju-reveal text-sm sm:text-lg text-gray-300 max-w-xl sm:max-w-3xl mx-auto leading-relaxed">
             Showcasing our innovative drone projects designed for research,
             competition, and real-world applications.
           </p>
@@ -161,8 +159,8 @@ const Projects = () => {
               key={category.id}
               onClick={() => setSelectedCategory(category.id)}
               className={`group flex items-center space-x-1 sm:space-x-2 px-3 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 ${selectedCategory === category.id
-                ? 'bg-orange-400 text-gray-900 shadow-lg shadow-orange-400/50'
-                : 'bg-gray-800/50 backdrop-blur-sm text-gray-300 border border-gray-700 hover:border-orange-400/50 hover:text-orange-400'
+                ? 'bg-primary text-gray-900 shadow-lg shadow-primary/50'
+                : 'bg-gray-800/50 backdrop-blur-sm text-gray-300 border border-gray-700 hover:border-primary/50 hover:text-primary'
                 }`}
             >
               <category.icon className="w-3 h-3 sm:w-4 sm:h-4" />
@@ -178,7 +176,7 @@ const Projects = () => {
               key={project.id}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
-              className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-orange-400/50 transition-all duration-500 hover:shadow-2xl hover:shadow-orange-400/20 hover:-translate-y-1 sm:hover:-translate-y-2"
+              className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-1 sm:hover:-translate-y-2"
             >
               {/* Image Container */}
               <div className="relative h-48 sm:h-56 overflow-hidden">
@@ -186,7 +184,7 @@ const Projects = () => {
                   src={project.image}
                   alt={project.name}
                   loading="lazy"
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="ju-reveal w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                 />
 
                 {/* Gradient Overlay */}
@@ -202,23 +200,23 @@ const Projects = () => {
 
                 {/* Year Badge */}
                 <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
-                  <div className="flex items-center space-x-1 bg-orange-400/20 backdrop-blur-sm border border-orange-400/30 px-2 py-1 rounded text-orange-400 text-[9px] sm:text-xs font-semibold">
+                  <div className="flex items-center space-x-1 bg-primary/20 backdrop-blur-sm border border-primary/30 px-2 py-1 rounded text-primary text-[9px] sm:text-xs font-semibold">
                     <Calendar className="w-3 h-3" />
                     <span>{project.year}</span>
                   </div>
                 </div>
 
                 {/* Hover Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-t from-orange-400/20 to-transparent transition-opacity duration-300 ${hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
+                <div className={`absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent transition-opacity duration-300 ${hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
                   }`}></div>
               </div>
 
               {/* Content */}
               <div className="p-3 sm:p-5">
-                <h3 className="text-base sm:text-lg font-bold text-white mb-1 sm:mb-2 group-hover:text-orange-400 transition-colors">
+                <h3 className="ju-reveal text-base sm:text-lg font-bold text-white mb-1 sm:mb-2 group-hover:text-primary transition-colors">
                   {project.name}
                 </h3>
-                <p className="text-gray-400 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
+                <p className="ju-reveal text-gray-400 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
                   {project.description}
                 </p>
 
@@ -236,7 +234,7 @@ const Projects = () => {
               </div>
 
               {/* Bottom Accent Line */}
-              <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+              <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-[#f97316] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </div>
           ))}
         </div>
@@ -250,8 +248,8 @@ const Projects = () => {
             { label: 'In Testing', value: projects.filter(p => p.status === 'Testing').length, icon: Eye }
           ].map((stat, index) => (
             <div key={index} className="text-center group">
-              <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-orange-400/10 rounded-full mb-2 sm:mb-3 group-hover:bg-orange-400/20 transition-colors">
-                <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-orange-400" />
+              <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full mb-2 sm:mb-3 group-hover:bg-primary/20 transition-colors">
+                <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
               </div>
               <div className="text-2xl sm:text-3xl font-black text-white mb-0.5 sm:mb-1">{stat.value}</div>
               <div className="text-[9px] sm:text-sm text-gray-400 uppercase tracking-wide">{stat.label}</div>

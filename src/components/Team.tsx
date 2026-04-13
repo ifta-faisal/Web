@@ -1,14 +1,27 @@
 import React, { useState } from 'react';
 import { GraduationCap, Mail, Linkedin, Award, Users2 } from 'lucide-react';
-import member1 from '../assets/images/member1.jpeg';
-import member2 from '../assets/images/member2.jpg';
-import member3 from '../assets/images/member3.jpeg';
-import member4 from '../assets/images/member4.jpg';
-import member5 from '../assets/images/member5.jpg';
-import member6 from '../assets/images/member6.jpg';
-import member7 from '../assets/images/member7.jpeg';
-import member8 from '../assets/images/member8.jpeg';
-import member9 from '../assets/images/member9.jpeg';
+import member1 from '../assets/images/Team/member1.jpeg';
+import member2 from '../assets/images/Team/member2.jpg';
+import member3 from '../assets/images/Team/member3.jpeg';
+import member4 from '../assets/images/Team/member4.jpg';
+import member5 from '../assets/images/Team/member5.jpg';
+import member7 from '../assets/images/Team/member7.jpeg';
+import member8 from '../assets/images/Team/member8.jpeg';
+import member9 from '../assets/images/Team/member9.jpeg';
+import adnan from '../assets/images/Team/adnan.jpeg';
+import alfi from '../assets/images/Team/alfi.png';
+import israfil from '../assets/images/Team/israfil.jpg';
+import ratul from '../assets/images/Team/ratul.jpg';
+import anika from '../assets/images/Team/orthy.jpeg';
+import jarin from '../assets/images/Team/jahrin.jpg';
+import rashed from '../assets/images/Team/rashed.jpg';
+import talha from '../assets/images/Team/talha.png';
+import alif from '../assets/images/Team/alif.jpg';
+import probin from '../assets/images/Team/probin.jpeg';
+import shahad from '../assets/images/Team/shahad.jpg';
+import arpon from '../assets/images/Team/arpon.jpg';
+import nazifa from '../assets/images/Team/nazifa.jpg';
+import sumaiya from '../assets/images/Team/sumaiya.jpg';
 
 const Team = () => {
   const [filter, setFilter] = useState('all');
@@ -18,57 +31,70 @@ const Team = () => {
     { name: 'Ahmed Junaed', role: 'CO-TEAM LEAD', team: 'Software & Navigation Team', department: 'Department of CSE', image: member2, category: 'leadership', email: 'ajunaed.work@gmail.com', linkedin: 'https://www.linkedin.com/in/ajunaed/' },
     { name: 'Fahad Rahaman', role: 'SUB TEAM LEAD', team: 'Software & Navigation Team', department: 'Department of CSE', image: member3, category: 'leadership', email: 'fahadrahman020@gmail.com', linkedin: 'https://www.linkedin.com/in/fahad-rahman-ovi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
     { name: 'MD Ifta Faisal', role: 'SUB TEAM LEAD', team: 'Communication Team', department: 'Department of CSE', image: member4, category: 'leadership', email: 'iftafaisal759@gmail.com', linkedin: 'https://www.linkedin.com/in/ifta-faisal-030738255?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
-    { name: 'Muktaderul Islam', role: 'SUB TEAM LEAD', team: 'Mechanical Team', department: 'Department of CSE', image: member5, category: 'leadership', email: 'mislam222147@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/muktaderul-islam-17a714357/'},
-    { name: 'Saraban Tohura', role: 'SUB TEAM LEAD', team: 'PR & Marketing Team', department: 'Department of CSE', image: member6, category: 'leadership', email: 'prokrity2199@gmail.com ', linkedin: 'https://bd.linkedin.com/in/saraban-tohura' },
+    { name: 'Muktaderul Islam', role: 'SUB TEAM LEAD', team: 'Mechanical Team', department: 'Department of CSE', image: member5, category: 'leadership', email: 'mislam222147@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/muktaderul-islam-17a714357/' },
     { name: 'Maysoon Zahir', role: 'MEMBER', team: 'PR & Marketing Team', department: 'Department of CSE', image: member7, category: 'member', email: 'mzahir2520045@bsds.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/maysoon-zahir-79b643242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
-    { name: 'Bahar Shahriyar', role: 'MEMBER', team: 'Communication & PR Team', department: 'Department of CSE', image: member8, category: 'member', email: ' bhr.shkh@gmail.com', linkedin: 'https://www.linkedin.com/in/bahauddin-sheik-bahar-6776ba152?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
     { name: 'Digonta Karmaker', role: 'MEMBER', team: 'Electrical Team', department: 'Department of EEE', image: member9, category: 'member', email: ' dkarmaker2330144@bseee.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/digonta-karmaker-72930a37b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
+    { name: 'Khalid Hasan Talha', role: 'MEMBER', team: 'Electrical & Mechanical Team', department: 'Department of EEE', image: talha, category: 'member', email: 'ktalha181034@bseee.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/khalid-hasan-talha-81597018b' },
+    { name: 'Adnan Mohammad Salauddin', role: 'MEMBER', team: 'Mechanical Team', department: 'Department of CSE', image: adnan, category: 'member', email: 'adnanmohammad546@gmail.com', linkedin: 'https://www.linkedin.com/in/adnan-sohag-76b376276?utm_source=share_via&utm_content=profile&utm_medium=member_ios' },
+    { name: 'Probin Chandra Nath', role: 'MEMBER', team: 'Electrical and Mechanical Team', department: 'Department of EEE', image: probin, category: 'member', email: 'pnath2330014', linkedin: 'https://www.linkedin.com/in/probin-nath-032985343?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
+    { name: 'Ratul Ghosh', role: 'MEMBER', team: 'R&P Team', department: 'Department of CSE', image: ratul, category: 'member', email: 'rghosh2410038@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/ratul-ghosh-7bb172377?' },
+    { name: 'Chowdhury Wayez Kurunee Alif', role: 'MEMBER', team: 'Nav & Soft Team', department: 'Department of CSE', image: alif, category: 'member', email: 'calif221474@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/wayezkurunee-alif-4a4b14227?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
+    { name: 'Md. Israfil Hossain', role: 'MEMBER', team: 'R&D Team', department: 'Department of CSE', image: israfil, category: 'member', email: 'mhossain223585@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/md-israfil-hossain-869851193' },
+    { name: 'Abdur Rahman', role: 'MEMBER', team: 'Electrical & Mechanical Team', department: 'Department of EEE', image: rashed, category: 'member', email: 'rashedur2545@gmail.com', linkedin: 'https://www.linkedin.com/in/abdur-rahman-rashed' },
+    { name: 'Md. Biplob', role: 'MEMBER', team: 'R&D Team', department: 'Department of CSE', image: alfi, category: 'member', email: 'mbiplob223592@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/mdbiplob' },
+    { name: 'Anika Noyshin Orthy', role: 'MEMBER', team: 'Electrical Team', department: 'Department of EEE', image: anika, category: 'member', email: 'aorthy2330060@bseee.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/anika-noyshin-orthy-280680242?utm_source=share_via&utm_content=profile&utm_medium=member_ios' },
+    { name: 'Jahrin Binte Zahid', role: 'MEMBER', team: 'Autonomous & Navigation Team', department: 'Department of CSE', image: jarin, category: 'member', email: 'jzahid2330034@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/jahrin-binte-zahid-28bb09352?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
+    { name: 'Bahar Shahriyar', role: 'MEMBER', team: 'Communication & PR Team', department: 'Department of CSE', image: member8, category: 'member', email: ' bhr.shkh@gmail.com', linkedin: 'https://www.linkedin.com/in/bahauddin-sheik-bahar-6776ba152?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
+    { name: 'Sumaiya Sadika', role: 'MEMBER', team: 'R&D Team', department: 'Department of CSE', image: sumaiya, category: 'member', email: 'ssadika2330926@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/sumaiya-sadika-a48b54293' },
+    { name: 'Mobassir Hossain Shahad', role: 'MEMBER', team: 'Electrical Team', department: 'Department of EEE', image: shahad, category: 'member', email: 'mshahad2330059@bseee.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/mobassir-hossain-shahad-367871392' },
+    { name: 'Md Shazan Mahmud Arpon', role: 'MEMBER', team: 'Software & Navigation Team', department: 'Department of CSE', image: arpon, category: 'member', email: 'marpon2410351@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/md-shazan-mahmud-arpon' },
+    { name: 'Najifa Nawar', role: 'MEMBER', team: 'R&D Team', department: 'Department of CSE', image: nazifa, category: 'member', email: 'nawarnajifa32@gmail.com', linkedin: 'https://www.linkedin.com/in/najifa-nawar-b21137403?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
   ];
 
-  const filteredMembers = filter === 'all'
-    ? teamMembers
-    : teamMembers.filter(member => member.category === filter);
+  const filteredMembers = teamMembers.filter(member =>
+    filter === 'all' ? true : member.category === filter
+  );
 
   return (
-    <section id="team" className="py-16 sm:py-20 lg:py-24 bg-transparent relative overflow-hidden">
+    <section id="team" className="min-h-screen pt-32 pb-24 bg-transparent relative overflow-hidden">
       {/* Decorative elements */}
-      <div className="absolute top-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-      <div className="absolute bottom-0 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-red-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" style={{ animationDelay: "2s" }}></div>
+      <div className="absolute top-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-[#f97316] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
+      <div
+        className="absolute bottom-0 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-[#dc2626] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"
+        style={{ animationDelay: "2s" }}
+      ></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        {/* Header */}
-        <div className="text-center mb-12 sm:mb-20">
-          <div className="inline-block mb-2 sm:mb-4">
-            <span className="px-3 sm:px-4 py-1 sm:py-2 bg-orange-500/20 border border-orange-400/50 rounded-full text-orange-300 text-xs sm:text-sm font-semibold flex items-center gap-2">
-              <Users2 className="w-4 h-4" />
-              Our Team
-            </span>
-          </div>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-            Meet The
-            <span className="bg-gradient-to-r from-orange-400 via-red-400 to-orange-600 text-transparent bg-clip-text"> Innovators</span>
-          </h2>
-          <p className="text-sm sm:text-lg text-slate-300 max-w-xl sm:max-w-3xl mx-auto leading-relaxed">
-            Passionate engineers, researchers, and innovators working together to revolutionize sustainable aviation technology.
+        <div className="text-center mb-16 sm:mb-24">
+          <div className="section-label mb-3">Our Core Team</div>
+          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6 leading-tight">
+            <div className="mask-container">
+              <span className="mask-reveal ju-visible">Architects of Flight</span>
+            </div>
+          </h1>
+          <p className="ju-reveal text-sm sm:text-lg text-slate-300 max-w-2xl mx-auto leading-relaxed">
+            A diverse group of engineers, researchers, and innovators working together to define the future of autonomous systems.
           </p>
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex justify-center mb-12 sm:mb-16">
-          <div className="inline-flex bg-slate-700/50 backdrop-blur-xl border border-slate-600/50 rounded-full p-1 gap-1">
+        <div className="flex justify-center mb-16">
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-full p-2 inline-flex items-center gap-1 sm:gap-2">
             {[
-              { label: 'All Team', value: 'all' },
-              { label: 'Leadership', value: 'leadership' },
-              { label: 'Members', value: 'member' }
-            ].map(tab => (
+              { id: 'all', label: 'All Team' },
+              { id: 'leadership', label: 'Leadership' },
+              { id: 'member', label: 'Members' }
+            ].map((tab) => (
               <button
-                key={tab.value}
-                onClick={() => setFilter(tab.value)}
-                className={`px-5 sm:px-6 py-2 rounded-full font-medium transition-all duration-300 ${
-                  filter === tab.value
-                    ? 'bg-gradient-to-r from-orange-600 to-red-600 text-white shadow-lg shadow-orange-500/30'
-                    : 'text-slate-300 hover:text-white'
-                }`}
+                key={tab.id}
+                onClick={() => setFilter(tab.id)}
+                className={`
+                  px-6 sm:px-8 py-2.5 rounded-full font-bold text-sm tracking-wide transition-all duration-500 relative
+                  ${filter === tab.id
+                    ? 'bg-gradient-to-r from-primary to-accent text-white shadow-[0_0_20px_rgba(249,115,22,0.4)]'
+                    : 'text-slate-400 hover:text-white hover:bg-white/5'
+                  }
+                `}
               >
                 {tab.label}
               </button>
@@ -80,17 +106,17 @@ const Team = () => {
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
           {filteredMembers.map((member, index) => (
             <div key={index} className="group relative">
-              <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-red-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
-              <div className="relative bg-slate-700/50 backdrop-blur-xl border border-slate-600/50 rounded-2xl overflow-hidden hover:border-slate-500/80 transition duration-300">
+              <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+              <div className="card-modern rounded-2xl w-full h-full">
                 <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className="ju-reveal w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute top-4 left-4">
-                    <span className="px-3 py-1 bg-gradient-to-r from-orange-600 to-red-600 text-white text-xs font-bold rounded-full shadow-lg">
+                    <span className="px-3 py-1 bg-gradient-to-r from-primary to-accent text-white text-xs font-bold rounded-full shadow-lg">
                       {member.role}
                     </span>
                   </div>
@@ -99,8 +125,7 @@ const Team = () => {
                       href={`mailto:${member.email}`}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`Email ${member.name}`}
-                      className="p-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full hover:bg-white hover:text-orange-600 transition-all"
+                      className="p-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full hover:bg-white hover:text-primary transition-all"
                     >
                       <Mail className="w-4 h-4" />
                     </a>
@@ -108,8 +133,7 @@ const Team = () => {
                       href={member.linkedin}
                       target="_blank"
                       rel="noopener noreferrer"
-                      aria-label={`${member.name}'s LinkedIn`}
-                      className="p-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full hover:bg-white hover:text-orange-600 transition-all"
+                      className="p-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full hover:bg-white hover:text-primary transition-all"
                     >
                       <Linkedin className="w-4 h-4" />
                     </a>
@@ -117,14 +141,14 @@ const Team = () => {
                 </div>
 
                 <div className="p-4 sm:p-6">
-                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-orange-300 transition-colors">
+                  <h3 className="ju-reveal text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                     {member.name}
                   </h3>
-                  <p className="text-slate-300 font-medium mb-2 flex items-center">
-                    <Award className="w-4 h-4 mr-2 text-orange-400" />
+                  <p className="ju-reveal text-slate-300 font-medium mb-2 flex items-center">
+                    <Award className="w-4 h-4 mr-2 text-primary" />
                     {member.team}
                   </p>
-                  <div className="flex items-center text-slate-400 text-sm sm:text-base pt-2 sm:pt-3 border-t border-slate-600">
+                  <div className="flex items-center text-slate-400 text-sm sm:text-base pt-2 sm:pt-3 border-t border-surface-2">
                     <GraduationCap className="w-4 h-4 mr-2" />
                     {member.department}
                   </div>

@@ -1,76 +1,156 @@
 import React from 'react';
 import { Award, Trophy, Star } from 'lucide-react';
-import uaImage from '../assets/images/UA1.jpeg'; // using as placeholder
+import uaImage from '../assets/images/UA1.jpeg';
+import soildwork from '../assets/images/Sponsor/solidworks.png';
+import mathlab from '../assets/images/Sponsor/matlab.png';
+import autodesk from '../assets/images/Sponsor/autodesk.png';
 
 const Achievements = () => {
-    const achievements = [
-        {
-            id: 1,
-            title: '2nd Runner-Up Position',
-            event: 'BEAR Summit and National Semiconductor Symposium 2025',
-            desc: 'At the BEAR Summit 2025, the team achieved remarkable success, securing the 2nd Runner Up position. United International University proudly showcased its cutting-edge innovation. The rover earned the title in the Robotics Demonstration segment.',
-            tag: 'Best Science Team Award',
-            date: 'July 2025',
-            icon: <Award className="w-6 h-6" />
-        },
-        {
-            id: 2,
-            title: '3rd Place at ARC 2025',
-            event: 'Anatolian Rover Challenge (ARC) 2025, Turkey',
-            desc: 'At ARC 2025, the team proudly secured 3rd place overall, along with two prestigious recognitions: the Best Science Award and the Best Autonomous Driving and Control System Award. Showcased cutting edge AI navigation.',
-            tag: 'Best Autonomous Driving',
-            date: 'July 2025',
-            icon: <Trophy className="w-6 h-6" />
-        },
-        {
-            id: 3,
-            title: '3rd Place Globally at ARC 2023',
-            event: 'Anatolian Rover Challenge (ARC) 2023',
-            desc: 'Achieved an impressive result, securing 3rd place overall out of 30 teams from 15 countries. This highlights the team\'s continuous growth and technical excellence in planetary exploration and autonomous navigation.',
-            tag: 'Featured Globally',
-            date: 'August 2023',
-            icon: <Star className="w-6 h-6" />
-        }
-    ];
+  const achievements = [
+    {
+      id: 1,
+      title: 'SolidWorks Engineering Partner',
+      event: 'Dassault Systèmes Sponsorship',
+      desc: 'Secured professional sponsorship from Dassault Systèmes, granting the team full access to the SolidWorks ecosystem. This partnership enables high-fidelity 3D modeling and complex structural simulations for our next-generation UAV platforms.',
+      tag: 'Mechanical Design',
+      date: 'January 2026',
+      icon: Award,
+      image: soildwork,
+    },
+    {
+      id: 2,
+      title: 'MathWorks Research Grant',
+      event: 'MATLAB & Simulink Partnership',
+      desc: 'Partnered with MathWorks to integrate MATLAB and Simulink into our flight control development. This sponsorship provides industry-leading tools for control system design, signal processing, and comprehensive flight physics simulations.',
+      tag: 'Control Systems',
+      date: 'March 2026',
+      icon: Trophy,
+      image: mathlab,
+    },
+    {
+      id: 3,
+      title: 'Autodesk Innovation Support',
+      event: 'Fusion 360 & Generative Design',
+      desc: 'Awarded an educational sponsorship from Autodesk, providing access to Fusion 360 and advanced generative design tools. This collaboration allows us to optimize airframe weight-to-strength ratios through state-of-the-art AI-driven design.',
+      tag: 'Design Innovation',
+      date: 'June 2025',
+      icon: Star,
+      image: autodesk,
+    },
+  ];
 
-    return (
-        <section className="py-24 bg-transparent relative overflow-hidden">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-                <div className="inline-block mb-4">
-                    <span className="px-4 py-2 bg-orange-500/20 border border-orange-400/50 rounded-full text-orange-300 text-sm font-semibold">
-                        RECOGNITIONS
-                    </span>
+  const delayClasses = ['ju-delay-1', 'ju-delay-2', 'ju-delay-3'];
+
+  return (
+    <section className="py-24 bg-transparent relative overflow-hidden">
+      {/* Cinematic atmosphere */}
+      <div className="absolute inset-0 bg-radial-deep opacity-40 pointer-events-none" />
+
+      {/* Ambient blob */}
+      <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+        <div className="section-label mb-5 mx-auto" style={{ display: 'inline-flex' }}>RECOGNITIONS</div>
+        <h2 className="text-4xl sm:text-5xl md:text-6xl text-white mb-4">
+          <div className="mask-container">
+            <span className="mask-reveal ju-visible">Our Achievements</span>
+          </div>
+        </h2>
+        <div className="shimmer-line mx-auto rounded-full mb-5" style={{ width: '80px', height: '3px', background: 'linear-gradient(90deg, #f97316, #dc2626)' }} />
+        <p className="ju-reveal text-slate-400 mb-16 max-w-xl mx-auto" style={{ fontFamily: "'Inter', sans-serif" }}>
+          Celebrating milestones that define our journey in robotics.
+        </p>
+
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
+          {achievements.map((item, i) => {
+            const Icon = item.icon;
+            return (
+              <div key={item.id} className={`ju-reveal-scale ${delayClasses[i]} group relative`}>
+                <div
+                  className="absolute inset-0 rounded-2xl opacity-0 group-hover:opacity-100 transition-opacity duration-500 pointer-events-none"
+                  style={{ background: 'radial-gradient(circle at 50% 0%, rgba(249,115,22,0.15) 0%, transparent 70%)', filter: 'blur(20px)' }}
+                />
+                <div
+                  className="relative overflow-hidden h-full flex flex-col transition-all duration-400 rounded-2xl"
+                  style={{
+                    background: 'rgba(15,23,42,0.8)',
+                    backdropFilter: 'blur(16px)',
+                    border: '1px solid rgba(255,255,255,0.08)',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.borderColor = 'rgba(249,115,22,0.4)';
+                    e.currentTarget.style.transform = 'translateY(-6px)';
+                    e.currentTarget.style.boxShadow = '0 0 40px rgba(249,115,22,0.1), 0 20px 60px rgba(0,0,0,0.5)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.borderColor = 'rgba(249,115,22,0.12)';
+                    e.currentTarget.style.transform = 'translateY(0)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  {/* Image */}
+                  <div className="relative w-full h-48 overflow-hidden bg-white/5 flex items-center justify-center p-8">
+                    <img src={item.image} alt={item.title} className="w-full h-full object-contain group-hover:scale-110 transition-transform duration-700" />
+                    {/* Gradient overlay on hover */}
+                    <div
+                      className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
+                      style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(249,115,22,0.5) 100%)' }}
+                    />
+                    {/* Glowing icon in corner */}
+                    <div
+                      className="absolute top-4 right-4 w-10 h-10 rounded-full flex items-center justify-center"
+                      style={{
+                        background: 'rgba(249,115,22,0.2)',
+                        border: '1px solid rgba(249,115,22,0.5)',
+                        backdropFilter: 'blur(8px)',
+                        boxShadow: '0 0 16px rgba(249,115,22,0.4)',
+                      }}
+                    >
+                      <Icon className="w-5 h-5" style={{ color: '#f97316' }} />
+                    </div>
+                  </div>
+
+                  {/* Content */}
+                  <div className="p-6 flex flex-col flex-grow">
+                    {/* Tag — slides in on hover */}
+                    <div
+                      className="inline-flex items-center gap-2 text-xs font-bold mb-4 px-3 py-1.5 rounded self-start"
+                      style={{
+                        color: '#f97316',
+                        background: 'rgba(249,115,22,0.12)',
+                        border: '1px solid rgba(249,115,22,0.3)',
+                        fontFamily: "'Inter', sans-serif",
+                        transition: 'transform 0.3s ease, background 0.3s ease',
+                      }}
+                    >
+                      <Icon className="w-3.5 h-3.5" />
+                      {item.tag}
+                    </div>
+
+                    <h3 className="text-xl font-bold text-white mb-2" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.04em' }}>
+                      {item.title}
+                    </h3>
+                    <p className="text-sm text-slate-500 mb-4 font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>
+                      {item.event}
+                    </p>
+                    <p className="text-slate-300 text-sm leading-relaxed mb-6 flex-grow" style={{ fontFamily: "'Inter', sans-serif" }}>
+                      {item.desc}
+                    </p>
+
+                    <div className="flex justify-between items-end pt-4 mt-auto" style={{ borderTop: '1px solid rgba(249,115,22,0.15)' }}>
+                      <span className="text-primary font-bold text-sm" style={{ fontFamily: "'Inter', sans-serif", color: '#f97316' }}>{item.date}</span>
+                      <span className="text-slate-500 text-xs max-w-[55%] text-right" style={{ fontFamily: "'Inter', sans-serif" }}>{item.tag}</span>
+                    </div>
+                  </div>
                 </div>
-                <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">Our Achievements</h2>
-                <div className="w-16 sm:w-24 h-1.5 bg-gradient-to-r from-orange-400 to-red-600 mx-auto rounded-full mb-6"></div>
-                <p className="text-slate-400 mb-16">Celebrating milestones that define our journey in robotics.</p>
-
-                <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-left">
-                    {achievements.map((item) => (
-                        <div key={item.id} className="group relative">
-                            <div className="absolute inset-0 bg-gradient-to-br from-orange-400/20 via-purple-500/20 to-blue-500/20 rounded-2xl blur-lg opacity-0 group-hover:opacity-100 transition duration-500"></div>
-                            <div className="relative bg-slate-800/80 backdrop-blur-xl border border-slate-700/50 rounded-2xl overflow-hidden hover:border-slate-500/80 transition-all duration-300 h-full flex flex-col">
-                                <img src={uaImage} alt={item.title} className="w-full h-48 object-cover" />
-                                <div className="p-6 flex flex-col flex-grow">
-                                    <div className="inline-flex items-center gap-2 text-xs font-bold text-orange-400 mb-3 bg-orange-400/10 px-2 py-1 rounded">
-                                        {item.icon} Rover Team
-                                    </div>
-                                    <h3 className="text-2xl font-bold text-white mb-2">{item.title}</h3>
-                                    <p className="text-sm text-slate-400 mb-4 font-medium">{item.event}</p>
-                                    <p className="text-slate-300 text-sm leading-relaxed mb-6 flex-grow">{item.desc}</p>
-
-                                    <div className="flex justify-between items-end border-t border-slate-700/50 pt-4 mt-auto">
-                                        <span className="text-orange-400 font-bold">{item.date}</span>
-                                        <span className="text-slate-400 text-xs max-w-[50%] text-right">{item.tag}</span>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                    ))}
-                </div>
-            </div>
-        </section>
-    );
+              </div>
+            );
+          })}
+        </div>
+      </div>
+    </section>
+  );
 };
 
 export default Achievements;

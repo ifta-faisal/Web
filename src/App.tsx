@@ -4,7 +4,6 @@ import ScrollToTop from './components/ScrollToTop';
 import SplashScreen from './components/SplashScreen';
 import Header from './components/Header';
 import Footer from './components/Footer';
-// 1. Import Hero (which now contains all homepage sections)
 import Hero from './components/Hero';
 import Team from './components/Team';
 import Projects from './components/Projects';
@@ -12,35 +11,47 @@ import Contact from './components/Contact';
 import JoinUs from './components/JoinUs';
 import Mentors from './components/Mentors';
 import DetailedFeatures from './components/DetailedFeatures';
+import Blog from './components/Blog';
 import Sponsor from './components/Sponsor';
 import SponsorProposal from './components/SponsorProposal';
 import Gallery from './components/Gallery';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import CookiePolicy from './components/CookiePolicy';
 import TermsofService from './components/TermsofService';
-import BackgroundAnimation from './components/BackgroundAnimation';
+
+const REVEAL_CLASSES = [
+  '.ju-reveal:not(.ju-visible)',
+  '.ju-reveal-left:not(.ju-visible)',
+  '.ju-reveal-right:not(.ju-visible)',
+  '.ju-reveal-scale:not(.ju-visible)',
+  '.mask-reveal:not(.ju-visible)',
+  '.scale-entry:not(.ju-visible)',
+];
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
   const location = useLocation();
 
   useEffect(() => {
+    // Lower threshold so elements reveal earlier in viewport (FlyShot feel)
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('ju-visible');
+            // Un-observe after reveal for performance
+            observer.unobserve(entry.target);
           }
         });
       },
-      { threshold: 0.1 }
+      { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
-    
-    // We wrap in setTimeout to let React render the page components first
+
     const timer = setTimeout(() => {
-      const elements = document.querySelectorAll('.ju-reveal:not(.ju-visible)');
-      elements.forEach((el) => observer.observe(el));
-    }, 100);
+      REVEAL_CLASSES.forEach((selector) => {
+        document.querySelectorAll(selector).forEach((el) => observer.observe(el));
+      });
+    }, 120);
 
     return () => {
       clearTimeout(timer);
@@ -49,23 +60,19 @@ const App = () => {
   }, [location.pathname]);
 
   return (
-    <>
+    <div className="atmosphere-right min-h-screen">
+      <div className="cinematic-grid min-h-screen relative">
       <ScrollToTop />
       {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
-      <BackgroundAnimation />
       <Header />
       <Routes>
-
-        {/* 3. Point the main route to Hero */}
         <Route path="/" element={<Hero />} />
         <Route path="/DetailedFeatures" element={<DetailedFeatures />} />
-        {/* These are your other pages */}
+        <Route path="/blog" element={<Blog />} />
         <Route path="/team" element={<Team />} />
         <Route path="/projects" element={<Projects />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/Gallery" element={<Gallery />} />
-
-        {/* 4. Changed paths to lowercase to match your <Link> tags */}
         <Route path="/sponsor-proposal" element={<SponsorProposal />} />
         <Route path="/sponsor" element={<Sponsor />} />
         <Route path="/joinus" element={<JoinUs />} />
@@ -74,10 +81,10 @@ const App = () => {
         <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
         <Route path="/CookiePolicy" element={<CookiePolicy />} />
         <Route path="TermsofService" element={<TermsofService />} />
-
       </Routes>
       <Footer />
-    </>
+      </div>
+    </div>
   );
 };
 

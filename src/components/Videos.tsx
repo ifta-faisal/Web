@@ -7,7 +7,7 @@ const VideoCard = ({ videoId, title, description, views, duration, featured }) =
 
   return (
     <div 
-      className={`group relative rounded-2xl overflow-hidden bg-gray-900 border border-gray-800 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-orange-400/20 ${
+      className={`group relative rounded-2xl overflow-hidden bg-gray-900 border border-gray-800 transform transition-all duration-500 hover:-translate-y-2 hover:shadow-2xl hover:shadow-blue-400/20 ${
         featured ? 'md:col-span-2 lg:col-span-2' : ''
       }`}
       onMouseEnter={() => setIsHovered(true)}
@@ -15,7 +15,7 @@ const VideoCard = ({ videoId, title, description, views, duration, featured }) =
     >
       {/* Featured Badge */}
       {featured && (
-        <div className="absolute top-4 left-4 z-20 flex items-center space-x-2 bg-orange-400 text-gray-900 px-3 py-1 rounded-full text-xs font-bold shadow-lg">
+        <div className="absolute top-4 left-4 z-20 flex items-center space-x-2 bg-primary text-gray-900 px-3 py-1 rounded-full text-xs font-bold shadow-lg">
           <TrendingUp className="w-3 h-3" />
           <span>FEATURED</span>
         </div>
@@ -38,7 +38,7 @@ const VideoCard = ({ videoId, title, description, views, duration, featured }) =
         <div className={`absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent flex items-center justify-center transition-opacity duration-300 ${
           isHovered ? 'opacity-0 pointer-events-none' : 'opacity-100'
         }`}>
-          <div className="w-16 h-16 bg-orange-400 rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
+          <div className="w-16 h-16 bg-primary rounded-full flex items-center justify-center shadow-2xl transform group-hover:scale-110 transition-transform">
             <Play className="w-8 h-8 text-gray-900 ml-1" fill="currentColor" />
           </div>
         </div>
@@ -54,12 +54,12 @@ const VideoCard = ({ videoId, title, description, views, duration, featured }) =
 
       {/* Content */}
       <div className="p-6 bg-gray-900/95 backdrop-blur-sm">
-        <h3 className={`font-bold text-white mb-2 group-hover:text-orange-400 transition-colors ${
+        <h3 className={`font-bold text-white mb-2 group-hover:text-primary transition-colors ${
           featured ? 'text-2xl' : 'text-xl'
         }`}>
           {title}
         </h3>
-        <p className="text-gray-400 text-sm leading-relaxed mb-4">
+        <p className="ju-reveal text-gray-400 text-sm leading-relaxed mb-4">
           {description}
         </p>
 
@@ -73,7 +73,7 @@ const VideoCard = ({ videoId, title, description, views, duration, featured }) =
             href={`https://www.youtube.com/watch?v=${videoId}`}
             target="_blank"
             rel="noopener noreferrer"
-            className="inline-flex items-center space-x-1 text-orange-400 hover:text-orange-300 text-sm font-semibold transition-colors"
+            className="inline-flex items-center space-x-1 text-primary hover:text-primary text-sm font-semibold transition-colors"
           >
             <span>Watch</span>
             <ExternalLink className="w-4 h-4" />
@@ -82,7 +82,7 @@ const VideoCard = ({ videoId, title, description, views, duration, featured }) =
       </div>
 
       {/* Bottom Accent Line */}
-      <div className="h-1 bg-gradient-to-r from-transparent via-orange-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
+      <div className="h-1 bg-gradient-to-r from-transparent via-blue-400 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
     </div>
   );
 };
@@ -131,24 +131,24 @@ const Videos = () => {
   ];
 
   return (
-    <section id="videos" className="py-24 bg-gray-900 relative overflow-hidden">
+    <section id="videos" className=" py-24 bg-gray-900 relative overflow-hidden">
       {/* Animated background */}
       <div className="absolute inset-0 opacity-5">
-        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-orange-400 rounded-full blur-3xl"></div>
-        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-red-500 rounded-full blur-3xl"></div>
+        <div className="absolute top-1/4 left-1/4 w-96 h-96 bg-primary rounded-full blur-3xl"></div>
+        <div className="absolute bottom-1/4 right-1/4 w-96 h-96 bg-accent rounded-full blur-3xl"></div>
       </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-16">
-          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-red-600/20 backdrop-blur-sm border border-red-500/30 rounded-full text-red-400 text-sm font-semibold mb-6">
+          <div className="inline-flex items-center space-x-2 px-4 py-2 bg-accent/20 backdrop-blur-sm border border-sky-500/30 rounded-full text-accent text-sm font-semibold mb-6">
             <Youtube className="w-4 h-4" />
             <span>Video Gallery</span>
           </div>
-          <h2 className="text-5xl md:text-6xl font-black text-white mb-6">
-            Flight <span className="text-orange-400">Videos</span>
+          <h2 className="ju-reveal text-5xl md:text-6xl font-black text-white mb-6">
+            Flight <span className="text-primary">Videos</span>
           </h2>
-          <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
+          <p className="ju-reveal text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">
             See our UAVs in action! Watch highlights from test flights, competitions, and behind-the-scenes development.
           </p>
         </div>
@@ -158,10 +158,10 @@ const Videos = () => {
           {stats.map((stat, index) => (
             <div 
               key={index}
-              className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-orange-400/50 transition-all duration-300"
+              className="bg-gray-800/50 backdrop-blur-sm border border-gray-700 rounded-xl p-6 text-center hover:border-primary/50 transition-all duration-300"
             >
-              <div className="inline-flex items-center justify-center w-12 h-12 bg-orange-400/10 rounded-full mb-3">
-                <stat.icon className="w-6 h-6 text-orange-400" />
+              <div className="inline-flex items-center justify-center w-12 h-12 bg-primary/10 rounded-full mb-3">
+                <stat.icon className="w-6 h-6 text-primary" />
               </div>
               <div className="text-3xl font-black text-white mb-1">{stat.value}</div>
               <div className="text-sm text-gray-400 uppercase tracking-wide">{stat.label}</div>
@@ -185,7 +185,7 @@ const Videos = () => {
         </div>
 
         {/* YouTube Channel CTA */}
-        <div className="relative bg-gradient-to-r from-red-600 to-red-700 rounded-3xl p-12 overflow-hidden">
+        <div className="relative bg-gradient-to-r from-accent to-sky-700 rounded-3xl p-12 overflow-hidden">
           {/* Background Pattern */}
           <div className="absolute inset-0 opacity-10">
             <div className="absolute top-0 right-0 w-64 h-64 bg-white rounded-full blur-3xl"></div>
@@ -193,10 +193,10 @@ const Videos = () => {
 
           <div className="relative z-10 text-center">
             <Youtube className="w-16 h-16 text-white mx-auto mb-6" />
-            <h3 className="text-3xl md:text-4xl font-black text-white mb-4">
+            <h3 className="ju-reveal text-3xl md:text-4xl font-black text-white mb-4">
               Want More Content?
             </h3>
-            <p className="text-xl text-red-100 mb-8 max-w-2xl mx-auto">
+            <p className="ju-reveal text-xl text-sky-100 mb-8 max-w-2xl mx-auto">
               Subscribe to our YouTube channel for exclusive flight tests, tutorials, and behind-the-scenes content!
             </p>
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -204,7 +204,7 @@ const Videos = () => {
                 href="https://www.youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="group inline-flex items-center justify-center px-8 py-4 bg-white text-red-600 font-bold rounded-full shadow-2xl hover:bg-gray-100 transition-all duration-300 hover:scale-105"
+                className="group inline-flex items-center justify-center px-8 py-4 bg-white text-accent font-bold rounded-full shadow-2xl hover:bg-gray-100 transition-all duration-300 hover:scale-105"
               >
                 <Youtube className="mr-3 w-6 h-6" />
                 <span>Visit Our Channel</span>
@@ -214,7 +214,7 @@ const Videos = () => {
                 href="https://www.youtube.com"
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center justify-center px-8 py-4 bg-red-800 border-2 border-white/30 text-white font-bold rounded-full hover:bg-red-900 transition-all duration-300"
+                className="inline-flex items-center justify-center px-8 py-4 bg-sky-800 border-2 border-white/30 text-white font-bold rounded-full hover:bg-sky-900 transition-all duration-300"
               >
                 <Play className="mr-2 w-5 h-5" />
                 <span>Watch Playlist</span>

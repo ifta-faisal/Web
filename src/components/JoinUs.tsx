@@ -160,7 +160,7 @@ const JoinUs = () => {
     <>
       <style>{`
         /* ── Reset & base ── */
-        .ju-page { background: transparent; color: #e2e8f0; font-family: 'Inter', 'Segoe UI', sans-serif; }
+        .ju-page { background: transparent; color: #e2e8f0; font-family: 'Inter', 'Segoe UI', sans-serif; position: relative; overflow-x: hidden; }
         .container { max-width: 1280px; margin: 0 auto; padding: 0 1.5rem; }
         .section-padding { padding: 6rem 0; }
 
@@ -172,11 +172,10 @@ const JoinUs = () => {
         .ju-hero {
           position: relative; min-height: 100vh;
           display: flex; align-items: center; justify-content: center;
-          padding-top: 5rem;    /* offset for fixed nav bar */
-          padding-bottom: 6rem; /* clearance for absolute scroll indicator */
-          background: radial-gradient(ellipse at 60% 40%, rgba(234,88,12,0.12) 0%, transparent 60%),
-                      radial-gradient(ellipse at 20% 80%, rgba(220,38,38,0.08) 0%, transparent 55%),
-                      transparent;
+          padding-top: 8rem;    /* standardized pt-32 offset */
+          padding-bottom: 6rem; 
+          background: radial-gradient(circle at 80% 20%, rgba(249,115,22,0.08) 0%, transparent 60%),
+                      radial-gradient(circle at 20% 80%, rgba(220,38,38,0.08) 0%, transparent 60%);
           overflow: hidden;
         }
         /* Particle dots */
@@ -418,7 +417,7 @@ const JoinUs = () => {
         .ju-accord-apply-btn:hover { opacity: .85; transform: translateX(3px); }
 
         /* ══ TIMELINE ════════════════════════════════════════════════ */
-        .ju-timeline { background: rgba(9,13,24,0.95); }
+        .ju-timeline { background: rgba(2,6,23,0.95); }
 
         /* Outer wrapper: positions the line relative to the circles */
         .ju-timeline-track {
@@ -507,8 +506,9 @@ const JoinUs = () => {
 
         /* Form */
         .ju-apply-form {
-          background: rgba(15,23,42,0.9); border: 1px solid rgba(255,255,255,0.08);
+          background: rgba(15,23,42,0.7); border: 1px solid rgba(255,255,255,0.08);
           border-radius: 16px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem;
+          backdrop-filter: blur(20px);
         }
         .ju-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         @media(max-width: 520px) { .ju-form-row { grid-template-columns: 1fr; } }
@@ -546,7 +546,7 @@ const JoinUs = () => {
       <div className="ju-page">
 
         {/* ── HERO ── */}
-        <section className="ju-hero" ref={heroRef} id="join-us">
+        <section className=" ju-hero" ref={heroRef} id="join-us">
           <div className="ju-hero-particles">
             {[...Array(30)].map((_, i) => (
               <span key={i} className="ju-particle" style={{
@@ -559,12 +559,12 @@ const JoinUs = () => {
             ))}
           </div>
           <div className={`ju-hero-content container ${heroVisible ? 'ju-hero-animate' : ''}`}>
-            <p className="ju-hero-eyebrow">🚀 UIU AERIAL ROBOTICS TEAM RECRUITMENT 2025</p>
-            <h1 className="ju-hero-title">
+            <p className="ju-reveal ju-hero-eyebrow">🚀 UIU AERIAL ROBOTICS TEAM RECRUITMENT 2025</p>
+            <h1 className="ju-reveal ju-hero-title">
               UIU AERIAL ROBOTICS TEAM<br />
               <span className="ju-hero-highlight">IS RECRUITING!</span>
             </h1>
-            <p className="ju-hero-desc">
+            <p className="ju-reveal ju-hero-desc">
               Are you enthusiastic about Aerial Robotics, Drone Technology, Autonomous Systems, Research, and exploring the future of aerial innovation? This is the perfect opportunity for you!
               We are looking for dedicated individuals who are passionate about contributing to the continuous development of our aerial robotics platforms. Join us as we build and improve cutting-edge drones for research, innovation, and competitive challenges.
               We are excited to form a new core team for upcoming events and projects. Students from **all departments at UIU** are encouraged to apply and bring their unique skills and ideas to the team. Be part of a collaborative environment where you can learn, experiment, and push the boundaries of aerial robotics!
@@ -582,12 +582,12 @@ const JoinUs = () => {
         </section>
 
         {/* ── WHY JOIN ── */}
-        <section className="ju-why section-padding" id="why-join">
+        <section className=" ju-why section-padding" id="why-join">
           <div className="container">
             <div className="ju-section-header ju-reveal">
               <span className="ju-section-tag">WHY JOIN US?</span>
-              <h2 className="ju-section-title">Build. Compete. Inspire.</h2>
-              <p className="ju-section-sub">
+              <h2 className="ju-reveal ju-section-title">Build. Compete. Inspire.</h2>
+              <p className="ju-reveal ju-section-sub">
                 Join a family of passionate engineers, scientists, and creators pushing the boundaries of what's possible.
               </p>
             </div>
@@ -595,8 +595,8 @@ const JoinUs = () => {
               {benefits.map((b, i) => (
                 <div className="ju-benefit-card ju-reveal" key={i} style={{ animationDelay: `${i * 0.1}s` }}>
                   <div className="ju-benefit-icon">{b.icon}</div>
-                  <h3 className="ju-benefit-title">{b.title}</h3>
-                  <p className="ju-benefit-desc">{b.desc}</p>
+                  <h3 className="ju-reveal ju-benefit-title">{b.title}</h3>
+                  <p className="ju-reveal ju-benefit-desc">{b.desc}</p>
                 </div>
               ))}
             </div>
@@ -604,20 +604,20 @@ const JoinUs = () => {
         </section>
 
         {/* ── MISSION CTA ── */}
-        <section className="ju-mission-cta ju-reveal">
+        <section className="ju-mission-cta ">
           <div className="container ju-mission-inner">
-            <h2>READY TO JOIN THE MISSION?</h2>
+            <h2 className="ju-reveal">READY TO JOIN THE MISSION?</h2>
             <a href="#apply" className="ju-btn-cta"><span>🚀</span> APPLY NOW</a>
           </div>
         </section>
 
         {/* ── OPEN POSITIONS (Accordion) ── */}
-        <section className="ju-teams section-padding" id="teams">
+        <section className=" ju-teams section-padding" id="teams">
           <div className="container">
             <div className="ju-section-header ju-reveal">
               <span className="ju-section-tag">OPEN POSITIONS</span>
-              <h2 className="ju-section-title">WE ARE LOOKING FOR MEMBERS<br />WITH THE FOLLOWING SKILLS</h2>
-              <p className="ju-section-sub">Click any sub-team card to see what we're looking for. All UIU departments welcome.</p>
+              <h2 className="ju-reveal ju-section-title">WE ARE LOOKING FOR MEMBERS<br />WITH THE FOLLOWING SKILLS</h2>
+              <p className="ju-reveal ju-section-sub">Click any sub-team card to see what we're looking for. All UIU departments welcome.</p>
             </div>
 
             <div className="ju-accord-grid">
@@ -647,8 +647,8 @@ const JoinUs = () => {
                       </div>
 
                       <div className="ju-accord-meta">
-                        <h3 className="ju-accord-name">{team.label}</h3>
-                        <p className="ju-accord-short">{team.shortDesc}</p>
+                        <h3 className="ju-reveal ju-accord-name">{team.label}</h3>
+                        <p className="ju-reveal ju-accord-short">{team.shortDesc}</p>
                         <div className="ju-accord-tool-row">
                           {team.skills.flatMap(s => s.tags || []).slice(0, 3).map((tag, ti) => (
                             <span className="ju-accord-pill" key={ti}>{tag}</span>
@@ -683,7 +683,7 @@ const JoinUs = () => {
                       {team.skills.map((skill, si) => (
                         <div className="ju-accord-skill-block" key={si}>
                           {skill.category && (
-                            <p className="ju-accord-cat" style={{ color: accent }}>
+                            <p className="ju-reveal ju-accord-cat" style={{ color: accent }}>
                               <span>{skill.categoryIcon}</span> {skill.category}
                             </p>
                           )}
@@ -697,7 +697,7 @@ const JoinUs = () => {
                           {skill.bullets && skill.bullets.length > 0 && (
                             <ul className="ju-accord-bullets">
                               {skill.bullets.map((b, bi) => (
-                                <li key={bi}>
+                                <li key={bi} className="ju-reveal">
                                   <span className="ju-accord-check" style={{ color: accent }}>✓</span>
                                   {b}
                                 </li>
@@ -726,11 +726,11 @@ const JoinUs = () => {
         </section>
 
         {/* ── HOW TO APPLY ── */}
-        <section className="ju-timeline section-padding" id="how-to-apply">
+        <section className=" ju-timeline section-padding" id="how-to-apply">
           <div className="container">
             <div className="ju-section-header ju-reveal">
               <span className="ju-section-tag">APPLICATION PROCESS</span>
-              <h2 className="ju-section-title">HOW TO APPLY</h2>
+              <h2 className="ju-reveal ju-section-title">HOW TO APPLY</h2>
             </div>
             <div className="ju-timeline-track ju-reveal">
               {timeline.map((step, i) => (
@@ -740,7 +740,7 @@ const JoinUs = () => {
                   </div>
                   <div className="ju-tl-content">
                     <h4>{step.title}</h4>
-                    <p>{step.desc}</p>
+                    <p className="ju-reveal">{step.desc}</p>
                   </div>
                 </div>
               ))}
@@ -749,13 +749,13 @@ const JoinUs = () => {
         </section>
 
         {/* ── APPLY FORM ── */}
-        <section className="ju-apply section-padding" id="apply">
+        <section className=" ju-apply section-padding" id="apply">
           <div className="container">
             <div className="ju-apply-inner ju-reveal">
               <div className="ju-apply-left">
                 <span className="ju-section-tag">JOIN THE CREW</span>
-                <h2 className="ju-apply-title">READY TO MAKE<br /><span>HISTORY?</span></h2>
-                <p className="ju-apply-desc">
+                <h2 className="ju-reveal ju-apply-title">READY TO MAKE<br /><span>HISTORY?</span></h2>
+                <p className="ju-reveal ju-apply-desc">
                   Fill out the form and one of our team leads will reach out to you within
                   5 business days. Open to all UIU students regardless of department.
                 </p>

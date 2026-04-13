@@ -1,59 +1,97 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import bgVideoUrl from '../assets/video/Drone_Fotage_1.mp4';
 
 const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
-    const [isExiting, setIsExiting] = useState(false);
+  const [isExiting, setIsExiting] = useState(false);
+  const [progress, setProgress] = useState(0);
 
-    // Fade out on click
-    const handleClick = () => {
-        setIsExiting(true);
-        setTimeout(() => {
-            onComplete();
-        }, 1000); // 1000ms duration for screen to fade
-    };
+  const logoUrl = new URL('../assets/images/logo/Logo UART SVG.svg', import.meta.url).href;
 
-    return (
-        <div
-            onClick={handleClick}
-            className={`fixed inset-0 z-[9999] bg-[#090d18] flex flex-col items-center justify-center transition-opacity duration-[1000ms] ease-in-out cursor-pointer ${isExiting ? 'opacity-0 pointer-events-none' : 'opacity-100'
-                }`}
-        >
-            {/* Background Video */}
-            <video
-                autoPlay
-                loop
-                muted
-                playsInline
-                className="absolute inset-0 w-full h-full object-cover opacity-60 pointer-events-none"
-            >
-                <source src={bgVideoUrl} type="video/mp4" />
-            </video>
+  // Auto-progress the loading bar and enter when complete
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setProgress(prev => {
+        if (prev >= 100) {
+          clearInterval(interval);
+          // Auto-enter after a brief pause at 100%
+          setTimeout(() => {
+            setIsExiting(true);
+            setTimeout(() => { onComplete(); }, 900);
+          }, 600);
+          return 100;
+        }
+        return prev + Math.random() * 1.5 + 0.8;
+      });
+    }, 80);
+    return () => clearInterval(interval);
+  }, []);
 
-            {/* Dark Gradient Overlay for better text readability */}
-            <div className="absolute inset-0 bg-gradient-to-t from-[#090d18] via-[rgba(9,13,24,0.4)] to-transparent pointer-events-none"></div>
+  return (
+    <div
+      className={`fixed inset-0 z-[9999] bg-[#020617] flex flex-col items-center justify-center transition-all duration-[900ms] ease-in-out ${isExiting ? 'opacity-0 pointer-events-none scale-105' : 'opacity-100 scale-100'
+        }`}
+    >
+      {/* Background Video — Optimized for maximum clarity */}
+      <video
+        autoPlay loop muted playsInline
+        className="absolute inset-0 w-full h-full object-cover opacity-80 pointer-events-none"
+      >
+        <source src={bgVideoUrl} type="video/mp4" />
+      </video>
 
-            {/* Main Content Overlay */}
-            <div className="relative z-10 flex flex-col items-center mt-auto mb-24 px-4 w-full">
-                <h1 className="text-3xl md:text-5xl font-bold tracking-[0.2em] text-white drop-shadow-[0_4px_8px_rgba(0,0,0,0.8)] mb-6 text-center">
-                    SYSTEM INITIALIZATION<span className="animate-pulse text-orange-500">...</span>
-                </h1>
+      {/* Subtle Vignette — Ensures focus on central content */}
+      <div className="absolute inset-0 bg-gradient-to-t from-[#020617]/90 via-transparent to-[#020617]/60 pointer-events-none" />
 
-                <p className="text-gray-300 font-mono tracking-[0.15em] text-xs md:text-sm text-center mb-8 bg-black/40 px-6 py-2 rounded-full border border-gray-700/50 backdrop-blur-md">
-                    <span className="inline-block w-2 h-2 rounded-full bg-orange-500 animate-pulse mr-3 shadow-[0_0_8px_rgba(249,115,22,1)]"></span>
-                    ESTABLISHING SECURE CONNECTION
-                </p>
+      {/* Main Branded Content — Minimalist & Centered */}
+      <div className="relative z-10 flex flex-col items-center justify-center px-4 w-full max-w-2xl text-center">
 
-                <div className="mt-8 group relative overflow-hidden rounded-full p-[1px]">
-                    <span className="absolute inset-0 bg-gradient-to-r from-orange-500 to-red-600 rounded-full opacity-50 group-hover:opacity-100 transition-opacity duration-300 animate-pulse"></span>
-                    <div className="relative px-8 py-3 bg-[rgba(9,13,24,0.8)] rounded-full backdrop-blur-sm border border-orange-500/30 group-hover:border-orange-500/80 transition-colors shadow-[0_0_15px_rgba(249,115,22,0.3)]">
-                        <p className="text-orange-400 font-mono text-sm tracking-[0.3em] uppercase transition-colors duration-300 group-hover:text-white group-hover:shadow-[0_0_15px_rgba(249,115,22,0.5)]">
-                            [ Click Anywhere To Launch ]
-                        </p>
-                    </div>
-                </div>
-            </div>
+        {/* Logo Section — Enlarged */}
+        <div className="mb-4 group">
+          <img
+            src={logoUrl}
+            alt="UART Logo"
+            className="w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-[0_0_30px_rgba(249,115,22,0.4)] transition-transform duration-700 group-hover:scale-105"
+          />
         </div>
-    );
+
+        {/* Brand Title */}
+        <div className="space-y-1 mb-6">
+          <h1
+            className="text-4xl md:text-5xl font-bold tracking-[0.3em] text-white"
+            style={{ fontFamily: "'Bebas Neue', sans-serif" }}
+          >
+            UIU AERIAL ROBOTICS TEAM
+          </h1>
+          <p className="text-primary font-bold tracking-[0.5em] text-[10px] md:text-xs">
+            PRECISION IN MOTION
+          </p>
+        </div>
+
+        {/* Minimalist Progress Section */}
+        <div className="w-full max-w-xs md:max-w-sm mb-4">
+          <div className="flex justify-between items-end mb-2">
+            <span className="text-[10px] font-mono font-bold text-white/60 tracking-widest uppercase">Initializing Systems</span>
+            <span className="text-[10px] font-mono font-bold text-primary">{Math.floor(progress)}%</span>
+          </div>
+          <div className="w-full h-[2px] bg-white/10 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-gradient-to-r from-primary to-accent transition-all duration-300"
+              style={{ width: `${progress}%`, boxShadow: '0 0 10px rgba(249,115,22,0.5)' }}
+            />
+          </div>
+        </div>
+
+        {/* Status message instead of click button */}
+        <p
+          className="text-white/40 text-[10px] tracking-[0.3em] font-mono uppercase"
+        >
+          {progress >= 100 ? 'Entering Experience...' : 'Please wait...'}
+        </p>
+
+      </div>
+
+    </div>
+  );
 };
 
 export default SplashScreen;

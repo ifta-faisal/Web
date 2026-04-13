@@ -2,43 +2,63 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import { Plus } from 'lucide-react';
 
-import img1 from '../assets/gallery/drone1.jpeg';
+import team from "../assets/gallery/team.jpeg";
 import img2 from '../assets/gallery/Engine1.jpeg';
-import img3 from '../assets/gallery/drone2.jpeg';
+import meeting_1 from "../assets/gallery/meeting_1.jpg";
 import img4 from '../assets/gallery/drone3.jpeg';
 import img5 from '../assets/gallery/project5.jpeg';
 import img6 from '../assets/gallery/Vitol_1.jpeg';
 import img7 from '../assets/gallery/project2.jpeg';
-import img8 from '../assets/gallery/project7.jpeg';
+import ramadan from "../assets/gallery/ramadan.jpeg";
+
+const images = [team, img2, meeting_1, img4, img5, img6, img7, ramadan];
 
 const GalleryGrid = () => {
-    // 8 images exactly for the 4x2 grid layout
-    const images = [img1, img2, img3, img4, img5, img6, img7, img8];
+  return (
+    <section className="bg-transparent w-full overflow-hidden">
+      <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
+        {images.map((src, i) => {
+          const delay = i * 80;
+          return (
+            <Link
+              to="/gallery"
+              key={i}
+              className="w-full aspect-video relative group overflow-hidden block"
+              style={{ background: '#0d0b0a' }}
+            >
+              <img
+                src={src}
+                alt={`Gallery ${i + 1}`}
+                className="ju-reveal w-full h-full object-cover transition-transform duration-700 ease-spring group-hover:scale-110"
+                style={{ transitionDelay: `${delay}ms` }}
+                loading="lazy"
+              />
 
-    return (
-        <section className="bg-transparent w-full overflow-hidden">
-            {/* Exactly 4 columns on desktop, 16:9 aspect blocks with no gaps */}
-            <div className="w-full grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-0">
-                {images.map((src, i) => (
-                    <Link
-                        to="/gallery"
-                        key={i}
-                        className="w-full aspect-video bg-slate-100 relative group overflow-hidden cursor-pointer block"
-                    >
-                        <img
-                            src={src}
-                            alt={`Gallery image ${i + 1}`}
-                            className="w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-                        />
-                        {/* Hover Overlay with precise thin Plus icon */}
-                        <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center pointer-events-none">
-                            <Plus className="w-12 h-12 text-white/90 stroke-[1]" />
-                        </div>
-                    </Link>
-                ))}
-            </div>
-        </section>
-    );
+              {/* Hover overlay — gradient + icon + label */}
+              <div className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 flex flex-col items-center justify-center pointer-events-none"
+                style={{ background: 'linear-gradient(to top, rgba(17,15,14,0.85) 0%, rgba(17,15,14,0.4) 50%, transparent 100%)' }}>
+                <div
+                  className="w-12 h-12 rounded-full flex items-center justify-center mb-2 transform scale-50 group-hover:scale-100 transition-transform duration-400"
+                  style={{ background: 'rgba(192,86,42,0.25)', border: '1px solid rgba(192,86,42,0.6)', backdropFilter: 'blur(8px)' }}
+                >
+                  <Plus className="w-5 h-5 stroke-[1.5]" style={{ color: '#fff' }} />
+                </div>
+                <span className="text-white/70 text-xs tracking-widest uppercase font-medium" style={{ fontFamily: "'Inter', sans-serif" }}>
+                  View Gallery
+                </span>
+              </div>
+
+              {/* Subtle border on hover */}
+              <div
+                className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
+                style={{ boxShadow: 'inset 0 0 0 1px rgba(192,86,42,0.3)' }}
+              />
+            </Link>
+          );
+        })}
+      </div>
+    </section>
+  );
 };
 
 export default GalleryGrid;

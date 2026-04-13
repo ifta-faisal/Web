@@ -20,18 +20,20 @@ const DroneParts = () => {
     }, [parts.length]);
 
     return (
-        <section className="py-24 bg-transparent relative">
-            <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-[#ea580c] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-
+        <section className="py-24 bg-transparent relative overflow-hidden">
+            {/* Cinematic atmosphere */}
+            <div className="absolute inset-0 bg-radial-warm opacity-30 pointer-events-none" />
+            
+            <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-[#f97316] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 ju-reveal">
                 <div className="text-center mb-16">
-                    <div className="inline-block mb-4">
-                        <span className="px-4 py-2 bg-orange-500/20 border border-orange-400/50 rounded-full text-orange-300 text-sm font-semibold uppercase tracking-wider">
-                            Anatomy
-                        </span>
-                    </div>
-                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">Inside Our Drone</h2>
-                    <div className="w-16 sm:w-24 h-1.5 bg-gradient-to-r from-orange-400 to-red-500 mx-auto rounded-full mb-8"></div>
+                    <div className="section-label mb-3">Anatomy</div>
+                    <h2 className="text-4xl sm:text-5xl md:text-6xl font-bold text-white mb-4">
+                        <div className="mask-container">
+                            <span className="mask-reveal ju-visible">Inside Our Drone</span>
+                        </div>
+                    </h2>
+                    <div className="w-16 sm:w-24 h-1.5 bg-gradient-to-r from-primary to-accent mx-auto rounded-full mb-8"></div>
                 </div>
 
                 <div className="relative flex flex-col md:flex-row h-auto md:h-[700px] overflow-hidden ju-reveal" style={{ animationDelay: '0.2s' }}>
@@ -41,7 +43,7 @@ const DroneParts = () => {
                         <img
                             src={droneImage}
                             alt="Drone Anatomy"
-                            className="w-full max-h-full object-contain relative z-10"
+                            className="ju-reveal w-full max-h-full object-contain relative z-10"
                         />
 
                         {/* Dots on Drone */}
@@ -56,7 +58,7 @@ const DroneParts = () => {
                                     <div className={`absolute w-8 h-8 bg-[#f97316] rounded-full transition-all duration-700 ${activeIndex === i ? 'animate-ping opacity-60' : 'opacity-0 scale-0'}`}></div>
                                     <div className={`absolute w-12 h-12 border border-[#f97316] rounded-full transition-all duration-1000 ${activeIndex === i ? 'opacity-40 scale-100' : 'opacity-0 scale-50'}`}></div>
                                     {/* Core Dot */}
-                                    <div className={`relative w-3 h-3 rounded-full border-2 border-[#090d18] shadow-md transition-all duration-500 ${activeIndex === i ? 'bg-[#f97316] scale-150' : 'bg-[#94a3b8] scale-100'}`}></div>
+                                    <div className={`relative w-3 h-3 rounded-full border-2 border-[#020617] shadow-md transition-all duration-500 ${activeIndex === i ? 'bg-[#f97316] scale-150' : 'bg-[#94a3b8] scale-100'}`}></div>
                                 </div>
                             </div>
                         ))}
@@ -94,7 +96,7 @@ const DroneParts = () => {
                                     className="md:absolute w-full mb-8 md:mb-0 transition-all duration-700 md:-translate-y-1/2"
                                     style={{ top: part.textTop }}
                                 >
-                                    <h4 className={`font-black text-sm md:text-base tracking-wider uppercase transition-colors duration-500 ${isActive ? 'text-[#f97316] scale-105 origin-left' : 'text-[#e2e8f0]'}`}>
+                                    <h4 className={`font-bold text-sm md:text-base tracking-[0.2em] uppercase transition-colors duration-500 ${isActive ? 'text-[#f97316] scale-105 origin-left' : 'text-[#e2e8f0]'}`} style={{ fontFamily: "'Inter', sans-serif" }}>
                                         {part.label}
                                     </h4>
                                     <p className={`text-[#94a3b8] text-xs sm:text-sm mt-2 font-light leading-relaxed transition-all duration-500 ${isActive ? 'opacity-100' : 'opacity-50'}`}>

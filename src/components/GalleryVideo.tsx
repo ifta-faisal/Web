@@ -13,14 +13,14 @@ const GalleryVideo = () => {
     videos[4] = { poster: uaImage, video: droneVideo };
 
     return (
-        <section className="py-24 bg-transparent relative">
+        <section className=" py-24 bg-transparent relative">
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 text-left">
 
                     {/* Left Column - Video Grid */}
                     <div className="flex flex-col justify-center">
-                        <h2 className="text-3xl font-black text-white mb-4 uppercase tracking-wide">Flying Drones</h2>
-                        <p className="text-slate-400 text-sm mb-10 leading-relaxed font-light">
+                        <h2 className="ju-reveal text-3xl font-black text-white mb-4 uppercase tracking-wide">Flying Drones</h2>
+                        <p className="ju-reveal text-slate-400 text-sm mb-10 leading-relaxed font-light">
                             They really are a scream the Addams Family! Their house is a museum where people come to see 'em. They really are a addams family.
                         </p>
 
@@ -28,12 +28,12 @@ const GalleryVideo = () => {
                             {videos.map((item, i) => (
                                 <div
                                     key={i}
-                                    className="aspect-[4/3] bg-slate-800 relative group overflow-hidden cursor-pointer"
+                                    className="aspect-[4/3] bg-surface relative group overflow-hidden cursor-pointer"
                                 >
                                     <img
                                         src={item.poster}
                                         alt={`Video ${i + 1}`}
-                                        className="w-full h-full object-cover opacity-80 group-hover:opacity-40 transition-all duration-500 group-hover:scale-110"
+                                        className="ju-reveal w-full h-full object-cover opacity-80 group-hover:opacity-40 transition-all duration-500 group-hover:scale-110"
                                     />
                                     <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
                                         <PlayCircle className="w-10 h-10 text-white/90 group-hover:text-yellow-400 group-hover:scale-110 transition-all duration-300 stroke-[1]" />
@@ -54,24 +54,14 @@ const GalleryVideo = () => {
                             <div className="absolute inset-0 bottom-32">
                                 <img
                                     src={droneImage}
-                                    className="w-full h-full object-cover opacity-60"
+                                    className="ju-reveal w-full h-full object-cover opacity-60"
                                     alt="Video Poster"
                                 />
                                 <div className="absolute inset-0 bg-black/20"></div>
                                 <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0b0f1a] to-transparent"></div>
                             </div>
 
-                            {/* The White Border Frame */}
-                            {/* Top line */}
-                            <div className="absolute top-8 left-8 right-8 h-px bg-white z-10 pointer-events-none"></div>
-                            {/* Left line */}
-                            <div className="absolute top-8 left-8 bottom-32 w-px bg-white z-10 pointer-events-none"></div>
-                            {/* Right line */}
-                            <div className="absolute top-8 right-8 bottom-32 w-px bg-white z-10 pointer-events-none"></div>
-
-                            {/* Bottom Broken Line segments to create gap for the text */}
-                            <div className="absolute bottom-32 left-8 w-[calc(50%-100px)] h-px bg-white z-10 pointer-events-none"></div>
-                            <div className="absolute bottom-32 right-8 w-[calc(50%-100px)] h-px bg-white z-10 pointer-events-none"></div>
+                            {/* Technical Frame removed for a cleaner look */}
 
                             {/* Centered Content */}
                             <div className="relative w-full h-full flex flex-col justify-between items-center z-20">
@@ -90,10 +80,10 @@ const GalleryVideo = () => {
 
                                 {/* Text sitting perfectly on the gap of the bottom frame border */}
                                 <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 w-full text-center">
-                                    <h2 className="text-2xl font-black text-white mb-4 tracking-wide uppercase inline-block bg-[#0b0f1a] px-4 -translate-y-6">
+                                    <h2 className="ju-reveal text-2xl font-black text-white mb-4 tracking-wide uppercase inline-block bg-[#0b0f1a] px-4 -translate-y-6">
                                         Drone Action
                                     </h2>
-                                    <p className="text-slate-400 text-sm max-w-xs mx-auto font-light leading-relaxed">
+                                    <p className="ju-reveal text-slate-400 text-sm max-w-xs mx-auto font-light leading-relaxed">
                                         And we'll do it our way yes our way. Make all our dreams come true me and you.
                                     </p>
                                 </div>

@@ -17,20 +17,6 @@ const ScrollHandler = () => {
       }
     }, 0);
 
-    // Add a global click listener for buttons
-    const handleButtonClick = (event: MouseEvent) => {
-      const target = event.target as HTMLElement;
-      if (target.tagName === 'BUTTON' || target.tagName === 'A') {
-        // Scroll to top on any button or link click
-        window.scrollTo({ top: 0, left: 0 });
-      }
-    };
-
-    document.addEventListener('click', handleButtonClick);
-
-    return () => {
-      document.removeEventListener('click', handleButtonClick);
-    };
   }, [pathname, hash]);
 
   return null;

@@ -1,7 +1,18 @@
 import React from 'react';
-import { Mail, Phone, MapPin, Youtube, Facebook, Instagram } from 'lucide-react';
-import Logo from "../assets/images/UART_Logo.png";
+import { Mail, Phone, MapPin, Youtube, Facebook, Instagram, ChevronRight } from 'lucide-react';
+import Logo from '../assets/images/logo/UART_Logo.png';
 import { Link } from 'react-router-dom';
+
+// Particle config for footer atmosphere
+const FOOTER_PARTICLES = Array.from({ length: 16 }, (_, i) => ({
+  id: i,
+  size: Math.random() * 2 + 1,
+  left: Math.random() * 100,
+  bottom: Math.random() * 40,
+  delay: Math.random() * 8,
+  duration: Math.random() * 6 + 6,
+  opacity: Math.random() * 0.3 + 0.1,
+}));
 
 const Footer = () => {
   const quickLinks = [
@@ -9,67 +20,134 @@ const Footer = () => {
     { name: 'Projects', href: '/projects' },
     { name: 'Join Us', href: '/joinus' },
     { name: 'Contact', href: '/contact' },
-    { name: 'Gallery', href: '/Gallery' },
-
+    { name: 'Blog', href: '/blog' },
   ];
 
   const projects = [
     { name: 'Endurance UAV', href: '/projects' },
     { name: 'Long Range Drone', href: '/projects' },
     { name: 'Surveillance UAV', href: '/projects' },
-    { name: 'Defensive Drone', href: '/projects' }
+    { name: 'Defensive Drone', href: '/projects' },
   ];
 
   return (
-    <footer className="bg-[rgba(9,13,24,0.6)] border-t border-[rgba(255,255,255,0.08)] text-[#e2e8f0] relative overflow-hidden">
-      {/* Decorative gradient blur based on JoinUs */}
-      <div className="absolute top-0 right-0 w-96 h-96 bg-[#ea580c] rounded-full mix-blend-multiply filter blur-[100px] opacity-10 pointer-events-none" />
-      <div className="absolute bottom-0 left-0 w-96 h-96 bg-[#dc2626] rounded-full mix-blend-multiply filter blur-[100px] opacity-10 pointer-events-none" />
+    <footer style={{ background: '#020617' }} className="text-white relative overflow-hidden">
+      {/* Horizontal grid divider at footer start */}
+      <div className="absolute top-0 left-0 right-0 z-20">
+        <div className="cinematic-divider-h" />
+      </div>
+
+      {/* Atmospheric particles */}
+      {FOOTER_PARTICLES.map(p => (
+        <div
+          key={p.id}
+          className="absolute rounded-full pointer-events-none"
+          style={{
+            width: p.size,
+            height: p.size,
+            left: `${p.left}%`,
+            bottom: `${p.bottom}%`,
+            background: p.id % 4 === 0 ? '#f97316' : 'rgba(255,255,255,0.5)',
+            opacity: p.opacity,
+            animation: `particle-drift-2 ${p.duration}s ease-in-out ${p.delay}s infinite`,
+          }}
+        />
+      ))}
+
+      {/* Corner glow blobs */}
+      <div className="absolute top-0 right-0 w-80 h-80 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.08) 0%, transparent 70%)', filter: 'blur(40px)' }} />
+      <div className="absolute bottom-0 left-0 w-80 h-80 rounded-full pointer-events-none"
+        style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.05) 0%, transparent 70%)', filter: 'blur(40px)' }} />
+
+      {/* Animated shimmer border line at top */}
+      <div className="w-full h-[2px] relative overflow-hidden">
+        <div
+          className="absolute inset-0"
+          style={{
+            background: 'linear-gradient(90deg, transparent 0%, #f97316 20%, #FFFFFF 50%, #f97316 80%, transparent 100%)',
+            backgroundSize: '200% 100%',
+            animation: 'border-shimmer 3s ease infinite',
+          }}
+        />
+      </div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 relative z-10">
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-10">
 
           {/* Brand Section */}
-          <div className="lg:col-span-1 ju-reveal">
+          <div className="lg:col-span-1 ju-reveal-left">
             <div className="flex items-center space-x-3 mb-6">
-              <img
-                src={Logo}
-                alt="UIU Aerial Robotics Logo"
-                className="w-32 h-32 md:w-32 md:h-32 object-contain"
-              />
+              <img src={Logo} alt="UIU Aerial Robotics Logo" className="w-24 h-24 object-contain" />
               <div>
-                <h3 className="text-lg md:text-xl font-bold">UIU Aerial Robotics Team</h3>
-                <p className="text-gray-400 text-sm">United International University</p>
+                <h3
+                  className="text-xl font-bold text-white tracking-[0.2em]"
+                  style={{ fontFamily: "'Inter', sans-serif" }}
+                >
+                  UIU Aerial Robotics Team
+                </h3>
+                <p className="text-sm mt-1" style={{ color: '#f97316', fontFamily: "'Inter', sans-serif" }}>
+                  United International University
+                </p>
               </div>
             </div>
-            <p className="text-[#94a3b8] text-sm mb-6 leading-relaxed">
-              Pioneering sustainable aviation through innovative solar-powered aircraft design and cutting-edge renewable energy research.
+            <p className="text-sm mb-7 leading-relaxed" style={{ color: '#7A6E68', fontFamily: "'Inter', sans-serif" }}>
+              Pioneering sustainable aviation through innovative UAV design and cutting-edge aerospace research.
             </p>
 
-            {/* Social Media */}
-            <div className="flex space-x-4">
-              <a href="https://www.facebook.com/uiuaerialrobotics" target="_blank" rel="noopener noreferrer"
-                className="w-10 h-10 border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.04)] rounded-lg flex items-center justify-center hover:bg-[#ea580c] hover:border-[#ea580c] transition duration-300 transform hover:scale-105 shadow-[0_4px_14px_rgba(0,0,0,0.1)]">
-                <Facebook className="w-5 h-5 text-white" />
-              </a>
-              <a href="https://www.instagram.com/uiuaerialrobotics" target="_blank" rel="noopener noreferrer"
-                className="w-10 h-10 border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.04)] rounded-lg flex items-center justify-center hover:bg-[#ea580c] hover:border-[#ea580c] transition duration-300 transform hover:scale-105 shadow-[0_4px_14px_rgba(0,0,0,0.1)]">
-                <Instagram className="w-5 h-5 text-white" />
-              </a>
-              <a href="https://youtube.com/@uiuaerialrobotics?si=DlAOChShO2_kzuYe" target="_blank" rel="noopener noreferrer"
-                className="w-10 h-10 border border-[rgba(255,255,255,0.12)] bg-[rgba(255,255,255,0.04)] rounded-lg flex items-center justify-center hover:bg-[#ea580c] hover:border-[#ea580c] transition duration-300 transform hover:scale-105 shadow-[0_4px_14px_rgba(0,0,0,0.1)]">
-                <Youtube className="w-5 h-5 text-white" />
-              </a>
+            {/* Social Icons — with ripple effect */}
+            <div className="flex space-x-3">
+              {[
+                { href: 'https://www.facebook.com/uiuaerialrobotics', Icon: Facebook, label: 'Facebook' },
+                { href: 'https://www.instagram.com/uiuaerialrobotics', Icon: Instagram, label: 'Instagram' },
+                { href: 'https://youtube.com/@uiuaerialrobotics?si=DlAOChShO2_kzuYe', Icon: Youtube, label: 'YouTube' },
+              ].map(({ href, Icon, label }) => (
+                <a
+                  key={href}
+                  href={href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={`Follow us on ${label}`}
+                  className="social-ripple w-10 h-10 flex items-center justify-center transition-all duration-300"
+                  style={{
+                    background: 'rgba(249,115,22,0.1)',
+                    border: '1px solid rgba(249,115,22,0.3)',
+                    borderRadius: '999px',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.background = '#f97316';
+                    e.currentTarget.style.boxShadow = '0 0 16px rgba(249,115,22,0.5)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = 'rgba(249,115,22,0.1)';
+                    e.currentTarget.style.boxShadow = 'none';
+                  }}
+                >
+                  <Icon className="w-4 h-4 text-white" />
+                </a>
+              ))}
             </div>
           </div>
 
           {/* Quick Links */}
-          <div className="ju-reveal" style={{ animationDelay: '0.1s' }}>
-            <h4 className="text-lg font-bold mb-6 text-white uppercase tracking-wider">Quick Links</h4>
+          <div className="ju-reveal ju-delay-2">
+            <h4
+              className="text-lg font-bold mb-6 text-white uppercase tracking-widest pb-2"
+              style={{ fontFamily: "'Bebas Neue', sans-serif", borderBottom: '1px solid rgba(249,115,22,0.3)' }}
+            >
+              Quick Links
+            </h4>
             <ul className="space-y-3">
               {quickLinks.map((link, idx) => (
                 <li key={idx}>
-                  <Link to={link.href} className="text-[#94a3b8] hover:text-[#f97316] transition duration-300 hover:translate-x-1 inline-block text-sm font-medium">
+                  <Link
+                    to={link.href}
+                    className="flex items-center gap-2 text-sm transition-all duration-300 group"
+                    style={{ color: '#7A6E68', fontFamily: "'Inter', sans-serif" }}
+                    onMouseEnter={e => e.currentTarget.style.color = '#f97316'}
+                    onMouseLeave={e => e.currentTarget.style.color = '#7A6E68'}
+                  >
+                    <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 -ml-1 transition-all" style={{ color: '#f97316' }} />
                     {link.name}
                   </Link>
                 </li>
@@ -78,12 +156,24 @@ const Footer = () => {
           </div>
 
           {/* Projects */}
-          <div className="ju-reveal" style={{ animationDelay: '0.2s' }}>
-            <h4 className="text-lg font-bold mb-6 text-white uppercase tracking-wider">Our Projects</h4>
+          <div className="ju-reveal ju-delay-3">
+            <h4
+              className="text-lg font-bold mb-6 text-white uppercase tracking-widest pb-2"
+              style={{ fontFamily: "'Bebas Neue', sans-serif", borderBottom: '1px solid rgba(249,115,22,0.3)' }}
+            >
+              Our Projects
+            </h4>
             <ul className="space-y-3">
               {projects.map((project, idx) => (
                 <li key={idx}>
-                  <Link to={project.href} className="text-[#94a3b8] hover:text-[#f97316] transition duration-300 hover:translate-x-1 inline-block text-sm font-medium">
+                  <Link
+                    to={project.href}
+                    className="flex items-center gap-2 text-sm transition-all duration-300 group"
+                    style={{ color: '#7A6E68', fontFamily: "'Inter', sans-serif" }}
+                    onMouseEnter={e => e.currentTarget.style.color = '#f97316'}
+                    onMouseLeave={e => e.currentTarget.style.color = '#7A6E68'}
+                  >
+                    <ChevronRight className="w-3.5 h-3.5 opacity-0 group-hover:opacity-100 -ml-1 transition-all" style={{ color: '#f97316' }} />
                     {project.name}
                   </Link>
                 </li>
@@ -92,55 +182,87 @@ const Footer = () => {
           </div>
 
           {/* Contact Info */}
-          <div className="ju-reveal" style={{ animationDelay: '0.3s' }}>
-            <h4 className="text-lg font-bold mb-6 text-white uppercase tracking-wider">Contact Info</h4>
-            <div className="space-y-4">
+          <div className="ju-reveal ju-delay-4">
+            <h4
+              className="text-lg font-bold mb-6 text-white uppercase tracking-widest pb-2"
+              style={{ fontFamily: "'Bebas Neue', sans-serif", borderBottom: '1px solid rgba(249,115,22,0.3)' }}
+            >
+              Contact Info
+            </h4>
+            <div className="space-y-5">
               <div className="flex items-start space-x-3">
-                <MapPin className="w-5 h-5 text-[#f97316] mt-1 flex-shrink-0" />
-                <div className="text-[#94a3b8] text-sm font-medium">
+                <MapPin className="w-5 h-5 mt-0.5 flex-shrink-0" style={{ color: '#f97316' }} />
+                <div className="text-sm leading-relaxed" style={{ color: '#7A6E68', fontFamily: "'Inter', sans-serif" }}>
                   <p>United International University</p>
-                  <p>United City</p>
-                  <p>Madani Ave 100ft, Dhaka</p>
-                  <a href="https://maps.app.goo.gl/GYa86SyjURtjzo6S7?g_st=aw" target="_blank" rel="noopener noreferrer" className="text-[#fb923c] hover:text-white underline mt-2 inline-block">
-                    View on Google Maps
+                  <p>United City, Madani Ave 100ft, Dhaka</p>
+                  <a
+                    href="https://maps.app.goo.gl/GYa86SyjURtjzo6S7?g_st=aw"
+                    target="_blank" rel="noopener noreferrer"
+                    className="mt-1.5 inline-block text-xs underline transition-colors"
+                    style={{ color: '#f97316' }}
+                    onMouseEnter={e => e.currentTarget.style.color = '#fff'}
+                    onMouseLeave={e => e.currentTarget.style.color = '#f97316'}
+                  >
+                    View on Google Maps →
                   </a>
                 </div>
               </div>
 
               <div className="flex items-center space-x-3">
-                <Mail className="w-5 h-5 text-[#f97316] flex-shrink-0" />
-                <a href="mailto:aerialrobotics@project.uiu.ac.bd" className="text-[#94a3b8] hover:text-[#f97316] text-sm transition duration-300 font-medium">
+                <Mail className="w-5 h-5 flex-shrink-0" style={{ color: '#f97316' }} />
+                <a
+                  href="mailto:aerialrobotics@project.uiu.ac.bd"
+                  className="text-sm transition-colors"
+                  style={{ color: '#7A6E68', fontFamily: "'Inter', sans-serif" }}
+                  onMouseEnter={e => e.currentTarget.style.color = '#f97316'}
+                  onMouseLeave={e => e.currentTarget.style.color = '#7A6E68'}
+                >
                   aerialrobotics@project.uiu.ac.bd
                 </a>
               </div>
 
               <div className="flex items-center space-x-3">
-                <Phone className="w-5 h-5 text-[#f97316] flex-shrink-0" />
-                <a href="tel:+8801521461598" className="text-[#94a3b8] hover:text-[#f97316] text-sm transition duration-300 font-medium">
+                <Phone className="w-5 h-5 flex-shrink-0" style={{ color: '#f97316' }} />
+                <a
+                  href="tel:+8801521461598"
+                  className="text-sm transition-colors"
+                  style={{ color: '#7A6E68', fontFamily: "'Inter', sans-serif" }}
+                  onMouseEnter={e => e.currentTarget.style.color = '#f97316'}
+                  onMouseLeave={e => e.currentTarget.style.color = '#7A6E68'}
+                >
                   +880 1521-461598
                 </a>
               </div>
             </div>
           </div>
-
         </div>
 
-        {/* Bottom Section */}
-        <div className="border-t border-[rgba(255,255,255,0.08)] mt-12 pt-8 ju-reveal" style={{ animationDelay: '0.4s' }}>
-          <div className="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
-            <div className="text-[#64748b] text-sm font-semibold tracking-wide">
-              © 2024-2025 UIU Aerial Robotics Team.<br className="md:hidden" /> All rights reserved.
+        {/* Bottom bar */}
+        <div
+          className="mt-14 pt-7 ju-reveal ju-delay-5"
+          style={{ borderTop: '1px solid rgba(249,115,22,0.2)' }}
+        >
+          <div className="flex flex-col md:flex-row justify-between items-center gap-4">
+            <div className="text-sm" style={{ color: '#4A4038', fontFamily: "'Inter', sans-serif" }}>
+              © 2024–2025 UIU Aerial Robotics Team. All rights reserved.
             </div>
-            <div className="flex space-x-6 text-sm font-medium">
-              <Link to="/PrivacyPolicy" className="text-[#64748b] hover:text-white transition duration-300">
-                Privacy Policy
-              </Link>
-              <Link to="/TermsofService" className="text-[#64748b] hover:text-white transition duration-300">
-                Terms of Service
-              </Link>
-              <Link to="/CookiePolicy" className="text-[#64748b] hover:text-white transition duration-300">
-                Cookie Policy
-              </Link>
+            <div className="flex space-x-6 text-sm">
+              {[
+                { to: '/PrivacyPolicy', label: 'Privacy Policy' },
+                { to: '/TermsofService', label: 'Terms of Service' },
+                { to: '/CookiePolicy', label: 'Cookie Policy' },
+              ].map(({ to, label }) => (
+                <Link
+                  key={to}
+                  to={to}
+                  className="transition-colors duration-300"
+                  style={{ color: '#4A4038', fontFamily: "'Inter', sans-serif" }}
+                  onMouseEnter={e => e.currentTarget.style.color = '#f97316'}
+                  onMouseLeave={e => e.currentTarget.style.color = '#4A4038'}
+                >
+                  {label}
+                </Link>
+              ))}
             </div>
           </div>
         </div>

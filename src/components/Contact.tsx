@@ -38,51 +38,41 @@ const Contact = () => {
         "United City, Madani Ave 100ft",
         "Dhaka, Bangladesh",
       ],
-      color: "from-orange-600 to-yellow-500",
+      color: "from-primary to-[#ea580c]",
       link: "https://maps.app.goo.gl/GYa86SyjURtjzo6S7?g_st=aw",
     },
     {
       icon: Mail,
       title: "Email Us",
       details: ["aerialrobotics@project.uiu.ac.bd"],
-      color: "from-orange-600 to-red-500",
+      color: "from-primary to-accent",
       link: "mailto:aerialrobotics@project.uiu.ac.bd",
     },
     {
       icon: Phone,
       title: "Call Us",
       details: ["+880 1521-461598"],
-      color: "from-yellow-500 to-orange-500",
+      color: "from-[#ea580c] to-primary",
       link: "tel:+8801521461598",
     },
   ];
 
   return (
-    <section
-      className="py-16 sm:py-20 lg:py-24 bg-transparent relative overflow-hidden"
-    >
+    <section className="min-h-screen pt-32 pb-24 bg-transparent relative overflow-hidden">
       {/* Decorative circles */}
-      <div className="absolute top-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-orange-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
-      <div
-        className="absolute bottom-0 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-yellow-500 rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"
-        style={{ animationDelay: "2s" }}
-      ></div>
+      <div className="absolute top-0 right-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-primary rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" />
+      <div className="absolute bottom-0 left-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-accent rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" style={{ animationDelay: "2s" }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         {/* Header */}
         <div className="text-center mb-12 sm:mb-20">
-          <div className="inline-block mb-2 sm:mb-4">
-            <span className="px-3 sm:px-4 py-1 sm:py-2 bg-orange-500/20 border border-orange-400/50 rounded-full text-orange-300 text-xs sm:text-sm font-semibold">
-              Get In Touch
-            </span>
-          </div>
+          <div className="section-label mb-3">Get In Touch</div>
           <h2 className="text-3xl sm:text-5xl md:text-6xl font-bold text-white mb-4 sm:mb-6 leading-tight">
-            Let's Create Something
-            <span className="bg-gradient-to-r from-orange-400 via-yellow-400 to-orange-500 text-transparent bg-clip-text">
-              {" "}Extraordinary
-            </span>
+            <div className="mask-container">
+              <span className="mask-reveal ju-visible">Let's Create Extraordinary</span>
+            </div>
           </h2>
-          <p className="text-sm sm:text-lg text-slate-300 max-w-xl sm:max-w-2xl mx-auto leading-relaxed">
+          <p className="ju-reveal text-sm sm:text-lg text-slate-300 max-w-xl sm:max-w-2xl mx-auto leading-relaxed">
             Whether you want to collaborate on innovative aerial robotics projects, explore partnership opportunities, or simply say hello—we're here and excited to hear from you.
           </p>
         </div>
@@ -99,9 +89,9 @@ const Contact = () => {
                 rel="noopener noreferrer"
                 className="group relative block h-full"
               >
-                <div className="absolute inset-0 bg-gradient-to-r from-orange-600/20 to-yellow-600/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-[#ea580c]/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
 
-                <div className="relative bg-slate-700/50 backdrop-blur-xl border border-slate-600/50 rounded-2xl p-6 sm:p-8 hover:border-slate-500/80 transition duration-300 h-full flex flex-col">
+                <div className="card-modern rounded-2xl p-6 sm:p-8 h-full flex flex-col">
                   <div
                     className={`w-14 h-14 sm:w-16 sm:h-16 rounded-xl bg-gradient-to-br ${info.color} flex items-center justify-center mb-4 sm:mb-6 group-hover:scale-110 transition transform`}
                   >
@@ -113,7 +103,7 @@ const Contact = () => {
                   {info.details.map((detail, i) => (
                     <p
                       key={i}
-                      className="text-slate-300 text-sm sm:text-base leading-relaxed mb-1 sm:mb-2 flex-grow"
+                      className="ju-reveal text-slate-300 text-sm sm:text-base leading-relaxed mb-1 sm:mb-2 flex-grow"
                     >
                       {detail}
                     </p>
@@ -127,12 +117,12 @@ const Contact = () => {
         {/* Contact Form */}
         <div className="max-w-3xl mx-auto">
           <div className="relative group">
-            <div className="absolute inset-0 bg-gradient-to-r from-orange-600/30 via-yellow-600/30 to-orange-600/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
-            <div className="relative bg-slate-700/40 backdrop-blur-xl border border-slate-600/50 rounded-3xl p-6 sm:p-10 md:p-14">
-              <h3 className="text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-4">
+            <div className="absolute inset-0 bg-gradient-to-r from-primary/30 via-[#ea580c]/30 to-primary/30 rounded-3xl blur-2xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
+            <div className="card-modern rounded-3xl p-6 sm:p-10 md:p-14">
+              <h3 className="ju-reveal text-2xl sm:text-3xl md:text-4xl font-bold text-white mb-2 sm:mb-4">
                 Send Us a Message
               </h3>
-              <p className="text-sm sm:text-base text-slate-300 mb-6 sm:mb-10">
+              <p className="ju-reveal text-sm sm:text-base text-slate-300 mb-6 sm:mb-10">
                 We'll get back to you within 24 hours.
               </p>
 
@@ -142,7 +132,7 @@ const Contact = () => {
                     <CheckCircle className="w-8 h-8 sm:w-10 sm:h-10 text-white" />
                   </div>
                   <h4 className="text-xl sm:text-2xl font-bold text-white mb-2">Message Sent!</h4>
-                  <p className="text-sm sm:text-base text-slate-300 text-center">
+                  <p className="ju-reveal text-sm sm:text-base text-slate-300 text-center">
                     Thank you for reaching out. We'll be in touch soon.
                   </p>
                 </div>
@@ -163,7 +153,7 @@ const Contact = () => {
                         value={formData.name}
                         onChange={handleInputChange}
                         placeholder="Name here"
-                        className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-slate-600/50 border border-slate-500/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-orange-400/80 focus:ring-2 focus:ring-orange-400/30 transition"
+                        className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-slate-600/50 border border-slate-500/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-primary/80 focus:ring-2 focus:ring-primary/30 transition"
                         required
                       />
                     </div>
@@ -181,7 +171,7 @@ const Contact = () => {
                         value={formData.email}
                         onChange={handleInputChange}
                         placeholder="your@email.com"
-                        className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-slate-600/50 border border-slate-500/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-orange-400/80 focus:ring-2 focus:ring-orange-400/30 transition"
+                        className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-slate-600/50 border border-slate-500/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-primary/80 focus:ring-2 focus:ring-primary/30 transition"
                         required
                       />
                     </div>
@@ -199,25 +189,25 @@ const Contact = () => {
                       name="subject"
                       value={formData.subject}
                       onChange={handleInputChange}
-                      className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-slate-600/50 border border-slate-500/50 rounded-xl text-white focus:outline-none focus:border-orange-400/80 focus:ring-2 focus:ring-orange-400/30 transition appearance-none"
+                      className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-slate-600/50 border border-slate-500/50 rounded-xl text-white focus:outline-none focus:border-primary/80 focus:ring-2 focus:ring-primary/30 transition appearance-none"
                       required
                     >
-                      <option value="" className="bg-slate-800">
+                      <option value="" className="bg-surface">
                         Select a subject
                       </option>
-                      <option value="join" className="bg-slate-800">
+                      <option value="join" className="bg-surface">
                         Join the Team
                       </option>
-                      <option value="collaboration" className="bg-slate-800">
+                      <option value="collaboration" className="bg-surface">
                         University Collaboration
                       </option>
-                      <option value="sponsorship" className="bg-slate-800">
+                      <option value="sponsorship" className="bg-surface">
                         Sponsorship Opportunities
                       </option>
-                      <option value="media" className="bg-slate-800">
+                      <option value="media" className="bg-surface">
                         Media Inquiry
                       </option>
-                      <option value="general" className="bg-slate-800">
+                      <option value="general" className="bg-surface">
                         General Inquiry
                       </option>
                     </select>
@@ -237,14 +227,14 @@ const Contact = () => {
                       value={formData.message}
                       onChange={handleInputChange}
                       placeholder="Tell us about your project, inquiry, or collaboration idea..."
-                      className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-slate-600/50 border border-slate-500/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-orange-400/80 focus:ring-2 focus:ring-orange-400/30 transition resize-none"
+                      className="w-full px-4 sm:px-5 py-3 sm:py-4 bg-slate-600/50 border border-slate-500/50 rounded-xl text-white placeholder-slate-400 focus:outline-none focus:border-primary/80 focus:ring-2 focus:ring-primary/30 transition resize-none"
                       required
                     />
                   </div>
 
                   <button
                     type="submit"
-                    className="w-full flex items-center justify-center gap-2 px-6 sm:px-8 py-3 sm:py-4 rounded-xl bg-gradient-to-r from-orange-600 to-yellow-600 text-white font-bold text-sm sm:text-lg hover:from-orange-700 hover:to-yellow-700 transition-all duration-300 hover:shadow-xl hover:shadow-orange-500/30 group"
+                    className="btn-primary w-full group"
                   >
                     <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
                     Send Message
