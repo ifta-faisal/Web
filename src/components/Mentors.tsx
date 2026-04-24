@@ -39,21 +39,128 @@ const mentors = [
     id: 'mentor-1',
     name: 'Dr. Riasat Azim',
     role: 'MENTOR',
+    category: 'mentor' as const,
     department: 'Assistant Professor, Dept. of CSE',
     image: mentor2,
+    bio: 'Specializing in computer vision and machine learning applications for autonomous drone navigation and control.',
     email: 'riasat@cse.uiu.ac.bd',
     linkedin: 'https://www.linkedin.com/in/riasat-azim-23812356',
+    gradient: 'from-[#0ea5e9] to-[#2563eb]',
   },
   {
     id: 'mentor-2',
     name: 'Mr. Azizur Rahman Anik',
     role: 'MENTOR',
+    category: 'mentor' as const,
     department: 'Lecturer, Dept. of CSE',
     image: mentor3,
+    bio: 'Expert in embedded systems and flight controller firmware development for specialized robotics platforms.',
     email: 'azizur@cse.uiu.ac.bd',
     linkedin: 'https://www.linkedin.com/in/azizur-rahman-anik-056220260',
+    gradient: 'from-[#8b5cf6] to-[#06b6d4]',
   },
 ];
+
+const LeadershipCard = ({ person }: { person: any }) => (
+  <div className="group relative">
+    {/* Glow */}
+    <div className={`absolute inset-0 bg-gradient-to-r ${person.gradient || 'from-primary to-accent'} rounded-3xl blur-2xl opacity-0 group-hover:opacity-20 transition duration-500`} />
+
+    <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/[0.08] bg-[rgba(15,23,42,0.8)] backdrop-blur-md">
+      <div className="grid md:grid-cols-2">
+
+        {/* ── Left: Photo or Placeholder ── */}
+        {person.isPlaceholder ? (
+          <div className="relative h-64 md:h-80 flex flex-col items-center justify-center bg-black/20">
+            <div className="w-28 h-28 rounded-full border-4 border-dashed border-white/30 flex items-center justify-center mb-4">
+              <UserPlus className="w-12 h-12 text-white/50" />
+            </div>
+            <p className="text-white/60 text-sm font-semibold tracking-widest uppercase">Position Open</p>
+          </div>
+        ) : (
+          <div className="relative overflow-hidden bg-[#020617]" style={{ minHeight: '380px' }}>
+            {/* Unified background glow for leadership cards */}
+            <div className={`absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,${person.id.includes('mentor') ? '#1e3a8a' : '#1e3a8a'} 0%,transparent_75%)] opacity-30`} />
+
+            <img
+              src={person.image}
+              alt={person.name}
+              className={`ju-reveal w-full h-full absolute inset-0 transition-transform duration-700 ${person.id === 'director' || person.id === 'vc-advisor'
+                ? 'object-contain scale-[0.85] group-hover:scale-[0.9] translate-y-2'
+                : 'object-cover object-top group-hover:scale-105'
+                }`}
+              style={{
+                objectPosition: (person.id === 'director' || person.id === 'vc-advisor') ? 'center center' : 'center 0%',
+                maskImage: (person.id === 'director' || person.id === 'vc-advisor')
+                  ? 'radial-gradient(circle at 50% 45%, black 20%, transparent 90%)'
+                  : 'none',
+                WebkitMaskImage: (person.id === 'director' || person.id === 'vc-advisor')
+                  ? 'radial-gradient(circle at 50% 45%, black 20%, transparent 90%)'
+                  : 'none',
+              }}
+            />
+          </div>
+        )}
+
+        {/* ── Right: Content ── */}
+        <div className="p-8 md:p-12 flex flex-col justify-center text-white">
+          {/* Role badge */}
+          <div className={`inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r ${person.gradient || 'from-primary to-accent'} backdrop-blur-sm rounded-full text-sm font-bold mb-4 w-fit`}>
+            <Award className="w-4 h-4" />
+            {person.role}
+          </div>
+
+          {person.isPlaceholder ? (
+            <>
+              <h3 className="ju-reveal text-2xl md:text-3xl font-black mb-3 text-white/60 italic">
+                To Be Announced
+              </h3>
+              <p className="ju-reveal text-white/50 leading-relaxed">
+                We are actively seeking an experienced advisor to join our team. Stay tuned for updates.
+              </p>
+            </>
+          ) : (
+            <>
+              <h3 className="ju-reveal text-2xl md:text-3xl font-black mb-3">
+                {person.name}
+              </h3>
+              <div className="flex items-center text-white/80 mb-4">
+                <GraduationCap className="w-5 h-5 mr-2 flex-shrink-0" />
+                <span className="font-medium">{person.department}</span>
+              </div>
+              {person.bio && (
+                <p className="ju-reveal text-white/75 leading-relaxed mb-6">
+                  {person.bio}
+                </p>
+              )}
+              <div className="flex gap-3">
+                {person.email && (
+                  <a
+                    href={`mailto:${person.email}`}
+                    target="_blank" rel="noopener noreferrer"
+                    className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white hover:text-primary transition-all duration-300"
+                  >
+                    <Mail className="w-5 h-5" />
+                  </a>
+                )}
+                {person.linkedin && (
+                  <a
+                    href={person.linkedin}
+                    target="_blank" rel="noopener noreferrer"
+                    className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white hover:text-primary transition-all duration-300"
+                  >
+                    <Linkedin className="w-5 h-5" />
+                  </a>
+                )}
+              </div>
+            </>
+          )}
+        </div>
+
+      </div>
+    </div>
+  </div>
+);
 
 const Mentors = () => {
   const [filter, setFilter] = useState<'all' | 'advisor' | 'director' | 'mentor'>('all');
@@ -113,176 +220,31 @@ const Mentors = () => {
         </div>
 
         {/* ════════════════════════════════════════════════════════════
-            ── FEATURED: Advisor + Director (wide horizontal cards) ──
+            ── ADVISORS & DIRECTORS ──
             ════════════════════════════════════════════════════════════ */}
         {showFeatured && (
           <div className="flex flex-col gap-6 mb-10">
             {visibleFeatured.map(person => (
-              <div key={person.id} className="group relative">
-                {/* Glow */}
-                <div className={`absolute inset-0 bg-gradient-to-r ${person.gradient} rounded-3xl blur-2xl opacity-0 group-hover:opacity-20 transition duration-500`} />
-
-                <div className="relative rounded-3xl overflow-hidden shadow-2xl border border-white/[0.08] bg-[rgba(15,23,42,0.8)] backdrop-blur-md">
-                  <div className="grid md:grid-cols-2">
-
-                    {/* ── Left: Photo or Placeholder ── */}
-                    {person.isPlaceholder ? (
-                      <div className="relative h-64 md:h-80 flex flex-col items-center justify-center bg-black/20">
-                        <div className="w-28 h-28 rounded-full border-4 border-dashed border-white/30 flex items-center justify-center mb-4">
-                          <UserPlus className="w-12 h-12 text-white/50" />
-                        </div>
-                        <p className="ju-reveal text-white/60 text-sm font-semibold tracking-widest uppercase">Position Open</p>
-                      </div>
-                    ) : (
-                      <div className="relative overflow-hidden bg-[#020617]" style={{ minHeight: '380px' }}>
-                        {/* Unified background glow for leadership cards */}
-                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,#1e3a8a_0%,transparent_75%)] opacity-30" />
-
-                        <img
-                          src={(person as typeof featured[1]).image}
-                          alt={person.name}
-                          className={`ju-reveal w-full h-full absolute inset-0 transition-transform duration-700 ${person.id === 'director' || person.id === 'vc-advisor'
-                              ? 'object-contain scale-[0.85] group-hover:scale-[0.9] translate-y-2'
-                              : 'object-cover object-top group-hover:scale-105'
-                            }`}
-                          style={{
-                            objectPosition: (person.id === 'director' || person.id === 'vc-advisor') ? 'center center' : 'center 0%',
-                            maskImage: (person.id === 'director' || person.id === 'vc-advisor')
-                              ? 'radial-gradient(circle at 50% 45%, black 20%, transparent 90%)'
-                              : 'none',
-                            WebkitMaskImage: (person.id === 'director' || person.id === 'vc-advisor')
-                              ? 'radial-gradient(circle at 50% 45%, black 20%, transparent 90%)'
-                              : 'none',
-                          }}
-                        />
-                      </div>
-                    )}
-
-                    {/* ── Right: Content ── */}
-                    <div className="p-8 md:p-12 flex flex-col justify-center text-white">
-                      {/* Role badge */}
-                      <div className={`inline-flex items-center gap-2 px-3 py-1 bg-gradient-to-r ${person.gradient} backdrop-blur-sm rounded-full text-sm font-bold mb-4 w-fit`}>
-                        <Award className="w-4 h-4" />
-                        {person.role}
-                      </div>
-
-                      {person.isPlaceholder ? (
-                        <>
-                          <h3 className="ju-reveal text-2xl md:text-3xl font-black mb-3 text-white/60 italic">
-                            To Be Announced
-                          </h3>
-                          <p className="ju-reveal text-white/50 leading-relaxed">
-                            We are actively seeking an experienced advisor to join our team. Stay tuned for updates.
-                          </p>
-                        </>
-                      ) : (
-                        <>
-                          <h3 className="ju-reveal text-2xl md:text-3xl font-black mb-3">
-                            {person.name}
-                          </h3>
-                          <div className="flex items-center text-white/80 mb-4">
-                            <GraduationCap className="w-5 h-5 mr-2 flex-shrink-0" />
-                            <span className="font-medium">{(person as typeof featured[1]).department}</span>
-                          </div>
-                          {(person as typeof featured[1]).bio && (
-                            <p className="ju-reveal text-white/75 leading-relaxed mb-6">
-                              {(person as typeof featured[1]).bio}
-                            </p>
-                          )}
-                          <div className="flex gap-3">
-                            {(person as typeof featured[1]).email && (
-                              <a
-                                href={`mailto:${(person as typeof featured[1]).email}`}
-                                target="_blank" rel="noopener noreferrer"
-                                className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white hover:text-primary transition-all duration-300"
-                              >
-                                <Mail className="w-5 h-5" />
-                              </a>
-                            )}
-                            {(person as typeof featured[1]).linkedin && (
-                              <a
-                                href={(person as typeof featured[1]).linkedin}
-                                target="_blank" rel="noopener noreferrer"
-                                className="p-3 bg-white/20 backdrop-blur-sm rounded-full hover:bg-white hover:text-primary transition-all duration-300"
-                              >
-                                <Linkedin className="w-5 h-5" />
-                              </a>
-                            )}
-                          </div>
-                        </>
-                      )}
-                    </div>
-
-                  </div>
-                </div>
-              </div>
+              <LeadershipCard key={person.id} person={person} />
             ))}
           </div>
         )}
 
         {/* ═══════════════════════════════════════════════════════════
-            ── MENTORS: Portrait card grid (unchanged style) ──
+            ── MENTORS ──
             ═══════════════════════════════════════════════════════════ */}
         {showMentors && (
-          <>
+          <div className="flex flex-col gap-6">
             {filter === 'all' && (
               <h3 className="ju-reveal text-center text-white/50 text-xs font-bold tracking-widest uppercase mb-6">
                 — Mentors —
               </h3>
             )}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 max-w-2xl mx-auto">
-              {mentors.map(mentor => (
-                <div key={mentor.id} className="group relative">
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500" />
-                  <div className="card-modern rounded-2xl w-full h-full">
-
-                    {/* Photo */}
-                    <div className="relative h-64 sm:h-72 md:h-80 overflow-hidden">
-                      <img
-                        src={mentor.image}
-                        alt={mentor.name}
-                        className="ju-reveal w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700"
-                      />
-                      <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
-
-                      {/* Badge */}
-                      <div className="absolute top-4 left-4">
-                        <span className="px-3 py-1 bg-gradient-to-r from-accent to-primary text-white text-xs font-bold rounded-full shadow-lg">
-                          {mentor.role}
-                        </span>
-                      </div>
-
-                      {/* Social icons */}
-                      <div className="absolute bottom-4 right-4 flex gap-2 opacity-0 group-hover:opacity-100 transition-opacity duration-500 transform translate-y-4 group-hover:translate-y-0">
-                        <a href={`mailto:${mentor.email}`} target="_blank" rel="noopener noreferrer"
-                          className="p-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full hover:bg-white hover:text-primary text-white transition-all">
-                          <Mail className="w-4 h-4" />
-                        </a>
-                        <a href={mentor.linkedin} target="_blank" rel="noopener noreferrer"
-                          className="p-2 bg-white/20 backdrop-blur-sm border border-white/30 rounded-full hover:bg-white hover:text-primary text-white transition-all">
-                          <Linkedin className="w-4 h-4" />
-                        </a>
-                      </div>
-                    </div>
-
-                    {/* Body */}
-                    <div className="p-4 sm:p-6">
-                      <h3 className="ju-reveal text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
-                        {mentor.name}
-                      </h3>
-                      <div className="flex items-center text-slate-400 text-sm pt-3 border-t border-surface-2">
-                        <GraduationCap className="w-4 h-4 mr-2 flex-shrink-0" />
-                        {mentor.department}
-                      </div>
-                    </div>
-
-                  </div>
-                </div>
-              ))}
-            </div>
-          </>
+            {mentors.map(mentor => (
+              <LeadershipCard key={mentor.id} person={mentor} />
+            ))}
+          </div>
         )}
-
       </div>
     </section>
   );
