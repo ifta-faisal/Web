@@ -176,7 +176,7 @@ const Hero = () => {
         />
 
         {/* Content – bottom-left anchored like SpaceX / FlyShot */}
-        <div className="relative z-20 flex flex-col justify-end flex-1 pb-32 sm:pb-48 lg:pb-56 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto w-full">
+        <div className="relative z-20 flex flex-col justify-end flex-1 pb-24 sm:pb-36 md:pb-44 lg:pb-56 px-5 sm:px-10 md:px-14 lg:px-20 max-w-7xl mx-auto w-full">
 
           {/* Mission tag */}
           <div className="hero-animate-tag flex items-center gap-3 mb-3">
@@ -188,7 +188,7 @@ const Hero = () => {
 
           {/* Main headline */}
           <h1
-            className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.05] mb-1 max-w-4xl"
+            className="text-[clamp(1.5rem,5vw,4rem)] text-white leading-[1.05] mb-1 max-w-4xl"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, letterSpacing: '-0.02em' }}
           >
             <div className="block w-full mb-1">
@@ -270,7 +270,7 @@ const Hero = () => {
       </section>
 
       {/* ===== 2. About Section ===== */}
-      <section id="about" className="py-24 bg-transparent relative overflow-hidden">
+      <section id="about" className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
         {/* Ambient blobs */}
         <div className="absolute inset-0 bg-radial-warm opacity-40 pointer-events-none" />
         <div className="absolute top-0 left-0 w-96 h-96 rounded-full opacity-[0.07] pointer-events-none"
@@ -281,7 +281,7 @@ const Hero = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-20">
             <div className="section-label mb-5">About Us</div>
-            <h2 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4">
               <div className="mask-container">
                 <span className="mask-reveal ju-visible">About Us</span>
               </div>
@@ -342,14 +342,14 @@ const Hero = () => {
       </section>
 
       {/* ===== 3. PRIMARY OBJECTIVE SECTION ===== */}
-      <section className="py-24 bg-transparent relative overflow-hidden">
+      <section className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full opacity-[0.07] pointer-events-none"
           style={{ background: 'radial-gradient(circle, #f97316, transparent 70%)', filter: 'blur(60px)' }} />
 
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 relative z-10">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="section-label mb-5">Our Primary Objective</div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl text-white mb-4">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4">
               <div className="mask-container">
                 <span className="mask-reveal ju-visible">Primary Objective</span>
               </div>
@@ -390,13 +390,13 @@ const Hero = () => {
       <DroneParts />
 
       {/* ===== 4. What We Do / Vision ===== */}
-      <section id="what-we-do" className="py-24 bg-transparent relative overflow-hidden">
+      <section id="what-we-do" className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
         <div className="absolute top-0 left-0 w-96 h-96 rounded-full opacity-[0.06] pointer-events-none"
           style={{ background: 'radial-gradient(circle, #f97316, transparent 70%)', filter: 'blur(70px)' }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
           <div className="section-label mb-5">Our Vision</div>
-          <h2 className="text-4xl sm:text-5xl md:text-6xl text-white mb-4">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4">
             <div className="mask-container">
               <span className="mask-reveal ju-visible">Our Vision</span>
             </div>
@@ -444,7 +444,7 @@ const Hero = () => {
       <MissionTimeline />
 
       {/* ===== 7. Featured Vehicle Section ===== */}
-      <section id="featured-vehicle" className="py-24 bg-transparent relative overflow-hidden">
+      <section id="featured-vehicle" className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
         {/* Ambient glows */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.06] pointer-events-none"
           style={{ background: 'radial-gradient(circle, #f97316, transparent 70%)', filter: 'blur(80px)' }} />
@@ -460,7 +460,7 @@ const Hero = () => {
               <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: '#f97316' }} />
               <span className="text-xs font-bold tracking-[0.25em] uppercase" style={{ color: '#f97316', fontFamily: "'Inter', sans-serif" }}>Our Featured Vehicle</span>
             </div>
-            <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6"
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-black leading-tight mb-6"
               style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.04em' }}>
               <span style={{ background: 'linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #f97316 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
                 Engineering <span className="whitespace-nowrap">Meets Precision</span>
@@ -537,12 +537,12 @@ const Hero = () => {
 
 
       {/* ===== Drone Specs Showcase ===== */}
-      <section className="py-20 bg-transparent relative overflow-x-hidden">
+      <section className="py-12 sm:py-16 md:py-20 bg-transparent relative overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* ── Title + subtitle (centred, reference-exact) ── */}
           <div className="text-center mb-10 ju-reveal">
-            <h2 className="text-4xl sm:text-5xl md:text-6xl font-black text-white mb-5"
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white mb-5"
               style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.08em' }}>
               BUILT TO DOMINATE THE SKY
             </h2>
@@ -557,7 +557,7 @@ const Hero = () => {
           <div className="w-full h-px mb-0" style={{ background: 'rgba(255,255,255,0.08)' }} />
 
           {/* ── Main row: LEFT stats | DRONE | RIGHT stats ── */}
-          <div className="flex items-stretch min-h-[440px]">
+          <div className="flex items-stretch min-h-[280px] sm:min-h-[360px] lg:min-h-[440px]">
 
             {/* LEFT stats column */}
             <div className="hidden lg:flex flex-col justify-around py-10 pr-10 border-r ju-reveal-left"
@@ -715,14 +715,14 @@ const Hero = () => {
       <GalleryGrid />
 
       {/* ===== 8. Sponsors Section — Marquee Ticker ===== */}
-      <section id="sponsors" className="py-24 bg-transparent relative overflow-hidden">
+      <section id="sponsors" className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
         <div className="absolute top-1/2 right-0 w-96 h-96 rounded-full opacity-[0.06] pointer-events-none"
           style={{ background: 'radial-gradient(circle, #f97316, transparent 70%)', filter: 'blur(60px)' }} />
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
           <div className="text-center mb-16">
             <div className="section-label mb-5">Our Supporters</div>
-            <h2 className="text-5xl md:text-6xl text-white mb-4">
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4">
               <div className="mask-container">
                 <span className="mask-reveal ju-visible">Our Sponsors</span>
               </div>
@@ -776,7 +776,7 @@ const Hero = () => {
       <GalleryVideo />
 
       {/* ===== 9. Latest News ===== */}
-      <section id="recent-updates" className="py-24 bg-transparent relative">
+      <section id="recent-updates" className="py-14 sm:py-20 md:py-24 bg-transparent relative">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 text-center relative">
           <div className="section-label mb-5 mx-auto" style={{ display: 'inline-flex' }}>Latest Updates</div>
           <h2 className="ju-reveal text-3xl md:text-4xl text-white uppercase tracking-tight mb-4">
