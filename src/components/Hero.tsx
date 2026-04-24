@@ -191,12 +191,14 @@ const Hero = () => {
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.1] mb-2 max-w-4xl"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, letterSpacing: '-0.02em' }}
           >
-            <div className="mask-container block">
-              <span className="mask-reveal ju-visible pb-1">Engineering</span>
+            <div className="mask-container block mb-1">
+              <span className="mask-reveal ju-visible">Engineering</span>
             </div>
             <div className="mask-container block">
-              <span className="mask-reveal ju-visible pb-1">
-                <span className="text-primary italic-ish">Tomorrow's</span> <span className="text-white">Sky</span>
+              <span className="mask-reveal ju-visible">
+                <span className="text-primary italic-ish">Tomorrow's</span>
+                <span className="inline-block w-4"></span>
+                <span className="text-white">Sky</span>
               </span>
             </div>
           </h1>
