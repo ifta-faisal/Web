@@ -188,7 +188,7 @@ const Hero = () => {
 
           {/* Main headline */}
           <h1
-            className="text-3xl sm:text-5xl md:text-6xl lg:text-7xl text-white leading-[1.1] mb-4 max-w-5xl"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.2] mb-6 max-w-5xl"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, letterSpacing: '-0.02em' }}
           >
             <div className="mask-container block mb-1">
@@ -808,7 +808,7 @@ const Hero = () => {
 
               <div
                 className="flex items-stretch gap-4 sm:gap-6 lg:gap-8 transition-transform duration-700 ease-spring"
-                style={{ 
+                style={{
                   transform: `translateX(calc(-1 * var(--carousel-step, 100%) * ${currentIndex}))`,
                 } as React.CSSProperties}
               >
