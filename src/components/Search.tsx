@@ -43,6 +43,12 @@ const SEARCH_DATA: SearchResult[] = [
   { id: 'm3', title: 'Fahad Rahaman', category: 'Member', link: '/team', icon: User, description: 'Sub Team Lead • Software & Nav Team', tags: ['ovi', 'coding'] },
   { id: 'm4', title: 'MD Ifta Faisal', category: 'Member', link: '/team', icon: User, description: 'Sub Team Lead • Web & Communication', tags: ['web', 'ifta'] },
   { id: 'm5', title: 'Muktaderul Islam', category: 'Member', link: '/team', icon: User, description: 'Sub Team Lead • Mechanical Team', tags: ['mechanical', 'cad'] },
+
+  // ─── Leadership & Advisors ───
+  { id: 'l1', title: 'Dr. Md. Abul Kashem Mia', category: 'Advisor', link: '/advisors', icon: Award, description: 'Official Advisor • Vice Chancellor, UIU', tags: ['vc', 'leader', 'kashem'] },
+  { id: 'l2', title: 'Dr. A.K.M. Muzahidul Islam', category: 'Advisor', link: '/advisors?filter=director', icon: Award, description: 'Director • Professor, Dept. of CSE', tags: ['director', 'muzahid', 'leader'] },
+  { id: 'l3', title: 'Dr. Riasat Azim', category: 'Advisor', link: '/advisors?filter=mentor', icon: User, description: 'Mentor • Assistant Professor, Dept. of CSE', tags: ['riasat', 'ml', 'vision'] },
+  { id: 'l4', title: 'Mr. Azizur Rahman Anik', category: 'Advisor', link: '/advisors?filter=mentor', icon: User, description: 'Mentor • Lecturer, Dept. of CSE', tags: ['anik', 'firmware', 'embedded'] },
 ];
 
 const Search = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
