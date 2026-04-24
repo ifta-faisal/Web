@@ -176,10 +176,10 @@ const Hero = () => {
         />
 
         {/* Content – bottom-left anchored like SpaceX / FlyShot */}
-        <div className="relative z-20 flex flex-col justify-end flex-1 pb-20 sm:pb-24 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto w-full">
+        <div className="relative z-20 flex flex-col justify-end flex-1 pb-32 sm:pb-48 lg:pb-56 px-6 sm:px-12 lg:px-20 max-w-7xl mx-auto w-full">
 
           {/* Mission tag */}
-          <div className="hero-animate-tag flex items-center gap-3 mb-5">
+          <div className="hero-animate-tag flex items-center gap-3 mb-3">
             <span className="block w-2 h-2 rounded-full" style={{ background: '#FFD4A3', boxShadow: '0 0 10px #f97316, 0 0 20px rgba(249, 115, 22, 0.4)' }} />
             <span className="text-xs sm:text-sm font-bold tracking-[0.22em] uppercase" style={{ color: '#f97316', fontFamily: "'Inter', sans-serif" }}>
               UIU Aerial Robotics Team&nbsp;/&nbsp;SUAS 2026
@@ -188,7 +188,7 @@ const Hero = () => {
 
           {/* Main headline */}
           <h1
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.0] mb-4 max-w-4xl"
+            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.0] mb-2 max-w-4xl"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, letterSpacing: '-0.02em' }}
           >
             <div className="mask-container">
@@ -203,19 +203,19 @@ const Hero = () => {
           </h1>
 
           {/* Animated rule */}
-          <div className="hero-animate-line mb-6 flex items-center gap-3">
+          <div className="hero-animate-line mb-4 flex items-center gap-3">
             <div className="h-[3px] w-20 sm:w-32 bg-primary" style={{ clipPath: 'polygon(0 0, calc(100% - 6px) 0, 100% 100%, 0 100%)' }} />
             <div className="h-[3px] w-4" style={{ background: 'rgba(249,115,22,0.4)' }} />
           </div>
 
           {/* Sub-headline */}
-          <p className="hero-animate-sub text-slate-300 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-xl mb-8 sm:mb-10" style={{ fontFamily: "'Inter', sans-serif" }}>
+          <p className="hero-animate-sub text-slate-300 text-base sm:text-lg md:text-xl font-light leading-relaxed max-w-xl mb-6 sm:mb-8" style={{ fontFamily: "'Inter', sans-serif" }}>
             Student-led aerospace engineering team at United International University —
             designing, building, and flying next-generation autonomous UAVs.
           </p>
 
           {/* Telemetry-style meta badges */}
-          <div className="hero-animate-meta flex flex-wrap items-center gap-3 sm:gap-4 mb-8 sm:mb-10 text-xs sm:text-sm font-mono">
+          <div className="hero-animate-meta flex flex-wrap items-center gap-3 sm:gap-4 mb-6 sm:mb-8 text-xs sm:text-sm font-mono">
             {[
               { label: 'MEMBERS', value: '25+' },
               { label: 'PROJECTS', value: '6+' },
