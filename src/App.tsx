@@ -60,8 +60,8 @@ const App = () => {
   }, [location.pathname]);
 
   return (
-    <div className="atmosphere-right min-h-screen">
-      <div className="cinematic-grid min-h-screen relative">
+    <div className="atmosphere-right min-h-screen overflow-x-hidden">
+      <div className="cinematic-grid min-h-screen relative overflow-x-hidden w-full">
       <ScrollToTop />
       {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
       <Header />

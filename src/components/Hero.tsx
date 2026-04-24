@@ -176,7 +176,7 @@ const Hero = () => {
         />
 
         {/* Content – bottom-left anchored like SpaceX / FlyShot */}
-        <div className="relative z-20 flex flex-col justify-end flex-1 pb-24 sm:pb-36 md:pb-44 lg:pb-56 px-5 sm:px-10 md:px-14 lg:px-20 max-w-7xl mx-auto w-full">
+        <div className="relative z-20 flex flex-col mt-auto pt-32 pb-24 sm:pb-36 md:pb-44 lg:pb-56 px-5 sm:px-10 md:px-14 lg:px-20 max-w-7xl mx-auto w-full">
 
           {/* Mission tag */}
           <div className="hero-animate-tag flex items-center gap-3 mb-3">
@@ -810,57 +810,59 @@ const Hero = () => {
               </div>
 
               <div
-                className="flex items-stretch gap-4 sm:gap-6 lg:gap-8 transition-transform duration-700 ease-spring"
+                className="flex items-stretch transition-transform duration-700 ease-spring"
                 style={{
-                  transform: `translateX(calc(-1 * var(--carousel-step, 100%) * ${currentIndex}))`,
+                  transform: `translateX(calc(-100% / ${achievements.length * 2} * ${currentIndex}))`,
                 } as React.CSSProperties}
               >
                 {achievements.concat(achievements).map((achieve, idx) => (
                   <div
                     key={`${achieve.id}-${idx}`}
-                    className="flex-none w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.3333%-1.333rem)] text-left flex flex-col card-modern card-shimmer group cursor-pointer"
+                    className="flex-none w-full sm:w-1/2 lg:w-1/3 px-2 sm:px-3 lg:px-4"
                   >
-                    {/* Image */}
-                    <div className="relative w-full aspect-[4/3] overflow-hidden" style={{ background: '#0d0b0a' }}>
-                      <img
-                        src={achieve.image}
-                        alt={achieve.title}
-                        className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
-                      />
-                      {/* Colored overlay on hover */}
-                      <div
-                        className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-                        style={{ background: 'linear-gradient(to top, rgba(249,115,22,0.5) 0%, transparent 60%)' }}
-                      />
-                      {/* Tag badge */}
-                      <div
-                        className="absolute bottom-4 left-4 px-3 py-1.5 text-xs font-bold text-white tracking-wider"
-                        style={{
-                          background: 'linear-gradient(135deg, #f97316, #dc2626)',
-                          borderRadius: '4px',
-                          border: '1px solid rgba(249,115,22,0.5)',
-                          fontFamily: "'Inter', sans-serif",
-                          transform: 'translateX(-4px)',
-                          transition: 'transform 0.3s ease',
-                        }}
-                        onMouseEnter={e => e.currentTarget.style.transform = 'translateX(0)'}
-                        onMouseLeave={e => e.currentTarget.style.transform = 'translateX(-4px)'}
-                      >
-                        {achieve.source.toUpperCase()}
+                    <div className="text-left flex flex-col h-full card-modern card-shimmer group cursor-pointer">
+                      {/* Image */}
+                      <div className="relative w-full aspect-[4/3] overflow-hidden" style={{ background: '#0d0b0a' }}>
+                        <img
+                          src={achieve.image}
+                          alt={achieve.title}
+                          className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700"
+                        />
+                        {/* Colored overlay on hover */}
+                        <div
+                          className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
+                          style={{ background: 'linear-gradient(to top, rgba(249,115,22,0.5) 0%, transparent 60%)' }}
+                        />
+                        {/* Tag badge */}
+                        <div
+                          className="absolute bottom-4 left-4 px-3 py-1.5 text-xs font-bold text-white tracking-wider"
+                          style={{
+                            background: 'linear-gradient(135deg, #f97316, #dc2626)',
+                            borderRadius: '4px',
+                            border: '1px solid rgba(249,115,22,0.5)',
+                            fontFamily: "'Inter', sans-serif",
+                            transform: 'translateX(-4px)',
+                            transition: 'transform 0.3s ease',
+                          }}
+                          onMouseEnter={e => e.currentTarget.style.transform = 'translateX(0)'}
+                          onMouseLeave={e => e.currentTarget.style.transform = 'translateX(-4px)'}
+                        >
+                          {achieve.source.toUpperCase()}
+                        </div>
                       </div>
-                    </div>
 
-                    {/* Content */}
-                    <div className="pt-6 px-6 pb-6 flex flex-col flex-1">
-                      <h3 className="text-xl font-extrabold text-white uppercase leading-snug mb-3 line-clamp-3 group-hover:text-primary transition-colors duration-300" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}>
-                        {achieve.title}
-                      </h3>
-                      <p className="text-sm text-slate-500 italic mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>
-                        {achieve.date} / By admin
-                      </p>
-                      <p className="text-slate-400 font-light text-sm leading-relaxed line-clamp-3" style={{ fontFamily: "'Inter', sans-serif" }}>
-                        {achieve.description}
-                      </p>
+                      {/* Content */}
+                      <div className="pt-6 px-6 pb-6 flex flex-col flex-1">
+                        <h3 className="text-xl font-extrabold text-white uppercase leading-snug mb-3 line-clamp-3 group-hover:text-primary transition-colors duration-300" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.05em' }}>
+                          {achieve.title}
+                        </h3>
+                        <p className="text-sm text-slate-500 italic mb-4" style={{ fontFamily: "'Inter', sans-serif" }}>
+                          {achieve.date} / By admin
+                        </p>
+                        <p className="text-slate-400 font-light text-sm leading-relaxed line-clamp-3" style={{ fontFamily: "'Inter', sans-serif" }}>
+                          {achieve.description}
+                        </p>
+                      </div>
                     </div>
                   </div>
                 ))}
