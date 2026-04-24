@@ -1,5 +1,6 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { GraduationCap, Mail, Linkedin, Award, Users2 } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 import member1 from '../assets/images/Team/member1.jpeg';
 import member2 from '../assets/images/Team/member2.jpg';
 import member3 from '../assets/images/Team/member3.jpeg';
@@ -24,7 +25,16 @@ import nazifa from '../assets/images/Team/nazifa.jpg';
 import sumaiya from '../assets/images/Team/sumaiya.jpg';
 
 const Team = () => {
-  const [filter, setFilter] = useState('all');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialFilter = searchParams.get('filter') || 'all';
+  const [filter, setFilter] = useState(initialFilter);
+
+  useEffect(() => {
+    const qFilter = searchParams.get('filter');
+    if (qFilter) {
+      setFilter(qFilter);
+    }
+  }, [searchParams]);
 
   const teamMembers = [
     { name: 'T M AL Anam', role: 'TEAM LEAD', team: 'Electrical Team', department: 'Department of CSE', image: member1, category: 'leadership', email: 'tmukit@gmail.com', linkedin: 'https://www.linkedin.com/in/tmalanam?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
@@ -130,7 +140,10 @@ const Team = () => {
             ].map((tab) => (
               <button
                 key={tab.id}
-                onClick={() => setFilter(tab.id)}
+                onClick={() => {
+                  setFilter(tab.id);
+                  setSearchParams({ filter: tab.id });
+                }}
                 className={`
                   px-6 sm:px-8 py-2.5 rounded-full font-bold text-sm tracking-wide transition-all duration-500 relative
                   ${filter === tab.id

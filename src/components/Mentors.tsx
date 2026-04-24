@@ -1,5 +1,5 @@
-import { useState, useEffect } from 'react';
 import { GraduationCap, Mail, Linkedin, Award, BookOpen, UserPlus } from 'lucide-react';
+import { useSearchParams } from 'react-router-dom';
 
 import mentor1 from '../assets/images/Advisor/Mentor1.jpeg';
 import mentor2 from '../assets/images/Advisor/Mentor2.jpeg';
@@ -156,7 +156,17 @@ const LeadershipCard = ({ person }: { person: any }) => (
 );
 
 const Mentors = () => {
-  const [filter, setFilter] = useState<'all' | 'advisor' | 'director' | 'mentor'>('all');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const initialFilter = (searchParams.get('filter') as any) || 'all';
+  const [filter, setFilter] = useState<'all' | 'advisor' | 'director' | 'mentor'>(initialFilter);
+
+  // Sync state with URL if it changes (e.g. from search navigation while already on page)
+  useEffect(() => {
+    const qFilter = searchParams.get('filter');
+    if (qFilter && (['advisor', 'director', 'mentor', 'all'].includes(qFilter))) {
+      setFilter(qFilter as any);
+    }
+  }, [searchParams]);
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -225,7 +235,10 @@ const Mentors = () => {
             {tabs.map(tab => (
               <button
                 key={tab.value}
-                onClick={() => setFilter(tab.value)}
+                onClick={() => {
+                  setFilter(tab.value);
+                  setSearchParams({ filter: tab.value });
+                }}
                 className={`px-5 sm:px-7 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${filter === tab.value
                   ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30'
                   : 'text-slate-400 hover:text-white'
