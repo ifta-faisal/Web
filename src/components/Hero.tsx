@@ -188,7 +188,7 @@ const Hero = () => {
 
           {/* Main headline */}
           <h1
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.1] mb-2 max-w-5xl"
+            className="text-xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl text-white leading-[1.1] mb-6 max-w-4xl"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, letterSpacing: '-0.02em' }}
           >
             <div className="block w-full mb-1">
