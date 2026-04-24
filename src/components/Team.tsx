@@ -133,7 +133,7 @@ const Team = () => {
   });
 
   return (
-    <section id="team" className="min-h-screen pt-32 pb-24 bg-transparent relative overflow-hidden">
+    <section id="team" className="min-h-screen pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 bg-transparent relative overflow-hidden">
       {/* Decorative elements */}
       <div className="absolute top-0 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-[#f97316] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse"></div>
       <div
@@ -144,7 +144,7 @@ const Team = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16 sm:mb-24">
           <div className="section-label mb-3">Our Core Team</div>
-          <h1 className="text-4xl sm:text-6xl md:text-7xl font-bold text-white mb-6 leading-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">
             <div className="mask-container">
               <span className="mask-reveal ju-visible">Architects of Flight</span>
             </div>

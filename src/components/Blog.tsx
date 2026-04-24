@@ -140,7 +140,7 @@ const Blog = () => {
         {/* Header Section */}
         <div className="text-center mb-20">
           <div className="section-label mb-5 mx-auto" style={{ display: 'inline-flex' }}>UART INSIGHTS</div>
-          <h1 className="text-5xl md:text-7xl font-black text-white mb-6 uppercase tracking-tight">
+          <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 uppercase tracking-tight">
             Knowledge <span className="text-primary italic">&amp;</span> Vision
           </h1>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
@@ -210,7 +210,7 @@ const Blog = () => {
         </div>
 
         {/* Newsletter / Call to Action */}
-        <div className="card-modern rounded-[2.5rem] p-12 text-center relative overflow-hidden group">
+        <div className="card-modern rounded-[2.5rem] p-6 sm:p-10 md:p-12 text-center relative overflow-hidden group">
           <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5 opacity-0 group-hover:opacity-100 transition-opacity" />
           <div className="relative z-10">
             <BookOpen className="w-12 h-12 text-primary mx-auto mb-6" />

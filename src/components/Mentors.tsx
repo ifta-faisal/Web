@@ -217,7 +217,7 @@ const Mentors = () => {
   const isFocused = !!targetId;
 
   return (
-    <section id="mentors" className="min-h-screen pt-32 pb-24 relative overflow-hidden bg-transparent">
+    <section id="mentors" className="min-h-screen pt-24 sm:pt-28 md:pt-32 pb-16 sm:pb-20 md:pb-24 relative overflow-hidden bg-transparent">
       {/* Glow blobs */}
       <div className="absolute top-0 right-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-primary rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" />
       <div className="absolute bottom-0 left-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-accent rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" style={{ animationDelay: '2s' }} />
@@ -227,7 +227,7 @@ const Mentors = () => {
         {/* ── Header ── */}
         <div className="text-center mb-14 sm:mb-20">
           <div className="section-label mb-3">Our Advisors &amp; Mentors</div>
-          <h2 className="text-3xl sm:text-5xl md:text-6xl font-extrabold text-white mb-5 leading-tight">
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl font-extrabold text-white mb-5 leading-tight">
             <div className="mask-container">
               <span className="mask-reveal ju-visible">Guided By Excellence</span>
             </div>
