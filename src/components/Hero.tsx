@@ -188,10 +188,10 @@ const Hero = () => {
 
           {/* Main headline */}
           <h1
-            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.2] mb-6 max-w-5xl"
+            className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl text-white leading-[1.05] mb-4 max-w-5xl"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, letterSpacing: '-0.02em' }}
           >
-            <div className="mask-container block mb-1">
+            <div className="mask-container block">
               <span className="mask-reveal ju-visible">Engineering</span>
             </div>
             <div className="mask-container block">
