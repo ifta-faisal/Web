@@ -191,16 +191,13 @@ const Hero = () => {
             className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.1] mb-2 max-w-4xl"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, letterSpacing: '-0.02em' }}
           >
-            <div className="flex flex-wrap items-baseline gap-x-[0.2em] gap-y-0">
-              <div className="mask-container">
-                <span className="mask-reveal ju-visible">Engineering</span>
-              </div>
-              <div className="mask-container">
-                <span className="mask-reveal ju-visible text-primary">Tomorrow's</span>
-              </div>
-              <div className="mask-container">
-                <span className="mask-reveal ju-visible text-white">Sky</span>
-              </div>
+            <div className="mask-container block">
+              <span className="mask-reveal ju-visible pb-1">Engineering</span>
+            </div>
+            <div className="mask-container block">
+              <span className="mask-reveal ju-visible pb-1">
+                <span className="text-primary italic-ish">Tomorrow's</span> <span className="text-white">Sky</span>
+              </span>
             </div>
           </h1>
 
@@ -461,7 +458,7 @@ const Hero = () => {
             <h2 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-black leading-tight mb-6"
               style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.04em' }}>
               <span style={{ background: 'linear-gradient(135deg, #ffffff 0%, #cbd5e1 50%, #f97316 100%)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
-                Engineering Meets<br />Precision
+                Engineering <span className="whitespace-nowrap">Meets Precision</span>
               </span>
             </h2>
             <div className="w-24 h-[3px] mx-auto rounded-full" style={{ background: 'linear-gradient(90deg, #f97316, #dc2626)' }} />
