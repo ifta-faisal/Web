@@ -170,13 +170,10 @@ const Drone360Viewer: React.FC<{ src: string; alt?: string }> = ({ src, alt = "3
 
 
       {/* 360° label */}
-      <div className="absolute bottom-0 right-0 z-20 flex items-center gap-1.5 px-3 py-1 rounded-full pointer-events-none"
-        style={{ background: 'rgba(15,23,42,0.75)', border: '1px solid rgba(249,115,22,0.3)', backdropFilter: 'blur(8px)' }}>
-        <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="#f97316" strokeWidth="2" strokeLinecap="round">
-          <path d="M21.5 2v6h-6" />
-          <path d="M21.34 15.57a10 10 0 1 1-.57-8.38" />
-        </svg>
-        <span className="text-[10px] font-bold tracking-widest uppercase" style={{ color: '#f97316', fontFamily: "'Inter',sans-serif" }}>360°</span>
+      <div className="absolute bottom-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full pointer-events-none shadow-lg"
+        style={{ background: 'rgba(15,23,42,0.85)', border: '1px solid rgba(249,115,22,0.4)', backdropFilter: 'blur(12px)' }}>
+        <Activity className="w-3.5 h-3.5 text-accent animate-pulse" />
+        <span className="text-[10px] font-bold tracking-widest uppercase" style={{ color: '#f97316', fontFamily: "'Inter', sans-serif" }}>Interactive 360°</span>
       </div>
     </div>
   );
@@ -318,7 +315,7 @@ const DetailedFeatures = () => {
           </div>
 
           {/* Drone 360° interactive viewer */}
-          <div className="relative flex-shrink-0 w-full max-w-sm lg:max-w-md" style={{ perspective: '900px' }}>
+          <div className="relative flex-shrink-0 w-full max-w-sm lg:max-w-md mx-auto lg:mx-0" style={{ perspective: '900px' }}>
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 rounded-full blur-3xl scale-125" />
             <Drone360Viewer src={droneImg} alt="UART Drone 360° View" />
           </div>
@@ -520,45 +517,64 @@ const DetailedFeatures = () => {
         </Reveal>
 
         <Reveal>
-          <div className="rounded-3xl border border-white/10 bg-[rgba(15,23,42,0.8)] backdrop-blur-md overflow-hidden">
-            {/* Table header */}
-            <div className="grid grid-cols-4 text-xs font-bold font-mono tracking-widest uppercase bg-[rgba(15,23,42,0.9)] border-b border-white/10">
-              <div className="col-span-1 px-6 py-4 text-slate-400">Metric</div>
-              <div className="px-6 py-4 text-center text-accent bg-accent/10">UART UAV</div>              <div className="px-6 py-4 text-center text-slate-400">DJI Matrice 30</div>
-              <div className="px-6 py-4 text-center text-slate-400">Autel EVO II</div>
+          <div className="rounded-3xl border border-white/10 bg-[rgba(15,23,42,0.8)] backdrop-blur-md overflow-hidden transition-all duration-500">
+            {/* Desktop Header (hidden on mobile) */}
+            <div className="hidden md:grid grid-cols-4 text-xs font-bold font-mono tracking-widest uppercase bg-[rgba(15,23,42,0.9)] border-b border-white/10">
+              <div className="col-span-1 px-6 py-5 text-slate-400">Metric</div>
+              <div className="px-6 py-5 text-center text-accent bg-accent/10">UART UAV</div>
+              <div className="px-6 py-5 text-center text-slate-400">DJI Matrice 30</div>
+              <div className="px-6 py-5 text-center text-slate-400">Autel EVO II</div>
             </div>
 
-            {/* Rows */}
-            {[
-              { metric: "Flight Endurance", uart: "35 min", dji: "41 min", autel: "40 min", uartBetter: false },
-              { metric: "Telemetry Range", uart: "10 km", dji: "8 km", autel: "9 km", uartBetter: true },
-              { metric: "Autonomous AI", uart: "On-board", dji: "Cloud", autel: "Limited", uartBetter: true },
-              { metric: "GPS-Denied Ops", uart: "✓ SLAM", dji: "✗ No", autel: "✗ No", uartBetter: true },
-              { metric: "Max Takeoff Weight", uart: "4.2 kg", dji: "3.77 kg", autel: "3.5 kg", uartBetter: false },
-              { metric: "Open Source", uart: "✓ Full", dji: "✗ Closed", autel: "✗ Closed", uartBetter: true },
-              { metric: "Payload System", uart: "Modular", dji: "Fixed", autel: "Fixed", uartBetter: true },
-              { metric: "Camera Resolution", uart: "2K HD", dji: "4K", autel: "6K", uartBetter: false },
-            ].map(({ metric, uart, dji, autel, uartBetter }, i) => (
-              <div key={i} className={`grid grid-cols-4 border-b border-white/10 last:border-0 hover:bg-white/[0.03] transition-colors ${i % 2 === 0 ? '' : 'bg-[rgba(15,23,42,0.4)]'}`}>
-                <div className="col-span-1 px-6 py-4 text-slate-400 text-sm font-mono">{metric}</div>
+            {/* Content Rows */}
+            <div className="divide-y divide-white/10">
+              {[
+                { metric: "Flight Endurance", uart: "35 min", dji: "41 min", autel: "40 min", uartBetter: false },
+                { metric: "Telemetry Range", uart: "10 km", dji: "8 km", autel: "9 km", uartBetter: true },
+                { metric: "Autonomous AI", uart: "On-board", dji: "Cloud", autel: "Limited", uartBetter: true },
+                { metric: "GPS-Denied Ops", uart: "✓ SLAM", dji: "✗ No", autel: "✗ No", uartBetter: true },
+                { metric: "Max Takeoff Weight", uart: "4.2 kg", dji: "3.77 kg", autel: "3.5 kg", uartBetter: false },
+                { metric: "Open Source", uart: "✓ Full", dji: "✗ Closed", autel: "✗ Closed", uartBetter: true },
+                { metric: "Payload System", uart: "Modular", dji: "Fixed", autel: "Fixed", uartBetter: true },
+                { metric: "Camera Resolution", uart: "2K HD", dji: "4K", autel: "6K", uartBetter: false },
+              ].map(({ metric, uart, dji, autel, uartBetter }, i) => (
+                <div key={i} className="flex flex-col md:grid md:grid-cols-4 hover:bg-white/[0.03] transition-colors overflow-hidden">
+                  {/* Metric Label (Mobile: Small header, Desktop: Column 1) */}
+                  <div className="px-6 py-4 md:py-5 text-slate-400 text-xs md:text-sm font-mono uppercase md:normal-case bg-white/[0.02] md:bg-transparent border-b md:border-b-0 border-white/5">
+                    {metric}
+                  </div>
 
-                {/* UART value – highlighted */}
-                <div className={`px-6 py-4 text-center font-bold text-sm bg-accent/5 ${uartBetter ? 'text-accent' : 'text-white'}`}>
-                  <span className="inline-flex items-center gap-1.5">
-                    {uartBetter && <Activity className="w-3.5 h-3.5" />}
-                    {uart}
-                  </span>
+                  {/* Values */}
+                  <div className="grid grid-cols-3 md:contents">
+                    {/* UART Value */}
+                    <div className={`px-4 py-3 md:px-6 md:py-5 flex flex-col md:block items-center justify-center text-center font-bold text-sm bg-accent/5 ${uartBetter ? 'text-accent' : 'text-white'} border-r md:border-r-0 border-white/5 md:bg-accent/10`}>
+                      <span className="md:hidden text-[10px] text-slate-500 font-mono mb-1">UART</span>
+                      <span className="inline-flex items-center gap-1.5">
+                        {uartBetter && <Activity className="w-3.5 h-3.5 hidden md:inline" />}
+                        {uart}
+                      </span>
+                    </div>
+
+                    {/* DJI Value */}
+                    <div className="px-4 py-3 md:px-6 md:py-5 flex flex-col md:block items-center justify-center text-center text-slate-400 text-sm border-r md:border-r-0 border-white/5">
+                      <span className="md:hidden text-[10px] text-slate-600 font-mono mb-1 uppercase">DJI M30</span>
+                      {dji}
+                    </div>
+
+                    {/* Autel Value */}
+                    <div className="px-4 py-3 md:px-6 md:py-5 flex flex-col md:block items-center justify-center text-center text-slate-400 text-sm">
+                      <span className="md:hidden text-[10px] text-slate-600 font-mono mb-1 uppercase">EVO II</span>
+                      {autel}
+                    </div>
+                  </div>
                 </div>
-
-                <div className="px-6 py-4 text-center text-slate-400 text-sm">{dji}</div>
-                <div className="px-6 py-4 text-center text-slate-400 text-sm">{autel}</div>
-              </div>
-            ))}
+              ))}
+            </div>
 
             {/* Footer note */}
-            <div className="px-6 py-4 bg-accent/5 border-t border-accent/20 flex items-center gap-2">
+            <div className="px-6 py-5 bg-accent/5 border-t border-accent/20 flex items-center gap-2">
               <Activity className="w-4 h-4 text-accent flex-shrink-0" />
-              <p className="text-xs text-slate-400 font-mono">Highlighted metrics indicate where UART's platform leads the comparison.</p>
+              <p className="text-xs text-slate-400 font-mono">Highlighted metrics indicate where UART leads.</p>
             </div>
           </div>
         </Reveal>

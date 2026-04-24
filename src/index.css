@@ -51,8 +51,25 @@
 
   /* Border overrides */
   .border-primary { border-color: #f97316 !important; }
+  
+  /* Hide scrollbar utility */
+  .hide-scrollbar {
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+  }
+  .hide-scrollbar::-webkit-scrollbar {
+    display: none;
+  }
 
-  /* * { scroll-behavior: smooth; } */
+  :root {
+    --carousel-step: 100%;
+  }
+  @media (min-width: 640px) {
+    :root { --carousel-step: 50%; }
+  }
+  @media (min-width: 1024px) {
+    :root { --carousel-step: 33.333%; }
+  }
 }
 
 /* ═══════════════════════════════════════════

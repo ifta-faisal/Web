@@ -79,7 +79,7 @@ const LeadershipCard = ({ person, searchParams }: { person: any; searchParams: U
             <p className="text-white/60 text-sm font-semibold tracking-widest uppercase">Position Open</p>
           </div>
         ) : (
-          <div className="relative overflow-hidden bg-[#020617]" style={{ minHeight: '380px' }}>
+          <div className="relative overflow-hidden bg-[#020617] h-[320px] sm:h-[380px] md:h-auto">
             {/* Unified background glow for leadership cards */}
             <div className={`absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,${person.id.includes('mentor') ? '#1e3a8a' : '#1e3a8a'} 0%,transparent_75%)] opacity-30`} />
 
@@ -240,7 +240,7 @@ const Mentors = () => {
         {/* ── Filter Tabs ── */}
         {!isFocused && (
           <div className="flex justify-center mb-12 sm:mb-16">
-            <div className="inline-flex bg-surface/60 backdrop-blur-xl border border-surface-2/50 rounded-full p-1 gap-1">
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-2 flex flex-wrap justify-center items-center gap-2">
               {tabs.map(tab => (
                 <button
                   key={tab.value}

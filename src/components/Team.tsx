@@ -157,7 +157,7 @@ const Team = () => {
         {/* Filter Tabs / Back Button */}
         <div className="flex justify-center mb-16">
           {!isFocused ? (
-            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-2 flex flex-wrap justify-center items-center gap-2 max-w-5xl">
+            <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-2 sm:p-2.5 flex flex-wrap justify-center items-center gap-2 max-w-5xl">
               {[
                 { id: 'all', label: 'All Team' },
                 { id: 'leadership', label: 'Leadership' },
@@ -203,7 +203,7 @@ const Team = () => {
             <div key={index} className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
               <div className="card-modern rounded-2xl w-full h-full">
-                <div className="relative h-64 sm:h-80 md:h-96 overflow-hidden">
+                <div className="relative h-72 sm:h-80 md:h-[400px] overflow-hidden">
                   <img
                     src={member.image}
                     alt={member.name}

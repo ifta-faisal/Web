@@ -69,7 +69,7 @@ const Header = () => {
                 src={logoUrl}
                 alt="UART Logo"
                 loading="lazy"
-                className="w-56 h-56 object-contain transition-all duration-300 group-hover:drop-shadow-[0_0_16px_rgba(249,115,22,0.6)]"
+                className="w-40 sm:w-48 md:w-56 h-auto object-contain transition-all duration-300 group-hover:drop-shadow-[0_0_16px_rgba(249,115,22,0.6)]"
               />
             </Link>
 
@@ -173,15 +173,15 @@ const Header = () => {
           </div>
 
           {/* Mobile Menu Items — staggered slide-in (Mirrors Desktop Navbar) */}
-          <nav className="p-5 space-y-1 text-sm sm:text-base overflow-y-auto">
+          <nav className="p-4 sm:p-6 space-y-1 text-sm sm:text-base overflow-y-auto">
             {navItems.map((item, index) => (
               <NavLink
                 key={item.name}
                 to={item.to}
                 className={({ isActive }) =>
-                  `flex items-center justify-between p-4 rounded uppercase tracking-wide font-bold transition-all duration-300
+                  `flex items-center justify-between p-3.5 sm:p-4 rounded-xl uppercase tracking-wide font-bold transition-all duration-300
                   ${isActive
-                    ? 'text-white bg-gradient-to-r from-primary/80 to-accent/80'
+                    ? 'text-white bg-gradient-to-r from-primary/80 to-accent/80 shadow-lg shadow-primary/20'
                     : 'text-gray-300 hover:text-white hover:bg-white/5'
                   }`
                 }

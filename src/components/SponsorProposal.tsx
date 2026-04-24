@@ -164,8 +164,9 @@ const SponsorProposal = () => {
                                     Drone Fabrication (UAV) with R&D
                                 </h3>
                             </div>
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-left">
+                            <div className="relative group/table overflow-x-auto hide-scrollbar">
+                                <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-slate-900/40 to-transparent pointer-events-none md:hidden z-10" />
+                                <table className="w-full text-left min-w-[600px]">
                                     <thead>
                                         <tr className="bg-slate-900/50 text-[10px] uppercase tracking-widest text-slate-500 font-bold">
                                             <th className="px-6 py-4">Name</th>
@@ -204,8 +205,9 @@ const SponsorProposal = () => {
                                     Administrative Budget (SUAS 2026)
                                 </h3>
                             </div>
-                            <div className="overflow-x-auto">
-                                <table className="w-full text-left">
+                            <div className="relative group/table overflow-x-auto hide-scrollbar">
+                                <div className="absolute inset-y-0 right-0 w-12 bg-gradient-to-l from-slate-900/40 to-transparent pointer-events-none md:hidden z-10" />
+                                <table className="w-full text-left min-w-[600px]">
                                     <thead>
                                         <tr className="bg-slate-900/50 text-[10px] uppercase tracking-widest text-slate-500 font-bold">
                                             <th className="px-6 py-4">Item Name</th>
@@ -321,7 +323,7 @@ const SponsorProposal = () => {
 
                         <div className="p-10 sm:p-16">
                             <div className="section-label mb-6">Contact Presence</div>
-                            <h2 className="text-4xl font-black text-white mb-12 uppercase tracking-tight">Information Section</h2>
+                            <h2 className="text-3xl sm:text-4xl font-black text-white mb-10 sm:mb-12 uppercase tracking-tight">Information Section</h2>
 
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                 <div className="space-y-10">

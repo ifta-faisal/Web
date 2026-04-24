@@ -188,7 +188,7 @@ const Hero = () => {
 
           {/* Main headline */}
           <h1
-            className="text-5xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.0] mb-2 max-w-4xl"
+            className="text-4xl sm:text-6xl md:text-7xl lg:text-8xl text-white leading-[1.0] mb-2 max-w-4xl"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, letterSpacing: '-0.02em' }}
           >
             <div className="mask-container">
@@ -806,13 +806,15 @@ const Hero = () => {
               </div>
 
               <div
-                className="flex gap-8 transition-transform duration-700 ease-spring"
-                style={{ transform: `translateX(-${currentIndex * (100 / 3)}%)` }}
+                className="flex items-stretch gap-4 sm:gap-6 lg:gap-8 transition-transform duration-700 ease-spring"
+                style={{ 
+                  transform: `translateX(calc(-1 * var(--carousel-step, 100%) * ${currentIndex}))`,
+                } as React.CSSProperties}
               >
                 {achievements.concat(achievements).map((achieve, idx) => (
                   <div
                     key={`${achieve.id}-${idx}`}
-                    className="flex-none w-full sm:w-[calc(50%-1rem)] lg:w-[calc(33.333%-1.33rem)] text-left flex flex-col card-modern card-shimmer group cursor-pointer"
+                    className="flex-none w-full sm:w-[calc(50%-0.75rem)] lg:w-[calc(33.3333%-1.333rem)] text-left flex flex-col card-modern card-shimmer group cursor-pointer"
                   >
                     {/* Image */}
                     <div className="relative w-full aspect-[4/3] overflow-hidden" style={{ background: '#0d0b0a' }}>
