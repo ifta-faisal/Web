@@ -76,6 +76,23 @@ const Team = () => {
     }
   });
 
+  const sortedMembers = [...filteredMembers].sort((a, b) => {
+    const rolePriority: { [key: string]: number } = {
+      'TEAM LEAD': 1,
+      'CO-TEAM LEAD': 2,
+      'SUB TEAM LEAD': 3,
+      'MEMBER': 4
+    };
+
+    const getDisplayRole = (member: any) => {
+      if (member.name === 'T M AL Anam' && filter === 'electronics') return 'SUB TEAM LEAD';
+      if (member.name === 'Ahmed Junaed' && filter === 'software') return 'MEMBER';
+      return member.role;
+    };
+
+    return (rolePriority[getDisplayRole(a)] || 99) - (rolePriority[getDisplayRole(b)] || 99);
+  });
+
   return (
     <section id="team" className="min-h-screen pt-32 pb-24 bg-transparent relative overflow-hidden">
       {/* Decorative elements */}
@@ -130,7 +147,7 @@ const Team = () => {
 
         {/* Team Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8">
-          {filteredMembers.map((member, index) => (
+          {sortedMembers.map((member, index) => (
             <div key={index} className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
               <div className="card-modern rounded-2xl w-full h-full">
