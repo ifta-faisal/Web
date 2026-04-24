@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { GraduationCap, Mail, Linkedin, Award, BookOpen, UserPlus } from 'lucide-react';
 
 import mentor1 from '../assets/images/Advisor/Mentor1.jpeg';
@@ -157,6 +157,31 @@ const LeadershipCard = ({ person }: { person: any }) => (
 
 const Mentors = () => {
   const [filter, setFilter] = useState<'all' | 'advisor' | 'director' | 'mentor'>('all');
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('ju-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const timer = setTimeout(() => {
+      document.querySelectorAll('.ju-reveal:not(.ju-visible)').forEach((el) => {
+        observer.observe(el);
+      });
+    }, 150);
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
+  }, [filter]);
 
   const tabs = [
     { label: 'All', value: 'all' },
