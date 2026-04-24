@@ -85,18 +85,11 @@ const LeadershipCard = ({ person }: { person: any }) => (
             <img
               src={person.image}
               alt={person.name}
-              className={`ju-reveal w-full h-full absolute inset-0 transition-transform duration-700 ${person.id === 'director' || person.id === 'vc-advisor'
-                ? 'object-contain scale-[0.85] group-hover:scale-[0.9] translate-y-2'
-                : 'object-cover object-top group-hover:scale-105'
-                }`}
+              className="ju-reveal w-full h-full absolute inset-0 transition-transform duration-700 object-contain scale-[0.85] group-hover:scale-[0.9] translate-y-2"
               style={{
-                objectPosition: (person.id === 'director' || person.id === 'vc-advisor') ? 'center center' : 'center 0%',
-                maskImage: (person.id === 'director' || person.id === 'vc-advisor')
-                  ? 'radial-gradient(circle at 50% 45%, black 20%, transparent 90%)'
-                  : 'none',
-                WebkitMaskImage: (person.id === 'director' || person.id === 'vc-advisor')
-                  ? 'radial-gradient(circle at 50% 45%, black 20%, transparent 90%)'
-                  : 'none',
+                objectPosition: 'center center',
+                maskImage: 'radial-gradient(circle at 50% 45%, black 20%, transparent 90%)',
+                WebkitMaskImage: 'radial-gradient(circle at 50% 45%, black 20%, transparent 90%)',
               }}
             />
           </div>
