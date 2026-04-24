@@ -46,7 +46,7 @@ const mentors = [
     bio: 'Specializing in computer vision and machine learning applications for autonomous drone navigation and control.',
     email: 'riasat@cse.uiu.ac.bd',
     linkedin: 'https://www.linkedin.com/in/riasat-azim-23812356',
-    gradient: 'from-[#0ea5e9] to-[#2563eb]',
+    gradient: 'from-primary to-[#ea580c]',
   },
   {
     id: 'mentor-2',
@@ -58,11 +58,11 @@ const mentors = [
     bio: 'Expert in embedded systems and flight controller firmware development for specialized robotics platforms.',
     email: 'azizur@cse.uiu.ac.bd',
     linkedin: 'https://www.linkedin.com/in/azizur-rahman-anik-056220260',
-    gradient: 'from-[#8b5cf6] to-[#06b6d4]',
+    gradient: 'from-primary to-[#ea580c]',
   },
 ];
 
-const LeadershipCard = ({ person }: { person: any }) => (
+const LeadershipCard = ({ person, searchParams }: { person: any; searchParams: URLSearchParams }) => (
   <div className="group relative">
     {/* Glow */}
     <div className={`absolute inset-0 bg-gradient-to-r ${person.gradient || 'from-primary to-accent'} rounded-3xl blur-2xl opacity-0 group-hover:opacity-20 transition duration-500`} />
@@ -86,7 +86,7 @@ const LeadershipCard = ({ person }: { person: any }) => (
             <img
               src={person.image}
               alt={person.name}
-              className="ju-reveal w-full h-full absolute inset-0 transition-transform duration-700 object-contain scale-[0.85] group-hover:scale-[0.9] translate-y-2"
+              className={`w-full h-full absolute inset-0 transition-transform duration-700 object-contain scale-[0.85] group-hover:scale-[0.9] translate-y-2 ${searchParams.get('id') === person.id ? 'ju-visible' : 'ju-reveal'}`}
               style={{
                 objectPosition: 'center center',
                 maskImage: 'radial-gradient(circle at 50% 45%, black 20%, transparent 90%)',
@@ -106,16 +106,16 @@ const LeadershipCard = ({ person }: { person: any }) => (
 
           {person.isPlaceholder ? (
             <>
-              <h3 className="ju-reveal text-2xl md:text-3xl font-black mb-3 text-white/60 italic">
+              <h3 className="text-2xl md:text-3xl font-black mb-3 text-white/60 italic">
                 To Be Announced
               </h3>
-              <p className="ju-reveal text-white/50 leading-relaxed">
+              <p className="text-white/50 leading-relaxed">
                 We are actively seeking an experienced advisor to join our team. Stay tuned for updates.
               </p>
             </>
           ) : (
             <>
-              <h3 className="ju-reveal text-2xl md:text-3xl font-black mb-3">
+              <h3 className="text-2xl md:text-3xl font-black mb-3">
                 {person.name}
               </h3>
               <div className="flex items-center text-white/80 mb-4">
@@ -123,7 +123,7 @@ const LeadershipCard = ({ person }: { person: any }) => (
                 <span className="font-medium">{person.department}</span>
               </div>
               {person.bio && (
-                <p className="ju-reveal text-white/75 leading-relaxed mb-6">
+                <p className="text-white/75 leading-relaxed mb-6">
                   {person.bio}
                 </p>
               )}
@@ -192,7 +192,7 @@ const Mentors = () => {
       clearTimeout(timer);
       observer.disconnect();
     };
-  }, [filter]);
+  }, [filter, searchParams]);
 
   const tabs = [
     { label: 'All', value: 'all' },
@@ -279,7 +279,7 @@ const Mentors = () => {
         {focusedFeatured.length > 0 && (
           <div className="flex flex-col gap-6 mb-10">
             {focusedFeatured.map(person => (
-              <LeadershipCard key={person.id} person={person} />
+              <LeadershipCard key={person.id} person={person} searchParams={searchParams} />
             ))}
           </div>
         )}
@@ -289,13 +289,8 @@ const Mentors = () => {
             ═══════════════════════════════════════════════════════════ */}
         {focusedMentors.length > 0 && (
           <div className="flex flex-col gap-6">
-            {!isFocused && filter === 'all' && (
-              <h3 className="ju-reveal text-center text-white/50 text-xs font-bold tracking-widest uppercase mb-6">
-                — Mentors —
-              </h3>
-            )}
             {focusedMentors.map(mentor => (
-              <LeadershipCard key={mentor.id} person={mentor} />
+              <LeadershipCard key={mentor.id} person={mentor} searchParams={searchParams} />
             ))}
           </div>
         )}

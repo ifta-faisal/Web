@@ -36,6 +36,31 @@ const Team = () => {
     }
   }, [searchParams]);
 
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('ju-visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      },
+      { threshold: 0.1 }
+    );
+
+    const timer = setTimeout(() => {
+      document.querySelectorAll('.ju-reveal:not(.ju-visible)').forEach((el) => {
+        observer.observe(el);
+      });
+    }, 150);
+
+    return () => {
+      clearTimeout(timer);
+      observer.disconnect();
+    };
+  }, [filter, searchParams]);
+
   const teamMembers = [
     { id: 'm1', name: 'T M AL Anam', role: 'TEAM LEAD', team: 'Electrical Team', department: 'Department of CSE', image: member1, category: 'leadership', email: 'tmukit@gmail.com', linkedin: 'https://www.linkedin.com/in/tmalanam?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
     { id: 'm2', name: 'Ahmed Junaed', role: 'CO-TEAM LEAD', team: 'Software & Navigation Team', department: 'Department of CSE', image: member2, category: 'leadership', email: 'ajunaed.work@gmail.com', linkedin: 'https://www.linkedin.com/in/ajunaed/' },
@@ -182,7 +207,7 @@ const Team = () => {
                   <img
                     src={member.image}
                     alt={member.name}
-                    className="ju-reveal w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    className={`w-full h-full object-cover group-hover:scale-110 transition-transform duration-700 ${searchParams.get('id') === member.id ? 'ju-visible' : 'ju-reveal'}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute top-4 left-4">
@@ -215,10 +240,10 @@ const Team = () => {
                 </div>
 
                 <div className="p-4 sm:p-6">
-                  <h3 className="ju-reveal text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
+                  <h3 className="text-lg sm:text-xl font-bold text-white mb-2 group-hover:text-primary transition-colors">
                     {member.name}
                   </h3>
-                  <p className="ju-reveal text-slate-300 font-medium mb-2 flex items-center">
+                  <p className="text-slate-300 font-medium mb-2 flex items-center">
                     <Award className="w-4 h-4 mr-2 text-primary" />
                     {member.team}
                   </p>

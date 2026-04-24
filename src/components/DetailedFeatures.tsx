@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
-import { Link } from "react-router-dom";
+import { Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Cpu, Wind, Radio, Eye, Shield, Zap, ChevronRight, MapPin, Navigation, CloudRain, Layers, Activity, Gauge } from "lucide-react";
 import img1 from "../assets/images/drone1.jpeg";
 import jetson from "../assets/images/DetailedFeatures/jetson.png";
@@ -186,18 +186,19 @@ const Drone360Viewer: React.FC<{ src: string; alt?: string }> = ({ src, alt = "3
 /*                  MAIN COMPONENT                     */
 /* ═══════════════════════════════════════════════════ */
 const DetailedFeatures = () => {
+  const [searchParams] = useSearchParams();
+
   useEffect(() => {
-    const urlParams = new URLSearchParams(window.location.search);
-    const targetId = urlParams.get('id');
+    const targetId = searchParams.get('id');
     if (targetId) {
       setTimeout(() => {
         const element = document.getElementById(targetId);
         if (element) {
           element.scrollIntoView({ behavior: 'smooth', block: 'center' });
         }
-      }, 500); // Wait for animations
+      }, 500);
     }
-  }, []);
+  }, [searchParams]);
 
   const specs = [
     { label: "Max Takeoff Weight", value: "4.2", unit: "kg" },
@@ -212,6 +213,7 @@ const DetailedFeatures = () => {
 
   const features: FeatureSectionProps[] = [
     {
+      id: "structural-engineering",
       tag: "Structural Engineering",
       title: "Lightweight Carbon Fiber Airframe",
       description:
@@ -228,6 +230,7 @@ const DetailedFeatures = () => {
       delay: 0,
     },
     {
+      id: "autonomy-navigation",
       tag: "Autonomy & Navigation",
       title: "AI-Powered Flight Intelligence",
       description:
@@ -244,6 +247,7 @@ const DetailedFeatures = () => {
       delay: 100,
     },
     {
+      id: "sensing-perception",
       tag: "Sensing & Perception",
       title: "Multi-Sensor Fusion Suite",
       description:
@@ -349,7 +353,7 @@ const DetailedFeatures = () => {
       {/* ── ALTERNATING FEATURE SECTIONS ── */}
       <section className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-16 space-y-28">
         {features.map((f, i) => (
-          <FeatureSection key={i} id={f.tag.toLowerCase().replace(/\s+/g, '-')} {...f} />
+          <FeatureSection key={i} id={f.id} {...f} />
         ))}
       </section>
 

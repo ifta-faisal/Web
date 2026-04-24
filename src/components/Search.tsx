@@ -70,10 +70,11 @@ const SEARCH_DATA: SearchResult[] = [
   { id: 's2', title: 'Battery: Power House of Drone', category: 'Spec', link: '/DetailedFeatures?id=battery-power', icon: Zap, description: 'Customized LiPo power houses for high-demand UAS operations.', tags: ['battery', 'power', 'lipo', 'energy', 'voltage', 'bms', 'customize', '3s'] },
   { id: 's3', title: 'Flight Endurance: 35min', category: 'Spec', link: '/DetailedFeatures?id=specs', icon: Activity, description: 'High-density LiPo battery power for extended missions.', tags: ['time', 'battery', 'duration', 'spec'] },
   { id: 's4', title: 'Telemetry Range: 10km', category: 'Spec', link: '/DetailedFeatures?id=specs', icon: Navigation, description: 'Long-range RFD900x communication link.', tags: ['distance', 'range', 'signal', 'spec'] },
-  { id: 's5', title: 'NVIDIA Jetson AI', category: 'Spec', link: '/DetailedFeatures?id=autonomy-&-navigation', icon: Cpu, description: 'Onboard edge AI processing (Jetson Orin Nano).', tags: ['brain', 'computer', 'autonomous', 'ai', 'spec'] },
+  { id: 's5', title: 'NVIDIA Jetson AI', category: 'Spec', link: '/DetailedFeatures?id=autonomy-navigation', icon: Cpu, description: 'Onboard edge AI processing (Jetson Orin Nano).', tags: ['brain', 'computer', 'autonomous', 'ai', 'spec'] },
   { id: 's6', title: 'Carbon Fiber Frame', category: 'Spec', link: '/DetailedFeatures?id=structural-engineering', icon: Shield, description: 'Lightweight monocoque airframe design.', tags: ['structure', 'materials', 'build', 'carbon'] },
   { id: 's7', title: 'Mission Planning', category: 'Feature', link: '/DetailedFeatures?id=mission-planning', icon: MapPin, description: 'Advanced route optimization and telemetry.', tags: ['gcs', 'ground', 'control', 'map'] },
-  { id: 's8', title: 'System Architecture', category: 'Feature', link: '/DetailedFeatures?id=system-architecture', icon: Cpu, description: 'Electronic and software integration overview.', tags: ['hardware', 'diagram', 'electronics'] },
+  { id: 's8', title: 'LIDAR Fusion Suite', category: 'Spec', link: '/DetailedFeatures?id=sensing-perception', icon: Eye, description: '360° LIDAR and multi-sensor fusion for obstacle avoidance.', tags: ['lidar', 'sensor', 'perception', '3d', 'mapping'] },
+  { id: 's9', title: 'System Architecture', category: 'Feature', link: '/DetailedFeatures?id=system-architecture', icon: Cpu, description: 'Electronic and software integration overview.', tags: ['hardware', 'diagram', 'electronics'] },
 
   // ─── Sub-Teams ───
   { id: 'st1', title: 'Electrical Team', category: 'Sub-Team', link: '/team?filter=electronics', icon: Zap, description: 'PCB design, power distribution, and avionics.', tags: ['avionics', 'circuits', 'power', 'electronics'] },
