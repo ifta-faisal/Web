@@ -7,6 +7,7 @@ import lidar from "../assets/images/DetailedFeatures/lidar.png";
 import droneImg from "../assets/images/drone.png";
 import missionPlanningImg from "../assets/images/DetailedFeatures/map.jpeg";
 import sysArchImg from "../assets/images/DetailedFeatures/system_architecture.png";
+import batteryImg from "../assets/images/Project/battery.png";
 
 /* ── Intersection-observer hook for scroll-reveal ── */
 function useReveal() {
@@ -25,12 +26,12 @@ function useReveal() {
 }
 
 /* ── Reusable reveal wrapper ── */
-const Reveal: React.FC<{ children: React.ReactNode; delay?: number; className?: string }> = ({
-  children, delay = 0, className = ""
+const Reveal: React.FC<{ children: React.ReactNode; delay?: number; className?: string; id?: string }> = ({
+  children, delay = 0, className = "", id
 }) => {
   const ref = useReveal();
   return (
-    <div ref={ref} className={`df-reveal ${className}`} style={{ transitionDelay: `${delay}ms` }}>
+    <div id={id} ref={ref} className={`df-reveal ${className}`} style={{ transitionDelay: `${delay}ms` }}>
       {children}
     </div>
   );
@@ -58,10 +59,10 @@ interface FeatureSectionProps {
   reverse?: boolean;
   delay?: number;
 }
-const FeatureSection: React.FC<FeatureSectionProps> = ({
-  tag, title, description, bullets, icon: Icon, image, reverse = false, delay = 0
+const FeatureSection: React.FC<FeatureSectionProps & { id?: string }> = ({
+  tag, title, description, bullets, icon: Icon, image, id, reverse = false, delay = 0
 }) => (
-  <Reveal delay={delay} className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${reverse ? "lg:flex-row-reverse" : ""}`}>
+  <Reveal id={id} delay={delay} className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${reverse ? "lg:flex-row-reverse" : ""}`}>
     {/* Text side */}
     <div className={reverse ? "lg:order-2" : ""}>
       <div className="flex items-center gap-3 mb-4">
@@ -185,6 +186,19 @@ const Drone360Viewer: React.FC<{ src: string; alt?: string }> = ({ src, alt = "3
 /*                  MAIN COMPONENT                     */
 /* ═══════════════════════════════════════════════════ */
 const DetailedFeatures = () => {
+  useEffect(() => {
+    const urlParams = new URLSearchParams(window.location.search);
+    const targetId = urlParams.get('id');
+    if (targetId) {
+      setTimeout(() => {
+        const element = document.getElementById(targetId);
+        if (element) {
+          element.scrollIntoView({ behavior: 'smooth', block: 'center' });
+        }
+      }, 500); // Wait for animations
+    }
+  }, []);
+
   const specs = [
     { label: "Max Takeoff Weight", value: "4.2", unit: "kg" },
     { label: "UAS Volume (disassembled)", value: "18 x 14 x 8", unit: "in" },
@@ -245,6 +259,23 @@ const DetailedFeatures = () => {
       reverse: false,
       delay: 200,
     },
+    {
+      id: "battery-power",
+      tag: "Power Systems",
+      title: "Battery: Power House of Drone",
+      description:
+        "The centralized energy hub of our UAS. We utilize customized high-density LiPo power houses engineered specifically for the extreme electrical demands of high-torque motors and continuous AI computation.",
+      bullets: [
+        "Customize 3S Battery Configuration",
+        "High-discharge (100C) Power house",
+        "Integrated Smart BMS monitoring",
+        "Rapid-swap modular battery bay",
+      ],
+      icon: Zap,
+      image: batteryImg,
+      reverse: true,
+      delay: 300,
+    },
   ];
 
   return (
@@ -291,7 +322,7 @@ const DetailedFeatures = () => {
       </header>
 
       {/* ── SPECS TABLE ── */}
-      <section className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-16">
+      <section id="specs" className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-16">
         <Reveal className="rounded-3xl border border-white/10 bg-[rgba(15,23,42,0.8)] backdrop-blur-md overflow-hidden">
           <div className="px-8 py-6 border-b border-white/10 flex items-center gap-3">
             <Zap className="w-5 h-5 text-accent" />
@@ -318,12 +349,12 @@ const DetailedFeatures = () => {
       {/* ── ALTERNATING FEATURE SECTIONS ── */}
       <section className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-16 space-y-28">
         {features.map((f, i) => (
-          <FeatureSection key={i} {...f} />
+          <FeatureSection key={i} id={f.tag.toLowerCase().replace(/\s+/g, '-')} {...f} />
         ))}
       </section>
 
       {/* ── CAPABILITIES GRID ── */}
-      <section className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-20">
+      <section id="capabilities" className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-20">
         <div className="text-center mb-14">
           <div className="section-label mb-3">What We Built</div>
           <h2 className="text-4xl sm:text-5xl font-black text-white mt-1">
@@ -358,7 +389,7 @@ const DetailedFeatures = () => {
       {/* ══════════════════════════════════════════════════
            MISSION PLANNING SECTION
       ══════════════════════════════════════════════════ */}
-      <section className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24">
+      <section id="mission-planning" className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24">
         {/* Section header – centred */}
         <Reveal className="text-center mb-16">
           <div className="section-label mb-3">Ground Control</div>
@@ -414,7 +445,7 @@ const DetailedFeatures = () => {
       {/* ══════════════════════════════════════════════════
            SYSTEM ARCHITECTURE SECTION
       ══════════════════════════════════════════════════ */}
-      <section className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24">
+      <section id="system-architecture" className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24">
         <Reveal className="text-center mb-16">
           <div className="section-label mb-3">Under The Hood</div>
           <h2 className="text-4xl sm:text-5xl font-black text-white mt-1 mb-4">
@@ -471,7 +502,7 @@ const DetailedFeatures = () => {
       {/* ══════════════════════════════════════════════════
            PERFORMANCE COMPARISON TABLE
       ══════════════════════════════════════════════════ */}
-      <section className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24">
+      <section id="performance" className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24">
         <Reveal className="text-center mb-14">
           <div className="section-label mb-3">How We Stack Up</div>
           <h2 className="text-4xl sm:text-5xl font-black text-white mt-1 mb-4">
@@ -531,7 +562,7 @@ const DetailedFeatures = () => {
       {/* ══════════════════════════════════════════════════
            OPERATIONAL PROCEDURES (NEW MANTADORY SECTION)
       ══════════════════════════════════════════════════ */}
-      <section className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24 border-t border-white/5" role="region" aria-labelledby="mission-procedures-title">
+      <section id="procedures" className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24 border-t border-white/5" role="region" aria-labelledby="mission-procedures-title">
         <Reveal className="text-center mb-16">
           <div className="section-label mb-3">Safety & Logistics</div>
           <h2 id="mission-procedures-title" className="text-4xl sm:text-5xl font-black text-white mt-1 mb-4">
@@ -592,7 +623,7 @@ const DetailedFeatures = () => {
       {/* ══════════════════════════════════════════════════
            DESIGN RATIONALE (TECHNICAL "WHY")
       ══════════════════════════════════════════════════ */}
-      <section className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24 border-t border-white/5 bg-white/[0.01]">
+      <section id="rationale" className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24 border-t border-white/5 bg-white/[0.01]">
         <Reveal className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
             <div className="section-label mb-3">Engineering Insight</div>
@@ -619,23 +650,23 @@ const DetailedFeatures = () => {
             </div>
           </div>
           <div className="relative">
-             <div className="absolute inset-0 bg-accent/20 rounded-full blur-3xl" />
-             <div className="relative rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
-               <div className="bg-[#111827] px-4 py-2 flex items-center justify-between border-b border-white/10">
-                 <span className="text-[10px] font-mono text-slate-500 uppercase">Analysis: CFD Simulation v4.2</span>
-                 <div className="flex gap-1.5">
-                   <div className="w-2 h-2 rounded-full bg-red-500/50" />
-                   <div className="w-2 h-2 rounded-full bg-accent/50" />
-                 </div>
-               </div>
-               <img src={missionPlanningImg} alt="Technical Analysis" className="w-full h-80 object-cover opacity-80" />
-               <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#020617] p-6">
-                 <div className="flex items-center gap-3">
-                   <div className="h-0.5 w-12 bg-accent" />
-                   <p className="text-[10px] font-mono text-accent uppercase tracking-widest">Optimized Pressure Vector Distribution</p>
-                 </div>
-               </div>
-             </div>
+            <div className="absolute inset-0 bg-accent/20 rounded-full blur-3xl" />
+            <div className="relative rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
+              <div className="bg-[#111827] px-4 py-2 flex items-center justify-between border-b border-white/10">
+                <span className="text-[10px] font-mono text-slate-500 uppercase">Analysis: CFD Simulation v4.2</span>
+                <div className="flex gap-1.5">
+                  <div className="w-2 h-2 rounded-full bg-red-500/50" />
+                  <div className="w-2 h-2 rounded-full bg-accent/50" />
+                </div>
+              </div>
+              <img src={missionPlanningImg} alt="Technical Analysis" className="w-full h-80 object-cover opacity-80" />
+              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#020617] p-6">
+                <div className="flex items-center gap-3">
+                  <div className="h-0.5 w-12 bg-accent" />
+                  <p className="text-[10px] font-mono text-accent uppercase tracking-widest">Optimized Pressure Vector Distribution</p>
+                </div>
+              </div>
+            </div>
           </div>
         </Reveal>
       </section>

@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import { Rocket, Zap, MapPin, Eye, ChevronRight, Calendar, Award } from "lucide-react";
+import { Rocket, Zap, MapPin, Eye, ChevronRight, Calendar, Award, ArrowLeft, Users } from "lucide-react";
+import { useSearchParams } from 'react-router-dom';
 import BackToHome from './BackToHome';
 
 // ===== Import Local Images =====
@@ -14,8 +15,12 @@ import project8 from "../assets/images/Project/project8.jpeg";
 import project9 from "../assets/images/drone2.jpeg";
 
 const Projects = () => {
+  const [searchParams, setSearchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [hoveredProject, setHoveredProject] = useState(null);
+
+  const targetId = searchParams.get('id');
+  const isFocused = !!targetId;
 
   const projects = [
     {
@@ -118,9 +123,11 @@ const Projects = () => {
     { id: 'ai', name: 'AI Systems', icon: Zap },
   ];
 
-  const filteredProjects = selectedCategory === 'all'
-    ? projects
-    : projects.filter(project => project.category === selectedCategory);
+  const filteredProjects = targetId 
+    ? projects.filter(project => project.id === parseInt(targetId))
+    : (selectedCategory === 'all'
+      ? projects
+      : projects.filter(project => project.category === selectedCategory));
 
   const getStatusColor = (status) => {
     switch (status) {
@@ -152,21 +159,33 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Category Filter */}
-        <div className="flex flex-wrap justify-center gap-2 sm:gap-3 mb-8 sm:mb-12">
-          {categories.map((category) => (
+        {/* Category Filter / Focus Back Button */}
+        <div className="flex justify-center mb-8 sm:mb-12">
+          {!isFocused ? (
+            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
+              {categories.map((category) => (
+                <button
+                  key={category.id}
+                  onClick={() => setSelectedCategory(category.id)}
+                  className={`group flex items-center space-x-1 sm:space-x-2 px-3 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 ${selectedCategory === category.id
+                    ? 'bg-primary text-gray-900 shadow-lg shadow-primary/50'
+                    : 'bg-gray-800/50 backdrop-blur-sm text-gray-300 border border-gray-700 hover:border-primary/50 hover:text-primary'
+                    }`}
+                >
+                  <category.icon className="w-3 h-3 sm:w-4 sm:h-4" />
+                  <span>{category.name}</span>
+                </button>
+              ))}
+            </div>
+          ) : (
             <button
-              key={category.id}
-              onClick={() => setSelectedCategory(category.id)}
-              className={`group flex items-center space-x-1 sm:space-x-2 px-3 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 ${selectedCategory === category.id
-                ? 'bg-primary text-gray-900 shadow-lg shadow-primary/50'
-                : 'bg-gray-800/50 backdrop-blur-sm text-gray-300 border border-gray-700 hover:border-primary/50 hover:text-primary'
-                }`}
+              onClick={() => setSearchParams({})}
+              className="flex items-center gap-2 px-8 py-3 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-all font-bold tracking-widest uppercase text-xs"
             >
-              <category.icon className="w-3 h-3 sm:w-4 sm:h-4" />
-              <span>{category.name}</span>
+              <ArrowLeft className="w-4 h-4" />
+              Show All Projects
             </button>
-          ))}
+          )}
         </div>
 
         {/* Projects Grid */}

@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GraduationCap, Mail, Linkedin, Award, Users, Trophy, ChevronRight, User } from 'lucide-react';
+import { GraduationCap, Mail, Linkedin, Award, BookOpen, UserPlus, ArrowLeft } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 
 import mentor1 from '../assets/images/Advisor/Mentor1.jpeg';
@@ -209,6 +209,13 @@ const Mentors = () => {
     ? featured
     : featured.filter(p => p.category === filter);
 
+  // If a specific ID is requested via search, further filter to just that person
+  const targetId = searchParams.get('id');
+  const focusedFeatured = targetId ? featured.filter(p => p.id === targetId) : visibleFeatured;
+  const focusedMentors = targetId ? mentors.filter(p => p.id === targetId) : (showMentors ? mentors : []);
+
+  const isFocused = !!targetId;
+
   return (
     <section id="mentors" className="min-h-screen pt-32 pb-24 relative overflow-hidden bg-transparent">
       {/* Glow blobs */}
@@ -231,32 +238,47 @@ const Mentors = () => {
         </div>
 
         {/* ── Filter Tabs ── */}
-        <div className="flex justify-center mb-12 sm:mb-16">
-          <div className="inline-flex bg-surface/60 backdrop-blur-xl border border-surface-2/50 rounded-full p-1 gap-1">
-            {tabs.map(tab => (
-              <button
-                key={tab.value}
-                onClick={() => {
-                  setFilter(tab.value);
-                  setSearchParams({ filter: tab.value });
-                }}
-                className={`px-5 sm:px-7 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${filter === tab.value
-                  ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30'
-                  : 'text-slate-400 hover:text-white'
-                  }`}
-              >
-                {tab.label}
-              </button>
-            ))}
+        {!isFocused && (
+          <div className="flex justify-center mb-12 sm:mb-16">
+            <div className="inline-flex bg-surface/60 backdrop-blur-xl border border-surface-2/50 rounded-full p-1 gap-1">
+              {tabs.map(tab => (
+                <button
+                  key={tab.value}
+                  onClick={() => {
+                    setFilter(tab.value);
+                    setSearchParams({ filter: tab.value });
+                  }}
+                  className={`px-5 sm:px-7 py-2 rounded-full text-sm font-semibold transition-all duration-300 ${filter === tab.value
+                    ? 'bg-gradient-to-r from-primary to-accent text-white shadow-lg shadow-primary/30'
+                    : 'text-slate-400 hover:text-white'
+                    }`}
+                >
+                  {tab.label}
+                </button>
+              ))}
+            </div>
           </div>
-        </div>
+        )}
+
+        {/* Focus Back Button */}
+        {isFocused && (
+          <div className="flex justify-center mb-12 sm:mb-16">
+            <button
+              onClick={() => setSearchParams({})}
+              className="flex items-center gap-2 px-6 py-2 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-all font-bold tracking-widest uppercase text-xs"
+            >
+              <ArrowLeft className="w-4 h-4" />
+              Show All Leadership
+            </button>
+          </div>
+        )}
 
         {/* ════════════════════════════════════════════════════════════
             ── ADVISORS & DIRECTORS ──
             ════════════════════════════════════════════════════════════ */}
-        {showFeatured && (
+        {focusedFeatured.length > 0 && (
           <div className="flex flex-col gap-6 mb-10">
-            {visibleFeatured.map(person => (
+            {focusedFeatured.map(person => (
               <LeadershipCard key={person.id} person={person} />
             ))}
           </div>
@@ -265,14 +287,14 @@ const Mentors = () => {
         {/* ═══════════════════════════════════════════════════════════
             ── MENTORS ──
             ═══════════════════════════════════════════════════════════ */}
-        {showMentors && (
+        {focusedMentors.length > 0 && (
           <div className="flex flex-col gap-6">
-            {filter === 'all' && (
+            {!isFocused && filter === 'all' && (
               <h3 className="ju-reveal text-center text-white/50 text-xs font-bold tracking-widest uppercase mb-6">
                 — Mentors —
               </h3>
             )}
-            {mentors.map(mentor => (
+            {focusedMentors.map(mentor => (
               <LeadershipCard key={mentor.id} person={mentor} />
             ))}
           </div>
