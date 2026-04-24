@@ -74,14 +74,14 @@ const Header = () => {
             </Link>
 
             {/* Desktop Navigation & Search */}
-            <div className="hidden md:flex items-center space-x-6">
-              <nav className="flex items-center space-x-4 lg:space-x-7 xl:space-x-9">
+            <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
+              <nav className="flex items-center space-x-3 lg:space-x-5 xl:space-x-7">
                 {navItems.map((item) => (
                   <NavLink
                     key={item.name}
                     to={item.to}
                     className={({ isActive }) =>
-                      `relative group tracking-[0.25em] font-medium transition-all duration-300 text-[11px] xl:text-[12px] whitespace-nowrap pb-1 uppercase
+                      `relative group tracking-[0.15em] lg:tracking-[0.2em] font-medium transition-all duration-300 text-[10px] lg:text-[11px] xl:text-[13px] whitespace-nowrap pb-1 uppercase
                       ${isActive ? 'text-primary' : 'text-slate-300 hover:text-white'}`
                     }
                     style={{ fontFamily: "'Inter', sans-serif" }}

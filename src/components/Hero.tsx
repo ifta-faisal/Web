@@ -193,10 +193,10 @@ const Hero = () => {
           >
             <div className="mask-container">
               <span className="mask-reveal ju-visible">Engineering</span>
-            </div>
+            </div>{" "}
             <div className="mask-container">
               <span className="mask-reveal ju-visible text-primary">Tomorrow's</span>
-            </div>
+            </div>{" "}
             <div className="mask-container">
               <span className="mask-reveal ju-visible text-white">Sky</span>
             </div>
