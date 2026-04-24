@@ -69,19 +69,19 @@ const Header = () => {
                 src={logoUrl}
                 alt="UART Logo"
                 loading="lazy"
-                className="w-40 sm:w-48 md:w-56 h-auto object-contain transition-all duration-300 group-hover:drop-shadow-[0_0_16px_rgba(249,115,22,0.6)]"
+                className="w-32 sm:w-40 md:w-44 lg:w-48 xl:w-56 h-auto object-contain transition-all duration-300 group-hover:drop-shadow-[0_0_16px_rgba(249,115,22,0.6)]"
               />
             </Link>
 
             {/* Desktop Navigation & Search */}
-            <div className="hidden md:flex items-center space-x-4 lg:space-x-6">
-              <nav className="flex items-center space-x-3 lg:space-x-5 xl:space-x-7">
+            <div className="hidden md:flex items-center space-x-2 lg:space-x-3 xl:space-x-5">
+              <nav className="flex items-center space-x-1.5 lg:space-x-2.5 xl:space-x-4">
                 {navItems.map((item) => (
                   <NavLink
                     key={item.name}
                     to={item.to}
                     className={({ isActive }) =>
-                      `relative group tracking-[0.15em] lg:tracking-[0.2em] font-medium transition-all duration-300 text-[10px] lg:text-[11px] xl:text-[13px] whitespace-nowrap pb-1 uppercase
+                      `relative group tracking-[0.1em] lg:tracking-[0.12em] xl:tracking-[0.18em] font-medium transition-all duration-300 text-[10px] lg:text-[10px] xl:text-[12px] whitespace-nowrap pb-1 uppercase
                       ${isActive ? 'text-primary' : 'text-slate-300 hover:text-white'}`
                     }
                     style={{ fontFamily: "'Inter', sans-serif" }}
