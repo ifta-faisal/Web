@@ -104,10 +104,9 @@ const Header = () => {
               <button 
                 onClick={() => setIsSearchOpen(true)}
                 className="p-2 text-slate-400 hover:text-primary transition-colors flex items-center gap-2 group"
-                aria-label="Open Search (Ctrl+K)"
-                title="Search (Ctrl+K)"
+                aria-label="Open Search"
+                title="Search"
               >
-                <kbd className="hidden lg:block text-[10px] font-mono border border-white/10 px-1.5 py-0.5 rounded bg-white/5 opacity-40 group-hover:opacity-100 transition-opacity">K</kbd>
                 <SearchIcon className="w-5 h-5" />
               </button>
             </div>

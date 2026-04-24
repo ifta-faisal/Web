@@ -1,25 +1,48 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { Search as SearchIcon, X, ArrowRight, FileText, User, Shield, Zap, Cpu } from 'lucide-react';
+import { Search as SearchIcon, X, ArrowRight, FileText, User, Shield, Zap, Cpu, Users, Settings, Activity, Gauge, MapPin, Navigation } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
 interface SearchResult {
   id: string;
   title: string;
-  category: 'Page' | 'Feature' | 'Blog' | 'Advisor';
+  category: 'Page' | 'Feature' | 'Blog' | 'Advisor' | 'Member' | 'Sub-Team' | 'Spec';
   link: string;
   icon: React.ElementType;
   description: string;
+  tags?: string[]; // Added tags for better searching
 }
 
 const SEARCH_DATA: SearchResult[] = [
-  { id: '1', title: 'Detailed Features', category: 'Page', link: '/DetailedFeatures', icon: Zap, description: 'Technical specifications and aircraft systems.' },
-  { id: '2', title: 'Advisors & Mentors', category: 'Page', link: '/advisors', icon: User, description: 'Our team leadership and advisory board.' },
-  { id: '3', title: 'Autonomous Navigation', category: 'Feature', link: '/DetailedFeatures', icon: Cpu, description: 'AI-powered flight intelligence on the edge.' },
-  { id: '4', title: 'Carbon Fiber Airframe', category: 'Feature', link: '/DetailedFeatures', icon: Shield, description: 'Structural engineering and monocoque design.' },
-  { id: '5', title: 'Join the Team', category: 'Page', link: '/joinus', icon: FileText, description: 'Recruitment and membership information.' },
-  { id: '6', title: 'UAV Research Blog', category: 'Page', link: '/blog', icon: FileText, description: 'Historical build progress and technical insights.' },
-  { id: '7', title: 'Sponsorships', category: 'Page', link: '/sponsor', icon: Zap, description: 'Support our mission and become a partner.' },
-  { id: '8', title: 'Contact Us', category: 'Page', link: '/contact', icon: FileText, description: 'Get in touch for inquiries or collaborations.' },
+  // ─── Pages ───
+  { id: 'p1', title: 'Detailed Features', category: 'Page', link: '/DetailedFeatures', icon: Settings, description: 'Technical specifications and aircraft systems.', tags: ['specs', 'vehicle', 'drone', 'weight', 'endurance'] },
+  { id: 'p2', title: 'Advisors & Mentors', category: 'Page', link: '/advisors', icon: User, description: 'Our team leadership and advisory board.', tags: ['leadership', 'mentors', 'teachers'] },
+  { id: 'p3', title: 'Join the Team', category: 'Page', link: '/joinus', icon: FileText, description: 'Recruitment and membership information.', tags: ['apply', 'recruitment', 'jobs', 'hiring'] },
+  { id: 'p4', title: 'UAV Research Blog', category: 'Page', link: '/blog', icon: FileText, description: 'Historical build progress and technical insights.', tags: ['news', 'updates', 'research'] },
+  { id: 'p5', title: 'Sponsorships', category: 'Page', link: '/sponsor', icon: Zap, description: 'Support our mission and become a partner.', tags: ['help', 'donate', 'partner'] },
+  { id: 'p6', title: 'Contact Us', category: 'Page', link: '/contact', icon: MapPin, description: 'Get in touch for inquiries or collaborations.', tags: ['email', 'location', 'reach us'] },
+  { id: 'p7', title: 'Projects', category: 'Page', link: '/projects', icon: Activity, description: 'Our flagship UAV projects and technical milestones.', tags: ['drone', 'aircraft', 'work'] },
+  { id: 'p8', title: 'Our Team', category: 'Page', link: '/team', icon: Users, description: 'Meet the engineers behind UART.', tags: ['members', 'people', 'staff'] },
+
+  // ─── Technical Specs ───
+  { id: 's1', title: 'Max Takeoff Weight: 4.2kg', category: 'Spec', link: '/DetailedFeatures', icon: Gauge, description: 'Optimized carbon fiber structure for high payload capacity.', tags: ['weight', 'kg', 'capacity'] },
+  { id: 's2', title: 'Flight Endurance: 35min', category: 'Spec', link: '/DetailedFeatures', icon: Activity, description: 'High-density LiPo battery power for extended missions.', tags: ['time', 'battery', 'duration'] },
+  { id: 's3', title: 'Telemetry Range: 10km', category: 'Spec', link: '/DetailedFeatures', icon: Navigation, description: 'Long-range RFD900x communication link.', tags: ['distance', 'range', 'signal'] },
+  { id: 's4', title: 'NVIDIA Jetson AI', category: 'Spec', link: '/DetailedFeatures', icon: Cpu, description: 'Onboard edge AI processing (Jetson Orin Nano).', tags: ['brain', 'computer', 'autonomous', 'ai'] },
+  { id: 's5', title: 'Carbon Fiber Frame', category: 'Spec', link: '/DetailedFeatures', icon: Shield, description: 'Lightweight monocoque airframe design.', tags: ['structure', 'materials', 'build'] },
+
+  // ─── Sub-Teams ───
+  { id: 'st1', title: 'Electrical Team', category: 'Sub-Team', link: '/team?filter=electronics', icon: Zap, description: 'PCB design, power distribution, and avionics integration.', tags: ['avionics', 'circuits', 'power'] },
+  { id: 'st2', title: 'Software & Navigation Team', category: 'Sub-Team', link: '/team?filter=software', icon: Cpu, description: 'Autonomous flight control, GCS, and AI development.', tags: ['coding', 'algorithms', 'ai', 'soft'] },
+  { id: 'st3', title: 'Mechanical Team', category: 'Sub-Team', link: '/team?filter=mechanical', icon: Settings, description: 'Airframe design, aerodynamics, and structural testing.', tags: ['structure', 'cad', 'build'] },
+  { id: 'st4', title: 'Web & Communication Team', category: 'Sub-Team', link: '/team?filter=web', icon: FileText, description: 'Website development and public communications.', tags: ['site', 'it', 'media'] },
+  { id: 'st5', title: 'Research & Development (R&D)', category: 'Sub-Team', link: '/team?filter=rd', icon: Activity, description: 'Long-term innovation and new technology scouting.', tags: ['future', 'innovation'] },
+
+  // ─── Members ───
+  { id: 'm1', title: 'T M AL Anam', category: 'Member', link: '/team', icon: User, description: 'Team Lead • Electrical Team', tags: ['mukit', 'leader', 'electronics'] },
+  { id: 'm2', title: 'Ahmed Junaed', category: 'Member', link: '/team', icon: User, description: 'Co-Team Lead • Software & Nav Team', tags: ['junaid', 'leader', 'coding'] },
+  { id: 'm3', title: 'Fahad Rahaman', category: 'Member', link: '/team', icon: User, description: 'Sub Team Lead • Software & Nav Team', tags: ['ovi', 'coding'] },
+  { id: 'm4', title: 'MD Ifta Faisal', category: 'Member', link: '/team', icon: User, description: 'Sub Team Lead • Web & Communication', tags: ['web', 'ifta'] },
+  { id: 'm5', title: 'Muktaderul Islam', category: 'Member', link: '/team', icon: User, description: 'Sub Team Lead • Mechanical Team', tags: ['mechanical', 'cad'] },
 ];
 
 const Search = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
@@ -36,7 +59,8 @@ const Search = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =
     const filtered = SEARCH_DATA.filter(item => 
       item.title.toLowerCase().includes(val.toLowerCase()) ||
       item.category.toLowerCase().includes(val.toLowerCase()) ||
-      item.description.toLowerCase().includes(val.toLowerCase())
+      item.description.toLowerCase().includes(val.toLowerCase()) ||
+      item.tags?.some(tag => tag.toLowerCase().includes(val.toLowerCase()))
     );
     setResults(filtered);
   }, []);
