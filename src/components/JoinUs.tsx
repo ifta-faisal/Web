@@ -5,19 +5,19 @@ const subTeams = [
   {
     id: 'communication',
     icon: '📡',
-    label: 'COMMUNICATION SUB-TEAM',
-    shortDesc: 'Public relations, social media & content strategy',
+    label: 'WEB & COMMUNICATION SUB-TEAM',
+    shortDesc: 'Build and maintain team website & all drone radio frequency (RF) devices',
     priority: 'OPEN',
     skills: [
       {
-        category: 'Content & PR',
-        categoryIcon: '📢',
-        tags: ['Social Media', 'Copywriting', 'PR'],
+        category: 'Web & RF Systems',
+        categoryIcon: '🌐',
+        tags: ['React', 'RF Systems', 'Telemetry'],
         bullets: [
-          'Strong written and verbal communication skills.',
-          'Experience managing social media accounts is a plus.',
-          'Interest in brand building and public outreach.',
-          'Ability to create compelling content about technology and robotics.',
+          'Design, build, and maintain the team\'s official website.',
+          'Manage and optimize long-range radio frequency (RF) communication links.',
+          'Optimize real-time telemetry and data downlink for the UAV.',
+          'Ensure reliable connection between ground station and aircraft.',
         ],
       },
     ],
@@ -132,6 +132,39 @@ const timeline = [
 // ─── Component ─────────────────────────────────────────────────────────────────
 const JoinUs = () => {
   const [expandedId, setExpandedId] = useState<string | null>(null);
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const form = e.target as HTMLFormElement;
+    const formData = new FormData(form);
+    formData.append("access_key", "b658eaef-4208-4192-9479-0cf129ab75bd");
+    formData.append("subject", `Recruitment: ${formData.get('preferred_team')}`);
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        form.reset();
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert("Error: " + data.message);
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
   const heroRef = useRef<HTMLDivElement>(null);
   const [heroVisible, setHeroVisible] = useState(false);
 
@@ -774,41 +807,55 @@ const JoinUs = () => {
                   </div>
                 </div>
               </div>
-              <form className="ju-apply-form" onSubmit={(e) => { e.preventDefault(); alert('Application submitted! We will contact you soon 🚀'); }}>
-                <div className="ju-form-row">
-                  <div className="ju-form-group">
-                    <label htmlFor="ju-fname">FIRST NAME *</label>
-                    <input id="ju-fname" type="text" placeholder="e.g. Mariam" required />
+              <form className="ju-apply-form" onSubmit={handleSubmit}>
+                {submitted ? (
+                  <div className="text-center py-10">
+                    <div className="text-4xl mb-4">🚀</div>
+                    <h3 className="text-2xl font-bold text-white mb-2">Application Sent!</h3>
+                    <p className="text-slate-400">Thank you for your interest. We will review your application and contact you soon.</p>
                   </div>
-                  <div className="ju-form-group">
-                    <label htmlFor="ju-lname">LAST NAME *</label>
-                    <input id="ju-lname" type="text" placeholder="e.g. Khan" required />
-                  </div>
-                </div>
-                <div className="ju-form-group">
-                  <label htmlFor="ju-email">UIU EMAIL *</label>
-                  <input id="ju-email" type="email" placeholder="student@uiu.ac.bd" required />
-                </div>
-                <div className="ju-form-group">
-                  <label htmlFor="ju-dept">DEPARTMENT *</label>
-                  <input id="ju-dept" type="text" placeholder="e.g. Computer Science & Engineering" required />
-                </div>
-                <div className="ju-form-group">
-                  <label htmlFor="ju-team">PREFERRED SUB-TEAM *</label>
-                  <select id="ju-team" required>
-                    <option value="">Select a sub-team...</option>
-                    {subTeams.map(t => (
-                      <option key={t.id} value={t.id}>{t.label}</option>
-                    ))}
-                  </select>
-                </div>
-                <div className="ju-form-group">
-                  <label htmlFor="ju-why">WHY DO YOU WANT TO JOIN? *</label>
-                  <textarea id="ju-why" rows={4} placeholder="Tell us what drives you..." required />
-                </div>
-                <button type="submit" className="ju-btn-submit">
-                  <span>🚀</span> SUBMIT APPLICATION
-                </button>
+                ) : (
+                  <>
+                    <div className="ju-form-row">
+                      <div className="ju-form-group">
+                        <label htmlFor="ju-fname">FIRST NAME *</label>
+                        <input id="ju-fname" name="first_name" type="text" placeholder="e.g. Mariam" required />
+                      </div>
+                      <div className="ju-form-group">
+                        <label htmlFor="ju-lname">LAST NAME *</label>
+                        <input id="ju-lname" name="last_name" type="text" placeholder="e.g. Khan" required />
+                      </div>
+                    </div>
+                    <div className="ju-form-group">
+                      <label htmlFor="ju-email">UIU EMAIL *</label>
+                      <input id="ju-email" name="email" type="email" placeholder="student@uiu.ac.bd" required />
+                    </div>
+                    <div className="ju-form-group">
+                      <label htmlFor="ju-dept">DEPARTMENT *</label>
+                      <input id="ju-dept" name="department" type="text" placeholder="e.g. Computer Science & Engineering" required />
+                    </div>
+                    <div className="ju-form-group">
+                      <label htmlFor="ju-team">PREFERRED SUB-TEAM *</label>
+                      <select id="ju-team" name="preferred_team" required>
+                        <option value="">Select a sub-team...</option>
+                        {subTeams.map(t => (
+                          <option key={t.id} value={t.id}>{t.label}</option>
+                        ))}
+                      </select>
+                    </div>
+                    <div className="ju-form-group">
+                      <label htmlFor="ju-why">WHY DO YOU WANT TO JOIN? *</label>
+                      <textarea id="ju-why" name="statement" rows={4} placeholder="Tell us what drives you..." required />
+                    </div>
+                    <button type="submit" disabled={isSubmitting} className={`ju-btn-submit ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
+                      {isSubmitting ? "Sending..." : (
+                        <>
+                          <span>🚀</span> SUBMIT APPLICATION
+                        </>
+                      )}
+                    </button>
+                  </>
+                )}
               </form>
             </div>
           </div>

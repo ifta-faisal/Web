@@ -3,9 +3,9 @@ import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, ChevronLeft, ChevronRight, Calendar, CheckCircle2 } from 'lucide-react';
 import droneVideo from '../assets/video/Drone_Fotage_1.mp4';
-import unitedGroupLogo from '../assets/images/Sponsor/UIU_Logo.png';
+import unitedGroupLogo from '../assets/images/Sponsor/united_group.png';
 import uiuLogo from '../assets/images/Sponsor/UIU_Logo.png';
-import droneImage from '../assets/images/drone.png';
+import droneImage from '../assets/images/ddrone.png';
 import droneSpecsImg from '../assets/images/drone_specs.png';
 import suaslogo from '../assets/images/suas.png';
 import recruit1 from '../assets/images/news/Recruit1.jpeg';
@@ -16,7 +16,7 @@ import mathlab from '../assets/images/Sponsor/matlab.png';
 import autodesk from '../assets/images/Sponsor/autodesk.png';
 import loopinc from '../assets/images/news/loopinc.jpg';
 import ovtidose from '../assets/images/news/ovtidose.jpg';
-import handson from '../assets/images/news/handson.jpeg';       
+import handson from '../assets/images/news/handson.jpeg';
 
 // Import New Sections
 import DroneParts from './DroneParts';
@@ -117,11 +117,6 @@ const Hero = () => {
     { name: 'SolidWorks', logo: soildwork },
     { name: 'MATLAB', logo: mathlab },
     { name: 'Autodesk', logo: autodesk },
-    { name: 'United Group B', logo: unitedGroupLogo },
-    { name: 'UIU B', logo: uiuLogo },
-    { name: 'SolidWorks B', logo: soildwork },
-    { name: 'MATLAB B', logo: mathlab },
-    { name: 'Autodesk B', logo: autodesk },
   ];
 
   const vehicleFeatures = [
@@ -313,7 +308,7 @@ const Hero = () => {
               {/* Info Cards */}
               <div className="grid grid-cols-2 gap-3 pt-2">
                 {[
-                  { title: '6 sub-teams', desc: 'Aircraft, Payload, Software, Electrical' },
+                  { title: '6 sub-teams', desc: 'Web & Communication, Software & Navigation, Electrical, Mechanical, R&D, PR & Marketing' },
                   { title: '25+ members', desc: 'Students from various engineering disciplines' },
                   { title: '2 annual intakes', desc: 'Our recruitment opens in January and November' },
                 ].map((card) => (
@@ -528,18 +523,7 @@ const Hero = () => {
                 ))}
               </ul>
 
-              {/* CTA */}
-              <Link to="/DetailedFeatures">
-                <button
-                  className="group inline-flex items-center gap-3 py-3 px-7 rounded-full font-bold text-sm tracking-wide transition-all duration-300 mt-2"
-                  style={{ background: 'linear-gradient(135deg, #f97316, #dc2626)', boxShadow: '0 6px 24px rgba(249,115,22,0.35)', fontFamily: "'Inter', sans-serif", color: '#fff' }}
-                  onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 10px 36px rgba(249,115,22,0.55)')}
-                  onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 6px 24px rgba(249,115,22,0.35)')}
-                >
-                  <span>See More Details</span>
-                  <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-                </button>
-              </Link>
+
             </div>
 
           </div>
@@ -754,7 +738,7 @@ const Hero = () => {
                   className="flex-shrink-0 mx-10 flex items-center justify-center group cursor-pointer"
                 >
                   <div
-                    className="relative p-4 rounded-lg transition-all duration-400"
+                    className="relative p-6 rounded-xl transition-all duration-400"
                     style={{
                       background: 'rgba(15,23,42,0.8)',
                       border: '1px solid rgba(255,255,255,0.08)',
@@ -769,7 +753,7 @@ const Hero = () => {
                     }}
                   >
                     <img
-                      className="h-10 md:h-14 object-contain transition-all duration-300"
+                      className="h-12 md:h-20 object-contain transition-all duration-300"
                       src={sponsor.logo}
                       alt={sponsor.name}
                       style={{ opacity: 0.9 }}

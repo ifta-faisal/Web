@@ -30,7 +30,7 @@ const Team = () => {
     { name: 'T M AL Anam', role: 'TEAM LEAD', team: 'Electrical Team', department: 'Department of CSE', image: member1, category: 'leadership', email: 'tmukit@gmail.com', linkedin: 'https://www.linkedin.com/in/tmalanam?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
     { name: 'Ahmed Junaed', role: 'CO-TEAM LEAD', team: 'Software & Navigation Team', department: 'Department of CSE', image: member2, category: 'leadership', email: 'ajunaed.work@gmail.com', linkedin: 'https://www.linkedin.com/in/ajunaed/' },
     { name: 'Fahad Rahaman', role: 'SUB TEAM LEAD', team: 'Software & Navigation Team', department: 'Department of CSE', image: member3, category: 'leadership', email: 'fahadrahman020@gmail.com', linkedin: 'https://www.linkedin.com/in/fahad-rahman-ovi?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
-    { name: 'MD Ifta Faisal', role: 'SUB TEAM LEAD', team: 'Communication Team', department: 'Department of CSE', image: member4, category: 'leadership', email: 'iftafaisal759@gmail.com', linkedin: 'https://www.linkedin.com/in/ifta-faisal-030738255?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
+    { name: 'MD Ifta Faisal', role: 'SUB TEAM LEAD', team: 'Web & Communication Team', department: 'Department of CSE', image: member4, category: 'leadership', email: 'iftafaisal759@gmail.com', linkedin: 'https://www.linkedin.com/in/ifta-faisal-030738255?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
     { name: 'Muktaderul Islam', role: 'SUB TEAM LEAD', team: 'Mechanical Team', department: 'Department of CSE', image: member5, category: 'leadership', email: 'mislam222147@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/muktaderul-islam-17a714357/' },
     { name: 'Maysoon Zahir', role: 'MEMBER', team: 'PR & Marketing Team', department: 'Department of CSE', image: member7, category: 'member', email: 'mzahir2520045@bsds.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/maysoon-zahir-79b643242?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=ios_app' },
     { name: 'Digonta Karmaker', role: 'MEMBER', team: 'Electrical Team', department: 'Department of EEE', image: member9, category: 'member', email: ' dkarmaker2330144@bseee.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/digonta-karmaker-72930a37b?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
@@ -44,16 +44,37 @@ const Team = () => {
     { name: 'Md. Biplob', role: 'MEMBER', team: 'R&D Team', department: 'Department of CSE', image: alfi, category: 'member', email: 'mbiplob223592@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/mdbiplob' },
     { name: 'Anika Noyshin Orthy', role: 'MEMBER', team: 'Electrical Team', department: 'Department of EEE', image: anika, category: 'member', email: 'aorthy2330060@bseee.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/anika-noyshin-orthy-280680242?utm_source=share_via&utm_content=profile&utm_medium=member_ios' },
     { name: 'Jahrin Binte Zahid', role: 'MEMBER', team: 'Autonomous & Navigation Team', department: 'Department of CSE', image: jarin, category: 'member', email: 'jzahid2330034@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/jahrin-binte-zahid-28bb09352?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
-    { name: 'Bahar Shahriyar', role: 'MEMBER', team: 'Communication & PR Team', department: 'Department of CSE', image: member8, category: 'member', email: ' bhr.shkh@gmail.com', linkedin: 'https://www.linkedin.com/in/bahauddin-sheik-bahar-6776ba152?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
+    { name: 'Bahar Shahriyar', role: 'MEMBER', team: 'Web & Communication Team', department: 'Department of CSE', image: member8, category: 'member', email: ' bhr.shkh@gmail.com', linkedin: 'https://www.linkedin.com/in/bahauddin-sheik-bahar-6776ba152?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app' },
     { name: 'Sumaiya Sadika', role: 'MEMBER', team: 'R&D Team', department: 'Department of CSE', image: sumaiya, category: 'member', email: 'ssadika2330926@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/sumaiya-sadika-a48b54293' },
     { name: 'Mobassir Hossain Shahad', role: 'MEMBER', team: 'Electrical Team', department: 'Department of EEE', image: shahad, category: 'member', email: 'mshahad2330059@bseee.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/mobassir-hossain-shahad-367871392' },
     { name: 'Md Shazan Mahmud Arpon', role: 'MEMBER', team: 'Software & Navigation Team', department: 'Department of CSE', image: arpon, category: 'member', email: 'marpon2410351@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/md-shazan-mahmud-arpon' },
     { name: 'Najifa Nawar', role: 'MEMBER', team: 'R&D Team', department: 'Department of CSE', image: nazifa, category: 'member', email: 'nawarnajifa32@gmail.com', linkedin: 'https://www.linkedin.com/in/najifa-nawar-b21137403?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
   ];
 
-  const filteredMembers = teamMembers.filter(member =>
-    filter === 'all' ? true : member.category === filter
-  );
+  const filteredMembers = teamMembers.filter(member => {
+    if (filter === 'all') return true;
+    if (filter === 'leadership' || filter === 'member') {
+      return member.category === filter;
+    }
+    
+    const team = member.team.toLowerCase();
+    switch (filter) {
+      case 'electronics':
+        return team.includes('electrical') || team.includes('electronics');
+      case 'mechanical':
+        return team.includes('mechanical');
+      case 'software':
+        return team.includes('software') || team.includes('nav') || team.includes('autonomous');
+      case 'communication':
+        return team.includes('communication');
+      case 'media':
+        return team.includes('pr') || team.includes('marketing');
+      case 'rd':
+        return team.includes('r&d') || team.includes('r&p');
+      default:
+        return true;
+    }
+  });
 
   return (
     <section id="team" className="min-h-screen pt-32 pb-24 bg-transparent relative overflow-hidden">
@@ -79,11 +100,16 @@ const Team = () => {
 
         {/* Filter Tabs */}
         <div className="flex justify-center mb-16">
-          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-full p-2 inline-flex items-center gap-1 sm:gap-2">
+          <div className="bg-white/5 backdrop-blur-md border border-white/10 rounded-2xl p-2 flex flex-wrap justify-center items-center gap-2 max-w-5xl">
             {[
               { id: 'all', label: 'All Team' },
               { id: 'leadership', label: 'Leadership' },
-              { id: 'member', label: 'Members' }
+              { id: 'electronics', label: 'Electrical' },
+              { id: 'mechanical', label: 'Mechanical' },
+              { id: 'software', label: 'Software & Nav' },
+              { id: 'rd', label: 'R&D' },
+              { id: 'communication', label: 'Web & Communication' },
+              { id: 'media', label: 'PR & Marketing' },
             ].map((tab) => (
               <button
                 key={tab.id}

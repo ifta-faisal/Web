@@ -9,6 +9,7 @@ const Contact = () => {
     message: "",
   });
   const [submitted, setSubmitted] = useState(false);
+  const [isSubmitting, setIsSubmitting] = useState(false);
 
   const handleInputChange = (
     e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
@@ -19,14 +20,36 @@ const Contact = () => {
     });
   };
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    console.log("Form submitted:", formData);
-    setSubmitted(true);
-    setTimeout(() => {
-      setFormData({ name: "", email: "", subject: "", message: "" });
-      setSubmitted(false);
-    }, 3000);
+    setIsSubmitting(true);
+
+    const form = e.target as HTMLFormElement;
+    const formDataToSubmit = new FormData(form);
+    formDataToSubmit.append("access_key", "b658eaef-4208-4192-9479-0cf129ab75bd");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formDataToSubmit,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        setFormData({ name: "", email: "", subject: "", message: "" });
+        setTimeout(() => {
+          setSubmitted(false);
+        }, 5000);
+      } else {
+        alert("Error: " + data.message);
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
   };
 
   const contactInfo = [
@@ -234,11 +257,18 @@ const Contact = () => {
 
                   <button
                     type="submit"
-                    className="btn-primary w-full group"
+                    disabled={isSubmitting}
+                    className={`btn-primary w-full group ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
                   >
-                    <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
-                    Send Message
-                    <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                    {isSubmitting ? (
+                      "Sending..."
+                    ) : (
+                      <>
+                        <Send className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                        Send Message
+                        <ArrowRight className="w-4 h-4 sm:w-5 sm:h-5 group-hover:translate-x-1 transition-transform" />
+                      </>
+                    )}
                   </button>
                 </form>
               )}

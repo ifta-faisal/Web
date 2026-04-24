@@ -21,6 +21,19 @@
     position: relative;
   }
 
+  /* Utility to properly hide scrollbar and prevent scroll */
+  html.no-scroll, body.no-scroll {
+    overflow: hidden !important;
+    height: 100% !important;
+    width: 100% !important;
+    position: relative;
+    scrollbar-width: none !important; /* Firefox */
+    -ms-overflow-style: none !important; /* IE/Edge */
+  }
+  .no-scroll::-webkit-scrollbar {
+    display: none !important; /* Chrome/Safari/Webkit */
+  }
+
   h1, h2, h3, h4, h5 {
     font-family: 'Bebas Neue', 'Impact', sans-serif;
     letter-spacing: 0.04em;

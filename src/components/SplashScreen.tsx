@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useLayoutEffect } from 'react';
 import bgVideoUrl from '../assets/video/Drone_Fotage_1.mp4';
 
 const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
@@ -6,6 +6,23 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
   const [progress, setProgress] = useState(0);
 
   const logoUrl = new URL('../assets/images/logo/Logo UART SVG.svg', import.meta.url).href;
+
+  // ─── Loading Configuration ───────────────────────────────────────
+  // Increase delay or decrease step size to SLOW DOWN loading
+  // Decrease delay or increase step size to SPEED UP loading
+  const LOADING_SPEED_DELAY = 20;   // ms between updates
+  const MIN_STEP = 0.8;             // minimum increment
+  const RANDOM_FACTOR = 1.8;        // random additional increment
+  // ─── Scroll Lock ────────────────────────────────────────────────
+  useLayoutEffect(() => {
+    document.body.classList.add('no-scroll');
+    document.documentElement.classList.add('no-scroll');
+    return () => {
+      document.body.classList.remove('no-scroll');
+      document.documentElement.classList.remove('no-scroll');
+    };
+  }, []);
+  // ────────────────────────────────────────────────────────────────
 
   // Auto-progress the loading bar and enter when complete
   useEffect(() => {
@@ -20,9 +37,9 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
           }, 600);
           return 100;
         }
-        return prev + Math.random() * 1.5 + 0.8;
+        return prev + Math.random() * RANDOM_FACTOR + MIN_STEP;
       });
-    }, 80);
+    }, LOADING_SPEED_DELAY);
     return () => clearInterval(interval);
   }, []);
 

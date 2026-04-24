@@ -134,12 +134,26 @@ const Mentors = () => {
                         <p className="ju-reveal text-white/60 text-sm font-semibold tracking-widest uppercase">Position Open</p>
                       </div>
                     ) : (
-                      <div className="relative overflow-hidden" style={{ minHeight: '380px' }}>
+                      <div className="relative overflow-hidden bg-[#020617]" style={{ minHeight: '380px' }}>
+                        {/* Unified background glow for leadership cards */}
+                        <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,#1e3a8a_0%,transparent_75%)] opacity-30" />
+
                         <img
                           src={(person as typeof featured[1]).image}
                           alt={person.name}
-                          className="ju-reveal w-full h-full object-cover object-top absolute inset-0 group-hover:scale-105 transition-transform duration-700"
-                          style={{ objectPosition: 'center 0%' }}
+                          className={`ju-reveal w-full h-full absolute inset-0 transition-transform duration-700 ${person.id === 'director' || person.id === 'vc-advisor'
+                              ? 'object-contain scale-[0.85] group-hover:scale-[0.9] translate-y-2'
+                              : 'object-cover object-top group-hover:scale-105'
+                            }`}
+                          style={{
+                            objectPosition: (person.id === 'director' || person.id === 'vc-advisor') ? 'center center' : 'center 0%',
+                            maskImage: (person.id === 'director' || person.id === 'vc-advisor')
+                              ? 'radial-gradient(circle at 50% 45%, black 20%, transparent 90%)'
+                              : 'none',
+                            WebkitMaskImage: (person.id === 'director' || person.id === 'vc-advisor')
+                              ? 'radial-gradient(circle at 50% 45%, black 20%, transparent 90%)'
+                              : 'none',
+                          }}
                         />
                       </div>
                     )}

@@ -1,5 +1,5 @@
-import React from 'react';
-import { Calendar, User, Clock, ArrowRight, BookOpen, Share2 } from 'lucide-react';
+import React, { useState } from 'react';
+import { Calendar, User, Clock, ArrowRight, BookOpen, Share2, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
 
 // Asset Imports
@@ -10,6 +10,42 @@ import droneImg from '../assets/images/drone1.jpeg';
 import missionImg from '../assets/images/DetailedFeatures/mission_planning_ui.png';
 
 const Blog = () => {
+  const [email, setEmail] = useState('');
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  const [submitted, setSubmitted] = useState(false);
+
+  const handleSubmit = async (e: React.FormEvent) => {
+    e.preventDefault();
+    setIsSubmitting(true);
+
+    const formData = new FormData();
+    formData.append("access_key", "b658eaef-4208-4192-9479-0cf129ab75bd");
+    formData.append("email", email);
+    formData.append("subject", "New Blog Newsletter Subscription");
+    formData.append("from_newsletter", "true");
+
+    try {
+      const response = await fetch("https://api.web3forms.com/submit", {
+        method: "POST",
+        body: formData,
+      });
+
+      const data = await response.json();
+
+      if (data.success) {
+        setSubmitted(true);
+        setEmail('');
+        setTimeout(() => setSubmitted(false), 5000);
+      } else {
+        alert("Error: " + data.message);
+      }
+    } catch (error) {
+      alert("Something went wrong. Please try again.");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   const logoUrl = new URL('../assets/images/logo/Logo UART SVG.svg', import.meta.url).href;
 
   const posts = [
@@ -95,7 +131,7 @@ const Blog = () => {
 
   return (
     <div className="min-h-screen bg-transparent text-white pt-32 pb-24 relative overflow-hidden">
-      
+
       {/* Background Atmosphere */}
       <div className="absolute top-0 right-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-primary rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" />
       <div className="absolute bottom-0 left-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-accent rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" style={{ animationDelay: '2s' }} />
@@ -115,21 +151,21 @@ const Blog = () => {
         {/* Featured Posts Grid */}
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
           {posts.map((post, i) => (
-            <div 
+            <div
               key={post.id}
               className="group relative flex flex-col h-full ju-reveal-scale"
               style={{ animationDelay: `${i * 100}ms` }}
             >
               {/* Backglow */}
               <div className={`absolute inset-0 bg-gradient-to-br ${post.gradient} rounded-3xl opacity-0 group-hover:opacity-100 blur-xl transition-opacity duration-500 pointer-events-none`} />
-              
+
               <div className="card-modern rounded-3xl overflow-hidden h-full flex flex-col group-hover:border-primary/30 transition-all duration-300">
                 {/* Article Image Container */}
                 <div className="relative h-56 overflow-hidden">
-                  <img 
-                    src={post.image} 
-                    alt={post.title} 
-                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75 group-hover:brightness-100" 
+                  <img
+                    src={post.image}
+                    alt={post.title}
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75 group-hover:brightness-100"
                   />
                   <div className="absolute top-4 left-4">
                     <span className="px-3 py-1 bg-black/60 backdrop-blur-md border border-white/10 text-white text-[10px] font-bold tracking-[0.2em] uppercase rounded-full">
@@ -182,16 +218,30 @@ const Blog = () => {
             <p className="text-slate-400 max-w-lg mx-auto mb-8">
               Join our mailing list to receive monthly technical deep-dives and team updates directly in your inbox.
             </p>
-            <div className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto">
-              <input 
-                type="email" 
-                placeholder="Enter your email" 
-                className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-full text-white focus:outline-none focus:border-primary transition-colors text-sm"
-              />
-              <button className="btn-primary px-8 py-4 whitespace-nowrap">
-                Subscribe Now
-              </button>
-            </div>
+            {submitted ? (
+              <div className="flex flex-col items-center gap-2 text-primary">
+                <CheckCircle className="w-10 h-10 mb-2 animate-bounce" />
+                <span className="font-bold text-xl uppercase tracking-widest">Subscription Successful!</span>
+              </div>
+            ) : (
+              <form onSubmit={handleSubmit} className="flex flex-col sm:flex-row items-center justify-center gap-3 max-w-md mx-auto w-full">
+                <input
+                  type="email"
+                  placeholder="Enter your email"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="w-full px-6 py-4 bg-white/5 border border-white/10 rounded-full text-white focus:outline-none focus:border-primary transition-colors text-sm"
+                  required
+                />
+                <button 
+                  type="submit" 
+                  disabled={isSubmitting}
+                  className={`btn-primary px-8 py-4 whitespace-nowrap ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}
+                >
+                  {isSubmitting ? "Sending..." : "Subscribe Now"}
+                </button>
+              </form>
+            )}
           </div>
         </div>
 

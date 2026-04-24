@@ -140,7 +140,7 @@ const Header = () => {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`md:hidden fixed inset-0 z-40 transition-opacity duration-300 ${
+        className={`md:hidden fixed inset-0 z-[60] transition-opacity duration-300 ${
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         style={{ background: 'rgba(2,6,23,0.7)', backdropFilter: 'blur(8px)' }}
@@ -167,9 +167,10 @@ const Header = () => {
             </div>
             <button
               onClick={() => setIsMenuOpen(false)}
-              className="p-2 rounded text-gray-400 hover:text-white transition-colors"
+              className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all"
+              style={{ border: '1px solid rgba(249,115,22,0.3)' }}
             >
-              <X className="w-5 h-5" />
+              <X className="w-6 h-6" />
             </button>
           </div>
 
