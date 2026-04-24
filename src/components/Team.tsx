@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { GraduationCap, Mail, Linkedin, Award, Users2 } from 'lucide-react';
+import { GraduationCap, Mail, Linkedin, Award, Users, Trophy, ChevronRight, User } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 import member1 from '../assets/images/Team/member1.jpeg';
 import member2 from '../assets/images/Team/member2.jpg';

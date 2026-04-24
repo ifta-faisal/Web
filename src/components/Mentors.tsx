@@ -1,4 +1,5 @@
-import { GraduationCap, Mail, Linkedin, Award, BookOpen, UserPlus } from 'lucide-react';
+import React, { useState, useEffect } from 'react';
+import { GraduationCap, Mail, Linkedin, Award, Users, Trophy, ChevronRight, User } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
 
 import mentor1 from '../assets/images/Advisor/Mentor1.jpeg';
