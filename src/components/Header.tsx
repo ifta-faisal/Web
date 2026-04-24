@@ -159,12 +159,11 @@ const Header = () => {
         >
           {/* Mobile Menu Header */}
           <div className="p-6 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(249,115,22,0.15)' }}>
-            <div className="flex items-center space-x-3">
-              <img src={logoUrl} alt="UART" loading="lazy" className="w-9 h-9 rounded-sm object-cover" />
-              <span className="font-bold text-lg text-primary uppercase tracking-wide" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
+            <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center">
+              <span className="font-black text-2xl text-primary uppercase tracking-tighter" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                 UART
               </span>
-            </div>
+            </Link>
             <button
               onClick={() => setIsMenuOpen(false)}
               className="p-2 rounded-lg text-gray-400 hover:text-white hover:bg-white/10 transition-all"
