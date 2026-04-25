@@ -211,6 +211,13 @@ const JoinUs = () => {
                       radial-gradient(circle at 20% 80%, rgba(220,38,38,0.08) 0%, transparent 60%);
           overflow: hidden;
         }
+        @media (max-width: 640px) {
+          .ju-hero {
+            min-height: auto;
+            padding-top: 7rem;
+            padding-bottom: 8rem;
+          }
+        }
         /* Particle dots */
         .ju-hero-particles { position: absolute; inset: 0; pointer-events: none; }
         .ju-particle {
