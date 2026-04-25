@@ -176,7 +176,7 @@ const Hero = () => {
         />
 
         {/* Content – bottom-left anchored like SpaceX / FlyShot */}
-        <div className="relative z-20 flex flex-col mt-auto pt-32 pb-24 sm:pb-36 md:pb-44 lg:pb-56 px-5 sm:px-10 md:px-14 lg:px-20 max-w-7xl mx-auto w-full">
+        <div className="relative z-20 flex flex-col mt-auto pt-32 pb-8 sm:pb-16 md:pb-20 lg:pb-24 px-5 sm:px-10 md:px-14 lg:px-20 max-w-7xl mx-auto w-full">
 
           {/* Mission tag */}
           <div className="hero-animate-tag flex items-center gap-3 mb-3">
@@ -188,7 +188,7 @@ const Hero = () => {
 
           {/* Main headline */}
           <h1
-            className="text-[clamp(1.5rem,5vw,4rem)] text-white leading-[1.05] mb-1 max-w-4xl"
+            className="text-[clamp(1.25rem,4vw,3rem)] text-white leading-[1.05] mb-1 max-w-4xl"
             style={{ fontFamily: "'Inter', sans-serif", fontWeight: 800, letterSpacing: '-0.02em' }}
           >
             <div className="block w-full mb-1">
