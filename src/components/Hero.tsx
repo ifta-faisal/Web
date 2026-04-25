@@ -176,7 +176,7 @@ const Hero = () => {
         />
 
         {/* Content – bottom-left anchored like SpaceX / FlyShot */}
-        <div className="relative z-20 flex flex-col mt-auto pt-32 pb-4 sm:pb-8 md:pb-12 lg:pb-16 px-5 sm:px-10 md:px-14 lg:px-20 max-w-7xl mx-auto w-full">
+        <div className="relative z-20 flex flex-col my-auto sm:mt-auto sm:mb-0 pt-16 sm:pt-32 pb-4 sm:pb-8 md:pb-12 lg:pb-16 px-5 sm:px-10 md:px-14 lg:px-20 max-w-7xl mx-auto w-full">
 
           {/* Mission tag */}
           <div className="hero-animate-tag flex items-center gap-3 mb-3">
