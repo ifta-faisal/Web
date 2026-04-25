@@ -182,7 +182,7 @@ const Hero = () => {
           <div className="hero-animate-tag flex items-center gap-3 mb-3">
             <span className="block w-2 h-2 rounded-full" style={{ background: '#FFD4A3', boxShadow: '0 0 10px #f97316, 0 0 20px rgba(249, 115, 22, 0.4)' }} />
             <span className="text-xs sm:text-sm font-bold tracking-[0.22em] uppercase" style={{ color: '#f97316', fontFamily: "'Inter', sans-serif" }}>
-              UIU Aerial Robotics Team&nbsp;/&nbsp;SUAS 2026
+              UIU Aerial Robotics Team&nbsp;
             </span>
           </div>
 
