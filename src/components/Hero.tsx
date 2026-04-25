@@ -499,7 +499,7 @@ const Hero = () => {
               {/* Eyebrow */}
               <div className="flex items-center gap-3">
                 <div className="w-8 h-[2px] rounded-full" style={{ background: '#f97316' }} />
-                <span className="text-xs font-bold tracking-[0.3em] uppercase" style={{ color: '#f97316', fontFamily: "'Inter', sans-serif" }}>UART · MK-1</span>
+                <span className="text-xs font-bold tracking-[0.3em] uppercase" style={{ color: '#f97316', fontFamily: "'Inter', sans-serif" }}>UART</span>
               </div>
 
               <h3 className="text-2xl sm:text-3xl font-black text-white"
@@ -549,7 +549,7 @@ const Hero = () => {
             <p className="italic text-slate-400 text-sm sm:text-base max-w-2xl mx-auto leading-relaxed"
               style={{ fontFamily: "'Inter', sans-serif" }}>
               Every gram optimized for endurance. Every line of code written for autonomy.
-              UART's MK-1 is engineered to lead both in the air and on the scoreboard.
+              UART's drone is engineered to lead both in the air and on the scoreboard.
             </p>
           </div>
 
@@ -612,7 +612,7 @@ const Hero = () => {
                 style={{ background: 'radial-gradient(ellipse at 50% 55%, rgba(249,115,22,0.14) 0%, transparent 68%)', filter: 'blur(24px)' }} />
               <img
                 src={droneImage}
-                alt="UART Drone MK-1 Specs View"
+                alt="UART Drone Specs View"
                 className="relative z-10 w-full"
                 style={{
                   maxWidth: '520px',
