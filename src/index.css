@@ -380,7 +380,7 @@
 
   /* ══ PRIMARY BUTTON — Bollsket Style ══ */
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-3 px-7 py-3 font-bold text-white tracking-widest uppercase transition-all duration-300 relative overflow-hidden;
+    @apply inline-flex items-center justify-center gap-3 px-7 py-3 font-bold text-white tracking-widest uppercase transition-all duration-300 relative overflow-hidden z-0;
     font-family: 'Bebas Neue', sans-serif;
     font-size: 1.1rem;
     letter-spacing: 0.12em;
@@ -389,7 +389,7 @@
   }
   .btn-primary::before {
     content: '';
-    @apply absolute inset-0 transition-opacity duration-300 opacity-0;
+    @apply absolute inset-0 transition-opacity duration-300 opacity-0 -z-10;
     background: linear-gradient(135deg, #ea580c, #dc2626);
   }
   .btn-primary:hover::before { opacity: 1; }
