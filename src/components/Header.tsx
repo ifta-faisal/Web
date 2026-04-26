@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { Menu, X, ChevronRight, ChevronDown, Search as SearchIcon } from 'lucide-react';
 import Search from './Search';
@@ -11,6 +11,15 @@ const Header = () => {
   const [lastScrollY, setLastScrollY] = useState(0);
   const [projectsOpen, setProjectsOpen] = useState(false);
   const [dropdownOpen, setDropdownOpen] = useState(false);
+  const closeTimer = useRef<ReturnType<typeof setTimeout> | null>(null);
+
+  const openDropdown = () => {
+    if (closeTimer.current) clearTimeout(closeTimer.current);
+    setDropdownOpen(true);
+  };
+  const scheduleClose = () => {
+    closeTimer.current = setTimeout(() => setDropdownOpen(false), 120);
+  };
 
   const logoUrl = new URL('../assets/images/logo/Logo UART SVG.svg', import.meta.url).href;
 
@@ -84,8 +93,8 @@ const Header = () => {
                     <div
                       key={item.name}
                       className="relative"
-                      onMouseEnter={() => setDropdownOpen(true)}
-                      onMouseLeave={() => setDropdownOpen(false)}
+                      onMouseEnter={openDropdown}
+                      onMouseLeave={scheduleClose}
                     >
                       <NavLink
                         to={item.to}
