@@ -19,6 +19,7 @@ import Gallery from './components/Gallery';
 import PrivacyPolicy from './components/PrivacyPolicy';
 import CookiePolicy from './components/CookiePolicy';
 import TermsofService from './components/TermsofService';
+import ScrollToTopButton from './components/ScrollToTopButton';
 
 const REVEAL_CLASSES = [
   '.ju-reveal:not(.ju-visible)',
@@ -85,6 +86,7 @@ const App = () => {
         <Route path="TermsofService" element={<TermsofService />} />
       </Routes>
       <Footer />
+      <ScrollToTopButton />
       </div>
     </div>
   );
