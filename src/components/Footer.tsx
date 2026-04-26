@@ -2,6 +2,7 @@ import React from 'react';
 import { Mail, Phone, MapPin, Youtube, Facebook, Instagram, ChevronRight } from 'lucide-react';
 import Logo from '../assets/images/logo/UART_Logo.png';
 import { Link } from 'react-router-dom';
+import { projectsData } from '../data/projectsData';
 
 // Particle config for footer atmosphere
 const FOOTER_PARTICLES = Array.from({ length: 16 }, (_, i) => ({
@@ -23,12 +24,11 @@ const Footer = () => {
     { name: 'Blog', href: '/blog' },
   ];
 
-  const projects = [
-    { name: 'Endurance UAV', href: '/projects' },
-    { name: 'Long Range Drone', href: '/projects' },
-    { name: 'Surveillance UAV', href: '/projects' },
-    { name: 'Defensive Drone', href: '/projects' },
-  ];
+  // Use first 5 projects from projectsData with correct deep-link hrefs
+  const projects = projectsData.slice(0, 5).map(p => ({
+    name: p.name,
+    href: `/project/${p.id}`,
+  }));
 
   return (
     <footer style={{ background: '#020617' }} className="text-white relative overflow-hidden">
