@@ -4,15 +4,9 @@ import { useSearchParams } from 'react-router-dom';
 import BackToHome from './BackToHome';
 
 // ===== Import Local Images =====
-import project1 from "../assets/images/Project/project1.jpeg";
-import project2 from "../assets/images/Project/project2.jpeg";
-import project3 from "../assets/images/Project/project3.jpeg";
-import project4 from "../assets/images/Project/project4.jpeg";
-import project5 from "../assets/images/Project/project5.jpeg";
-import project6 from "../assets/images/Project/project6.jpeg";
-import project7 from "../assets/images/Project/project7.jpeg";
-import project8 from "../assets/images/Project/project8.jpeg";
-import project9 from "../assets/images/drone2.jpeg";
+// Moved to src/data/projectsData.ts
+import { projectsData } from '../data/projectsData';
+import { Link } from 'react-router-dom';
 
 const Projects = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -22,99 +16,7 @@ const Projects = () => {
   const targetId = searchParams.get('id');
   const isFocused = !!targetId;
 
-  const projects = [
-    {
-      id: 1,
-      name: "Endurance UAV",
-      description: "A high-performance UAV designed for endurance missions.",
-      image: project1,
-      category: "research",
-      year: "2024",
-      status: "Active",
-      tags: ["Mapping", "Autonomous"]
-    },
-    {
-      id: 2,
-      name: "Racing Drone",
-      description: "Compact and efficient aerial system for research purposes.",
-      image: project2,
-      category: "research",
-      year: "2024",
-      status: "Active",
-      tags: ["Racing", "Video Graphy"]
-    },
-    {
-      id: 3,
-      name: "Long Range Drone",
-      description: "Autonomous mapping drone with advanced navigation.",
-      image: project3,
-      category: "mapping",
-      year: "2023",
-      status: "Completed",
-      tags: ["AI Navigation", "Long Range"]
-    },
-    {
-      id: 4,
-      name: "Customize Dead Cat",
-      description: "Lightweight drone built for environmental monitoring.",
-      image: project4,
-      category: "environmental",
-      year: "2024",
-      status: "Active",
-      tags: ["Environmental", "Monitoring"]
-    },
-    {
-      id: 5,
-      name: "Surveillance UAV",
-      description: "Experimental VTOL platform for vertical take-off operations.",
-      image: project5,
-      category: "experimental",
-      year: "2023",
-      status: "Testing",
-      tags: ["Long Range", "Experimental"]
-    },
-    {
-      id: 6,
-      name: "Defensive Drone",
-      description: "AI-integrated drone for real-time data processing.",
-      image: project6,
-      category: "ai",
-      year: "2024",
-      status: "Active",
-      tags: ["AI", "Real-time"]
-    },
-    {
-      id: 7,
-      name: "Fixed Wing ",
-
-      description: "Fixed-wing UAV optimized for long-range surveillance.",
-      image: project7,
-      category: "surveillance",
-      year: "2023",
-      status: "Completed",
-      tags: ["Fixed-wing", "Surveillance"]
-    },
-    {
-      id: 8,
-      name: "Workshop",
-      description: "UART member taking Workshop about UAV.",
-      image: project8,
-      category: "Workshop",
-      year: "2024",
-      status: "Testing",
-      tags: ["Competition", "Prototype"]
-    },
-    {
-      id: 9,
-      name: "Multifunctional Long range Drone",
-      description: "Compact prototype drone for competition testing.",
-      image: project9,
-      category: "Rescue",
-      year: "2025",
-      status: "Completed",
-      tags: ["Rescue", "Long Range"]
-    },
-  ];
+  const projects = projectsData;
 
   const categories = [
     { id: 'all', name: 'All Projects', icon: Rocket },
@@ -188,14 +90,14 @@ const Projects = () => {
           )}
         </div>
 
-        {/* Projects Grid */}
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
           {filteredProjects.map((project) => (
-            <div
+            <Link
+              to={`/project/${project.id}`}
               key={project.id}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
-              className="group bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-1 sm:hover:-translate-y-2"
+              className="group block bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-1 sm:hover:-translate-y-2"
             >
               {/* Image Container */}
               <div className="relative h-48 sm:h-56 overflow-hidden">
@@ -254,7 +156,7 @@ const Projects = () => {
 
               {/* Bottom Accent Line */}
               <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-[#f97316] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
-            </div>
+            </Link>
           ))}
         </div>
 

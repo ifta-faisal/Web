@@ -7,6 +7,7 @@ import Footer from './components/Footer';
 import Hero from './components/Hero';
 import Team from './components/Team';
 import Projects from './components/Projects';
+import ProjectDetail from './components/ProjectDetail';
 import Contact from './components/Contact';
 import JoinUs from './components/JoinUs';
 import Mentors from './components/Mentors';
@@ -71,6 +72,7 @@ const App = () => {
         <Route path="/blog" element={<Blog />} />
         <Route path="/team" element={<Team />} />
         <Route path="/projects" element={<Projects />} />
+        <Route path="/project/:id" element={<ProjectDetail />} />
         <Route path="/contact" element={<Contact />} />
         <Route path="/Gallery" element={<Gallery />} />
         <Route path="/sponsor-proposal" element={<SponsorProposal />} />
