@@ -95,7 +95,7 @@ const Achievements = () => {
                     {/* Gradient overlay on hover */}
                     <div
                       className="absolute inset-0 opacity-0 group-hover:opacity-100 transition-opacity duration-400 pointer-events-none"
-                      style={{ background: 'linear-gradient(to bottom, transparent 30%, rgba(249,115,22,0.5) 100%)' }}
+                      style={{ background: 'linear-gradient(to bottom, transparent 70%, rgba(249,115,22,0.2) 100%)' }}
                     />
                     {/* Glowing icon in corner */}
                     <div
