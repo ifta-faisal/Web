@@ -10,6 +10,7 @@ const Header = () => {
   const [isTop, setIsTop] = useState(true);
   const [lastScrollY, setLastScrollY] = useState(0);
   const [projectsOpen, setProjectsOpen] = useState(false);
+  const [dropdownOpen, setDropdownOpen] = useState(false);
 
   const logoUrl = new URL('../assets/images/logo/Logo UART SVG.svg', import.meta.url).href;
 
@@ -80,9 +81,15 @@ const Header = () => {
               <nav className="flex items-center space-x-3 xl:space-x-5">
                 {navItems.map((item) =>
                   item.hasDropdown ? (
-                    <div key={item.name} className="relative group">
+                    <div
+                      key={item.name}
+                      className="relative"
+                      onMouseEnter={() => setDropdownOpen(true)}
+                      onMouseLeave={() => setDropdownOpen(false)}
+                    >
                       <NavLink
                         to={item.to}
+                        onClick={() => setDropdownOpen(false)}
                         className={({ isActive }) =>
                           `relative flex items-center gap-1 tracking-[0.1em] xl:tracking-[0.18em] font-medium transition-all duration-300 text-[11px] xl:text-[12px] whitespace-nowrap pb-1 uppercase
                           ${isActive ? 'text-primary' : 'text-slate-300 hover:text-white'}`
@@ -92,10 +99,10 @@ const Header = () => {
                         {({ isActive }) => (
                           <>
                             {item.name}
-                            <ChevronDown className="w-3 h-3 group-hover:rotate-180 transition-transform duration-300" />
+                            <ChevronDown className={`w-3 h-3 transition-transform duration-300 ${dropdownOpen ? 'rotate-180' : ''}`} />
                             <span
                               className={`absolute bottom-0 h-[2px] transition-all duration-300 ease-out rounded-full ${
-                                isActive ? 'left-0 right-0' : 'left-1/2 right-1/2 group-hover:left-0 group-hover:right-0'
+                                isActive ? 'left-0 right-0' : 'left-1/2 right-1/2'
                               }`}
                               style={{ background: '#f97316' }}
                             />
@@ -104,19 +111,28 @@ const Header = () => {
                       </NavLink>
                       {/* Dropdown */}
                       <div
-                        className="absolute top-full left-0 mt-3 w-56 opacity-0 group-hover:opacity-100 pointer-events-none group-hover:pointer-events-auto transition-all duration-300 translate-y-2 group-hover:translate-y-0"
                         style={{
+                          position: 'absolute',
+                          top: '100%',
+                          left: 0,
+                          marginTop: '12px',
+                          width: '224px',
                           background: 'rgba(10,15,35,0.97)',
                           backdropFilter: 'blur(20px)',
                           border: '1px solid rgba(249,115,22,0.2)',
                           borderRadius: '12px',
                           boxShadow: '0 20px 60px rgba(0,0,0,0.6)',
                           zIndex: 100,
+                          opacity: dropdownOpen ? 1 : 0,
+                          transform: dropdownOpen ? 'translateY(0)' : 'translateY(8px)',
+                          pointerEvents: dropdownOpen ? 'auto' : 'none',
+                          transition: 'opacity 0.25s ease, transform 0.25s ease',
                         }}
                       >
                         <div className="p-2">
                           <Link
                             to="/projects"
+                            onClick={() => setDropdownOpen(false)}
                             className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs text-primary font-bold uppercase tracking-widest hover:bg-primary/10 transition-colors mb-1"
                             style={{ fontFamily: "'Inter', sans-serif", borderBottom: '1px solid rgba(249,115,22,0.15)' }}
                           >
@@ -126,6 +142,7 @@ const Header = () => {
                             <Link
                               key={project.id}
                               to={`/project/${project.id}`}
+                              onClick={() => setDropdownOpen(false)}
                               className="flex items-center gap-2 px-3 py-2 rounded-lg text-[11px] text-slate-300 hover:text-white hover:bg-white/5 transition-colors group/item"
                               style={{ fontFamily: "'Inter', sans-serif" }}
                             >
