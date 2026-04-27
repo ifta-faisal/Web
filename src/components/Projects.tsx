@@ -120,11 +120,24 @@ const Projects = () => {
                 </div>
 
                 {/* Year Badge */}
-                <div className="absolute top-3 right-3 sm:top-4 sm:right-4">
+                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex flex-col items-end gap-1.5">
                   <div className="flex items-center space-x-1 bg-primary/20 backdrop-blur-sm border border-primary/30 px-2 py-1 rounded text-primary text-[9px] sm:text-xs font-semibold">
                     <Calendar className="w-3 h-3" />
                     <span>{project.year}</span>
                   </div>
+                  {project.isLatest && (
+                    <div
+                      className="flex items-center gap-1 px-2 py-1 rounded text-[9px] sm:text-xs font-bold tracking-wide"
+                      style={{
+                        background: 'linear-gradient(135deg, #f97316, #dc2626)',
+                        color: '#fff',
+                        boxShadow: '0 0 12px rgba(249,115,22,0.7)',
+                        animation: 'pulse 2s cubic-bezier(0.4,0,0.6,1) infinite',
+                      }}
+                    >
+                      ✦ LATEST
+                    </div>
+                  )}
                 </div>
 
                 {/* Hover Overlay */}

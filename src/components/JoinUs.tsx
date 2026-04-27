@@ -605,9 +605,8 @@ const JoinUs = () => {
               <span className="ju-hero-highlight">IS RECRUITING!</span>
             </h1>
             <p className="ju-reveal ju-hero-desc">
-              Are you enthusiastic about Aerial Robotics, Drone Technology, Autonomous Systems, Research, and exploring the future of aerial innovation? This is the perfect opportunity for you!
-              We are looking for dedicated individuals who are passionate about contributing to the continuous development of our aerial robotics platforms. Join us as we build and improve cutting-edge drones for research, innovation, and competitive challenges.
-              We are excited to form a new core team for upcoming events and projects. Students from **all departments at UIU** are encouraged to apply and bring their unique skills and ideas to the team. Be part of a collaborative environment where you can learn, experiment, and push the boundaries of aerial robotics!
+              Are you passionate about Aerial Robotics, Drone Technology, Autonomous Systems, and Research? Curious about shaping the future of aerial innovation? This is your chance to get involved!
+              We are looking for dedicated and motivated individuals to join our team and contribute to the continuous development of advanced aerial robotics platforms. Together, we design, build, and optimize cutting-edge drones for research, innovation, and competitive challenges.
             </p>
             <div className="ju-hero-actions">
               <a href="#apply" className="ju-btn-primary"><span>🚀</span> APPLY NOW</a>

@@ -29,18 +29,20 @@ const ProjectDetail = () => {
       {/* Hero Section */}
       <div className="relative h-[60vh] sm:h-[70vh] md:h-[80vh] flex items-center justify-center">
         <div className="absolute inset-0 z-0">
-          <img 
-            src={project.image} 
-            alt={project.name} 
+          <img
+            src={project.image}
+            alt={project.name}
             className="w-full h-full object-cover filter brightness-[0.3]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
         </div>
-        
+
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          <div className="inline-block px-3 py-1 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full text-primary text-xs sm:text-sm font-semibold mb-6 uppercase tracking-wider">
-            Our Latest Vehicle
-          </div>
+          {project.isLatest && (
+            <div className="inline-block px-3 py-1 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full text-primary text-xs sm:text-sm font-semibold mb-6 uppercase tracking-wider">
+              Our Latest Vehicle
+            </div>
+          )}
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-white mb-6 uppercase tracking-tight">
             {project.name}
           </h1>
@@ -57,7 +59,7 @@ const ProjectDetail = () => {
 
       {/* Main Content Area */}
       <div id="details" className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-16 sm:py-24 relative z-10">
-        
+
         {/* Description Section */}
         <div className="mb-20">
           <h4 className="text-primary font-bold tracking-widest uppercase mb-2 text-sm">About</h4>
@@ -99,10 +101,10 @@ const ProjectDetail = () => {
             </h2>
             <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">A little bit of hype never hurt anybody...</p>
             <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-gray-700/50 group">
-              <iframe 
-                src={project.videoUrl} 
+              <iframe
+                src={project.videoUrl}
                 title={`${project.name} Video`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen
                 className="absolute inset-0 w-full h-full object-cover"
               ></iframe>
@@ -119,8 +121,8 @@ const ProjectDetail = () => {
             <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
               {project.media.map((imgUrl, index) => (
                 <div key={index} className="relative group overflow-hidden rounded-xl aspect-[4/3] bg-gray-900 border border-gray-800">
-                  <img 
-                    src={imgUrl} 
+                  <img
+                    src={imgUrl}
                     alt={`${project.name} Media ${index + 1}`}
                     className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                   />
@@ -142,10 +144,10 @@ const ProjectDetail = () => {
             </h2>
             <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
               {project.docs.map((doc, index) => (
-                <a 
+                <a
                   key={index}
-                  href={doc.url} 
-                  target="_blank" 
+                  href={doc.url}
+                  target="_blank"
                   rel="noopener noreferrer"
                   className="flex items-center gap-2 px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white hover:border-primary hover:bg-primary/10 transition-all"
                 >
@@ -154,10 +156,10 @@ const ProjectDetail = () => {
                   <ExternalLink className="w-4 h-4 ml-2 text-gray-500" />
                 </a>
               ))}
-              <Link to="/blog" className="flex items-center gap-2 px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white hover:border-primary hover:bg-primary/10 transition-all">
+              {/* <Link to="/blog" className="flex items-center gap-2 px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white hover:border-primary hover:bg-primary/10 transition-all">
                 <FileText className="w-5 h-5 text-primary" />
                 <span className="font-semibold">Blogs!</span>
-              </Link>
+              </Link> */}
             </div>
           </div>
         )}

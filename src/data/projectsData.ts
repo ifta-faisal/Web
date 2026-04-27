@@ -7,6 +7,7 @@ import project6 from "../assets/images/Project/project6.jpeg";
 import project7 from "../assets/images/Project/project7.jpeg";
 import project8 from "../assets/images/Project/project8.jpeg";
 import project9 from "../assets/images/drone2.jpeg";
+import project10 from "../assets/images/drone3.jpeg";
 
 export interface ProjectSpec {
   label: string;
@@ -28,6 +29,7 @@ export interface ProjectData {
   year: string;
   status: string;
   tags: string[];
+  isLatest?: boolean;
   specs?: ProjectSpec[];
   media?: string[];
   docs?: ProjectDoc[];
@@ -35,6 +37,33 @@ export interface ProjectData {
 }
 
 export const projectsData: ProjectData[] = [
+  {
+    id: 10,
+    name: "Autonomous Swarm UAV",
+    description: "Next-gen AI-powered swarm drone system for coordinated multi-agent missions.",
+    longDescription: "The Autonomous Swarm UAV project represents the cutting edge of multi-agent aerial robotics. A fleet of coordinated drones communicates via mesh networking and onboard AI to autonomously plan, execute, and adapt to complex missions—whether mapping disaster zones, coordinating search-and-rescue, or conducting large-scale agricultural surveys. Each unit is equipped with obstacle avoidance, real-time telemetry, and edge-computing capabilities.",
+    image: project10,
+    category: "ai",
+    year: "2026",
+    status: "Active",
+    isLatest: true,
+    tags: ["Swarm", "AI", "Autonomous"],
+    specs: [
+      { label: "Swarm Size", value: "Up to 12 units" },
+      { label: "Communication", value: "Mesh Network (900MHz)" },
+      { label: "Endurance", value: "35 minutes" },
+      { label: "AI Processor", value: "Jetson Orin NX 16GB" },
+      { label: "Navigation", value: "RTK GPS + Visual Odometry" },
+      { label: "Payload", value: "500g per unit" }
+    ],
+    media: [project10, project9],
+    docs: [
+      { title: "Swarm Architecture", url: "#" },
+      { title: "AI System Guide", url: "#" },
+      { title: "Mission Planning", url: "#" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
   {
     id: 1,
     name: "Endurance UAV",
@@ -53,13 +82,10 @@ export const projectsData: ProjectData[] = [
       { label: "Propulsion System", value: "KDE 4215 – 465 KV" },
       { label: "Power System", value: "6S8P Custom LiOn Pack" },
     ],
-    media: [project1, project2, project3],
+    media: [project1],
     docs: [
-      { title: "Aircraft Specs", url: "#" },
-      { title: "Payload Details", url: "#" },
-      { title: "Avionics Guide", url: "#" }
-    ],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+      { title: "Aircraft Specs", url: "#" }
+    ]
   },
   {
     id: 2,
