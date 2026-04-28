@@ -700,7 +700,7 @@ const DetailedFeatures = () => {
               Most student UAV platforms compromise between endurance and autonomy. UART's platform delivers both — tactical range with strategic intelligence, purpose-built for SUAS and beyond.
             </p>
             <Link to="/projects">
-              <button className="btn-primary group">
+              <button className="btn-primary btn-pill group px-10 py-4">
                 <span>See Our Projects</span>
                 <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>

@@ -244,7 +244,7 @@ const Footer = () => {
         >
           <div className="flex flex-col md:flex-row justify-between items-center gap-4">
             <div className="text-sm" style={{ color: '#4A4038', fontFamily: "'Inter', sans-serif" }}>
-              © 2024–2025 UIU Aerial Robotics Team. All rights reserved.
+              © 2026 UIU Aerial Robotics Team. All rights reserved.
             </div>
             <div className="flex space-x-6 text-sm">
               {[

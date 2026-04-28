@@ -21,7 +21,7 @@ const GalleryVideo = () => {
                     <div className="flex flex-col justify-center">
                         <h2 className="ju-reveal text-3xl font-black text-white mb-4 uppercase tracking-wide">Flying Drones</h2>
                         <p className="ju-reveal text-slate-400 text-sm mb-10 leading-relaxed font-light">
-                            They really are a scream the Addams Family! Their house is a museum where people come to see 'em. They really are a addams family.
+                            Fast, smart, and always evolving—drones are changing the sky. From capturing stunning visuals to executing autonomous missions, they bring innovation to life. The future is airborne.
                         </p>
 
                         <div className="grid grid-cols-2 sm:grid-cols-3 gap-2">
@@ -84,7 +84,7 @@ const GalleryVideo = () => {
                                         Drone Action
                                     </h2>
                                     <p className="ju-reveal text-slate-400 text-sm max-w-xs mx-auto font-light leading-relaxed">
-                                        And we'll do it our way yes our way. Make all our dreams come true me and you.
+                                        Taking control of the skies with speed, precision, and purpose. Every flight brings ideas closer to reality.
                                     </p>
                                 </div>
 

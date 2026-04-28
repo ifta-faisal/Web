@@ -162,7 +162,7 @@ const SponsorPage = () => {
                                     <div className="px-6 pb-6">
                                         <a
                                             href="mailto:aerialrobotics@project.uiu.ac.bd?subject=Sponsorship Inquiry"
-                                            className={`w-full inline-flex items-center justify-center gap-2 py-2.5 rounded-xl font-bold text-sm transition-all duration-300 bg-gradient-to-r ${tier.color} text-white hover:opacity-90 hover:shadow-lg`}
+                                            className="btn-primary btn-pill w-full py-3"
                                         >
                                             <Mail className="w-4 h-4" /> Get Started
                                         </a>
@@ -185,18 +185,18 @@ const SponsorPage = () => {
                             <p className="ju-reveal text-slate-400 text-sm sm:text-base max-w-xl mx-auto leading-relaxed mb-8">
                                 Whether you're interested in financial sponsorship, in-kind support, or technical collaboration, we'd love to discuss how we can work together to drive innovation in aerial robotics.
                             </p>
-                            <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                             <div className="flex flex-col sm:flex-row gap-4 justify-center">
                                 <a
                                     href="mailto:aerialrobotics@project.uiu.ac.bd?subject=Partnership Inquiry"
-                                    className="inline-flex items-center justify-center gap-2 px-7 py-3 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl hover:shadow-lg hover:shadow-primary/30 transition-all duration-300"
+                                    className="btn-primary btn-pill px-10 py-4 group"
                                 >
-                                    <Mail className="w-4 h-4" /> Start Partnership <ArrowRight className="w-4 h-4" />
+                                    <Mail className="w-4 h-4" /> Start Partnership <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </a>
                                 <Link
                                     to="/sponsor-proposal"
-                                    className="inline-flex items-center justify-center gap-2 px-7 py-3 bg-surface-2/60 border border-surface-2/50 text-white font-bold rounded-xl hover:border-primary/40 hover:bg-surface-2 transition-all duration-300"
+                                    className="btn-outline btn-pill px-10 py-4 group"
                                 >
-                                    Learn More <ArrowRight className="w-4 h-4" />
+                                    Learn More <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                                 </Link>
                             </div>
                         </div>

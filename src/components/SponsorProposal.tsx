@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail, Facebook, Youtube, Instagram, Linkedin } from 'lucide-react';
+import { Mail, Facebook, Youtube, Instagram, Linkedin, ArrowRight } from 'lucide-react';
 
 
 const SponsorProposal = () => {
@@ -288,7 +288,7 @@ const SponsorProposal = () => {
                                         </ul>
                                     </div>
                                     <div className="px-8 pb-8">
-                                        <a href="mailto:aerialrobotics@project.uiu.ac.bd" className={`w-full py-4 rounded-xl font-bold uppercase tracking-widest text-xs transition-all duration-300 text-center block ${i === 0 ? 'bg-primary text-white shadow-lg shadow-primary/30' : 'bg-white/5 text-white hover:bg-white/10 border border-white/10'}`}>
+                                        <a href="mailto:aerialrobotics@project.uiu.ac.bd" className="btn-primary btn-pill w-full text-center block py-4">
                                             Select Package
                                         </a>
                                     </div>
@@ -505,10 +505,11 @@ const SponsorProposal = () => {
                     </p>
                     <a
                         href="mailto:aerialrobotics@project.uiu.ac.bd"
-                        className="inline-flex items-center justify-center gap-2 px-8 py-4 bg-gradient-to-r from-primary to-accent text-white font-bold rounded-xl hover:opacity-90 hover:shadow-lg transition-all"
+                        className="btn-primary btn-pill px-10 py-4 group"
                     >
                         <Mail className="w-5 h-5" />
                         <span>Email Us</span>
+                        <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </a>
                 </section>
           </div>

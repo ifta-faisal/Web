@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
+import { ArrowRight } from 'lucide-react';
 
 // ─── Sub-team data ─────────────────────────────────────────────────────────────
 const subTeams = [
@@ -115,7 +116,7 @@ const subTeams = [
 
 const benefits = [
   { icon: '🚀', title: 'Real-World Experience', desc: 'Hands-on engineering on systems that compete internationally.' },
-  { icon: '🌍', title: 'International Competitions', desc: 'Represent UIU .' },
+  { icon: '🌍', title: 'International Competitions', desc: 'Represent Bangladesh & UIU .' },
   { icon: '🤝', title: 'Diverse Collaboration', desc: 'Work alongside students from all departments and disciplines.' },
   { icon: '📚', title: 'Skill Development', desc: 'Gain technical and soft skills that employers value most.' },
   { icon: '🏆', title: 'Trophy Cabinet', desc: 'Be part of a team with a proven record of achievement.' },
@@ -260,23 +261,7 @@ const JoinUs = () => {
           font-size: clamp(.85rem, 1.4vw, .98rem); color: #94a3b8; line-height: 1.75;
         }
         .ju-hero-actions { display: flex; gap: 1rem; justify-content: center; flex-wrap: wrap; }
-        .ju-btn-primary {
-          display: inline-flex; align-items: center; gap: .5rem;
-          padding: .85rem 2.2rem; border-radius: 8px;
-          background: linear-gradient(135deg, #ea580c, #dc2626);
-          color: #fff; font-weight: 700; font-size: 1rem; letter-spacing: .05em; text-transform: uppercase;
-          text-decoration: none; transition: transform .2s, box-shadow .2s;
-          box-shadow: 0 4px 24px rgba(234,88,12,0.35);
-        }
-        .ju-btn-primary:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(234,88,12,0.5); }
-        .ju-btn-outline {
-          display: inline-flex; align-items: center; gap: .5rem;
-          padding: .85rem 2.2rem; border-radius: 8px;
-          border: 2px solid rgba(255,255,255,0.25); color: #fff;
-          font-weight: 700; font-size: 1rem; letter-spacing: .05em; text-transform: uppercase;
-          text-decoration: none; transition: border-color .2s, background .2s;
-        }
-        .ju-btn-outline:hover { border-color: rgba(249,115,22,0.6); background: rgba(249,115,22,0.08); }
+
         .ju-hero-scroll {
           position: absolute; bottom: 2rem; left: 50%; transform: translateX(-50%);
           display: flex; flex-direction: column; align-items: center; gap: .4rem;
@@ -354,16 +339,7 @@ const JoinUs = () => {
           font-size: clamp(1.6rem, 3.5vw, 2.4rem); font-weight: 900;
           text-transform: uppercase; color: #fff; letter-spacing: .04em;
         }
-        .ju-btn-cta {
-          display: inline-flex; align-items: center; gap: .5rem;
-          padding: .9rem 2.8rem; border-radius: 999px;
-          background: linear-gradient(135deg, #f97316, #ef4444);
-          color: #fff; font-weight: 700; font-size: 1rem; letter-spacing: .05em; text-transform: uppercase;
-          text-decoration: none; white-space: nowrap;
-          transition: transform .2s, box-shadow .2s;
-          box-shadow: 0 4px 24px rgba(249,115,22,0.45);
-        }
-        .ju-btn-cta:hover { transform: translateY(-2px); box-shadow: 0 8px 36px rgba(249,115,22,0.6); }
+
 
         /* ══ ACCORDION (OPEN POSITIONS) ══════════════════════════════ */
         .ju-teams { background: transparent; }
@@ -449,12 +425,7 @@ const JoinUs = () => {
         }
         .ju-accord-check { flex-shrink: 0; margin-top: .1rem; font-weight: 700; }
         .ju-accord-footer { padding: 1.25rem 1.5rem 1.5rem; }
-        .ju-accord-apply-btn {
-          display: inline-block; padding: .6rem 1.4rem; border-radius: 8px;
-          font-size: .85rem; font-weight: 700; letter-spacing: .04em; text-decoration: none;
-          transition: opacity .2s, transform .2s;
-        }
-        .ju-accord-apply-btn:hover { opacity: .85; transform: translateX(3px); }
+
 
         /* ══ TIMELINE ════════════════════════════════════════════════ */
         .ju-timeline { background: rgba(2,6,23,0.95); }
@@ -572,15 +543,7 @@ const JoinUs = () => {
         .ju-form-group textarea::placeholder { color: #334155; }
         .ju-form-group select { appearance: none; cursor: pointer; }
         .ju-form-group select option { background: #1e293b; }
-        .ju-btn-submit {
-          display: inline-flex; align-items: center; justify-content: center; gap: .6rem;
-          padding: 1rem; border-radius: 10px; border: none; cursor: pointer;
-          background: linear-gradient(135deg, #ea580c, #dc2626);
-          color: #fff; font-size: 1rem; font-weight: 800; letter-spacing: .08em; text-transform: uppercase;
-          transition: transform .2s, box-shadow .2s, opacity .2s;
-          box-shadow: 0 4px 20px rgba(234,88,12,0.4);
-        }
-        .ju-btn-submit:hover { transform: translateY(-2px); box-shadow: 0 8px 32px rgba(234,88,12,0.55); }
+
       `}</style>
 
       <div className="ju-page">
@@ -599,7 +562,7 @@ const JoinUs = () => {
             ))}
           </div>
           <div className={`ju-hero-content container ${heroVisible ? 'ju-hero-animate' : ''}`}>
-            <p className="ju-reveal ju-hero-eyebrow">🚀 UIU AERIAL ROBOTICS TEAM RECRUITMENT 2025</p>
+            <p className="ju-reveal ju-hero-eyebrow"> UIU AERIAL ROBOTICS TEAM RECRUITMENT 2025</p>
             <h1 className="ju-reveal ju-hero-title">
               UIU AERIAL ROBOTICS TEAM<br />
               <span className="ju-hero-highlight">IS RECRUITING!</span>
@@ -609,8 +572,8 @@ const JoinUs = () => {
               We are looking for dedicated and motivated individuals to join our team and contribute to the continuous development of advanced aerial robotics platforms. Together, we design, build, and optimize cutting-edge drones for research, innovation, and competitive challenges.
             </p>
             <div className="ju-hero-actions">
-              <a href="#apply" className="ju-btn-primary"><span>🚀</span> APPLY NOW</a>
-              <a href="#teams" className="ju-btn-outline">LEARN MORE ↓</a>
+              <a href="#apply" className="btn-primary btn-pill px-10 py-4"> APPLY NOW</a>
+              <a href="#teams" className="btn-outline btn-pill px-10 py-4">LEARN MORE ↓</a>
             </div>
           </div>
           <div className="ju-hero-scroll">
@@ -646,7 +609,7 @@ const JoinUs = () => {
         <section className="ju-mission-cta ">
           <div className="container ju-mission-inner">
             <h2 className="ju-reveal">READY TO JOIN THE MISSION?</h2>
-            <a href="#apply" className="ju-btn-cta"><span>🚀</span> APPLY NOW</a>
+            <a href="#apply" className="btn-primary btn-pill px-12 py-5 text-xl"> APPLY NOW</a>
           </div>
         </section>
 
@@ -656,7 +619,7 @@ const JoinUs = () => {
             <div className="ju-section-header ju-reveal">
               <span className="ju-section-tag">OPEN POSITIONS</span>
               <h2 className="ju-reveal ju-section-title">WE ARE LOOKING FOR MEMBERS<br />WITH THE FOLLOWING SKILLS</h2>
-              <p className="ju-reveal ju-section-sub">Click any sub-team card to see what we're looking for. All UIU departments welcome.</p>
+              <p className="ju-reveal ju-section-sub">Click any sub-team card to see what we’re looking for. Students from all UIU departments are welcome.</p>
             </div>
 
             <div className="ju-accord-grid">
@@ -749,8 +712,7 @@ const JoinUs = () => {
                       <div className="ju-accord-footer">
                         <a
                           href="#apply"
-                          className="ju-accord-apply-btn"
-                          style={{ background: 'linear-gradient(135deg, #ea580c, #dc2626)', color: '#fff' }}
+                          className="btn-primary btn-pill w-full py-3 text-sm"
                           onClick={e => e.stopPropagation()}
                         >
                           APPLY FOR THIS TEAM →
@@ -804,7 +766,7 @@ const JoinUs = () => {
                     <span className="ju-fact-label">Sub-Teams</span>
                   </div>
                   <div className="ju-fact">
-                    <span className="ju-fact-num">3</span>
+                    <span className="ju-fact-num">2</span>
                     <span className="ju-fact-label">Competitions</span>
                   </div>
                   <div className="ju-fact">
@@ -816,7 +778,6 @@ const JoinUs = () => {
               <form className="ju-apply-form" onSubmit={handleSubmit}>
                 {submitted ? (
                   <div className="text-center py-10">
-                    <div className="text-4xl mb-4">🚀</div>
                     <h3 className="text-2xl font-bold text-white mb-2">Application Sent!</h3>
                     <p className="text-slate-400">Thank you for your interest. We will review your application and contact you soon.</p>
                   </div>
@@ -853,12 +814,8 @@ const JoinUs = () => {
                       <label htmlFor="ju-why">WHY DO YOU WANT TO JOIN? *</label>
                       <textarea id="ju-why" name="statement" rows={4} placeholder="Tell us what drives you..." required />
                     </div>
-                    <button type="submit" disabled={isSubmitting} className={`ju-btn-submit ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
-                      {isSubmitting ? "Sending..." : (
-                        <>
-                          <span>🚀</span> SUBMIT APPLICATION
-                        </>
-                      )}
+                    <button type="submit" disabled={isSubmitting} className={`btn-primary btn-pill w-full py-3 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
+                      {isSubmitting ? "Sending..." : "SUBMIT APPLICATION"}
                     </button>
                   </>
                 )}

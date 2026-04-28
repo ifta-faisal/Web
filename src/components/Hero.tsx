@@ -673,12 +673,7 @@ const Hero = () => {
           {/* ── See More button ── */}
           <div className="flex justify-center mt-10">
             <Link to="/DetailedFeatures">
-              <button
-                className="group inline-flex items-center gap-3 py-3 px-8 rounded-full font-bold text-sm tracking-wide transition-all duration-300"
-                style={{ background: 'linear-gradient(135deg, #f97316, #dc2626)', boxShadow: '0 6px 24px rgba(249,115,22,0.35)', fontFamily: "'Inter', sans-serif", color: '#fff' }}
-                onMouseEnter={e => (e.currentTarget.style.boxShadow = '0 10px 36px rgba(249,115,22,0.55)')}
-                onMouseLeave={e => (e.currentTarget.style.boxShadow = '0 6px 24px rgba(249,115,22,0.35)')}
-              >
+              <button className="btn-primary btn-pill group px-10 py-4">
                 <span>See More Details</span>
                 <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
               </button>
