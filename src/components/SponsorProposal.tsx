@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Facebook, Youtube, Instagram, Linkedin } from 'lucide-react';
-import sponsorImageRight from '../assets/images/drone.png';
-import sponsorImageLeft from '../assets/images/drone.png';
+
 
 const SponsorProposal = () => {
     const GradientUnderline = () => (
@@ -107,19 +106,7 @@ const SponsorProposal = () => {
             <div className="absolute top-20 right-0 w-64 sm:w-96 h-64 sm:h-96 bg-[#f97316] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse hidden md:block"></div>
             <div className="absolute bottom-0 left-0 w-64 sm:w-96 h-64 sm:h-96 bg-[#dc2626] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse hidden md:block" style={{ animationDelay: '2s' }}></div>
 
-            <img
-                src={sponsorImageRight}
-                alt="Sponsor Right"
-                className="ju-reveal absolute right-0 top-1/2 transform -translate-y-1/2 w-80 sm:w-96 opacity-90 hidden md:block"
-                style={{ transform: `translateY(calc(-50% + ${scrollY * parallaxStrengthRight}px))` }}
-            />
 
-            <img
-                src={sponsorImageLeft}
-                alt="Sponsor Left"
-                className="ju-reveal absolute left-0 top-[15%] transform -translate-y-1/2 w-64 sm:w-80 opacity-90 hidden md:block"
-                style={{ transform: `translateY(calc(-50% + ${scrollY * parallaxStrengthLeft}px))` }}
-            />
 
             <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
                 <section className=" text-center py-20">
