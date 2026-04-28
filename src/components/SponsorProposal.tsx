@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from 'react';
-import { Mail } from 'lucide-react';
+import { Mail, Facebook, Youtube, Instagram, Linkedin } from 'lucide-react';
 import sponsorImageRight from '../assets/images/drone.png';
 import sponsorImageLeft from '../assets/images/drone.png';
 
@@ -379,10 +379,18 @@ const SponsorProposal = () => {
                                             <div>
                                                 <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-2 text-white">Join the Community</h4>
                                                 <div className="flex gap-4">
-                                                    <a href="#" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 hover:bg-primary hover:text-white transition-all">FB</a>
-                                                    <a href="#" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 hover:bg-primary hover:text-white transition-all">YT</a>
-                                                    <a href="#" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 hover:bg-primary hover:text-white transition-all">IG</a>
-                                                    <a href="#" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 hover:bg-primary hover:text-white transition-all">IN</a>
+                                                    <a href="https://www.facebook.com/uiuaerialrobotics" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 hover:bg-primary hover:text-white transition-all">
+                                                        <Facebook className="w-4 h-4" />
+                                                    </a>
+                                                    <a href="https://youtube.com/@uiuaerialrobotics?si=DlAOChShO2_kzuYe" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 hover:bg-primary hover:text-white transition-all">
+                                                        <Youtube className="w-4 h-4" />
+                                                    </a>
+                                                    <a href="https://www.instagram.com/uiuaerialrobotics" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 hover:bg-primary hover:text-white transition-all">
+                                                        <Instagram className="w-4 h-4" />
+                                                    </a>
+                                                    <a href="#" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 hover:bg-primary hover:text-white transition-all">
+                                                        <Linkedin className="w-4 h-4" />
+                                                    </a>
                                                 </div>
                                             </div>
                                         </div>

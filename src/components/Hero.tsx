@@ -97,7 +97,7 @@ const Hero = () => {
 
   const aboutStats = [
     { value: '8+', label: 'Years of Experience' },
-    { value: '25+', label: 'Team Members' },
+    { value: '20+', label: 'Team Members' },
     { value: '6+', label: 'Completed Projects' },
     { value: '2+', label: 'Awards Won' },
   ];
@@ -221,7 +221,7 @@ const Hero = () => {
           {/* Telemetry-style meta badges */}
           <div className="hero-animate-meta flex flex-wrap items-center gap-3 sm:gap-4 mb-6 sm:mb-8 text-xs sm:text-sm font-mono">
             {[
-              { label: 'MEMBERS', value: '25+' },
+              { label: 'MEMBERS', value: '20+' },
               { label: 'PROJECTS', value: '6+' },
               { label: 'AWARDS', value: '2+' },
             ].map((item) => (
@@ -313,7 +313,7 @@ const Hero = () => {
               <div className="grid grid-cols-2 gap-3 pt-2">
                 {[
                   { title: '6 sub-teams', desc: 'Web & Communication, Software & Navigation, Electrical, Mechanical, R&D, PR & Marketing' },
-                  { title: '25+ members', desc: 'Students from various engineering disciplines' },
+                  { title: '20+ members', desc: 'Students from various engineering disciplines' },
                   { title: '2 annual intakes', desc: 'Our recruitment opens in January and November' },
                 ].map((card) => (
                   <div

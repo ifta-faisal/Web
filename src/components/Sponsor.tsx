@@ -64,9 +64,9 @@ const SponsorPage = () => {
     ];
 
     const stats = [
-        { value: '50+', label: 'Team Members' },
-        { value: '10+', label: 'Projects Completed' },
-        { value: '5+', label: 'Competitions' },
+        { value: '20+', label: 'Team Members' },
+        { value: '6+', label: 'Projects Completed' },
+        { value: '2+', label: 'Competitions' },
         { value: '100%', label: 'Dedication' },
     ];
 
