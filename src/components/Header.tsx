@@ -3,6 +3,8 @@ import { Link, NavLink } from 'react-router-dom';
 import { Menu, X, ChevronRight, ChevronDown, Search as SearchIcon } from 'lucide-react';
 import Search from './Search';
 import { projectsData } from '../data/projectsData';
+import logoUrl from '../assets/images/logo/Logo UART SVG.svg';
+
 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -21,7 +23,6 @@ const Header = () => {
     closeTimer.current = setTimeout(() => setDropdownOpen(false), 120);
   };
 
-  const logoUrl = new URL('../assets/images/logo/Logo UART SVG.svg', import.meta.url).href;
 
   const navItems = [
     { name: 'Projects', to: '/projects', hasDropdown: true },
@@ -82,6 +83,7 @@ const Header = () => {
                 alt="UART Logo"
                 loading="lazy"
                 className="w-32 sm:w-40 lg:w-44 xl:w-52 h-auto object-contain transition-all duration-300 group-hover:drop-shadow-[0_0_16px_rgba(249,115,22,0.6)]"
+                style={{ background: 'transparent', mixBlendMode: 'screen' }}
               />
             </Link>
 

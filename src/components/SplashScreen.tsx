@@ -1,11 +1,10 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
 import bgVideoUrl from '../assets/video/Drone_Fotage_1.mp4';
+import logoUrl from '../assets/images/logo/Logo UART SVG.svg';
 
 const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
   const [isExiting, setIsExiting] = useState(false);
   const [progress, setProgress] = useState(0);
-
-  const logoUrl = new URL('../assets/images/logo/Logo UART SVG.svg', import.meta.url).href;
 
   // ─── Loading Configuration ───────────────────────────────────────
   // Increase delay or decrease step size to SLOW DOWN loading
@@ -68,6 +67,7 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
             src={logoUrl}
             alt="UART Logo"
             className="w-48 h-48 md:w-64 md:h-64 object-contain drop-shadow-[0_0_30px_rgba(249,115,22,0.4)] transition-transform duration-700 group-hover:scale-105"
+            style={{ background: 'transparent', mixBlendMode: 'screen' }}
           />
         </div>
 
