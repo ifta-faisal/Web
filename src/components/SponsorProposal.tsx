@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Mail, Facebook, Youtube, Instagram, Linkedin, ArrowRight } from 'lucide-react';
 
 // Image imports — Vite bundles these correctly for production
@@ -12,6 +12,83 @@ import drone8 from '../assets/images/Sponsor/drone_8.png';
 import droneArm from '../assets/images/Sponsor/drone_arm.png';
 import droneRight from '../assets/images/Sponsor/drone_right.png';
 import droneLeft from '../assets/images/Sponsor/drone_left.png';
+
+/* ── 3D Tilt Card ─────────────────────────────────────────────────────────── */
+interface TiltCardProps {
+    children: React.ReactNode;
+    className?: string;
+    style?: React.CSSProperties;
+    maxTilt?: number;
+    scale?: number;
+    glare?: boolean;
+}
+
+const TiltCard: React.FC<TiltCardProps> = ({
+    children,
+    className = '',
+    style = {},
+    maxTilt = 12,
+    scale = 1.04,
+    glare = true,
+}) => {
+    const cardRef = useRef<HTMLDivElement>(null);
+    const glareRef = useRef<HTMLDivElement>(null);
+
+    const onMove = useCallback(
+        (e: React.MouseEvent<HTMLDivElement>) => {
+            const el = cardRef.current;
+            if (!el) return;
+            const r = el.getBoundingClientRect();
+            const x = e.clientX - r.left;
+            const y = e.clientY - r.top;
+            const rX = ((y - r.height / 2) / (r.height / 2)) * -maxTilt;
+            const rY = ((x - r.width / 2) / (r.width / 2)) * maxTilt;
+            el.style.transform = `perspective(900px) rotateX(${rX}deg) rotateY(${rY}deg) scale3d(${scale},${scale},${scale})`;
+            if (glare && glareRef.current) {
+                const px = (x / r.width) * 100;
+                const py = (y / r.height) * 100;
+                glareRef.current.style.background = `radial-gradient(circle at ${px}% ${py}%, rgba(249,115,22,0.18) 0%, rgba(255,255,255,0.06) 45%, transparent 70%)`;
+                glareRef.current.style.opacity = '1';
+            }
+        },
+        [maxTilt, scale, glare]
+    );
+
+    const onLeave = useCallback(() => {
+        const el = cardRef.current;
+        if (!el) return;
+        el.style.transform = 'perspective(900px) rotateX(0deg) rotateY(0deg) scale3d(1,1,1)';
+        if (glare && glareRef.current) glareRef.current.style.opacity = '0';
+    }, [glare]);
+
+    return (
+        <div
+            ref={cardRef}
+            className={className}
+            style={{
+                position: 'relative',
+                transformStyle: 'preserve-3d',
+                transition: 'transform 0.18s cubic-bezier(0.03,0.98,0.52,0.99)',
+                willChange: 'transform',
+                ...style,
+            }}
+            onMouseMove={onMove}
+            onMouseLeave={onLeave}
+        >
+            {glare && (
+                <div
+                    ref={glareRef}
+                    style={{
+                        position: 'absolute', inset: 0, borderRadius: 'inherit',
+                        opacity: 0, transition: 'opacity 0.3s ease',
+                        pointerEvents: 'none', zIndex: 10,
+                    }}
+                />
+            )}
+            {children}
+        </div>
+    );
+};
 
 
 const SponsorProposal = () => {
@@ -283,7 +360,7 @@ const SponsorProposal = () => {
                         {sponsorshipTiers.map((tier, i) => (
                             <div key={i} className={`group relative ${i === 0 ? 'lg:scale-105 z-20' : ''}`}>
                                 <div className={`absolute inset-0 bg-gradient-to-br ${tier.color} opacity-0 group-hover:opacity-10 blur-xl transition-opacity rounded-2xl`}></div>
-                                <div className={`card-modern rounded-2xl overflow-hidden h-full flex flex-col border border-white/[0.08] group-hover:border-primary/40 transition-all duration-500 ${i === 0 ? 'shadow-2xl shadow-primary/10' : ''}`}>
+                                <TiltCard className={`card-modern rounded-2xl overflow-hidden h-full flex flex-col border border-white/[0.08] group-hover:border-primary/40 transition-all duration-500 ${i === 0 ? 'shadow-2xl shadow-primary/10' : ''}`} maxTilt={8} scale={1.04}>
                                     <div className={`bg-gradient-to-br ${tier.color} p-8 text-center`}>
                                         <h3 className="text-[10px] uppercase tracking-[0.3em] font-black text-white/60 mb-2">{tier.name} Package</h3>
                                         <div className="text-3xl font-black text-white">{tier.amountBDT} <span className="text-sm font-medium opacity-70">BDT</span></div>
@@ -304,7 +381,7 @@ const SponsorProposal = () => {
                                             Select Package
                                         </a>
                                     </div>
-                                </div>
+                                </TiltCard>
                             </div>
                         ))}
                     </div>
@@ -473,13 +550,13 @@ const SponsorProposal = () => {
 
                                 {/* Front View */}
                                 <div className="flex flex-col items-center w-[42%]">
-                                    <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+                                    <TiltCard className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-xl" maxTilt={6} scale={1.02} glare={false}>
                                         <img
                                             src={jerseyFront}
                                             alt="Jersey Front View"
                                             className="w-full object-cover object-top"
                                         />
-                                    </div>
+                                    </TiltCard>
                                     <div className="mt-4 text-center">
                                         <p className="text-sm font-bold text-white">Front View</p>
                                         <p className="text-[10px] text-slate-500 mt-0.5">Chest &amp; Sleeve Logos</p>
@@ -511,13 +588,13 @@ const SponsorProposal = () => {
 
                                 {/* Back View */}
                                 <div className="flex flex-col items-center w-[42%]">
-                                    <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+                                    <TiltCard className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-xl" maxTilt={6} scale={1.02} glare={false}>
                                         <img
                                             src={jerseyBack}
                                             alt="Jersey Back View"
                                             className="w-full object-cover object-top"
                                         />
-                                    </div>
+                                    </TiltCard>
                                     <div className="mt-4 text-center">
                                         <p className="text-sm font-bold text-white">Back View</p>
                                         <p className="text-[10px] text-slate-500 mt-0.5">Prominent Center Logo</p>
@@ -538,9 +615,9 @@ const SponsorProposal = () => {
 
                                 {/* Back View */}
                                 <div className="flex flex-col items-start gap-2">
-                                    <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40">
+                                    <TiltCard className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40" maxTilt={7} scale={1.03} glare={false}>
                                         <img src={droneBack} alt="UAV Back View" className="w-full object-cover" />
-                                    </div>
+                                    </TiltCard>
                                     <div className="flex items-center gap-1.5">
                                         <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div>
                                         <p className="text-xs font-bold text-white">Back View</p>
@@ -549,9 +626,9 @@ const SponsorProposal = () => {
 
                                 {/* Centre drone + circular callout below */}
                                 <div className="flex flex-col items-center gap-3">
-                                    <div className="w-full rounded-2xl overflow-hidden border border-primary/30 shadow-[0_0_25px_rgba(249,115,22,0.2)] bg-slate-800/40">
+                                    <TiltCard className="w-full rounded-2xl overflow-hidden border border-primary/30 shadow-[0_0_25px_rgba(249,115,22,0.2)] bg-slate-800/40" maxTilt={7} scale={1.03}>
                                         <img src={droneFront} alt="UAV Centre" className="w-full object-cover" />
-                                    </div>
+                                    </TiltCard>
                                     {/* Orange circular callout */}
                                     <div className="w-20 h-20 rounded-full border-4 border-primary overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.5)]">
                                         <img src={droneFrontZoom} alt="UAV Body Detail" className="w-full h-full object-cover" />
@@ -568,9 +645,9 @@ const SponsorProposal = () => {
 
                                 {/* Front View + circular callout */}
                                 <div className="flex flex-col items-end gap-2">
-                                    <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40">
+                                    <TiltCard className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40" maxTilt={7} scale={1.03} glare={false}>
                                         <img src={drone8} alt="UAV Front View" className="w-full object-cover" />
-                                    </div>
+                                    </TiltCard>
                                     {/* Orange circular callout */}
                                     <div className="flex items-center gap-2 self-end">
                                         <p className="text-xs font-bold text-white">Front  View</p>
@@ -587,9 +664,9 @@ const SponsorProposal = () => {
 
                                 {/* Right View */}
                                 <div className="flex flex-col items-start gap-2">
-                                    <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40">
+                                    <TiltCard className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40" maxTilt={7} scale={1.03} glare={false}>
                                         <img src={droneRight} alt="UAV Right View" className="w-full object-cover" />
-                                    </div>
+                                    </TiltCard>
                                     <div className="flex items-center gap-1.5">
                                         <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div>
                                         <p className="text-xs font-bold text-white">Right View</p>
@@ -614,9 +691,9 @@ const SponsorProposal = () => {
 
                                 {/* Left View */}
                                 <div className="flex flex-col items-end gap-2">
-                                    <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40">
+                                    <TiltCard className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40" maxTilt={7} scale={1.03} glare={false}>
                                         <img src={droneLeft} alt="UAV Left View" className="w-full object-cover" />
-                                    </div>
+                                    </TiltCard>
                                     <div className="flex items-center gap-1.5">
                                         <p className="text-xs font-bold text-white">Left View</p>
                                         <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div>
