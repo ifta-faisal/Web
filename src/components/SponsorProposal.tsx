@@ -1,6 +1,18 @@
 import React, { useState, useEffect } from 'react';
 import { Mail, Facebook, Youtube, Instagram, Linkedin, ArrowRight } from 'lucide-react';
 
+// Image imports — Vite bundles these correctly for production
+import jerseyFront from '../assets/images/Sponsor/UART_jersy_fornt.png';
+import jerseyBack from '../assets/images/Sponsor/UART_jersy_back.png';
+import jerseySleeve from '../assets/images/Sponsor/jersy_sleve.png';
+import droneBack from '../assets/images/Sponsor/drone_back.png';
+import droneFront from '../assets/images/Sponsor/drone_fornt.png';
+import droneFrontZoom from '../assets/images/Sponsor/drone_forn_zoom.png';
+import drone8 from '../assets/images/Sponsor/drone_8.png';
+import droneArm from '../assets/images/Sponsor/drone_arm.png';
+import droneRight from '../assets/images/Sponsor/drone_right.png';
+import droneLeft from '../assets/images/Sponsor/drone_left.png';
+
 
 const SponsorProposal = () => {
     const GradientUnderline = () => (
@@ -463,7 +475,7 @@ const SponsorProposal = () => {
                                 <div className="flex flex-col items-center w-[42%]">
                                     <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-xl">
                                         <img
-                                            src="/src/assets/images/Sponsor/UART_jersy_fornt.png"
+                                            src={jerseyFront}
                                             alt="Jersey Front View"
                                             className="w-full object-cover object-top"
                                         />
@@ -489,7 +501,7 @@ const SponsorProposal = () => {
                                     {/* Circular sleeve zoom badge */}
                                     <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-primary overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.5)] relative">
                                         <img
-                                            src="/src/assets/images/Sponsor/jersy_sleve.png"
+                                            src={jerseySleeve}
                                             alt="Sleeve Detail"
                                             className="w-full h-full object-cover"
                                         />
@@ -501,7 +513,7 @@ const SponsorProposal = () => {
                                 <div className="flex flex-col items-center w-[42%]">
                                     <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-xl">
                                         <img
-                                            src="/src/assets/images/Sponsor/UART_jersy_back.png"
+                                            src={jerseyBack}
                                             alt="Jersey Back View"
                                             className="w-full object-cover object-top"
                                         />
@@ -527,7 +539,7 @@ const SponsorProposal = () => {
                                 {/* Back View */}
                                 <div className="flex flex-col items-start gap-2">
                                     <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40">
-                                        <img src="/src/assets/images/Sponsor/drone_back.png" alt="UAV Back View" className="w-full object-cover" />
+                                        <img src={droneBack} alt="UAV Back View" className="w-full object-cover" />
                                     </div>
                                     <div className="flex items-center gap-1.5">
                                         <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div>
@@ -538,11 +550,11 @@ const SponsorProposal = () => {
                                 {/* Centre drone + circular callout below */}
                                 <div className="flex flex-col items-center gap-3">
                                     <div className="w-full rounded-2xl overflow-hidden border border-primary/30 shadow-[0_0_25px_rgba(249,115,22,0.2)] bg-slate-800/40">
-                                        <img src="/src/assets/images/Sponsor/drone_fornt.png" alt="UAV Centre" className="w-full object-cover" />
+                                        <img src={droneFront} alt="UAV Centre" className="w-full object-cover" />
                                     </div>
                                     {/* Orange circular callout */}
                                     <div className="w-20 h-20 rounded-full border-4 border-primary overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.5)]">
-                                        <img src="/src/assets/images/Sponsor/drone_forn_zoom.png" alt="UAV Body Detail" className="w-full h-full object-cover" />
+                                        <img src={droneFrontZoom} alt="UAV Body Detail" className="w-full h-full object-cover" />
                                     </div>
                                     <svg viewBox="0 0 60 30" className="w-16 opacity-60" fill="none">
                                         <path d="M5 25 Q30 5 55 25" stroke="#f97316" strokeWidth="2" strokeDasharray="4 3" markerEnd="url(#arr2)" />
@@ -557,7 +569,7 @@ const SponsorProposal = () => {
                                 {/* Front View + circular callout */}
                                 <div className="flex flex-col items-end gap-2">
                                     <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40">
-                                        <img src="/src/assets/images/Sponsor/drone_8.png" alt="UAV Front View" className="w-full object-cover" />
+                                        <img src={drone8} alt="UAV Front View" className="w-full object-cover" />
                                     </div>
                                     {/* Orange circular callout */}
                                     <div className="flex items-center gap-2 self-end">
@@ -565,7 +577,7 @@ const SponsorProposal = () => {
                                         <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div>
                                     </div>
                                     <div className="w-16 h-16 rounded-full border-4 border-primary overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.5)] self-end">
-                                        <img src="/src/assets/images/Sponsor/drone_forn_zoom.png" alt="Front Detail" className="w-full h-full object-cover" style={{ objectPosition: '40% 50%', transform: 'scale(2)', transformOrigin: '40% 50%' }} />
+                                        <img src={droneFrontZoom} alt="Front Detail" className="w-full h-full object-cover" style={{ objectPosition: '40% 50%', transform: 'scale(2)', transformOrigin: '40% 50%' }} />
                                     </div>
                                 </div>
                             </div>
@@ -576,7 +588,7 @@ const SponsorProposal = () => {
                                 {/* Right View */}
                                 <div className="flex flex-col items-start gap-2">
                                     <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40">
-                                        <img src="/src/assets/images/Sponsor/drone_right.png" alt="UAV Right View" className="w-full object-cover" />
+                                        <img src={droneRight} alt="UAV Right View" className="w-full object-cover" />
                                     </div>
                                     <div className="flex items-center gap-1.5">
                                         <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div>
@@ -587,7 +599,7 @@ const SponsorProposal = () => {
                                 {/* Centre arm detail callout */}
                                 <div className="flex flex-col items-center gap-3">
                                     <div className="w-24 h-24 rounded-full border-4 border-primary overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.5)]">
-                                        <img src="/src/assets/images/Sponsor/drone_arm.png" alt="Arm Logo Detail" className="w-full h-full object-cover" style={{ transform: 'scale(2.2)', transformOrigin: '30% 50%' }} />
+                                        <img src={droneArm} alt="Arm Logo Detail" className="w-full h-full object-cover" style={{ transform: 'scale(2.2)', transformOrigin: '30% 50%' }} />
                                     </div>
                                     <svg viewBox="0 0 80 40" className="w-20 opacity-60" fill="none">
                                         <path d="M5 20 Q40 5 75 20" stroke="#f97316" strokeWidth="2" strokeDasharray="4 3" markerEnd="url(#arr3)" />
@@ -603,7 +615,7 @@ const SponsorProposal = () => {
                                 {/* Left View */}
                                 <div className="flex flex-col items-end gap-2">
                                     <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40">
-                                        <img src="/src/assets/images/Sponsor/drone_left.png" alt="UAV Left View" className="w-full object-cover" />
+                                        <img src={droneLeft} alt="UAV Left View" className="w-full object-cover" />
                                     </div>
                                     <div className="flex items-center gap-1.5">
                                         <p className="text-xs font-bold text-white">Left View</p>
