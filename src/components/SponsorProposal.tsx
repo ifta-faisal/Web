@@ -229,7 +229,7 @@ const SponsorProposal = () => {
                         <div className="absolute inset-0 bg-gradient-to-r from-primary/5 via-transparent to-accent/5 opacity-50"></div>
                         <div className="relative z-10 max-w-4xl mx-auto">
                             <h3 className="text-2xl font-bold text-white mb-8 text-center uppercase tracking-widest">Funding Progress</h3>
-                            
+
                             <div className="space-y-6">
                                 <div>
                                     <div className="flex justify-between text-sm mb-3">
@@ -302,10 +302,10 @@ const SponsorProposal = () => {
                 <section className="py-20 max-w-5xl mx-auto">
                     <div className="card-modern rounded-[3rem] overflow-hidden border border-white/[0.08] relative">
                         <div className="absolute top-0 right-0 p-8">
-                             <div className="bg-primary/20 p-4 rounded-3xl border border-primary/20 backdrop-blur-md">
+                            <div className="bg-primary/20 p-4 rounded-3xl border border-primary/20 backdrop-blur-md">
                                 <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-1">Institution</h4>
                                 <p className="text-sm font-bold text-white">United International University</p>
-                             </div>
+                            </div>
                         </div>
 
                         <div className="p-10 sm:p-16">
@@ -443,52 +443,176 @@ const SponsorProposal = () => {
 
                 {/* ══ LOGO PLACEMENTS ══════════════════════════════════════════════════ */}
                 <section className="py-20 max-w-6xl mx-auto">
-                    <div className="card-modern rounded-[3rem] p-12 sm:p-20 bg-slate-900/50 border border-white/[0.08]">
+                    <div className="card-modern rounded-[3rem] p-8 sm:p-14 bg-slate-900/50 border border-white/[0.08]">
                         <div className="text-center mb-16">
                             <h2 className="text-4xl font-black text-white uppercase tracking-tighter mb-4">Logo Placements</h2>
                             <p className="text-slate-500 font-mono text-xs uppercase tracking-[0.4em]">Visual Identification Guide</p>
                         </div>
 
-                        <div className="grid grid-cols-1 lg:grid-cols-2 gap-16">
-                            {/* Apparel */}
-                            <div className="space-y-8">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-black text-[10px]">A</div>
-                                    <h3 className="text-xl font-bold text-white uppercase tracking-widest">Team Apparel</h3>
-                                </div>
-                                <div className="grid grid-cols-2 gap-4">
-                                    <div className="aspect-[4/5] bg-slate-800/50 rounded-2xl border border-white/5 p-6 flex flex-col justify-center items-center text-center">
-                                        <div className="w-16 h-1 bg-primary/40 rounded-full mb-4"></div>
-                                        <p className="text-xs font-bold text-white uppercase">Front View</p>
-                                        <p className="text-[10px] text-slate-500 mt-2">Chest & Sleeve Logos</p>
+                        {/* ── APPAREL SECTION ─────────────────────────────────── */}
+                        <div className="mb-20">
+                            <div className="flex items-center gap-3 mb-10">
+                                <div className="w-8 h-8 rounded-full bg-primary flex items-center justify-center text-white font-black text-[10px]">A</div>
+                                <h3 className="text-xl font-bold text-white uppercase tracking-widest">Team Apparel</h3>
+                            </div>
+
+                            {/* Jersey layout: Front | Sleeve callout | Back */}
+                            <div className="relative flex items-end justify-between gap-2">
+
+                                {/* Front View */}
+                                <div className="flex flex-col items-center w-[42%]">
+                                    <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+                                        <img
+                                            src="/src/assets/images/Sponsor/UART_jersy_fornt.png"
+                                            alt="Jersey Front View"
+                                            className="w-full object-cover object-top"
+                                        />
                                     </div>
-                                    <div className="aspect-[4/5] bg-slate-800/50 rounded-2xl border border-white/5 p-6 flex flex-col justify-center items-center text-center">
-                                        <div className="w-20 h-8 bg-primary/20 rounded-lg flex items-center justify-center mb-4 border border-primary/30">
-                                            <span className="text-[8px] font-black text-primary">YOUR LOGO</span>
-                                        </div>
-                                        <p className="text-xs font-bold text-white uppercase">Back View</p>
-                                        <p className="text-[10px] text-slate-500 mt-2">Prominent Center Logo</p>
+                                    <div className="mt-4 text-center">
+                                        <p className="text-sm font-bold text-white">Front View</p>
+                                        <p className="text-[10px] text-slate-500 mt-0.5">Chest &amp; Sleeve Logos</p>
+                                    </div>
+                                </div>
+
+                                {/* Centre: Sleeve callout badge */}
+                                <div className="flex flex-col items-center gap-3 w-[16%] pb-10">
+                                    {/* SVG curved arrows – top arrow points left, bottom arrow points right */}
+                                    <svg viewBox="0 0 80 60" className="w-full opacity-60" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <path d="M70 10 Q40 5 10 30" stroke="#f97316" strokeWidth="2" strokeDasharray="4 3" markerEnd="url(#arr)" />
+                                        <path d="M10 30 Q40 55 70 50" stroke="#f97316" strokeWidth="2" strokeDasharray="4 3" markerEnd="url(#arr)" />
+                                        <defs>
+                                            <marker id="arr" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                                                <path d="M0,0 L6,3 L0,6 Z" fill="#f97316" />
+                                            </marker>
+                                        </defs>
+                                    </svg>
+                                    {/* Circular sleeve zoom badge */}
+                                    <div className="w-20 h-20 sm:w-24 sm:h-24 rounded-full border-4 border-primary overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.5)] relative">
+                                        <img
+                                            src="/src/assets/images/Sponsor/jersy_sleve.png"
+                                            alt="Sleeve Detail"
+                                            className="w-full h-full object-cover"
+                                        />
+                                    </div>
+                                    <p className="text-[10px] font-bold text-primary text-center uppercase tracking-widest">Sleeve<br />View</p>
+                                </div>
+
+                                {/* Back View */}
+                                <div className="flex flex-col items-center w-[42%]">
+                                    <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-xl">
+                                        <img
+                                            src="/src/assets/images/Sponsor/UART_jersy_back.png"
+                                            alt="Jersey Back View"
+                                            className="w-full object-cover object-top"
+                                        />
+                                    </div>
+                                    <div className="mt-4 text-center">
+                                        <p className="text-sm font-bold text-white">Back View</p>
+                                        <p className="text-[10px] text-slate-500 mt-0.5">Prominent Center Logo</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        {/* ── UAV SECTION ─────────────────────────────────────── */}
+                        <div>
+                            <div className="flex items-center gap-3 mb-10">
+                                <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-black text-[10px]">B</div>
+                                <h3 className="text-xl font-bold text-white uppercase tracking-widest">UAV Body</h3>
+                            </div>
+
+                            {/* Row 1: Back View | Centre drone | Front View */}
+                            <div className="relative grid grid-cols-3 items-center gap-4 mb-8">
+
+                                {/* Back View */}
+                                <div className="flex flex-col items-start gap-2">
+                                    <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40">
+                                        <img src="/src/assets/images/Sponsor/drone_back.png" alt="UAV Back View" className="w-full object-cover" />
+                                    </div>
+                                    <div className="flex items-center gap-1.5">
+                                        <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div>
+                                        <p className="text-xs font-bold text-white">Back View</p>
+                                    </div>
+                                </div>
+
+                                {/* Centre drone + circular callout below */}
+                                <div className="flex flex-col items-center gap-3">
+                                    <div className="w-full rounded-2xl overflow-hidden border border-primary/30 shadow-[0_0_25px_rgba(249,115,22,0.2)] bg-slate-800/40">
+                                        <img src="/src/assets/images/Sponsor/drone_fornt.png" alt="UAV Centre" className="w-full object-cover" />
+                                    </div>
+                                    {/* Orange circular callout */}
+                                    <div className="w-20 h-20 rounded-full border-4 border-primary overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.5)]">
+                                        <img src="/src/assets/images/Sponsor/drone_forn_zoom.png" alt="UAV Body Detail" className="w-full h-full object-cover" />
+                                    </div>
+                                    <svg viewBox="0 0 60 30" className="w-16 opacity-60" fill="none">
+                                        <path d="M5 25 Q30 5 55 25" stroke="#f97316" strokeWidth="2" strokeDasharray="4 3" markerEnd="url(#arr2)" />
+                                        <defs>
+                                            <marker id="arr2" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                                                <path d="M0,0 L6,3 L0,6 Z" fill="#f97316" />
+                                            </marker>
+                                        </defs>
+                                    </svg>
+                                </div>
+
+                                {/* Front View + circular callout */}
+                                <div className="flex flex-col items-end gap-2">
+                                    <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40">
+                                        <img src="/src/assets/images/Sponsor/drone_8.png" alt="UAV Front View" className="w-full object-cover" />
+                                    </div>
+                                    {/* Orange circular callout */}
+                                    <div className="flex items-center gap-2 self-end">
+                                        <p className="text-xs font-bold text-white">Front  View</p>
+                                        <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div>
+                                    </div>
+                                    <div className="w-16 h-16 rounded-full border-4 border-primary overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.5)] self-end">
+                                        <img src="/src/assets/images/Sponsor/drone_forn_zoom.png" alt="Front Detail" className="w-full h-full object-cover" style={{ objectPosition: '40% 50%', transform: 'scale(2)', transformOrigin: '40% 50%' }} />
                                     </div>
                                 </div>
                             </div>
 
-                            {/* UAV */}
-                            <div className="space-y-8">
-                                <div className="flex items-center gap-4">
-                                    <div className="w-8 h-8 rounded-full bg-accent flex items-center justify-center text-white font-black text-[10px]">B</div>
-                                    <h3 className="text-xl font-bold text-white uppercase tracking-widest">UAV Body</h3>
+                            {/* Row 2: Right View | Arm callout | Left View */}
+                            <div className="relative grid grid-cols-3 items-center gap-4">
+
+                                {/* Right View */}
+                                <div className="flex flex-col items-start gap-2">
+                                    <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40">
+                                        <img src="/src/assets/images/Sponsor/drone_right.png" alt="UAV Right View" className="w-full object-cover" />
+                                    </div>
+                                    <div className="flex items-center gap-1.5">
+                                        <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div>
+                                        <p className="text-xs font-bold text-white">Right View</p>
+                                    </div>
                                 </div>
-                                <div className="bg-slate-800/50 rounded-3xl border border-white/5 p-12 relative overflow-hidden flex flex-col items-center">
-                                     {/* Simple Drone Silhouette SVG or Placeholder */}
-                                     <div className="w-full max-w-[280px] h-40 border-2 border-dashed border-white/10 rounded-full flex items-center justify-center relative">
-                                        <div className="absolute top-0 px-4 py-1 bg-primary text-[8px] font-black text-white rounded-full -translate-y-1/2">TOP PLACEMENT</div>
-                                        <div className="absolute left-0 -translate-x-1/2 px-4 py-1 bg-accent text-[8px] font-black text-white rounded-full rotate-90">LEFT BODY</div>
-                                        <div className="absolute right-0 translate-x-1/2 px-4 py-1 bg-accent text-[8px] font-black text-white rounded-full -rotate-90">RIGHT BODY</div>
-                                        <span className="text-slate-600 font-mono text-[10px] uppercase">UART SUAS 2026 UAV</span>
-                                     </div>
-                                     <p className="mt-8 text-center text-sm text-slate-400">Logos will be applied using high-durability aerospace grade vinyl to ensure visibility in all flight conditions.</p>
+
+                                {/* Centre arm detail callout */}
+                                <div className="flex flex-col items-center gap-3">
+                                    <div className="w-24 h-24 rounded-full border-4 border-primary overflow-hidden shadow-[0_0_20px_rgba(249,115,22,0.5)]">
+                                        <img src="/src/assets/images/Sponsor/drone_arm.png" alt="Arm Logo Detail" className="w-full h-full object-cover" style={{ transform: 'scale(2.2)', transformOrigin: '30% 50%' }} />
+                                    </div>
+                                    <svg viewBox="0 0 80 40" className="w-20 opacity-60" fill="none">
+                                        <path d="M5 20 Q40 5 75 20" stroke="#f97316" strokeWidth="2" strokeDasharray="4 3" markerEnd="url(#arr3)" />
+                                        <defs>
+                                            <marker id="arr3" markerWidth="6" markerHeight="6" refX="3" refY="3" orient="auto">
+                                                <path d="M0,0 L6,3 L0,6 Z" fill="#f97316" />
+                                            </marker>
+                                        </defs>
+                                    </svg>
+                                    <p className="text-[9px] text-primary font-bold uppercase tracking-widest text-center">Arm Logo<br />Placement</p>
+                                </div>
+
+                                {/* Left View */}
+                                <div className="flex flex-col items-end gap-2">
+                                    <div className="w-full rounded-2xl overflow-hidden border border-white/10 shadow-lg bg-slate-800/40">
+                                        <img src="/src/assets/images/Sponsor/drone_left.png" alt="UAV Left View" className="w-full object-cover" />
+                                    </div>
+                                    <div className="flex items-center gap-1.5">
+                                        <p className="text-xs font-bold text-white">Left View</p>
+                                        <div className="w-2 h-2 rounded-full bg-primary shrink-0"></div>
+                                    </div>
                                 </div>
                             </div>
+
+                            <p className="mt-10 text-center text-sm text-slate-400">Logos will be applied using high-durability aerospace grade vinyl to ensure visibility in all flight conditions.</p>
                         </div>
                     </div>
                 </section>
@@ -512,7 +636,7 @@ const SponsorProposal = () => {
                         <ArrowRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
                     </a>
                 </section>
-          </div>
+            </div>
         </div>
     );
 };
