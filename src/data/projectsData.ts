@@ -1,9 +1,19 @@
 import project1 from "../assets/images/Project/project1.jpeg";
-import project4 from "../assets/images/Project/project4.jpeg";
 import project6 from "../assets/images/Project/project6.jpeg";
 import project7 from "../assets/images/Project/project7.jpeg";
 import project9 from "../assets/images/drone2.jpeg";
 import project10 from "../assets/images/drone3.jpeg";
+import aether1 from "../assets/images/Project/Aether_1.jpg";
+import aether2 from "../assets/images/Project/Aether_2.JPG";
+import aether3 from "../assets/images/Project/Aether_3.JPG";
+import aether4 from "../assets/images/Project/Aether_4.jpg";
+import aether5 from "../assets/images/Project/Aether_5.jpg";
+import aetherPdf from "../assets/Documnet/Aether.pdf";
+import deadcat1 from "../assets/images/Project/Deadcat_1.jpg";
+import deadcat2 from "../assets/images/Project/Deadcat_2.jpg";
+import deadcat3 from "../assets/images/Project/Deadcat_3.jpg";
+import deadcat4 from "../assets/images/Project/Deadcat_4.jpg";
+import deadcat5 from "../assets/images/Project/Deadcat_5.jpeg";
 
 export interface ProjectSpec { label: string; value: string; }
 export interface ProjectDoc { title: string; url: string; }
@@ -34,6 +44,23 @@ export const projectsData: ProjectData[] = [
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
+    id: 9, name: "AETHER",
+    description: "Advanced Electronic Tactical Hybrid Emergency Reconnaissance UAV.",
+    longDescription: "Project AETHER is designed as a resilient, modular UAV platform for disaster response and autonomous reconnaissance, integrating real-time sensing, communication, and environmental awareness. Its architecture emphasizes scalability, redundancy, and reliable operation in harsh conditions through multi-channel communication and sensor fusion. Built for future autonomy, it supports upgrades like AI-based navigation and mission adaptability using onboard edge computing.",
+    image: aether1, category: "Rescue", year: "2025", status: "Completed",
+    tags: ["Rescue", "Long Range"],
+    specs: [
+      { label: "Range", value: "8–12 km" },
+      { label: "Payload Capacity", value: "0.5 – 1.4 kg" },
+      { label: "Endurance", value: "up to ~35 minutes" }
+    ],
+    media: [aether1, aether2, aether3, aether4, aether5],
+    docs: [
+      { title: "AETHER Systems Manual", url: aetherPdf },
+    ],
+    videoUrl: "https://www.youtube.com/embed/R9LzS1dUryI?si=S05b4yigzyW1e7Pf"
+  },
+  {
     id: 1, name: "Endurance UAV",
     description: "A high-performance UAV designed for endurance missions.",
     longDescription: "Our inspiration comes from the need for long-lasting flight times in critical missions.",
@@ -52,16 +79,19 @@ export const projectsData: ProjectData[] = [
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
-    id: 4, name: "Customize Dead Cat",
-    description: "Lightweight drone built for environmental monitoring.",
-    longDescription: "The Dead Cat frame design ensures that the propellers stay out of the camera view, providing an unobstructed field of vision.",
-    image: project4, category: "environmental", year: "2024", status: "Completed",
+    id: 4, name: "Project Dead Cat: DIY FPV Drone",
+    description: "The primary objective of this project is to design a lightweight, modular, and upgradeable drone platform that balances performance, stability, and extensibility.",
+    longDescription: "Project Dead Cat is a lightweight, Dead Cat–frame FPV drone designed for stable,  efficient power usage and extended endurance. It integrates GPS-assisted navigation, modular hardware architecture, and CRSF-based long-range control for reliable performance in both manual and semi-autonomous modes.",
+    image: deadcat1, category: "environmental", year: "2024", status: "Completed",
     tags: ["Environmental", "Monitoring"],
     specs: [
-      { label: "Camera", value: "4K Gimbal-stabilized" },
-      { label: "Endurance", value: "30 minutes" }
+      { label: "Range", value: "2–5 km" },
+      { label: "Endurance", value: "up to ~40 minutes" }
     ],
-    media: [project4],
+    media: [deadcat1, deadcat2, deadcat3, deadcat4, deadcat5],
+    docs: [
+      { title: "Dead Cat Systems Manual", url: "https://drive.google.com/file/d/10tRqMCycjaOOR6zgCnPWBxOkARIw_YE4/view?usp=sharing" },
+    ],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
@@ -88,19 +118,6 @@ export const projectsData: ProjectData[] = [
       { label: "Endurance", value: "120 minutes" }
     ],
     media: [project7],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-  },
-  {
-    id: 9, name: "Multifunctional Long range Drone",
-    description: "Compact prototype drone for competition testing.",
-    longDescription: "A versatile platform designed for search and rescue operations.",
-    image: project9, category: "Rescue", year: "2025", status: "Completed",
-    tags: ["Rescue", "Long Range"],
-    specs: [
-      { label: "Range", value: "20 miles" },
-      { label: "Payload Capacity", value: "2kg" }
-    ],
-    media: [project9],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   }
 ];

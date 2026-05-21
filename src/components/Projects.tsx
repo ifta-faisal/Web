@@ -200,18 +200,7 @@ const Projects = () => {
                 </div>
 
                 {/* Footer Row */}
-                <div className="flex flex-wrap items-center justify-between gap-2.5 pt-3 border-t border-gray-700/30">
-                  <div className="flex flex-wrap gap-1">
-                    {project.tags.map((tag, idx) => (
-                      <span
-                        key={idx}
-                        className="text-[9px] px-1.5 py-0.5 bg-gray-800 text-gray-300 rounded border border-gray-700 font-medium"
-                      >
-                        {tag}
-                      </span>
-                    ))}
-                  </div>
-
+                <div className="flex flex-wrap items-center justify-end gap-2.5 pt-3 border-t border-gray-700/30">
                   <div className="flex items-center gap-2.5">
                     {/* YouTube Icon */}
                     <div
@@ -293,7 +282,7 @@ const Projects = () => {
             {/* Video Embed */}
             <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
               <iframe
-                src={`${videoModal.url}?autoplay=1&rel=0`}
+                src={`${videoModal.url}${videoModal.url.includes('?') ? '&' : '?'}autoplay=1&mute=1&rel=0`}
                 title={videoModal.name}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

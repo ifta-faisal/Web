@@ -102,7 +102,7 @@ const ProjectDetail = () => {
             <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">A little bit of hype never hurt anybody...</p>
             <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-gray-700/50 group">
               <iframe
-                src={project.videoUrl}
+                src={`${project.videoUrl}${project.videoUrl.includes('?') ? '&' : '?'}autoplay=1&mute=1&rel=0`}
                 title={`${project.name} Video`}
                 allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                 allowFullScreen

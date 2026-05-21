@@ -10,12 +10,13 @@ import vcImage from '../assets/images/Advisor/VC.jpg';
 
 // ─── Project Imports ───
 import project1 from "../assets/images/Project/project1.jpeg";
-import project4 from "../assets/images/Project/project4.jpeg";
 import project6 from "../assets/images/Project/project6.jpeg";
 import project7 from "../assets/images/Project/project7.jpeg";
 import workshop from "../assets/images/news/workshop.jpeg";
 import project9 from "../assets/images/drone2.jpeg";
 import project10 from "../assets/images/drone3.jpeg";
+import aether1 from "../assets/images/Project/Aether_1.jpg";
+import deadcat1 from "../assets/images/Project/Deadcat_1.jpg";
 
 // ─── Team Member Imports ───
 import member1 from '../assets/images/Team/member1.jpeg';
@@ -108,11 +109,11 @@ const SEARCH_DATA: SearchResult[] = [
   // ─── Projects (ALL 7) ───
   { id: 'pr10', title: 'Autonomous Swarm UAV', category: 'Project', image: project10, link: '/projects?id=10', icon: Cpu, description: 'Next-gen AI-powered swarm drone system.', tags: ['swarm', 'ai', 'autonomous'] },
   { id: 'pr1', title: 'Endurance UAV', category: 'Project', image: project1, link: '/projects?id=1', icon: Rocket, description: 'High-performance endurance UAV.', tags: ['research', 'mapping', 'drone'] },
-  { id: 'pr4', title: 'Customize Dead Cat', category: 'Project', image: project4, link: '/projects?id=4', icon: Shield, description: 'Environmental monitoring drone.', tags: ['monitoring', 'deadcat'] },
+  { id: 'pr4', title: 'Project Dead Cat: DIY FPV Drone', category: 'Project', image: deadcat1, link: '/projects?id=4', icon: Shield, description: 'Lightweight Dead Cat–frame FPV drone designed for stable, efficient power usage.', tags: ['monitoring', 'deadcat', 'diy', 'fpv'] },
   { id: 'pr6', title: 'Defensive Drone', category: 'Project', image: project6, link: '/projects?id=6', icon: Shield, description: 'AI-integrated defensive system.', tags: ['defense', 'ai', 'real-time'] },
   { id: 'pr7', title: 'Fixed Wing', category: 'Project', image: project7, link: '/projects?id=7', icon: Wind, description: 'Long-range surveillance aircraft.', tags: ['fixed-wing', 'plane'] },
   { id: 'pr8', title: 'UAV Workshop Conducted', category: 'Blog', image: workshop, link: '/news', icon: Users, description: 'One of our core team members successfully conducted an intensive, hands-on workshop on UAV design, hardware integration, and autonomous flight controls.', tags: ['training', 'education', 'workshop', 'news'] },
-  { id: 'pr9', title: 'Multifunctional Drone', category: 'Project', image: project9, link: '/projects?id=9', icon: Award, description: 'Rescue operational drone for SUAS.', tags: ['rescue', 'competition', 'suas'] },
+  { id: 'pr9', title: 'AETHER', category: 'Project', image: aether1, link: '/projects?id=9', icon: Award, description: 'Advanced Electronic Tactical Hybrid Emergency Reconnaissance UAV.', tags: ['rescue', 'competition', 'suas', 'aether', 'reconnaissance'] },
 
   // ─── Leadership & Advisors ───
   { id: 'l1', title: 'Dr. Md. Abul Kashem Mia', category: 'Advisor', image: vcImage, link: '/advisors?id=vc-advisor', icon: Award, description: 'Official Advisor • Vice Chancellor, UIU', tags: ['vc', 'leader', 'kashem'] },
