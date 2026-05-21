@@ -5,8 +5,7 @@ import SplashScreen from './components/SplashScreen';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
-import NewsPage from './components/NewsPage';
-import Blog from './components/BlogPage';
+import NewsPage, { BlogComponent } from './components/NewsPage';
 import Team from './components/Team';
 import Projects from './components/Projects';
 import ProjectDetail from './components/ProjectDetail';
@@ -71,7 +70,7 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Hero />} />
           <Route path="/news" element={<NewsPage />} />
-          <Route path="/blog" element={<Blog />} />
+          <Route path="/blog" element={<BlogComponent />} />
           <Route path="/DetailedFeatures" element={<DetailedFeatures />} />
           <Route path="/team" element={<Team />} />
           <Route path="/projects" element={<Projects />} />
