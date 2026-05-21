@@ -30,7 +30,7 @@ export interface ProjectData {
 
 export const projectsData: ProjectData[] = [
   {
-    id: 10, name: "Autonomous Swarm UAV",
+    id: 10, name: " UAV",
     description: "Next-gen AI-powered swarm drone system for coordinated multi-agent missions.",
     longDescription: "The Autonomous Swarm UAV project represents the cutting edge of multi-agent aerial robotics. A fleet of coordinated drones communicates via mesh networking and onboard AI to autonomously plan, execute, and adapt to complex missions.",
     image: project10, category: "ai", year: "2026", status: "Active", isLatest: true,
@@ -44,7 +44,7 @@ export const projectsData: ProjectData[] = [
       { label: "Payload", value: "500g per unit" }
     ],
     media: [project10, swarm1, swarm2, swarm3, swarm4, swarm5],
-    docs: [{ title: "Swarm Architecture", url: "#" }, { title: "AI System Guide", url: "#" }, { title: "Mission Planning", url: "#" }],
+    docs: [{ title: "TDR", url: "#" },],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
@@ -94,7 +94,7 @@ export const projectsData: ProjectData[] = [
     ],
     media: [deadcat1, deadcat2, deadcat3, deadcat4, deadcat5],
     docs: [
-      { title: "Dead Cat Systems Manual", url: "https://drive.google.com/file/d/10tRqMCycjaOOR6zgCnPWBxOkARIw_YE4/view?usp=sharing" },
+      { title: "Dead Cat Systems Manual", url: "https://drive.google.com/file/d/1gAf_FV3DuQHDXwpTMfXwGkugqm9GQWEA/view?usp=sharing" },
     ],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
