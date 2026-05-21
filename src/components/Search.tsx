@@ -10,14 +10,12 @@ import vcImage from '../assets/images/Advisor/VC.jpg';
 
 // ─── Project Imports ───
 import project1 from "../assets/images/Project/project1.jpeg";
-import project2 from "../assets/images/Project/project2.jpeg";
-import project3 from "../assets/images/Project/project3.jpeg";
 import project4 from "../assets/images/Project/project4.jpeg";
-import project5 from "../assets/images/Project/project5.jpeg";
 import project6 from "../assets/images/Project/project6.jpeg";
 import project7 from "../assets/images/Project/project7.jpeg";
 import workshop from "../assets/images/news/workshop.jpeg";
 import project9 from "../assets/images/drone2.jpeg";
+import project10 from "../assets/images/drone3.jpeg";
 
 // ─── Team Member Imports ───
 import member1 from '../assets/images/Team/member1.jpeg';
@@ -107,12 +105,10 @@ const SEARCH_DATA: SearchResult[] = [
   { id: 'm21', title: 'Md Shazan Mahmud Arpon', category: 'Member', image: arpon, link: '/team?id=m21', icon: User, description: 'Member • Software & Navigation', tags: ['arpon'] },
   { id: 'm22', title: 'Najifa Nawar', category: 'Member', image: nazifa, link: '/team?id=m22', icon: User, description: 'Member • R&D Team', tags: ['nazifa', 'nawar'] },
 
-  // ─── Projects (ALL 9) ───
+  // ─── Projects (ALL 7) ───
+  { id: 'pr10', title: 'Autonomous Swarm UAV', category: 'Project', image: project10, link: '/projects?id=10', icon: Cpu, description: 'Next-gen AI-powered swarm drone system.', tags: ['swarm', 'ai', 'autonomous'] },
   { id: 'pr1', title: 'Endurance UAV', category: 'Project', image: project1, link: '/projects?id=1', icon: Rocket, description: 'High-performance endurance UAV.', tags: ['research', 'mapping', 'drone'] },
-  { id: 'pr2', title: 'Racing Drone', category: 'Project', image: project2, link: '/projects?id=2', icon: Zap, description: 'Compact system for high-speed flight.', tags: ['racing', 'fpv', 'research'] },
-  { id: 'pr3', title: 'Long Range Drone', category: 'Project', image: project3, link: '/projects?id=3', icon: Navigation, description: 'Autonomous mapping drone.', tags: ['mapping', 'nav', 'ai'] },
   { id: 'pr4', title: 'Customize Dead Cat', category: 'Project', image: project4, link: '/projects?id=4', icon: Shield, description: 'Environmental monitoring drone.', tags: ['monitoring', 'deadcat'] },
-  { id: 'pr5', title: 'Surveillance UAV', category: 'Project', image: project5, link: '/projects?id=5', icon: Eye, description: 'Experimental VTOL platform.', tags: ['vtol', 'experimental', 'surveillance'] },
   { id: 'pr6', title: 'Defensive Drone', category: 'Project', image: project6, link: '/projects?id=6', icon: Shield, description: 'AI-integrated defensive system.', tags: ['defense', 'ai', 'real-time'] },
   { id: 'pr7', title: 'Fixed Wing', category: 'Project', image: project7, link: '/projects?id=7', icon: Wind, description: 'Long-range surveillance aircraft.', tags: ['fixed-wing', 'plane'] },
   { id: 'pr8', title: 'UAV Workshop Conducted', category: 'Blog', image: workshop, link: '/news', icon: Users, description: 'One of our core team members successfully conducted an intensive, hands-on workshop on UAV design, hardware integration, and autonomous flight controls.', tags: ['training', 'education', 'workshop', 'news'] },

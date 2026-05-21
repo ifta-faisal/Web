@@ -1,8 +1,5 @@
-﻿import project1 from "../assets/images/Project/project1.jpeg";
-import project2 from "../assets/images/Project/project2.jpeg";
-import project3 from "../assets/images/Project/project3.jpeg";
+import project1 from "../assets/images/Project/project1.jpeg";
 import project4 from "../assets/images/Project/project4.jpeg";
-import project5 from "../assets/images/Project/project5.jpeg";
 import project6 from "../assets/images/Project/project6.jpeg";
 import project7 from "../assets/images/Project/project7.jpeg";
 import project9 from "../assets/images/drone2.jpeg";
@@ -55,40 +52,10 @@ export const projectsData: ProjectData[] = [
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
-    id: 2, name: "Racing Drone",
-    description: "Compact and efficient aerial system for research purposes.",
-    longDescription: "Built for speed and agility, the Racing Drone represents the pinnacle of our aerodynamic research.",
-    image: project2, category: "research", year: "2024", status: "Active",
-    tags: ["Racing", "Video Graphy"],
-    specs: [
-      { label: "Weight", value: "500g" },
-      { label: "Dimensions", value: "250mm wheelbase" },
-      { label: "Top Speed", value: "90mph+" },
-      { label: "Power System", value: "6S 1300mAh LiPo" }
-    ],
-    media: [project2],
-    docs: [{ title: "Build Log", url: "#" }],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-  },
-  {
-    id: 3, name: "Long Range Drone",
-    description: "Autonomous mapping drone with advanced navigation.",
-    longDescription: "Designed for expansive mapping operations, the Long Range Drone uses state-of-the-art AI navigation to cover vast areas efficiently.",
-    image: project3, category: "mapping", year: "2023", status: "Completed",
-    tags: ["AI Navigation", "Long Range"],
-    specs: [
-      { label: "Endurance", value: "90 minutes" },
-      { label: "Range", value: "15 miles" },
-      { label: "Navigation System", value: "Here4 GPS + RTK" }
-    ],
-    media: [project3],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-  },
-  {
     id: 4, name: "Customize Dead Cat",
     description: "Lightweight drone built for environmental monitoring.",
     longDescription: "The Dead Cat frame design ensures that the propellers stay out of the camera view, providing an unobstructed field of vision.",
-    image: project4, category: "environmental", year: "2024", status: "Active",
+    image: project4, category: "environmental", year: "2024", status: "Completed",
     tags: ["Environmental", "Monitoring"],
     specs: [
       { label: "Camera", value: "4K Gimbal-stabilized" },
@@ -98,23 +65,10 @@ export const projectsData: ProjectData[] = [
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
-    id: 5, name: "Surveillance UAV",
-    description: "Experimental VTOL platform for vertical take-off operations.",
-    longDescription: "Combining the efficiency of fixed-wing flight with the versatility of vertical take-off and landing (VTOL).",
-    image: project5, category: "experimental", year: "2023", status: "Testing",
-    tags: ["Long Range", "Experimental"],
-    specs: [
-      { label: "Wingspan", value: "2.5m" },
-      { label: "Take-off", value: "VTOL" }
-    ],
-    media: [project5],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-  },
-  {
     id: 6, name: "Defensive Drone",
     description: "AI-integrated drone for real-time data processing.",
     longDescription: "Equipped with advanced neural network processors, the Defensive Drone processes sensory data in real-time.",
-    image: project6, category: "ai", year: "2024", status: "Active",
+    image: project6, category: "ai", year: "2024", status: "Completed",
     tags: ["AI", "Real-time"],
     specs: [
       { label: "Processors", value: "Jetson Orin Nano 8GB" },
