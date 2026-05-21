@@ -174,28 +174,6 @@ const Projects = () => {
 
                 {/* Hover Overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent transition-opacity duration-300 ${hoveredProject === project.id ? 'opacity-100' : 'opacity-0'}`}></div>
-
-                {/* YouTube-style Play Button */}
-                <div
-                  className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10"
-                  onClick={(e) => handleVideoClick(e, project)}
-                  title={project.videoUrl ? "Watch project video" : "No video available"}
-                >
-                  <div
-                    className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg backdrop-blur-md border transition-all duration-300 shadow-lg
-                      ${project.videoUrl
-                        ? 'bg-[#FF0000] border-red-400/50 hover:bg-[#cc0000] hover:scale-110 cursor-pointer'
-                        : 'bg-black/50 border-white/10 cursor-default opacity-60'
-                      }`}
-                  >
-                    {/* YouTube logo shape */}
-                    <svg viewBox="0 0 90 20" className="h-3.5 sm:h-4 w-auto" fill="white">
-                      <path d="M27.9727 3.12324C27.6435 1.89289 26.6768 0.926871 25.4464 0.597804C23.2043 2.66938e-07 14.2298 0 14.2298 0C14.2298 0 5.25527 2.66938e-07 3.01317 0.597804C1.78283 0.926871 0.816104 1.89289 0.486793 3.12324C-1.6593e-07 5.36534 0 10.0075 0 10.0075C0 10.0075 -1.6593e-07 14.6496 0.486793 16.8918C0.816104 18.1221 1.78283 19.0881 3.01317 19.4172C5.25527 20.015 14.2298 20.015 14.2298 20.015C14.2298 20.015 23.2043 20.015 25.4464 19.4172C26.6768 19.0881 27.6435 18.1221 27.9727 16.8918C28.4595 14.6496 28.4595 10.0075 28.4595 10.0075C28.4595 10.0075 28.4595 5.36534 27.9727 3.12324Z" fill="#FF0000"/>
-                      <path d="M11.4336 14.3173L18.8084 10.0075L11.4336 5.69775V14.3173Z" fill="white"/>
-                      <text x="32" y="15" fontSize="14" fontWeight="700" fontFamily="Arial, sans-serif" fill="white" letterSpacing="0">YouTube</text>
-                    </svg>
-                  </div>
-                </div>
               </div>
 
               {/* Content */}
@@ -207,16 +185,33 @@ const Projects = () => {
                   {project.description}
                 </p>
 
-                {/* Tags */}
-                <div className="flex flex-wrap gap-1 sm:gap-2 mb-3 sm:mb-4">
-                  {project.tags.map((tag, index) => (
-                    <span
-                      key={index}
-                      className="text-[8px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gray-700/50 text-gray-300 rounded border border-gray-600"
-                    >
-                      {tag}
-                    </span>
-                  ))}
+                {/* Tags + YouTube Icon Row */}
+                <div className="flex items-center justify-between gap-2">
+                  <div className="flex flex-wrap gap-1 sm:gap-2">
+                    {project.tags.map((tag, index) => (
+                      <span
+                        key={index}
+                        className="text-[8px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gray-700/50 text-gray-300 rounded border border-gray-600"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+                  {/* YouTube Icon */}
+                  <div
+                    onClick={(e) => handleVideoClick(e, project)}
+                    title={project.videoUrl ? 'Watch project video' : 'No video available'}
+                    className={`flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center border transition-all duration-300 shadow-md
+                      ${project.videoUrl
+                        ? 'bg-[#FF0000]/90 border-red-400/40 hover:bg-[#FF0000] hover:scale-110 cursor-pointer'
+                        : 'bg-white/5 border-white/10 cursor-default opacity-40'
+                      }`}
+                  >
+                    <svg viewBox="0 0 24 24" className="w-4 h-4 sm:w-5 sm:h-5" fill="none">
+                      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" fill="white"/>
+                      <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="#FF0000"/>
+                    </svg>
+                  </div>
                 </div>
               </div>
 
