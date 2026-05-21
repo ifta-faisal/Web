@@ -1,10 +1,7 @@
 import React, { useState } from "react";
-import { Rocket, Zap, MapPin, Eye, ChevronRight, Calendar, Award, ArrowLeft, Users, Video } from "lucide-react";
+import { Rocket, Zap, MapPin, Eye, ChevronRight, Calendar, Award, ArrowLeft, Users, X, Play } from "lucide-react";
 import { useSearchParams } from 'react-router-dom';
 import BackToHome from './BackToHome';
-
-// ===== Import Local Images =====
-// Moved to src/data/projectsData.ts
 import { projectsData } from '../data/projectsData';
 import { Link } from 'react-router-dom';
 
@@ -12,6 +9,7 @@ const Projects = () => {
   const [searchParams, setSearchParams] = useSearchParams();
   const [selectedCategory, setSelectedCategory] = useState('all');
   const [hoveredProject, setHoveredProject] = useState(null);
+  const [videoModal, setVideoModal] = useState<{ url: string; name: string } | null>(null);
 
   const targetId = searchParams.get('id');
   const isFocused = !!targetId;
@@ -37,6 +35,14 @@ const Projects = () => {
       case 'Testing':   return 'bg-primary';
       case 'Completed': return 'bg-primary';
       default:          return 'bg-gray-500';
+    }
+  };
+
+  const handleVideoClick = (e: React.MouseEvent, project) => {
+    if (project.videoUrl) {
+      e.preventDefault();
+      e.stopPropagation();
+      setVideoModal({ url: project.videoUrl, name: project.name });
     }
   };
 
@@ -66,7 +72,6 @@ const Projects = () => {
         <div className="mb-10 sm:mb-14">
           {!isFocused ? (
             <div>
-              {/* Divider + Filter label row */}
               <div className="flex flex-wrap gap-2 items-center pt-2 border-t border-white/5 mb-1">
                 <div className="flex items-center gap-2 mr-2 text-slate-500 text-xs font-semibold uppercase tracking-wider" style={{ fontFamily: "'Inter', sans-serif" }}>
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="21" y1="4" x2="7" y2="4"/><line x1="17" y1="12" x2="3" y2="12"/><line x1="15" y1="20" x2="3" y2="20"/><circle cx="5" cy="4" r="2"/><circle cx="21" cy="12" r="2"/><circle cx="19" cy="20" r="2"/></svg>
@@ -100,8 +105,6 @@ const Projects = () => {
                   );
                 })}
               </div>
-
-              {/* Live count */}
               <p className="text-right text-xs text-slate-500 tracking-widest uppercase mt-2 font-semibold" style={{ fontFamily: "'Inter', sans-serif" }}>
                 Showing {filteredProjects.length} of {projects.length} projects
               </p>
@@ -170,13 +173,27 @@ const Projects = () => {
                 </div>
 
                 {/* Hover Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent transition-opacity duration-300 ${hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
-                  }`}></div>
-                  
-                {/* Video Icon */}
-                <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10">
-                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-primary/90 group-hover:border-primary group-hover:scale-110 transition-all duration-300 shadow-lg">
-                    <Video className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+                <div className={`absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent transition-opacity duration-300 ${hoveredProject === project.id ? 'opacity-100' : 'opacity-0'}`}></div>
+
+                {/* YouTube-style Play Button */}
+                <div
+                  className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10"
+                  onClick={(e) => handleVideoClick(e, project)}
+                  title={project.videoUrl ? "Watch project video" : "No video available"}
+                >
+                  <div
+                    className={`flex items-center gap-1.5 px-2.5 py-1.5 rounded-lg backdrop-blur-md border transition-all duration-300 shadow-lg
+                      ${project.videoUrl
+                        ? 'bg-[#FF0000] border-red-400/50 hover:bg-[#cc0000] hover:scale-110 cursor-pointer'
+                        : 'bg-black/50 border-white/10 cursor-default opacity-60'
+                      }`}
+                  >
+                    {/* YouTube logo shape */}
+                    <svg viewBox="0 0 90 20" className="h-3.5 sm:h-4 w-auto" fill="white">
+                      <path d="M27.9727 3.12324C27.6435 1.89289 26.6768 0.926871 25.4464 0.597804C23.2043 2.66938e-07 14.2298 0 14.2298 0C14.2298 0 5.25527 2.66938e-07 3.01317 0.597804C1.78283 0.926871 0.816104 1.89289 0.486793 3.12324C-1.6593e-07 5.36534 0 10.0075 0 10.0075C0 10.0075 -1.6593e-07 14.6496 0.486793 16.8918C0.816104 18.1221 1.78283 19.0881 3.01317 19.4172C5.25527 20.015 14.2298 20.015 14.2298 20.015C14.2298 20.015 23.2043 20.015 25.4464 19.4172C26.6768 19.0881 27.6435 18.1221 27.9727 16.8918C28.4595 14.6496 28.4595 10.0075 28.4595 10.0075C28.4595 10.0075 28.4595 5.36534 27.9727 3.12324Z" fill="#FF0000"/>
+                      <path d="M11.4336 14.3173L18.8084 10.0075L11.4336 5.69775V14.3173Z" fill="white"/>
+                      <text x="32" y="15" fontSize="14" fontWeight="700" fontFamily="Arial, sans-serif" fill="white" letterSpacing="0">YouTube</text>
+                    </svg>
                   </div>
                 </div>
               </div>
@@ -227,6 +244,51 @@ const Projects = () => {
           ))}
         </div>
       </div>
+
+      {/* ── Video Modal ── */}
+      {videoModal && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center p-4"
+          style={{ background: 'rgba(2,6,23,0.92)', backdropFilter: 'blur(16px)' }}
+          onClick={() => setVideoModal(null)}
+        >
+          <div
+            className="relative w-full max-w-4xl rounded-2xl overflow-hidden shadow-2xl border border-white/10"
+            onClick={(e) => e.stopPropagation()}
+          >
+            {/* Modal Header */}
+            <div className="flex items-center justify-between px-5 py-4 bg-black/60 border-b border-white/10">
+              <div className="flex items-center gap-3">
+                {/* YouTube Icon in header */}
+                <div className="flex items-center gap-1.5 px-2.5 py-1 bg-[#FF0000] rounded-md">
+                  <svg viewBox="0 0 28 20" className="h-4 w-auto" fill="white">
+                    <path d="M27.9727 3.12324C27.6435 1.89289 26.6768 0.926871 25.4464 0.597804C23.2043 0 14.2298 0 14.2298 0C14.2298 0 5.25527 0 3.01317 0.597804C1.78283 0.926871 0.816104 1.89289 0.486793 3.12324C0 5.36534 0 10.0075 0 10.0075C0 10.0075 0 14.6496 0.486793 16.8918C0.816104 18.1221 1.78283 19.0881 3.01317 19.4172C5.25527 20.015 14.2298 20.015 14.2298 20.015C14.2298 20.015 23.2043 20.015 25.4464 19.4172C26.6768 19.0881 27.6435 18.1221 27.9727 16.8918C28.4595 14.6496 28.4595 10.0075 28.4595 10.0075C28.4595 10.0075 28.4595 5.36534 27.9727 3.12324Z"/>
+                    <path d="M11.4336 14.3173L18.8084 10.0075L11.4336 5.69775V14.3173Z" fill="#FF0000"/>
+                  </svg>
+                </div>
+                <span className="text-white font-bold text-sm uppercase tracking-wider">{videoModal.name}</span>
+              </div>
+              <button
+                onClick={() => setVideoModal(null)}
+                className="w-9 h-9 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white transition-all hover:scale-110"
+              >
+                <X className="w-5 h-5" />
+              </button>
+            </div>
+            {/* Video Embed */}
+            <div className="relative w-full" style={{ paddingBottom: '56.25%' }}>
+              <iframe
+                src={`${videoModal.url}?autoplay=1&rel=0`}
+                title={videoModal.name}
+                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                allowFullScreen
+                className="absolute inset-0 w-full h-full"
+                style={{ border: 'none' }}
+              />
+            </div>
+          </div>
+        </div>
+      )}
     </section>
   );
 };
