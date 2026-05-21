@@ -50,7 +50,7 @@ const Projects = () => {
       <div className="absolute top-0 right-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-primary rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" />
       <div className="absolute bottom-0 left-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-accent rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" style={{ animationDelay: '2s' }} />
 
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+      <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1 sm:py-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full text-primary text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
@@ -120,48 +120,50 @@ const Projects = () => {
           )}
         </div>
 
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 sm:gap-6">
-          {filteredProjects.map((project) => (
+        <div className="flex flex-col gap-4 sm:gap-6">
+          {filteredProjects.map((project, index) => (
             <Link
               to={`/project/${project.id}`}
               key={project.id}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
-              className="group block bg-gray-800/50 backdrop-blur-sm rounded-2xl overflow-hidden border border-gray-700 hover:border-primary/50 transition-all duration-500 hover:shadow-2xl hover:shadow-primary/20 hover:-translate-y-1 sm:hover:-translate-y-2"
+              className={`group flex flex-col md:flex-row ${
+                index % 2 === 1 ? "md:flex-row-reverse" : ""
+              } bg-gray-800/30 backdrop-blur-md rounded-xl overflow-hidden border border-gray-700/50 hover:border-primary/50 transition-all duration-500 hover:shadow-xl hover:shadow-primary/5`}
             >
-              {/* Image Container */}
-              <div className="relative h-48 sm:h-56 overflow-hidden">
+              {/* Image Column */}
+              <div className="relative w-full md:w-44 lg:w-48 h-36 md:h-auto flex-shrink-0 overflow-hidden">
                 <img
                   src={project.image}
                   alt={project.name}
                   loading="lazy"
-                  className="ju-reveal w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                  className="ju-reveal w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
                 />
 
                 {/* Gradient Overlay */}
-                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/50 to-transparent opacity-60"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-gray-900/40 to-transparent opacity-60"></div>
 
                 {/* Status Badge */}
-                <div className="absolute top-3 left-3 sm:top-4 sm:left-4 flex items-center space-x-1 sm:space-x-2">
-                  <div className={`w-2 h-2 sm:w-2.5 sm:h-2.5 rounded-full ${getStatusColor(project.status)} animate-pulse`}></div>
-                  <span className="text-[9px] sm:text-xs font-bold text-white bg-black/50 backdrop-blur-sm px-1.5 py-0.5 sm:px-2 sm:py-1 rounded">
+                <div className="absolute top-2 left-2 flex items-center space-x-1">
+                  <div className={`w-1.5 h-1.5 rounded-full ${getStatusColor(project.status)} animate-pulse`}></div>
+                  <span className="text-[9px] font-bold text-white bg-black/60 backdrop-blur-sm px-1.5 py-0.5 rounded">
                     {project.status}
                   </span>
                 </div>
 
                 {/* Year Badge */}
-                <div className="absolute top-3 right-3 sm:top-4 sm:right-4 flex flex-col items-end gap-1.5">
-                  <div className="flex items-center space-x-1 bg-primary/20 backdrop-blur-sm border border-primary/30 px-2 py-1 rounded text-primary text-[9px] sm:text-xs font-semibold">
+                <div className="absolute top-2 right-2 flex flex-col items-end gap-1">
+                  <div className="flex items-center space-x-1 bg-primary/20 backdrop-blur-sm border border-primary/30 px-1.5 py-0.5 rounded text-primary text-[9px] font-semibold">
                     <Calendar className="w-3 h-3" />
                     <span>{project.year}</span>
                   </div>
                   {project.isLatest && (
                     <div
-                      className="flex items-center gap-1 px-2 py-1 rounded text-[9px] sm:text-xs font-bold tracking-wide"
+                      className="flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[8px] font-bold tracking-wider"
                       style={{
                         background: 'linear-gradient(135deg, #f97316, #dc2626)',
                         color: '#fff',
-                        boxShadow: '0 0 12px rgba(249,115,22,0.7)',
+                        boxShadow: '0 0 8px rgba(249,115,22,0.5)',
                         animation: 'pulse 2s cubic-bezier(0.4,0,0.6,1) infinite',
                       }}
                     >
@@ -171,50 +173,70 @@ const Projects = () => {
                 </div>
 
                 {/* Hover Overlay */}
-                <div className={`absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent transition-opacity duration-300 ${hoveredProject === project.id ? 'opacity-100' : 'opacity-0'}`}></div>
+                <div className={`absolute inset-0 bg-gradient-to-t from-primary/10 to-transparent transition-opacity duration-300 ${hoveredProject === project.id ? 'opacity-100' : 'opacity-0'}`}></div>
               </div>
 
-              {/* Content */}
-              <div className="p-3 sm:p-5">
-                <h3 className="ju-reveal text-base sm:text-lg font-bold text-white mb-1 sm:mb-2 group-hover:text-primary transition-colors">
-                  {project.name}
-                </h3>
-                <p className="ju-reveal text-gray-400 text-xs sm:text-sm leading-relaxed mb-3 sm:mb-4">
-                  {project.description}
-                </p>
+              {/* Content Column */}
+              <div className="flex-1 p-3.5 sm:p-4 lg:p-4.5 flex flex-col justify-between gap-3">
+                <div>
+                  <h3 className="ju-reveal text-lg sm:text-xl font-bold text-white mb-1 group-hover:text-primary transition-colors duration-300">
+                    {project.name}
+                  </h3>
+                  <p className="ju-reveal text-gray-300 text-xs leading-relaxed mb-3">
+                    {project.description}
+                  </p>
 
-                {/* Tags + YouTube Icon Row */}
-                <div className="flex items-center justify-between gap-2">
-                  <div className="flex flex-wrap gap-1 sm:gap-2">
-                    {project.tags.map((tag, index) => (
+                  {/* Specs Grid */}
+                  {project.specs && project.specs.length > 0 && (
+                    <div className="grid grid-cols-2 sm:grid-cols-4 gap-2 mb-3">
+                      {project.specs.slice(0, 4).map((spec, sIdx) => (
+                        <div key={sIdx} className="bg-white/5 border border-white/10 rounded-md p-1.5 flex flex-col justify-center transition-all group-hover:bg-white/[0.08] hover:border-primary/20">
+                          <span className="text-[8px] text-gray-400 uppercase tracking-wider font-semibold">{spec.label}</span>
+                          <span className="text-[11px] font-bold text-white mt-0.5 truncate">{spec.value}</span>
+                        </div>
+                      ))}
+                    </div>
+                  )}
+                </div>
+
+                {/* Footer Row */}
+                <div className="flex flex-wrap items-center justify-between gap-2.5 pt-3 border-t border-gray-700/30">
+                  <div className="flex flex-wrap gap-1">
+                    {project.tags.map((tag, idx) => (
                       <span
-                        key={index}
-                        className="text-[8px] sm:text-xs px-1.5 sm:px-2 py-0.5 sm:py-1 bg-gray-700/50 text-gray-300 rounded border border-gray-600"
+                        key={idx}
+                        className="text-[9px] px-1.5 py-0.5 bg-gray-800 text-gray-300 rounded border border-gray-700 font-medium"
                       >
                         {tag}
                       </span>
                     ))}
                   </div>
-                  {/* YouTube Icon */}
-                  <div
-                    onClick={(e) => handleVideoClick(e, project)}
-                    title={project.videoUrl ? 'Watch project video' : 'No video available'}
-                    className={`flex-shrink-0 w-8 h-8 sm:w-9 sm:h-9 rounded-full flex items-center justify-center border transition-all duration-300 shadow-md
-                      ${project.videoUrl
-                        ? 'bg-[#FF0000]/90 border-red-400/40 hover:bg-[#FF0000] hover:scale-110 cursor-pointer'
-                        : 'bg-white/5 border-white/10 cursor-default opacity-40'
-                      }`}
-                  >
-                    <svg viewBox="0 0 24 24" className="w-4 h-4 sm:w-5 sm:h-5" fill="none">
-                      <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" fill="white"/>
-                      <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="#FF0000"/>
-                    </svg>
+
+                  <div className="flex items-center gap-2.5">
+                    {/* YouTube Icon */}
+                    <div
+                      onClick={(e) => handleVideoClick(e, project)}
+                      title={project.videoUrl ? 'Watch project video' : 'No video available'}
+                      className={`flex-shrink-0 w-7 h-7 rounded-full flex items-center justify-center border transition-all duration-300 shadow-md
+                        ${project.videoUrl
+                          ? 'bg-[#FF0000]/90 border-red-400/40 hover:bg-[#FF0000] hover:scale-110 cursor-pointer shadow-red-600/20'
+                          : 'bg-white/5 border-white/10 cursor-default opacity-40'
+                        }`}
+                    >
+                      <svg viewBox="0 0 24 24" className="w-3.5 h-3.5" fill="none">
+                        <path d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46A2.78 2.78 0 0 0 1.46 6.42 29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58 2.78 2.78 0 0 0 1.95 1.96C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.96-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z" fill="white"/>
+                        <polygon points="9.75,15.02 15.5,12 9.75,8.98 9.75,15.02" fill="#FF0000"/>
+                      </svg>
+                    </div>
+
+                    {/* View Details Link */}
+                    <span className="flex items-center gap-0.5 text-[11px] font-bold text-primary group-hover:text-white transition-colors duration-300">
+                      View Details
+                      <ChevronRight className="w-3 h-3 transform group-hover:translate-x-0.5 transition-transform" />
+                    </span>
                   </div>
                 </div>
               </div>
-
-              {/* Bottom Accent Line */}
-              <div className="h-0.5 sm:h-1 bg-gradient-to-r from-transparent via-[#f97316] to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
             </Link>
           ))}
         </div>
