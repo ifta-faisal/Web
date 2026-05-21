@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { GraduationCap, Mail, Linkedin, Award, BookOpen, UserPlus, ArrowLeft } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
-import BackToHome from './BackToHome';
 
 import mentor1 from '../assets/images/Advisor/Mentor1.jpeg';
 import mentor2 from '../assets/images/Advisor/Mentor2.jpeg';
@@ -224,7 +223,6 @@ const Mentors = () => {
       <div className="absolute bottom-0 left-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-accent rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" style={{ animationDelay: '2s' }} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <BackToHome />
         {/* ── Header ── */}
         <div className="text-center mb-14 sm:mb-20">
           <div className="section-label mb-3">Our Advisors &amp; Mentors</div>

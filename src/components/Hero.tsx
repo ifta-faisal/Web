@@ -2,10 +2,11 @@ import React, { useRef, useEffect, useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, ChevronLeft, ChevronRight, Calendar, CheckCircle2 } from 'lucide-react';
-import droneVideo from '../assets/video/Drone_Fotage_1.mp4';
+import droneVideo from '../assets/video/vid_1.mp4';
+import vid2 from '../assets/video/vid_2.mp4';
 import unitedGroupLogo from '../assets/images/Sponsor/united_group.png';
 import uiuLogo from '../assets/images/Sponsor/UIU_Logo.png';
-import droneImage from '../assets/images/ddrone.png';
+import droneImage from '../assets/images/0000.png';
 import droneSpecsImg from '../assets/images/drone_specs.png';
 import suaslogo from '../assets/images/suas.png';
 import soildwork from '../assets/images/Sponsor/solidworks.png';
@@ -365,13 +366,13 @@ const Hero = () => {
               <div className="absolute -inset-6 pointer-events-none"
                 style={{ background: 'radial-gradient(ellipse, rgba(249,115,22,0.12) 0%, transparent 70%)', filter: 'blur(30px)' }} />
               <div className="relative" style={{ paddingBottom: '56.25%' }}>
-                <iframe
-                  src="https://www.youtube.com/embed/wObg836qNrE?autoplay=1&mute=1&loop=1&playlist=wObg836qNrE&controls=0&modestbranding=1&rel=0&start=10"
-                  title="Drone Assembly Detail"
-                  allow="autoplay; encrypted-media"
-                  allowFullScreen
-                  className="absolute inset-0 w-full h-full rounded-xl"
-                  style={{ border: 'none' }}
+                <video
+                  src={vid2}
+                  autoPlay
+                  muted
+                  loop
+                  playsInline
+                  className="absolute inset-0 w-full h-full rounded-xl object-cover"
                 />
                 <div className="absolute top-0 left-0 w-7 h-7 pointer-events-none z-10" style={{ borderTop: '2px solid rgba(249,115,22,0.6)', borderLeft: '2px solid rgba(249,115,22,0.6)' }} />
                 <div className="absolute top-0 right-0 w-7 h-7 pointer-events-none z-10" style={{ borderTop: '2px solid rgba(249,115,22,0.6)', borderRight: '2px solid rgba(249,115,22,0.6)' }} />

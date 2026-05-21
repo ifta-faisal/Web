@@ -1,5 +1,4 @@
 import React from "react";
-import BackToHome from './BackToHome';
 import { Eye } from 'lucide-react';
 
 // Import images from assets
@@ -93,10 +92,7 @@ const Gallery = () => {
       <div className="absolute top-0 right-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-primary rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" />
       <div className="absolute bottom-0 left-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-accent rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" style={{ animationDelay: '2s' }} />
 
-      {/* Back to Home Navigation */}
-      <div className="max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
-        <BackToHome />
-      </div>
+
 
       {/* Title */}
       <div className="text-center mb-16 relative z-10">

@@ -23,3 +23,6 @@ dist-ssr
 *.sln
 *.sw?
 .env
+
+# Large media files
+src/VID_20260512_173945529.mp4

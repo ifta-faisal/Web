@@ -1,6 +1,5 @@
 import React, { useState } from "react";
 import { Mail, Phone, MapPin, Send, ArrowRight, CheckCircle } from "lucide-react";
-import BackToHome from './BackToHome';
 
 const Contact = () => {
   const [formData, setFormData] = useState({
@@ -88,7 +87,6 @@ const Contact = () => {
       <div className="absolute bottom-0 left-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-accent rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" style={{ animationDelay: "2s" }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <BackToHome />
         {/* Header */}
         <div className="text-center mb-12 sm:mb-20">
           <div className="section-label mb-3">Get In Touch</div>

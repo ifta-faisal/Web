@@ -1,6 +1,6 @@
-﻿import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
-import { Search as SearchIcon, Calendar, ArrowLeft, X, SlidersHorizontal, User, Tag, Sparkles } from 'lucide-react';
+import { Search as SearchIcon, Calendar, X, SlidersHorizontal, User, Tag, Sparkles } from 'lucide-react';
 import { newsItems, NewsItem } from '../data/newsData';
 
 const CATEGORIES = ['All', 'Workshop', 'Collaboration', 'Training', 'Visit', 'Recruiting', 'General'];
@@ -56,25 +56,6 @@ const NewsPage = () => {
 
         {/* â”€â”€ Page Content â”€â”€ */}
         <div style={{ maxWidth: '80rem', margin: '0 auto', padding: '0 1.5rem', position: 'relative', zIndex: 10 }}>
-
-          {/* Back link */}
-          <div style={{ marginBottom: '2rem' }}>
-            <Link
-              to="/"
-              style={{
-                display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-                fontSize: '0.7rem', fontWeight: 700, letterSpacing: '0.12em',
-                textTransform: 'uppercase', color: '#64748b',
-                textDecoration: 'none', transition: 'color 0.2s',
-                fontFamily: "'Inter', sans-serif",
-              }}
-              onMouseEnter={e => (e.currentTarget.style.color = '#f97316')}
-              onMouseLeave={e => (e.currentTarget.style.color = '#64748b')}
-            >
-              <ArrowLeft size={14} />
-              Back to Home
-            </Link>
-          </div>
 
           {/* â”€â”€ Hero Header â”€â”€ */}
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>

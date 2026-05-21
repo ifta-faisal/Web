@@ -1,7 +1,6 @@
 import React, { useState } from "react";
 import { Rocket, Zap, MapPin, Eye, ChevronRight, Calendar, Award, ArrowLeft, Users, X, Play } from "lucide-react";
 import { useSearchParams } from 'react-router-dom';
-import BackToHome from './BackToHome';
 import { projectsData } from '../data/projectsData';
 import { Link } from 'react-router-dom';
 
@@ -52,7 +51,6 @@ const Projects = () => {
       <div className="absolute bottom-0 left-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-accent rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" style={{ animationDelay: '2s' }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        <BackToHome />
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1 sm:py-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full text-primary text-xs sm:text-sm font-semibold mb-4 sm:mb-6">

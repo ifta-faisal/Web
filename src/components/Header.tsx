@@ -26,12 +26,12 @@ const Header = () => {
 
   const navItems = [
     { name: 'Projects', to: '/projects', hasDropdown: true },
-    { name: 'News', to: '/news' },
     { name: 'Advisors', to: '/advisors' },
     { name: 'Team', to: '/team' },
     { name: 'Join us', to: '/joinus' },
-    { name: 'Contact us', to: '/contact' },
     { name: 'Blog', to: '/blog' },
+    { name: 'News', to: '/news' },
+    { name: 'Contact us', to: '/contact' },
     { name: 'Become a sponsor', to: '/sponsor' },
   ];
 

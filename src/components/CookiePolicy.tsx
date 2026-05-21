@@ -1,5 +1,4 @@
 import React from "react";
-import BackToHome from './BackToHome';
 
 const CookiePolicy = () => {
   return (
@@ -9,7 +8,6 @@ const CookiePolicy = () => {
       <div className="absolute bottom-0 left-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-accent rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" style={{ animationDelay: '2s' }} />
 
       <div className="max-w-4xl mx-auto px-6 relative z-10">
-        <BackToHome />
         <h1 className="ju-reveal text-4xl sm:text-5xl font-bold text-center">
           Cookie Policy
         </h1>
