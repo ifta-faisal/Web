@@ -179,6 +179,25 @@ const Drone360Viewer: React.FC<{ src: string; alt?: string }> = ({ src, alt = "3
   );
 };
 
+const slideshowImages = [
+  img1,
+  jetson,
+  lidar,
+  missionPlanningImg,
+  sysArchImg,
+  batteryImg
+];
+
+const getSlideDetails = (imgSrc: string, index: number) => {
+  if (imgSrc === img1) return { title: "Carbon Fiber Airframe", desc: "Lightweight and rigid structural monocoque" };
+  if (imgSrc === jetson) return { title: "NVIDIA Jetson AI Brain", desc: "On-board real-time neural edge processing" };
+  if (imgSrc === lidar) return { title: "Multi-Sensor Fusion Suite", desc: "Integrated LiDAR and depth perception" };
+  if (imgSrc === missionPlanningImg) return { title: "Mission Planning UI", desc: "Autonomous ground control waypoint tracking" };
+  if (imgSrc === sysArchImg) return { title: "Hardware System Architecture", desc: "Dual-redundant flight control communication" };
+  if (imgSrc === batteryImg) return { title: "High-Density Power House", desc: "Custom 3S smart BMS battery module" };
+  return { title: `Aircraft Subsystem Image ${index + 1}`, desc: "Click to view full photo gallery" };
+};
+
 /* ═══════════════════════════════════════════════════ */
 /*                  MAIN COMPONENT                     */
 /* ═══════════════════════════════════════════════════ */
@@ -335,15 +354,35 @@ const DetailedFeatures = () => {
         </Reveal>
       </section>
 
-      {/* ── PHOTO STRIP ── */}
-      <section className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-8">
-        <Reveal className="grid grid-cols-3 gap-4">
-          {[img1, img1,].map((src, i) => (
-            <div key={i} className="relative group overflow-hidden rounded-2xl aspect-[4/3]">
-              <img src={src} alt={`drone-${i + 1}`} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700" />
-              <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500" />
+      {/* ── PHOTO SLIDESHOW (Continuous Infinite Marquee) ── */}
+      <section className="relative z-10 w-full py-8 overflow-hidden">
+        <Reveal>
+          <div className="gallery-marquee-row gallery-edge-fade overflow-hidden relative z-10 w-full">
+            <div className="gallery-marquee-track-left">
+              {[...slideshowImages, ...slideshowImages].map((src, i) => {
+                const index = i % slideshowImages.length;
+                const details = getSlideDetails(src, index);
+                return (
+                  <div
+                    className="gallery-card-marquee block"
+                    key={i}
+                    style={{ background: '#0d0b0a' }}
+                  >
+                    <img 
+                      src={src} 
+                      alt={details.title} 
+                      className="w-full h-full object-cover" 
+                      loading="lazy" 
+                    />
+                    <div className="gallery-card-caption">
+                      <h3 style={{ fontFamily: "'Inter', sans-serif" }}>{details.title}</h3>
+                      <p style={{ fontFamily: "'Inter', sans-serif" }}>{details.desc}</p>
+                    </div>
+                  </div>
+                );
+              })}
             </div>
-          ))}
+          </div>
         </Reveal>
       </section>
 

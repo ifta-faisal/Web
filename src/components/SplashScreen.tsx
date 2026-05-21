@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useLayoutEffect } from 'react';
-import bgVideoUrl from '../assets/video/Drone_Fotage_1.mp4';
+import bgVideoUrl from '../assets/video/splash.mp4';
 import logoUrl from '../assets/images/logo/Logo UART SVG.svg';
 
 const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {

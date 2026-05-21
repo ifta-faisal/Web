@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { GraduationCap, Mail, Linkedin, Award, Users, Trophy, ChevronRight, User } from 'lucide-react';
 import { useSearchParams } from 'react-router-dom';
+import BackToHome from './BackToHome';
 import member1 from '../assets/images/Team/member1.jpeg';
 import member2 from '../assets/images/Team/member2.jpg';
 import member3 from '../assets/images/Team/member3.jpeg';
@@ -142,6 +143,7 @@ const Team = () => {
       ></div>
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <BackToHome />
         <div className="text-center mb-16 sm:mb-24">
           <div className="section-label mb-3">Our Core Team</div>
           <h1 className="text-2xl sm:text-4xl md:text-6xl lg:text-7xl font-bold text-white mb-6 leading-tight">

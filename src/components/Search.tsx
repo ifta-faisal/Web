@@ -16,7 +16,7 @@ import project4 from "../assets/images/Project/project4.jpeg";
 import project5 from "../assets/images/Project/project5.jpeg";
 import project6 from "../assets/images/Project/project6.jpeg";
 import project7 from "../assets/images/Project/project7.jpeg";
-import project8 from "../assets/images/Project/project8.jpeg";
+import workshop from "../assets/images/news/workshop.jpeg";
 import project9 from "../assets/images/drone2.jpeg";
 
 // ─── Team Member Imports ───
@@ -115,7 +115,7 @@ const SEARCH_DATA: SearchResult[] = [
   { id: 'pr5', title: 'Surveillance UAV', category: 'Project', image: project5, link: '/projects?id=5', icon: Eye, description: 'Experimental VTOL platform.', tags: ['vtol', 'experimental', 'surveillance'] },
   { id: 'pr6', title: 'Defensive Drone', category: 'Project', image: project6, link: '/projects?id=6', icon: Shield, description: 'AI-integrated defensive system.', tags: ['defense', 'ai', 'real-time'] },
   { id: 'pr7', title: 'Fixed Wing', category: 'Project', image: project7, link: '/projects?id=7', icon: Wind, description: 'Long-range surveillance aircraft.', tags: ['fixed-wing', 'plane'] },
-  { id: 'pr8', title: 'Workshop', category: 'Project', image: project8, link: '/projects?id=8', icon: Users, description: 'Member training and UAV workshops.', tags: ['training', 'education', 'workshop'] },
+  { id: 'pr8', title: 'UAV Workshop Conducted', category: 'Blog', image: workshop, link: '/news', icon: Users, description: 'One of our core team members successfully conducted an intensive, hands-on workshop on UAV design, hardware integration, and autonomous flight controls.', tags: ['training', 'education', 'workshop', 'news'] },
   { id: 'pr9', title: 'Multifunctional Drone', category: 'Project', image: project9, link: '/projects?id=9', icon: Award, description: 'Rescue operational drone for SUAS.', tags: ['rescue', 'competition', 'suas'] },
 
   // ─── Leadership & Advisors ───
@@ -136,7 +136,7 @@ const Search = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =
       setResults([]);
       return;
     }
-    const filtered = SEARCH_DATA.filter(item => 
+    const filtered = SEARCH_DATA.filter(item =>
       item.title.toLowerCase().includes(val.toLowerCase()) ||
       item.category.toLowerCase().includes(val.toLowerCase()) ||
       item.description.toLowerCase().includes(val.toLowerCase()) ||
@@ -162,7 +162,7 @@ const Search = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =
   return (
     <div className="fixed inset-0 z-[100] flex items-start justify-center pt-[15vh] px-4 sm:px-6">
       {/* Backdrop */}
-      <div 
+      <div
         className="absolute inset-0 bg-[#020617]/90 backdrop-blur-xl transition-opacity animate-fade-in"
         onClick={onClose}
       />

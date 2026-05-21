@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { ArrowRight } from 'lucide-react';
+import BackToHome from './BackToHome';
 
 // ─── Sub-team data ─────────────────────────────────────────────────────────────
 const subTeams = [
@@ -547,6 +548,9 @@ const JoinUs = () => {
       `}</style>
 
       <div className="ju-page">
+        <div style={{ maxWidth: '80rem', margin: '0 auto', padding: '1.5rem 1.5rem 0' }}>
+          <BackToHome />
+        </div>
 
         {/* ── HERO ── */}
         <section className=" ju-hero" ref={heroRef} id="join-us">

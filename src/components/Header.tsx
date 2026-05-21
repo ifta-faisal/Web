@@ -26,6 +26,7 @@ const Header = () => {
 
   const navItems = [
     { name: 'Projects', to: '/projects', hasDropdown: true },
+    { name: 'News', to: '/news' },
     { name: 'Advisors', to: '/advisors' },
     { name: 'Team', to: '/team' },
     { name: 'Join us', to: '/joinus' },

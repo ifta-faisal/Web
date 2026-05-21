@@ -8,15 +8,10 @@ import uiuLogo from '../assets/images/Sponsor/UIU_Logo.png';
 import droneImage from '../assets/images/ddrone.png';
 import droneSpecsImg from '../assets/images/drone_specs.png';
 import suaslogo from '../assets/images/suas.png';
-import recruit1 from '../assets/images/news/Recruit1.jpeg';
-import recruit2 from '../assets/images/news/Recruit2.jpeg';
-import ua from '../assets/images/UA1.jpeg';
 import soildwork from '../assets/images/Sponsor/solidworks.png';
 import mathlab from '../assets/images/Sponsor/matlab.png';
 import autodesk from '../assets/images/Sponsor/autodesk.png';
-import loopinc from '../assets/images/news/loopinc.jpg';
-import ovtidose from '../assets/images/news/ovtidose.jpg';
-import handson from '../assets/images/news/handson.jpeg';
+import { newsItems } from '../data/newsData';
 
 // Import New Sections
 import DroneParts from './DroneParts';
@@ -128,15 +123,8 @@ const Hero = () => {
     { text: 'Modular architecture allowing customizable mission payloads' },
   ];
 
-  // Recent Updates Carousel
-  const achievements = [
-    { id: 1, title: 'Recruiting', date: '12 November 2025', source: 'UART', description: 'We are looking for new Members.', link: '#', image: recruit1 },
-    { id: 2, title: 'Recruiting', date: '19 November 2025', source: 'UART', description: 'This is your last chance to join — 24 HOURS LEFT', link: '#', image: recruit2 },
-    { id: 3, title: 'Meet UART', date: '28 November 2025', source: 'UART', description: 'A group of enthusiasts from UIU taking innovation to new heights.', link: '#', image: ua },
-    { id: 4, title: 'Official Visit of Loop Inc', date: '28 November 2025', source: 'UART', description: 'A group of representatives from Loop Inc., Japan, visited us..', link: '#', image: loopinc },
-    { id: 5, title: 'Invitation from Ovitidose, Bangladesh', date: '6 April 2026', source: 'UART', description: 'Our team was formally invited by Ovitidose, a Bangladesh-based drone company.', link: '#', image: ovtidose },
-    { id: 6, title: 'Hands-on Training Session', date: '20 March 2026', source: 'UART', description: 'A hands-on training session was conducted by one of our team members.', link: '#', image: handson },
-  ];
+  // Recent Updates Carousel (sorted by most recent date first from shared data)
+  const achievements = newsItems;
 
   const [currentIndex, setCurrentIndex] = useState(0);
   const prevSlide = () => setCurrentIndex(prev => (prev === 0 ? achievements.length - 1 : prev - 1));
@@ -180,10 +168,10 @@ const Hero = () => {
 
           {/* Mission tag */}
           <div className="hero-animate-tag flex items-center gap-3 mb-3">
-            <span className="block w-2 h-2 rounded-full" style={{ background: '#FFD4A3', boxShadow: '0 0 10px #f97316, 0 0 20px rgba(249, 115, 22, 0.4)' }} />
+            {/* <span className="block w-2 h-2 rounded-full" style={{ background: '#FFD4A3', boxShadow: '0 0 10px #f97316, 0 0 20px rgba(249, 115, 22, 0.4)' }} />
             <span className="text-xs sm:text-sm font-bold tracking-[0.22em] uppercase" style={{ color: '#f97316', fontFamily: "'Inter', sans-serif" }}>
               UIU Aerial Robotics Team&nbsp;
-            </span>
+            </span> */}
           </div>
 
           {/* Main headline */}
@@ -341,109 +329,7 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* ===== 3. PRIMARY OBJECTIVE SECTION ===== */}
-      <section className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-80 h-80 rounded-full opacity-[0.07] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #f97316, transparent 70%)', filter: 'blur(60px)' }} />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-          <div className="text-center mb-16">
-            <div className="section-label mb-5">Our Primary Objective</div>
-            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4">
-              <div className="mask-container">
-                <span className="mask-reveal ju-visible">Primary Objective</span>
-              </div>
-            </h2>
-            <div className="shimmer-line mx-auto rounded-full" style={{ width: '100px', height: '3px', background: 'linear-gradient(90deg, #f97316, #dc2626)' }} />
-          </div>
-
-          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
-            {/* SUAS Logo Card — zoom-in scale reveal + float */}
-            <div className="ju-reveal-scale">
-              <div className="relative p-10 text-center rounded-2xl border border-white/[0.08] bg-[rgba(15,23,42,0.8)] backdrop-blur-md" style={{ animation: 'float-y-slow 6s ease-in-out infinite' }}>
-                <img src={suaslogo} alt="SUAS Logo" className="object-contain mx-auto w-56 h-56" />
-                <a
-                  href="https://suas-competition.org/competitions"
-                  target="_blank" rel="noopener noreferrer"
-                  className="block text-center px-8 py-3 mt-6 rounded-lg font-semibold transition-all duration-300"
-                  style={{ border: '2px solid #f97316', color: '#f97316' }}
-                  onMouseEnter={e => { e.currentTarget.style.background = 'rgba(249,115,22,0.2)'; e.currentTarget.style.color = '#fff'; }}
-                  onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#f97316'; }}
-                >
-                  Visit SUAS Competition →
-                </a>
-              </div>
-            </div>
-
-            {/* Text — fade up with stagger */}
-            <p className="ju-reveal text-slate-300 text-lg leading-relaxed md:text-xl" style={{ fontFamily: "'Inter', sans-serif" }}>
-              UART's annual objective is to achieve top performance in the SUAS 2026 competition,
-              the primary focus is on providing undergraduate students with an opportunity to apply their engineering and computer science skills to solve a complex,
-              real-world problem. The competition acts as a platform for hands-on engineering experience, autonomous system development,
-              innovation, and collaborative, multidisciplinary teamwork.
-            </p>
-          </div>
-        </div>
-      </section>
-
-      {/* ===== Drone Parts ===== */}
-      <DroneParts />
-
-      {/* ===== 4. What We Do / Vision ===== */}
-      <section id="what-we-do" className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
-        <div className="absolute top-0 left-0 w-96 h-96 rounded-full opacity-[0.06] pointer-events-none"
-          style={{ background: 'radial-gradient(circle, #f97316, transparent 70%)', filter: 'blur(70px)' }} />
-
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
-          <div className="section-label mb-5">Our Vision</div>
-          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4">
-            <div className="mask-container">
-              <span className="mask-reveal ju-visible">Our Vision</span>
-            </div>
-          </h2>
-          <div className="shimmer-line mx-auto rounded-full mb-16" style={{ width: '80px', height: '3px', background: 'linear-gradient(90deg, #f97316, #dc2626)' }} />
-
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {whatWeDoCards.map((card, index) => {
-              const delayClass = ['ju-delay-1', 'ju-delay-2', 'ju-delay-3', 'ju-delay-4', 'ju-delay-5', 'ju-delay-6'][index] || '';
-              return (
-                <div key={card.id} className={`ju-reveal relative p-6 sm:p-8 text-left rounded-2xl border border-white/[0.08] bg-[rgba(15,23,42,0.8)] backdrop-blur-md group ${delayClass}`}>
-                  {/* Number badge */}
-                  <div
-                    className="text-5xl font-bold mb-4 leading-none"
-                    style={{ fontFamily: "'Bebas Neue', sans-serif", color: 'rgba(249,115,22,0.25)', transition: 'color 0.3s ease' }}
-                    onMouseEnter={e => e.currentTarget.style.color = 'rgba(249,115,22,0.6)'}
-                    onMouseLeave={e => e.currentTarget.style.color = 'rgba(249,115,22,0.25)'}
-                  >
-                    {card.num}
-                  </div>
-
-                  {/* Corner accents */}
-                  <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-primary opacity-60 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-primary opacity-60 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-primary opacity-60 group-hover:opacity-100 transition-opacity" />
-                  <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-primary opacity-60 group-hover:opacity-100 transition-opacity" />
-
-                  <h3 className="text-base sm:text-lg font-bold text-primary mb-3 group-hover:text-cyan-200 transition-colors" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.06em' }}>
-                    {card.title}
-                  </h3>
-                  <p className="text-slate-400 leading-relaxed text-sm sm:text-base" style={{ fontFamily: "'Inter', sans-serif" }}>
-                    {card.description}
-                  </p>
-                </div>
-              );
-            })}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== 5. Achievements ===== */}
-      <Achievements />
-
-      {/* ===== 6. Mission Timeline ===== */}
-      <MissionTimeline />
-
-      {/* ===== 7. Featured Vehicle Section ===== */}
+      {/* ===== Featured Vehicle Section (Moved) ===== */}
       <section id="featured-vehicle" className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
         {/* Ambient glows */}
         <div className="absolute top-0 right-0 w-[600px] h-[600px] rounded-full opacity-[0.06] pointer-events-none"
@@ -533,8 +419,6 @@ const Hero = () => {
           </div>
         </div>
       </section>
-
-
 
       {/* ===== Drone Specs Showcase ===== */}
       <section className="py-12 sm:py-16 md:py-20 bg-transparent relative overflow-x-hidden">
@@ -704,6 +588,110 @@ const Hero = () => {
 
         </div>
       </section>
+
+      {/* ===== 3. PRIMARY OBJECTIVE SECTION ===== */}
+      <section className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-80 h-80 rounded-full opacity-[0.07] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #f97316, transparent 70%)', filter: 'blur(60px)' }} />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="text-center mb-16">
+            <div className="section-label mb-5">Our Primary Objective</div>
+            <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4">
+              <div className="mask-container">
+                <span className="mask-reveal ju-visible">Primary Objective</span>
+              </div>
+            </h2>
+            <div className="shimmer-line mx-auto rounded-full" style={{ width: '100px', height: '3px', background: 'linear-gradient(90deg, #f97316, #dc2626)' }} />
+          </div>
+
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-16 items-center">
+            {/* SUAS Logo Card — zoom-in scale reveal + float */}
+            <div className="ju-reveal-scale">
+              <div className="relative p-10 text-center rounded-2xl border border-white/[0.08] bg-[rgba(15,23,42,0.8)] backdrop-blur-md" style={{ animation: 'float-y-slow 6s ease-in-out infinite' }}>
+                <img src={suaslogo} alt="SUAS Logo" className="object-contain mx-auto w-56 h-56" />
+                <a
+                  href="https://suas-competition.org/competitions"
+                  target="_blank" rel="noopener noreferrer"
+                  className="block text-center px-8 py-3 mt-6 rounded-lg font-semibold transition-all duration-300"
+                  style={{ border: '2px solid #f97316', color: '#f97316' }}
+                  onMouseEnter={e => { e.currentTarget.style.background = 'rgba(249,115,22,0.2)'; e.currentTarget.style.color = '#fff'; }}
+                  onMouseLeave={e => { e.currentTarget.style.background = 'transparent'; e.currentTarget.style.color = '#f97316'; }}
+                >
+                  Visit SUAS Competition →
+                </a>
+              </div>
+            </div>
+
+            {/* Text — fade up with stagger */}
+            <p className="ju-reveal text-slate-300 text-lg leading-relaxed md:text-xl" style={{ fontFamily: "'Inter', sans-serif" }}>
+              UART's annual objective is to achieve top performance in the SUAS 2026 competition,
+              the primary focus is on providing undergraduate students with an opportunity to apply their engineering and computer science skills to solve a complex,
+              real-world problem. The competition acts as a platform for hands-on engineering experience, autonomous system development,
+              innovation, and collaborative, multidisciplinary teamwork.
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* ===== Drone Parts ===== */}
+      <DroneParts />
+
+      {/* ===== 4. What We Do / Vision ===== */}
+      <section id="what-we-do" className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
+        <div className="absolute top-0 left-0 w-96 h-96 rounded-full opacity-[0.06] pointer-events-none"
+          style={{ background: 'radial-gradient(circle, #f97316, transparent 70%)', filter: 'blur(70px)' }} />
+
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 text-center">
+          <div className="section-label mb-5">Our Vision</div>
+          <h2 className="text-2xl sm:text-4xl md:text-5xl lg:text-6xl text-white mb-4">
+            <div className="mask-container">
+              <span className="mask-reveal ju-visible">Our Vision</span>
+            </div>
+          </h2>
+          <div className="shimmer-line mx-auto rounded-full mb-16" style={{ width: '80px', height: '3px', background: 'linear-gradient(90deg, #f97316, #dc2626)' }} />
+
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {whatWeDoCards.map((card, index) => {
+              const delayClass = ['ju-delay-1', 'ju-delay-2', 'ju-delay-3', 'ju-delay-4', 'ju-delay-5', 'ju-delay-6'][index] || '';
+              return (
+                <div key={card.id} className={`ju-reveal relative p-6 sm:p-8 text-left rounded-2xl border border-white/[0.08] bg-[rgba(15,23,42,0.8)] backdrop-blur-md group ${delayClass}`}>
+                  {/* Number badge */}
+                  <div
+                    className="text-5xl font-bold mb-4 leading-none"
+                    style={{ fontFamily: "'Bebas Neue', sans-serif", color: 'rgba(249,115,22,0.25)', transition: 'color 0.3s ease' }}
+                    onMouseEnter={e => e.currentTarget.style.color = 'rgba(249,115,22,0.6)'}
+                    onMouseLeave={e => e.currentTarget.style.color = 'rgba(249,115,22,0.25)'}
+                  >
+                    {card.num}
+                  </div>
+
+                  {/* Corner accents */}
+                  <div className="absolute top-3 left-3 w-4 h-4 border-t-2 border-l-2 border-primary opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute top-3 right-3 w-4 h-4 border-t-2 border-r-2 border-primary opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute bottom-3 left-3 w-4 h-4 border-b-2 border-l-2 border-primary opacity-60 group-hover:opacity-100 transition-opacity" />
+                  <div className="absolute bottom-3 right-3 w-4 h-4 border-b-2 border-r-2 border-primary opacity-60 group-hover:opacity-100 transition-opacity" />
+
+                  <h3 className="text-base sm:text-lg font-bold text-primary mb-3 group-hover:text-cyan-200 transition-colors" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.06em' }}>
+                    {card.title}
+                  </h3>
+                  <p className="text-slate-400 leading-relaxed text-sm sm:text-base" style={{ fontFamily: "'Inter', sans-serif" }}>
+                    {card.description}
+                  </p>
+                </div>
+              );
+            })}
+          </div>
+        </div>
+      </section>
+
+      {/* ===== 5. Achievements ===== */}
+      <Achievements />
+
+      {/* ===== 6. Mission Timeline ===== */}
+      <MissionTimeline />
+
+
 
       {/* ===== Gallery Grid ===== */}
 
@@ -886,6 +874,28 @@ const Hero = () => {
               style={{ border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)' }}>
               <ChevronRight className="w-5 h-5" />
             </button>
+          </div>
+
+          {/* View All Button */}
+          <div className="mt-12 flex justify-center">
+            <Link
+              to="/news"
+              className="relative inline-flex items-center justify-center px-8 py-4 text-xs font-bold tracking-widest text-white uppercase overflow-hidden group transition-all duration-300 hover:scale-105"
+              style={{
+                fontFamily: "'Inter', sans-serif",
+                borderRadius: '8px',
+                border: '1px solid rgba(249,115,22,0.4)',
+                background: 'rgba(10,15,35,0.6)',
+                backdropFilter: 'blur(10px)',
+                boxShadow: '0 4px 30px rgba(0, 0, 0, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.05)',
+              }}
+            >
+              <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-primary/20 to-accent/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300 pointer-events-none" />
+              <span className="relative flex items-center gap-2">
+                View All News & Updates
+                <ArrowRight className="w-4 h-4 group-hover:translate-x-1.5 transition-transform duration-300 text-primary" />
+              </span>
+            </Link>
           </div>
         </div>
       </section>

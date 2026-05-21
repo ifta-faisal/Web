@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import { Rocket, Zap, MapPin, Eye, ChevronRight, Calendar, Award, ArrowLeft, Users } from "lucide-react";
+import { Rocket, Zap, MapPin, Eye, ChevronRight, Calendar, Award, ArrowLeft, Users, Video } from "lucide-react";
 import { useSearchParams } from 'react-router-dom';
 import BackToHome from './BackToHome';
 
@@ -19,24 +19,24 @@ const Projects = () => {
   const projects = projectsData;
 
   const categories = [
-    { id: 'all', name: 'All Projects', icon: Rocket },
-    { id: 'research', name: 'Research', icon: Eye },
-    { id: 'competition', name: 'Competition', icon: Award },
-    { id: 'ai', name: 'AI Systems', icon: Zap },
+    { id: 'top', name: 'Top Projects' },
+    { id: 'all', name: 'All Projects' },
   ];
 
-  const filteredProjects = targetId 
+  const filteredProjects = targetId
     ? projects.filter(project => project.id === parseInt(targetId))
-    : (selectedCategory === 'all'
-      ? projects
-      : projects.filter(project => project.category === selectedCategory));
+    : selectedCategory === 'top'
+      ? projects.filter(project => project.isLatest || project.status === 'Active')
+      : selectedCategory === 'all'
+        ? projects
+        : projects.filter(project => project.category === selectedCategory);
 
   const getStatusColor = (status) => {
     switch (status) {
-      case 'Active': return 'bg-green-500';
-      case 'Testing': return 'bg-primary';
+      case 'Active':    return 'bg-green-500';
+      case 'Testing':   return 'bg-primary';
       case 'Completed': return 'bg-primary';
-      default: return 'bg-gray-500';
+      default:          return 'bg-gray-500';
     }
   };
 
@@ -46,6 +46,7 @@ const Projects = () => {
       <div className="absolute bottom-0 left-0 w-72 sm:w-[500px] h-72 sm:h-[500px] bg-accent rounded-full mix-blend-multiply filter blur-[120px] opacity-[0.05] animate-pulse" style={{ animationDelay: '2s' }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <BackToHome />
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
           <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1 sm:py-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full text-primary text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
@@ -61,32 +62,60 @@ const Projects = () => {
           </p>
         </div>
 
-        {/* Category Filter / Focus Back Button */}
-        <div className="flex justify-center mb-8 sm:mb-12">
+        {/* ── Filter Bar ── */}
+        <div className="mb-10 sm:mb-14">
           {!isFocused ? (
-            <div className="flex flex-wrap justify-center gap-2 sm:gap-3">
-              {categories.map((category) => (
-                <button
-                  key={category.id}
-                  onClick={() => setSelectedCategory(category.id)}
-                  className={`group flex items-center space-x-1 sm:space-x-2 px-3 sm:px-6 py-2 sm:py-3 rounded-full font-semibold text-xs sm:text-sm transition-all duration-300 ${selectedCategory === category.id
-                    ? 'bg-primary text-gray-900 shadow-lg shadow-primary/50'
-                    : 'bg-gray-800/50 backdrop-blur-sm text-gray-300 border border-gray-700 hover:border-primary/50 hover:text-primary'
-                    }`}
-                >
-                  <category.icon className="w-3 h-3 sm:w-4 sm:h-4" />
-                  <span>{category.name}</span>
-                </button>
-              ))}
+            <div>
+              {/* Divider + Filter label row */}
+              <div className="flex flex-wrap gap-2 items-center pt-2 border-t border-white/5 mb-1">
+                <div className="flex items-center gap-2 mr-2 text-slate-500 text-xs font-semibold uppercase tracking-wider" style={{ fontFamily: "'Inter', sans-serif" }}>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><line x1="21" y1="4" x2="7" y2="4"/><line x1="17" y1="12" x2="3" y2="12"/><line x1="15" y1="20" x2="3" y2="20"/><circle cx="5" cy="4" r="2"/><circle cx="21" cy="12" r="2"/><circle cx="19" cy="20" r="2"/></svg>
+                  Filter:
+                </div>
+                {categories.map((cat) => {
+                  const active = selectedCategory === cat.id;
+                  return (
+                    <button
+                      key={cat.id}
+                      onClick={() => setSelectedCategory(cat.id)}
+                      style={{
+                        padding: '0.45rem 1.1rem',
+                        fontSize: '0.65rem',
+                        fontWeight: 700,
+                        letterSpacing: '0.10em',
+                        textTransform: 'uppercase',
+                        borderRadius: '0.5rem',
+                        cursor: 'pointer',
+                        fontFamily: "'Inter', sans-serif",
+                        transition: 'all 0.25s',
+                        border: active ? '1px solid rgba(249,115,22,0.5)' : '1px solid rgba(255,255,255,0.1)',
+                        background: active ? 'linear-gradient(135deg, #f97316, #dc2626)' : 'rgba(255,255,255,0.02)',
+                        color: active ? '#fff' : '#94a3b8',
+                        transform: active ? 'scale(1.05)' : 'scale(1)',
+                        boxShadow: active ? '0 4px 14px rgba(249,115,22,0.25)' : 'none',
+                      }}
+                    >
+                      {cat.name}
+                    </button>
+                  );
+                })}
+              </div>
+
+              {/* Live count */}
+              <p className="text-right text-xs text-slate-500 tracking-widest uppercase mt-2 font-semibold" style={{ fontFamily: "'Inter', sans-serif" }}>
+                Showing {filteredProjects.length} of {projects.length} projects
+              </p>
             </div>
           ) : (
-            <button
-              onClick={() => setSearchParams({})}
-              className="flex items-center gap-2 px-8 py-3 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-all font-bold tracking-widest uppercase text-xs"
-            >
-              <ArrowLeft className="w-4 h-4" />
-              Show All Projects
-            </button>
+            <div className="flex justify-center">
+              <button
+                onClick={() => setSearchParams({})}
+                className="flex items-center gap-2 px-8 py-3 rounded-full bg-white/5 border border-white/10 text-slate-400 hover:text-white hover:bg-white/10 transition-all font-bold tracking-widest uppercase text-xs"
+              >
+                <ArrowLeft className="w-4 h-4" />
+                Show All Projects
+              </button>
+            </div>
           )}
         </div>
 
@@ -143,6 +172,13 @@ const Projects = () => {
                 {/* Hover Overlay */}
                 <div className={`absolute inset-0 bg-gradient-to-t from-primary/20 to-transparent transition-opacity duration-300 ${hoveredProject === project.id ? 'opacity-100' : 'opacity-0'
                   }`}></div>
+                  
+                {/* Video Icon */}
+                <div className="absolute bottom-3 right-3 sm:bottom-4 sm:right-4 z-10">
+                  <div className="w-7 h-7 sm:w-8 sm:h-8 rounded-full bg-black/60 backdrop-blur-md border border-white/20 flex items-center justify-center group-hover:bg-primary/90 group-hover:border-primary group-hover:scale-110 transition-all duration-300 shadow-lg">
+                    <Video className="w-3.5 h-3.5 sm:w-4 sm:h-4 text-white" />
+                  </div>
+                </div>
               </div>
 
               {/* Content */}

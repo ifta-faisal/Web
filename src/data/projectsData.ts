@@ -5,7 +5,6 @@ import project4 from "../assets/images/Project/project4.jpeg";
 import project5 from "../assets/images/Project/project5.jpeg";
 import project6 from "../assets/images/Project/project6.jpeg";
 import project7 from "../assets/images/Project/project7.jpeg";
-import project8 from "../assets/images/Project/project8.jpeg";
 import project9 from "../assets/images/drone2.jpeg";
 import project10 from "../assets/images/drone3.jpeg";
 
@@ -188,22 +187,6 @@ export const projectsData: ProjectData[] = [
       { label: "Endurance", value: "120 minutes" }
     ],
     media: [project7]
-  },
-  {
-    id: 8,
-    name: "Workshop",
-    description: "UART member taking Workshop about UAV.",
-    longDescription: "A comprehensive workshop covering the fundamentals of UAV design, assembly, and piloting. The session includes hands-on experience with drone prototypes, teaching members about the intricate electronics and aerodynamics involved.",
-    image: project8,
-    category: "Workshop",
-    year: "2024",
-    status: "Testing",
-    tags: ["Competition", "Prototype"],
-    specs: [
-      { label: "Duration", value: "2 Days" },
-      { label: "Participants", value: "30+" }
-    ],
-    media: [project8]
   },
   {
     id: 9,

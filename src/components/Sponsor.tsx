@@ -1,5 +1,6 @@
 import { Mail, Zap, Globe, Heart, Shield, Star, Trophy, Users, ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import BackToHome from './BackToHome';
 
 const SponsorPage = () => {
     const benefits = [
@@ -78,6 +79,7 @@ const SponsorPage = () => {
       <div className="absolute top-1/2 left-1/3 w-64 h-64 bg-primary rounded-full mix-blend-multiply filter blur-[120px] opacity-5 animate-pulse" style={{ animationDelay: '4s' }} />
 
       <div className="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+        <BackToHome />
 
                 {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
                 <section className="text-center mb-20 ">
