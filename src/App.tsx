@@ -6,7 +6,7 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
 import NewsPage from './components/NewsPage';
-import Blog from './components/Blog';
+import Blog from './components/BlogPage';
 import Team from './components/Team';
 import Projects from './components/Projects';
 import ProjectDetail from './components/ProjectDetail';
