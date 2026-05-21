@@ -13,8 +13,7 @@ import project1 from "../assets/images/Project/project1.jpeg";
 import project6 from "../assets/images/Project/project6.jpeg";
 import project7 from "../assets/images/Project/project7.jpeg";
 import workshop from "../assets/images/news/workshop.jpeg";
-import project9 from "../assets/images/drone2.jpeg";
-import project10 from "../assets/images/drone3.jpeg";
+import project10 from "../assets/images/DetailedFeatures/Drone.jpg";
 import aether1 from "../assets/images/Project/Aether_1.jpg";
 import deadcat1 from "../assets/images/Project/Deadcat_1.jpg";
 

@@ -1,8 +1,12 @@
 import project1 from "../assets/images/Project/project1.jpeg";
 import project6 from "../assets/images/Project/project6.jpeg";
 import project7 from "../assets/images/Project/project7.jpeg";
-import project9 from "../assets/images/drone2.jpeg";
-import project10 from "../assets/images/drone3.jpeg";
+import project10 from "../assets/images/DetailedFeatures/Drone.jpg";
+import swarm1 from "../assets/images/DetailedFeatures/D_1.jpg";
+import swarm2 from "../assets/images/DetailedFeatures/D_2.jpg";
+import swarm3 from "../assets/images/DetailedFeatures/D_3.jpg";
+import swarm4 from "../assets/images/DetailedFeatures/D_4.jpg";
+import swarm5 from "../assets/images/DetailedFeatures/D_5.jpg";
 import aether1 from "../assets/images/Project/Aether_1.jpg";
 import aether2 from "../assets/images/Project/Aether_2.JPG";
 import aether3 from "../assets/images/Project/Aether_3.JPG";
@@ -39,7 +43,7 @@ export const projectsData: ProjectData[] = [
       { label: "Navigation", value: "RTK GPS + Visual Odometry" },
       { label: "Payload", value: "500g per unit" }
     ],
-    media: [project10, project9],
+    media: [project10, swarm1, swarm2, swarm3, swarm4, swarm5],
     docs: [{ title: "Swarm Architecture", url: "#" }, { title: "AI System Guide", url: "#" }, { title: "Mission Planning", url: "#" }],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
