@@ -118,21 +118,38 @@ const ProjectDetail = () => {
             <h2 className="text-3xl sm:text-5xl font-black text-white mb-10 uppercase border-l-4 border-primary pl-4">
               Media Library
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-4">
-              {project.media.map((imgUrl, index) => (
-                <div key={index} className="relative group overflow-hidden rounded-xl aspect-[4/3] bg-gray-900 border border-gray-800">
-                  <img
-                    src={imgUrl}
-                    alt={`${project.name} Media ${index + 1}`}
-                    className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
-                  />
-                  <div className="absolute inset-0 bg-gradient-to-t from-gray-900 via-transparent to-transparent opacity-0 group-hover:opacity-60 transition-opacity" />
-                  <div className="absolute bottom-4 left-4 text-white font-bold opacity-0 group-hover:opacity-100 transition-opacity translate-y-4 group-hover:translate-y-0 duration-300">
-                    {project.name} Media
+            {(() => {
+              // Ensure we have a decent number of unique cards in our single loop sequence
+              // so that the marquee fills the screen and loops nicely
+              let sequence = [...project.media];
+              while (sequence.length < 8) {
+                sequence = [...sequence, ...project.media];
+              }
+              const marqueeImages = [...sequence, ...sequence];
+              return (
+                <div className="gallery-marquee-row gallery-edge-fade overflow-hidden relative z-10 w-full py-4">
+                  <div className="gallery-marquee-track-left">
+                    {marqueeImages.map((imgUrl, i) => {
+                      const index = i % project.media.length;
+                      return (
+                        <div
+                          key={i}
+                          className="gallery-card-marquee block"
+                          style={{ background: '#0d0b0a' }}
+                        >
+                          <img
+                            src={imgUrl}
+                            alt={`${project.name} Media ${index + 1}`}
+                            className="w-full h-full object-cover"
+                            loading="lazy"
+                          />
+                        </div>
+                      );
+                    })}
                   </div>
                 </div>
-              ))}
-            </div>
+              );
+            })()}
           </div>
         )}
 

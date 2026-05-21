@@ -1,13 +1,20 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Cpu, Wind, Radio, Eye, Shield, Zap, ChevronRight, MapPin, Navigation, CloudRain, Layers, Activity, Gauge } from "lucide-react";
-import img1 from "../assets/images/drone1.jpeg";
+import img1 from "../assets/images/DetailedFeatures/D_1.jpg";
 import jetson from "../assets/images/DetailedFeatures/jetson.png";
 import lidar from "../assets/images/DetailedFeatures/lidar.png";
 import droneImg from "../assets/images/drone.png";
 import missionPlanningImg from "../assets/images/DetailedFeatures/map.jpeg";
 import sysArchImg from "../assets/images/DetailedFeatures/system_architecture.png";
 import batteryImg from "../assets/images/Project/battery.png";
+
+// Slideshow Images
+import imgD1 from "../assets/images/DetailedFeatures/D_1.jpg";
+import imgD2 from "../assets/images/DetailedFeatures/D_2.jpg";
+import imgD3 from "../assets/images/DetailedFeatures/D_3.jpg";
+import imgD4 from "../assets/images/DetailedFeatures/D_4.jpg";
+
 
 /* ── Intersection-observer hook for scroll-reveal ── */
 function useReveal() {
@@ -180,23 +187,11 @@ const Drone360Viewer: React.FC<{ src: string; alt?: string }> = ({ src, alt = "3
 };
 
 const slideshowImages = [
-  img1,
-  jetson,
-  lidar,
-  missionPlanningImg,
-  sysArchImg,
-  batteryImg
+  imgD1,
+  imgD2,
+  imgD3,
+  imgD4
 ];
-
-const getSlideDetails = (imgSrc: string, index: number) => {
-  if (imgSrc === img1) return { title: "Carbon Fiber Airframe", desc: "Lightweight and rigid structural monocoque" };
-  if (imgSrc === jetson) return { title: "NVIDIA Jetson AI Brain", desc: "On-board real-time neural edge processing" };
-  if (imgSrc === lidar) return { title: "Multi-Sensor Fusion Suite", desc: "Integrated LiDAR and depth perception" };
-  if (imgSrc === missionPlanningImg) return { title: "Mission Planning UI", desc: "Autonomous ground control waypoint tracking" };
-  if (imgSrc === sysArchImg) return { title: "Hardware System Architecture", desc: "Dual-redundant flight control communication" };
-  if (imgSrc === batteryImg) return { title: "High-Density Power House", desc: "Custom 3S smart BMS battery module" };
-  return { title: `Aircraft Subsystem Image ${index + 1}`, desc: "Click to view full photo gallery" };
-};
 
 /* ═══════════════════════════════════════════════════ */
 /*                  MAIN COMPONENT                     */
@@ -361,23 +356,18 @@ const DetailedFeatures = () => {
             <div className="gallery-marquee-track-left">
               {[...slideshowImages, ...slideshowImages].map((src, i) => {
                 const index = i % slideshowImages.length;
-                const details = getSlideDetails(src, index);
                 return (
                   <div
                     className="gallery-card-marquee block"
                     key={i}
                     style={{ background: '#0d0b0a' }}
                   >
-                    <img 
-                      src={src} 
-                      alt={details.title} 
-                      className="w-full h-full object-cover" 
-                      loading="lazy" 
+                    <img
+                      src={src}
+                      alt={`Aircraft Subsystem ${index + 1}`}
+                      className="w-full h-full object-cover"
+                      loading="lazy"
                     />
-                    <div className="gallery-card-caption">
-                      <h3 style={{ fontFamily: "'Inter', sans-serif" }}>{details.title}</h3>
-                      <p style={{ fontFamily: "'Inter', sans-serif" }}>{details.desc}</p>
-                    </div>
                   </div>
                 );
               })}
