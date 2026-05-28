@@ -100,14 +100,22 @@ const ProjectDetail = () => {
               Watch Our Flight Readiness Review
             </h2>
             <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">A little bit of hype never hurt anybody...</p>
-            <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-gray-700/50 group">
-              <iframe
-                src={`${project.videoUrl}${project.videoUrl.includes('?') ? '&' : '?'}autoplay=1&mute=1&rel=0`}
-                title={`${project.name} Video`}
-                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-                className="absolute inset-0 w-full h-full object-cover"
-              ></iframe>
+            <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-gray-700/50 group bg-gray-900/50">
+              {project.videoUrl.includes('dQw4w9WgXcQ') ? (
+                <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">
+                  <Play className="w-16 h-16 text-primary/30 mb-4" />
+                  <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">Video Coming Soon</h3>
+                  <p className="text-gray-400 max-w-md">This video is currently being updated and will be uploaded soon. Stay tuned!</p>
+                </div>
+              ) : (
+                <iframe
+                  src={`${project.videoUrl}${project.videoUrl.includes('?') ? '&' : '?'}autoplay=1&mute=1&rel=0`}
+                  title={`${project.name} Video`}
+                  allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                  className="absolute inset-0 w-full h-full object-cover"
+                ></iframe>
+              )}
             </div>
           </div>
         )}

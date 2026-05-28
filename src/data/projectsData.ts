@@ -18,6 +18,13 @@ import deadcat2 from "../assets/images/Project/Deadcat_2.jpg";
 import deadcat3 from "../assets/images/Project/Deadcat_3.jpg";
 import deadcat4 from "../assets/images/Project/Deadcat_4.jpg";
 import deadcat5 from "../assets/images/Project/Deadcat_5.jpeg";
+import raven1 from "../assets/images/Project/B1.jpeg";
+import raven2 from "../assets/images/Project/B2.jpeg";
+import raven3 from "../assets/images/Project/B3.jpg";
+import raven4 from "../assets/images/Project/B4.jpg";
+import raven5 from "../assets/images/Project/B5.jpg";
+import raven6 from "../assets/images/Project/B6.jpg";
+import raven7 from "../assets/images/Project/B7.jpg";
 
 export interface ProjectSpec { label: string; value: string; }
 export interface ProjectDoc { title: string; url: string; }
@@ -29,6 +36,26 @@ export interface ProjectData {
 }
 
 export const projectsData: ProjectData[] = [
+  {
+    id: 11, name: "Raven",
+    description: "Advanced tactical drone system named Raven.",
+    longDescription: "The Raven project is an advanced tactical drone system featuring high maneuverability and reconnaissance capabilities.",
+    image: raven3, category: "reconnaissance", year: "2026", status: "Active", isLatest: true,
+    tags: ["Tactical", "Reconnaissance"],
+    specs: [
+      { label: "Endurance", value: "30 minutes" },
+      { label: "Top Speed", value: "80 mph" },
+      { label: "Range", value: "5-10 km" },
+      { label: "Payload Capacity", value: "1.2 kg" },
+      { label: "Navigation", value: "GPS + Vision System" },
+      { label: "Communication", value: "Encrypted Data Link (2.4GHz / 5.8GHz)" }
+    ],
+    media: [raven1, raven2, raven3, raven4, raven5, raven6, raven7],
+    docs: [
+      { title: "Raven Technical Specifications", url: "#" }
+    ],
+    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+  },
   {
     id: 10, name: " UAV",
     description: "Next-gen AI-powered swarm drone system for coordinated multi-agent missions.",

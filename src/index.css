@@ -716,4 +716,20 @@
 .gallery-edge-fade::after {
   right: 0;
   background: linear-gradient(to left, #020617 0%, transparent 100%);
+}
+
+/* ══ SLIDESHOW SCAN & TRANSITION ANIMATIONS ══ */
+@keyframes slide-fade-in {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-slide-fade {
+  animation: slide-fade-in 0.45s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
