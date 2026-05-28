@@ -5,6 +5,7 @@ import loopinc from '../assets/images/news/loopinc.jpg';
 import ua from '../assets/images/UA1.jpeg';
 import recruit2 from '../assets/images/news/Recruit2.jpeg';
 import recruit1 from '../assets/images/news/Recruit1.jpeg';
+import vcvist from '../assets/images/news/VC_Vist_21_May.jpeg';
 
 export interface NewsItem {
   id: number;
@@ -19,6 +20,17 @@ export interface NewsItem {
 }
 
 export const newsItems: NewsItem[] = [
+  {
+    id: 8,
+    title: 'Honourable VC Sir Visited Our Field Test',
+    date: '21 May 2026',
+    source: 'UART',
+    description: 'Our honourable VC sir visited our field test with our Director of UART.',
+    link: '#',
+    image: vcvist,
+    category: 'Visit',
+    tags: ['visit', 'testing', 'field-test', 'leadership']
+  },
   {
     id: 7,
     title: 'UAV Workshop Conducted',

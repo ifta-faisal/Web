@@ -43,10 +43,10 @@ export const projectsData: ProjectData[] = [
     image: raven3, category: "reconnaissance", year: "2026", status: "Active", isLatest: true,
     tags: ["Tactical", "Reconnaissance"],
     specs: [
-      { label: "Endurance", value: "30 minutes" },
-      { label: "Top Speed", value: "80 mph" },
+      { label: "Endurance", value: "1 hour" },
+      { label: "Top Speed", value: "40 mph" },
       { label: "Range", value: "5-10 km" },
-      { label: "Payload Capacity", value: "1.2 kg" },
+      { label: "Payload Capacity", value: "5 kg" },
       { label: "Navigation", value: "GPS + Vision System" },
       { label: "Communication", value: "Encrypted Data Link (2.4GHz / 5.8GHz)" }
     ],

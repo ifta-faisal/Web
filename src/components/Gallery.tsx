@@ -15,6 +15,11 @@ import meeting_1 from "../assets/gallery/meeting_1.jpg";
 import meeting_2 from "../assets/gallery/meeting_2.jpg";
 import ramadan from "../assets/gallery/ramadan.jpeg";
 import team from "../assets/gallery/team.jpeg";
+import b1 from "../assets/gallery/B1.jpeg";
+import b2 from "../assets/gallery/B2.jpeg";
+import b3 from "../assets/gallery/B3.jpg";
+import b4 from "../assets/gallery/B4.jpg";
+import b5 from "../assets/gallery/B5.jpg";
 
 const galleryItems = [
   {
@@ -81,6 +86,31 @@ const galleryItems = [
     image: team,
     title: "Annual Team Meeting",
     description: "An annual team meeting where members discussed progress and goals.",
+  },
+  {
+    image: b1,
+    title: "Field Test at UIU",
+    description: "Drone test flight near UIU campus.",
+  },
+  {
+    image: b2,
+    title: "Drone on Field",
+    description: "Preparing for takeoff on the field.",
+  },
+  {
+    image: b3,
+    title: "Flight Test",
+    description: "Drone flying near the building.",
+  },
+  {
+    image: b4,
+    title: "UIU Campus Flight",
+    description: "Drone hovering near UIU building.",
+  },
+  {
+    image: b5,
+    title: "Sky Flight",
+    description: "Drone soaring high in the sky.",
   },
 ];
 
