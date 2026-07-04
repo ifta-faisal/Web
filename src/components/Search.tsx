@@ -18,28 +18,28 @@ import aether1 from "../assets/images/Project/Aether_1.jpg";
 import deadcat1 from "../assets/images/Project/Deadcat_1.jpg";
 
 // ─── Team Member Imports ───
-import member1 from '../assets/images/Team/member1.jpeg';
-import member2 from '../assets/images/Team/member2.jpg';
-import member3 from '../assets/images/Team/member3.jpeg';
-import member4 from '../assets/images/Team/member4.jpg';
-import member5 from '../assets/images/Team/member5.jpg';
-import member7 from '../assets/images/Team/member7.jpeg';
-import member8 from '../assets/images/Team/member8.jpeg';
-import member9 from '../assets/images/Team/member9.jpeg';
-import adnan from '../assets/images/Team/adnan.jpeg';
+import member1 from '../assets/images/Team/member1.png';
+import member2 from '../assets/images/Team/member2.png';
+import member3 from '../assets/images/Team/member3.png';
+import member4 from '../assets/images/Team/member4.png';
+import member5 from '../assets/images/Team/member5.png';
+import member7 from '../assets/images/Team/member7.png';
+import member8 from '../assets/images/Team/member8.png';
+import member9 from '../assets/images/Team/member9.png';
+import adnan from '../assets/images/Team/adnan.png';
 import alfi from '../assets/images/Team/alfi.png';
-import israfil from '../assets/images/Team/israfil.jpg';
-import ratul from '../assets/images/Team/ratul.jpg';
+import israfil from '../assets/images/Team/israfil.png';
+import ratul from '../assets/images/Team/ratul.png';
 import anika from '../assets/images/Team/orthy.jpeg';
-import jarin from '../assets/images/Team/jahrin.jpg';
-import rashed from '../assets/images/Team/rashed.jpg';
+import jarin from '../assets/images/Team/dip.png';
+import rashed from '../assets/images/Team/rashed.png';
 import talha from '../assets/images/Team/talha.png';
 import alif from '../assets/images/Team/alif.jpg';
-import probin from '../assets/images/Team/probin.jpeg';
-import shahad from '../assets/images/Team/shahad.jpg';
-import arpon from '../assets/images/Team/arpon.jpg';
-import nazifa from '../assets/images/Team/nazifa.jpg';
-import sumaiya from '../assets/images/Team/sumaiya.jpg';
+import probin from '../assets/images/Team/probin.png';
+import shahad from '../assets/images/Team/shahad.png';
+import arpon from '../assets/images/Team/arpon.png';
+import nazifa from '../assets/images/Team/nazifa.png';
+import sumaiya from '../assets/images/Team/sumaiya.png';
 
 interface SearchResult {
   id: string;
