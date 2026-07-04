@@ -43,52 +43,29 @@ const GalleryVideo = () => {
                         </div>
                     </div>
 
-                    {/* Right Column - Video Section */}
-                    <div className="relative group flex items-center justify-center">
-                        {/* 
-                            Container for the video block. 
-                            Uses dark background to match the page, and the poster image overlaid.
-                        */}
-                        <div className="relative w-full aspect-square max-w-[600px] overflow-hidden bg-transparent">
-                            {/* Poster Image with Bottom Fade */}
-                            <div className="absolute inset-0 bottom-32">
-                                <img
-                                    src={droneImage}
-                                    className="ju-reveal w-full h-full object-cover opacity-60"
-                                    alt="Video Poster"
+                    {/* Right Column - Embedded YouTube Video */}
+                    <div className="relative flex flex-col items-center justify-center">
+                        <div className="relative w-full max-w-[600px] overflow-hidden rounded-xl shadow-2xl">
+                            {/* YouTube Embed */}
+                            <div className="relative w-full aspect-video">
+                                <iframe
+                                    src="https://www.youtube.com/embed/Fm7WHzXVMhE?si=7MYhj3CHGIPdTujF"
+                                    title="Drone Action"
+                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                    allowFullScreen
+                                    className="absolute inset-0 w-full h-full rounded-xl"
                                 />
-                                <div className="absolute inset-0 bg-black/20"></div>
-                                <div className="absolute inset-x-0 bottom-0 h-1/2 bg-gradient-to-t from-[#0b0f1a] to-transparent"></div>
                             </div>
+                        </div>
 
-                            {/* Technical Frame removed for a cleaner look */}
-
-                            {/* Centered Content */}
-                            <div className="relative w-full h-full flex flex-col justify-between items-center z-20">
-
-                                {/* Play Button Area (shifted up slightly) */}
-                                <div className="flex-1 flex items-center justify-center w-full relative -top-8">
-                                    <div className="w-16 h-16 rounded-full border border-white flex items-center justify-center bg-transparent cursor-pointer hover:bg-white/10 transition-colors group">
-                                        <div className="w-0 h-0 border-y-[8px] border-y-transparent border-l-[12px] border-l-white ml-1 group-hover:scale-110 transition-transform"></div>
-                                    </div>
-                                    <video
-                                        src={droneVideo}
-                                        className="absolute inset-0 w-0 h-0 opacity-0" // hidden video to prevent layout breaking but exist for interactivity if added later
-                                        controls
-                                    />
-                                </div>
-
-                                {/* Text sitting perfectly on the gap of the bottom frame border */}
-                                <div className="absolute bottom-16 left-1/2 transform -translate-x-1/2 w-full text-center">
-                                    <h2 className="ju-reveal text-2xl font-black text-white mb-4 tracking-wide uppercase inline-block bg-[#0b0f1a] px-4 -translate-y-6">
-                                        Drone Action
-                                    </h2>
-                                    <p className="ju-reveal text-slate-400 text-sm max-w-xs mx-auto font-light leading-relaxed">
-                                        Taking control of the skies with speed, precision, and purpose. Every flight brings ideas closer to reality.
-                                    </p>
-                                </div>
-
-                            </div>
+                        {/* Text below the video */}
+                        <div className="mt-6 text-center">
+                            <h2 className="ju-reveal text-2xl font-black text-white mb-3 tracking-wide uppercase">
+                                Drone Action
+                            </h2>
+                            <p className="ju-reveal text-slate-400 text-sm max-w-xs mx-auto font-light leading-relaxed">
+                                Taking control of the skies with speed, precision, and purpose. Every flight brings ideas closer to reality.
+                            </p>
                         </div>
                     </div>
 

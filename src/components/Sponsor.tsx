@@ -1,5 +1,12 @@
 import { Mail, Zap, Globe, Heart, Shield, Star, Trophy, Users, ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
+import unitedGroupLogo from '../assets/images/Sponsor/united_group.png';
+import uiuLogo from '../assets/images/Sponsor/UIU_Logo.png';
+import soildwork from '../assets/images/Sponsor/solidworks.png';
+import mathlab from '../assets/images/Sponsor/matlab.png';
+import autodesk from '../assets/images/Sponsor/autodesk.png';
+import amprius from '../assets/images/Sponsor/amprius.png';
+import puku from '../assets/images/Sponsor/puku.png';
 
 const SponsorPage = () => {
     const benefits = [
@@ -120,6 +127,52 @@ const SponsorPage = () => {
                                 <p className="ju-reveal text-slate-400 text-sm mt-1">{s.label}</p>
                             </div>
                         ))}
+                    </div>
+                </section>
+
+                {/* ══ CURRENT SPONSORS ══════════════════════════════════════════════════ */}
+                <section className="mb-16" style={{ animationDelay: '0.25s' }}>
+                    <div className="text-center mb-10">
+                        <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-primary text-xs font-semibold mb-4">
+                            <Star className="w-3.5 h-3.5" /> Our Sponsors
+                        </span>
+                        <h2 className="ju-reveal text-3xl sm:text-4xl font-extrabold text-white">
+                            Proudly Supported{' '}
+                            <span className="bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text">By</span>
+                        </h2>
+                    </div>
+                    <div className="flex flex-col items-center gap-12">
+                        {/* Row 1 */}
+                        <div className="flex flex-wrap justify-center items-center gap-16">
+                            {[
+                                { name: 'Amprius',      logo: amprius },
+                                { name: 'United Group', logo: unitedGroupLogo },
+                                { name: 'UIU',          logo: uiuLogo },
+                            ].map((s) => (
+                                <img
+                                    key={s.name}
+                                    src={s.logo}
+                                    alt={s.name}
+                                    className="h-20 max-w-[170px] object-contain opacity-75 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
+                                />
+                            ))}
+                        </div>
+                        {/* Row 2 */}
+                        <div className="flex flex-wrap justify-center items-center gap-16">
+                            {[
+                                { name: 'SolidWorks', logo: soildwork },
+                                { name: 'MATLAB',     logo: mathlab },
+                                { name: 'Autodesk',   logo: autodesk },
+                                { name: 'Puku',       logo: puku },
+                            ].map((s) => (
+                                <img
+                                    key={s.name}
+                                    src={s.logo}
+                                    alt={s.name}
+                                    className="h-20 max-w-[170px] object-contain opacity-75 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
+                                />
+                            ))}
+                        </div>
                     </div>
                 </section>
 

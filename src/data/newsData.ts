@@ -6,6 +6,7 @@ import ua from '../assets/images/UA1.jpeg';
 import recruit2 from '../assets/images/news/Recruit2.jpeg';
 import recruit1 from '../assets/images/news/Recruit1.jpeg';
 import vcvist from '../assets/images/news/VC_Vist_21_May.jpeg';
+import amprius from '../assets/images/Sponsor/amp.png';
 
 export interface NewsItem {
   id: number;
@@ -20,6 +21,17 @@ export interface NewsItem {
 }
 
 export const newsItems: NewsItem[] = [
+  {
+    id: 9,
+    title: 'Amprius — Official Technology Partner',
+    date: '27 May 2026',
+    source: 'UART',
+    description: 'We are proud to announce that Amprius Technologies has officially joined UART as our technology partner. Amprius brings cutting-edge silicon anode lithium-ion battery technology that will power the next generation of our UAV platforms with superior energy density and performance.',
+    link: '#',
+    image: amprius,
+    category: 'Collaboration',
+    tags: ['partnership', 'technology', 'battery', 'collaboration', 'amprius']
+  },
   {
     id: 8,
     title: 'Honourable VC Sir Visited Our Field Test',

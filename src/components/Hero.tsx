@@ -12,6 +12,8 @@ import suaslogo from '../assets/images/suas.png';
 import soildwork from '../assets/images/Sponsor/solidworks.png';
 import mathlab from '../assets/images/Sponsor/matlab.png';
 import autodesk from '../assets/images/Sponsor/autodesk.png';
+import amprius from '../assets/images/Sponsor/amprius.png';
+import puku from '../assets/images/Sponsor/puku.png';
 import { newsItems } from '../data/newsData';
 
 // Import New Sections
@@ -108,11 +110,13 @@ const Hero = () => {
   ];
 
   const sponsors = [
+    { name: 'Amprius', logo: amprius },
     { name: 'United Group', logo: unitedGroupLogo },
     { name: 'UIU', logo: uiuLogo },
     { name: 'SolidWorks', logo: soildwork },
     { name: 'MATLAB', logo: mathlab },
     { name: 'Autodesk', logo: autodesk },
+    { name: 'Puku', logo: puku },
   ];
 
   const vehicleFeatures = [

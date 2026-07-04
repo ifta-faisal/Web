@@ -54,7 +54,7 @@ export const projectsData: ProjectData[] = [
     docs: [
       { title: "Raven Technical Specifications", url: "#" }
     ],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    videoUrl: "https://www.youtube.com/embed/Fm7WHzXVMhE?si=7MYhj3CHGIPdTujF"
   },
   {
     id: 10, name: " UAV",
