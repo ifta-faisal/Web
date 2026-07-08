@@ -449,9 +449,6 @@ const SponsorProposal = () => {
 
                                     <div className="pt-6 border-t border-white/5">
                                         <div className="flex items-center gap-6">
-                                            <div className="w-16 h-16 bg-white/5 rounded-xl border border-white/10 p-2 flex items-center justify-center">
-                                                <span className="text-[10px] font-black text-slate-500 uppercase rotate-90">QR Link</span>
-                                            </div>
                                             <div>
                                                 <h4 className="text-[10px] font-black text-slate-500 uppercase tracking-[0.2em] mb-2 text-white">Join the Community</h4>
                                                 <div className="flex gap-4">
@@ -464,7 +461,7 @@ const SponsorProposal = () => {
                                                     <a href="https://www.instagram.com/uiuaerialrobotics" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 hover:bg-primary hover:text-white transition-all">
                                                         <Instagram className="w-4 h-4" />
                                                     </a>
-                                                    <a href="#" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 hover:bg-primary hover:text-white transition-all">
+                                                    <a href="https://www.linkedin.com/company/uiu-aerial-robotics-team-uart/" target="_blank" rel="noopener noreferrer" className="w-8 h-8 rounded-full bg-primary/10 flex items-center justify-center text-primary border border-primary/20 hover:bg-primary hover:text-white transition-all">
                                                         <Linkedin className="w-4 h-4" />
                                                     </a>
                                                 </div>

@@ -7,6 +7,9 @@ import recruit2 from '../assets/images/news/Recruit2.jpeg';
 import recruit1 from '../assets/images/news/Recruit1.jpeg';
 import vcvist from '../assets/images/news/VC_Vist_21_May.jpeg';
 import amprius from '../assets/images/Sponsor/amp.png';
+import autodesk from '../assets/images/news/autodesk_1.jpg';
+import solidworks from '../assets/images/news/solidworks.jpg';
+import suaslogo from '../assets/images/suas.png';
 
 export interface NewsItem {
   id: number;
@@ -22,6 +25,39 @@ export interface NewsItem {
 
 export const newsItems: NewsItem[] = [
   {
+    id: 12,
+    title: 'Selected for SUAS 2026',
+    date: '29 July 2026',
+    source: 'UART',
+    description: 'We are thrilled to announce we are selected for SUAS 2026!',
+    link: '#',
+    image: suaslogo,
+    category: 'General',
+    tags: ['suas', 'competition', 'achievement']
+  },
+  {
+    id: 11,
+    title: 'Autodesk — Official Sponsorship',
+    date: '4 June 2026',
+    source: 'UART',
+    description: 'We are thrilled to announce that Autodesk has officially sponsored our team. Their state-of-the-art design and engineering software will empower our members to innovate and build the next generation of UAV platforms.',
+    link: '#',
+    image: autodesk,
+    category: 'Sponsorship',
+    tags: ['sponsorship', 'software', 'design', 'autodesk']
+  },
+  {
+    id: 10,
+    title: 'SolidWorks — Official Sponsorship',
+    date: '3 June 2026',
+    source: 'UART',
+    description: 'We are proud to announce our new sponsorship with SolidWorks. This partnership will provide our team with access to industry-leading 3D CAD design software, greatly accelerating our hardware development process.',
+    link: '#',
+    image: solidworks,
+    category: 'Sponsorship',
+    tags: ['sponsorship', 'software', 'design', 'solidworks']
+  },
+  {
     id: 9,
     title: 'Amprius — Official Technology Partner',
     date: '27 May 2026',
@@ -29,7 +65,7 @@ export const newsItems: NewsItem[] = [
     description: 'We are proud to announce that Amprius Technologies has officially joined UART as our technology partner. Amprius brings cutting-edge silicon anode lithium-ion battery technology that will power the next generation of our UAV platforms with superior energy density and performance.',
     link: '#',
     image: amprius,
-    category: 'Collaboration',
+    category: 'Sponsorship',
     tags: ['partnership', 'technology', 'battery', 'collaboration', 'amprius']
   },
   {

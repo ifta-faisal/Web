@@ -49,11 +49,11 @@ const GalleryVideo = () => {
                             {/* YouTube Embed */}
                             <div className="relative w-full aspect-video">
                                 <iframe
-                                    src="https://www.youtube.com/embed/Fm7WHzXVMhE?si=7MYhj3CHGIPdTujF"
+                                    src="https://www.youtube.com/embed/I8id3VY7Vdg?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1"
                                     title="Drone Action"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowFullScreen
-                                    className="absolute inset-0 w-full h-full rounded-xl"
+                                    className="absolute inset-0 w-full h-full rounded-xl pointer-events-none"
                                 />
                             </div>
                         </div>

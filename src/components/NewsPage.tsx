@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { Search as SearchIcon, Calendar, X, SlidersHorizontal, User, Tag, Sparkles } from 'lucide-react';
 import { newsItems, NewsItem } from '../data/newsData';
 
-const CATEGORIES = ['All', 'Workshop', 'Collaboration', 'Training', 'Visit', 'Recruiting', 'General'];
+const CATEGORIES = ['All', 'Sponsorship', 'Workshop', 'Collaboration', 'Training', 'Visit', 'Recruiting', 'General'];
 
 const NewsPage = () => {
   const [searchTerm, setSearchTerm] = useState('');

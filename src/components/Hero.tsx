@@ -2,11 +2,11 @@ import React, { useRef, useEffect, useState } from 'react';
 import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, ChevronLeft, ChevronRight, Calendar, CheckCircle2 } from 'lucide-react';
-import droneVideo from '../assets/video/vid_1.mp4';
+import droneVideo from '../assets/video/Faysal2.mp4';
 import vid2 from '../assets/video/vid_2.mp4';
 import unitedGroupLogo from '../assets/images/Sponsor/united_group.png';
 import uiuLogo from '../assets/images/Sponsor/UIU_Logo.png';
-import droneImage from '../assets/images/0000.png';
+import droneImage from '../assets/images/B6_png.png';
 import droneSpecsImg from '../assets/images/drone_specs.png';
 import suaslogo from '../assets/images/suas.png';
 import soildwork from '../assets/images/Sponsor/solidworks.png';
@@ -135,11 +135,7 @@ const Hero = () => {
   const prevSlide = () => setCurrentIndex(prev => (prev === 0 ? achievements.length - 1 : prev - 1));
   const nextSlide = () => setCurrentIndex(prev => (prev === achievements.length - 1 ? 0 : prev + 1));
 
-  useEffect(() => {
-    const interval = setInterval(nextSlide, 5000);
-    return () => clearInterval(interval);
-  }, [currentIndex]);
-
+  // Removed auto-play interval
   return (
     <div>
       {/* ===== 1. Hero Section – Cinematic Aerospace ===== */}
@@ -784,18 +780,7 @@ const Hero = () => {
 
             {/* Carousel */}
             <div className="w-full overflow-hidden">
-              {/* Progress bar */}
-              <div className="w-full h-[2px] mb-8 rounded-full overflow-hidden" style={{ background: 'rgba(255,255,255,0.08)' }}>
-                <div
-                  key={currentIndex}
-                  className="h-full rounded-full"
-                  style={{
-                    background: 'linear-gradient(90deg, #f97316, #dc2626)',
-                    animation: 'progress-fill 5s linear forwards',
-                    boxShadow: '0 0 8px rgba(249,115,22,0.6)',
-                  }}
-                />
-              </div>
+
 
               <div
                 className="flex items-stretch transition-transform duration-700 ease-spring"

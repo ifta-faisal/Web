@@ -1,7 +1,7 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Cpu, Wind, Radio, Eye, Shield, Zap, ChevronRight, MapPin, Navigation, CloudRain, Layers, Activity, Gauge } from "lucide-react";
-import img1 from "../assets/images/DetailedFeatures/D_1.jpg";
+import img1 from "../assets/images/DetailedFeatures/B6.jpg";
 import jetson from "../assets/images/DetailedFeatures/jetson.png";
 import lidar from "../assets/images/DetailedFeatures/lidar.png";
 import droneImg from "../assets/images/drone.png";
@@ -10,10 +10,10 @@ import sysArchImg from "../assets/images/DetailedFeatures/system_architecture.pn
 import batteryImg from "../assets/images/Project/battery.png";
 
 // Slideshow Images
-import imgD1 from "../assets/images/DetailedFeatures/D_1.jpg";
-import imgD2 from "../assets/images/DetailedFeatures/D_2.jpg";
-import imgD3 from "../assets/images/DetailedFeatures/D_3.jpg";
-import imgD4 from "../assets/images/DetailedFeatures/D_4.jpg";
+import imgD1 from "../assets/images/DetailedFeatures/b9.jpg";
+import imgD2 from "../assets/images/DetailedFeatures/B8.jpg";
+import imgD3 from "../assets/images/DetailedFeatures/B7.jpg";
+import imgD4 from "../assets/images/DetailedFeatures/B10.jpg";
 
 
 /* ── Intersection-observer hook for scroll-reveal ── */
@@ -319,13 +319,6 @@ const DetailedFeatures = () => {
             <p className="text-slate-400 text-lg leading-relaxed max-w-lg mb-8">
               Every subsystem of our fixed-wing UAV is purpose-built for autonomous operations — from the carbon fiber skeleton to the AI compute stack.
             </p>
-            <div className="flex flex-wrap gap-3">
-              {["Autonomous", "SUAS 2026", "Open-Source Stack"].map((tag) => (
-                <span key={tag} className="px-3 py-1 rounded-full border border-white/20 text-xs font-mono text-slate-300 bg-white/5 backdrop-blur-sm">
-                  {tag}
-                </span>
-              ))}
-            </div>
           </div>
 
           {/* Drone 360° interactive viewer */}
