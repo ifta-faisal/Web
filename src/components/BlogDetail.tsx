@@ -1,6 +1,6 @@
 import React, { useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { Clock, Calendar, ArrowLeft, Linkedin, Twitter, Facebook, Mail, Link2 } from 'lucide-react';
+import { Clock, Calendar, Linkedin, Twitter, Facebook, Mail, Link2 } from 'lucide-react';
 import { posts } from '../data/blogData';
 
 const BlogDetail = () => {
@@ -34,14 +34,6 @@ const BlogDetail = () => {
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         
-        {/* Back button */}
-        <div className="mb-10">
-          <Link to="/blog" className="inline-flex items-center text-sm font-medium text-slate-400 hover:text-primary transition-colors">
-            <ArrowLeft className="w-4 h-4 mr-2" />
-            Back to Insights
-          </Link>
-        </div>
-
         {/* Article Header */}
         <div className="max-w-4xl mx-auto mb-16">
           <div className="flex items-center gap-3 mb-6">

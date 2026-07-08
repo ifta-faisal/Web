@@ -25,7 +25,7 @@ const placeholderContent = `
 <p>Our recent trials have demonstrated that integrating <strong>Jetson-class edge compute</strong> natively into the flight control loop yields unprecedented reaction times, allowing the UAV to process complex sensory data directly onboard.</p>
 
 <div class="ai-summary-block">
-  <h3>AI-Generated Summary</h3>
+  <h3>Summary</h3>
   <ul>
     <li>Edge computing significantly reduces telemetry latency for dynamic pathfinding.</li>
     <li>New carbon fiber monocoque designs increase torsional rigidity by 15% without adding weight.</li>
