@@ -54,7 +54,7 @@ export const projectsData: ProjectData[] = [
     docs: [
       { title: "Raven Technical Specifications", url: "#" }
     ],
-    videoUrl: "https://www.youtube.com/embed/Fm7WHzXVMhE?si=7MYhj3CHGIPdTujF"
+    videoUrl: "https://www.youtube.com/embed/I8id3VY7Vdg"
   },
   {
     id: 10, name: " UAV",
@@ -87,7 +87,7 @@ export const projectsData: ProjectData[] = [
     ],
     media: [aether1, aether2, aether3, aether4, aether5],
     docs: [
-      { title: "AETHER Systems Manual", url: aetherPdf },
+      { title: "AETHER Systems Manual", url: "https://drive.google.com/file/d/1DhEqMxO5iuOlhus2vQK1eWrgj9lGsEJs/view?usp=sharing" },
     ],
     videoUrl: "https://www.youtube.com/embed/R9LzS1dUryI?si=S05b4yigzyW1e7Pf"
   },
@@ -121,7 +121,7 @@ export const projectsData: ProjectData[] = [
     ],
     media: [deadcat1, deadcat2, deadcat3, deadcat4, deadcat5],
     docs: [
-      { title: "Dead Cat Systems Manual", url: "https://drive.google.com/file/d/1gAf_FV3DuQHDXwpTMfXwGkugqm9GQWEA/view?usp=sharing" },
+      { title: "Dead Cat Systems Manual", url: "https://drive.google.com/file/d/1v8uarfqe7O3oW5tY8O0_dAOqqhANAoY8/view?usp=sharing" },
     ],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },

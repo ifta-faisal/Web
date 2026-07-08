@@ -453,7 +453,7 @@ const Hero = () => {
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 mb-1"
                   style={{ fontFamily: "'Inter', sans-serif" }}>Max Takeoff Weight</p>
                 <p style={{ fontFamily: "'Bebas Neue', sans-serif", lineHeight: 1 }}>
-                  <span className="text-5xl" style={{ color: '#f97316' }}>4.2</span>
+                  <span className="text-5xl" style={{ color: '#f97316' }}>10</span>
                   <span className="text-2xl text-white ml-1">Kg</span>
                 </p>
               </div>
