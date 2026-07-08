@@ -35,6 +35,8 @@ const Header = () => {
     { name: 'Become a sponsor', to: '/sponsor' },
   ];
 
+  const [isHidden, setIsHidden] = useState(false);
+
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
@@ -49,11 +51,18 @@ const Header = () => {
       }
     };
 
+    const handleHideHeader = (e: Event) => {
+      const customEvent = e as CustomEvent;
+      setIsHidden(customEvent.detail.hide);
+    };
+
     window.addEventListener('scroll', handleScroll, { passive: true });
     window.addEventListener('keydown', handleKeyDown);
+    window.addEventListener('hide-header', handleHideHeader);
     return () => {
       window.removeEventListener('scroll', handleScroll);
       window.removeEventListener('keydown', handleKeyDown);
+      window.removeEventListener('hide-header', handleHideHeader);
     };
   }, [lastScrollY]);
 
@@ -62,6 +71,8 @@ const Header = () => {
       {/* Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-spring ${
+          isHidden ? '-translate-y-full opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'
+        } ${
           isTop
             ? 'bg-transparent py-3 shadow-none'
             : 'py-2 shadow-2xl'

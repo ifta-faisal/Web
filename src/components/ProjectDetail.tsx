@@ -168,19 +168,33 @@ const ProjectDetail = () => {
               Read Our Full Documentation!
             </h2>
             <div className="flex flex-wrap justify-center gap-4 max-w-4xl mx-auto">
-              {project.docs.map((doc, index) => (
-                <a
-                  key={index}
-                  href={doc.url}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="flex items-center gap-2 px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white hover:border-primary hover:bg-primary/10 transition-all"
-                >
-                  <FileText className="w-5 h-5 text-primary" />
-                  <span className="font-semibold">{doc.title}</span>
-                  <ExternalLink className="w-4 h-4 ml-2 text-gray-500" />
-                </a>
-              ))}
+              {project.docs.map((doc, index) => {
+                const isInternal = doc.url.startsWith('/');
+                const isPlaceholder = doc.url.startsWith('#');
+                if (isInternal || isPlaceholder) {
+                  return (
+                    <Link
+                      key={index}
+                      to={doc.url}
+                      className="flex items-center gap-2 px-6 py-2 bg-transparent border border-primary rounded text-white hover:bg-primary/10 transition-all"
+                    >
+                      <span className="font-semibold">{doc.title}</span>
+                    </Link>
+                  );
+                }
+                return (
+                  <a
+                    key={index}
+                    href={doc.url}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="flex items-center gap-2 px-6 py-2 bg-transparent border border-primary rounded text-white hover:bg-primary/10 transition-all"
+                  >
+                    <span className="font-semibold">{doc.title}</span>
+                    <ExternalLink className="w-4 h-4 ml-1 opacity-70" />
+                  </a>
+                );
+              })}
               {/* <Link to="/blog" className="flex items-center gap-2 px-6 py-3 bg-gray-800/50 border border-gray-700 rounded-lg text-white hover:border-primary hover:bg-primary/10 transition-all">
                 <FileText className="w-5 h-5 text-primary" />
                 <span className="font-semibold">Blogs!</span>

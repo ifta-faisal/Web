@@ -43,7 +43,13 @@ export const projectsData: ProjectData[] = [
     ],
     media: [raven1, raven2, raven3, raven4, raven5, raven6, raven7],
     docs: [
-      { title: "Raven Technical Specifications", url: "#" }
+      { title: "Aircraft", url: "#" },
+      { title: "Payload", url: "#" },
+      { title: "Avionics", url: "#" },
+      { title: "Electrical", url: "#" },
+      { title: "Communication", url: "#" },
+      { title: "Software & Navigation", url: "#" },
+      { title: "Technical Design Report >", url: "#" }
     ],
     videoUrl: "https://www.youtube.com/embed/I8id3VY7Vdg"
   },
