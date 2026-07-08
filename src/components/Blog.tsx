@@ -1,85 +1,7 @@
-﻿import React, { useState } from 'react';
+import React, { useState } from 'react';
 import { Calendar, Clock, ArrowRight, BookOpen, CheckCircle } from 'lucide-react';
-import mentor1 from '../assets/images/Advisor/Mentor1.jpeg';
-import vcImage from '../assets/images/Advisor/VC.jpg';
-import projectImg from '../assets/images/Project/project1.jpeg';
-import droneImg from '../assets/images/drone1.jpeg';
-import missionImg from '../assets/images/DetailedFeatures/mission_planning_ui.png';
-
-const posts = [
-  {
-    id: 1,
-    title: "Empowering the Next Generation: The UART Mission",
-    excerpt: "University laboratories are the birthplaces of tomorrow industry leaders. At UART, we provide more than just technical training; we foster a culture of leadership and visionary engineering.",
-    author: "Dr. Md. Abul Kashem Mia",
-    role: "Vice Chancellor, UIU",
-    authorImg: vcImage,
-    date: "April 11, 2026",
-    readTime: "6 min read",
-    category: "Leadership",
-    image: projectImg,
-  },
-  {
-    id: 2,
-    title: "The Future of Autonomous Flight: AI and Edge Systems",
-    excerpt: "The convergence of Jetson-class compute and advanced aerospace geometry is redefining UAV capabilities. We explore the roadmap for GPS-denied navigation and real-time obstacle avoidance.",
-    author: "Dr. A.K.M. Muzahidul Islam",
-    role: "Director, UART",
-    authorImg: mentor1,
-    date: "April 08, 2026",
-    readTime: "8 min read",
-    category: "Technology",
-    image: droneImg,
-  },
-  {
-    id: 3,
-    title: "SUAS 2026: The Path to Global Excellence",
-    excerpt: "Competing on the international stage requires more than just a working drone. It demands rigorous systems engineering, redundant fail-safes, and a commitment to data-driven mission planning.",
-    author: "Dr. A.K.M. Muzahidul Islam",
-    role: "Director, UART",
-    authorImg: mentor1,
-    date: "April 05, 2026",
-    readTime: "5 min read",
-    category: "Research",
-    image: missionImg,
-  },
-  {
-    id: 4,
-    title: "Telemetry Records: Breaking the 10km Barrier",
-    excerpt: "Technical Log: Field testing the RFD900x link at maximum gain. Achievement of stable 10.2km bi-directional telemetry with packet loss under 5% on encrypted FHSS channels.",
-    author: "UART Engineering Lab",
-    role: "Build Log v3.1",
-    authorImg: projectImg,
-    date: "December 14, 2025",
-    readTime: "4 min read",
-    category: "Build Log",
-    image: projectImg,
-  },
-  {
-    id: 5,
-    title: "Edge AI Breakthrough: Jetson Integration",
-    excerpt: "Milestone: Successfully migrated mission-critical neural networks from PC-tethered testing to the onboard NVIDIA Jetson. Real-time inference latency reduced to 82ms.",
-    author: "UART Engineering Lab",
-    role: "Build Log v2.4",
-    authorImg: droneImg,
-    date: "October 20, 2024",
-    readTime: "7 min read",
-    category: "Build Log",
-    image: droneImg,
-  },
-  {
-    id: 6,
-    title: "Pioneering the Monocoque: Early Stress Tests",
-    excerpt: "Foundational Record: Initial structural loading tests of the 3K Twill Carbon Fiber fuselage. Analysis shows 15% better torsional rigidity than target specs.",
-    author: "UART Engineering Lab",
-    role: "Build Log v1.0",
-    authorImg: projectImg,
-    date: "February 12, 2024",
-    readTime: "5 min read",
-    category: "Build Log",
-    image: projectImg,
-  },
-];
+import { Link } from 'react-router-dom';
+import { posts } from '../data/blogData';
 
 const Blog = () => {
   const [email, setEmail] = useState('');
@@ -126,7 +48,7 @@ const Blog = () => {
         </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 mb-20">
           {posts.map((post) => (
-            <div key={post.id} className="group relative flex flex-col h-full">
+            <Link to={`/blog/${post.id}`} key={post.id} className="group relative flex flex-col h-full cursor-pointer">
               <div className="card-modern rounded-3xl overflow-hidden h-full flex flex-col group-hover:border-primary/30 transition-all duration-300">
                 <div className="relative h-56 overflow-hidden">
                   <img src={post.image} alt={post.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-700 brightness-75 group-hover:brightness-100" />
@@ -157,7 +79,7 @@ const Blog = () => {
                   </div>
                 </div>
               </div>
-            </div>
+            </Link>
           ))}
         </div>
         <div className="card-modern rounded-[2.5rem] p-6 sm:p-10 md:p-12 text-center relative overflow-hidden group">
