@@ -47,7 +47,12 @@ const GalleryVideo = () => {
                     <div className="relative flex flex-col items-center justify-center">
                         <div className="relative w-full max-w-[600px] overflow-hidden rounded-xl shadow-2xl">
                             {/* YouTube Embed */}
-                            <div className="relative w-full aspect-video">
+                            <a 
+                                href="https://www.youtube.com/watch?v=I8id3VY7Vdg"
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="relative w-full aspect-video block cursor-pointer"
+                            >
                                 <iframe
                                     src="https://www.youtube.com/embed/I8id3VY7Vdg?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1"
                                     title="Drone Action"
@@ -55,7 +60,7 @@ const GalleryVideo = () => {
                                     allowFullScreen
                                     className="absolute inset-0 w-full h-full rounded-xl pointer-events-none"
                                 />
-                            </div>
+                            </a>
                         </div>
 
                         {/* Text below the video */}
