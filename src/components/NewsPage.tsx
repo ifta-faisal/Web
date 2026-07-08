@@ -79,7 +79,7 @@ const NewsPage = () => {
               background: 'linear-gradient(180deg, #ffffff 0%, #94a3b8 100%)',
               WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent',
             }}>
-              News &amp; Updates
+              News <span className="text-primary italic pr-1 lg:pr-2" style={{ WebkitTextFillColor: 'initial', WebkitBackgroundClip: 'initial', background: 'none', color: '#f97316' }}>&amp;</span> Updates
             </h1>
 
             <p style={{

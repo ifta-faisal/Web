@@ -40,7 +40,7 @@ const Blog = () => {
         <div className="text-center mb-20">
           <div className="section-label mb-5 mx-auto" style={{ display: 'inline-flex' }}>UART INSIGHTS</div>
           <h1 className="text-2xl sm:text-4xl md:text-5xl lg:text-7xl font-black text-white mb-6 uppercase tracking-tight">
-            Knowledge <span className="text-primary italic">&amp;</span> Vision
+            Knowledge <span className="text-primary italic pr-2 lg:pr-3">&amp;</span> Vision
           </h1>
           <p className="text-slate-400 text-lg max-w-2xl mx-auto leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
             Thought leadership and technical breakthroughs from our advisors, exploring the frontiers of autonomous robotics.
