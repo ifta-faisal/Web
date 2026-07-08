@@ -10,7 +10,7 @@ import sysArchImg from "../assets/images/DetailedFeatures/system_architecture.pn
 import batteryImg from "../assets/images/Project/battery.png";
 
 // Slideshow Images
-import imgD1 from "../assets/images/DetailedFeatures/b9.jpg";
+import imgD1 from "../assets/images/DetailedFeatures/B9.jpg";
 import imgD2 from "../assets/images/DetailedFeatures/B8.jpg";
 import imgD3 from "../assets/images/DetailedFeatures/B7.jpg";
 import imgD4 from "../assets/images/DetailedFeatures/B10.jpg";
