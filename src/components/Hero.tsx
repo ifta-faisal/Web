@@ -569,7 +569,7 @@ const Hero = () => {
           {/* Mobile stats (small screens) */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-10 lg:hidden ju-reveal">
             {[
-              { label: 'Max Weight', value: '4.2', unit: 'Kg' },
+              { label: 'Max Weight', value: '10', unit: 'Kg' },
               { label: 'Range', value: '10', unit: 'km' },
               { label: 'Endurance', value: '35', unit: 'min' },
               { label: 'Speed', value: '18', unit: 'm/s' },

@@ -1,6 +1,3 @@
-import project1 from "../assets/images/Project/project1.jpeg";
-import project6 from "../assets/images/Project/project6.jpeg";
-import project7 from "../assets/images/Project/project7.jpeg";
 import project10 from "../assets/images/DetailedFeatures/Drone.jpg";
 import swarm1 from "../assets/images/DetailedFeatures/D_1.jpg";
 import swarm2 from "../assets/images/DetailedFeatures/D_2.jpg";
@@ -12,12 +9,6 @@ import aether2 from "../assets/images/Project/Aether_2.JPG";
 import aether3 from "../assets/images/Project/Aether_3.JPG";
 import aether4 from "../assets/images/Project/Aether_4.jpg";
 import aether5 from "../assets/images/Project/Aether_5.jpg";
-import aetherPdf from "../assets/Documnet/Aether.pdf";
-import deadcat1 from "../assets/images/Project/Deadcat_1.jpg";
-import deadcat2 from "../assets/images/Project/Deadcat_2.jpg";
-import deadcat3 from "../assets/images/Project/Deadcat_3.jpg";
-import deadcat4 from "../assets/images/Project/Deadcat_4.jpg";
-import deadcat5 from "../assets/images/Project/Deadcat_5.jpeg";
 import raven1 from "../assets/images/Project/B1.jpeg";
 import raven2 from "../assets/images/Project/B2.jpeg";
 import raven3 from "../assets/images/Project/B3.jpg";
@@ -91,64 +82,4 @@ export const projectsData: ProjectData[] = [
     ],
     videoUrl: "https://www.youtube.com/embed/R9LzS1dUryI?si=S05b4yigzyW1e7Pf"
   },
-  {
-    id: 1, name: "Endurance UAV",
-    description: "A high-performance UAV designed for endurance missions.",
-    longDescription: "Our inspiration comes from the need for long-lasting flight times in critical missions.",
-    image: project1, category: "research", year: "2024", status: "Active",
-    tags: ["Mapping", "Autonomous"],
-    specs: [
-      { label: "Weight", value: "7300g (~16 lbs)" },
-      { label: "Dimensions", value: "30.7 in x 24 in x 14.2 in" },
-      { label: "Top Speed", value: "41mph (18.3m/s)" },
-      { label: "Endurance", value: "45 minutes @ hover" },
-      { label: "Propulsion System", value: "KDE 4215 – 465 KV" },
-      { label: "Power System", value: "6S8P Custom LiOn Pack" }
-    ],
-    media: [project1],
-    docs: [{ title: "Aircraft Specs", url: "#" }],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-  },
-  {
-    id: 4, name: "Project Dead Cat: DIY FPV Drone",
-    description: "The primary objective of this project is to design a lightweight, modular, and upgradeable drone platform that balances performance, stability, and extensibility.",
-    longDescription: "Project Dead Cat is a lightweight, Dead Cat–frame FPV drone designed for stable,  efficient power usage and extended endurance. It integrates GPS-assisted navigation, modular hardware architecture, and CRSF-based long-range control for reliable performance in both manual and semi-autonomous modes.",
-    image: deadcat1, category: "environmental", year: "2024", status: "Completed",
-    tags: ["Environmental", "Monitoring"],
-    specs: [
-      { label: "Range", value: "2–5 km" },
-      { label: "Endurance", value: "up to ~40 minutes" }
-    ],
-    media: [deadcat1, deadcat2, deadcat3, deadcat4, deadcat5],
-    docs: [
-      { title: "Dead Cat Systems Manual", url: "https://drive.google.com/file/d/1v8uarfqe7O3oW5tY8O0_dAOqqhANAoY8/view?usp=sharing" },
-    ],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-  },
-  {
-    id: 6, name: "Defensive Drone",
-    description: "AI-integrated drone for real-time data processing.",
-    longDescription: "Equipped with advanced neural network processors, the Defensive Drone processes sensory data in real-time.",
-    image: project6, category: "ai", year: "2024", status: "Completed",
-    tags: ["AI", "Real-time"],
-    specs: [
-      { label: "Processors", value: "Jetson Orin Nano 8GB" },
-      { label: "Perception Sensors", value: "Arducam IMX219" }
-    ],
-    media: [project6],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-  },
-  {
-    id: 7, name: "Fixed Wing",
-    description: "Fixed-wing UAV optimized for long-range surveillance.",
-    longDescription: "Our classic Fixed Wing platform is highly optimized for lift-to-drag ratio with an endurance of over two hours.",
-    image: project7, category: "surveillance", year: "2023", status: "Completed",
-    tags: ["Fixed-wing", "Surveillance"],
-    specs: [
-      { label: "Top Speed", value: "60mph" },
-      { label: "Endurance", value: "120 minutes" }
-    ],
-    media: [project7],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
-  }
 ];
