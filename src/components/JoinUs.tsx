@@ -562,7 +562,7 @@ const JoinUs = () => {
             ))}
           </div>
           <div className={`ju-hero-content container ${heroVisible ? 'ju-hero-animate' : ''}`}>
-            <p className="ju-reveal ju-hero-eyebrow"> UIU AERIAL ROBOTICS TEAM RECRUITMENT 2025</p>
+            <p className="ju-reveal ju-hero-eyebrow"> UIU AERIAL ROBOTICS TEAM RECRUITMENT 2027</p>
             <h1 className="ju-reveal ju-hero-title">
               UIU AERIAL ROBOTICS TEAM<br />
               <span className="ju-hero-highlight">IS RECRUITING!</span>
