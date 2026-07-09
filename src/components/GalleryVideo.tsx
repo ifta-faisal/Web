@@ -85,7 +85,7 @@ const GalleryVideo = () => {
                             >
                                 <iframe
                                     ref={iframeRef}
-                                    src="https://www.youtube.com/embed/I8id3VY7Vdg?autoplay=0&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
+                                    src="https://www.youtube.com/embed/I8id3VY7Vdg?autoplay=0&mute=0&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1"
                                     title="Drone Action"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowFullScreen
