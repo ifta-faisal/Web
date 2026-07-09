@@ -171,6 +171,58 @@ const BlogDetail = () => {
                 color: #94a3b8;
                 line-height: 1.7;
               }
+              .blog-section-img {
+                width: 100%;
+                max-height: 420px;
+                object-fit: cover;
+                border-radius: 0.75rem;
+                margin: 1.5rem 0 2rem;
+                border: 1px solid rgba(255, 255, 255, 0.08);
+                display: block;
+              }
+              .about-authors-section {
+                margin-top: 3.5rem;
+                padding-top: 2.5rem;
+                border-top: 2px solid rgba(249, 115, 22, 0.3);
+              }
+              .about-authors-section h2 {
+                color: #f1f5f9;
+                font-size: 1.8rem;
+                margin-bottom: 2rem;
+                margin-top: 0;
+              }
+              .author-card {
+                display: flex;
+                align-items: flex-start;
+                gap: 1.5rem;
+                padding: 1.5rem 0;
+                border-bottom: 1px solid rgba(255, 255, 255, 0.07);
+              }
+              .author-card:last-child {
+                border-bottom: none;
+              }
+              .author-photo {
+                width: 90px;
+                height: 90px;
+                border-radius: 0.5rem;
+                object-fit: cover;
+                object-position: top;
+                flex-shrink: 0;
+                border: 2px solid rgba(249, 115, 22, 0.4);
+              }
+              .author-info h4 {
+                color: #f1f5f9;
+                font-size: 1rem;
+                font-weight: 700;
+                margin: 0 0 0.5rem;
+                font-family: 'Inter', sans-serif;
+              }
+              .author-info p {
+                color: #94a3b8;
+                font-size: 0.9rem;
+                line-height: 1.7;
+                margin: 0;
+              }
             `}} />
             
             <div dangerouslySetInnerHTML={{ __html: post.content }} />

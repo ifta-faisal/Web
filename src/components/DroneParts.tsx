@@ -5,11 +5,12 @@ const DroneParts = () => {
   const sectionRef = useRef<HTMLElement>(null);
 
   useEffect(() => {
+    // Hide header event logic when in view
     const observer = new IntersectionObserver(
       ([entry]) => {
         window.dispatchEvent(new CustomEvent('hide-header', { detail: { hide: entry.isIntersecting } }));
       },
-      { threshold: 0.3 } // Hide when at least 30% of the video section is visible
+      { threshold: 0.3 }
     );
 
     if (sectionRef.current) {
@@ -38,8 +39,8 @@ const DroneParts = () => {
         </div>
       </div>
 
-      {/* Full Screen Content Container */}
-      <div className="w-full relative z-10 animate-fade-in border-y border-gray-800/50 bg-gray-900/50 aspect-[20/9] shadow-2xl shadow-primary/20">
+      {/* Video Container - No scrolling effect, just standard autoplay */}
+      <div className="w-full relative z-10 border-y border-gray-800/50 bg-gray-900/50 aspect-[20/9] shadow-2xl shadow-primary/20 overflow-hidden">
         <video
           src={droneVideo}
           autoPlay

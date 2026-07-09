@@ -75,11 +75,11 @@ const ProjectDetail = () => {
             <h2 className="text-3xl sm:text-5xl font-black text-white mb-10 uppercase border-l-4 border-primary pl-4">
               Technical Specs
             </h2>
-            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {project.specs.map((spec, index) => (
-                <div key={index} className="bg-gray-800/40 backdrop-blur-sm border border-gray-700/50 rounded-xl p-6 hover:border-primary/50 transition-colors">
-                  <h4 className="text-gray-400 font-semibold uppercase tracking-wider text-xs mb-2">{spec.label}</h4>
-                  <p className="text-white text-lg font-bold">{spec.value}</p>
+                <div key={index} className="flex flex-col justify-center items-center px-6 py-3 bg-transparent border border-primary rounded text-white hover:bg-primary/10 transition-all">
+                  <h4 className="text-gray-300 font-semibold uppercase tracking-wider text-xs mb-1 text-center">{spec.label}</h4>
+                  <p className="text-white font-bold text-center">{spec.value}</p>
                 </div>
               ))}
             </div>
@@ -99,7 +99,7 @@ const ProjectDetail = () => {
             <h2 className="text-3xl sm:text-5xl font-black text-white mb-8 uppercase text-center">
               Watch Our Flight Readiness Review
             </h2>
-            <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">A little bit of hype never hurt anybody...</p>
+            <p className="text-center text-gray-400 mb-8 max-w-2xl mx-auto">Something exciting is on the horizon.</p>
             <div className="relative w-full max-w-4xl mx-auto aspect-video rounded-2xl overflow-hidden shadow-2xl shadow-primary/20 border border-gray-700/50 group bg-gray-900/50">
               {project.videoUrl.includes('dQw4w9WgXcQ') ? (
                 <div className="absolute inset-0 flex flex-col items-center justify-center p-6 text-center">

@@ -10,6 +10,7 @@ import amprius from '../assets/images/Sponsor/amp.png';
 import autodesk from '../assets/images/news/autodesk_1.jpg';
 import solidworks from '../assets/images/news/solidworks.jpg';
 import suaslogo from '../assets/images/suas.png';
+import poster from '../assets/images/news/poster.png';
 
 export interface NewsItem {
   id: number;
@@ -31,7 +32,7 @@ export const newsItems: NewsItem[] = [
     source: 'UART',
     description: 'We are thrilled to announce we are selected for SUAS 2026!',
     link: '#',
-    image: suaslogo,
+    image: poster,
     category: 'General',
     tags: ['suas', 'competition', 'achievement']
   },

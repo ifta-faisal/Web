@@ -34,12 +34,19 @@ export const projectsData: ProjectData[] = [
     image: raven3, category: "reconnaissance", year: "2026", status: "Active", isLatest: true,
     tags: ["Tactical", "Reconnaissance"],
     specs: [
-      { label: "Endurance", value: "1 hour" },
-      { label: "Top Speed", value: "40 mph" },
-      { label: "Range", value: "5-10 km" },
-      { label: "Payload Capacity", value: "5 kg" },
-      { label: "Navigation", value: "GPS + Vision System" },
-      { label: "Communication", value: "Encrypted Data Link (2.4GHz / 5.8GHz)" }
+      { label: "Weight", value: "6.8 kg" },
+      { label: "Dimensions", value: "To be updated (L × W × H)" },
+      { label: "Maximum Speed", value: "15 m/s (Tested)" },
+      { label: "Flight Endurance", value: "Up to 50 minutes" },
+      { label: "Propulsion System", value: "Electric Brushless Motors" },
+      { label: "Power System", value: "Lithium-ion Battery" },
+      { label: "Communication Links", value: "900 MHz, 2.4 GHz, 5.8 GHz" },
+      { label: "Onboard Computer", value: "NVIDIA Jetson Orin NX 16GB" },
+      { label: "Flight Controller", value: "Cube Orange+" },
+      { label: "Navigation System", value: "GNSS (GPS), IMU, Magnetometer, Barometer" },
+      { label: "Autopilot Software", value: "ArduPilot" },
+      { label: "Perception Sensors", value: "Siyi A8 Mini" },
+      { label: "Software Environment", value: "Python" }
     ],
     media: [raven1, raven2, raven3, raven4, raven5, raven6, raven7],
     docs: [

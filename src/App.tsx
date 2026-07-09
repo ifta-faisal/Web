@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
+import Lenis from 'lenis';
 import ScrollToTop from './components/ScrollToTop';
 import SplashScreen from './components/SplashScreen';
 import Header from './components/Header';
@@ -37,6 +38,24 @@ const App = () => {
   const location = useLocation();
 
   useEffect(() => {
+    // Initialize Lenis for buttery smooth global scrolling
+    const lenis = new Lenis({
+      duration: 1.2,
+      easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)),
+      orientation: 'vertical',
+      gestureOrientation: 'vertical',
+      smoothWheel: true,
+      wheelMultiplier: 1,
+      touchMultiplier: 2,
+    });
+
+    function raf(time: number) {
+      lenis.raf(time);
+      requestAnimationFrame(raf);
+    }
+
+    requestAnimationFrame(raf);
+
     // Lower threshold so elements reveal earlier in viewport (FlyShot feel)
     const observer = new IntersectionObserver(
       (entries) => {
@@ -60,6 +79,7 @@ const App = () => {
     return () => {
       clearTimeout(timer);
       observer.disconnect();
+      lenis.destroy();
     };
   }, [location.pathname]);
 

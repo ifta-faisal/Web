@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { PlayCircle } from 'lucide-react';
 
 import droneVideo from '../assets/video/Drone_Fotage_1.mp4';
@@ -11,6 +11,27 @@ const GalleryVideo = () => {
     // Add some variety to the thumbnails
     videos[1] = { poster: uaImage, video: droneVideo };
     videos[4] = { poster: uaImage, video: droneVideo };
+
+    const [inView, setInView] = useState(false);
+    const videoRef = useRef<HTMLDivElement>(null);
+
+    useEffect(() => {
+        const observer = new IntersectionObserver(
+            ([entry]) => {
+                if (entry.isIntersecting) {
+                    setInView(true);
+                    observer.disconnect(); // Only need to trigger once
+                }
+            },
+            { threshold: 0.5 } // Start playing when at least 50% of the video container is visible
+        );
+
+        if (videoRef.current) {
+            observer.observe(videoRef.current);
+        }
+
+        return () => observer.disconnect();
+    }, []);
 
     return (
         <section className=" py-24 bg-transparent relative">
@@ -44,23 +65,27 @@ const GalleryVideo = () => {
                     </div>
 
                     {/* Right Column - Embedded YouTube Video */}
-                    <div className="relative flex flex-col items-center justify-center">
-                        <div className="relative w-full max-w-[600px] overflow-hidden rounded-xl shadow-2xl">
-                            {/* YouTube Embed */}
-                            <a 
-                                href="https://www.youtube.com/watch?v=I8id3VY7Vdg"
-                                target="_blank"
-                                rel="noopener noreferrer"
-                                className="relative w-full aspect-video block cursor-pointer"
-                            >
-                                <iframe
-                                    src="https://www.youtube.com/embed/I8id3VY7Vdg?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1"
-                                    title="Drone Action"
-                                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                                    allowFullScreen
-                                    className="absolute inset-0 w-full h-full rounded-xl pointer-events-none"
-                                />
-                            </a>
+                    <div ref={videoRef} className="relative flex flex-col items-center justify-center">
+                        <div className="relative w-full max-w-[600px] overflow-hidden rounded-xl shadow-2xl bg-slate-900/50 aspect-video flex items-center justify-center">
+                            {/* YouTube Embed - Only rendered when scrolled into view */}
+                            {inView ? (
+                                <a
+                                    href="https://www.youtube.com/watch?v=I8id3VY7Vdg"
+                                    target="_blank"
+                                    rel="noopener noreferrer"
+                                    className="relative w-full h-full block cursor-pointer"
+                                >
+                                    <iframe
+                                        src="https://www.youtube.com/embed/I8id3VY7Vdg?autoplay=1&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1"
+                                        title="Drone Action"
+                                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                                        allowFullScreen
+                                        className="absolute inset-0 w-full h-full rounded-xl pointer-events-none"
+                                    />
+                                </a>
+                            ) : (
+                                <div className="animate-pulse w-full h-full bg-slate-800 rounded-xl" />
+                            )}
                         </div>
 
                         {/* Text below the video */}
