@@ -7,6 +7,8 @@ import suasImg from '../assets/images/suas.png';
 import israfilImg from '../assets/images/Team/israfil.png';
 import biplobImg from '../assets/images/Team/alfi.png';
 import faisalImg from '../assets/images/Team/member4.png';
+import OnBoard from '../assets/images/Blog/On_Board.jpeg';  
+import Tele from '../assets/images/Blog/Tele.jpeg';  
 
 export interface BlogPost {
   id: number;
@@ -763,7 +765,7 @@ const postsRaw: BlogPost[] = [
   <li>Update mission progress</li>
 </ul>
 <p>By maintaining continuous communication, operators remain informed throughout every stage of the mission.</p>
-<img src="${missionImg}" alt="Communication Flow Diagram" class="blog-section-img" />
+<img src="${Tele}" alt="Communication Flow Diagram" class="blog-section-img" />
 
 <h2>Onboard Processing</h2>
 <p>Some tasks require immediate decision-making during flight.</p>
@@ -777,7 +779,7 @@ const postsRaw: BlogPost[] = [
   <li>Autonomous decision support</li>
 </ul>
 <p>Separating high-level processing from flight control improves both stability and overall system performance.</p>
-<img src="${suasImg}" alt="Companion Computer Photograph" class="blog-section-img" />
+<img src="${OnBoard}" alt="Companion Computer Photograph" class="blog-section-img" />
 
 <h2>Testing Before Flight</h2>
 <p>Reliable software is built through continuous testing.</p>

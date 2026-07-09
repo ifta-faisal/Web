@@ -12,16 +12,14 @@ import member9 from '../assets/images/Team/member9.png';
 import adnan from '../assets/images/Team/adnan.png';
 import alfi from '../assets/images/Team/alfi.png';
 import israfil from '../assets/images/Team/israfil.png';
-import ratul from '../assets/images/Team/ratul.png';
 import anika from '../assets/images/Team/orthy.jpeg';
 import jarin from '../assets/images/Team/dip.png';
 import rashed from '../assets/images/Team/rashed.png';
 import talha from '../assets/images/Team/talha.png';
-import alif from '../assets/images/Team/alif.jpg';
 import probin from '../assets/images/Team/probin.png';
 import shahad from '../assets/images/Team/shahad.png';
 import arpon from '../assets/images/Team/arpon.png';
-import nazifa from '../assets/images/Team/nazifa.png';
+import nazifa from '../assets/images/Team/nazifa.jpeg';
 import sumaiya from '../assets/images/Team/sumaiya.png';
 import nusrat from '../assets/images/Team/nusrat.jpeg';
 
@@ -85,7 +83,7 @@ const Team = () => {
     { id: 'm20', name: 'Mobassir Hossain Shahad', role: 'MEMBER', team: 'Electrical Team', department: 'Department of EEE', image: shahad, category: 'member', email: 'mshahad2330059@bseee.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/mobassir-hossain-shahad-367871392' },
     { id: 'm21', name: 'Md Shazan Mahmud Arpon', role: 'MEMBER', team: 'Software & Navigation Team', department: 'Department of CSE', image: arpon, category: 'member', email: 'marpon2410351@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/md-shazan-mahmud-arpon' },
     { id: 'm22', name: 'Najifa Nawar', role: 'MEMBER', team: 'R&D Team', department: 'Department of CSE', image: nazifa, category: 'member', email: 'nawarnajifa32@gmail.com', linkedin: 'https://www.linkedin.com/in/najifa-nawar-b21137403?utm_source=share_via&utm_content=profile&utm_medium=member_android' },
-    { id: 'm11', name: 'Ratul Ghosh', role: 'MEMBER', team: 'R&D Team', department: 'Department of CSE', image: ratul, category: 'member', email: 'rghosh2410038@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/ratul-ghosh-7bb172377?' },
+    // { id: 'm11', name: 'Ratul Ghosh', role: 'MEMBER', team: 'R&D Team', department: 'Department of CSE', image: ratul, category: 'member', email: 'rghosh2410038@bscse.uiu.ac.bd', linkedin: 'https://www.linkedin.com/in/ratul-ghosh-7bb172377?' },
   
   ];
 

@@ -10,14 +10,24 @@ const NewsPage = () => {
   const [selectedCategory, setSelectedCategory] = useState('All');
   const [selectedNews, setSelectedNews] = useState<NewsItem | null>(null);
 
-  // Escape key to close modal
+  // Escape key to close modal & lock body scroll
   useEffect(() => {
     const handleKeyDown = (e: KeyboardEvent) => {
       if (e.key === 'Escape') setSelectedNews(null);
     };
     window.addEventListener('keydown', handleKeyDown);
-    return () => window.removeEventListener('keydown', handleKeyDown);
-  }, []);
+
+    if (selectedNews) {
+      document.body.style.overflow = 'hidden';
+    } else {
+      document.body.style.overflow = 'unset';
+    }
+
+    return () => {
+      window.removeEventListener('keydown', handleKeyDown);
+      document.body.style.overflow = 'unset';
+    };
+  }, [selectedNews]);
 
   // Filter & Search news items
   const filteredNews = newsItems.filter((item) => {
@@ -32,7 +42,7 @@ const NewsPage = () => {
 
   return (
     <>
-      {/* â”€â”€ Inline keyframe for card fade-in â”€â”€ */}
+      {/* ——— Inline keyframe for card fade-in ——— */}
       <style>{`
         @keyframes card-fade-in {
           from { opacity: 0; transform: translateY(28px); }
@@ -54,10 +64,10 @@ const NewsPage = () => {
         }}
       >
 
-        {/* â”€â”€ Page Content â”€â”€ */}
+        {/* ——— Page Content ——— */}
         <div style={{ maxWidth: '80rem', margin: '0 auto', padding: '0 1.5rem', position: 'relative', zIndex: 10 }}>
 
-          {/* â”€â”€ Hero Header â”€â”€ */}
+          {/* ——— Hero Header ——— */}
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
             <div style={{
               display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
@@ -98,7 +108,7 @@ const NewsPage = () => {
             }} />
           </div>
 
-          {/* â”€â”€ Search & Filters â”€â”€ */}
+          {/* ——— Search & Filters ——— */}
           <div style={{ marginBottom: '3rem' }}>
             {/* Top row: search + count */}
             <div style={{ display: 'flex', flexWrap: 'wrap', gap: '1rem', alignItems: 'center', justifyContent: 'space-between', marginBottom: '1.2rem' }}>
@@ -175,7 +185,7 @@ const NewsPage = () => {
             </div>
           </div>
 
-          {/* â”€â”€ Cards Grid â”€â”€ */}
+          {/* ——— Cards Grid ——— */}
           {filteredNews.length > 0 ? (
             <div style={{
               display: 'grid',
@@ -278,7 +288,7 @@ const NewsPage = () => {
                       fontFamily: "'Inter', sans-serif",
                     }}>
                       <span>Read More</span>
-                      <span>â†’</span>
+                      <span>→</span>
                     </div>
                   </div>
                 </div>
@@ -308,27 +318,37 @@ const NewsPage = () => {
           )}
         </div>
 
-        {/* â”€â”€ Detail Modal â”€â”€ */}
+        {/* ——— Detail Modal ——— */}
         {selectedNews && (
-          <div
-            onClick={() => setSelectedNews(null)}
-            style={{
-              position: 'fixed', inset: 0, zIndex: 9999,
-              display: 'flex', alignItems: 'center', justifyContent: 'center',
-              padding: '1rem',
-              background: 'rgba(2,6,23,0.85)',
-              backdropFilter: 'blur(12px)',
-            }}
-          >
+          <>
+            {/* Backdrop */}
             <div
-              onClick={e => e.stopPropagation()}
+              onClick={() => setSelectedNews(null)}
               style={{
+                position: 'fixed', inset: 0, zIndex: 9998,
+                background: 'rgba(2,6,23,0.85)',
+                backdropFilter: 'blur(12px)',
+              }}
+            />
+            {/* Positioning Wrapper */}
+            <div
+              style={{
+                position: 'fixed', inset: 0, zIndex: 9999,
+                display: 'flex', alignItems: 'center', justifyContent: 'center',
+                padding: '1rem', pointerEvents: 'none',
+              }}
+            >
+            {/* Scrollable Modal Box */}
+            <div
+              style={{
+                pointerEvents: 'auto',
                 position: 'relative', width: '100%', maxWidth: '48rem',
-                maxHeight: '90vh', borderRadius: '1.25rem', overflow: 'hidden',
+                maxHeight: '90vh', overflowY: 'auto',
+                borderRadius: '1.25rem',
                 background: 'rgba(10,15,35,0.97)',
                 border: '1px solid rgba(249,115,22,0.2)',
                 boxShadow: '0 30px 80px rgba(0,0,0,0.8)',
-                display: 'flex', flexDirection: 'column',
+                overscrollBehavior: 'contain',
               }}
             >
               {/* Close btn */}
@@ -346,7 +366,7 @@ const NewsPage = () => {
               </button>
 
               {/* Scrollable body */}
-              <div style={{ overflowY: 'auto' }}>
+              <div>
                 {/* Banner */}
                 <div style={{ position: 'relative', aspectRatio: '16/9', background: '#050911' }}>
                   <img
@@ -424,7 +444,8 @@ const NewsPage = () => {
                 </div>
               </div>
             </div>
-          </div>
+            </div>
+          </>
         )}
       </div>
     </>

@@ -121,10 +121,10 @@ const Hero = () => {
 
   const vehicleFeatures = [
     { text: 'Lightweight carbon fiber frame engineered for strength and endurance' },
-    { text: 'Extended flight duration of up to 35 minutes per mission' },
+    { text: 'Extended flight duration of up to 50 minutes per mission' },
     { text: 'AI-driven flight controller for intelligent navigation and stability' },
-    { text: '2K HD camera with 2-axis gimbal for smooth and stable imaging' },
-    { text: 'Real-time telemetry and video transmission over a 10km range' },
+    { text: '4K HD camera with 3-axis gimbal for smooth and stable imaging' },
+    { text: 'Real-time telemetry and video transmission over a 20km range' },
     { text: 'Modular architecture allowing customizable mission payloads' },
   ];
 
@@ -453,7 +453,7 @@ const Hero = () => {
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 mb-1"
                   style={{ fontFamily: "'Inter', sans-serif" }}>Max Takeoff Weight</p>
                 <p style={{ fontFamily: "'Bebas Neue', sans-serif", lineHeight: 1 }}>
-                  <span className="text-5xl" style={{ color: '#f97316' }}>10</span>
+                  <span className="text-5xl" style={{ color: '#f97316' }}>6.8</span>
                   <span className="text-2xl text-white ml-1">Kg</span>
                 </p>
               </div>
@@ -461,9 +461,9 @@ const Hero = () => {
               {/* Stat 2 */}
               <div>
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 mb-1"
-                  style={{ fontFamily: "'Inter', sans-serif" }}>Wingspan (folded)</p>
+                  style={{ fontFamily: "'Inter', sans-serif" }}>Wheelbase</p>
                 <p style={{ fontFamily: "'Bebas Neue', sans-serif", lineHeight: 1 }}>
-                  <span className="text-5xl" style={{ color: '#f97316' }}>45</span>
+                  <span className="text-5xl" style={{ color: '#f97316' }}>32</span>
                   <span className="text-2xl text-white ml-1">cm</span>
                 </p>
               </div>
@@ -474,7 +474,7 @@ const Hero = () => {
                   <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 mb-1"
                     style={{ fontFamily: "'Inter', sans-serif" }}>Cruise Speed</p>
                   <p style={{ fontFamily: "'Bebas Neue', sans-serif", lineHeight: 1 }}>
-                    <span className="text-4xl" style={{ color: '#f97316' }}>18</span>
+                    <span className="text-4xl" style={{ color: '#f97316' }}>12</span>
                     <span className="text-xl text-white ml-1">m/s</span>
                   </p>
                 </div>
@@ -482,8 +482,8 @@ const Hero = () => {
                   <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 mb-1"
                     style={{ fontFamily: "'Inter', sans-serif" }}>Payload</p>
                   <p style={{ fontFamily: "'Bebas Neue', sans-serif", lineHeight: 1 }}>
-                    <span className="text-4xl" style={{ color: '#f97316' }}>800</span>
-                    <span className="text-xl text-white ml-1">g</span>
+                    <span className="text-4xl" style={{ color: '#f97316' }}>4</span>
+                    <span className="text-xl text-white ml-1">kg</span>
                   </p>
                 </div>
               </div>
@@ -523,7 +523,7 @@ const Hero = () => {
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 mb-1"
                   style={{ fontFamily: "'Inter', sans-serif" }}>Telemetry Range</p>
                 <p style={{ fontFamily: "'Bebas Neue', sans-serif", lineHeight: 1 }}>
-                  <span className="text-5xl" style={{ color: '#f97316' }}>10</span>
+                  <span className="text-5xl" style={{ color: '#f97316' }}>20</span>
                   <span className="text-2xl text-white ml-1">km</span>
                 </p>
               </div>
@@ -533,7 +533,7 @@ const Hero = () => {
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 mb-1"
                   style={{ fontFamily: "'Inter', sans-serif" }}>Flight Endurance</p>
                 <p style={{ fontFamily: "'Bebas Neue', sans-serif", lineHeight: 1 }}>
-                  <span className="text-5xl" style={{ color: '#f97316' }}>35</span>
+                  <span className="text-5xl" style={{ color: '#f97316' }}>50</span>
                   <span className="text-2xl text-white ml-1">min</span>
                 </p>
               </div>
@@ -541,9 +541,9 @@ const Hero = () => {
               {/* Stat 3 */}
               <div>
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 mb-1"
-                  style={{ fontFamily: "'Inter', sans-serif" }}>Max Altitude</p>
+                  style={{ fontFamily: "'Inter', sans-serif" }}>Max Altitude(Tested)</p>
                 <p style={{ fontFamily: "'Bebas Neue', sans-serif", lineHeight: 1 }}>
-                  <span className="text-5xl" style={{ color: '#f97316' }}>400</span>
+                  <span className="text-5xl" style={{ color: '#f97316' }}>120</span>
                   <span className="text-2xl text-white ml-1">m AGL</span>
                 </p>
               </div>
@@ -569,12 +569,12 @@ const Hero = () => {
           {/* Mobile stats (small screens) */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-10 lg:hidden ju-reveal">
             {[
-              { label: 'Max Weight', value: '10', unit: 'Kg' },
-              { label: 'Range', value: '10', unit: 'km' },
-              { label: 'Endurance', value: '35', unit: 'min' },
-              { label: 'Speed', value: '18', unit: 'm/s' },
-              { label: 'Altitude', value: '400', unit: 'm' },
-              { label: 'Payload', value: '800', unit: 'g' },
+              { label: 'Max Weight', value: '6.8', unit: 'Kg' },
+              { label: 'Range', value: '20', unit: 'km' },
+              { label: 'Endurance', value: '50', unit: 'min' },
+              { label: 'Speed', value: '12', unit: 'm/s' },
+              { label: 'Altitude', value: '120', unit: 'm' },
+              { label: 'Payload', value: '4', unit: 'kg' },
             ].map((s) => (
               <div key={s.label} className="text-center">
                 <p className="text-[9px] font-bold tracking-[0.2em] uppercase text-slate-500 mb-1"

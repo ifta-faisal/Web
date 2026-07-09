@@ -212,14 +212,14 @@ const DetailedFeatures = () => {
   }, [searchParams]);
 
   const specs = [
-    { label: "Max Takeoff Weight", value: "4.2", unit: "kg" },
-    { label: "UAS Volume (disassembled)", value: "18 x 14 x 8", unit: "in" },
-    { label: "Flight Endurance", value: "35", unit: "min" },
-    { label: "Telemetry Range", value: "10", unit: "km" },
-    { label: "Camera Resolution", value: "2K", unit: "HD" },
-    { label: "Cruise Speed", value: "18", unit: "m/s" },
-    { label: "Tested Max Altitude", value: "400", unit: "m AGL" },
-    { label: "MAXIMUM Payload Capacity", value: "800", unit: "g" },
+    { label: "Max Takeoff Weight", value: "6.8", unit: "kg" },
+    { label: "UAS Volume (Unfolded)", value: "14 x 23 x 23", unit: "in" },
+    { label: "Flight Endurance", value: "50", unit: "min" },
+    { label: "Telemetry Range", value: "20", unit: "km" },
+    { label: "Camera Resolution", value: "4K", unit: "HD" },
+    { label: "Cruise Speed", value: "12", unit: "m/s" },
+    { label: "Tested Max Altitude", value: "120", unit: "m AGL" },
+    { label: "MAXIMUM Payload Capacity", value: "4", unit: "kg" },
   ];
 
   const features: FeatureSectionProps[] = [
@@ -551,14 +551,14 @@ const DetailedFeatures = () => {
             {/* Content Rows */}
             <div className="divide-y divide-white/10">
               {[
-                { metric: "Flight Endurance", uart: "35 min", dji: "41 min", autel: "40 min", uartBetter: false },
-                { metric: "Telemetry Range", uart: "10 km", dji: "8 km", autel: "9 km", uartBetter: true },
+                { metric: "Flight Endurance", uart: "50 min", dji: "41 min", autel: "40 min", uartBetter: false },
+                { metric: "Telemetry Range", uart: "20 km", dji: "8 km", autel: "9 km", uartBetter: true },
                 { metric: "Autonomous AI", uart: "On-board", dji: "Cloud", autel: "Limited", uartBetter: true },
                 { metric: "GPS-Denied Ops", uart: "✓ SLAM", dji: "✗ No", autel: "✗ No", uartBetter: true },
-                { metric: "Max Takeoff Weight", uart: "4.2 kg", dji: "3.77 kg", autel: "3.5 kg", uartBetter: false },
+                { metric: "Max Takeoff Weight", uart: "6.8 kg", dji: "3.77 kg", autel: "3.5 kg", uartBetter: false },
                 { metric: "Open Source", uart: "✓ Full", dji: "✗ Closed", autel: "✗ Closed", uartBetter: true },
                 { metric: "Payload System", uart: "Modular", dji: "Fixed", autel: "Fixed", uartBetter: true },
-                { metric: "Camera Resolution", uart: "2K HD", dji: "4K", autel: "6K", uartBetter: false },
+                { metric: "Camera Resolution", uart: "4K HD", dji: "4K", autel: "6K", uartBetter: false },
               ].map(({ metric, uart, dji, autel, uartBetter }, i) => (
                 <div key={i} className="flex flex-col md:grid md:grid-cols-4 hover:bg-white/[0.03] transition-colors overflow-hidden">
                   {/* Metric Label (Mobile: Small header, Desktop: Column 1) */}

@@ -438,7 +438,7 @@ const SponsorProposal = () => {
                                         <div className="space-y-4">
                                             <div>
                                                 <p className="text-white font-bold text-sm">TM Al Anam</p>
-                                                <p className="text-slate-500 text-xs mt-1">Representative | tmukit@gmail.com</p>
+                                                <p className="text-slate-500 text-xs mt-1">Team Lead | tmukit@gmail.com</p>
                                             </div>
                                             <div>
                                                 <p className="text-white font-bold text-sm">Maysoon Zahir</p>

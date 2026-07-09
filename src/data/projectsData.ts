@@ -35,7 +35,7 @@ export const projectsData: ProjectData[] = [
     tags: ["Tactical", "Reconnaissance"],
     specs: [
       { label: "Weight", value: "6.8 kg" },
-      { label: "Dimensions", value: "To be updated (L × W × H)" },
+      { label: "Dimensions(Unfolded)", value: "14×23×23 (L × W × H)" },
       { label: "Maximum Speed", value: "15 m/s (Tested)" },
       { label: "Flight Endurance", value: "Up to 50 minutes" },
       { label: "Propulsion System", value: "Electric Brushless Motors" },

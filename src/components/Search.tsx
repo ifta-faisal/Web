@@ -29,16 +29,16 @@ import member9 from '../assets/images/Team/member9.png';
 import adnan from '../assets/images/Team/adnan.png';
 import alfi from '../assets/images/Team/alfi.png';
 import israfil from '../assets/images/Team/israfil.png';
-import ratul from '../assets/images/Team/ratul.png';
+
 import anika from '../assets/images/Team/orthy.jpeg';
 import jarin from '../assets/images/Team/dip.png';
 import rashed from '../assets/images/Team/rashed.png';
 import talha from '../assets/images/Team/talha.png';
-import alif from '../assets/images/Team/alif.jpg';
+
 import probin from '../assets/images/Team/probin.png';
 import shahad from '../assets/images/Team/shahad.png';
 import arpon from '../assets/images/Team/arpon.png';
-import nazifa from '../assets/images/Team/nazifa.png';
+import nazifa from '../assets/images/Team/nazifa.jpeg';
 import sumaiya from '../assets/images/Team/sumaiya.png';
 
 interface SearchResult {
@@ -92,8 +92,7 @@ const SEARCH_DATA: SearchResult[] = [
   { id: 'm8', title: 'Khalid Hasan Talha', category: 'Member', image: talha, link: '/team?id=m8', icon: User, description: 'Member • Electrical & Mechanical', tags: ['talha', 'eee'] },
   { id: 'm9', title: 'Adnan Mohammad Salauddin', category: 'Member', image: adnan, link: '/team?id=m9', icon: User, description: 'Member • Mechanical Team', tags: ['adnan', 'sohag'] },
   { id: 'm10', title: 'Probin Chandra Nath', category: 'Member', image: probin, link: '/team?id=m10', icon: User, description: 'Member • Electrical and Mechanical', tags: ['probin', 'eee'] },
-  { id: 'm11', title: 'Ratul Ghosh', category: 'Member', image: ratul, link: '/team?id=m11', icon: User, description: 'Member • R&P Team', tags: ['ratul'] },
-  { id: 'm12', title: 'Chowdhury Wayez Kurunee Alif', category: 'Member', image: alif, link: '/team?id=m12', icon: User, description: 'Member • Nav & Soft Team', tags: ['alif', 'alif'] },
+
   { id: 'm13', title: 'Md. Israfil Hossain', category: 'Member', image: israfil, link: '/team?id=m13', icon: User, description: 'Member • R&D Team', tags: ['israfil'] },
   { id: 'm14', title: 'Abdur Rahman', category: 'Member', image: rashed, link: '/team?id=m14', icon: User, description: 'Member • Electrical & Mechanical', tags: ['rashed', 'rahman'] },
   { id: 'm15', title: 'Md. Biplob', category: 'Member', image: alfi, link: '/team?id=m15', icon: User, description: 'Member • R&D Team', tags: ['biplob', 'alfi'] },
