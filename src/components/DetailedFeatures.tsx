@@ -317,7 +317,7 @@ const DetailedFeatures = () => {
               <span className="bg-gradient-to-r from-primary via-accent to-accent text-transparent bg-clip-text">For Precision</span>
             </h1>
             <p className="text-slate-400 text-lg leading-relaxed max-w-lg mb-8">
-              Every subsystem of our fixed-wing UAV is purpose-built for autonomous operations — from the carbon fiber skeleton to the AI compute stack.
+              Every subsystem of Raven 1.0 is purpose-built for autonomous operations — from the carbon fiber skeleton to the AI compute stack.
             </p>
           </div>
 
@@ -543,22 +543,29 @@ const DetailedFeatures = () => {
             {/* Desktop Header (hidden on mobile) */}
             <div className="hidden md:grid grid-cols-4 text-xs font-bold font-mono tracking-widest uppercase bg-[rgba(15,23,42,0.9)] border-b border-white/10">
               <div className="col-span-1 px-6 py-5 text-slate-400">Metric</div>
-              <div className="px-6 py-5 text-center text-accent bg-accent/10">UART UAV</div>
-              <div className="px-6 py-5 text-center text-slate-400">DJI Matrice 30</div>
-              <div className="px-6 py-5 text-center text-slate-400">Autel EVO II</div>
+              <div className="px-6 py-5 text-center text-accent bg-accent/10">Raven 1.0</div>
+              <div className="px-6 py-5 text-center text-slate-400">DJI Matrice 350 RTK</div>
+              <div className="px-6 py-5 text-center text-slate-400">Freefly Astro</div>
             </div>
 
             {/* Content Rows */}
             <div className="divide-y divide-white/10">
               {[
-                { metric: "Flight Endurance", uart: "50 min", dji: "41 min", autel: "40 min", uartBetter: false },
-                { metric: "Telemetry Range", uart: "20 km", dji: "8 km", autel: "9 km", uartBetter: true },
-                { metric: "Autonomous AI", uart: "On-board", dji: "Cloud", autel: "Limited", uartBetter: true },
-                { metric: "GPS-Denied Ops", uart: "✓ SLAM", dji: "✗ No", autel: "✗ No", uartBetter: true },
-                { metric: "Max Takeoff Weight", uart: "6.8 kg", dji: "3.77 kg", autel: "3.5 kg", uartBetter: false },
-                { metric: "Open Source", uart: "✓ Full", dji: "✗ Closed", autel: "✗ Closed", uartBetter: true },
-                { metric: "Payload System", uart: "Modular", dji: "Fixed", autel: "Fixed", uartBetter: true },
-                { metric: "Camera Resolution", uart: "4K HD", dji: "4K", autel: "6K", uartBetter: false },
+                { metric: "Flight Endurance", uart: "50 min", dji: "55 min", autel: "38 min", uartBetter: false },
+                { metric: "Max Takeoff Weight", uart: "6.8 kg", dji: "9.2 kg", autel: "2.95 kg", uartBetter: false },
+                { metric: "Autonomous AI", uart: "On-board Edge AI", dji: "Optional AI Payload", autel: "Companion Computer", uartBetter: true },
+                { metric: "Companion Computer", uart: "NVIDIA Jetson Orin NX 16GB", dji: "Optional", autel: "Optional", uartBetter: true },
+                { metric: "GPS-Denied Navigation", uart: "✓ Visual SLAM / VIO", dji: "Limited", autel: "Custom Integration", uartBetter: true },
+                { metric: "Mission Planning", uart: "ArduPilot + Mission Planner / QGC", dji: "DJI Pilot 2", autel: "QGroundControl", uartBetter: true },
+                { metric: "Software Stack", uart: "Fully Open Source", dji: "Closed Ecosystem", autel: "Mostly Open", uartBetter: true },
+                { metric: "Payload System", uart: "Modular", dji: "Modular", autel: "Modular", uartBetter: false },
+                { metric: "Payload Integration", uart: "Fully Customizable", dji: "DJI Ecosystem", autel: "Open Payload Interface", uartBetter: true },
+                { metric: "Communication", uart: "900 MHz / 2.4 GHz / 5.8 GHz", dji: "O3 Enterprise", autel: "Herelink / Custom Radios", uartBetter: false },
+                { metric: "Camera System", uart: "4K UHD (Interchangeable)", dji: "Zenmuse Series", autel: "Sony Mapping Camera", uartBetter: false },
+                { metric: "Research & Development", uart: "Designed for Research & Competition", dji: "Enterprise", autel: "Industrial / Research", uartBetter: true },
+                { metric: "Competition Ready", uart: "✓ SUAS Optimized", dji: "×", autel: "×", uartBetter: true },
+                { metric: "Source Code Access", uart: "✓ Full", dji: "×", autel: "Partial", uartBetter: true },
+                { metric: "Hardware Customization", uart: "✓ Unlimited", dji: "Limited", autel: "High", uartBetter: true },
               ].map(({ metric, uart, dji, autel, uartBetter }, i) => (
                 <div key={i} className="flex flex-col md:grid md:grid-cols-4 hover:bg-white/[0.03] transition-colors overflow-hidden">
                   {/* Metric Label (Mobile: Small header, Desktop: Column 1) */}
@@ -570,7 +577,7 @@ const DetailedFeatures = () => {
                   <div className="grid grid-cols-3 md:contents">
                     {/* UART Value */}
                     <div className={`px-4 py-3 md:px-6 md:py-5 flex flex-col md:block items-center justify-center text-center font-bold text-sm bg-accent/5 ${uartBetter ? 'text-accent' : 'text-white'} border-r md:border-r-0 border-white/5 md:bg-accent/10`}>
-                      <span className="md:hidden text-[10px] text-slate-500 font-mono mb-1">UART</span>
+                      <span className="md:hidden text-[10px] text-slate-500 font-mono mb-1">RAVEN 1.0</span>
                       <span className="inline-flex items-center gap-1.5">
                         {uartBetter && <Activity className="w-3.5 h-3.5 hidden md:inline" />}
                         {uart}
@@ -579,13 +586,13 @@ const DetailedFeatures = () => {
 
                     {/* DJI Value */}
                     <div className="px-4 py-3 md:px-6 md:py-5 flex flex-col md:block items-center justify-center text-center text-slate-400 text-sm border-r md:border-r-0 border-white/5">
-                      <span className="md:hidden text-[10px] text-slate-600 font-mono mb-1 uppercase">DJI M30</span>
+                      <span className="md:hidden text-[10px] text-slate-600 font-mono mb-1 uppercase">M350 RTK</span>
                       {dji}
                     </div>
 
                     {/* Autel Value */}
                     <div className="px-4 py-3 md:px-6 md:py-5 flex flex-col md:block items-center justify-center text-center text-slate-400 text-sm">
-                      <span className="md:hidden text-[10px] text-slate-600 font-mono mb-1 uppercase">EVO II</span>
+                      <span className="md:hidden text-[10px] text-slate-600 font-mono mb-1 uppercase">ASTRO</span>
                       {autel}
                     </div>
                   </div>
@@ -596,7 +603,7 @@ const DetailedFeatures = () => {
             {/* Footer note */}
             <div className="px-6 py-5 bg-accent/5 border-t border-accent/20 flex items-center gap-2">
               <Activity className="w-4 h-4 text-accent flex-shrink-0" />
-              <p className="text-xs text-slate-400 font-mono">Highlighted metrics indicate where UART leads.</p>
+              <p className="text-xs text-slate-400 font-mono">Highlighted metrics indicate where Raven 1.0 leads.</p>
             </div>
           </div>
         </Reveal>

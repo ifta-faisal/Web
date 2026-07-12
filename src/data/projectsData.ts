@@ -46,7 +46,7 @@ export const projectsData: ProjectData[] = [
       { label: "Navigation System", value: "GNSS (GPS), IMU, Magnetometer, Barometer" },
       { label: "Autopilot Software", value: "ArduPilot" },
       { label: "Perception Sensors", value: "Siyi A8 Mini" },
-      { label: "Software Environment", value: "Python" }
+      { label: "Software Environment", value: "Python,c++,Bash script" }
     ],
     media: [raven1, raven2, raven3, raven4, raven5, raven6, raven7],
     docs: [
@@ -61,21 +61,21 @@ export const projectsData: ProjectData[] = [
     videoUrl: "https://www.youtube.com/embed/I8id3VY7Vdg"
   },
   {
-    id: 10, name: " UAV",
-    description: "Next-gen AI-powered swarm drone system for coordinated multi-agent missions.",
-    longDescription: "The Autonomous Swarm UAV project represents the cutting edge of multi-agent aerial robotics. A fleet of coordinated drones communicates via mesh networking and onboard AI to autonomously plan, execute, and adapt to complex missions.",
+    id: 10, name: " Raven",
+    description: "Next-generation, visually guided UAV prototype engineered for cutting edge autonomous flight research..",
+    longDescription: "Our design philosophy is not just about the vehicle itself, but about the mission it must serve. We believe a truly innovative aerial platform must be Built for adaptation.",
     image: project10, category: "ai", year: "2026", status: "Active", isLatest: true,
-    tags: ["Swarm", "AI", "Autonomous"],
+    tags: ["AI", "Autonomous"],
     specs: [
-      { label: "Swarm Size", value: "Up to 12 units" },
-      { label: "Communication", value: "Mesh Network (900MHz)" },
+      { label: "Weight", value: "2.5 kg" },
+      { label: "Communication", value: "900 MHz, 2.4 GHz, 5.8 GHz" },
       { label: "Endurance", value: "35 minutes" },
-      { label: "AI Processor", value: "Jetson Orin NX 16GB" },
-      { label: "Navigation", value: "RTK GPS + Visual Odometry" },
-      { label: "Payload", value: "500g per unit" }
+      { label: "Onboard Computer", value: "Jetson Orin NX 16GB" },
+      { label: "Flight Controller", value: "CUAV X7+ Pro" },
+      { label: "Power System", value: "Lithium-ion Battery" },
     ],
     media: [project10, swarm1, swarm2, swarm3, swarm4, swarm5],
-    docs: [{ title: "TDR", url: "#" },],
+    docs: [{ title: "Raven System Details Report", url: "#" },],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {
