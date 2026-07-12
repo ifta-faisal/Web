@@ -50,7 +50,7 @@ const Achievements = () => {
   ];
 
   return (
-    <section className="py-24 bg-transparent relative overflow-hidden">
+    <section id="achievements" className="py-24 bg-transparent relative overflow-hidden">
       <div
         className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[600px] h-[600px] rounded-full pointer-events-none"
         style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.06) 0%, transparent 70%)', filter: 'blur(80px)' }}

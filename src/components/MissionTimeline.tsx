@@ -24,7 +24,7 @@ const MissionTimeline = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-transparent relative overflow-hidden">
+    <section id="mission-timeline" ref={sectionRef} className="py-24 bg-transparent relative overflow-hidden">
       {/* Cinematic atmosphere */}
       <div className="absolute inset-0 bg-radial-deep opacity-40 pointer-events-none" />
       

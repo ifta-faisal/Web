@@ -15,6 +15,7 @@ import autodesk from '../assets/images/Sponsor/autodesk.png';
 import amprius from '../assets/images/Sponsor/amprius.png';
 import puku from '../assets/images/Sponsor/puku.png';
 import { newsItems } from '../data/newsData';
+import DroneFieldBackground from '../three/DroneField/DroneFieldBackground';
 
 // Import New Sections
 import DroneParts from './DroneParts';
@@ -75,7 +76,7 @@ const StatCard = ({ value, label }: { value: string; label: string }) => {
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const heroRef = useRef<HTMLElement>(null);
-
+  const pageRef = useRef<HTMLDivElement>(null);
 
   // Parallax video on scroll
   useEffect(() => {
@@ -137,7 +138,10 @@ const Hero = () => {
 
   // Removed auto-play interval
   return (
-    <div>
+    <div ref={pageRef}>
+      {/* Ambient 3D drone, fixed behind every section from the About section down */}
+      <DroneFieldBackground pageRef={pageRef} heroRef={heroRef} />
+
       {/* ===== 1. Hero Section – Cinematic Aerospace ===== */}
       <section ref={heroRef} id="home" className="relative min-h-screen flex flex-col overflow-hidden" style={{ background: 'transparent' }}>
 
@@ -422,7 +426,7 @@ const Hero = () => {
       </section>
 
       {/* ===== Drone Specs Showcase ===== */}
-      <section className="py-12 sm:py-16 md:py-20 bg-transparent relative overflow-x-hidden">
+      <section id="drone-specs" className="py-12 sm:py-16 md:py-20 bg-transparent relative overflow-x-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
 
           {/* ── Title + subtitle (centred, reference-exact) ── */}
@@ -591,7 +595,7 @@ const Hero = () => {
       </section>
 
       {/* ===== 3. PRIMARY OBJECTIVE SECTION ===== */}
-      <section className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
+      <section id="primary-objective" className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
         <div className="absolute top-0 left-0 w-80 h-80 rounded-full opacity-[0.07] pointer-events-none"
           style={{ background: 'radial-gradient(circle, #f97316, transparent 70%)', filter: 'blur(60px)' }} />
 

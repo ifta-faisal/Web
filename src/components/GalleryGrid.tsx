@@ -51,7 +51,7 @@ const track2 = [...row2, ...row2];
 
 const GalleryGrid = () => {
   return (
-    <section className="bg-transparent w-full overflow-hidden py-2 relative">
+    <section id="gallery-grid" className="bg-transparent w-full overflow-hidden py-2 relative">
       
       {/* ── Row 1 → slides LEFT ── */}
       <div className="gallery-marquee-row gallery-edge-fade overflow-hidden mb-4 relative z-10 w-full">

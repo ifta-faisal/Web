@@ -1,6 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
+import { gsap } from 'gsap';
+import { ScrollTrigger } from 'gsap/ScrollTrigger';
+
+gsap.registerPlugin(ScrollTrigger);
 import ScrollToTop from './components/ScrollToTop';
 import SplashScreen from './components/SplashScreen';
 import Header from './components/Header';
@@ -49,12 +53,13 @@ const App = () => {
       touchMultiplier: 2,
     });
 
-    function raf(time: number) {
-      lenis.raf(time);
-      requestAnimationFrame(raf);
-    }
+    lenis.on('scroll', ScrollTrigger.update);
 
-    requestAnimationFrame(raf);
+    const tickerCallback = (time: number) => {
+      lenis.raf(time * 1000);
+    };
+    gsap.ticker.add(tickerCallback);
+    gsap.ticker.lagSmoothing(0);
 
     // Lower threshold so elements reveal earlier in viewport (FlyShot feel)
     const observer = new IntersectionObserver(
@@ -79,6 +84,7 @@ const App = () => {
     return () => {
       clearTimeout(timer);
       observer.disconnect();
+      gsap.ticker.remove(tickerCallback);
       lenis.destroy();
     };
   }, [location.pathname]);

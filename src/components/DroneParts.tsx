@@ -24,7 +24,7 @@ const DroneParts = () => {
   }, []);
 
   return (
-    <section ref={sectionRef} className="py-24 bg-transparent relative overflow-hidden">
+    <section id="drone-parts" ref={sectionRef} className="py-24 bg-transparent relative overflow-hidden">
       <div className="absolute inset-0 bg-radial-warm opacity-30 pointer-events-none" />
       <div className="absolute top-0 right-0 w-72 sm:w-96 h-72 sm:h-96 bg-[#f97316] rounded-full mix-blend-multiply filter blur-3xl opacity-10 animate-pulse" />
 

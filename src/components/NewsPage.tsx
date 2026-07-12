@@ -51,6 +51,37 @@ const NewsPage = () => {
         .news-card-enter {
           animation: card-fade-in 0.5s cubic-bezier(0.16,1,0.3,1) both;
         }
+        @keyframes modal-backdrop-in {
+          from { opacity: 0; }
+          to   { opacity: 1; }
+        }
+        @keyframes modal-box-in {
+          from { opacity: 0; transform: translateY(16px) scale(0.98); }
+          to   { opacity: 1; transform: translateY(0) scale(1); }
+        }
+        .news-modal-backdrop {
+          animation: modal-backdrop-in 0.25s ease both;
+        }
+        .news-modal-box {
+          animation: modal-box-in 0.32s cubic-bezier(0.16,1,0.3,1) both;
+        }
+        .news-modal-scroll {
+          scrollbar-width: thin;
+          scrollbar-color: rgba(249,115,22,0.4) transparent;
+        }
+        .news-modal-scroll::-webkit-scrollbar {
+          width: 8px;
+        }
+        .news-modal-scroll::-webkit-scrollbar-track {
+          background: transparent;
+        }
+        .news-modal-scroll::-webkit-scrollbar-thumb {
+          background: rgba(249,115,22,0.35);
+          border-radius: 999px;
+        }
+        .news-modal-scroll::-webkit-scrollbar-thumb:hover {
+          background: rgba(249,115,22,0.55);
+        }
       `}</style>
 
       <div
@@ -323,6 +354,7 @@ const NewsPage = () => {
           <>
             {/* Backdrop */}
             <div
+              className="news-modal-backdrop"
               onClick={() => setSelectedNews(null)}
               style={{
                 position: 'fixed', inset: 0, zIndex: 9998,
@@ -338,35 +370,72 @@ const NewsPage = () => {
                 padding: '1rem', pointerEvents: 'none',
               }}
             >
-            {/* Scrollable Modal Box */}
+            {/* Modal Box — fixed-height flex column: sticky header + independently scrollable body */}
             <div
+              className="news-modal-box"
               style={{
                 pointerEvents: 'auto',
-                position: 'relative', width: '100%', maxWidth: '48rem',
-                maxHeight: '90vh', overflowY: 'auto',
-                borderRadius: '1.25rem',
+                position: 'relative', width: '100%', maxWidth: '44rem',
+                maxHeight: '88vh', display: 'flex', flexDirection: 'column',
+                borderRadius: '1.25rem', overflow: 'hidden',
                 background: 'rgba(10,15,35,0.97)',
                 border: '1px solid rgba(249,115,22,0.2)',
                 boxShadow: '0 30px 80px rgba(0,0,0,0.8)',
-                overscrollBehavior: 'contain',
               }}
             >
-              {/* Close btn */}
-              <button
-                onClick={() => setSelectedNews(null)}
-                style={{
-                  position: 'absolute', top: '1rem', right: '1rem', zIndex: 10,
-                  width: '2.5rem', height: '2.5rem', borderRadius: '50%',
-                  background: 'rgba(2,6,23,0.8)', border: '1px solid rgba(255,255,255,0.15)',
-                  color: '#fff', cursor: 'pointer', display: 'flex',
-                  alignItems: 'center', justifyContent: 'center',
-                }}
-              >
-                <X size={18} />
-              </button>
+              {/* Sticky header — always visible, so the reader never has to scroll back up to close it */}
+              <div style={{
+                flexShrink: 0, display: 'flex', alignItems: 'center', gap: '1rem',
+                padding: '1rem 1.25rem', borderBottom: '1px solid rgba(255,255,255,0.08)',
+                background: 'rgba(10,15,35,0.98)',
+              }}>
+                <span style={{
+                  padding: '0.3rem 0.8rem', borderRadius: '0.4rem', flexShrink: 0,
+                  background: 'linear-gradient(135deg,#f97316,#dc2626)',
+                  fontSize: '0.62rem', fontWeight: 800, letterSpacing: '0.1em',
+                  textTransform: 'uppercase', color: '#fff',
+                  fontFamily: "'Inter', sans-serif",
+                }}>
+                  {selectedNews.category}
+                </span>
+                <h3 style={{
+                  flex: 1, minWidth: 0, margin: 0,
+                  fontFamily: "'Inter', sans-serif", fontWeight: 600,
+                  fontSize: '0.85rem', color: '#cbd5e1',
+                  whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
+                }}>
+                  {selectedNews.title}
+                </h3>
+                <button
+                  onClick={() => setSelectedNews(null)}
+                  aria-label="Close"
+                  style={{
+                    flexShrink: 0, width: '2.25rem', height: '2.25rem', borderRadius: '50%',
+                    background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)',
+                    color: '#fff', cursor: 'pointer', display: 'flex',
+                    alignItems: 'center', justifyContent: 'center',
+                    transition: 'background 0.2s, border-color 0.2s',
+                  }}
+                  onMouseEnter={e => {
+                    e.currentTarget.style.background = 'rgba(249,115,22,0.15)';
+                    e.currentTarget.style.borderColor = 'rgba(249,115,22,0.4)';
+                  }}
+                  onMouseLeave={e => {
+                    e.currentTarget.style.background = 'rgba(255,255,255,0.06)';
+                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)';
+                  }}
+                >
+                  <X size={16} />
+                </button>
+              </div>
 
-              {/* Scrollable body */}
-              <div>
+              {/* Scrollable body — data-lenis-prevent stops the page's global Lenis
+                  smooth-scroll from swallowing wheel events meant for this element */}
+              <div
+                className="news-modal-scroll"
+                data-lenis-prevent
+                style={{ overflowY: 'auto', overscrollBehavior: 'contain' }}
+              >
                 {/* Banner */}
                 <div style={{ position: 'relative', aspectRatio: '16/9', background: '#050911' }}>
                   <img
@@ -375,17 +444,7 @@ const NewsPage = () => {
                     style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
                   />
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,15,35,0.9) 0%, transparent 50%)' }} />
-                  {/* Badges */}
-                  <div style={{ position: 'absolute', bottom: '1.5rem', left: '1.5rem', display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
-                    <span style={{
-                      padding: '0.35rem 0.9rem', borderRadius: '0.5rem',
-                      background: 'linear-gradient(135deg,#f97316,#dc2626)',
-                      fontSize: '0.65rem', fontWeight: 800, letterSpacing: '0.12em',
-                      textTransform: 'uppercase', color: '#fff',
-                      fontFamily: "'Inter', sans-serif",
-                    }}>
-                      {selectedNews.category}
-                    </span>
+                  <div style={{ position: 'absolute', bottom: '1.5rem', left: '1.5rem' }}>
                     <span style={{
                       display: 'flex', alignItems: 'center', gap: '0.4rem',
                       padding: '0.35rem 0.9rem', borderRadius: '0.5rem',
@@ -399,8 +458,8 @@ const NewsPage = () => {
                   </div>
                 </div>
 
-                {/* Body */}
-                <div style={{ padding: '2rem 2rem 2.5rem' }}>
+                {/* Body — constrained to a comfortable reading measure */}
+                <div style={{ padding: '2rem 2rem 2.5rem', maxWidth: '38rem', margin: '0 auto' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#64748b', fontFamily: "'Inter', sans-serif" }}>
                     <span>Official Release</span>
                     <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#f97316' }} />
@@ -409,16 +468,16 @@ const NewsPage = () => {
 
                   <h2 style={{
                     fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: 'clamp(1.8rem, 5vw, 2.6rem)',
+                    fontSize: 'clamp(1.7rem, 4.5vw, 2.4rem)',
                     fontWeight: 900, textTransform: 'uppercase',
                     letterSpacing: '0.04em', color: '#fff',
-                    lineHeight: 1.1, margin: '0 0 1.5rem',
+                    lineHeight: 1.15, margin: '0 0 1.5rem',
                   }}>
                     {selectedNews.title}
                   </h2>
 
-                  <div style={{ color: '#cbd5e1', fontSize: '0.9rem', lineHeight: 1.75, fontWeight: 300, fontFamily: "'Inter', sans-serif", marginBottom: '2rem' }}>
-                    <p style={{ marginBottom: '1rem' }}>{selectedNews.description}</p>
+                  <div style={{ color: '#cbd5e1', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, fontFamily: "'Inter', sans-serif", marginBottom: '2rem' }}>
+                    <p style={{ marginBottom: '1.1rem' }}>{selectedNews.description}</p>
                     <p>Our team is actively involved in pushing the boundaries of autonomous aerospace navigation, intelligent pathfinding algorithms, and hardware-software integration. This update represents an important milestone in our mission timeline, fostering collaborative engineering education and next-generation autonomous flight systems.</p>
                   </div>
 
