@@ -590,7 +590,7 @@ const JoinUs = () => {
               <span className="ju-section-tag">WHY JOIN US?</span>
               <h2 className="ju-reveal ju-section-title">Build. Compete. Inspire.</h2>
               <p className="ju-reveal ju-section-sub">
-                Join a family of passionate engineers, scientists, and creators pushing the boundaries of what's possible.
+                Join a family of passionate engineers and creators pushing the boundaries of what's possible.
               </p>
             </div>
             <div className="ju-benefits-grid">

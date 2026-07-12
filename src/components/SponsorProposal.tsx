@@ -206,10 +206,8 @@ const SponsorProposal = () => {
                         </div>
                     </h1>
                     <p className="ju-reveal text-lg md:text-xl max-w-2xl mx-auto mt-6 text-slate-400">
-                        Join us in our journey to innovate and make an impact. Become a sponsor and be part of something extraordinary.
-                    </p>
+                        Empower the next generation of technological advancement. By partnering with our team, you are directly investing in innovative solutions and gaining exposure within a community of driven, forward-thinking professionals. </p>
                 </section>
-
                 <section className=" py-16 max-w-5xl mx-auto text-center">
                     <div className="section-label mb-3">Our Mission</div>
                     <h2 className="text-3xl font-semibold mb-4 uppercase tracking-[0.2em] text-white">

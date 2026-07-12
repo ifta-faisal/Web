@@ -167,9 +167,18 @@ const BlogDetail = () => {
                 margin-bottom: 1.5rem;
                 font-family: 'Inter', sans-serif;
               }
+              article ul {
+                list-style-type: disc;
+                margin-left: 1.5rem;
+                margin-bottom: 1.5rem;
+              }
               article li {
                 color: #94a3b8;
                 line-height: 1.7;
+                margin-bottom: 0.5rem;
+              }
+              article li::marker {
+                color: #f97316;
               }
               .blog-section-img {
                 width: 100%;

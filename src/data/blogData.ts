@@ -74,17 +74,14 @@ const postsRaw: BlogPost[] = [
     excerpt: "Discover the engineering decisions, autonomous technologies, and multidisciplinary collaboration behind UART's next-generation UAV developed for the SUAS 2026 competition.",
     content: `
 <h2>Every Mission Begins with a Clear Vision</h2>
-<p>Autonomous aerial systems are becoming increasingly important in disaster response, environmental monitoring, precision agriculture, infrastructure inspection, and search-and-rescue operations. These real-world applications demand aircraft that can operate with minimal human intervention while making reliable decisions in dynamic environments.</p>
-
-<p>At the UIU Aerial Robotics Team (UART), we view the SUAS competition as more than a robotics challenge. It is an opportunity to design, integrate, and validate an autonomous system that combines mechanical engineering, embedded systems, computer vision, artificial intelligence, and software engineering into a single platform.</p>
-
-<p>Our 2026 UAV represents months of research, design iterations, hardware testing, software development, and interdisciplinary collaboration. Every subsystem was developed with a single objective:</p>
-
-<p><strong>Build a reliable autonomous aircraft capable of completing complex missions safely and efficiently.</strong></p>
+<p>Autonomous aerial systems are becoming increasingly important in disaster response, environmental monitoring, precision agriculture, infrastructure inspection, and search-and-rescue operations. These real-world applications demand aircraft that can operate with minimal human intervention while making reliable decisions in dynamic environments.
+At the UIU Aerial Robotics Team (UART), we view the SUAS competition as more than a robotics challenge. It is an opportunity to design, integrate, and validate an autonomous system that combines mechanical engineering, embedded systems, computer vision, artificial intelligence, and software engineering into a single platform.
+Our 2026 UAV represents months of research, design iterations, hardware testing, software development, and interdisciplinary collaboration. Every subsystem was developed with a single objective:
+<strong>Build a reliable autonomous aircraft capable of completing complex missions safely and efficiently.</strong></p>
 
 <h2>The Challenge</h2>
-<p>The SUAS mission is significantly more demanding than conventional waypoint navigation.</p>
-<p>Throughout a single autonomous flight, the aircraft must:</p>
+<p>The SUAS mission is significantly more demanding than conventional waypoint navigation.
+Throughout a single autonomous flight, the aircraft must:</p>
 <ul>
   <li>Navigate a predefined mission route</li>
   <li>Generate a geo-referenced aerial map</li>
@@ -97,16 +94,16 @@ const postsRaw: BlogPost[] = [
 <img src="${droneImg}" alt="Competition Mission Illustration" class="blog-section-img" />
 
 <h2>Designing Around Reliability</h2>
-<p>One of the first engineering decisions we made was to prioritize reliability over complexity.</p>
-<p>Rather than maximizing speed or aggressive flight performance, we focused on creating an aircraft capable of completing the entire mission without failures or safety violations.</p>
-<p>This philosophy influenced nearly every design decision—from airframe selection and power distribution to onboard computing and mission software.</p>
-<p><strong>Reliability became our primary design metric.</strong></p>
+<p>One of the first engineering decisions we made was to prioritize reliability over complexity.
+Rather than maximizing speed or aggressive flight performance, we focused on creating an aircraft capable of completing the entire mission without failures or safety violations.
+This philosophy influenced nearly every design decision—from airframe selection and power distribution to onboard computing and mission software.
+<strong>Reliability became our primary design metric.</strong></p>
 <img src="${suasImg}" alt="Airframe Photograph" class="blog-section-img" />
 
 <h2>A Modular System</h2>
 <p>Instead of treating navigation, perception, mapping, and obstacle avoidance as isolated features, the aircraft was designed as a unified autonomous platform.</p>
-<p>Several independent subsystems continuously exchange information during flight.</p>
-<p>These include:</p>
+Several independent subsystems continuously exchange information during flight.
+These include:</p>
 <ul>
   <li>Flight Control</li>
   <li>Navigation</li>
@@ -121,24 +118,24 @@ const postsRaw: BlogPost[] = [
 <img src="${missionImg}" alt="System Architecture Diagram" class="blog-section-img" />
 
 <h2>AI at the Center of Perception</h2>
-<p>Traditional object detection systems often require thousands of labeled images before they can recognize a new object.</p>
-<p>Our approach explores a different direction.</p>
-<p>The UAV employs a zero-shot vision-language detection pipeline powered by Grounding DINO V2, allowing the system to identify mission targets using natural language prompts instead of task-specific training.</p>
-<p>This significantly reduces development time while increasing flexibility for future missions.</p>
+<p>Traditional object detection systems often require thousands of labeled images before they can recognize a new object.
+Our approach explores a different direction.
+The UAV employs a zero-shot vision-language detection pipeline powered by Grounding DINO V2, allowing the system to identify mission targets using natural language prompts instead of task-specific training.
+This significantly reduces development time while increasing flexibility for future missions.</p>
 <img src="${droneImg}" alt="Grounding DINO Detection Example" class="blog-section-img" />
 
 <h2>Mapping the Mission Environment</h2>
 <p>Situational awareness is essential for autonomous decision-making.</p>
-<p>During flight, the UAV continuously captures overlapping aerial imagery together with GPS metadata.</p>
-<p>These images are processed to generate a high-resolution orthographic map of the mission area, providing an accurate representation of the operational environment.</p>
-<p>The mapping pipeline is designed to minimize distortion while preserving spatial accuracy.</p>
+During flight, the UAV continuously captures overlapping aerial imagery together with GPS metadata.
+These images are processed to generate a high-resolution orthographic map of the mission area, providing an accurate representation of the operational environment.
+The mapping pipeline is designed to minimize distortion while preserving spatial accuracy.<p>
 <img src="${missionImg}" alt="Mapping Result" class="blog-section-img" />
 
 <h2>Safe Navigation</h2>
-<p>Autonomy is only valuable if it remains safe.</p>
-<p>To improve operational reliability, the aircraft integrates LiDAR-based obstacle detection into the navigation pipeline.</p>
-<p>The system continuously monitors nearby obstacles and adjusts its flight path whenever necessary, allowing the UAV to safely continue its mission without manual intervention.</p>
-<p>This capability becomes particularly important in dynamic or partially unknown environments.</p>
+<p>Autonomy is only valuable if it remains safe.
+To improve operational reliability, the aircraft integrates LiDAR-based obstacle detection into the navigation pipeline.
+The system continuously monitors nearby obstacles and adjusts its flight path whenever necessary, allowing the UAV to safely continue its mission without manual intervention.
+This capability becomes particularly important in dynamic or partially unknown environments.</p>
 <img src="${suasImg}" alt="Obstacle Avoidance Illustration" class="blog-section-img" />
 
 <h2>Software Behind the Aircraft</h2>
@@ -160,9 +157,9 @@ const postsRaw: BlogPost[] = [
 <img src="${droneImg}" alt="Team Working Photograph" class="blog-section-img" />
 
 <h2>Looking Ahead</h2>
-<p>The 2026 platform represents an important milestone in UART's ongoing research into autonomous aerial systems.</p>
-<p>Future work will focus on expanding onboard intelligence, improving mission robustness, enhancing perception capabilities, and developing custom electronic subsystems for next-generation aircraft.</p>
-<p>The lessons learned throughout this project will guide the evolution of future UART platforms.</p>
+<p>The 2026 platform represents an important milestone in UART's ongoing research into autonomous aerial systems.
+Future work will focus on expanding onboard intelligence, improving mission robustness, enhancing perception capabilities, and developing custom electronic subsystems for next-generation aircraft.
+The lessons learned throughout this project will guide the evolution of future UART platforms.</p>
 
 <div class="about-authors-section">
   <h2>About the Authors</h2>
@@ -597,16 +594,14 @@ const postsRaw: BlogPost[] = [
     excerpt: "Autonomous flight is only successful when it is safe. Learn how UART integrates LiDAR-based obstacle avoidance to help the UAV navigate complex environments while maintaining mission reliability.",
     content: `
 <h2>Safety Comes First</h2>
-<p>An autonomous UAV must do more than follow a predefined flight path. It must continuously observe its surroundings and react to unexpected obstacles without human intervention.</p>
-
-<p>Whether operating near trees, poles, buildings, or other aerial objects, the aircraft should be capable of making safe decisions while continuing its mission.</p>
-
-<p>For our SUAS 2026 platform, obstacle avoidance was designed as a core safety feature rather than an optional capability.</p>
+<p>An autonomous UAV must do more than follow a predefined flight path. It must continuously observe its surroundings and react to unexpected obstacles without human intervention.
+Whether operating near trees, poles, buildings, or other aerial objects, the aircraft should be capable of making safe decisions while continuing its mission.
+For our SUAS 2026 platform, obstacle avoidance was designed as a core safety feature rather than an optional capability.</p>
 
 <h2>Why Obstacle Avoidance Matters</h2>
-<p>Unexpected obstacles can appear at any stage of an autonomous mission.</p>
-<p>Without an effective avoidance system, a single collision could lead to mission failure or even damage the aircraft.</p>
-<p>Our obstacle avoidance system helps the UAV:</p>
+<p>Unexpected obstacles can appear at any stage of an autonomous mission.
+Without an effective avoidance system, a single collision could lead to mission failure or even damage the aircraft.
+Our obstacle avoidance system helps the UAV:</p>
 <ul>
   <li>Detect nearby obstacles</li>
   <li>Maintain a safe flight distance</li>
@@ -618,9 +613,9 @@ const postsRaw: BlogPost[] = [
 <img src="${droneImg}" alt="Example of Obstacles During Flight" class="blog-section-img" />
 
 <h2>Selecting LiDAR Technology</h2>
-<p>To detect surrounding objects, our UAV uses a 2D LiDAR sensor.</p>
-<p>Unlike traditional cameras, LiDAR measures distance directly by emitting laser pulses and calculating the time required for the reflected signal to return.</p>
-<p>This allows the system to estimate the distance between the UAV and nearby obstacles with high accuracy.</p>
+<p>To detect surrounding objects, our UAV uses a 2D LiDAR sensor.
+Unlike traditional cameras, LiDAR measures distance directly by emitting laser pulses and calculating the time required for the reflected signal to return.
+This allows the system to estimate the distance between the UAV and nearby obstacles with high accuracy.</p>
 <p>Some advantages of LiDAR include:</p>
 <ul>
   <li>Accurate distance measurement</li>
@@ -633,16 +628,16 @@ const postsRaw: BlogPost[] = [
 <img src="${suasImg}" alt="LiDAR Sensor Photograph" class="blog-section-img" />
 
 <h2>Integrating LiDAR with the Flight Controller</h2>
-<p>The LiDAR continuously scans the environment while the UAV is in flight.</p>
-<p>Sensor data is transmitted to the flight controller, where it is processed to determine whether any obstacle is within a predefined safety distance.</p>
-<p>If an obstacle is detected, the navigation system responds by adjusting the aircraft's trajectory before continuing toward the next waypoint.</p>
+<p>The LiDAR continuously scans the environment while the UAV is in flight.
+Sensor data is transmitted to the flight controller, where it is processed to determine whether any obstacle is within a predefined safety distance.
+If an obstacle is detected, the navigation system responds by adjusting the aircraft's trajectory before continuing toward the next waypoint.
 <p>This process occurs automatically throughout the mission without requiring pilot intervention.</p>
 <img src="${missionImg}" alt="LiDAR Data Flow Diagram" class="blog-section-img" />
 
 <h2>Improving Detection Reliability</h2>
-<p>Real-world environments often introduce sensor noise and unexpected measurements.</p>
-<p>To improve the accuracy of obstacle detection, multiple validation techniques are incorporated into the navigation pipeline.</p>
-<p>These include:</p>
+<p>Real-world environments often introduce sensor noise and unexpected measurements.
+To improve the accuracy of obstacle detection, multiple validation techniques are incorporated into the navigation pipeline.
+These include:</p>
 <ul>
   <li>Continuous distance monitoring</li>
   <li>Consecutive scan validation</li>
@@ -654,9 +649,9 @@ const postsRaw: BlogPost[] = [
 <img src="${droneImg}" alt="Obstacle Detection Visualization" class="blog-section-img" />
 
 <h2>Supporting Autonomous Missions</h2>
-<p>Obstacle avoidance does not operate independently.</p>
-<p>It works together with navigation, mapping, and computer vision to help the UAV complete its mission safely and efficiently.</p>
-<p>This integrated approach allows the aircraft to:</p>
+<p>Obstacle avoidance does not operate independently.
+It works together with navigation, mapping, and computer vision to help the UAV complete its mission safely and efficiently.
+This integrated approach allows the aircraft to:</p>
 <ul>
   <li>Continue waypoint navigation</li>
   <li>Avoid unexpected obstacles</li>
@@ -668,8 +663,8 @@ const postsRaw: BlogPost[] = [
 <img src="${suasImg}" alt="Flight Test Photograph" class="blog-section-img" />
 
 <h2>Looking Ahead</h2>
-<p>Obstacle avoidance technology continues to evolve as autonomous systems become more capable.</p>
-<p>Future development will focus on:</p>
+<p>Obstacle avoidance technology continues to evolve as autonomous systems become more capable.
+Future development will focus on:</p>
 <ul>
   <li>Three-dimensional obstacle detection</li>
   <li>Sensor fusion with cameras</li>
@@ -718,16 +713,14 @@ const postsRaw: BlogPost[] = [
     excerpt: "Autonomous flight depends on more than powerful hardware. Discover how UART built a modular software ecosystem that connects navigation, computer vision, mapping, telemetry, and mission control into one intelligent platform.",
     content: `
 <h2>Software as the Brain of the UAV</h2>
-<p>A modern autonomous UAV is much more than motors, batteries, and sensors. While the hardware enables the aircraft to fly, it is the software that transforms individual components into a coordinated autonomous system.</p>
-
-<p>For the SUAS 2026 platform, our software architecture was designed to manage mission planning, onboard intelligence, telemetry, and communication while ensuring that every subsystem operates together efficiently.</p>
-
-<p>Rather than developing a single large application, we adopted a modular software architecture that simplifies development, testing, and future expansion.</p>
+<p>A modern autonomous UAV is much more than motors, batteries, and sensors. While the hardware enables the aircraft to fly, it is the software that transforms individual components into a coordinated autonomous system.
+For the SUAS 2026 platform, our software architecture was designed to manage mission planning, onboard intelligence, telemetry, and communication while ensuring that every subsystem operates together efficiently.
+Rather than developing a single large application, we adopted a modular software architecture that simplifies development, testing, and future expansion.</p>
 
 <h2>Building a Custom Ground Control Station</h2>
-<p>The Ground Control Station (GCS) acts as the central interface between the UAV and the ground team.</p>
-<p>It provides real-time information throughout the mission and allows operators to monitor the aircraft while autonomous tasks are being performed.</p>
-<p>The Ground Control Station supports:</p>
+<p>The Ground Control Station (GCS) acts as the central interface between the UAV and the ground team.
+It provides real-time information throughout the mission and allows operators to monitor the aircraft while autonomous tasks are being performed.
+The Ground Control Station supports:</p>
 <ul>
   <li>Mission planning</li>
   <li>Live telemetry</li>
@@ -739,9 +732,9 @@ const postsRaw: BlogPost[] = [
 <img src="${missionImg}" alt="Ground Control Station Screenshot" class="blog-section-img" />
 
 <h2>A Modular Software Architecture</h2>
-<p>Instead of combining every feature into a single application, each major subsystem operates independently while communicating through a shared architecture.</p>
-<p>This approach improves system reliability and makes it easier to maintain and upgrade individual components.</p>
-<p>Our software architecture includes:</p>
+<p>Instead of combining every feature into a single application, each major subsystem operates independently while communicating through a shared architecture.
+This approach improves system reliability and makes it easier to maintain and upgrade individual components.
+Our software architecture includes:</p>
 <ul>
   <li>Navigation Module</li>
   <li>Computer Vision Module</li>
@@ -754,9 +747,9 @@ const postsRaw: BlogPost[] = [
 <img src="${droneImg}" alt="Software Architecture Diagram" class="blog-section-img" />
 
 <h2>Communication Between Systems</h2>
-<p>Reliable communication is essential during autonomous flight.</p>
-<p>The UAV continuously exchanges information between the flight controller, companion computer, and Ground Control Station.</p>
-<p>This communication enables the aircraft to:</p>
+<p>Reliable communication is essential during autonomous flight.
+The UAV continuously exchanges information between the flight controller, companion computer, and Ground Control Station.
+This communication enables the aircraft to:</p>
 <ul>
   <li>Receive mission commands</li>
   <li>Send telemetry data</li>
@@ -768,9 +761,9 @@ const postsRaw: BlogPost[] = [
 <img src="${Tele}" alt="Communication Flow Diagram" class="blog-section-img" />
 
 <h2>Onboard Processing</h2>
-<p>Some tasks require immediate decision-making during flight.</p>
-<p>To reduce workload on the flight controller, computationally intensive processes are handled by the onboard companion computer.</p>
-<p>These include:</p>
+<p>Some tasks require immediate decision-making during flight.
+To reduce workload on the flight controller, computationally intensive processes are handled by the onboard companion computer.
+These include:</p>
 <ul>
   <li>Object detection</li>
   <li>Image processing</li>
@@ -782,9 +775,9 @@ const postsRaw: BlogPost[] = [
 <img src="${OnBoard}" alt="Companion Computer Photograph" class="blog-section-img" />
 
 <h2>Testing Before Flight</h2>
-<p>Reliable software is built through continuous testing.</p>
-<p>Before deploying the UAV in the field, individual modules are verified using simulation environments and controlled experiments.</p>
-<p>Our testing process includes:</p>
+<p>Reliable software is built through continuous testing.
+Before deploying the UAV in the field, individual modules are verified using simulation environments and controlled experiments.
+Our testing process includes:</p>
 <ul>
   <li>Software integration testing</li>
   <li>Mission simulation</li>
@@ -796,9 +789,9 @@ const postsRaw: BlogPost[] = [
 <img src="${droneImg}" alt="Simulation Screenshot" class="blog-section-img" />
 
 <h2>Building for the Future</h2>
-<p>One of the biggest advantages of a modular architecture is scalability.</p>
-<p>As new technologies become available, individual modules can be upgraded without redesigning the entire system.</p>
-<p>Future software improvements may include:</p>
+<p>One of the biggest advantages of a modular architecture is scalability.
+As new technologies become available, individual modules can be upgraded without redesigning the entire system.
+Future software improvements may include:</p>
 <ul>
   <li>Advanced mission planning</li>
   <li>AI-assisted decision making</li>
@@ -809,9 +802,9 @@ const postsRaw: BlogPost[] = [
 <p>These improvements will continue to strengthen the software foundation of future UART autonomous platforms.</p>
 
 <h2>Looking Ahead</h2>
-<p>Software is the bridge that connects every subsystem of an autonomous UAV.</p>
-<p>By combining navigation, perception, mapping, and communication into a unified platform, UART has developed a flexible architecture capable of supporting increasingly complex autonomous missions.</p>
-<p>As our research continues, the software ecosystem will evolve alongside new hardware and artificial intelligence technologies, enabling more capable and reliable autonomous systems.</p>
+<p>Software is the bridge that connects every subsystem of an autonomous UAV.
+By combining navigation, perception, mapping, and communication into a unified platform, UART has developed a flexible architecture capable of supporting increasingly complex autonomous missions.
+As our research continues, the software ecosystem will evolve alongside new hardware and artificial intelligence technologies, enabling more capable and reliable autonomous systems.</p>
 
 <div class="about-authors-section">
   <h2>About the Authors</h2>
