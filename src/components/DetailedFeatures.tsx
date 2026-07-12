@@ -1,13 +1,13 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Link, useSearchParams } from "react-router-dom";
-import { ArrowLeft, Cpu, Wind, Radio, Eye, Shield, Zap, ChevronRight, MapPin, Navigation, CloudRain, Layers, Activity, Gauge } from "lucide-react";
+import { ArrowLeft, Cpu, Wind, Radio, Eye, Shield, Zap, ChevronRight, MapPin, Navigation, CloudRain, Layers, Activity, Gauge, Map, Brain, Target } from "lucide-react";
 import img1 from "../assets/images/DetailedFeatures/B6.jpg";
-import jetson from "../assets/images/DetailedFeatures/jetson.png";
+import jetson from "../assets/images/DetailedFeatures/Jetson.jfif";
 import lidar from "../assets/images/DetailedFeatures/lidar.png";
 import droneImg from "../assets/images/B6_png.png";
-import missionPlanningImg from "../assets/images/DetailedFeatures/map.jpeg";
-import sysArchImg from "../assets/images/DetailedFeatures/system_architecture.png";
-import batteryImg from "../assets/images/Project/battery.png";
+import missionPlanningImg from "../assets/images/DetailedFeatures/map.png";
+import sysArchImg from "../assets/images/DetailedFeatures/system_architecture.jpeg";
+import batteryImg from "../assets/images/DetailedFeatures/battery.jpeg";
 
 // Slideshow Images
 import imgD1 from "../assets/images/DetailedFeatures/B9.jpg";
@@ -60,14 +60,15 @@ interface FeatureSectionProps {
   tag: string;
   title: string;
   description: string;
-  bullets: string[];
+  bullets?: string[];
+  specs?: { label: string; value: string }[];
   icon: React.ComponentType<{ className?: string }>;
   image: string;
   reverse?: boolean;
   delay?: number;
 }
 const FeatureSection: React.FC<FeatureSectionProps & { id?: string }> = ({
-  tag, title, description, bullets, icon: Icon, image, id, reverse = false, delay = 0
+  tag, title, description, bullets, specs, icon: Icon, image, id, reverse = false, delay = 0
 }) => (
   <Reveal id={id} delay={delay} className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${reverse ? "lg:flex-row-reverse" : ""}`}>
     {/* Text side */}
@@ -79,21 +80,35 @@ const FeatureSection: React.FC<FeatureSectionProps & { id?: string }> = ({
       <h2 className="text-3xl sm:text-4xl font-black text-white leading-tight mb-4">{title}</h2>
       <p className="text-slate-400 text-base leading-relaxed mb-6">{description}</p>
 
-      {/* Key Benefits card */}
-      <div className="rounded-2xl border border-white/[0.08] bg-[rgba(15,23,42,0.8)] backdrop-blur-md p-6">
-        <div className="flex items-center gap-2 mb-4">
-          <Icon className="w-4 h-4 text-accent" />
-          <span className="text-white text-sm font-semibold">Key Benefits</span>
+      {/* Dynamic Benefits / Specs card */}
+      {(bullets || specs) && (
+        <div className="rounded-2xl border border-white/[0.08] bg-[rgba(15,23,42,0.8)] backdrop-blur-md p-6">
+          <div className="flex items-center gap-2 mb-4">
+            <Icon className="w-4 h-4 text-accent" />
+            <span className="text-white text-sm font-semibold">{specs ? "Specification" : "Key Benefits"}</span>
+          </div>
+          
+          {specs ? (
+            <div className="flex flex-col gap-2">
+              {specs.map((s, i) => (
+                <div key={i} className="flex justify-between items-center text-sm py-1.5 border-b border-white/5 last:border-0">
+                  <span className="text-slate-400 font-medium">{s.label}</span>
+                  <span className="text-white font-bold text-right">{s.value}</span>
+                </div>
+              ))}
+            </div>
+          ) : bullets ? (
+            <ul className="space-y-2.5">
+              {bullets.map((b, i) => (
+                <li key={i} className="flex items-start gap-3 text-slate-300 text-sm">
+                  <ChevronRight className="w-3.5 h-3.5 text-accent mt-0.5 flex-shrink-0" />
+                  {b}
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
-        <ul className="space-y-2.5">
-          {bullets.map((b, i) => (
-            <li key={i} className="flex items-start gap-3 text-slate-300 text-sm">
-              <ChevronRight className="w-3.5 h-3.5 text-accent mt-0.5 flex-shrink-0" />
-              {b}
-            </li>
-          ))}
-        </ul>
-      </div>
+      )}
     </div>
 
     {/* Image side */}
@@ -108,80 +123,23 @@ const FeatureSection: React.FC<FeatureSectionProps & { id?: string }> = ({
   </Reveal>
 );
 
-/* ── 360° Drone Viewer ── */
-const Drone360Viewer: React.FC<{ src: string; alt?: string }> = ({ src, alt = "360 view" }) => {
-  const [angle, setAngle] = useState(0);
-  const [dragging, setDragging] = useState(false);
-  const dragStart = useRef(0);
-  const angleAtDrag = useRef(0);
-  const isDraggingRef = useRef(false);
-
-  const startDrag = useCallback((clientX: number) => {
-    isDraggingRef.current = true;
-    setDragging(true);
-    dragStart.current = clientX;
-    angleAtDrag.current = angle;
-  }, [angle]);
-
-  const moveDrag = useCallback((clientX: number) => {
-    if (!isDraggingRef.current) return;
-    const delta = clientX - dragStart.current;
-    setAngle(angleAtDrag.current + delta * 0.6);
-  }, []);
-
-  const endDrag = useCallback(() => {
-    isDraggingRef.current = false;
-    setDragging(false);
-  }, []);
-
+/* ── Static Drone Viewer ── */
+const Drone360Viewer: React.FC<{ src: string; alt?: string }> = ({ src, alt = "Drone view" }) => {
+  // Keep hooks around to avoid unused import warnings, but they aren't used for dragging anymore
+  const [angle] = useState(0);
   const containerRef = useRef<HTMLDivElement>(null);
 
   return (
-    <div
-      ref={containerRef}
-      className="relative select-none"
-      style={{ cursor: dragging ? 'grabbing' : 'grab' }}
-      onMouseDown={e => startDrag(e.clientX)}
-      onMouseMove={e => moveDrag(e.clientX)}
-      onMouseUp={endDrag}
-      onMouseLeave={endDrag}
-      onTouchStart={e => startDrag(e.touches[0].clientX)}
-      onTouchMove={e => moveDrag(e.touches[0].clientX)}
-      onTouchEnd={endDrag}
-    >
-      {/* Drone image with rotateY */}
+    <div ref={containerRef} className="relative select-none pointer-events-none">
+      {/* Static Drone image */}
       <img
         src={src}
         alt={alt}
-        draggable={false}
         className="relative z-10 w-full"
         style={{
-          transform: `rotateY(${angle}deg)`,
           filter: 'drop-shadow(0 24px 48px rgba(249,115,22,0.35))',
-          transition: dragging ? 'none' : 'transform 0.04s linear',
-          perspective: '900px',
         }}
       />
-
-      {/* Dashed elliptical orbit ring (Hyundai-style) */}
-      <div className="absolute left-1/2 -translate-x-1/2 pointer-events-none"
-        style={{ bottom: '-12px', width: '85%' }}>
-        <svg viewBox="0 0 300 60" fill="none" xmlns="http://www.w3.org/2000/svg" className="w-full">
-          <ellipse cx="150" cy="30" rx="148" ry="26"
-            stroke="rgba(249,115,22,0.35)" strokeWidth="1.5"
-            strokeDasharray="6 5"
-          />
-        </svg>
-      </div>
-
-
-
-      {/* 360° label */}
-      <div className="absolute bottom-4 right-4 z-20 flex items-center gap-1.5 px-3 py-1.5 rounded-full pointer-events-none shadow-lg"
-        style={{ background: 'rgba(15,23,42,0.85)', border: '1px solid rgba(249,115,22,0.4)', backdropFilter: 'blur(12px)' }}>
-        <Activity className="w-3.5 h-3.5 text-accent animate-pulse" />
-        <span className="text-[10px] font-bold tracking-widest uppercase" style={{ color: '#f97316', fontFamily: "'Inter', sans-serif" }}>Interactive 360°</span>
-      </div>
     </div>
   );
 };
@@ -212,7 +170,7 @@ const DetailedFeatures = () => {
   }, [searchParams]);
 
   const specs = [
-    { label: "Max Takeoff Weight", value: "6.8", unit: "kg" },
+    { label: "Max Takeoff Weight", value: "13", unit: "kg" },
     { label: "UAS Volume (Unfolded)", value: "14 x 23 x 23", unit: "in" },
     { label: "Flight Endurance", value: "50", unit: "min" },
     { label: "Telemetry Range", value: "20", unit: "km" },
@@ -279,12 +237,20 @@ const DetailedFeatures = () => {
       tag: "Power Systems",
       title: "Battery: Power House of Drone",
       description:
-        "The centralized energy hub of our UAS. We utilize customized high-density LiPo power houses engineered specifically for the extreme electrical demands of high-torque motors and continuous AI computation.",
-      bullets: [
-        "Customize 3S Battery Configuration",
-        "High-discharge (100C) Power house",
-        "Integrated Smart BMS monitoring",
-        "Rapid-swap modular battery bay",
+        "The UART UAV is powered by a modular 6S2P lithium-ion battery system utilizing Amprius SiCore SA08 high-energy-density cells. Its six interchangeable 2S battery modules deliver 451 Wh of energy, up to 108 A continuous and 172.8 A peak output, providing exceptional endurance while supporting high-performance propulsion and on-board AI computing.",
+      specs: [
+        { label: "Battery Architecture", value: "6S2P (6 × 2S Modules)" },
+        { label: "Cell Technology", value: "Amprius SiCore SA08" },
+        { label: "Battery Chemistry", value: "Lithium-ion" },
+        { label: "Nominal Voltage", value: "20.4 V" },
+        { label: "Maximum Voltage", value: "25.2 V" },
+        { label: "Capacity", value: "22.1 Ah" },
+        { label: "Energy", value: "451 Wh" },
+        { label: "Continuous Output", value: "108 A" },
+        { label: "Peak Output", value: "172.8 A" },
+        { label: "Peak Power", value: "3.5 kW" },
+        { label: "Energy Density", value: "345 Wh/kg" },
+        { label: "Battery Design", value: "Modular & Field Replaceable" }
       ],
       icon: Zap,
       image: batteryImg,
@@ -445,14 +411,17 @@ const DetailedFeatures = () => {
 
           {/* Feature list */}
           <div className="flex-shrink-0 w-full lg:max-w-xs xl:max-w-sm space-y-4">
-            <h3 className="text-2xl sm:text-3xl font-black text-white mb-6">Intelligent Route Optimization</h3>
+            <h3 className="text-2xl sm:text-3xl font-black text-white mb-6">AUTONOMOUS MISSION PLANNING</h3>
+            <p className="text-slate-400 text-lg leading-relaxed max-w-lg mb-8">
+              Designed using Mission Planner, the UART UAV executes fully autonomous waypoint and survey missions. Optimized endurance routes and polygon-based mapping ensure maximum area coverage while supporting real-time AI perception and autonomous payload operations.
+            </p>
             {[
-              { icon: Navigation, text: "Automated waypoint generation" },
-              { icon: CloudRain, text: "Real-time weather integration" },
-              { icon: Layers, text: "No-fly zone compliance" },
-              { icon: Cpu, text: "Multi-aircraft coordination" },
-              { icon: MapPin, text: "Precision landing zone marking" },
-              { icon: Radio, text: "Live telemetry overlay on map" },
+              { icon: Navigation, text: "Long-Endurance Waypoint Missions" },
+              { icon: Map, text: "Polygon Survey Planning" },
+              { icon: Layers, text: "Optimized Mapping Coverage" },
+              { icon: Cpu, text: "Autonomous Mission Execution" },
+              { icon: Brain, text: "AI-assisted Mission Operations" },
+              { icon: Target, text: "Precision Flight Path Control" },
             ].map(({ icon: Icon, text }, i) => (
               <div key={i} className="flex items-center gap-4 group">
                 <div className="w-8 h-8 rounded-lg bg-accent/10 border border-accent/30 flex items-center justify-center flex-shrink-0 group-hover:bg-accent/20 transition-colors">
@@ -489,8 +458,8 @@ const DetailedFeatures = () => {
             <div className="space-y-3">
               {[
                 { icon: Cpu, name: "NVIDIA Jetson Orin Nano", desc: "AI Brain & Mission Computer with onboard processing" },
-                { icon: Radio, name: "Multi-Band Communications", desc: "4G/LTE VPN Gateway and RFD900x Long Range Radio" },
-                { icon: Eye, name: "Advanced Sensors", desc: "LiDAR, RTK GNSS, Camera, and Airspeed sensors" },
+                { icon: Radio, name: "Multi-Band Communications", desc: "900 MHz / 2.4 GHz / 5.8 GHz Long Range Radio" },
+                { icon: Eye, name: "Advanced Sensors", desc: "LiDAR, GPS and Camera sensors" },
                 { icon: Shield, name: "Flight Controller", desc: "Cube Orange+ for stability & navigation" },
               ].map(({ icon: Icon, name, desc }, i) => (
                 <div key={i} className="flex items-start gap-4 p-4 rounded-xl border border-white/[0.08] bg-[rgba(15,23,42,0.8)] hover:border-accent/30 hover:bg-[rgba(15,23,42,0.9)] transition-all duration-300 group">
@@ -552,7 +521,7 @@ const DetailedFeatures = () => {
             <div className="divide-y divide-white/10">
               {[
                 { metric: "Flight Endurance", uart: "50 min", dji: "55 min", autel: "38 min", uartBetter: false },
-                { metric: "Max Takeoff Weight", uart: "6.8 kg", dji: "9.2 kg", autel: "2.95 kg", uartBetter: false },
+                { metric: "Max Takeoff Weight", uart: "13 kg", dji: "9.2 kg", autel: "2.95 kg", uartBetter: false },
                 { metric: "Autonomous AI", uart: "On-board Edge AI", dji: "Optional AI Payload", autel: "Companion Computer", uartBetter: true },
                 { metric: "Companion Computer", uart: "NVIDIA Jetson Orin NX 16GB", dji: "Optional", autel: "Optional", uartBetter: true },
                 { metric: "GPS-Denied Navigation", uart: "✓ Visual SLAM / VIO", dji: "Limited", autel: "Custom Integration", uartBetter: true },

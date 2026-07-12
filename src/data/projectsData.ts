@@ -34,7 +34,7 @@ export const projectsData: ProjectData[] = [
     image: raven3, category: "reconnaissance", year: "2026", status: "Active", isLatest: true,
     tags: ["Tactical", "Reconnaissance"],
     specs: [
-      { label: "Weight", value: "6.8 kg" },
+      { label: "Weight", value: "13 kg" },
       { label: "Dimensions(Unfolded)", value: "14×23×23 (L × W × H)" },
       { label: "Maximum Speed", value: "15 m/s (Tested)" },
       { label: "Flight Endurance", value: "Up to 50 minutes" },

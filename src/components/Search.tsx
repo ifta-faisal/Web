@@ -9,13 +9,13 @@ import mentor3 from '../assets/images/Advisor/Mentor3.jpeg';
 import vcImage from '../assets/images/Advisor/VC.jpg';
 
 // ─── Project Imports ───
-import project1 from "../assets/images/Project/project1.jpeg";
-import project6 from "../assets/images/Project/project6.jpeg";
-import project7 from "../assets/images/Project/project7.jpeg";
+import project1 from "../assets/images/Project/B1.jpeg";
+import project6 from "../assets/images/Project/B6.jpg";
+import project7 from "../assets/images/Project/B7.jpg";
 import workshop from "../assets/images/news/workshop.jpeg";
 import project10 from "../assets/images/DetailedFeatures/Drone.jpg";
 import aether1 from "../assets/images/Project/Aether_1.jpg";
-import deadcat1 from "../assets/images/Project/Deadcat_1.jpg";
+import deadcat1 from "../assets/images/Project/Aether_2.JPG";
 
 // ─── Team Member Imports ───
 import member1 from '../assets/images/Team/member1.png';
