@@ -6,8 +6,8 @@ import jetson from "../assets/images/DetailedFeatures/jetson.jpg";
 import lidar from "../assets/images/DetailedFeatures/lidar.png";
 import droneImg from "../assets/images/B6_png.png";
 import missionPlanningImg from "../assets/images/DetailedFeatures/map.png";
-import sysArchImg from "../assets/images/DetailedFeatures/system_architecture.jpeg";
-import batteryImg from "../assets/images/DetailedFeatures/battery.jpeg";
+import sysArchImg from "../assets/images/DetailedFeatures/system_architecture.png";
+import batteryImg from "../assets/images/DetailedFeatures/Battery.jpeg";
 
 // Slideshow Images
 import imgD1 from "../assets/images/DetailedFeatures/B9.jpg";
