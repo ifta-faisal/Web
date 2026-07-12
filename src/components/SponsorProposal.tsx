@@ -388,17 +388,21 @@ const SponsorProposal = () => {
                 {/* ══ INFORMATION SECTION ═══════════════════════════════════════════════ */}
                 <section className="py-20 max-w-5xl mx-auto">
                     <div className="card-modern rounded-[3rem] overflow-hidden border border-white/[0.08] relative">
-                        <div className="absolute top-0 right-0 p-8">
-                            <div className="bg-primary/20 p-4 rounded-3xl border border-primary/20 backdrop-blur-md">
-                                <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-1">Institution</h4>
-                                <p className="text-sm font-bold text-white">United International University</p>
+                        <div className="px-6 sm:px-10 md:px-16 pt-8 sm:pt-10 md:pt-16 pb-2 md:pb-0">
+                            <div className="flex justify-center md:justify-start">
+                                <div className="section-label mb-6">Contact Presence</div>
+                            </div>
+                            <h2 className="text-3xl sm:text-4xl font-black text-white mb-6 sm:mb-12 uppercase tracking-tight text-center md:text-left">Information Section</h2>
+                        </div>
+
+                        <div className="md:absolute md:top-0 md:right-0 px-6 sm:px-10 md:p-8 flex justify-center md:justify-end">
+                            <div className="bg-primary/20 p-4 rounded-2xl md:rounded-3xl border border-primary/20 backdrop-blur-md w-full sm:w-auto">
+                                <h4 className="text-[10px] font-black uppercase tracking-[0.3em] text-primary mb-1 text-center md:text-left">Institution</h4>
+                                <p className="text-sm font-bold text-white text-center md:text-left">United International University</p>
                             </div>
                         </div>
 
-                        <div className="p-10 sm:p-16">
-                            <div className="section-label mb-6">Contact Presence</div>
-                            <h2 className="text-3xl sm:text-4xl font-black text-white mb-10 sm:mb-12 uppercase tracking-tight">Information Section</h2>
-
+                        <div className="px-6 sm:px-10 md:px-16 pt-8 sm:pt-10 md:pt-0 pb-6 sm:pb-10 md:pb-16">
                             <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
                                 <div className="space-y-10">
                                     <div>

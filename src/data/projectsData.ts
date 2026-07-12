@@ -53,7 +53,7 @@ export const projectsData: ProjectData[] = [
       { title: "Aircraft", url: "#" },
       { title: "Payload", url: "#" },
       { title: "Avionics", url: "#" },
-      { title: "Electrical", url: "#" },
+      { title: "Electrical", url: "https://drive.google.com/file/d/1usASKTKMacqBOxYKuqVPRMzcr5WAGc_z/view?usp=sharing" },
       { title: "Communication", url: "#" },
       { title: "Software & Navigation", url: "#" },
       { title: "Technical Design Report >", url: "#" }
