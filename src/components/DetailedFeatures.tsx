@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Cpu, Wind, Radio, Eye, Shield, Zap, ChevronRight, MapPin, Navigation, CloudRain, Layers, Activity, Gauge, Map, Brain, Target } from "lucide-react";
 import img1 from "../assets/images/DetailedFeatures/B6.jpg";
-import jetson from "../assets/images/DetailedFeatures/Jetson.jfif";
+import jetson from "../assets/images/DetailedFeatures/jetson.jpg";
 import lidar from "../assets/images/DetailedFeatures/lidar.png";
 import droneImg from "../assets/images/B6_png.png";
 import missionPlanningImg from "../assets/images/DetailedFeatures/map.png";
