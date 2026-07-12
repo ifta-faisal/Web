@@ -28,9 +28,9 @@ export interface ProjectData {
 
 export const projectsData: ProjectData[] = [
   {
-    id: 11, name: "Raven",
-    description: "Advanced tactical drone system named Raven.",
-    longDescription: "The Raven project is an advanced tactical drone system featuring high maneuverability and reconnaissance capabilities.",
+    id: 11, name: "Raven 1.0",
+    description: "Advanced tactical drone system named Raven 1.0.",
+    longDescription: "The Raven 1.0 project is an advanced tactical drone system featuring high maneuverability and reconnaissance capabilities.",
     image: raven3, category: "reconnaissance", year: "2026", status: "Active", isLatest: true,
     tags: ["Tactical", "Reconnaissance"],
     specs: [

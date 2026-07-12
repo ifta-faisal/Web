@@ -495,6 +495,14 @@ const Hero = () => {
               {/* Soft radial glow */}
               <div className="absolute inset-0 pointer-events-none"
                 style={{ background: 'radial-gradient(ellipse at 50% 55%, rgba(249,115,22,0.14) 0%, transparent 68%)', filter: 'blur(24px)' }} />
+              
+              {/* Drone Name Tag */}
+              <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap text-center">
+                <span className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-primary to-white drop-shadow-lg" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.1em' }}>
+                  RAVEN 1.0
+                </span>
+              </div>
+
               <img
                 src={droneImage}
                 alt="UART Drone Specs View"
