@@ -4,9 +4,9 @@ import { useNavigate } from 'react-router-dom';
 
 // ─── Advisor Imports ───
 import mentor1 from '../assets/images/Advisor/Mentor1.jpeg';
-import mentor2 from '../assets/images/Advisor/Mentor2.jpeg';
+import mentor2 from '../assets/images/Advisor/Mentor2.png';
 import mentor3 from '../assets/images/Advisor/Mentor3.jpeg';
-import vcImage from '../assets/images/Advisor/VC.jpg';
+import vcImage from '../assets/images/Advisor/VC.png';
 
 // ─── Project Imports ───
 import project1 from "../assets/images/Project/B1.jpeg";
