@@ -6,11 +6,12 @@ const MissionTimeline = () => {
   const [lineVisible, setLineVisible] = useState(false);
 
   const events = [
-    { title: 'Team Formation', date: 'September 2024', desc: 'UART was established with a vision to advance rescue robotics in Bangladesh.', status: 'done' },
-    { title: 'First Prototype', date: 'January 2025', desc: 'Completed our first rescue drone with basic mobility and sensor systems.', status: 'done' },
-    { title: 'Final Flying', date: 'January 2026', desc: 'Fully workable autonomous system ready for competition.', status: 'done' },
-    { title: 'Preparing TDR', date: '3rd March 2026', desc: 'Ready paper for Team Description and completing the team participation form.', status: 'done' },
-    { title: 'SUAS 2026', date: 'Upcoming', desc: 'Preparing to represent Bangladesh at SUAS 2026.', status: 'upcoming' },
+    { title: 'Team Formation', date: 'September 2024', desc: 'The UIU Aerial Robotics Team (UART) was established to develop autonomous UAV technologies and represent Bangladesh in international aerial robotics competitions.', status: 'done' },
+    { title: 'Project Initiation', date: 'March 2025', desc: 'System architecture, mission requirements, and UAV design concepts were finalized, marking the beginning of hardware and software development.', status: 'done' },
+    { title: 'Prototype Development', date: 'November 2025', desc: 'Completed the first fully integrated prototype, validating the airframe, propulsion system, avionics, and autonomous flight architecture.', status: 'done' },
+    { title: 'Flight Testing', date: 'May 2026', desc: 'Successfully demonstrated autonomous waypoint navigation, survey mapping, AI integration, and long-endurance flight through extensive field testing.', status: 'done' },
+    { title: 'Flight Readiness Review', date: 'July 2026', desc: 'Successfully submitted the SUAS 2026 Flight Readiness Review (FRR) and secured a position in the official competition flight order.', status: 'done' },
+    { title: 'SUAS 2026', date: 'September 2026', desc: 'Representing Bangladesh at the Student Unmanned Aerial Systems (SUAS) 2026 competition in Tulsa, Oklahoma, USA, showcasing our autonomous UAV platform on the international stage.', status: 'upcoming' },
   ];
 
   // Trigger the timeline line animation on scroll
