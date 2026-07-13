@@ -1,5 +1,4 @@
 import React, { useRef, useEffect, useState } from 'react';
-import { HashLink } from 'react-router-hash-link';
 import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, ChevronLeft, ChevronRight, Calendar, CheckCircle2 } from 'lucide-react';
 import droneVideo from '../assets/video/Faysal2.mp4';
@@ -101,12 +100,12 @@ const Hero = () => {
   ];
 
   const whatWeDoCards = [
-    { id: 1, num: '01', title: 'Advancing Autonomous Aerial Robotics', description: 'We develop intelligent UAV systems capable of executing complex missions with minimal human intervention through advanced autonomy, artificial intelligence, and reliable flight control.' },
-    { id: 2, num: '02', title: 'Innovating Through Research', description: 'We bridge academic research and real-world engineering by designing, testing, and validating next-generation aerial robotics technologies for practical applications.' },
-    { id: 3, num: '03', title: 'Building Intelligent Autonomous Systems', description: 'By integrating onboard AI, computer vision, and autonomous navigation, we create UAV platforms capable of perception, decision-making, and mission execution in dynamic environments.' },
-    { id: 4, num: '04', title: 'Engineering Modular UAV Platforms', description: 'We design scalable and modular aerial systems that can be rapidly adapted for mapping, inspection, surveillance, environmental monitoring, and payload delivery.' },
-    { id: 5, num: '05', title: 'Educating the Next Generation', description: 'Beyond building drones, we cultivate future engineers by providing hands-on experience in aerospace engineering, embedded systems, robotics, AI, and autonomous flight technologies.' },
-    { id: 6, num: '06', title: 'Representing Bangladesh Globally', description: 'Our mission is to establish Bangladesh as a recognized contributor to autonomous aerial robotics by competing in international competitions, advancing research, and fostering global collaboration.' },
+    { id: 1, num: '01', title: 'Designing High-Efficiency Aerial Platforms', description: 'We design and build custom carbon fiber structures and aerodynamic composites for lightweight, durable, and performance-optimized aircraft.' },
+    { id: 2, num: '02', title: 'Intelligent Sensing and Environmental Awareness', description: 'We integrate advanced sensors with onboard processing to enable real-time tracking, mapping, and situational understanding.' },
+    { id: 3, num: '03', title: 'Advanced Flight Control and Obstacle Avoidance', description: 'We develop precise control algorithms that enhance flight stability, energy efficiency, and autonomous safety in dynamic environments.' },
+    { id: 4, num: '04', title: 'Modular Payload Systems and Functionality', description: 'We design and test adaptable payload systems that expand mission capabilities and operational versatility.' },
+    { id: 5, num: '05', title: 'Custom Avionics and Control Solutions', description: 'We build reliable, high-performance avionics systems to ensure seamless control, navigation, and mission execution.' },
+    { id: 6, num: '06', title: 'Driven by Innovation', description: 'Innovation defines our approach — we continuously explore new ideas to push the boundaries of aerial robotics.' },
   ];
 
   const sponsors = [
@@ -120,12 +119,12 @@ const Hero = () => {
   ];
 
   const vehicleFeatures = [
-    { text: 'Hybrid aluminum & carbon fiber airframe engineered for strength, modularity, and lightweight performance.' },
-    { text: 'Up to 50 minutes of autonomous flight endurance powered by a custom 6S2P Amprius lithium-ion battery system.' },
-    { text: 'NVIDIA Jetson Orin NX 16GB enables real-time onboard AI, object detection, and autonomous decision-making.' },
-    { text: 'Fully autonomous navigation using ArduPilot with waypoint missions, survey mapping, and precision payload delivery.' },
-    { text: 'Long-range communications via 900 MHz telemetry, 2.4 GHz command & control, and 5.8 GHz HD video transmission.' },
-    { text: 'Modular architecture supporting interchangeable payloads, rapid maintenance, and future hardware expansion.' },
+    { text: 'Lightweight carbon fiber frame engineered for strength and endurance' },
+    { text: 'Extended flight duration of up to 50 minutes per mission' },
+    { text: 'AI-driven flight controller for intelligent navigation and stability' },
+    { text: '4K HD camera with 3-axis gimbal for smooth and stable imaging' },
+    { text: 'Real-time telemetry and video transmission over a 20km range' },
+    { text: 'Modular architecture allowing customizable mission payloads' },
   ];
 
   // Recent Updates Carousel (sorted by most recent date first from shared data)
@@ -395,7 +394,7 @@ const Hero = () => {
               </h3>
 
               <p className="text-slate-400 leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-                Designed and built by the UIU Aerial Robotics Team, the UART UAV is a research-grade autonomous platform developed for long-endurance, AI-powered, and mission-critical operations. Every subsystem—from the hybrid airframe and modular power system to the onboard edge AI and autonomous flight software—is engineered for reliability, adaptability, and high-performance autonomous missions.
+                Purpose-built for autonomous competition missions — every component from the carbon fiber skeleton to the AI compute stack is engineered for maximum performance.
               </p>
 
               {/* Feature list — no card, clean */}
@@ -495,7 +494,7 @@ const Hero = () => {
               {/* Soft radial glow */}
               <div className="absolute inset-0 pointer-events-none"
                 style={{ background: 'radial-gradient(ellipse at 50% 55%, rgba(249,115,22,0.14) 0%, transparent 68%)', filter: 'blur(24px)' }} />
-              
+
               {/* Drone Name Tag */}
               <div className="absolute top-4 left-1/2 -translate-x-1/2 z-20 whitespace-nowrap text-center">
                 <span className="text-4xl sm:text-5xl lg:text-6xl font-black tracking-widest text-transparent bg-clip-text bg-gradient-to-r from-primary to-white drop-shadow-lg" style={{ fontFamily: "'Bebas Neue', sans-serif", letterSpacing: '0.1em' }}>
@@ -634,8 +633,10 @@ const Hero = () => {
 
             {/* Text — fade up with stagger */}
             <p className="ju-reveal text-slate-300 text-lg leading-relaxed md:text-xl" style={{ fontFamily: "'Inter', sans-serif" }}>
-The UIU Aerial Robotics Team (UART) is dedicated to developing intelligent autonomous aerial systems through innovation, engineering excellence, and hands-on research. Our current focus is competing in the Student Unmanned Aerial Systems (SUAS) 2026 competition, where we design, build, and validate advanced UAV technologies for complex real-world autonomous missions.
-Beyond competition, UART provides students with practical experience in aerospace engineering, embedded systems, artificial intelligence, computer vision, and autonomous flight while driving innovation in aerial robotics and representing Bangladesh on the global stage.
+              UART's annual objective is to achieve top performance in the SUAS 2026 competition,
+              the primary focus is on providing undergraduate students with an opportunity to apply their engineering and computer science skills to solve a complex,
+              real-world problem. The competition acts as a platform for hands-on engineering experience, autonomous system development,
+              innovation, and collaborative, multidisciplinary teamwork.
             </p>
           </div>
         </div>
@@ -775,14 +776,7 @@ Beyond competition, UART provides students with practical experience in aerospac
           <div className="shimmer-line mx-auto rounded-full mb-14" style={{ width: '80px', height: '3px', background: 'linear-gradient(90deg, #f97316, #dc2626)' }} />
 
           <div className="relative flex items-center justify-center">
-            {/* Left Arrow */}
-            <button
-              onClick={prevSlide}
-              className="hidden lg:flex w-12 h-12 absolute -left-16 items-center justify-center text-slate-300 hover:text-white transition-colors"
-              style={{ border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(8px)', borderRadius: '4px' }}
-            >
-              <ChevronLeft className="w-5 h-5" />
-            </button>
+
 
             {/* Carousel */}
             <div className="w-full overflow-hidden">
@@ -848,29 +842,10 @@ Beyond competition, UART provides students with practical experience in aerospac
               </div>
             </div>
 
-            {/* Right Arrow */}
-            <button
-              onClick={nextSlide}
-              className="hidden lg:flex w-12 h-12 absolute -right-16 items-center justify-center text-slate-300 hover:text-white transition-colors"
-              style={{ border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)', backdropFilter: 'blur(8px)', borderRadius: '4px' }}
-            >
-              <ChevronRight className="w-5 h-5" />
-            </button>
+
           </div>
 
-          {/* Mobile Arrows */}
-          <div className="flex lg:hidden justify-center gap-4 mt-10">
-            <button onClick={prevSlide}
-              className="w-12 h-12 rounded flex items-center justify-center text-slate-300 hover:text-white transition-colors"
-              style={{ border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)' }}>
-              <ChevronLeft className="w-5 h-5" />
-            </button>
-            <button onClick={nextSlide}
-              className="w-12 h-12 rounded flex items-center justify-center text-slate-300 hover:text-white transition-colors"
-              style={{ border: '1px solid rgba(255,255,255,0.12)', background: 'rgba(255,255,255,0.04)' }}>
-              <ChevronRight className="w-5 h-5" />
-            </button>
-          </div>
+
 
           {/* View All Button */}
           <div className="mt-12 flex justify-center">
