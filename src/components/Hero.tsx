@@ -633,10 +633,8 @@ const Hero = () => {
 
             {/* Text — fade up with stagger */}
             <p className="ju-reveal text-slate-300 text-lg leading-relaxed md:text-xl" style={{ fontFamily: "'Inter', sans-serif" }}>
-              UART's annual objective is to achieve top performance in the SUAS 2026 competition,
-              the primary focus is on providing undergraduate students with an opportunity to apply their engineering and computer science skills to solve a complex,
-              real-world problem. The competition acts as a platform for hands-on engineering experience, autonomous system development,
-              innovation, and collaborative, multidisciplinary teamwork.
+              The UIU Aerial Robotics Team (UART) is dedicated to developing intelligent autonomous aerial systems through innovation, engineering excellence, and hands-on research. Our current focus is competing in the Student Unmanned Aerial Systems (SUAS) 2026 competition, where we design, build, and validate advanced UAV technologies for complex real-world autonomous missions.
+              Beyond competition, UART provides students with practical experience in aerospace engineering, embedded systems, artificial intelligence, computer vision, and autonomous flight while driving innovation in aerial robotics and representing Bangladesh on the global stage.
             </p>
           </div>
         </div>
