@@ -13,9 +13,7 @@ import raven1 from "../assets/images/Project/B1.jpeg";
 import raven2 from "../assets/images/Project/B2.jpeg";
 import raven3 from "../assets/images/Project/B3.jpg";
 import raven4 from "../assets/images/Project/B4.jpg";
-import raven5 from "../assets/images/Project/B5.jpg";
 import raven6 from "../assets/images/Project/B6.jpg";
-import raven7 from "../assets/images/Project/B7.jpg";
 import raven8 from "../assets/images/Project/B8.jpg";
 import raven9 from "../assets/images/Project/B9.jpg";
 import raven10 from "../assets/images/Project/B10.jpg";
@@ -52,7 +50,7 @@ export const projectsData: ProjectData[] = [
       { label: "Perception Sensors", value: "Siyi A8 Mini" },
       { label: "Software Environment", value: "Python,c++,Bash script" }
     ],
-    media: [raven1, raven2, raven3, raven4, raven5, raven6, raven7, raven8, raven9, raven10, raven11],
+    media: [raven1, raven2, raven3, raven4,  raven6, raven8, raven9, raven10, raven11],
     docs: [
       { title: "Aircraft", url: "#" },
       { title: "Payload", url: "#" },
@@ -60,7 +58,7 @@ export const projectsData: ProjectData[] = [
       { title: "Electrical", url: "https://drive.google.com/file/d/1usASKTKMacqBOxYKuqVPRMzcr5WAGc_z/view?usp=sharing" },
       { title: "Communication", url: "#" },
       { title: "Software & Navigation", url: "#" },
-      { title: "Technical Design Report >", url: "#" }
+      { title: "Technical Design Report", url: "#" }
     ],
     videoUrl: "https://www.youtube.com/embed/I8id3VY7Vdg"
   },
