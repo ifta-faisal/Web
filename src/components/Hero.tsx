@@ -17,7 +17,6 @@ import { newsItems } from '../data/newsData';
 
 // Import New Sections
 import DroneParts from './DroneParts';
-import Achievements from './Achievements';
 import MissionTimeline from './MissionTimeline';
 import GalleryVideo from './GalleryVideo';
 import GalleryGrid from './GalleryGrid';
@@ -100,12 +99,12 @@ const Hero = () => {
   ];
 
   const whatWeDoCards = [
-    { id: 1, num: '01', title: 'Designing High-Efficiency Aerial Platforms', description: 'We design and build custom carbon fiber structures and aerodynamic composites for lightweight, durable, and performance-optimized aircraft.' },
-    { id: 2, num: '02', title: 'Intelligent Sensing and Environmental Awareness', description: 'We integrate advanced sensors with onboard processing to enable real-time tracking, mapping, and situational understanding.' },
-    { id: 3, num: '03', title: 'Advanced Flight Control and Obstacle Avoidance', description: 'We develop precise control algorithms that enhance flight stability, energy efficiency, and autonomous safety in dynamic environments.' },
-    { id: 4, num: '04', title: 'Modular Payload Systems and Functionality', description: 'We design and test adaptable payload systems that expand mission capabilities and operational versatility.' },
-    { id: 5, num: '05', title: 'Custom Avionics and Control Solutions', description: 'We build reliable, high-performance avionics systems to ensure seamless control, navigation, and mission execution.' },
-    { id: 6, num: '06', title: 'Driven by Innovation', description: 'Innovation defines our approach — we continuously explore new ideas to push the boundaries of aerial robotics.' },
+    { id: 1, num: '01', title: 'Advancing Autonomous Aerial Robotics', description: 'We develop intelligent UAV systems capable of executing complex missions with minimal human intervention through advanced autonomy, artificial intelligence, and reliable flight control.' },
+    { id: 2, num: '02', title: 'Innovating Through Research', description: 'We bridge academic research and real-world engineering by designing, testing, and validating next-generation aerial robotics technologies for practical applications.' },
+    { id: 3, num: '03', title: 'Building Intelligent Autonomous Systems', description: 'By integrating onboard AI, computer vision, and autonomous navigation, we create UAV platforms capable of perception, decision-making, and mission execution in dynamic environments.' },
+    { id: 4, num: '04', title: 'Engineering Modular UAV Platforms', description: 'We design scalable and modular aerial systems that can be rapidly adapted for mapping, inspection, surveillance, environmental monitoring, and payload delivery.' },
+    { id: 5, num: '05', title: 'Educating the Next Generation', description: 'Beyond building drones, we cultivate future engineers by providing hands-on experience in aerospace engineering, embedded systems, robotics, AI, and autonomous flight technologies.' },
+    { id: 6, num: '06', title: 'Representing Bangladesh Globally', description: 'Our mission is to establish Bangladesh as a recognized contributor to autonomous aerial robotics by competing in international competitions, advancing research, and fostering global collaboration.' },
   ];
 
   const sponsors = [
@@ -691,8 +690,6 @@ const Hero = () => {
         </div>
       </section>
 
-      {/* ===== 5. Achievements ===== */}
-      <Achievements />
 
       {/* ===== 6. Mission Timeline ===== */}
       <MissionTimeline />
