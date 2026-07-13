@@ -1,19 +1,27 @@
-import project10 from "../assets/images/Project/Drone.jpg";
+import project10 from "../assets/images/Project/D_1.jpg";
 import swarm1 from "../assets/images/Project/D_1.jpg";
 import swarm2 from "../assets/images/Project/D_2.jpg";
 import swarm3 from "../assets/images/Project/D_3.jpg";
 import swarm4 from "../assets/images/Project/D_4.jpg";
 import swarm5 from "../assets/images/Project/D_5.jpg";
+import swarm6 from "../assets/images/Project/D_6.jpg";
+import swarm7 from "../assets/images/Project/D_7.jpg";
+import swarm8 from "../assets/images/Project/D_8.jpg";
+import swarm9 from "../assets/images/Project/D_9.jpg";
+import swarm10 from "../assets/images/Project/D_10.jpg";
+
 import aether1 from "../assets/images/Project/Aether_1.jpg";
 import aether2 from "../assets/images/Project/Aether_2.JPG";
 import aether3 from "../assets/images/Project/Aether_3.JPG";
 import aether4 from "../assets/images/Project/Aether_4.jpg";
 import aether5 from "../assets/images/Project/Aether_5.jpg";
+
 import raven1 from "../assets/images/Project/B1.jpeg";
 import raven2 from "../assets/images/Project/B2.jpeg";
 import raven3 from "../assets/images/Project/B3.jpg";
 import raven4 from "../assets/images/Project/B4.jpg";
 import raven6 from "../assets/images/Project/B6.jpg";
+import raven12 from "../assets/images/Project/B12.jpg";
 import raven8 from "../assets/images/Project/B8.jpg";
 import raven9 from "../assets/images/Project/B9.jpg";
 import raven10 from "../assets/images/Project/B10.jpg";
@@ -33,7 +41,7 @@ export const projectsData: ProjectData[] = [
     id: 11, name: "Raven 1.0",
     description: "Advanced tactical drone system named Raven 1.0.",
     longDescription: "The Raven 1.0 project is an advanced tactical drone system featuring high maneuverability and reconnaissance capabilities.",
-    image: raven3, category: "reconnaissance", year: "2026", status: "Active", isLatest: true,
+    image: raven12, category: "reconnaissance", year: "2026", status: "Active", isLatest: true,
     tags: ["Tactical", "Reconnaissance"],
     specs: [
       { label: "Weight", value: "13 kg" },
@@ -50,7 +58,7 @@ export const projectsData: ProjectData[] = [
       { label: "Perception Sensors", value: "Siyi A8 Mini" },
       { label: "Software Environment", value: "Python,c++,Bash script" }
     ],
-    media: [raven1, raven2, raven3, raven4,  raven6, raven8, raven9, raven10, raven11],
+    media: [raven1, raven2, raven3, raven4, raven6, raven8, raven9, raven10, raven11, raven12],
     docs: [
       { title: "Aircraft", url: "#" },
       { title: "Payload", url: "#" },
@@ -76,7 +84,7 @@ export const projectsData: ProjectData[] = [
       { label: "Flight Controller", value: "CUAV X7+ Pro" },
       { label: "Power System", value: "Lithium-ion Battery" },
     ],
-    media: [project10, swarm1, swarm2, swarm3, swarm4, swarm5],
+    media: [swarm1, swarm2, swarm3, swarm4, swarm5, swarm6, swarm7, swarm8, swarm9, swarm10],
     docs: [{ title: "Raven System Details Report", url: "#" },],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },

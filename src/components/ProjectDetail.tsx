@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import { ArrowLeft, ExternalLink, Play, FileText, ChevronRight } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
@@ -7,9 +7,40 @@ const ProjectDetail = () => {
   const { id } = useParams<{ id: string }>();
   const project = projectsData.find(p => p.id === Number(id));
 
+  const iframeRef = useRef<HTMLIFrameElement>(null);
+
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [id]);
+
+  useEffect(() => {
+    if (!project?.videoUrl || project.videoUrl.includes('dQw4w9WgXcQ')) return;
+
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (iframeRef.current && iframeRef.current.contentWindow) {
+            if (entry.isIntersecting) {
+              iframeRef.current.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+            } else {
+              iframeRef.current.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            }
+          }
+        });
+      },
+      { threshold: 0.5 }
+    );
+
+    if (iframeRef.current) {
+      observer.observe(iframeRef.current);
+    }
+
+    return () => {
+      if (iframeRef.current) {
+        observer.unobserve(iframeRef.current);
+      }
+    };
+  }, [project?.videoUrl]);
 
   if (!project) {
     return (
@@ -109,7 +140,8 @@ const ProjectDetail = () => {
                 </div>
               ) : (
                 <iframe
-                  src={`${project.videoUrl}${project.videoUrl.includes('?') ? '&' : '?'}autoplay=1&mute=1&rel=0`}
+                  ref={iframeRef}
+                  src={`${project.videoUrl}${project.videoUrl.includes('?') ? '&' : '?'}autoplay=1&mute=1&rel=0&enablejsapi=1`}
                   title={`${project.name} Video`}
                   allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                   allowFullScreen

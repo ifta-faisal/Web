@@ -1,8 +1,6 @@
 import React from "react";
 import { Eye } from 'lucide-react';
 
-// Import images from assets
-import img1 from "../assets/gallery/drone.png";
 import img2 from "../assets/gallery/Engine1.jpeg";
 import img3 from "../assets/gallery/drone2.jpeg";
 import img4 from "../assets/gallery/Vitol_1.jpeg";
@@ -24,13 +22,26 @@ import b8 from "../assets/images/Project/B8.jpg";
 import b9 from "../assets/images/Project/B9.jpg";
 import b10 from "../assets/images/Project/B10.jpg";
 import b11 from "../assets/images/Project/B11.jpg";
+import aether1 from "../assets/images/Project/Aether_1.jpg";
+import aether2 from "../assets/images/Project/Aether_2.JPG";
+import aether3 from "../assets/images/Project/Aether_3.JPG";
+import aether4 from "../assets/images/Project/Aether_4.jpg";
+import aether5 from "../assets/images/Project/Aether_5.jpg";
+import b6 from "../assets/images/Project/B6.jpg";
+import b7 from "../assets/images/Project/B7.jpg";
+import b12 from "../assets/images/Project/B12.jpg";
+import d1 from "../assets/images/Project/D_1.jpg";
+import d2 from "../assets/images/Project/D_2.jpg";
+import d3 from "../assets/images/Project/D_3.jpg";
+import d4 from "../assets/images/Project/D_4.jpg";
+import d5 from "../assets/images/Project/D_5.jpg";
+import d6 from "../assets/images/Project/D_6.jpg";
+import d7 from "../assets/images/Project/D_7.jpg";
+import d8 from "../assets/images/Project/D_8.jpg";
+import d9 from "../assets/images/Project/D_9.jpg";
+import d10 from "../assets/images/Project/D_10.jpg";
 
 const galleryItems = [
-  {
-    image: img1,
-    title: "Drone 3D Design",
-    description: "Building the carbon fiber frame.",
-  },
   {
     image: img2,
     title: "Drone Engine",
@@ -136,6 +147,24 @@ const galleryItems = [
     title: "Field Operation",
     description: "Operating the drone in the field.",
   },
+  { image: aether1, title: "Project Aether", description: "Aether on the field." },
+  { image: aether2, title: "Aether Setup", description: "Preparing Project Aether." },
+  { image: aether3, title: "Aether Ready", description: "Aether ready for flight." },
+  { image: aether4, title: "Aether Flight", description: "Aether taking off." },
+  { image: aether5, title: "Aether Display", description: "Aether showcased." },
+  { image: b6, title: "Raven Hardware", description: "Close up of Raven hardware." },
+  { image: b7, title: "Raven Testing", description: "Testing Raven systems." },
+  { image: b12, title: "Raven Showcase", description: "Raven 1.0 full view." },
+  { image: d1, title: "Prototype Testing", description: "Testing Our Prototype Raven" },
+  { image: d2, title: "Raven Prototype", description: "Multiple Raven Prototypes." },
+  { image: d3, title: "Prototype Field Test", description: "Raven Prototypes on the field." },
+  { image: d4, title: "Prototype Prep", description: "Preparing Raven Prototypes." },
+  { image: d5, title: "Prototype Formation", description: "Raven Prototypes in formation." },
+  { image: d6, title: "Prototype Flight", description: "Raven Prototypes flying." },
+  { image: d7, title: "Prototype Action", description: "Raven Prototypes in action." },
+  { image: d8, title: "Prototype Mission", description: "Raven Prototypes on mission." },
+  { image: d9, title: "Prototype Test", description: "Testing Raven Prototypes." },
+  { image: d10, title: "Prototype Close-up", description: "Close up of Raven Prototype." },
 ];
 
 const Gallery = () => {
