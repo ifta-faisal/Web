@@ -38,9 +38,9 @@ const ProjectDetail = () => {
         </div>
 
         <div className="relative z-10 text-center px-4 max-w-4xl mx-auto">
-          {project.isLatest && (
+          {(project.isLatest || project.isPrototype) && (
             <div className="inline-block px-3 py-1 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full text-primary text-xs sm:text-sm font-semibold mb-6 uppercase tracking-wider">
-              Our Latest Vehicle
+              {project.isPrototype ? "Our Prototype" : "Our Latest Vehicle"}
             </div>
           )}
           <h1 className="text-5xl sm:text-7xl md:text-8xl font-black text-white mb-6 uppercase tracking-tight">

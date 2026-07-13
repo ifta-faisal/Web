@@ -184,14 +184,18 @@ const DetailedFeatures = () => {
     {
       id: "structural-engineering",
       tag: "Structural Engineering",
-      title: "Lightweight Carbon Fiber Airframe",
+      title: "HYBRID ALUMINUM & CARBON FIBER AIRFRAME",
       description:
-        "Our drone is built around a precision-engineered carbon fiber monocoque structure — delivering exceptional rigidity and strength at a fraction of the weight of conventional aluminium builds. Every gram is optimized.",
+        "The UART UAV features a hybrid structural architecture combining a precision-machined aluminum center frame with carbon fiber arms and structural plates. Designed for high strength, low weight, and modularity, the airframe supports both long-endurance autonomous missions and heavy-payload operations while maintaining exceptional rigidity and reliability.",
       bullets: [
-        "330g total structural weight",
-        "Modular arm design for rapid field assembly",
-        "IP52-rated electronics bay",
-        "Vibration-isolated motor mounts",
+        "Operating Weight For SUAS: 6.8 kg",
+        "Maximum Takeoff Weight (MTOW): 13 kg",
+        "Precision-machined aluminum center frame",
+        "Carbon fiber arms, top & bottom plates",
+        "Carbon fiber tube structure for maximum strength-to-weight ratio",
+        "Modular arm design for rapid maintenance",
+        "High structural rigidity with low vibration",
+        "Optimized for autonomous and payload missions",
       ],
       icon: Shield,
       image: img1,
@@ -355,12 +359,12 @@ const DetailedFeatures = () => {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5">
           {[
-            { icon: Wind, title: "Aerodynamic Efficiency", desc: "Optimized airfoil geometry and composite layup for maximum L/D ratio at cruise." },
-            { icon: Cpu, title: "Edge AI Compute", desc: "Jetson-class NPU delivers 21 TOPS of inference power for real-time perception." },
-            { icon: Radio, title: "Long-Range Telemetry", desc: "Encrypted FHSS datalink maintains bi-directional control at up to 10 km range." },
-            { icon: Eye, title: "HD Stabilized Imagery", desc: "2K 2-axis gimbal camera captures smooth broadcast-quality footage in flight." },
-            { icon: Shield, title: "Redundant Safety Systems", desc: "Triple-redundant IMUs and auto-land failsafe ensure safe recovery in all scenarios." },
-            { icon: Zap, title: "Rapid Payload Swap", desc: "Tool-free modular bay supports mission-specific payloads in under 90 seconds." },
+            { icon: Navigation, title: "Autonomous Navigation", desc: "Execute fully autonomous waypoint missions with precision takeoff, landing, and intelligent flight control using ArduPilot." },
+            { icon: Brain, title: "On-board Edge AI", desc: "Powered by the NVIDIA Jetson Orin NX 16GB, enabling real-time object detection, target recognition, and autonomous decision-making." },
+            { icon: Radio, title: "Long-Range Communications", desc: "900 MHz telemetry, 2.4 GHz command & control, and 5.8 GHz HD video transmission for reliable long-range operations." },
+            { icon: Map, title: "Autonomous Survey Mapping", desc: "Generate high-overlap aerial imagery through polygon survey missions for accurate orthomosaic and geospatial mapping." },
+            { icon: Target, title: "Precision Payload Delivery", desc: "Designed for autonomous payload deployment with mission-specific release mechanisms and high positional accuracy." },
+            { icon: Zap, title: "Long-Endurance Flight", desc: "High-energy 6S2P Amprius lithium-ion battery system delivers up to 50 minutes of flight endurance under mission configuration." },
           ].map(({ icon: Icon, title, desc }, i) => (
             <Reveal key={i} delay={i * 80}>
               <div className="group h-full rounded-2xl border border-white/[0.08] bg-[rgba(15,23,42,0.8)] backdrop-blur-md p-6 hover:border-accent/40 hover:bg-[rgba(15,23,42,0.9)] transition-all duration-300">
@@ -589,7 +593,7 @@ const DetailedFeatures = () => {
             </div>
           </h2>
           <p className="text-slate-400 text-base max-w-xl mx-auto">
-            Standardized checklists ensuring flight safety and operational excellence during SUAS 2026.
+            A standardized autonomous operational sequence designed to ensure safety, mission efficiency, and reliable execution from takeoff to landing.
           </p>
         </Reveal>
 
@@ -598,13 +602,18 @@ const DetailedFeatures = () => {
           <Reveal delay={100} className="rounded-3xl border border-white/10 bg-[rgba(15,23,42,0.8)] p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-full bg-accent/20 flex items-center justify-center text-accent font-black">01</div>
-              <h3 className="text-xl font-bold">Pre-Flight Inspection</h3>
+              <h3 className="text-xl font-bold uppercase">Mission Preparation</h3>
             </div>
+            <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+              Every successful mission begins with a comprehensive pre-flight inspection to ensure the UAV is fully operational and ready for autonomous deployment.
+            </p>
             <ul className="space-y-4 text-sm text-slate-300">
-              <li className="flex gap-3"><span className="text-accent">•</span> Verify carbon fiber structural integrity & motor mounts.</li>
-              <li className="flex gap-3"><span className="text-accent">•</span> Confirm RTK GPS lock (Min 12 satellites).</li>
-              <li className="flex gap-3"><span className="text-accent">•</span> Battery voltage check (Target: 4.2V per cell).</li>
-              <li className="flex gap-3"><span className="text-accent">•</span> Datalink signal strength verification (&gt; -80dBm).</li>
+              <li className="flex gap-3"><span className="text-accent">•</span> Airframe & propulsion system inspection</li>
+              <li className="flex gap-3"><span className="text-accent">•</span> Battery health and power system verification</li>
+              <li className="flex gap-3"><span className="text-accent">•</span> GPS, IMU & compass status confirmation</li>
+              <li className="flex gap-3"><span className="text-accent">•</span> Telemetry, RC & video link verification</li>
+              <li className="flex gap-3"><span className="text-accent">•</span> Mission upload & parameter validation</li>
+              <li className="flex gap-3"><span className="text-accent">•</span> Payload and camera system check</li>
             </ul>
           </Reveal>
 
@@ -612,13 +621,18 @@ const DetailedFeatures = () => {
           <Reveal delay={200} className="rounded-3xl border border-white/10 bg-[rgba(15,23,42,0.8)] p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-full bg-primary/20 flex items-center justify-center text-primary font-black">02</div>
-              <h3 className="text-xl font-bold">Launch & Recovery</h3>
+              <h3 className="text-xl font-bold uppercase">Autonomous Mission Execution</h3>
             </div>
+            <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+              Once armed, the UART UAV autonomously performs the assigned mission with minimal operator intervention while continuously monitoring system health and mission progress.
+            </p>
             <ul className="space-y-4 text-sm text-slate-300">
-              <li className="flex gap-3"><span className="text-primary">•</span> CATAPULT: Clear launch vector & check bungee tension.</li>
-              <li className="flex gap-3"><span className="text-primary">•</span> IN-FLIGHT: Monitor current draw & airspeed stability.</li>
-              <li className="flex gap-3"><span className="text-primary">•</span> RECOVERY: Trigger descent on glideslope (15° path).</li>
-              <li className="flex gap-3"><span className="text-primary">•</span> POST-FLIGHT: Log telemetry & thermally scan motors.</li>
+              <li className="flex gap-3"><span className="text-primary">•</span> Autonomous takeoff and climb</li>
+              <li className="flex gap-3"><span className="text-primary">•</span> Waypoint navigation</li>
+              <li className="flex gap-3"><span className="text-primary">•</span> Polygon survey & aerial mapping</li>
+              <li className="flex gap-3"><span className="text-primary">•</span> Real-time AI object detection</li>
+              <li className="flex gap-3"><span className="text-primary">•</span> Precision payload delivery (mission dependent)</li>
+              <li className="flex gap-3"><span className="text-primary">•</span> Autonomous Return-to-Launch (RTL) & landing</li>
             </ul>
           </Reveal>
 
@@ -626,13 +640,18 @@ const DetailedFeatures = () => {
           <Reveal delay={300} className="rounded-3xl border border-white/10 bg-[rgba(15,23,42,0.8)] p-8">
             <div className="flex items-center gap-3 mb-6">
               <div className="w-10 h-10 rounded-full bg-red-500/20 flex items-center justify-center text-red-500 font-black">03</div>
-              <h3 className="text-xl font-bold">Emergency Failsafes</h3>
+              <h3 className="text-xl font-bold uppercase">Safety & Failsafe Systems</h3>
             </div>
+            <p className="text-slate-400 text-sm mb-6 leading-relaxed">
+              Multiple safety layers continuously monitor the aircraft and automatically respond to abnormal conditions, ensuring reliable operation throughout every mission.
+            </p>
             <ul className="space-y-4 text-sm text-slate-300">
-              <li className="flex gap-3"><span className="text-red-500">•</span> SIGNAL LOSS: Auto RTL (Return To Launch) at 60m.</li>
-              <li className="flex gap-3"><span className="text-red-500">•</span> LOW BATTERY: Trigger immediate landing zone priority.</li>
-              <li className="flex gap-3"><span className="text-red-500">•</span> GEOFENCE: Instant kill-switch on perimeter breach.</li>
-              <li className="flex gap-3"><span className="text-red-500">•</span> OBSTACLE: Neural-net overrides waypoint for avoidance.</li>
+              <li className="flex gap-3"><span className="text-red-500">•</span> Automatic Return-to-Launch (RTL)</li>
+              <li className="flex gap-3"><span className="text-red-500">•</span> Intelligent low-battery protection</li>
+              <li className="flex gap-3"><span className="text-red-500">•</span> Geofence boundary enforcement</li>
+              <li className="flex gap-3"><span className="text-red-500">•</span> GPS & EKF health monitoring</li>
+              <li className="flex gap-3"><span className="text-red-500">•</span> Manual flight mode override</li>
+              <li className="flex gap-3"><span className="text-red-500">•</span> Emergency failsafe procedures</li>
             </ul>
           </Reveal>
         </div>
@@ -648,21 +667,33 @@ const DetailedFeatures = () => {
             <h2 className="text-4xl font-black text-white mb-6">Design Rationale</h2>
             <div className="space-y-8">
               <div>
-                <h4 className="text-accent font-bold mb-2 uppercase tracking-widest text-xs">System: Materials</h4>
+                <h4 className="text-accent font-bold mb-2 uppercase tracking-widest text-xs">System: Mission Planning</h4>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  We chose 3K Twill Carbon Fiber for the primary fuselage to achieve a 220% increase in strength-to-weight ratio compared to 3D-printed filaments. This allows for an 800g payload without compromising wing stability.
+                  Every mission begins with meticulous planning using Mission Planner, where autonomous waypoint routes and polygon survey missions are optimized for maximum endurance, complete area coverage, and efficient flight execution. This workflow minimizes energy consumption while ensuring reliable autonomous operation throughout the mission.
                 </p>
               </div>
               <div>
-                <h4 className="text-accent font-bold mb-2 uppercase tracking-widest text-xs">System: Edge Intelligence</h4>
+                <h4 className="text-accent font-bold mb-2 uppercase tracking-widest text-xs">System: On-Board Edge AI</h4>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  Moving AI processing to the NVIDIA Jetson Orin Nano (on-board) removes latency issues caused by LTE jitter. Sub-100ms inference is required for high-speed obstacle avoidance at 18m/s cruise.
+                  All mission-critical AI processing is performed onboard using the NVIDIA Jetson Orin NX 16GB. Running computer vision and autonomous decision-making locally eliminates cloud dependency, reduces latency, and enables reliable real-time object detection and target localization during flight.
                 </p>
               </div>
               <div>
-                <h4 className="text-accent font-bold mb-2 uppercase tracking-widest text-xs">System: Aerodynamics</h4>
+                <h4 className="text-accent font-bold mb-2 uppercase tracking-widest text-xs">System: Modular Power Architecture</h4>
                 <p className="text-slate-400 text-sm leading-relaxed">
-                  The Clark-Y airfoil profile was selected for its high lift coefficient at low Reynolds numbers, ensuring stable slow-flight during autonomous package delivery landing phases.
+                  The UAV is powered by a custom 6S2P modular lithium-ion battery system built with Amprius SiCore SA08 high-energy-density cells. Its six interchangeable 2S battery modules provide 451 Wh of energy while allowing rapid field replacement, simplified maintenance, and extended mission endurance.
+                </p>
+              </div>
+              <div>
+                <h4 className="text-accent font-bold mb-2 uppercase tracking-widest text-xs">System: Structural Engineering</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  A hybrid aluminum and carbon fiber airframe combines a precision-machined aluminum center frame with carbon fiber arms and structural plates. This design delivers exceptional rigidity, low vibration, and a high strength-to-weight ratio while supporting a 6.8–7.0 kg operating configuration and a 13 kg maximum takeoff weight (MTOW).
+                </p>
+              </div>
+              <div>
+                <h4 className="text-accent font-bold mb-2 uppercase tracking-widest text-xs">System: Autonomous Flight Control</h4>
+                <p className="text-slate-400 text-sm leading-relaxed">
+                  Built on the ArduPilot ecosystem, the UART UAV autonomously executes waypoint navigation, survey mapping, payload delivery, and return-to-launch procedures with minimal operator intervention. The open-source architecture enables rapid software development, mission customization, and continuous system improvements.
                 </p>
               </div>
             </div>
@@ -670,20 +701,7 @@ const DetailedFeatures = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-accent/20 rounded-full blur-3xl" />
             <div className="relative rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
-              <div className="bg-[#111827] px-4 py-2 flex items-center justify-between border-b border-white/10">
-                <span className="text-[10px] font-mono text-slate-500 uppercase">Analysis: CFD Simulation v4.2</span>
-                <div className="flex gap-1.5">
-                  <div className="w-2 h-2 rounded-full bg-red-500/50" />
-                  <div className="w-2 h-2 rounded-full bg-accent/50" />
-                </div>
-              </div>
-              <img src={missionPlanningImg} alt="Technical Analysis" className="w-full h-80 object-cover opacity-80" />
-              <div className="absolute inset-x-0 bottom-0 bg-gradient-to-t from-[#020617] p-6">
-                <div className="flex items-center gap-3">
-                  <div className="h-0.5 w-12 bg-accent" />
-                  <p className="text-[10px] font-mono text-accent uppercase tracking-widest">Optimized Pressure Vector Distribution</p>
-                </div>
-              </div>
+              <img src={imgD4} alt="Technical Analysis" className="w-full h-80 object-cover opacity-80" />
             </div>
           </div>
         </Reveal>

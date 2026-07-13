@@ -23,7 +23,7 @@ const Projects = () => {
   const filteredProjects = targetId
     ? projects.filter(project => project.id === parseInt(targetId))
     : selectedCategory === 'top'
-      ? projects.filter(project => project.isLatest || project.status === 'Active')
+      ? projects.filter(project => project.isLatest || project.isPrototype || project.status === 'Active')
       : selectedCategory === 'all'
         ? projects
         : projects.filter(project => project.category === selectedCategory);
@@ -157,7 +157,7 @@ const Projects = () => {
                     <Calendar className="w-3 h-3" />
                     <span>{project.year}</span>
                   </div>
-                  {project.isLatest && (
+                  {(project.isLatest || project.isPrototype) && (
                     <div
                       className="flex items-center gap-0.5 px-1.5 py-0.5 rounded text-[8px] font-bold tracking-wider"
                       style={{
@@ -167,7 +167,7 @@ const Projects = () => {
                         animation: 'pulse 2s cubic-bezier(0.4,0,0.6,1) infinite',
                       }}
                     >
-                      ✦ LATEST
+                      ✦ {project.isPrototype ? "PROTOTYPE" : "LATEST"}
                     </div>
                   )}
                 </div>

@@ -1,9 +1,9 @@
-import project10 from "../assets/images/DetailedFeatures/Drone.jpg";
-import swarm1 from "../assets/images/DetailedFeatures/D_1.jpg";
-import swarm2 from "../assets/images/DetailedFeatures/D_2.jpg";
-import swarm3 from "../assets/images/DetailedFeatures/D_3.jpg";
-import swarm4 from "../assets/images/DetailedFeatures/D_4.jpg";
-import swarm5 from "../assets/images/DetailedFeatures/D_5.jpg";
+import project10 from "../assets/images/Project/Drone.jpg";
+import swarm1 from "../assets/images/Project/D_1.jpg";
+import swarm2 from "../assets/images/Project/D_2.jpg";
+import swarm3 from "../assets/images/Project/D_3.jpg";
+import swarm4 from "../assets/images/Project/D_4.jpg";
+import swarm5 from "../assets/images/Project/D_5.jpg";
 import aether1 from "../assets/images/Project/Aether_1.jpg";
 import aether2 from "../assets/images/Project/Aether_2.JPG";
 import aether3 from "../assets/images/Project/Aether_3.JPG";
@@ -22,7 +22,7 @@ export interface ProjectDoc { title: string; url: string; }
 export interface ProjectData {
   id: number; name: string; description: string; longDescription?: string;
   image: string; category: string; year: string; status: string; tags: string[];
-  isLatest?: boolean; specs?: ProjectSpec[]; media?: string[]; docs?: ProjectDoc[];
+  isLatest?: boolean; isPrototype?: boolean; specs?: ProjectSpec[]; media?: string[]; docs?: ProjectDoc[];
   videoUrl?: string;
 }
 
@@ -64,7 +64,7 @@ export const projectsData: ProjectData[] = [
     id: 10, name: " Raven",
     description: "Next-generation, visually guided UAV prototype engineered for cutting edge autonomous flight research..",
     longDescription: "Our design philosophy is not just about the vehicle itself, but about the mission it must serve. We believe a truly innovative aerial platform must be Built for adaptation.",
-    image: project10, category: "ai", year: "2026", status: "Active", isLatest: true,
+    image: project10, category: "ai", year: "2026", status: "Active", isPrototype: true,
     tags: ["AI", "Autonomous"],
     specs: [
       { label: "Weight", value: "2.5 kg" },
