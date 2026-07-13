@@ -241,7 +241,7 @@ const Header = () => {
 
       {/* Mobile Navigation Overlay */}
       <div
-        className={`md:hidden fixed inset-0 z-[60] transition-opacity duration-300 ${
+        className={`xl:hidden fixed inset-0 z-[60] transition-opacity duration-300 ${
           isMenuOpen ? 'opacity-100 pointer-events-auto' : 'opacity-0 pointer-events-none'
         }`}
         style={{ background: 'rgba(2,6,23,0.7)', backdropFilter: 'blur(8px)' }}
