@@ -2,7 +2,7 @@ import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Cpu, Wind, Radio, Eye, Shield, Zap, ChevronRight, MapPin, Navigation, CloudRain, Layers, Activity, Gauge, Map, Brain, Target } from "lucide-react";
 import img1 from "../assets/images/DetailedFeatures/B6.jpg";
-import jetson from "../assets/images/DetailedFeatures/jetson.jpg";
+import jetson from "../assets/images/DetailedFeatures/jetson.png";
 import lidar from "../assets/images/DetailedFeatures/lidar.png";
 import droneImg from "../assets/images/B6_png.png";
 import missionPlanningImg from "../assets/images/DetailedFeatures/map.png";
@@ -66,9 +66,10 @@ interface FeatureSectionProps {
   image: string;
   reverse?: boolean;
   delay?: number;
+  imageClassName?: string;
 }
 const FeatureSection: React.FC<FeatureSectionProps & { id?: string }> = ({
-  tag, title, description, bullets, specs, icon: Icon, image, id, reverse = false, delay = 0
+  tag, title, description, bullets, specs, icon: Icon, image, id, reverse = false, delay = 0, imageClassName
 }) => (
   <Reveal id={id} delay={delay} className={`grid grid-cols-1 lg:grid-cols-2 gap-10 lg:gap-16 items-center ${reverse ? "lg:flex-row-reverse" : ""}`}>
     {/* Text side */}
@@ -117,7 +118,7 @@ const FeatureSection: React.FC<FeatureSectionProps & { id?: string }> = ({
       <img
         src={image}
         alt={title}
-        className="relative z-10 w-full rounded-3xl object-cover aspect-[4/3] shadow-2xl border border-white/10 group-hover:scale-[1.01] transition-transform duration-700"
+        className={`relative z-10 w-full rounded-3xl shadow-2xl border border-white/10 group-hover:scale-[1.01] transition-transform duration-700 ${imageClassName || 'object-cover aspect-[4/3]'}`}
       />
     </div>
   </Reveal>
@@ -204,35 +205,45 @@ const DetailedFeatures = () => {
     },
     {
       id: "autonomy-navigation",
-      tag: "Autonomy & Navigation",
-      title: "AI-Powered Flight Intelligence",
+      tag: "Autonomy & Edge AI",
+      title: "Intelligent Autonomous Flight",
       description:
-        "Dual-redundant flight controller with onboard Jetson-class AI processing enables real-time path planning, dynamic obstacle avoidance, and mission-adaptive re-routing — entirely on the edge with no cloud dependency.",
+        "The UART UAV combines the Cube Orange+ flight controller with the NVIDIA Jetson Orin NX 16GB to create a powerful autonomous flight platform. While the flight controller delivers reliable and precise aircraft control, the onboard AI computer processes computer vision, object detection, mapping, and mission intelligence in real time—without relying on cloud connectivity.",
       bullets: [
-        "Visual SLAM for GPS-denied environments",
-        "Sub-50ms obstacle detection latency",
-        "400Hz IMU update rate",
-        "Fully autonomous waypoint missions",
+        "NVIDIA Jetson Orin NX 16GB Edge AI Computer",
+        "Cube Orange+ running ArduPilot",
+        "Real-time AI Object Detection & Target Recognition",
+        "Autonomous Waypoint Navigation",
+        "Polygon Survey & Mapping Missions",
+        "Modular AI Software Architecture",
+        "MAVLink-based AI & Flight Controller Integration",
+        "Fully Onboard Edge Computing",
       ],
       icon: Cpu,
       image: jetson,
+      imageClassName: "object-contain p-8 bg-[rgba(15,23,42,0.4)] aspect-[4/3]",
       reverse: true,
       delay: 100,
     },
     {
       id: "sensing-perception",
       tag: "Sensing & Perception",
-      title: "Multi-Sensor Fusion Suite",
+      title: "Intelligent Perception System",
       description:
-        "Tightly fused RGB, depth, and LIDAR data streams feed a custom Kalman filter stack that provides precise state estimation and rich 3D environmental awareness under all lighting and weather conditions.",
+        "The UART UAV combines advanced vision sensors, ranging technologies, and precision navigation into a unified perception system. Powered by onboard edge AI, the platform continuously interprets its surroundings, enabling autonomous navigation, environmental awareness, and intelligent mission execution in complex operating environments.",
       bullets: [
-        "Stereo depth sensing at 30fps",
-        "360° LIDAR point-cloud mapping",
-        "Thermal imaging payload ready",
-        "Real-time HD video downlink",
+        "AI-powered Object Detection & Classification",
+        "360° Environmental Awareness",
+        "Real-time Distance & Obstacle Detection",
+        "Precision Target Localization",
+        "Autonomous Survey & Mapping",
+        "GPS, IMU & Vision Sensor Fusion",
+        "Onboard Edge AI Processing",
+        "Modular Multi-Sensor Architecture",
       ],
       icon: Eye,
       image: lidar,
+      imageClassName: "object-contain p-8 bg-[rgba(15,23,42,0.4)] aspect-[4/3]",
       reverse: false,
       delay: 200,
     },
