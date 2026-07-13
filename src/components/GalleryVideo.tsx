@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { PlayCircle, Youtube, ExternalLink } from 'lucide-react';
 
-import droneVideo from '../assets/video/Drone_Fotage_1.mp4';
-import droneImage from '../assets/images/drone.png';
-import uaImage from '../assets/images/UA1.jpeg';
+// import droneVideo from '../assets/video/Drone_Fotage_1.mp4';
+// import droneImage from '../assets/images/drone.png';
+// import uaImage from '../assets/images/UA1.jpeg';
 
 const GalleryVideo = () => {
     const youtubeVideos = [
@@ -13,7 +13,7 @@ const GalleryVideo = () => {
         { id: "ObORVT5EFPo", title: "Flight Readiness Overview" },
         { id: "m0vT2T1jra4", title: "Proof of Flight Readiness" },
         { id: "_EaZ3xg4thI", title: "Team Behind The Scenes" },
-        { id: "N1-3eb-vTw0", title: "Advanced Navigation Demo" },
+        { id: "du0CwWUKZEY", title: "Flying Drones", imgScale: "scale-[1.35] group-hover:scale-[1.5]" },
     ];
 
     const [activeVideoId, setActiveVideoId] = useState(youtubeVideos[0].id);
@@ -78,9 +78,9 @@ const GalleryVideo = () => {
                                     className={`aspect-[4/3] bg-surface relative group overflow-hidden cursor-pointer transition-all duration-300 ${activeVideoId === item.id ? 'scale-[0.98]' : ''}`}
                                 >
                                     <img
-                                        src={`https://img.youtube.com/vi/${item.id}/hqdefault.jpg`}
+                                        src={`https://img.youtube.com/vi/${item.id}/maxresdefault.jpg`}
                                         alt={item.title}
-                                        className={`w-full h-full object-cover transition-all duration-500 group-hover:scale-110 ${activeVideoId === item.id ? 'opacity-100' : 'opacity-60 group-hover:opacity-80'}`}
+                                        className={`w-full h-full object-cover transition-all duration-500 ${item.imgScale || 'group-hover:scale-110'} ${activeVideoId === item.id ? 'opacity-100' : 'opacity-60 group-hover:opacity-80'}`}
                                     />
                                     <div className="absolute inset-0 flex items-center justify-center z-10 pointer-events-none">
                                         <PlayCircle className={`w-10 h-10 transition-all duration-300 stroke-[1] ${activeVideoId === item.id ? 'text-primary scale-110' : 'text-white/80 group-hover:text-yellow-400 group-hover:scale-110'}`} />
