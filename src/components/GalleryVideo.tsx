@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { PlayCircle, Youtube, ExternalLink } from 'lucide-react';
+import { PlayCircle, Youtube, ExternalLink, VolumeX } from 'lucide-react';
 
 // import droneVideo from '../assets/video/Drone_Fotage_1.mp4';
 // import droneImage from '../assets/images/drone.png';
@@ -9,10 +9,10 @@ const GalleryVideo = () => {
     const youtubeVideos = [
         // Paste the 11-character video IDs here (the part after v= or youtu.be/):
         { id: "I8id3VY7Vdg", title: "Drone Action" },
-        { id: "kzlitmbiOUE", title: "Latest Drone Action" },
+        { id: "jqSFzuQ9kxA", title: "Latest Drone Action" },
         { id: "ObORVT5EFPo", title: "Flight Readiness Overview" },
         { id: "m0vT2T1jra4", title: "Proof of Flight Readiness" },
-        { id: "_EaZ3xg4thI", title: "Team Behind The Scenes" },
+        { id: "kzlitmbiOUE", title: "Testing First Prototype for SUAS 2026" },
         { id: "du0CwWUKZEY", title: "Flying Drones", imgScale: "scale-[1.35] group-hover:scale-[1.5]" },
     ];
 
@@ -30,14 +30,14 @@ const GalleryVideo = () => {
                 if (!iframeRef.current || !iframeRef.current.contentWindow) return;
                 
                 if (entry.isIntersecting) {
-                    // Play the video (resumes from where it left off)
+                    // Play the video
                     iframeRef.current.contentWindow.postMessage(
-                        '{"event":"command","func":"playVideo","args":""}', '*'
+                        '{"event":"command","func":"playVideo","args":[]}', '*'
                     );
                 } else {
                     // Pause the video when out of view
                     iframeRef.current.contentWindow.postMessage(
-                        '{"event":"command","func":"pauseVideo","args":""}', '*'
+                        '{"event":"command","func":"pauseVideo","args":[]}', '*'
                     );
                 }
             },
@@ -72,7 +72,7 @@ const GalleryVideo = () => {
                                         setIsMuted(false);
                                         // Force play when clicked if it was paused
                                         if (iframeRef.current?.contentWindow) {
-                                            iframeRef.current.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                                            iframeRef.current.contentWindow.postMessage('{"event":"command","func":"playVideo","args":[]}', '*');
                                         }
                                     }}
                                     className={`aspect-[4/3] bg-surface relative group overflow-hidden cursor-pointer transition-all duration-300 ${activeVideoId === item.id ? 'scale-[0.98]' : ''}`}
@@ -97,17 +97,37 @@ const GalleryVideo = () => {
                             <div className="relative w-full h-full block">
                                 <iframe
                                     ref={iframeRef}
-                                    src={`https://www.youtube.com/embed/${activeVideoId}?autoplay=0&mute=${isMuted ? 1 : 0}&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1`}
+                                    src={`https://www.youtube.com/embed/${activeVideoId}?autoplay=0&mute=1&controls=0&rel=0&modestbranding=1&playsinline=1&enablejsapi=1&origin=${typeof window !== 'undefined' ? window.location.origin : ''}`}
                                     title="Drone Action"
                                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                                     allowFullScreen
                                     className="absolute inset-0 w-full h-full rounded-xl"
                                     onLoad={() => {
                                         if (isIntersecting && iframeRef.current?.contentWindow) {
-                                            iframeRef.current.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
+                                            setTimeout(() => {
+                                                if (!isMuted) {
+                                                    iframeRef.current?.contentWindow?.postMessage('{"event":"command","func":"unMute","args":[]}', '*');
+                                                }
+                                                iframeRef.current?.contentWindow?.postMessage('{"event":"command","func":"playVideo","args":[]}', '*');
+                                            }, 500);
                                         }
                                     }}
                                 />
+                                {isMuted && isIntersecting && (
+                                    <button 
+                                        onClick={(e) => {
+                                            e.stopPropagation();
+                                            setIsMuted(false);
+                                            if (iframeRef.current?.contentWindow) {
+                                                iframeRef.current.contentWindow.postMessage('{"event":"command","func":"unMute","args":[]}', '*');
+                                            }
+                                        }}
+                                        className="absolute bottom-4 right-4 bg-black/70 hover:bg-black/90 text-white px-4 py-2 rounded-full flex items-center gap-2 backdrop-blur-sm transition-all shadow-lg z-20 group cursor-pointer"
+                                    >
+                                        <VolumeX className="w-4 h-4 group-hover:scale-110 transition-transform" />
+                                        <span className="text-sm font-medium">Click to Unmute</span>
+                                    </button>
+                                )}
                             </div>
                         </div>
 
