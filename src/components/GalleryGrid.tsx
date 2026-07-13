@@ -20,6 +20,10 @@ import b2 from "../assets/gallery/B2.jpeg";
 import b3 from "../assets/gallery/B3.jpg";
 import b4 from "../assets/gallery/B4.jpg";
 import b5 from "../assets/gallery/B5.jpg";
+import b8 from "../assets/images/Project/B8.jpg";
+import b9 from "../assets/images/Project/B9.jpg";
+import b10 from "../assets/images/Project/B10.jpg";
+import b11 from "../assets/images/Project/B11.jpg";
 
 const row1 = [
   { image: img1,      title: "Drone 3D Design" },
@@ -30,6 +34,8 @@ const row1 = [
   { image: meeting_2, title: "Mentorship Session" },
   { image: b1, title: "Field Test at UIU" },
   { image: b2, title: "Drone on Field" },
+  { image: b8, title: "Project Raven" },
+  { image: b9, title: "Flight Preparation" },
 ];
 
 const row2 = [
@@ -43,6 +49,8 @@ const row2 = [
   { image: b3, title: "Flight Test" },
   { image: b4, title: "UIU Campus Flight" },
   { image: b5, title: "Sky Flight" },
+  { image: b10, title: "Team Inspection" },
+  { image: b11, title: "Field Operation" },
 ];
 
 /* Duplicate arrays so the marquee loops seamlessly */

@@ -20,6 +20,10 @@ import b2 from "../assets/gallery/B2.jpeg";
 import b3 from "../assets/gallery/B3.jpg";
 import b4 from "../assets/gallery/B4.jpg";
 import b5 from "../assets/gallery/B5.jpg";
+import b8 from "../assets/images/Project/B8.jpg";
+import b9 from "../assets/images/Project/B9.jpg";
+import b10 from "../assets/images/Project/B10.jpg";
+import b11 from "../assets/images/Project/B11.jpg";
 
 const galleryItems = [
   {
@@ -111,6 +115,26 @@ const galleryItems = [
     image: b5,
     title: "Sky Flight",
     description: "Drone soaring high in the sky.",
+  },
+  {
+    image: b8,
+    title: "Project Raven",
+    description: "Raven on the grassy field.",
+  },
+  {
+    image: b9,
+    title: "Flight Preparation",
+    description: "Preparing Raven drone for flight.",
+  },
+  {
+    image: b10,
+    title: "Team Inspection",
+    description: "Team inspecting the drone setup.",
+  },
+  {
+    image: b11,
+    title: "Field Operation",
+    description: "Operating the drone in the field.",
   },
 ];
 

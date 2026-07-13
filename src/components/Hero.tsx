@@ -118,12 +118,12 @@ const Hero = () => {
   ];
 
   const vehicleFeatures = [
-    { text: 'Lightweight carbon fiber frame engineered for strength and endurance' },
-    { text: 'Extended flight duration of up to 50 minutes per mission' },
-    { text: 'AI-driven flight controller for intelligent navigation and stability' },
-    { text: '4K HD camera with 3-axis gimbal for smooth and stable imaging' },
-    { text: 'Real-time telemetry and video transmission over a 20km range' },
-    { text: 'Modular architecture allowing customizable mission payloads' },
+    { text: 'Hybrid aluminum & carbon fiber airframe engineered for strength, modularity, and lightweight performance.' },
+    { text: 'Up to 50 minutes of autonomous flight endurance powered by a custom 6S2P Amprius lithium-ion battery system.' },
+    { text: 'NVIDIA Jetson Orin NX 16GB enables real-time onboard AI, object detection, and autonomous decision-making.' },
+    { text: 'Fully autonomous navigation using ArduPilot with waypoint missions, survey mapping, and precision payload delivery.' },
+    { text: 'Long-range communications via 900 MHz telemetry, 2.4 GHz command & control, and 5.8 GHz HD video transmission.' },
+    { text: 'Modular architecture supporting interchangeable payloads, rapid maintenance, and future hardware expansion.' },
   ];
 
   // Recent Updates Carousel (sorted by most recent date first from shared data)
@@ -393,7 +393,7 @@ const Hero = () => {
               </h3>
 
               <p className="text-slate-400 leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-                Purpose-built for autonomous competition missions — every component from the carbon fiber skeleton to the AI compute stack is engineered for maximum performance.
+                Designed and built by the UIU Aerial Robotics Team, the UART UAV is a research-grade autonomous platform developed for long-endurance, AI-powered, and mission-critical operations. Every subsystem—from the hybrid airframe and modular power system to the onboard edge AI and autonomous flight software—is engineered for reliability, adaptability, and high-performance autonomous missions.
               </p>
 
               {/* Feature list — no card, clean */}

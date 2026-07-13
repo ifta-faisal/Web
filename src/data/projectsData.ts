@@ -16,6 +16,10 @@ import raven4 from "../assets/images/Project/B4.jpg";
 import raven5 from "../assets/images/Project/B5.jpg";
 import raven6 from "../assets/images/Project/B6.jpg";
 import raven7 from "../assets/images/Project/B7.jpg";
+import raven8 from "../assets/images/Project/B8.jpg";
+import raven9 from "../assets/images/Project/B9.jpg";
+import raven10 from "../assets/images/Project/B10.jpg";
+import raven11 from "../assets/images/Project/B11.jpg";
 
 export interface ProjectSpec { label: string; value: string; }
 export interface ProjectDoc { title: string; url: string; }
@@ -48,7 +52,7 @@ export const projectsData: ProjectData[] = [
       { label: "Perception Sensors", value: "Siyi A8 Mini" },
       { label: "Software Environment", value: "Python,c++,Bash script" }
     ],
-    media: [raven1, raven2, raven3, raven4, raven5, raven6, raven7],
+    media: [raven1, raven2, raven3, raven4, raven5, raven6, raven7, raven8, raven9, raven10, raven11],
     docs: [
       { title: "Aircraft", url: "#" },
       { title: "Payload", url: "#" },
