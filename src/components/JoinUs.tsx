@@ -344,7 +344,7 @@ const JoinUs = () => {
         /* ══ ACCORDION (OPEN POSITIONS) ══════════════════════════════ */
         .ju-teams { background: transparent; }
         .ju-accord-grid {
-          display: grid; grid-template-columns: repeat(auto-fill, minmax(520px, 1fr)); gap: 1rem;
+          display: grid; grid-template-columns: repeat(auto-fill, minmax(520px, 1fr)); gap: 1rem; align-items: start;
         }
         @media(max-width: 600px) { .ju-accord-grid { grid-template-columns: 1fr; } }
 
