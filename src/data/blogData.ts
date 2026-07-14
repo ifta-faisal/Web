@@ -10,6 +10,15 @@ import faisalImg from '../assets/images/Team/member4.png';
 import OnBoard from '../assets/images/Blog/On_Board.jpeg';  
 import Tele from '../assets/images/Blog/Tele.jpeg';  
 
+// ─── Blog 1 Imports ───
+import blog1Cover from '../assets/images/Blog/Blog_1/Blog_1cover.jpeg';
+import bolg1 from '../assets/images/Blog/Blog_1/Bolg1.jpeg';
+import blog2 from '../assets/images/Blog/Blog_1/Blog2.jpeg';
+import blog3 from '../assets/images/Blog/Blog_1/Blog3.jpeg';
+import blog4 from '../assets/images/Blog/Blog_1/Blog4.jpeg';
+import blog5 from '../assets/images/Blog/Blog_1/Blog5.jpeg';
+import blog6 from '../assets/images/Blog/Blog_1/Blog6.jpeg';
+
 export interface BlogPost {
   id: number;
   title: string;
@@ -91,14 +100,14 @@ Throughout a single autonomous flight, the aircraft must:</p>
   <li>Maintain safe autonomous operation</li>
 </ul>
 <p>Each capability depends on every other subsystem working together. Success is determined not by one individual component, but by the reliability of the complete system.</p>
-<img src="${droneImg}" alt="Competition Mission Illustration" class="blog-section-img" />
+<img src="${bolg1}" alt="Competition Mission Illustration" class="blog-section-img" />
 
 <h2>Designing Around Reliability</h2>
 <p>One of the first engineering decisions we made was to prioritize reliability over complexity.
 Rather than maximizing speed or aggressive flight performance, we focused on creating an aircraft capable of completing the entire mission without failures or safety violations.
 This philosophy influenced nearly every design decision—from airframe selection and power distribution to onboard computing and mission software.
 <strong>Reliability became our primary design metric.</strong></p>
-<img src="${suasImg}" alt="Airframe Photograph" class="blog-section-img" />
+<img src="${blog2}" alt="Airframe Photograph" class="blog-section-img" />
 
 <h2>A Modular System</h2>
 <p>Instead of treating navigation, perception, mapping, and obstacle avoidance as isolated features, the aircraft was designed as a unified autonomous platform.</p>
@@ -115,34 +124,34 @@ These include:</p>
   <li>Payload Delivery</li>
 </ul>
 <p>Each subsystem performs a specialized task while contributing to the overall mission.</p>
-<img src="${missionImg}" alt="System Architecture Diagram" class="blog-section-img" />
+<img src="${blog4}" alt="System Architecture Diagram" class="blog-section-img" />
 
 <h2>AI at the Center of Perception</h2>
 <p>Traditional object detection systems often require thousands of labeled images before they can recognize a new object.
 Our approach explores a different direction.
 The UAV employs a zero-shot vision-language detection pipeline powered by Grounding DINO V2, allowing the system to identify mission targets using natural language prompts instead of task-specific training.
 This significantly reduces development time while increasing flexibility for future missions.</p>
-<img src="${droneImg}" alt="Grounding DINO Detection Example" class="blog-section-img" />
+
 
 <h2>Mapping the Mission Environment</h2>
 <p>Situational awareness is essential for autonomous decision-making.</p>
 During flight, the UAV continuously captures overlapping aerial imagery together with GPS metadata.
 These images are processed to generate a high-resolution orthographic map of the mission area, providing an accurate representation of the operational environment.
 The mapping pipeline is designed to minimize distortion while preserving spatial accuracy.<p>
-<img src="${missionImg}" alt="Mapping Result" class="blog-section-img" />
+<img src="${blog3}" alt="Mapping Result" class="blog-section-img" />
 
 <h2>Safe Navigation</h2>
 <p>Autonomy is only valuable if it remains safe.
 To improve operational reliability, the aircraft integrates LiDAR-based obstacle detection into the navigation pipeline.
 The system continuously monitors nearby obstacles and adjusts its flight path whenever necessary, allowing the UAV to safely continue its mission without manual intervention.
 This capability becomes particularly important in dynamic or partially unknown environments.</p>
-<img src="${suasImg}" alt="Obstacle Avoidance Illustration" class="blog-section-img" />
+
 
 <h2>Software Behind the Aircraft</h2>
-<p>The hardware is only one part of the system.</p>
-<p>Mission planning, monitoring, telemetry, and subsystem communication are coordinated through a custom web-based Ground Control Station developed by the team.</p>
-<p>The architecture separates mission management, perception, mapping, and flight control into independent services, making the platform easier to maintain, expand, and test.</p>
-<img src="${missionImg}" alt="GCS Screenshot" class="blog-section-img" />
+<p>The hardware is only one part of the system.
+Mission planning, monitoring, telemetry, and subsystem communication are coordinated through a custom web-based Ground Control Station developed by the team.
+The architecture separates mission management, perception, mapping, and flight control into independent services, making the platform easier to maintain, expand, and test.</p>
+<img src="${blog5}" alt="GCS Screenshot" class="blog-section-img" />
 
 <h2>Engineering as a Team</h2>
 <p>Developing an autonomous UAV requires expertise from multiple engineering disciplines.</p>
@@ -154,7 +163,7 @@ This capability becomes particularly important in dynamic or partially unknown e
   <li>Integration engineers ensure every subsystem works together.</li>
 </ul>
 <p>Our UAV is the result of continuous collaboration across these domains.</p>
-<img src="${droneImg}" alt="Team Working Photograph" class="blog-section-img" />
+<img src="${blog6}" alt="Team Working Photograph" class="blog-section-img" />
 
 <h2>Looking Ahead</h2>
 <p>The 2026 platform represents an important milestone in UART's ongoing research into autonomous aerial systems.
@@ -192,7 +201,7 @@ The lessons learned throughout this project will guide the evolution of future U
     date: "July 10, 2026",
     readTime: "8 min read",
     category: "Leadership",
-    image: suasImg, // TODO: Replace with actual UAV hero image
+    image: blog1Cover, // Updated with actual UAV hero image
   },
   {
     id: 8,

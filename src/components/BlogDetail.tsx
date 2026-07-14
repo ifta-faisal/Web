@@ -182,8 +182,8 @@ const BlogDetail = () => {
               }
               .blog-section-img {
                 width: 100%;
-                max-height: 420px;
-                object-fit: cover;
+                height: auto;
+                object-fit: contain;
                 border-radius: 0.75rem;
                 margin: 1.5rem 0 2rem;
                 border: 1px solid rgba(255, 255, 255, 0.08);
