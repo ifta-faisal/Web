@@ -15,6 +15,7 @@ import aether2 from "../assets/images/Project/Aether_2.JPG";
 import aether3 from "../assets/images/Project/Aether_3.JPG";
 import aether4 from "../assets/images/Project/Aether_4.jpg";
 import aether5 from "../assets/images/Project/Aether_5.jpg";
+import aetherVideo from "../assets/video/projrct_video/eather.mp4";
 
 import raven1 from "../assets/images/Project/B1.jpeg";
 import raven2 from "../assets/images/Project/B2.jpeg";
@@ -103,6 +104,6 @@ export const projectsData: ProjectData[] = [
     docs: [
       { title: "AETHER Systems Manual", url: "https://drive.google.com/file/d/1DhEqMxO5iuOlhus2vQK1eWrgj9lGsEJs/view?usp=sharing" },
     ],
-    videoUrl: "https://www.youtube.com/embed/R9LzS1dUryI?si=S05b4yigzyW1e7Pf"
+    videoUrl: aetherVideo
   },
 ];

@@ -8,6 +8,7 @@ const ProjectDetail = () => {
   const project = projectsData.find(p => p.id === Number(id));
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
+  const videoRef = useRef<HTMLVideoElement>(null);
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -19,11 +20,19 @@ const ProjectDetail = () => {
     const observer = new IntersectionObserver(
       (entries) => {
         entries.forEach((entry) => {
-          if (iframeRef.current && iframeRef.current.contentWindow) {
-            if (entry.isIntersecting) {
+          if (entry.isIntersecting) {
+            if (iframeRef.current && iframeRef.current.contentWindow) {
               iframeRef.current.contentWindow.postMessage('{"event":"command","func":"playVideo","args":""}', '*');
-            } else {
+            }
+            if (videoRef.current) {
+              videoRef.current.play();
+            }
+          } else {
+            if (iframeRef.current && iframeRef.current.contentWindow) {
               iframeRef.current.contentWindow.postMessage('{"event":"command","func":"pauseVideo","args":""}', '*');
+            }
+            if (videoRef.current) {
+              videoRef.current.pause();
             }
           }
         });
@@ -34,10 +43,16 @@ const ProjectDetail = () => {
     if (iframeRef.current) {
       observer.observe(iframeRef.current);
     }
+    if (videoRef.current) {
+      observer.observe(videoRef.current);
+    }
 
     return () => {
       if (iframeRef.current) {
         observer.unobserve(iframeRef.current);
+      }
+      if (videoRef.current) {
+        observer.unobserve(videoRef.current);
       }
     };
   }, [project?.videoUrl]);
@@ -138,7 +153,7 @@ const ProjectDetail = () => {
                   <h3 className="text-2xl sm:text-3xl font-bold text-white mb-2">Video Coming Soon</h3>
                   <p className="text-gray-400 max-w-md">This video is currently being updated and will be uploaded soon. Stay tuned!</p>
                 </div>
-              ) : (
+              ) : project.videoUrl.includes('youtube.com') || project.videoUrl.includes('youtu.be') ? (
                 <iframe
                   ref={iframeRef}
                   src={`${project.videoUrl}${project.videoUrl.includes('?') ? '&' : '?'}autoplay=1&mute=1&rel=0&enablejsapi=1`}
@@ -147,6 +162,16 @@ const ProjectDetail = () => {
                   allowFullScreen
                   className="absolute inset-0 w-full h-full object-cover"
                 ></iframe>
+              ) : (
+                <video
+                  ref={videoRef}
+                  src={project.videoUrl}
+                  autoPlay
+                  muted
+                  loop
+                  controls
+                  className="absolute inset-0 w-full h-full object-cover"
+                />
               )}
             </div>
           </div>
