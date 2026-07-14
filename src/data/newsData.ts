@@ -2,14 +2,14 @@ import workshop from '../assets/images/news/workshop.jpeg';
 import ovtidose from '../assets/images/news/ovtidose.jpg';
 import handson from '../assets/images/news/handson.jpeg';
 import loopinc from '../assets/images/news/loopinc.jpg';
-import ua from '../assets/images/UA1.jpeg';
+import ua from '../assets/images/news/UA1.jpeg';
 import recruit2 from '../assets/images/news/Recruit2.jpeg';
 import recruit1 from '../assets/images/news/Recruit1.jpeg';
 import vcvist from '../assets/images/news/VC_Vist_21_May.jpeg';
 import amprius from '../assets/images/Sponsor/amp.png';
 import autodesk from '../assets/images/news/autodesk_1.jpg';
 import solidworks from '../assets/images/news/solidworks.jpg';
-import suaslogo from '../assets/images/suas.png';
+import suaslogo from '../assets/images/logo/suas.png';
 import poster from '../assets/images/news/poster.png';
 
 export interface NewsItem {

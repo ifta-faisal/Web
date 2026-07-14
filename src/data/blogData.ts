@@ -1,14 +1,13 @@
 import mentor1 from '../assets/images/Advisor/Mentor1.jpeg';
 import vcImage from '../assets/images/Advisor/VC.jpg';
 import projectImg from '../assets/images/Project/project1.jpeg';
-import droneImg from '../assets/images/drone1.jpeg';
+
 import missionImg from '../assets/images/DetailedFeatures/mission_planning_ui.png';
-import suasImg from '../assets/images/suas.png';
+import suasImg from '../assets/images/logo/suas.png';
 import israfilImg from '../assets/images/Team/israfil.png';
 import biplobImg from '../assets/images/Team/alfi.png';
 import faisalImg from '../assets/images/Team/member4.png';
-import OnBoard from '../assets/images/Blog/On_Board.jpeg';  
-import Tele from '../assets/images/Blog/Tele.jpeg';  
+
 
 // ─── Blog 1 Imports ───
 import blog1Cover from '../assets/images/Blog/Blog_1/Blog_1cover.jpeg';
@@ -24,6 +23,22 @@ import blog2Cover from '../assets/images/Blog/Blog_2/Blog_2cover.jpeg';
 import b2Blog2 from '../assets/images/Blog/Blog_2/Blog2.jpeg';
 import b2Blog4 from '../assets/images/Blog/Blog_2/Blog4.png';
 import b2Blog5 from '../assets/images/Blog/Blog_2/Blog5.jpeg';
+
+// ─── Blog 3 Imports ───
+import blog3Cover from '../assets/images/Blog/3/Blog_3cover.png';
+import b3Blog3 from '../assets/images/Blog/3/Blog3.png';
+
+// ─── Blog 6 Imports ───
+import blog6Cover from '../assets/images/Blog/6/cover.jpeg';
+import b6OnBoard from '../assets/images/Blog/6/On_Board.jpeg';
+import b6Tele from '../assets/images/Blog/6/Tele.jpeg';
+import b6Groundstation from '../assets/images/Blog/6/groundstation.jpeg';
+
+// ─── Blog 7 Imports ───
+import blog7Cover from '../assets/images/Blog/7/cover.jpeg';
+import b7Blog1 from '../assets/images/Blog/7/blog1.png';
+import b7Blog2 from '../assets/images/Blog/7/blog2.jpeg';
+import b7Blog3 from '../assets/images/Blog/7/blog3.jpeg';
 
 export interface BlogPost {
   id: number;
@@ -343,7 +358,7 @@ Future iterations will focus on:</p>
 `,
     author: "MD. Israfil Hossain • Md. Biplob • Ifta Faisal",
     role: "Research Members, UIU Aerial Robotics Team",
-    authorImg: droneImg,
+    authorImg: "",
     date: "July 10, 2026",
     readTime: "9 min read",
     category: "Technology",
@@ -373,7 +388,7 @@ Future iterations will focus on:</p>
   <li>Reduced model retraining</li>
 </ul>
 <p>These benefits make zero-shot detection particularly suitable for research and rapidly evolving autonomous systems.</p>
-<img src="${missionImg}" alt="Comparison Diagram: Traditional Detection vs. Zero-Shot Detection" class="blog-section-img" />
+
 
 <h2>Selecting Grounding DINO V2</h2>
 <p>After evaluating different approaches, we selected Grounding DINO V2 because of its strong performance in open-vocabulary object detection.</p>
@@ -387,7 +402,7 @@ Future iterations will focus on:</p>
   <li>Continuous improvements from the research community</li>
 </ul>
 <p>Its flexibility aligns well with the unpredictable nature of autonomous missions.</p>
-<img src="${droneImg}" alt="Grounding DINO Architecture or Workflow" class="blog-section-img" />
+<img src="${b3Blog3}" alt="Grounding DINO Architecture or Workflow" class="blog-section-img" />
 
 <h2>Detecting Mission Targets</h2>
 <p>During the SUAS mission, the UAV processes images captured by the onboard camera in real time.</p>
@@ -403,7 +418,7 @@ Future iterations will focus on:</p>
 </ul>
 <p>The model evaluates how closely different regions of the image match each prompt and generates bounding boxes around the most relevant detections.</p>
 <p>This prompt-based approach allows the system to adapt without requiring additional model training.</p>
-<img src="${missionImg}" alt="Detection Result with Bounding Boxes" class="blog-section-img" />
+
 
 <h2>Improving Detection Reliability</h2>
 <p>Real-world environments introduce numerous challenges, including varying lighting conditions, shadows, occlusions, and background clutter.</p>
@@ -416,7 +431,7 @@ Future iterations will focus on:</p>
   <li>Temporal consistency across consecutive frames</li>
 </ul>
 <p>These additional validation steps help reduce false positives while increasing confidence in the final detection results.</p>
-<img src="${droneImg}" alt="Detection Pipeline Illustration" class="blog-section-img" />
+
 
 <h2>From Detection to Decision</h2>
 <p>Object detection is only one part of the perception pipeline.</p>
@@ -430,7 +445,7 @@ Future iterations will focus on:</p>
   <li>Mission reporting</li>
 </ul>
 <p>This integration transforms computer vision from a standalone capability into a core component of the UAV's autonomous workflow.</p>
-<img src="${missionImg}" alt="Diagram Showing Detection to Mission Workflow" class="blog-section-img" />
+
 
 <h2>Looking Ahead</h2>
 <p>Zero-shot detection represents an exciting direction for autonomous aerial systems, but there is still room for improvement.</p>
@@ -475,7 +490,7 @@ Future iterations will focus on:</p>
     date: "July 10, 2026",
     readTime: "10 min read",
     category: "Artificial Intelligence",
-    image: missionImg, // TODO: Replace with actual detection hero image
+    image: blog3Cover, // Updated with actual detection hero image
   },
   {
     id: 10,
@@ -513,7 +528,7 @@ Future iterations will focus on:</p>
   <li>Timestamp</li>
 </ul>
 <p>This additional information allows every image to be placed in its correct geographical position during the mapping process.</p>
-<img src="${droneImg}" alt="Camera Capturing During Flight" class="blog-section-img" />
+
 
 <h2>Building the Map</h2>
 <p>Once the images have been collected, they are processed through an image stitching pipeline.</p>
@@ -541,7 +556,7 @@ Future iterations will focus on:</p>
   <li>Reliable map projection</li>
 </ul>
 <p>These considerations ensure the final map can be used confidently during mission analysis.</p>
-<img src="${droneImg}" alt="Geo-Referenced Mapping Example" class="blog-section-img" />
+
 
 <h2>Supporting Autonomous Operations</h2>
 <p>The generated aerial map is more than a visual output—it becomes a valuable source of information for the overall autonomous system.</p>
@@ -595,97 +610,86 @@ Future iterations will focus on:</p>
 `,
     author: "MD. Israfil Hossain • Md. Biplob • Ifta Faisal",
     role: "Research Members, UIU Aerial Robotics Team",
-    authorImg: droneImg,
+    authorImg: "",
     date: "July 10, 2026",
     readTime: "9 min read",
     category: "Research",
-    image: droneImg, // TODO: Replace with actual mapping hero image
+    image: "", // TODO: Replace with actual mapping hero image
   },
   {
     id: 11,
-    title: "Designing Safe Navigation: LiDAR-Based Obstacle Avoidance",
-    excerpt: "Autonomous flight is only successful when it is safe. Learn how UART integrates LiDAR-based obstacle avoidance to help the UAV navigate complex environments while maintaining mission reliability.",
+    title: "Building the Airframe: Designing a Lightweight and Reliable UAV",
+    excerpt: "Every successful UAV starts with a strong foundation. Explore how UART designed a lightweight, durable, and modular airframe capable of supporting autonomous missions in the SUAS 2026 competition.",
     content: `
-<h2>Safety Comes First</h2>
-<p>An autonomous UAV must do more than follow a predefined flight path. It must continuously observe its surroundings and react to unexpected obstacles without human intervention.
-Whether operating near trees, poles, buildings, or other aerial objects, the aircraft should be capable of making safe decisions while continuing its mission.
-For our SUAS 2026 platform, obstacle avoidance was designed as a core safety feature rather than an optional capability.</p>
+<h2>The Backbone of Every UAV</h2>
+<p>An autonomous UAV is only as reliable as the structure that supports it. While artificial intelligence and navigation systems often receive the most attention, the airframe plays an equally important role in ensuring safe and stable flight.</p>
+<p>For the SUAS 2026 platform, our goal was to design an airframe that could carry multiple onboard systems while remaining lightweight, durable, and easy to maintain. Every design decision was made with long-term reliability and mission performance in mind.</p>
 
-<h2>Why Obstacle Avoidance Matters</h2>
-<p>Unexpected obstacles can appear at any stage of an autonomous mission.
-Without an effective avoidance system, a single collision could lead to mission failure or even damage the aircraft.
-Our obstacle avoidance system helps the UAV:</p>
+<h2>Defining Our Design Goals</h2>
+<p>Before selecting materials or components, we identified the characteristics required for a competition-ready aircraft.</p>
+<p>Our design objectives included:</p>
 <ul>
-  <li>Detect nearby obstacles</li>
-  <li>Maintain a safe flight distance</li>
-  <li>Adjust its flight path automatically</li>
-  <li>Continue the mission safely</li>
-  <li>Improve overall mission reliability</li>
+  <li>Lightweight construction</li>
+  <li>High structural strength</li>
+  <li>Easy transportation</li>
+  <li>Rapid assembly</li>
+  <li>Stable flight characteristics</li>
+  <li>Modular component installation</li>
 </ul>
-<p>Obstacle avoidance allows the aircraft to operate more confidently in dynamic environments.</p>
-<img src="${droneImg}" alt="Example of Obstacles During Flight" class="blog-section-img" />
+<p>These goals became the foundation for every mechanical design decision throughout the project.</p>
+<img src="${b7Blog1}" alt="Initial CAD Design" class="blog-section-img" />
 
-<h2>Selecting LiDAR Technology</h2>
-<p>To detect surrounding objects, our UAV uses a 2D LiDAR sensor.
-Unlike traditional cameras, LiDAR measures distance directly by emitting laser pulses and calculating the time required for the reflected signal to return.
-This allows the system to estimate the distance between the UAV and nearby obstacles with high accuracy.</p>
-<p>Some advantages of LiDAR include:</p>
+<h2>Why Carbon Fiber?</h2>
+<p>Material selection has a significant impact on UAV performance.</p>
+<p>After evaluating different options, we selected carbon fiber because it offers excellent strength while keeping the aircraft lightweight.</p>
+<p>Some of the advantages include:</p>
 <ul>
-  <li>Accurate distance measurement</li>
-  <li>Reliable obstacle detection</li>
-  <li>Fast response time</li>
-  <li>Lightweight design</li>
-  <li>Independence from lighting conditions</li>
+  <li>High strength-to-weight ratio</li>
+  <li>Excellent rigidity</li>
+  <li>Low vibration</li>
+  <li>Corrosion resistance</li>
+  <li>Long service life</li>
 </ul>
-<p>These characteristics make LiDAR well suited for autonomous navigation.</p>
-<img src="${suasImg}" alt="LiDAR Sensor Photograph" class="blog-section-img" />
+<p>These properties help maintain stable flight while supporting sensitive onboard electronics.</p>
+<img src="${b7Blog2}" alt="Carbon Fiber Frame" class="blog-section-img" />
 
-<h2>Integrating LiDAR with the Flight Controller</h2>
-<p>The LiDAR continuously scans the environment while the UAV is in flight.
-Sensor data is transmitted to the flight controller, where it is processed to determine whether any obstacle is within a predefined safety distance.
-If an obstacle is detected, the navigation system responds by adjusting the aircraft's trajectory before continuing toward the next waypoint.
-<p>This process occurs automatically throughout the mission without requiring pilot intervention.</p>
-<img src="${missionImg}" alt="LiDAR Data Flow Diagram" class="blog-section-img" />
-
-<h2>Improving Detection Reliability</h2>
-<p>Real-world environments often introduce sensor noise and unexpected measurements.
-To improve the accuracy of obstacle detection, multiple validation techniques are incorporated into the navigation pipeline.
-These include:</p>
+<h2>Choosing the X-Frame Configuration</h2>
+<p>The UAV uses a quadrotor X-frame configuration, a design widely adopted in autonomous aerial systems due to its balance between stability and maneuverability.</p>
+<p>The symmetrical layout offers several benefits:</p>
 <ul>
-  <li>Continuous distance monitoring</li>
-  <li>Consecutive scan validation</li>
-  <li>Safety distance thresholds</li>
-  <li>Noise filtering</li>
-  <li>Stable trajectory adjustment</li>
+  <li>Balanced thrust distribution</li>
+  <li>Improved flight stability</li>
+  <li>Simplified control algorithms</li>
+  <li>Better weight distribution</li>
+  <li>Easier maintenance</li>
 </ul>
-<p>Together, these techniques reduce false detections while improving overall flight safety.</p>
-<img src="${droneImg}" alt="Obstacle Detection Visualization" class="blog-section-img" />
+<p>This configuration also provides sufficient space for sensors, batteries, and onboard computing hardware.</p>
+<img src="${b7Blog3}" alt="X-Frame Configuration" class="blog-section-img" />
 
-<h2>Supporting Autonomous Missions</h2>
-<p>Obstacle avoidance does not operate independently.
-It works together with navigation, mapping, and computer vision to help the UAV complete its mission safely and efficiently.
-This integrated approach allows the aircraft to:</p>
+<h2>Designing for Easy Maintenance</h2>
+<p>A competition aircraft should not only fly well but also be easy to repair and transport.</p>
+<p>To simplify field operations, the airframe was designed with a modular structure that allows components to be replaced without rebuilding the entire aircraft.</p>
+<p>This modular approach provides:</p>
 <ul>
-  <li>Continue waypoint navigation</li>
-  <li>Avoid unexpected obstacles</li>
-  <li>Protect onboard hardware</li>
-  <li>Reduce mission risk</li>
-  <li>Increase operational confidence</li>
+  <li>Faster maintenance</li>
+  <li>Easier upgrades</li>
+  <li>Reduced repair time</li>
+  <li>Better accessibility</li>
+  <li>Improved transportation</li>
 </ul>
-<p>Safe navigation is one of the key building blocks of a fully autonomous UAV.</p>
-<img src="${suasImg}" alt="Flight Test Photograph" class="blog-section-img" />
+<p>These features are especially valuable during competitions where preparation time is limited.</p>
 
 <h2>Looking Ahead</h2>
-<p>Obstacle avoidance technology continues to evolve as autonomous systems become more capable.
-Future development will focus on:</p>
+<p>The current airframe provides a strong foundation for autonomous flight, but mechanical development never truly stops.</p>
+<p>Future improvements will focus on:</p>
 <ul>
-  <li>Three-dimensional obstacle detection</li>
-  <li>Sensor fusion with cameras</li>
-  <li>Improved avoidance algorithms</li>
-  <li>Dynamic path planning</li>
-  <li>Enhanced real-time navigation</li>
+  <li>Additional weight reduction</li>
+  <li>Improved vibration isolation</li>
+  <li>Custom-designed mechanical components</li>
+  <li>Better cable management</li>
+  <li>Enhanced modularity</li>
 </ul>
-<p>These improvements will help UART develop increasingly intelligent UAVs capable of operating safely in more challenging environments.</p>
+<p>These improvements will continue to increase the reliability and efficiency of future UART UAV platforms.</p>
 
 <div class="about-authors-section">
   <h2>About the Authors</h2>
@@ -714,11 +718,11 @@ Future development will focus on:</p>
 `,
     author: "MD. Israfil Hossain • Md. Biplob • Ifta Faisal",
     role: "Research Members, UIU Aerial Robotics Team",
-    authorImg: suasImg,
-    date: "August 7, 2026",
-    readTime: "9 min read",
-    category: "Technology",
-    image: suasImg, // TODO: Replace with actual LiDAR/obstacle avoidance hero image
+    authorImg: blog7Cover,
+    date: "August 21, 2026",
+    readTime: "8 min read",
+    category: "Mechanical",
+    image: blog7Cover,
   },
   {
     id: 12,
@@ -742,7 +746,7 @@ The Ground Control Station supports:</p>
   <li>Mission progress tracking</li>
 </ul>
 <p>A web-based interface also allows the platform to remain flexible and accessible across different devices.</p>
-<img src="${missionImg}" alt="Ground Control Station Screenshot" class="blog-section-img" />
+<img src="${b6Groundstation}" alt="Ground Control Station Screenshot" class="blog-section-img" />
 
 <h2>A Modular Software Architecture</h2>
 <p>Instead of combining every feature into a single application, each major subsystem operates independently while communicating through a shared architecture.
@@ -757,7 +761,7 @@ Our software architecture includes:</p>
   <li>Ground Control Station</li>
 </ul>
 <p>Each module performs a dedicated task while contributing to the overall mission.</p>
-<img src="${droneImg}" alt="Software Architecture Diagram" class="blog-section-img" />
+
 
 <h2>Communication Between Systems</h2>
 <p>Reliable communication is essential during autonomous flight.
@@ -771,7 +775,7 @@ This communication enables the aircraft to:</p>
   <li>Update mission progress</li>
 </ul>
 <p>By maintaining continuous communication, operators remain informed throughout every stage of the mission.</p>
-<img src="${Tele}" alt="Communication Flow Diagram" class="blog-section-img" />
+<img src="${b6Tele}" alt="Communication Flow Diagram" class="blog-section-img" />
 
 <h2>Onboard Processing</h2>
 <p>Some tasks require immediate decision-making during flight.
@@ -785,7 +789,7 @@ These include:</p>
   <li>Autonomous decision support</li>
 </ul>
 <p>Separating high-level processing from flight control improves both stability and overall system performance.</p>
-<img src="${OnBoard}" alt="Companion Computer Photograph" class="blog-section-img" />
+<img src="${b6OnBoard}" alt="Companion Computer Photograph" class="blog-section-img" />
 
 <h2>Testing Before Flight</h2>
 <p>Reliable software is built through continuous testing.
@@ -799,7 +803,7 @@ Our testing process includes:</p>
   <li>Ground station testing</li>
 </ul>
 <p>This approach allows potential issues to be identified and resolved before actual flight operations.</p>
-<img src="${droneImg}" alt="Simulation Screenshot" class="blog-section-img" />
+
 
 <h2>Building for the Future</h2>
 <p>One of the biggest advantages of a modular architecture is scalability.
@@ -850,7 +854,7 @@ As our research continues, the software ecosystem will evolve alongside new hard
     date: "August 14, 2026",
     readTime: "10 min read",
     category: "Software",
-    image: missionImg, // TODO: Replace with actual GCS hero image
+    image: blog6Cover, // Updated with actual GCS hero image
   },
 ];
 

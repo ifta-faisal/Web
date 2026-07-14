@@ -4,7 +4,7 @@ import { ArrowLeft, Cpu, Wind, Radio, Eye, Shield, Zap, ChevronRight, MapPin, Na
 import img1 from "../assets/images/DetailedFeatures/B6.jpg";
 import jetson from "../assets/images/DetailedFeatures/jetson.png";
 import lidar from "../assets/images/DetailedFeatures/lidar.png";
-import droneImg from "../assets/images/B6_png.png";
+import droneImg from "../assets/images/DetailedFeatures/B6_png.png";
 import missionPlanningImg from "../assets/images/DetailedFeatures/map.png";
 import sysArchImg from "../assets/images/DetailedFeatures/system_architecture.png";
 import batteryImg from "../assets/images/DetailedFeatures/Battery.jpeg";
