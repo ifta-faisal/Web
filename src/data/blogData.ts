@@ -19,6 +19,12 @@ import blog4 from '../assets/images/Blog/Blog_1/Blog4.jpeg';
 import blog5 from '../assets/images/Blog/Blog_1/Blog5.jpeg';
 import blog6 from '../assets/images/Blog/Blog_1/Blog6.jpeg';
 
+// ─── Blog 2 Imports ───
+import blog2Cover from '../assets/images/Blog/Blog_2/Blog_2cover.jpeg';
+import b2Blog2 from '../assets/images/Blog/Blog_2/Blog2.jpeg';
+import b2Blog4 from '../assets/images/Blog/Blog_2/Blog4.png';
+import b2Blog5 from '../assets/images/Blog/Blog_2/Blog5.jpeg';
+
 export interface BlogPost {
   id: number;
   title: string;
@@ -209,15 +215,13 @@ The lessons learned throughout this project will guide the evolution of future U
     excerpt: "A reliable autonomous mission starts with a reliable aircraft. Discover how UART designed a lightweight, modular, and efficient flight platform for the SUAS 2026 competition.",
     content: `
 <h2>Building the Foundation of Autonomous Flight</h2>
-<p>Every successful autonomous UAV begins with a strong foundation. Before artificial intelligence can detect objects or navigation algorithms can guide the aircraft, the drone itself must provide a stable, efficient, and reliable flight platform.</p>
-
-<p>For the SUAS 2026 competition, our objective was not simply to build a drone that could fly. We wanted to engineer a platform capable of carrying multiple subsystems while maintaining stability, endurance, and ease of deployment in the field.</p>
-
-<p>Every component—from the airframe to the battery configuration—was selected with reliability and mission performance in mind.</p>
+<p>Every successful autonomous UAV begins with a strong foundation. Before artificial intelligence can detect objects or navigation algorithms can guide the aircraft, the drone itself must provide a stable, efficient, and reliable flight platform.
+For the SUAS 2026 competition, our objective was not simply to build a drone that could fly. We wanted to engineer a platform capable of carrying multiple subsystems while maintaining stability, endurance, and ease of deployment in the field.
+Every component—from the airframe to the battery configuration—was selected with reliability and mission performance in mind.</p>
 
 <h2>Defining Our Design Goals</h2>
-<p>Before selecting hardware, we established a set of engineering goals that would guide every design decision.</p>
-<p>Our primary objectives included:</p>
+<p>Before selecting hardware, we established a set of engineering goals that would guide every design decision.
+Our primary objectives included:</p>
 <ul>
   <li>Lightweight construction for improved endurance</li>
   <li>High structural rigidity to reduce vibration</li>
@@ -227,11 +231,11 @@ The lessons learned throughout this project will guide the evolution of future U
   <li>Compliance with SUAS transportation requirements</li>
 </ul>
 <p>Rather than optimizing for a single metric, we aimed to achieve a balanced platform capable of supporting the complete autonomous mission.</p>
-<img src="${droneImg}" alt="Design Sketch or CAD Model" class="blog-section-img" />
+<img src="${b2Blog2}" alt="Design Sketch or CAD Model" class="blog-section-img" />
 
 <h2>Choosing the Airframe</h2>
-<p>The aircraft adopts a quadrotor X-configuration built around a carbon fiber frame. This configuration provides a balance between maneuverability, stability, and mechanical simplicity while offering sufficient payload capacity for onboard sensors and computing hardware.</p>
-<p>Carbon fiber was selected because it offers:</p>
+<p>The aircraft adopts a quadrotor X-configuration built around a carbon fiber frame. This configuration provides a balance between maneuverability, stability, and mechanical simplicity while offering sufficient payload capacity for onboard sensors and computing hardware.
+Carbon fiber was selected because it offers:</p>
 <ul>
   <li>High strength-to-weight ratio</li>
   <li>Excellent structural rigidity</li>
@@ -240,12 +244,12 @@ The lessons learned throughout this project will guide the evolution of future U
   <li>Lightweight construction</li>
 </ul>
 <p>The modular frame design also simplifies transportation, maintenance, and future hardware upgrades.</p>
-<img src="${suasImg}" alt="Airframe Photograph" class="blog-section-img" />
+
 
 <h2>Designing the Propulsion System</h2>
-<p>Selecting the propulsion system required balancing efficiency and performance.</p>
-<p>Instead of focusing solely on maximum thrust, we evaluated components that could deliver consistent flight performance during mapping, object detection, and autonomous navigation.</p>
-<p>Our propulsion system is designed to provide:</p>
+<p>Selecting the propulsion system required balancing efficiency and performance.
+Instead of focusing solely on maximum thrust, we evaluated components that could deliver consistent flight performance during mapping, object detection, and autonomous navigation.
+Our propulsion system is designed to provide:</p>
 <ul>
   <li>Stable hover performance</li>
   <li>Efficient power consumption</li>
@@ -253,7 +257,7 @@ The lessons learned throughout this project will guide the evolution of future U
   <li>Reliable operation during long-duration missions</li>
 </ul>
 <p>This balance allows the aircraft to perform multiple mission tasks without compromising flight stability.</p>
-<img src="${droneImg}" alt="Motor and Propeller Image" class="blog-section-img" />
+
 
 <h2>Hardware Integration Analysis</h2>
 <p>Looking closely at our flight platform, several critical components work together to ensure mission success. Based on our hardware integration:</p>
@@ -266,9 +270,9 @@ The lessons learned throughout this project will guide the evolution of future U
 <p>This deliberate combination of premium off-the-shelf components and custom engineering ensures the platform exceeds SUAS requirements.</p>
 
 <h2>Powering the Aircraft</h2>
-<p>A reliable aircraft depends on a reliable power system.</p>
-<p>To maximize endurance while satisfying competition transportation requirements, we designed a battery configuration using lithium-ion cells arranged to remain within the allowable energy limits.</p>
-<p>Our power system was developed with the following priorities:</p>
+<p>A reliable aircraft depends on a reliable power system.
+To maximize endurance while satisfying competition transportation requirements, we designed a battery configuration using lithium-ion cells arranged to remain within the allowable energy limits.
+Our power system was developed with the following priorities:</p>
 <ul>
   <li>Long flight endurance</li>
   <li>Safe transportation</li>
@@ -277,12 +281,12 @@ The lessons learned throughout this project will guide the evolution of future U
   <li>Simplified electrical architecture</li>
 </ul>
 <p>Careful battery placement also improves the aircraft's center of gravity, contributing to smoother autonomous flight.</p>
-<img src="${missionImg}" alt="Battery Configuration Diagram" class="blog-section-img" />
+<img src="${b2Blog4}" alt="Battery Configuration Diagram" class="blog-section-img" />
 
 <h2>Electrical Integration</h2>
-<p>The power architecture extends beyond the batteries.</p>
-<p>Dedicated power regulation circuits ensure that sensitive onboard electronics receive stable voltage throughout the mission, reducing electrical noise and improving overall system reliability.</p>
-<p>The integrated electrical system supplies power to:</p>
+<p>The power architecture extends beyond the batteries.
+Dedicated power regulation circuits ensure that sensitive onboard electronics receive stable voltage throughout the mission, reducing electrical noise and improving overall system reliability.
+The integrated electrical system supplies power to:</p>
 <ul>
   <li>Flight Controller</li>
   <li>Companion Computer</li>
@@ -291,18 +295,18 @@ The lessons learned throughout this project will guide the evolution of future U
   <li>Electronic Speed Controllers (ESCs)</li>
 </ul>
 <p>A clean power distribution strategy helps maintain consistent performance across all onboard subsystems.</p>
-<img src="${missionImg}" alt="Wiring Diagram or PCB Layout" class="blog-section-img" />
+<img src="${b2Blog5}" alt="Electrical Integration" class="blog-section-img" />
 
 <h2>Engineering for Reliability</h2>
-<p>Every hardware decision was made with one question in mind:</p>
-<p><strong>Will this improve mission reliability?</strong></p>
-<p>Instead of chasing maximum performance numbers, we prioritized a platform that could consistently complete autonomous missions under real operating conditions.</p>
-<p>This philosophy influenced our choices in materials, propulsion, battery configuration, and electrical design.</p>
-<p>A dependable aircraft forms the foundation upon which every intelligent subsystem operates.</p>
+<p>Every hardware decision was made with one question in mind:
+<strong>Will this improve mission reliability?</strong>
+Instead of chasing maximum performance numbers, we prioritized a platform that could consistently complete autonomous missions under real operating conditions.
+This philosophy influenced our choices in materials, propulsion, battery configuration, and electrical design.
+A dependable aircraft forms the foundation upon which every intelligent subsystem operates.</p>
 
 <h2>Looking Ahead</h2>
-<p>While the current platform has demonstrated reliable performance, development continues beyond the 2026 competition.</p>
-<p>Future iterations will focus on:</p>
+<p>While the current platform has demonstrated reliable performance, development continues beyond the 2026 competition.
+Future iterations will focus on:</p>
 <ul>
   <li>Custom battery management systems (BMS)</li>
   <li>In-house electronic speed controllers (ESCs)</li>
@@ -343,7 +347,7 @@ The lessons learned throughout this project will guide the evolution of future U
     date: "July 10, 2026",
     readTime: "9 min read",
     category: "Technology",
-    image: droneImg, // TODO: Replace with actual airframe hero image
+    image: blog2Cover, // Updated with actual airframe hero image
   },
   {
     id: 9,
