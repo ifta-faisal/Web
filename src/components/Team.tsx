@@ -205,11 +205,11 @@ const Team = () => {
             <div key={index} className="group relative">
               <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-accent/20 rounded-2xl blur-xl opacity-0 group-hover:opacity-100 transition duration-500"></div>
               <div className="card-modern rounded-2xl w-full h-full">
-                <div className="relative h-72 sm:h-80 md:h-[400px] overflow-hidden rounded-t-2xl bg-white">
+                <div className="relative aspect-[6/7] sm:aspect-auto sm:h-80 md:h-[400px] overflow-hidden rounded-t-2xl bg-transparent">
                   <img
                     src={member.image}
                     alt={member.name}
-                    className={`w-full h-full object-contain group-hover:scale-110 transition-transform duration-700 ${searchParams.get('id') === member.id ? 'ju-visible' : 'ju-reveal'}`}
+                    className={`w-full h-full object-cover object-top group-hover:scale-110 transition-transform duration-700 ${searchParams.get('id') === member.id ? 'ju-visible' : 'ju-reveal'}`}
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent opacity-0 group-hover:opacity-100 transition-opacity duration-500"></div>
                   <div className="absolute top-4 left-4">
