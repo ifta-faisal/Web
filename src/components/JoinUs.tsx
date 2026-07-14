@@ -520,11 +520,16 @@ const JoinUs = () => {
           background: rgba(15,23,42,0.7); border: 1px solid rgba(255,255,255,0.08);
           border-radius: 16px; padding: 2.5rem; display: flex; flex-direction: column; gap: 1.25rem;
           backdrop-filter: blur(20px);
+          width: 100%;
+          box-sizing: border-box;
+        }
+        @media(max-width: 640px) {
+          .ju-apply-form { padding: 1.25rem; }
         }
         .ju-form-row { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
         @media(max-width: 520px) { .ju-form-row { grid-template-columns: 1fr; } }
-        .ju-form-group { display: flex; flex-direction: column; gap: .4rem; }
-        .ju-form-group label { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #94a3b8; }
+        .ju-form-group { display: flex; flex-direction: column; gap: .4rem; min-width: 0; }
+        .ju-form-group label { font-size: .78rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: #94a3b8; word-wrap: break-word; }
         .ju-form-group input,
         .ju-form-group select,
         .ju-form-group textarea {
@@ -532,6 +537,9 @@ const JoinUs = () => {
           border-radius: 8px; padding: .75rem 1rem; color: #e2e8f0;
           font-size: .95rem; outline: none;
           transition: border-color .2s, box-shadow .2s;
+          width: 100%;
+          min-width: 0;
+          box-sizing: border-box;
         }
         .ju-form-group input:focus,
         .ju-form-group select:focus,
@@ -543,6 +551,20 @@ const JoinUs = () => {
         .ju-form-group textarea::placeholder { color: #334155; }
         .ju-form-group select { appearance: none; cursor: pointer; }
         .ju-form-group select option { background: #1e293b; }
+        .ju-apply-submit {
+          width: 100%;
+          min-width: 0;
+          white-space: normal;
+          word-wrap: break-word;
+        }
+        @media(max-width: 400px) {
+          .ju-apply-submit {
+            font-size: 0.9rem !important;
+            padding-left: 0.75rem !important;
+            padding-right: 0.75rem !important;
+            letter-spacing: 0.05em !important;
+          }
+        }
 
       `}</style>
 
@@ -814,7 +836,7 @@ const JoinUs = () => {
                       <label htmlFor="ju-why">WHY DO YOU WANT TO JOIN? *</label>
                       <textarea id="ju-why" name="statement" rows={4} placeholder="Tell us what drives you..." required />
                     </div>
-                    <button type="submit" disabled={isSubmitting} className={`btn-primary btn-pill w-full py-3 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
+                    <button type="submit" disabled={isSubmitting} className={`btn-primary btn-pill ju-apply-submit py-3 ${isSubmitting ? 'opacity-70 cursor-not-allowed' : ''}`}>
                       {isSubmitting ? "Sending..." : "SUBMIT APPLICATION"}
                     </button>
                   </>
