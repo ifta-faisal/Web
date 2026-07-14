@@ -2,44 +2,10 @@ import React, { useState, useEffect, useCallback } from 'react';
 import { Search as SearchIcon, X, ArrowRight, FileText, User, Shield, Zap, Cpu, Users, Settings, Activity, Gauge, MapPin, Navigation, Award, Rocket, Eye, Wind } from 'lucide-react';
 import { useNavigate } from 'react-router-dom';
 
-// ─── Advisor Imports ───
-import mentor1 from '../assets/images/Advisor/Mentor1.jpeg';
-import mentor2 from '../assets/images/Advisor/Mentor2.png';
-import mentor3 from '../assets/images/Advisor/Mentor3.jpeg';
-import vcImage from '../assets/images/Advisor/VC.png';
-
-// ─── Project Imports ───
-import project1 from "../assets/images/Project/B1.jpeg";
-import project6 from "../assets/images/Project/B6.jpg";
-import project7 from "../assets/images/Project/B7.jpg";
+import { teamMembers } from '../data/teamData';
+import { projectsData } from '../data/projectsData';
+import { featured, mentors } from '../data/advisorsData';
 import workshop from "../assets/images/news/workshop.jpeg";
-import project10 from "../assets/images/Project/D_1.jpg";
-import aether1 from "../assets/images/Project/Aether_1.jpg";
-import deadcat1 from "../assets/images/Project/Aether_2.JPG";
-
-// ─── Team Member Imports ───
-import member1 from '../assets/images/Team/member1.png';
-import member2 from '../assets/images/Team/member2.png';
-import member3 from '../assets/images/Team/member3.png';
-import member4 from '../assets/images/Team/member4.png';
-import member5 from '../assets/images/Team/member5.png';
-import member7 from '../assets/images/Team/member7.png';
-import member8 from '../assets/images/Team/member8.png';
-import member9 from '../assets/images/Team/member9.png';
-import adnan from '../assets/images/Team/adnan.png';
-import alfi from '../assets/images/Team/alfi.png';
-import israfil from '../assets/images/Team/israfil.png';
-
-import anika from '../assets/images/Team/orthy.jpeg';
-import jarin from '../assets/images/Team/dip.png';
-import rashed from '../assets/images/Team/rashed.png';
-import talha from '../assets/images/Team/talha.png';
-
-import probin from '../assets/images/Team/probin.png';
-import shahad from '../assets/images/Team/shahad.png';
-import arpon from '../assets/images/Team/arpon.png';
-import nazifa from '../assets/images/Team/nazifa.jpeg';
-import sumaiya from '../assets/images/Team/sumaiya.png';
 
 interface SearchResult {
   id: string;
@@ -52,7 +18,7 @@ interface SearchResult {
   tags?: string[];
 }
 
-const SEARCH_DATA: SearchResult[] = [
+const STATIC_PAGES: SearchResult[] = [
   // ─── Pages ───
   { id: 'p1', title: 'Detailed Features', category: 'Page', link: '/DetailedFeatures', icon: Settings, description: 'Technical specifications and aircraft systems.', tags: ['specs', 'vehicle', 'drone', 'weight', 'endurance', 'technical'] },
   { id: 'p2', title: 'Advisors & Mentors', category: 'Page', link: '/advisors', icon: User, description: 'Our team leadership and advisory board.', tags: ['leadership', 'mentors', 'teachers', 'advisors'] },
@@ -80,44 +46,56 @@ const SEARCH_DATA: SearchResult[] = [
   { id: 'st3', title: 'Mechanical Team', category: 'Sub-Team', link: '/team?filter=mechanical', icon: Settings, description: 'Airframe design, aerodynamics, and CAD.', tags: ['structure', 'cad', 'build', 'mechanical'] },
   { id: 'st4', title: 'Web & Communication Team', category: 'Sub-Team', link: '/team?filter=communication', icon: FileText, description: 'Website development and public relations.', tags: ['site', 'it', 'media', 'comms', 'ifta', 'bahar'] },
   { id: 'st5', title: 'Research & Development (R&D)', category: 'Sub-Team', link: '/team?filter=rd', icon: Activity, description: 'Long-term innovation and tech research.', tags: ['future', 'innovation', 'rd', 'ratul', 'israfil', 'biplob', 'sumaiya', 'nazifa'] },
+  { id: 'pr8', title: 'UAV Workshop Conducted', category: 'Blog', image: workshop, link: '/news', icon: Users, description: 'One of our core team members successfully conducted an intensive, hands-on workshop on UAV design, hardware integration, and autonomous flight controls.', tags: ['training', 'education', 'workshop', 'news'] }
+];
 
-  // ─── Team Members (ALL 22) ───
-  { id: 'm1', title: 'T M AL Anam', category: 'Member', image: member1, link: '/team?id=m1', icon: User, description: 'Team Lead • Electrical Team', tags: ['leader', 'mukit', 'anam'] },
-  { id: 'm2', title: 'Ahmed Junaed', category: 'Member', image: member2, link: '/team?id=m2', icon: User, description: 'Co-Team Lead • Software & Nav', tags: ['leader', 'junaid'] },
-  { id: 'm3', title: 'Fahad Rahaman', category: 'Member', image: member3, link: '/team?id=m3', icon: User, description: 'Sub Team Lead • Software & Nav', tags: ['ovi', 'coding'] },
-  { id: 'm4', title: 'MD Ifta Faisal', category: 'Member', image: member4, link: '/team?id=m4', icon: User, description: 'Sub Team Lead • Web & Comms', tags: ['web', 'ifta'] },
-  { id: 'm5', title: 'Muktaderul Islam', category: 'Member', image: member5, link: '/team?id=m5', icon: User, description: 'Sub Team Lead • Mechanical Team', tags: ['mechanical', 'cad'] },
-  { id: 'm6', title: 'Maysoon Zahir', category: 'Member', image: member7, link: '/team?id=m6', icon: User, description: 'Member • PR & Marketing Team', tags: ['marketing', 'pr', 'zahir'] },
-  { id: 'm7', title: 'Digonta Karmaker', category: 'Member', image: member9, link: '/team?id=m7', icon: User, description: 'Member • Electrical Team', tags: ['electronics', 'eee'] },
-  { id: 'm8', title: 'Khalid Hasan Talha', category: 'Member', image: talha, link: '/team?id=m8', icon: User, description: 'Member • Electrical & Mechanical', tags: ['talha', 'eee'] },
-  { id: 'm9', title: 'Adnan Mohammad Salauddin', category: 'Member', image: adnan, link: '/team?id=m9', icon: User, description: 'Member • Mechanical Team', tags: ['adnan', 'sohag'] },
-  { id: 'm10', title: 'Probin Chandra Nath', category: 'Member', image: probin, link: '/team?id=m10', icon: User, description: 'Member • Electrical and Mechanical', tags: ['probin', 'eee'] },
-
-  { id: 'm13', title: 'Md. Israfil Hossain', category: 'Member', image: israfil, link: '/team?id=m13', icon: User, description: 'Member • R&D Team', tags: ['israfil'] },
-  { id: 'm14', title: 'Abdur Rahman', category: 'Member', image: rashed, link: '/team?id=m14', icon: User, description: 'Member • Electrical & Mechanical', tags: ['rashed', 'rahman'] },
-  { id: 'm15', title: 'Md. Biplob', category: 'Member', image: alfi, link: '/team?id=m15', icon: User, description: 'Member • R&D Team', tags: ['biplob', 'alfi'] },
-  { id: 'm16', title: 'Anika Noyshin Orthy', category: 'Member', image: anika, link: '/team?id=m16', icon: User, description: 'Member • Electrical Team', tags: ['orthy', 'anika'] },
-  { id: 'm17', title: 'Jahrin Binte Zahid', category: 'Member', image: jarin, link: '/team?id=m17', icon: User, description: 'Member • Autonomous & Navigation', tags: ['jarin', 'zahid'] },
-  { id: 'm18', title: 'Bahar Shahriyar', category: 'Member', image: member8, link: '/team?id=m18', icon: User, description: 'Member • Web & Communication', tags: ['bahar', 'sheik'] },
-  { id: 'm19', title: 'Sumaiya Sadika', category: 'Member', image: sumaiya, link: '/team?id=m19', icon: User, description: 'Member • R&D Team', tags: ['sumaiya', 'sadika'] },
-  { id: 'm20', title: 'Mobassir Hossain Shahad', category: 'Member', image: shahad, link: '/team?id=m20', icon: User, description: 'Member • Electrical Team', tags: ['shahad'] },
-  { id: 'm21', title: 'Md Shazan Mahmud Arpon', category: 'Member', image: arpon, link: '/team?id=m21', icon: User, description: 'Member • Software & Navigation', tags: ['arpon'] },
-  { id: 'm22', title: 'Najifa Nawar', category: 'Member', image: nazifa, link: '/team?id=m22', icon: User, description: 'Member • R&D Team', tags: ['nazifa', 'nawar'] },
-
-  // ─── Projects (ALL 7) ───
-  { id: 'pr10', title: 'Autonomous Swarm UAV', category: 'Project', image: project10, link: '/projects?id=10', icon: Cpu, description: 'Next-gen AI-powered swarm drone system.', tags: ['swarm', 'ai', 'autonomous'] },
-  { id: 'pr1', title: 'Endurance UAV', category: 'Project', image: project1, link: '/projects?id=1', icon: Rocket, description: 'High-performance endurance UAV.', tags: ['research', 'mapping', 'drone'] },
-  { id: 'pr4', title: 'Project Dead Cat: DIY FPV Drone', category: 'Project', image: deadcat1, link: '/projects?id=4', icon: Shield, description: 'Lightweight Dead Cat–frame FPV drone designed for stable, efficient power usage.', tags: ['monitoring', 'deadcat', 'diy', 'fpv'] },
-  { id: 'pr6', title: 'Defensive Drone', category: 'Project', image: project6, link: '/projects?id=6', icon: Shield, description: 'AI-integrated defensive system.', tags: ['defense', 'ai', 'real-time'] },
-  { id: 'pr7', title: 'Fixed Wing', category: 'Project', image: project7, link: '/projects?id=7', icon: Wind, description: 'Long-range surveillance aircraft.', tags: ['fixed-wing', 'plane'] },
-  { id: 'pr8', title: 'UAV Workshop Conducted', category: 'Blog', image: workshop, link: '/news', icon: Users, description: 'One of our core team members successfully conducted an intensive, hands-on workshop on UAV design, hardware integration, and autonomous flight controls.', tags: ['training', 'education', 'workshop', 'news'] },
-  { id: 'pr9', title: 'AETHER', category: 'Project', image: aether1, link: '/projects?id=9', icon: Award, description: 'Advanced Electronic Tactical Hybrid Emergency Reconnaissance UAV.', tags: ['rescue', 'competition', 'suas', 'aether', 'reconnaissance'] },
-
-  // ─── Leadership & Advisors ───
-  { id: 'l1', title: 'Dr. Md. Abul Kashem Mia', category: 'Advisor', image: vcImage, link: '/advisors?id=vc-advisor', icon: Award, description: 'Official Advisor • Vice Chancellor, UIU', tags: ['vc', 'leader', 'kashem'] },
-  { id: 'l2', title: 'Dr. A.K.M. Muzahidul Islam', category: 'Director', image: mentor1, link: '/advisors?id=director', icon: Award, description: 'Director • Professor, Dept. of CSE', tags: ['director', 'muzahid', 'leader'] },
-  { id: 'l3', title: 'Dr. Riasat Azim', category: 'Mentor', image: mentor2, link: '/advisors?id=mentor-1', icon: User, description: 'Assistant Professor, Dept. of CSE', tags: ['riasat', 'ml', 'vision', 'mentor'] },
-  { id: 'l4', title: 'Mr. Azizur Rahman Anik', category: 'Mentor', image: mentor3, link: '/advisors?id=mentor-2', icon: User, description: 'Lecturer, Dept. of CSE', tags: ['anik', 'firmware', 'embedded', 'mentor'] },
+const SEARCH_DATA: SearchResult[] = [
+  ...STATIC_PAGES,
+  ...teamMembers.map((m) => ({
+    id: m.id,
+    title: m.name,
+    category: 'Member' as const,
+    image: m.image,
+    link: `/team?id=${m.id}`,
+    icon: User,
+    description: `${m.role} • ${m.team} • ${m.department}`,
+    tags: [m.name, m.role, m.team, m.department].map(t => t.toLowerCase()),
+  })),
+  ...projectsData.map((p) => ({
+    id: `pr${p.id}`,
+    title: p.name,
+    category: 'Project' as const,
+    image: p.image,
+    link: `/projects?id=${p.id}`,
+    icon: Cpu,
+    description: p.description,
+    tags: [
+      p.name, p.category, 
+      ...(p.tags || []), 
+      ...(p.specs?.map(s => s.value) || []),
+      p.longDescription || ''
+    ].map(t => t.toLowerCase()),
+  })),
+  ...featured.map((f) => ({
+    id: f.id,
+    title: f.name,
+    category: f.category === 'director' ? 'Director' as const : 'Advisor' as const,
+    image: f.image,
+    link: `/advisors?id=${f.id}`,
+    icon: Award,
+    description: `${f.role} • ${f.department}`,
+    tags: [f.name, f.role, f.department, f.bio].map(t => t.toLowerCase()),
+  })),
+  ...mentors.map((m) => ({
+    id: m.id,
+    title: m.name,
+    category: 'Mentor' as const,
+    image: m.image,
+    link: `/advisors?id=${m.id}`,
+    icon: User,
+    description: `${m.role} • ${m.department}`,
+    tags: [m.name, m.role, m.department, m.bio].map(t => t.toLowerCase()),
+  }))
 ];
 
 const Search = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) => {
