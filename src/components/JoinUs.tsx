@@ -1,11 +1,11 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight } from 'lucide-react';
+import { ArrowRight, Globe, Wrench, CircuitBoard, Code, Camera, Lightbulb, Rocket, Handshake, BookOpen, Trophy, Link } from 'lucide-react';
 
 // ─── Sub-team data ─────────────────────────────────────────────────────────────
 const subTeams = [
   {
     id: 'communication',
-    icon: '📡',
+    icon: <Globe className="text-accent w-6 h-6" />,
     label: 'WEB & COMMUNICATION SUB-TEAM',
     shortDesc: 'Build and maintain team website & all drone radio frequency (RF) devices',
     priority: 'OPEN',
@@ -25,7 +25,7 @@ const subTeams = [
   },
   {
     id: 'mechanical',
-    icon: '⚙️',
+    icon: <Wrench className="text-accent w-6 h-6" />,
     label: 'MECHANICAL SUB-TEAM',
     shortDesc: '3D design, fabrication & structural engineering',
     priority: 'OPEN',
@@ -46,7 +46,7 @@ const subTeams = [
   },
   {
     id: 'electronics',
-    icon: '⚡',
+    icon: <CircuitBoard className="text-accent w-6 h-6" />,
     label: 'ELECTRONICS SUB-TEAM',
     shortDesc: 'PCB design, circuits & embedded hardware',
     priority: 'OPEN',
@@ -61,7 +61,7 @@ const subTeams = [
   },
   {
     id: 'software',
-    icon: '💻',
+    icon: <Code className="text-accent w-6 h-6" />,
     label: 'SOFTWARE SUB-TEAM',
     shortDesc: 'Robotics programming, control systems & AI',
     priority: 'OPEN',
@@ -76,7 +76,7 @@ const subTeams = [
   },
   {
     id: 'media',
-    icon: '📸',
+    icon: <Camera className="text-accent w-6 h-6" />,
     label: 'MEDIA & PR SUB-TEAM',
     shortDesc: 'Branding, video production & social media',
     priority: 'OPEN',
@@ -95,7 +95,7 @@ const subTeams = [
   },
   {
     id: 'rd',
-    icon: '🎙️',
+    icon: <Lightbulb className="text-accent w-6 h-6" />,
     label: 'RESEARCH & DEVELOPMENT SUB-TEAM',
     shortDesc: 'Sponsorships, partnerships & external relations',
     priority: 'OPEN',
@@ -115,12 +115,12 @@ const subTeams = [
 ];
 
 const benefits = [
-  { icon: '🚀', title: 'Real-World Experience', desc: 'Hands-on engineering on systems that compete internationally.' },
-  { icon: '🌍', title: 'International Competitions', desc: 'Represent Bangladesh & UIU .' },
-  { icon: '🤝', title: 'Diverse Collaboration', desc: 'Work alongside students from all departments and disciplines.' },
-  { icon: '📚', title: 'Skill Development', desc: 'Gain technical and soft skills that employers value most.' },
-  { icon: '🏆', title: 'Trophy Cabinet', desc: 'Be part of a team with a proven record of achievement.' },
-  { icon: '🔗', title: 'Industry Network', desc: 'Connect with professionals, mentors, and sponsors.' },
+  { icon: <Rocket className="text-accent w-8 h-8" />, title: 'Real-World Experience', desc: 'Hands-on engineering on systems that compete internationally.' },
+  { icon: <Globe className="text-accent w-8 h-8" />, title: 'International Competitions', desc: 'Represent Bangladesh & UIU .' },
+  { icon: <Handshake className="text-accent w-8 h-8" />, title: 'Diverse Collaboration', desc: 'Work alongside students from all departments and disciplines.' },
+  { icon: <BookOpen className="text-accent w-8 h-8" />, title: 'Skill Development', desc: 'Gain technical and soft skills that employers value most.' },
+  { icon: <Trophy className="text-accent w-8 h-8" />, title: 'Trophy Cabinet', desc: 'Be part of a team with a proven record of achievement.' },
+  { icon: <Link className="text-accent w-8 h-8" />, title: 'Industry Network', desc: 'Connect with professionals, mentors, and sponsors.' },
 ];
 
 const timeline = [
