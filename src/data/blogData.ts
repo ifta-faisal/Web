@@ -530,7 +530,7 @@ The detected information can then be used for:</p>
 </ul>
 <p>Rather than optimizing for a single parameter, we selected components that provide reliable overall performance.</p>
 
-<img src="\${motorComp}" alt="Motor Comparison" class="blog-section-img" />
+<img src="${motorComp}" alt="Motor Comparison" class="blog-section-img" />
 
 <h2>Selecting Motors and Propellers</h2>
 <p>The propulsion system combines brushless motors with large propellers to provide smooth and efficient flight.</p>
@@ -544,7 +544,7 @@ The detected information can then be used for:</p>
 </ul>
 <p>Careful component matching ensures that the propulsion system operates efficiently under varying mission conditions.</p>
 
-<img src="\${motorProp}" alt="Motor and Propeller Setup" class="blog-section-img" />
+<img src="${motorProp}" alt="Motor and Propeller Setup" class="blog-section-img" />
 
 <h2>Managing Power Efficiently</h2>
 <p>Efficient propulsion is not only about generating thrust—it is also about using energy wisely.</p>
@@ -559,7 +559,7 @@ The detected information can then be used for:</p>
 </ul>
 <p>This integrated approach helps maximize mission duration while maintaining stable flight.</p>
 
-<img src="\${batteryDist}" alt="Battery and Power Distribution" class="blog-section-img" />
+<img src="${batteryDist}" alt="Battery and Power Distribution" class="blog-section-img" />
 
 <h2>Testing for Reliable Performance</h2>
 <p>Every propulsion system must be validated before deployment.</p>
@@ -589,21 +589,21 @@ The detected information can then be used for:</p>
 <div class="about-authors-section">
   <h2>About the Authors</h2>
   <div class="author-card">
-    <img src="\${israfilImg}" alt="MD. Israfil Hossain" class="author-photo" />
+    <img src="${israfilImg}" alt="MD. Israfil Hossain" class="author-photo" />
     <div class="author-info">
       <h4>MD. Israfil Hossain</h4>
       <p>Research Member, UIU Aerial Robotics Team</p>
     </div>
   </div>
   <div class="author-card">
-    <img src="\${biplobImg}" alt="Md. Biplob" class="author-photo" />
+    <img src="${biplobImg}" alt="Md. Biplob" class="author-photo" />
     <div class="author-info">
       <h4>Md. Biplob</h4>
       <p>Research Member, UIU Aerial Robotics Team</p>
     </div>
   </div>
   <div class="author-card">
-    <img src="\${faisalImg}" alt="Ifta Faisal" class="author-photo" />
+    <img src="${faisalImg}" alt="Ifta Faisal" class="author-photo" />
     <div class="author-info">
       <h4>Ifta Faisal</h4>
       <p>Research Member, UIU Aerial Robotics Team</p>
