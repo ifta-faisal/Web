@@ -24,7 +24,7 @@ function useReveal() {
     if (!el) return;
     const obs = new IntersectionObserver(
       ([entry]) => { if (entry.isIntersecting) { el.classList.add("df-visible"); obs.disconnect(); } },
-      { threshold: 0.12 }
+      { threshold: 0.05, rootMargin: "0px 0px -20px 0px" }
     );
     obs.observe(el);
     return () => obs.disconnect();
@@ -288,7 +288,7 @@ const DetailedFeatures = () => {
 
       {/* ── HERO BAND ── */}
       <header className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto pb-20">
-        <Reveal className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
+        <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
           {/* Text */}
           <div className="flex-1">
             <div className="flex items-center gap-3 mb-6">
@@ -316,7 +316,7 @@ const DetailedFeatures = () => {
             <div className="absolute inset-0 bg-gradient-to-br from-primary/30 to-accent/20 rounded-full blur-3xl scale-125" />
             <Drone360Viewer src={droneImg} alt="UART Drone 360° View" />
           </div>
-        </Reveal>
+        </div>
       </header>
 
       {/* ── SPECS TABLE ── */}
@@ -752,8 +752,8 @@ const DetailedFeatures = () => {
       <style>{`
         .df-reveal {
           opacity: 0;
-          transform: translateY(2.5rem);
-          transition: opacity 0.75s cubic-bezier(0.16,1,0.3,1), transform 0.75s cubic-bezier(0.16,1,0.3,1);
+          transform: translateY(1.5rem);
+          transition: opacity 0.6s cubic-bezier(0.16,1,0.3,1), transform 0.6s cubic-bezier(0.16,1,0.3,1);
         }
         .df-visible {
           opacity: 1;
