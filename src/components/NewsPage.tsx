@@ -370,139 +370,139 @@ const NewsPage = () => {
                 padding: '1rem', pointerEvents: 'none',
               }}
             >
-            {/* Modal Box — fixed-height flex column: sticky header + independently scrollable body */}
-            <div
-              className="news-modal-box"
-              style={{
-                pointerEvents: 'auto',
-                position: 'relative', width: '100%', maxWidth: '44rem',
-                maxHeight: '88vh', display: 'flex', flexDirection: 'column',
-                borderRadius: '1.25rem', overflow: 'hidden',
-                background: 'rgba(10,15,35,0.97)',
-                border: '1px solid rgba(249,115,22,0.2)',
-                boxShadow: '0 30px 80px rgba(0,0,0,0.8)',
-              }}
-            >
-              {/* Sticky header — always visible, so the reader never has to scroll back up to close it */}
-              <div style={{
-                flexShrink: 0, display: 'flex', alignItems: 'center', gap: '1rem',
-                padding: '1rem 1.25rem', borderBottom: '1px solid rgba(255,255,255,0.08)',
-                background: 'rgba(10,15,35,0.98)',
-              }}>
-                <span style={{
-                  padding: '0.3rem 0.8rem', borderRadius: '0.4rem', flexShrink: 0,
-                  background: 'linear-gradient(135deg,#f97316,#dc2626)',
-                  fontSize: '0.62rem', fontWeight: 800, letterSpacing: '0.1em',
-                  textTransform: 'uppercase', color: '#fff',
-                  fontFamily: "'Inter', sans-serif",
-                }}>
-                  {selectedNews.category}
-                </span>
-                <h3 style={{
-                  flex: 1, minWidth: 0, margin: 0,
-                  fontFamily: "'Inter', sans-serif", fontWeight: 600,
-                  fontSize: '0.85rem', color: '#cbd5e1',
-                  whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
-                }}>
-                  {selectedNews.title}
-                </h3>
-                <button
-                  onClick={() => setSelectedNews(null)}
-                  aria-label="Close"
-                  style={{
-                    flexShrink: 0, width: '2.25rem', height: '2.25rem', borderRadius: '50%',
-                    background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)',
-                    color: '#fff', cursor: 'pointer', display: 'flex',
-                    alignItems: 'center', justifyContent: 'center',
-                    transition: 'background 0.2s, border-color 0.2s',
-                  }}
-                  onMouseEnter={e => {
-                    e.currentTarget.style.background = 'rgba(249,115,22,0.15)';
-                    e.currentTarget.style.borderColor = 'rgba(249,115,22,0.4)';
-                  }}
-                  onMouseLeave={e => {
-                    e.currentTarget.style.background = 'rgba(255,255,255,0.06)';
-                    e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)';
-                  }}
-                >
-                  <X size={16} />
-                </button>
-              </div>
-
-              {/* Scrollable body — data-lenis-prevent stops the page's global Lenis
-                  smooth-scroll from swallowing wheel events meant for this element */}
+              {/* Modal Box — fixed-height flex column: sticky header + independently scrollable body */}
               <div
-                className="news-modal-scroll"
-                data-lenis-prevent
-                style={{ overflowY: 'auto', overscrollBehavior: 'contain' }}
+                className="news-modal-box"
+                style={{
+                  pointerEvents: 'auto',
+                  position: 'relative', width: '100%', maxWidth: '44rem',
+                  maxHeight: '88vh', display: 'flex', flexDirection: 'column',
+                  borderRadius: '1.25rem', overflow: 'hidden',
+                  background: 'rgba(10,15,35,0.97)',
+                  border: '1px solid rgba(249,115,22,0.2)',
+                  boxShadow: '0 30px 80px rgba(0,0,0,0.8)',
+                }}
               >
-                {/* Banner */}
-                <div style={{ position: 'relative', aspectRatio: '16/9', background: '#050911' }}>
-                  <img
-                    src={selectedNews.image}
-                    alt={selectedNews.title}
-                    style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
-                  />
-                  <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,15,35,0.9) 0%, transparent 50%)' }} />
-                  <div style={{ position: 'absolute', bottom: '1.5rem', left: '1.5rem' }}>
-                    <span style={{
-                      display: 'flex', alignItems: 'center', gap: '0.4rem',
-                      padding: '0.35rem 0.9rem', borderRadius: '0.5rem',
-                      background: 'rgba(5,9,17,0.85)', border: '1px solid rgba(255,255,255,0.12)',
-                      fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em',
-                      textTransform: 'uppercase', color: '#cbd5e1',
-                      fontFamily: "'Inter', sans-serif",
-                    }}>
-                      <Calendar size={12} color="#f97316" /> {selectedNews.date}
-                    </span>
-                  </div>
-                </div>
-
-                {/* Body — constrained to a comfortable reading measure */}
-                <div style={{ padding: '2rem 2rem 2.5rem', maxWidth: '38rem', margin: '0 auto' }}>
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#64748b', fontFamily: "'Inter', sans-serif" }}>
-                    <span>Official Release</span>
-                    <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#f97316' }} />
-                    <span>By {selectedNews.source} Admin</span>
-                  </div>
-
-                  <h2 style={{
-                    fontFamily: "'Bebas Neue', sans-serif",
-                    fontSize: 'clamp(1.7rem, 4.5vw, 2.4rem)',
-                    fontWeight: 900, textTransform: 'uppercase',
-                    letterSpacing: '0.04em', color: '#fff',
-                    lineHeight: 1.15, margin: '0 0 1.5rem',
+                {/* Sticky header — always visible, so the reader never has to scroll back up to close it */}
+                <div style={{
+                  flexShrink: 0, display: 'flex', alignItems: 'center', gap: '1rem',
+                  padding: '1rem 1.25rem', borderBottom: '1px solid rgba(255,255,255,0.08)',
+                  background: 'rgba(10,15,35,0.98)',
+                }}>
+                  <span style={{
+                    padding: '0.3rem 0.8rem', borderRadius: '0.4rem', flexShrink: 0,
+                    background: 'linear-gradient(135deg,#f97316,#dc2626)',
+                    fontSize: '0.62rem', fontWeight: 800, letterSpacing: '0.1em',
+                    textTransform: 'uppercase', color: '#fff',
+                    fontFamily: "'Inter', sans-serif",
+                  }}>
+                    {selectedNews.category}
+                  </span>
+                  <h3 style={{
+                    flex: 1, minWidth: 0, margin: 0,
+                    fontFamily: "'Inter', sans-serif", fontWeight: 600,
+                    fontSize: '0.85rem', color: '#cbd5e1',
+                    whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis',
                   }}>
                     {selectedNews.title}
-                  </h2>
+                  </h3>
+                  <button
+                    onClick={() => setSelectedNews(null)}
+                    aria-label="Close"
+                    style={{
+                      flexShrink: 0, width: '2.25rem', height: '2.25rem', borderRadius: '50%',
+                      background: 'rgba(255,255,255,0.06)', border: '1px solid rgba(255,255,255,0.15)',
+                      color: '#fff', cursor: 'pointer', display: 'flex',
+                      alignItems: 'center', justifyContent: 'center',
+                      transition: 'background 0.2s, border-color 0.2s',
+                    }}
+                    onMouseEnter={e => {
+                      e.currentTarget.style.background = 'rgba(249,115,22,0.15)';
+                      e.currentTarget.style.borderColor = 'rgba(249,115,22,0.4)';
+                    }}
+                    onMouseLeave={e => {
+                      e.currentTarget.style.background = 'rgba(255,255,255,0.06)';
+                      e.currentTarget.style.borderColor = 'rgba(255,255,255,0.15)';
+                    }}
+                  >
+                    <X size={16} />
+                  </button>
+                </div>
 
-                  <div style={{ color: '#cbd5e1', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, fontFamily: "'Inter', sans-serif", marginBottom: '2rem' }}>
-                    <p style={{ marginBottom: '1.1rem' }}>{selectedNews.description}</p>
-                    <p>Our team is actively involved in pushing the boundaries of autonomous aerospace navigation, intelligent pathfinding algorithms, and hardware-software integration. This update represents an important milestone in our mission timeline, fostering collaborative engineering education and next-generation autonomous flight systems.</p>
+                {/* Scrollable body — data-lenis-prevent stops the page's global Lenis
+                  smooth-scroll from swallowing wheel events meant for this element */}
+                <div
+                  className="news-modal-scroll"
+                  data-lenis-prevent
+                  style={{ overflowY: 'auto', overscrollBehavior: 'contain' }}
+                >
+                  {/* Banner */}
+                  <div style={{ position: 'relative', aspectRatio: '16/9', background: '#050911' }}>
+                    <img
+                      src={selectedNews.image}
+                      alt={selectedNews.title}
+                      style={{ width: '100%', height: '100%', objectFit: 'cover', display: 'block' }}
+                    />
+                    <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(to top, rgba(10,15,35,0.9) 0%, transparent 50%)' }} />
+                    <div style={{ position: 'absolute', bottom: '1.5rem', left: '1.5rem' }}>
+                      <span style={{
+                        display: 'flex', alignItems: 'center', gap: '0.4rem',
+                        padding: '0.35rem 0.9rem', borderRadius: '0.5rem',
+                        background: 'rgba(5,9,17,0.85)', border: '1px solid rgba(255,255,255,0.12)',
+                        fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em',
+                        textTransform: 'uppercase', color: '#cbd5e1',
+                        fontFamily: "'Inter', sans-serif",
+                      }}>
+                        <Calendar size={12} color="#f97316" /> {selectedNews.date}
+                      </span>
+                    </div>
                   </div>
 
-                  {/* Tags */}
-                  {selectedNews.tags.length > 0 && (
-                    <div style={{ paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
-                      <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#475569', fontFamily: "'Inter', sans-serif" }}>
-                        <Tag size={13} /> Tags:
-                      </span>
-                      {selectedNews.tags.map(tag => (
-                        <span key={tag} style={{
-                          padding: '0.3rem 0.75rem', borderRadius: '0.4rem',
-                          background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)',
-                          fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.08em',
-                          textTransform: 'uppercase', color: '#94a3b8',
-                          fontFamily: "'Inter', sans-serif",
-                        }}>
-                          #{tag}
-                        </span>
-                      ))}
+                  {/* Body — constrained to a comfortable reading measure */}
+                  <div style={{ padding: '2rem 2rem 2.5rem', maxWidth: '38rem', margin: '0 auto' }}>
+                    <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '1rem', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.12em', textTransform: 'uppercase', color: '#64748b', fontFamily: "'Inter', sans-serif" }}>
+                      <span>Official Release</span>
+                      <span style={{ width: '6px', height: '6px', borderRadius: '50%', background: '#f97316' }} />
+                      <span>By {selectedNews.source} Admin</span>
                     </div>
-                  )}
+
+                    <h2 style={{
+                      fontFamily: "'Bebas Neue', sans-serif",
+                      fontSize: 'clamp(1.7rem, 4.5vw, 2.4rem)',
+                      fontWeight: 900, textTransform: 'uppercase',
+                      letterSpacing: '0.04em', color: '#fff',
+                      lineHeight: 1.15, margin: '0 0 1.5rem',
+                    }}>
+                      {selectedNews.title}
+                    </h2>
+
+                    <div style={{ color: '#cbd5e1', fontSize: '0.95rem', lineHeight: 1.8, fontWeight: 300, fontFamily: "'Inter', sans-serif", marginBottom: '2rem' }}>
+                      <p style={{ marginBottom: '1.1rem' }}>{selectedNews.description}</p>
+                      <p>Our team is actively involved in pushing the boundaries of autonomous aerospace navigation, intelligent pathfinding algorithms, and hardware-software integration. This update represents an important milestone in our mission timeline, fostering collaborative engineering education and next-generation autonomous flight systems.</p>
+                    </div>
+
+                    {/* Tags */}
+                    {selectedNews.tags.length > 0 && (
+                      <div style={{ paddingTop: '1.5rem', borderTop: '1px solid rgba(255,255,255,0.06)', display: 'flex', flexWrap: 'wrap', gap: '0.5rem', alignItems: 'center' }}>
+                        <span style={{ display: 'flex', alignItems: 'center', gap: '0.35rem', fontSize: '0.65rem', fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#475569', fontFamily: "'Inter', sans-serif" }}>
+                          <Tag size={13} /> Tags:
+                        </span>
+                        {selectedNews.tags.map(tag => (
+                          <span key={tag} style={{
+                            padding: '0.3rem 0.75rem', borderRadius: '0.4rem',
+                            background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.1)',
+                            fontSize: '0.65rem', fontWeight: 600, letterSpacing: '0.08em',
+                            textTransform: 'uppercase', color: '#94a3b8',
+                            fontFamily: "'Inter', sans-serif",
+                          }}>
+                            #{tag}
+                          </span>
+                        ))}
+                      </div>
+                    )}
+                  </div>
                 </div>
               </div>
-            </div>
             </div>
           </>
         )}

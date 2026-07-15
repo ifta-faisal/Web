@@ -33,7 +33,7 @@ const BlogDetail = () => {
       <div className="absolute top-1/2 left-0 w-[500px] h-[500px] bg-accent rounded-full mix-blend-multiply filter blur-[150px] opacity-[0.03] pointer-events-none" />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
-        
+
         {/* Article Header */}
         <div className="max-w-4xl mx-auto mb-16">
           <div className="flex items-center gap-3 mb-6">
@@ -41,11 +41,11 @@ const BlogDetail = () => {
               {post.category}
             </span>
           </div>
-          
+
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-8 tracking-tight uppercase" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
             {post.title}
           </h1>
-          
+
           <div className="flex flex-wrap items-center justify-end gap-6 pb-8 border-b border-white/10">
             <div className="flex items-center gap-6 text-sm text-slate-400 font-mono">
               <div className="flex items-center gap-2"><Calendar className="w-4 h-4 text-primary" /> {post.date}</div>
@@ -63,25 +63,25 @@ const BlogDetail = () => {
 
         {/* Content Layout */}
         <div className="max-w-5xl mx-auto flex flex-col lg:flex-row gap-12 relative">
-          
+
           {/* Social Sidebar (Sticky) */}
           <div className="hidden lg:block w-16 flex-shrink-0">
             <div className="sticky top-32 flex flex-col items-center gap-4">
               <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2" style={{ writingMode: 'vertical-rl' }}>Share</div>
               <div className="w-px h-8 bg-white/10 mb-2"></div>
-              
+
               <button className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#0A66C2] hover:border-[#0A66C2] transition-all group">
                 <Linkedin className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </button>
-              
+
               <button className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#1DA1F2] hover:border-[#1DA1F2] transition-all group">
                 <Twitter className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </button>
-              
+
               <button className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all group">
                 <Facebook className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </button>
-              
+
               <button className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-red-500 hover:border-red-500 transition-all group">
                 <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </button>
@@ -96,7 +96,8 @@ const BlogDetail = () => {
           <article className="flex-grow max-w-3xl prose prose-invert prose-lg prose-headings:font-bold prose-headings:text-white prose-a:text-primary hover:prose-a:text-orange-400 prose-img:rounded-xl prose-hr:border-white/10">
             {/* AI Summary Block Aesthetic styling is embedded in the content HTML using classes. 
                 We will inject some CSS here to format it specifically. */}
-            <style dangerouslySetInnerHTML={{__html: `
+            <style dangerouslySetInnerHTML={{
+              __html: `
               .ai-summary-block {
                 background: rgba(15, 23, 42, 0.6);
                 border: 1px solid rgba(255, 255, 255, 0.1);
@@ -223,9 +224,9 @@ const BlogDetail = () => {
                 margin: 0;
               }
             `}} />
-            
+
             <div dangerouslySetInnerHTML={{ __html: post.content }} />
-            
+
           </article>
         </div>
       </div>

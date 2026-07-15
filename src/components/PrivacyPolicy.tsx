@@ -23,9 +23,9 @@ const PrivacyPolicy = () => {
           <p className="ju-reveal">
             We may update this policy from time to time. Any updates will be posted here, and we encourage you to review it regularly.
           </p>
+        </div>
       </div>
     </div>
-  </div>
   );
 };
 

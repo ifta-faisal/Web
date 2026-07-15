@@ -67,11 +67,10 @@ const Blog = () => {
             <button
               key={cat}
               onClick={() => setActiveCategory(cat)}
-              className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-200 border ${
-                activeCategory === cat
+              className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-200 border ${activeCategory === cat
                   ? 'bg-primary border-primary text-white shadow-lg shadow-primary/20'
                   : 'bg-transparent border-white/10 text-slate-400 hover:border-primary/50 hover:text-white'
-              }`}
+                }`}
             >
               {cat}
             </button>
@@ -97,9 +96,8 @@ const Blog = () => {
 
                   {/* Image — left for even, right for odd */}
                   <div
-                    className={`relative w-full md:w-56 lg:w-64 shrink-0 overflow-hidden ${
-                      isEven ? 'md:order-first' : 'md:order-last'
-                    }`}
+                    className={`relative w-full md:w-56 lg:w-64 shrink-0 overflow-hidden ${isEven ? 'md:order-first' : 'md:order-last'
+                      }`}
                     style={{ minHeight: '170px' }}
                   >
                     <img

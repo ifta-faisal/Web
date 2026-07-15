@@ -49,7 +49,7 @@ const Team = () => {
     if (filter === 'leadership' || filter === 'member') {
       return member.category === filter;
     }
-    
+
     const team = member.team.toLowerCase();
     switch (filter) {
       case 'electronics':

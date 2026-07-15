@@ -31,7 +31,7 @@ export const newsItems: NewsItem[] = [
   {
     id: 13,
     title: 'Welcome Puku AI — Our Official AI Partner',
-    date: '15 July 2026',
+    date: '25 May 2026',
     source: 'UART',
     description: 'We are excited to welcome Puku AI as our official AI partner. This partnership will empower us to integrate advanced artificial intelligence capabilities into our platforms, pushing the boundaries of autonomous innovation.',
     link: '#',
@@ -86,7 +86,7 @@ export const newsItems: NewsItem[] = [
   {
     id: 9,
     title: 'Amprius — Official Technology Partner',
-    date: '27 May 2026',
+    date: '17 june 2026',
     source: 'UART',
     description: 'We are proud to announce that Amprius Technologies has officially joined UART as our technology partner. Amprius brings cutting-edge silicon anode lithium-ion battery technology that will power the next generation of our UAV platforms with superior energy density and performance.',
     link: '#',
