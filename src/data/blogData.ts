@@ -4,7 +4,7 @@
 
 import missionImg from '../assets/images/DetailedFeatures/mission_planning_ui.png';
 import mapImg from '../assets/images/DetailedFeatures/map.png';
-import suasImg from '../assets/images/logo/suas.png';
+// import suasImg from '../assets/images/logo/suas.png';
 import israfilImg from '../assets/images/Team/israfil.png';
 import biplobImg from '../assets/images/Team/alfi.png';
 import faisalImg from '../assets/images/Team/member4.png';
