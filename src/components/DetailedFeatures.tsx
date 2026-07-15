@@ -119,6 +119,7 @@ const FeatureSection: React.FC<FeatureSectionProps & { id?: string }> = ({
       <img
         src={image}
         alt={title}
+        loading="lazy"
         className={`relative z-10 w-full rounded-3xl shadow-2xl border border-white/10 group-hover:scale-[1.01] transition-transform duration-700 ${imageClassName || 'object-cover aspect-[4/3]'}`}
       />
     </div>
@@ -421,7 +422,7 @@ const DetailedFeatures = () => {
                 <span className="w-3 h-3 rounded-full bg-green-500/70" />
                 <span className="flex-1 ml-4 bg-white/10 rounded h-4 max-w-xs" />
               </div>
-              <img src={missionPlanningImg} alt="Mission Planning UI" className="w-full object-cover" />
+              <img src={missionPlanningImg} alt="Mission Planning UI" loading="lazy" className="w-full object-cover" />
             </div>
           </div>
 
@@ -501,7 +502,7 @@ const DetailedFeatures = () => {
                 <span className="w-3 h-3 rounded-full bg-green-500/70" />
                 <span className="text-slate-500 text-xs ml-4 font-mono">uart-system-architecture.svg</span>
               </div>
-              <img src={sysArchImg} alt="System Architecture" className="w-full object-contain bg-[#020617]" />
+              <img src={sysArchImg} alt="System Architecture" loading="lazy" className="w-full object-contain bg-[#020617]" />
             </div>
           </div>
         </Reveal>
@@ -713,7 +714,7 @@ const DetailedFeatures = () => {
           <div className="relative">
             <div className="absolute inset-0 bg-accent/20 rounded-full blur-3xl" />
             <div className="relative rounded-3xl border border-white/10 overflow-hidden shadow-2xl">
-              <img src={imgD4} alt="Technical Analysis" className="w-full h-80 object-cover opacity-80" />
+              <img src={imgD4} alt="Technical Analysis" loading="lazy" className="w-full h-80 object-cover opacity-80" />
             </div>
           </div>
         </Reveal>
