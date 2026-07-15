@@ -1,14 +1,14 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-import img2 from '../assets/gallery/Engine1.jpeg';
-import img3 from "../assets/gallery/drone2.jpeg";
-import img4 from '../assets/gallery/drone3.jpeg';
-import img5 from '../assets/gallery/project5.jpeg';
-import img6 from '../assets/gallery/Vitol_1.jpeg';
-import img7 from '../assets/gallery/project2.jpeg';
-import img8 from "../assets/gallery/project7.jpeg";
-import img9 from "../assets/gallery/Engine2.jpeg";
+// import img2 from '../assets/gallery/Engine1.jpeg';
+// import img3 from "../assets/gallery/drone2.jpeg";
+// import img4 from '../assets/gallery/drone3.jpeg';
+// import img5 from '../assets/gallery/project5.jpeg';
+// import img6 from '../assets/gallery/Vitol_1.jpeg';
+// import img7 from '../assets/gallery/project2.jpeg';
+// import img8 from "../assets/gallery/project7.jpeg";
+// import img9 from "../assets/gallery/Engine2.jpeg";
 import meeting_1 from "../assets/gallery/meeting_1.jpg";
 import meeting_2 from "../assets/gallery/meeting_2.jpg";
 import ramadan from "../assets/gallery/ramadan.jpeg";
@@ -22,11 +22,11 @@ import b8 from "../assets/images/Project/Raven1.0/B8.jpg";
 import b9 from "../assets/images/Project/Raven1.0/B9.jpg";
 import b10 from "../assets/images/Project/Raven1.0/B10.jpg";
 import b11 from "../assets/images/Project/Raven1.0/B11.jpg";
-import aether1 from "../assets/images/Project/Aether/Aether_1.jpg";
-import aether2 from "../assets/images/Project/Aether/Aether_2.jpg";
-import aether3 from "../assets/images/Project/Aether/Aether_3.jpg";
-import aether4 from "../assets/images/Project/Aether/Aether_4.jpg";
-import aether5 from "../assets/images/Project/Aether/Aether_5.jpg";
+// import aether1 from "../assets/images/Project/Aether/Aether_1.jpg";
+// import aether2 from "../assets/images/Project/Aether/Aether_2.jpg";
+// import aether3 from "../assets/images/Project/Aether/Aether_3.jpg";
+// import aether4 from "../assets/images/Project/Aether/Aether_4.jpg";
+// import aether5 from "../assets/images/Project/Aether/Aether_5.jpg";
 import b6 from "../assets/images/Project/Raven1.0/B6.jpg";
 import b7 from "../assets/images/Project/Raven1.0/B7.jpg";
 import b12 from "../assets/images/Project/Raven1.0/B12.jpg";
@@ -42,20 +42,20 @@ import d9 from "../assets/images/Project/Raven/D_9.jpg";
 import d10 from "../assets/images/Project/Raven/D_10.jpg";
 
 const row1 = [
-  { image: img2,      title: "Drone Engine" },
-  { image: img3,      title: "Long Range Drone" },
-  { image: img4,      title: "Autonomous Drone" },
+  // { image: img2,      title: "Drone Engine" },
+  // { image: img3,      title: "Long Range Drone" },
+  // { image: img4,      title: "Autonomous Drone" },
   { image: meeting_1, title: "Training Session" },
   { image: meeting_2, title: "Mentorship Session" },
   { image: b1, title: "Field Test at UIU" },
   { image: b2, title: "Drone on Field" },
   { image: b8, title: "Project Raven" },
   { image: b9, title: "Flight Preparation" },
-  { image: aether1, title: "Project Aether" },
-  { image: aether2, title: "Aether Setup" },
-  { image: aether3, title: "Aether Ready" },
-  { image: aether4, title: "Aether Flight" },
-  { image: aether5, title: "Aether Display" },
+  // { image: aether1, title: "Project Aether" },
+  // { image: aether2, title: "Aether Setup" },
+  // { image: aether3, title: "Aether Ready" },
+  // { image: aether4, title: "Aether Flight" },
+  // { image: aether5, title: "Aether Display" },
   { image: b6, title: "Raven Hardware" },
   { image: b7, title: "Raven Testing" },
   { image: b12, title: "Raven Showcase" },
@@ -64,11 +64,11 @@ const row1 = [
 ];
 
 const row2 = [
-  { image: img5,      title: "FPV practice" },
-  { image: img6,      title: "VTOL design" },
-  { image: img7,      title: "Cinewhoop drone" },
-  { image: img8,      title: "Fixed Wing custom" },
-  { image: img9,      title: "Engine module" },
+  // { image: img5,      title: "FPV practice" },
+  // { image: img6,      title: "VTOL design" },
+  // { image: img7,      title: "Cinewhoop drone" },
+  // { image: img8,      title: "Fixed Wing custom" },
+  // { image: img9,      title: "Engine module" },
   { image: ramadan,   title: "Iftar Gathering" },
   { image: team,      title: "Team Meeting" },
   { image: b3, title: "Flight Test" },
