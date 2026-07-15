@@ -204,4 +204,4 @@ export const newsItems: NewsItem[] = [
     category: 'Recruiting',
     tags: ['recruitment', 'hiring', 'joinus']
   }
-];
+].sort((a, b) => new Date(b.date).getTime() - new Date(a.date).getTime());
