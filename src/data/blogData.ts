@@ -3,11 +3,20 @@
 // import projectImg from '../assets/images/Project/project1.jpeg';
 
 import missionImg from '../assets/images/DetailedFeatures/mission_planning_ui.png';
+import mapImg from '../assets/images/DetailedFeatures/map.png';
 import suasImg from '../assets/images/logo/suas.png';
 import israfilImg from '../assets/images/Team/israfil.png';
 import biplobImg from '../assets/images/Team/alfi.png';
 import faisalImg from '../assets/images/Team/member4.png';
-
+import member5 from '../assets/images/Team/member5.png';
+import member9 from '../assets/images/Team/member9.png';
+import adnan from '../assets/images/Team/adnan.png';
+import member3 from '../assets/images/Team/member3.png';
+import nusrat from '../assets/images/Team/nusrat.jpeg';
+import arpon from '../assets/images/Team/arpon.png';
+import member1 from '../assets/images/Team/member1.png';
+import member2 from '../assets/images/Team/member2.png';
+import member7 from '../assets/images/Team/member7.png';
 
 // ─── Blog 1 Imports ───
 import blog1Cover from '../assets/images/Blog/Blog_1/Blog_1cover.jpeg';
@@ -194,31 +203,31 @@ The lessons learned throughout this project will guide the evolution of future U
 <div class="about-authors-section">
   <h2>About the Authors</h2>
   <div class="author-card">
-    <img src="${israfilImg}" alt="MD. Israfil Hossain" class="author-photo" />
+    <img src="${member1}" alt="T M AL Anam" class="author-photo" />
     <div class="author-info">
-      <h4>MD. Israfil Hossain</h4>
-      <p>MD. Israfil Hossain is a Research Member at the UIU Aerial Robotics Team (UART), contributing to autonomous systems development, computer vision research, and AI integration for the SUAS 2026 competition platform.</p>
+      <h4>T M AL Anam</h4>
+      <p>T M AL Anam is the Team Lead of the UIU Aerial Robotics Team (UART), heading the Electrical Team and overseeing the system architecture for our SUAS 2026 UAV.</p>
     </div>
   </div>
   <div class="author-card">
-    <img src="${biplobImg}" alt="Md. Biplob" class="author-photo" />
+    <img src="${member2}" alt="Ahmed Junaed" class="author-photo" />
     <div class="author-info">
-      <h4> Md. Biplob</h4>
-      <p>Md. Biplob is a Research Member at the UIU Aerial Robotics Team (UART), working on autonomous flight systems, embedded software, and mission-critical subsystem integration for next-generation UAV platforms.</p>
+      <h4>Ahmed Junaed</h4>
+      <p>Ahmed Junaed is the Co-Team Lead of the UIU Aerial Robotics Team (UART), specializing in Software &amp; Navigation integration for autonomous missions.</p>
     </div>
   </div>
   <div class="author-card">
-    <img src="${faisalImg}" alt="Ifta Faisal" class="author-photo" />
+    <img src="${member7}" alt="Maysoon Zahir" class="author-photo" />
     <div class="author-info">
-      <h4>Ifta Faisal</h4>
-      <p>Ifta Faisal is a Research Member and Sub Team Lead of the Web &amp; Communication Team at the UIU Aerial Robotics Team (UART), contributing to mission software, ground control systems, and team communication infrastructure.</p>
+      <h4>Maysoon Zahir</h4>
+      <p>Maysoon Zahir is a Sub Team Lead of the PR &amp; Marketing Team and R&amp;D Team at the UIU Aerial Robotics Team (UART), managing team outreach and research initiatives.</p>
     </div>
   </div>
 </div>
 `,
-    author: "MD. Israfil Hossain • Md. Biplob • Ifta Faisal",
-    role: "Research Members, UIU Aerial Robotics Team",
-    authorImg: suasImg,
+    author: "T M AL Anam • Ahmed Junaed • Maysoon Zahir",
+    role: "Leadership Team, UIU Aerial Robotics Team",
+    authorImg: member1,
     date: "July 10, 2026",
     readTime: "8 min read",
     category: "Leadership",
@@ -377,9 +386,9 @@ Future iterations will focus on:</p>
 <p>For our 2026 UAV, we explored a more flexible solution by adopting Grounding DINO V2, a zero-shot vision-language model capable of detecting objects from natural language descriptions.</p>
 
 <h2>Why Zero-Shot Detection?</h2>
-<p>Unlike conventional object detection models, zero-shot detection does not require training for every new object.</p>
-<p>Instead, the model uses descriptive text prompts to identify objects within an image.</p>
-<p>This approach provides several advantages:</p>
+<p>Unlike conventional object detection models, zero-shot detection does not require training for every new object.
+Instead, the model uses descriptive text prompts to identify objects within an image.
+This approach provides several advantages:</p>
 <ul>
   <li>No need for large labeled datasets</li>
   <li>Faster development cycle</li>
@@ -391,9 +400,9 @@ Future iterations will focus on:</p>
 
 
 <h2>Selecting Grounding DINO V2</h2>
-<p>After evaluating different approaches, we selected Grounding DINO V2 because of its strong performance in open-vocabulary object detection.</p>
-<p>Rather than recognizing only predefined classes, the model understands relationships between images and natural language, allowing it to detect a much wider variety of objects.</p>
-<p>Some of the reasons behind our selection include:</p>
+<p>After evaluating different approaches, we selected Grounding DINO V2 because of its strong performance in open-vocabulary object detection.
+Rather than recognizing only predefined classes, the model understands relationships between images and natural language, allowing it to detect a much wider variety of objects.
+Some of the reasons behind our selection include:</p>
 <ul>
   <li>Open-vocabulary object detection</li>
   <li>Strong detection accuracy</li>
@@ -405,9 +414,9 @@ Future iterations will focus on:</p>
 <img src="${b3Blog3}" alt="Grounding DINO Architecture or Workflow" class="blog-section-img" />
 
 <h2>Detecting Mission Targets</h2>
-<p>During the SUAS mission, the UAV processes images captured by the onboard camera in real time.</p>
-<p>Instead of searching for a fixed class label, the model receives carefully designed text prompts that describe the mission targets.</p>
-<p>Some examples include:</p>
+<p>During the SUAS mission, the UAV processes images captured by the onboard camera in real time.
+Instead of searching for a fixed class label, the model receives carefully designed text prompts that describe the mission targets.
+Some examples include:</p>
 <ul>
   <li>"Mannequin"</li>
   <li>"Human dummy"</li>
@@ -421,9 +430,9 @@ Future iterations will focus on:</p>
 
 
 <h2>Improving Detection Reliability</h2>
-<p>Real-world environments introduce numerous challenges, including varying lighting conditions, shadows, occlusions, and background clutter.</p>
-<p>To improve reliability, the detection pipeline incorporates several filtering techniques before confirming a target.</p>
-<p>These include:</p>
+<p>Real-world environments introduce numerous challenges, including varying lighting conditions, shadows, occlusions, and background clutter.
+To improve reliability, the detection pipeline incorporates several filtering techniques before confirming a target.
+These include:</p>
 <ul>
   <li>Confidence score thresholding</li>
   <li>Non-Maximum Suppression (NMS)</li>
@@ -434,9 +443,9 @@ Future iterations will focus on:</p>
 
 
 <h2>From Detection to Decision</h2>
-<p>Object detection is only one part of the perception pipeline.</p>
-<p>Once a target is identified, its location is combined with GPS and flight data to support mission planning and autonomous decision-making.</p>
-<p>The detected information can then be used for:</p>
+<p>Object detection is only one part of the perception pipeline.
+Once a target is identified, its location is combined with GPS and flight data to support mission planning and autonomous decision-making.
+The detected information can then be used for:</p>
 <ul>
   <li>Mission target localization</li>
   <li>Navigation updates</li>
@@ -462,31 +471,31 @@ Future iterations will focus on:</p>
 <div class="about-authors-section">
   <h2>About the Authors</h2>
   <div class="author-card">
-    <img src="${israfilImg}" alt="MD. Israfil Hossain" class="author-photo" />
+    <img src="${member3}" alt="Fahad Rahaman" class="author-photo" />
     <div class="author-info">
-      <h4>MD. Israfil Hossain</h4>
-      <p>MD. Israfil Hossain is a Research Member at the UIU Aerial Robotics Team (UART), contributing to autonomous systems development, computer vision research, and AI integration for the SUAS 2026 competition platform.</p>
+      <h4>Fahad Rahaman</h4>
+      <p>Fahad Rahaman is the Sub Team Lead of the Software &amp; Navigation Team and R&amp;D Team at the UIU Aerial Robotics Team (UART), contributing to autonomous systems development and mission software.</p>
     </div>
   </div>
   <div class="author-card">
-    <img src="${biplobImg}" alt="Md. Biplob" class="author-photo" />
+    <img src="${member2}" alt="Ahmed Junaed" class="author-photo" />
     <div class="author-info">
-      <h4>Md. Biplob</h4>
-      <p>Md. Biplob is a Research Member at the UIU Aerial Robotics Team (UART), working on autonomous flight systems, embedded software, and mission-critical subsystem integration for next-generation UAV platforms.</p>
+      <h4>Ahmed Junaed</h4>
+      <p>Ahmed Junaed is the Co-Team Lead of the UIU Aerial Robotics Team (UART), specializing in Software &amp; Navigation integration for autonomous missions.</p>
     </div>
   </div>
   <div class="author-card">
-    <img src="${faisalImg}" alt="Ifta Faisal" class="author-photo" />
+    <img src="${arpon}" alt="Md Shazan Mahmud Arpon" class="author-photo" />
     <div class="author-info">
-      <h4>Ifta Faisal</h4>
-      <p>Ifta Faisal is a Research Member and Sub Team Lead of the Web &amp; Communication Team at the UIU Aerial Robotics Team (UART), contributing to mission software, ground control systems, and team communication infrastructure.</p>
+      <h4>Md Shazan Mahmud Arpon</h4>
+      <p>Md Shazan Mahmud Arpon is a Research Member of the Software &amp; Navigation Team at the UIU Aerial Robotics Team (UART), contributing to computer vision and embedded software integration.</p>
     </div>
   </div>
 </div>
 `,
-    author: "MD. Israfil Hossain • Md. Biplob • Ifta Faisal",
-    role: "Research Members, UIU Aerial Robotics Team",
-    authorImg: missionImg,
+    author: "Fahad Rahaman • Ahmed Junaed • Md Shazan Mahmud Arpon",
+    role: "Software & Navigation Team, UIU Aerial Robotics Team",
+    authorImg: member3,
     date: "July 10, 2026",
     readTime: "10 min read",
     category: "Artificial Intelligence",
@@ -516,7 +525,7 @@ Future iterations will focus on:</p>
   <li>Improved operational safety</li>
 </ul>
 <p>By combining multiple images into a single map, the UAV provides a clearer understanding of its surroundings.</p>
-<img src="${missionImg}" alt="Example of Individual Images vs Final Map" class="blog-section-img" />
+<img src="${mapImg}" alt="Example of Individual Images vs Final Map" class="blog-section-img" />
 
 <h2>Capturing the Mission Area</h2>
 <p>As the UAV follows its autonomous flight path, the onboard camera continuously captures high-resolution images of the ground below.</p>
@@ -531,9 +540,9 @@ Future iterations will focus on:</p>
 
 
 <h2>Building the Map</h2>
-<p>Once the images have been collected, they are processed through an image stitching pipeline.</p>
-<p>Instead of treating each photograph separately, the system identifies overlapping regions between consecutive images and combines them into a single continuous map.</p>
-<p>The mapping process includes:</p>
+<p>Once the images have been collected, they are processed through an image stitching pipeline.
+Instead of treating each photograph separately, the system identifies overlapping regions between consecutive images and combines them into a single continuous map.
+The mapping process includes:</p>
 <ul>
   <li>Feature detection</li>
   <li>Image alignment</li>
@@ -542,12 +551,12 @@ Future iterations will focus on:</p>
   <li>Exposure correction</li>
 </ul>
 <p>These steps help produce a smooth and visually consistent aerial map with minimal distortion.</p>
-<img src="${missionImg}" alt="Image Stitching Pipeline Diagram" class="blog-section-img" />
+<img src="${mapImg}" alt="Image Stitching Pipeline Diagram" class="blog-section-img" />
 
 <h2>Maintaining Geographic Accuracy</h2>
-<p>Creating a visually appealing map is important, but maintaining positional accuracy is equally critical.</p>
-<p>To improve map reliability, GPS information is incorporated throughout the mapping process. This allows the generated map to represent real-world locations more accurately and supports future mission planning.</p>
-<p>Our approach focuses on:</p>
+<p>Creating a visually appealing map is important, but maintaining positional accuracy is equally critical.
+To improve map reliability, GPS information is incorporated throughout the mapping process. This allows the generated map to represent real-world locations more accurately and supports future mission planning.
+Our approach focuses on:</p>
 <ul>
   <li>Consistent image overlap</li>
   <li>Stable camera positioning</li>
@@ -640,9 +649,9 @@ Future iterations will focus on:</p>
 <img src="${b7Blog1}" alt="Initial CAD Design" class="blog-section-img" />
 
 <h2>Why Carbon Fiber?</h2>
-<p>Material selection has a significant impact on UAV performance.</p>
-<p>After evaluating different options, we selected carbon fiber because it offers excellent strength while keeping the aircraft lightweight.</p>
-<p>Some of the advantages include:</p>
+<p>Material selection has a significant impact on UAV performance.
+After evaluating different options, we selected carbon fiber because it offers excellent strength while keeping the aircraft lightweight.
+Some of the advantages include:</p>
 <ul>
   <li>High strength-to-weight ratio</li>
   <li>Excellent rigidity</li>
@@ -667,9 +676,9 @@ Future iterations will focus on:</p>
 <img src="${b7Blog3}" alt="X-Frame Configuration" class="blog-section-img" />
 
 <h2>Designing for Easy Maintenance</h2>
-<p>A competition aircraft should not only fly well but also be easy to repair and transport.</p>
-<p>To simplify field operations, the airframe was designed with a modular structure that allows components to be replaced without rebuilding the entire aircraft.</p>
-<p>This modular approach provides:</p>
+<p>A competition aircraft should not only fly well but also be easy to repair and transport.
+To simplify field operations, the airframe was designed with a modular structure that allows components to be replaced without rebuilding the entire aircraft.
+This modular approach provides:</p>
 <ul>
   <li>Faster maintenance</li>
   <li>Easier upgrades</li>
@@ -694,31 +703,31 @@ Future iterations will focus on:</p>
 <div class="about-authors-section">
   <h2>About the Authors</h2>
   <div class="author-card">
-    <img src="${israfilImg}" alt="MD. Israfil Hossain" class="author-photo" />
+    <img src="${member5}" alt="Muktaderul Islam" class="author-photo" />
     <div class="author-info">
-      <h4>MD. Israfil Hossain</h4>
-      <p>MD. Israfil Hossain is a Research Member at the UIU Aerial Robotics Team (UART), contributing to autonomous systems development, computer vision research, and AI integration for the SUAS 2026 competition platform.</p>
+      <h4>Muktaderul Islam</h4>
+      <p>Muktaderul Islam is the Sub Team Lead of the Mechanical Team at the UIU Aerial Robotics Team (UART), specializing in airframe design, structural integrity, and hardware development for the SUAS 2026 competition platform.</p>
     </div>
   </div>
   <div class="author-card">
-    <img src="${biplobImg}" alt="Md. Biplob" class="author-photo" />
+    <img src="${member9}" alt="Digonta Karmaker" class="author-photo" />
     <div class="author-info">
-      <h4>Md. Biplob</h4>
-      <p>Md. Biplob is a Research Member at the UIU Aerial Robotics Team (UART), working on autonomous flight systems, embedded software, and mission-critical subsystem integration for next-generation UAV platforms.</p>
+      <h4>Digonta Karmaker</h4>
+      <p>Digonta Karmaker is a Research Member of the Mechanical  Team at the UIU Aerial Robotics Team (UART), focusing on mechanical integration and structural optimization.</p>
     </div>
   </div>
   <div class="author-card">
-    <img src="${faisalImg}" alt="Ifta Faisal" class="author-photo" />
+    <img src="${adnan}" alt="Adnan Mohammad Salauddin" class="author-photo" />
     <div class="author-info">
-      <h4>Ifta Faisal</h4>
-      <p>Ifta Faisal is a Research Member and Sub Team Lead of the Web &amp; Communication Team at the UIU Aerial Robotics Team (UART), contributing to mission software, ground control systems, and team communication infrastructure.</p>
+      <h4>Adnan Mohammad Salauddin</h4>
+      <p>Adnan Mohammad Salauddin is a Research Member of the Mechanical Team at the UIU Aerial Robotics Team (UART), contributing to mechanical design.</p>
     </div>
   </div>
 </div>
 `,
-    author: "MD. Israfil Hossain • Md. Biplob • Ifta Faisal",
-    role: "Research Members, UIU Aerial Robotics Team",
-    authorImg: blog7Cover,
+    author: "Muktaderul Islam • Digonta Karmaker • Adnan Mohammad Salauddin",
+    role: "Mechanical Team, UIU Aerial Robotics Team",
+    authorImg: member5,
     date: "August 21, 2026",
     readTime: "8 min read",
     category: "Mechanical",
@@ -826,31 +835,31 @@ As our research continues, the software ecosystem will evolve alongside new hard
 <div class="about-authors-section">
   <h2>About the Authors</h2>
   <div class="author-card">
-    <img src="${israfilImg}" alt="MD. Israfil Hossain" class="author-photo" />
+    <img src="${member3}" alt="Fahad Rahaman" class="author-photo" />
     <div class="author-info">
-      <h4>MD. Israfil Hossain</h4>
-      <p>MD. Israfil Hossain is a Research Member at the UIU Aerial Robotics Team (UART), contributing to autonomous systems development, computer vision research, and AI integration for the SUAS 2026 competition platform.</p>
+      <h4>Fahad Rahaman</h4>
+      <p>Fahad Rahaman is the Sub Team Lead of the Software &amp; Navigation Team and R&amp;D Team at the UIU Aerial Robotics Team (UART), contributing to autonomous systems development and mission software.</p>
     </div>
   </div>
   <div class="author-card">
-    <img src="${biplobImg}" alt="Md. Biplob" class="author-photo" />
+    <img src="${nusrat}" alt="Nusrat Jahan" class="author-photo" />
     <div class="author-info">
-      <h4>Md. Biplob</h4>
-      <p>Md. Biplob is a Research Member at the UIU Aerial Robotics Team (UART), working on autonomous flight systems, embedded software, and mission-critical subsystem integration for next-generation UAV platforms.</p>
+      <h4>Nusrat Jahan</h4>
+      <p>Nusrat Jahan is a Research Member of the Autonomous &amp; Navigation Team at the UIU Aerial Robotics Team (UART), working on mission planning and autonomous flight systems.</p>
     </div>
   </div>
   <div class="author-card">
-    <img src="${faisalImg}" alt="Ifta Faisal" class="author-photo" />
+    <img src="${arpon}" alt="Md Shazan Mahmud Arpon" class="author-photo" />
     <div class="author-info">
-      <h4>Ifta Faisal</h4>
-      <p>Ifta Faisal is a Research Member and Sub Team Lead of the Web &amp; Communication Team at the UIU Aerial Robotics Team (UART), contributing to mission software, ground control systems, and team communication infrastructure.</p>
+      <h4>Md Shazan Mahmud Arpon</h4>
+      <p>Md Shazan Mahmud Arpon is a Research Member of the Software &amp; Navigation Team at the UIU Aerial Robotics Team (UART), contributing to computer vision and embedded software integration.</p>
     </div>
   </div>
 </div>
 `,
-    author: "MD. Israfil Hossain • Md. Biplob • Ifta Faisal",
-    role: "Research Members, UIU Aerial Robotics Team",
-    authorImg: missionImg,
+    author: "Fahad Rahaman • Nusrat Jahan • Md Shazan Mahmud Arpon",
+    role: "Software & Navigation Team, UIU Aerial Robotics Team",
+    authorImg: member3,
     date: "August 14, 2026",
     readTime: "10 min read",
     category: "Software",
