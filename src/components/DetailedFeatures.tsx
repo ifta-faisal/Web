@@ -57,6 +57,7 @@ const SpecRow: React.FC<{ label: string; value: string; unit?: string }> = ({ la
 
 /* ── Feature section (alternating) ── */
 interface FeatureSectionProps {
+  id?: string;
   tag: string;
   title: string;
   description: string;
