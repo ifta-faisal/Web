@@ -376,7 +376,7 @@ Future iterations will focus on:</p>
     authorImg: "",
     date: "July 10, 2026",
     readTime: "9 min read",
-    category: "Technology",
+    category: "Electrical",
     image: blog2Cover, // Updated with actual airframe hero image
   },
   {
@@ -504,7 +504,7 @@ The detected information can then be used for:</p>
     authorImg: member3,
     date: "July 10, 2026",
     readTime: "10 min read",
-    category: "Artificial Intelligence",
+    category: "Software",
     image: blog3Cover, // Updated with actual detection hero image
   },
   {

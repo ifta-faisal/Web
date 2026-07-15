@@ -31,16 +31,16 @@ import b14 from "../assets/images/Project/Raven1.0/B14.jpeg";
 import b6 from "../assets/images/Project/Raven1.0/B6.jpg";
 import b7 from "../assets/images/Project/Raven1.0/B7.jpg";
 import b12 from "../assets/images/Project/Raven1.0/B12.jpg";
-import d1 from "../assets/images/Project/Raven/D_1.jpg";
-import d2 from "../assets/images/Project/Raven/D_2.jpg";
-import d3 from "../assets/images/Project/Raven/D_3.jpg";
-import d4 from "../assets/images/Project/Raven/D_4.jpg";
-import d5 from "../assets/images/Project/Raven/D_5.jpg";
-import d6 from "../assets/images/Project/Raven/D_6.jpg";
-import d7 from "../assets/images/Project/Raven/D_7.jpg";
-import d8 from "../assets/images/Project/Raven/D_8.jpg";
-import d9 from "../assets/images/Project/Raven/D_9.jpg";
-import d10 from "../assets/images/Project/Raven/D_10.jpg";
+import d1 from "../assets/images/Project/ThunderBird/D_1.jpg";
+import d2 from "../assets/images/Project/ThunderBird/D_2.jpg";
+import d3 from "../assets/images/Project/ThunderBird/D_3.jpg";
+import d4 from "../assets/images/Project/ThunderBird/D_4.jpg";
+import d5 from "../assets/images/Project/ThunderBird/D_5.jpg";
+import d6 from "../assets/images/Project/ThunderBird/D_6.jpg";
+import d7 from "../assets/images/Project/ThunderBird/D_7.jpg";
+import d8 from "../assets/images/Project/ThunderBird/D_8.jpg";
+import d9 from "../assets/images/Project/ThunderBird/D_9.jpg";
+import d10 from "../assets/images/Project/ThunderBird/D_10.jpg";
 
 const galleryItems = [
   // {
@@ -130,13 +130,13 @@ const galleryItems = [
   },
   {
     image: b8,
-    title: "Project Raven",
-    description: "Raven on the grassy field.",
+    title: "Project ThunderBird",
+    description: "ThunderBird on the grassy field.",
   },
   {
     image: b9,
     title: "Flight Preparation",
-    description: "Preparing Raven drone for flight.",
+    description: "Preparing ThunderBird drone for flight.",
   },
   {
     image: b10,
@@ -161,16 +161,16 @@ const galleryItems = [
   { image: b6, title: "Raven1.0", description: "Raven 1.0 having its first flight." },
   { image: b7, title: "Raven 1.0", description: "Testing Raven1.0 systems." },
   { image: b12, title: "Raven1.0 Showcase", description: "Raven 1.0 full view." },
-  { image: d1, title: "Raven Prototype Testing", description: "Testing Our Prototype Raven" },
-  { image: d2, title: "Raven Prototype", description: "Raven Test Flight." },
-  { image: d3, title: "Raven Prototype Field Test", description: "Raven Prototypes on the field." },
-  { image: d4, title: "Raven Prototype Testing", description: "Pre-flight test for Raven prototypes." },
-  { image: d5, title: "Raven Prototype ", description: "Raven Prototypes in Action." },
-  { image: d6, title: "Raven Prototype Flight", description: "Raven Prototypes flying." },
-  { image: d7, title: "Raven Prototype Action", description: "Raven Prototypes in action." },
-  { image: d8, title: "Raven Prototype Mission", description: "Raven Prototypes on mission." },
-  { image: d9, title: "Raven Prototype Test", description: "Testing Raven Prototypes." },
-  { image: d10, title: "Raven ", description: "Raven Prototype Night Flight." },
+  { image: d1, title: "ThunderBird Prototype Testing", description: "Testing Our Prototype ThunderBird" },
+  { image: d2, title: "ThunderBird Prototype", description: "ThunderBird Test Flight." },
+  { image: d3, title: "ThunderBird Prototype Field Test", description: "ThunderBird Prototypes on the field." },
+  { image: d4, title: "ThunderBird Prototype Testing", description: "Pre-flight test for ThunderBird prototypes." },
+  { image: d5, title: "ThunderBird Prototype ", description: "ThunderBird Prototypes in Action." },
+  { image: d6, title: "ThunderBird Prototype Flight", description: "ThunderBird Prototypes flying." },
+  { image: d7, title: "ThunderBird Prototype Action", description: "ThunderBird Prototypes in action." },
+  { image: d8, title: "ThunderBird Prototype Mission", description: "ThunderBird Prototypes on mission." },
+  { image: d9, title: "ThunderBird Prototype Test", description: "Testing ThunderBird Prototypes." },
+  { image: d10, title: "ThunderBird ", description: "ThunderBird Prototype Night Flight." },
 ];
 
 const Gallery = () => {

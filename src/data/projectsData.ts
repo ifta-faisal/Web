@@ -1,14 +1,14 @@
-import project10 from "../assets/images/Project/Raven/D_1.jpg";
-import swarm1 from "../assets/images/Project/Raven/D_1.jpg";
-import swarm2 from "../assets/images/Project/Raven/D_2.jpg";
-import swarm3 from "../assets/images/Project/Raven/D_3.jpg";
-import swarm4 from "../assets/images/Project/Raven/D_4.jpg";
-import swarm5 from "../assets/images/Project/Raven/D_5.jpg";
-import swarm6 from "../assets/images/Project/Raven/D_6.jpg";
-import swarm7 from "../assets/images/Project/Raven/D_7.jpg";
-import swarm8 from "../assets/images/Project/Raven/D_8.jpg";
-import swarm9 from "../assets/images/Project/Raven/D_9.jpg";
-import swarm10 from "../assets/images/Project/Raven/D_10.jpg";
+import project10 from "../assets/images/Project/ThunderBird/D_1.jpg";
+import swarm1 from "../assets/images/Project/ThunderBird/D_1.jpg";
+import swarm2 from "../assets/images/Project/ThunderBird/D_2.jpg";
+import swarm3 from "../assets/images/Project/ThunderBird/D_3.jpg";
+import swarm4 from "../assets/images/Project/ThunderBird/D_4.jpg";
+import swarm5 from "../assets/images/Project/ThunderBird/D_5.jpg";
+import swarm6 from "../assets/images/Project/ThunderBird/D_6.jpg";
+import swarm7 from "../assets/images/Project/ThunderBird/D_7.jpg";
+import swarm8 from "../assets/images/Project/ThunderBird/D_8.jpg";
+import swarm9 from "../assets/images/Project/ThunderBird/D_9.jpg";
+import swarm10 from "../assets/images/Project/ThunderBird/D_10.jpg";
 
 import aether1 from "../assets/images/Project/Aether/Aether_1.jpg";
 import aether2 from "../assets/images/Project/Aether/Aether_2.jpg";
@@ -73,7 +73,7 @@ export const projectsData: ProjectData[] = [
     videoUrl: "https://www.youtube.com/embed/I8id3VY7Vdg"
   },
   {
-    id: 10, name: " Raven",
+    id: 10, name: " ThunderBird",
     description: "Next-generation, visually guided UAV prototype engineered for cutting edge autonomous flight research..",
     longDescription: "Our design philosophy is not just about the vehicle itself, but about the mission it must serve. We believe a truly innovative aerial platform must be Built for adaptation.",
     image: project10, category: "ai", year: "2026", status: "Active", isPrototype: true,
@@ -87,7 +87,7 @@ export const projectsData: ProjectData[] = [
       { label: "Power System", value: "Lithium-ion Battery" },
     ],
     media: [swarm1, swarm2, swarm3, swarm4, swarm5, swarm6, swarm7, swarm8, swarm9, swarm10],
-    docs: [{ title: "Raven System Details Report", url: "#" },],
+    docs: [{ title: "ThunderBird System Details Report", url: "#" },],
     videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
   },
   {

@@ -30,16 +30,16 @@ import b11 from "../assets/images/Project/Raven1.0/B11.jpg";
 import b6 from "../assets/images/Project/Raven1.0/B6.jpg";
 import b7 from "../assets/images/Project/Raven1.0/B7.jpg";
 import b12 from "../assets/images/Project/Raven1.0/B12.jpg";
-import d1 from "../assets/images/Project/Raven/D_1.jpg";
-import d2 from "../assets/images/Project/Raven/D_2.jpg";
-import d3 from "../assets/images/Project/Raven/D_3.jpg";
-import d4 from "../assets/images/Project/Raven/D_4.jpg";
-import d5 from "../assets/images/Project/Raven/D_5.jpg";
-import d6 from "../assets/images/Project/Raven/D_6.jpg";
-import d7 from "../assets/images/Project/Raven/D_7.jpg";
-import d8 from "../assets/images/Project/Raven/D_8.jpg";
-import d9 from "../assets/images/Project/Raven/D_9.jpg";
-import d10 from "../assets/images/Project/Raven/D_10.jpg";
+import d1 from "../assets/images/Project/ThunderBird/D_1.jpg";
+import d2 from "../assets/images/Project/ThunderBird/D_2.jpg";
+import d3 from "../assets/images/Project/ThunderBird/D_3.jpg";
+import d4 from "../assets/images/Project/ThunderBird/D_4.jpg";
+import d5 from "../assets/images/Project/ThunderBird/D_5.jpg";
+import d6 from "../assets/images/Project/ThunderBird/D_6.jpg";
+import d7 from "../assets/images/Project/ThunderBird/D_7.jpg";
+import d8 from "../assets/images/Project/ThunderBird/D_8.jpg";
+import d9 from "../assets/images/Project/ThunderBird/D_9.jpg";
+import d10 from "../assets/images/Project/ThunderBird/D_10.jpg";
 
 const row1 = [
   // { image: img2,      title: "Drone Engine" },
@@ -49,18 +49,18 @@ const row1 = [
   { image: meeting_2, title: "Mentorship Session" },
   { image: b1, title: "Field Test at UIU" },
   { image: b2, title: "Drone on Field" },
-  { image: b8, title: "Project Raven" },
+  { image: b8, title: "Project ThunderBird" },
   { image: b9, title: "Flight Preparation" },
   // { image: aether1, title: "Project Aether" },
   // { image: aether2, title: "Aether Setup" },
   // { image: aether3, title: "Aether Ready" },
   // { image: aether4, title: "Aether Flight" },
   // { image: aether5, title: "Aether Display" },
-  { image: b6, title: "Raven Hardware" },
-  { image: b7, title: "Raven Testing" },
-  { image: b12, title: "Raven Showcase" },
+  { image: b6, title: "ThunderBird Hardware" },
+  { image: b7, title: "ThunderBird Testing" },
+  { image: b12, title: "ThunderBird Showcase" },
   { image: d1, title: "Prototype Testing" },
-  { image: d2, title: "Raven Prototype" },
+  { image: d2, title: "ThunderBird Prototype" },
 ];
 
 const row2 = [

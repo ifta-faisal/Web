@@ -26,6 +26,25 @@ const BlogDetail = () => {
     alert('Link copied to clipboard!');
   };
 
+  const postUrl = encodeURIComponent(window.location.href);
+  const postTitle = encodeURIComponent(post.title);
+
+  const handleShareLinkedin = () => {
+    window.open(`https://www.linkedin.com/shareArticle?mini=true&url=${postUrl}&title=${postTitle}`, '_blank');
+  };
+
+  const handleShareTwitter = () => {
+    window.open(`https://twitter.com/intent/tweet?url=${postUrl}&text=${postTitle}`, '_blank');
+  };
+
+  const handleShareFacebook = () => {
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${postUrl}`, '_blank');
+  };
+
+  const handleShareEmail = () => {
+    window.location.href = `mailto:?subject=${postTitle}&body=Check out this article: ${window.location.href}`;
+  };
+
   return (
     <div className="min-h-screen bg-[#020617] text-white pt-32 pb-24 relative overflow-hidden">
       {/* Background Ambience */}
@@ -70,19 +89,19 @@ const BlogDetail = () => {
               <div className="text-[10px] font-bold text-slate-500 uppercase tracking-widest mb-2" style={{ writingMode: 'vertical-rl' }}>Share</div>
               <div className="w-px h-8 bg-white/10 mb-2"></div>
 
-              <button className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#0A66C2] hover:border-[#0A66C2] transition-all group">
+              <button onClick={handleShareLinkedin} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#0A66C2] hover:border-[#0A66C2] transition-all group">
                 <Linkedin className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </button>
 
-              <button className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#1DA1F2] hover:border-[#1DA1F2] transition-all group">
+              <button onClick={handleShareTwitter} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#1DA1F2] hover:border-[#1DA1F2] transition-all group">
                 <Twitter className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </button>
 
-              <button className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all group">
+              <button onClick={handleShareFacebook} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-[#1877F2] hover:border-[#1877F2] transition-all group">
                 <Facebook className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </button>
 
-              <button className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-red-500 hover:border-red-500 transition-all group">
+              <button onClick={handleShareEmail} className="w-10 h-10 rounded-full bg-white/5 border border-white/10 flex items-center justify-center text-slate-400 hover:text-white hover:bg-red-500 hover:border-red-500 transition-all group">
                 <Mail className="w-4 h-4 group-hover:scale-110 transition-transform" />
               </button>
 

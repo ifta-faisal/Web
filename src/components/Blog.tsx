@@ -3,7 +3,7 @@ import { Calendar, Clock, ArrowRight, BookOpen, CheckCircle, SlidersHorizontal }
 import { Link } from 'react-router-dom';
 import { posts } from '../data/blogData';
 
-const categories = ['All', 'Leadership', 'Mechanical', 'Software', 'Artificial Intelligence', 'Research'];
+const categories = ['All', 'Leadership', 'Mechanical', 'Software', 'Electrical', 'Payload'];
 
 const Blog = () => {
   const [email, setEmail] = useState('');
@@ -111,14 +111,7 @@ const Blog = () => {
                         {post.category}
                       </span>
                     </div>
-                    {/* Latest badge for newest */}
-                    {index === 0 && (
-                      <div className="absolute bottom-4 left-4 z-10">
-                        <span className="px-3 py-1 bg-accent text-white text-[10px] font-black tracking-[0.15em] uppercase rounded-full">
-                          + Latest
-                        </span>
-                      </div>
-                    )}
+
                   </div>
 
                   {/* Content */}
