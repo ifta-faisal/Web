@@ -1,6 +1,6 @@
 import React, { useEffect, useRef } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Play, FileText, ChevronRight } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Play, FileText, ChevronRight, Activity } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
 
 const ProjectDetail = () => {
@@ -134,6 +134,19 @@ const ProjectDetail = () => {
                 <a href="#docs" className="inline-flex items-center gap-2 text-primary hover:text-orange-400 transition-colors font-bold group">
                   Want To Know Even More? <ChevronRight className="w-5 h-5 group-hover:translate-x-1 transition-transform" />
                 </a>
+              </div>
+            )}
+            {/* See Test Data button — only for Raven 1.0 */}
+            {project.id === 11 && (
+              <div className="mt-8">
+                <Link
+                  to="/TestData"
+                  className="inline-flex items-center gap-3 px-7 py-3.5 rounded-full bg-accent/10 border border-accent/40 text-accent font-bold text-sm hover:bg-accent/20 hover:border-accent/70 transition-all duration-300 group"
+                >
+                  <Activity className="w-4 h-4" />
+                  See Test Data
+                  <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+                </Link>
               </div>
             )}
           </div>

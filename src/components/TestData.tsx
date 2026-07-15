@@ -118,17 +118,6 @@ const TestData: React.FC = () => {
 
       <div className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto">
 
-        {/* ── Back button ── */}
-        <Reveal className="mb-10">
-          <Link
-            to="/DetailedFeatures"
-            className="inline-flex items-center gap-2 text-slate-400 hover:text-white transition-colors text-sm font-mono group"
-          >
-            <ArrowLeft className="w-4 h-4 group-hover:-translate-x-1 transition-transform" />
-            Back to Detailed Features
-          </Link>
-        </Reveal>
-
         {/* ── HERO ── */}
         <Reveal className="text-center mb-20">
           <div className="inline-flex items-center gap-2 mb-5">
@@ -258,12 +247,19 @@ const TestData: React.FC = () => {
             <p className="text-slate-300 text-lg leading-relaxed max-w-2xl mx-auto mb-8">
               Dive deeper into every subsystem — from the carbon fiber airframe to the onboard AI stack powering Raven 1.0.
             </p>
-            <Link to="/DetailedFeatures">
-              <button className="btn-primary btn-pill group px-10 py-4">
-                <span>View Detailed Features</span>
-                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
-              </button>
-            </Link>
+            <a
+              href="YOUR_GOOGLE_DRIVE_LINK_HERE"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex items-center gap-2 btn-primary btn-pill group px-10 py-4"
+            >
+              <svg className="w-5 h-5" viewBox="0 0 24 24" fill="currentColor">
+                <path d="M6.187 8.5L2 15.5 5.813 22h12.375L22 15.5 17.813 8.5H6.187zm5.813 9a2 2 0 110-4 2 2 0 010 4z"/>
+                <path d="M15.5 8.5L12 3 8.5 8.5h7zM12 3L6.187 8.5h11.626L12 3z"/>
+              </svg>
+              <span>View Technical Paper</span>
+              <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+            </a>
           </div>
         </Reveal>
       </div>
