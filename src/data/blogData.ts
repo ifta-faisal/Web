@@ -513,14 +513,13 @@ The detected information can then be used for:</p>
     excerpt: "A UAV's performance depends on the harmony between its motors, propellers, and power system. Learn how UART engineered an efficient propulsion system for stable autonomous flight.",
     content: `
 <h2>Turning Electrical Energy into Flight</h2>
-<p>The propulsion system is responsible for generating the thrust that keeps a UAV airborne. Every motor, propeller, and battery contributes to the aircraft's stability, efficiency, and endurance.</p>
-
-<p>For the SUAS 2026 platform, our objective was not simply to maximize thrust. Instead, we focused on achieving a balanced propulsion system capable of supporting autonomous navigation, aerial mapping, and onboard computing throughout the mission.</p>
+<p>The propulsion system is responsible for generating the thrust that keeps a UAV airborne. Every motor, propeller, and battery contributes to the aircraft's stability, efficiency, and endurance.
+For the SUAS 2026 platform, our objective was not simply to maximize thrust. Instead, we focused on achieving a balanced propulsion system capable of supporting autonomous navigation, aerial mapping, and onboard computing throughout the mission.</p>
 
 <h2>Finding the Right Balance</h2>
-<p>Selecting propulsion components requires balancing several competing factors.</p>
-<p>Larger motors can generate more thrust, while smaller motors often improve agility. Similarly, propeller size influences both efficiency and flight characteristics.</p>
-<p>When evaluating different configurations, we considered:</p>
+<p>Selecting propulsion components requires balancing several competing factors.
+Larger motors can generate more thrust, while smaller motors often improve agility. Similarly, propeller size influences both efficiency and flight characteristics.
+When evaluating different configurations, we considered:</p>
 <ul>
   <li>Flight endurance</li>
   <li>Stable hovering</li>
@@ -533,8 +532,8 @@ The detected information can then be used for:</p>
 <img src="${motorComp}" alt="Motor Comparison" class="blog-section-img" />
 
 <h2>Selecting Motors and Propellers</h2>
-<p>The propulsion system combines brushless motors with large propellers to provide smooth and efficient flight.</p>
-<p>This combination offers several advantages:</p>
+<p>The propulsion system combines brushless motors with large propellers to provide smooth and efficient flight.
+This combination offers several advantages:</p>
 <ul>
   <li>High thrust efficiency</li>
   <li>Lower power consumption</li>
@@ -547,9 +546,9 @@ The detected information can then be used for:</p>
 <img src="${motorProp}" alt="Motor and Propeller Setup" class="blog-section-img" />
 
 <h2>Managing Power Efficiently</h2>
-<p>Efficient propulsion is not only about generating thrust—it is also about using energy wisely.</p>
-<p>Battery capacity, motor efficiency, and propeller selection all influence how long the UAV can remain airborne.</p>
-<p>Our power strategy focuses on:</p>
+<p>Efficient propulsion is not only about generating thrust—it is also about using energy wisely.
+Battery capacity, motor efficiency, and propeller selection all influence how long the UAV can remain airborne.
+Our power strategy focuses on:</p>
 <ul>
   <li>Efficient energy usage</li>
   <li>Balanced weight distribution</li>
@@ -562,9 +561,9 @@ The detected information can then be used for:</p>
 <img src="${batteryDist}" alt="Battery and Power Distribution" class="blog-section-img" />
 
 <h2>Testing for Reliable Performance</h2>
-<p>Every propulsion system must be validated before deployment.</p>
-<p>Ground testing allows us to verify system performance under controlled conditions before autonomous flight begins.</p>
-<p>Our testing process includes:</p>
+<p>Every propulsion system must be validated before deployment.
+Ground testing allows us to verify system performance under controlled conditions before autonomous flight begins.
+Our testing process includes:</p>
 <ul>
   <li>Motor performance testing</li>
   <li>Propeller balancing</li>
@@ -575,8 +574,8 @@ The detected information can then be used for:</p>
 <p>These tests provide valuable insights that help improve reliability and overall flight performance.</p>
 
 <h2>Looking Ahead</h2>
-<p>Mechanical engineering is a continuous process of refinement.</p>
-<p>Future improvements to the propulsion system will explore:</p>
+<p>Mechanical engineering is a continuous process of refinement.
+Future improvements to the propulsion system will explore:</p>
 <ul>
   <li>Higher-efficiency motors</li>
   <li>Improved propeller optimization</li>
@@ -629,8 +628,8 @@ The detected information can then be used for:</p>
 <p>For the SUAS 2026 platform, our goal was to design an airframe that could carry multiple onboard systems while remaining lightweight, durable, and easy to maintain. Every design decision was made with long-term reliability and mission performance in mind.</p>
 
 <h2>Defining Our Design Goals</h2>
-<p>Before selecting materials or components, we identified the characteristics required for a competition-ready aircraft.</p>
-<p>Our design objectives included:</p>
+<p>Before selecting materials or components, we identified the characteristics required for a competition-ready aircraft.
+Our design objectives included:</p>
 <ul>
   <li>Lightweight construction</li>
   <li>High structural strength</li>
@@ -657,8 +656,8 @@ Some of the advantages include:</p>
 <img src="${b7Blog2}" alt="Carbon Fiber Frame" class="blog-section-img" />
 
 <h2>Choosing the X-Frame Configuration</h2>
-<p>The UAV uses a quadrotor X-frame configuration, a design widely adopted in autonomous aerial systems due to its balance between stability and maneuverability.</p>
-<p>The symmetrical layout offers several benefits:</p>
+<p>The UAV uses a quadrotor X-frame configuration, a design widely adopted in autonomous aerial systems due to its balance between stability and maneuverability.
+The symmetrical layout offers several benefits:</p>
 <ul>
   <li>Balanced thrust distribution</li>
   <li>Improved flight stability</li>
