@@ -46,17 +46,7 @@ const BlogDetail = () => {
             {post.title}
           </h1>
           
-          <div className="flex flex-wrap items-center justify-between gap-6 pb-8 border-b border-white/10">
-            <div className="flex items-center gap-4">
-              <div className="w-14 h-14 rounded-full overflow-hidden border-2 border-primary/30">
-                <img src={post.authorImg} alt={post.author} className="w-full h-full object-cover" />
-              </div>
-              <div>
-                <p className="text-white font-bold text-sm tracking-wide">{post.author}</p>
-                <p className="text-slate-400 text-xs">{post.role}</p>
-              </div>
-            </div>
-            
+          <div className="flex flex-wrap items-center justify-end gap-6 pb-8 border-b border-white/10">
             <div className="flex items-center gap-6 text-sm text-slate-400 font-mono">
               <div className="flex items-center gap-2"><Calendar className="w-4 h-4 text-primary" /> {post.date}</div>
               <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-primary" /> {post.readTime}</div>
