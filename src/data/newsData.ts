@@ -6,11 +6,12 @@ import ua from '../assets/images/news/UA1.jpeg';
 import recruit2 from '../assets/images/news/Recruit2.jpeg';
 import recruit1 from '../assets/images/news/Recruit1.jpeg';
 import vcvist from '../assets/images/news/VC_Vist_21_May.jpeg';
-import amprius from '../assets/images/Sponsor/amp.png';
+import amprius from '../assets/images/News/amprius_news.jpeg';
 import autodesk from '../assets/images/news/autodesk_1.jpg';
 import solidworks from '../assets/images/news/solidworks.jpg';
-import suaslogo from '../assets/images/logo/suas.png';
 import poster from '../assets/images/news/poster.png';
+import puku from '../assets/images/news/puku.jpeg';
+import mayy23 from '../assets/images/news/mayy_23.jpeg';
 
 export interface NewsItem {
   id: number;
@@ -25,6 +26,17 @@ export interface NewsItem {
 }
 
 export const newsItems: NewsItem[] = [
+  {
+    id: 13,
+    title: 'Welcome Puku AI — Our Official AI Partner',
+    date: '15 July 2026',
+    source: 'UART',
+    description: 'We are excited to welcome Puku AI as our official AI partner. This partnership will empower us to integrate advanced artificial intelligence capabilities into our platforms, pushing the boundaries of autonomous innovation.',
+    link: '#',
+    image: puku,
+    category: 'Sponsorship',
+    tags: ['partnership', 'ai', 'collaboration', 'puku-ai']
+  },
   {
     id: 12,
     title: 'Selected for SUAS 2026',
@@ -68,6 +80,17 @@ export const newsItems: NewsItem[] = [
     image: amprius,
     category: 'Sponsorship',
     tags: ['partnership', 'technology', 'battery', 'collaboration', 'amprius']
+  },
+  {
+    id: 14,
+    title: 'Presentation to Honorable VC & Faculty',
+    date: '23 May 2026',
+    source: 'UART',
+    description: 'UIU Aerial Robotics Team had the opportunity to present our UAV prototype and full-scale aerial platform to our Honorable Vice Chancellor of United International University Prof. Dr. Md. Abul Kashem Mia Sir, Prof Dr. A.K.M. Muzahidul Islam Sir, and Lecturer Azizur Rahman Anik Sir. We also conducted a successful test run, demonstrating the progress and performance of our system through practical implementation and live flight testing. The positive feedback and support truly motivates us to keep pushing forward and achieving even greater milestones in autonomous aerial robotics and engineering innovation.',
+    link: '#',
+    image: mayy23,
+    category: 'General',
+    tags: ['visit', 'presentation', 'uav', 'test-run']
   },
   {
     id: 8,

@@ -1,6 +1,6 @@
-import mentor1 from '../assets/images/Advisor/Mentor1.jpeg';
-import vcImage from '../assets/images/Advisor/VC.jpg';
-import projectImg from '../assets/images/Project/project1.jpeg';
+// import mentor1 from '../assets/images/Advisor/Mentor1.jpeg';
+// import vcImage from '../assets/images/Advisor/VC.jpg';
+// import projectImg from '../assets/images/Project/project1.jpeg';
 
 import missionImg from '../assets/images/DetailedFeatures/mission_planning_ui.png';
 import suasImg from '../assets/images/logo/suas.png';
