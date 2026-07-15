@@ -127,7 +127,7 @@ const Blog = () => {
                   <div className="flex flex-col justify-between p-4 md:p-6 flex-grow min-w-0">
                     {/* Title & Excerpt */}
                     <div className="mb-3">
-                      <h2 className="text-base md:text-lg font-black text-white mb-1.5 leading-snug group-hover:text-primary transition-colors uppercase tracking-tight line-clamp-2">
+                      <h2 className="text-lg md:text-xl font-bold text-white mb-2 leading-snug group-hover:text-primary transition-colors line-clamp-2">
                         {post.title}
                       </h2>
                       <p className="text-slate-400 text-xs leading-relaxed line-clamp-2">
@@ -144,10 +144,6 @@ const Blog = () => {
                       <div className="bg-white/5 border border-white/8 rounded-md px-3 py-1.5">
                         <p className="text-slate-500 text-[8px] uppercase tracking-widest font-bold mb-0.5">Read Time</p>
                         <p className="text-white text-[11px] font-bold">{post.readTime}</p>
-                      </div>
-                      <div className="bg-white/5 border border-white/8 rounded-md px-3 py-1.5">
-                        <p className="text-slate-500 text-[8px] uppercase tracking-widest font-bold mb-0.5">Category</p>
-                        <p className="text-white text-[11px] font-bold">{post.category}</p>
                       </div>
                     </div>
 
