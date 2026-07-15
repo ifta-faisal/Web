@@ -43,7 +43,7 @@ export const projectsData: ProjectData[] = [
     id: 11, name: "Raven 1.0",
     description: "Advanced tactical drone system named Raven 1.0.",
     longDescription: "The Raven 1.0 project is an advanced tactical drone system featuring high maneuverability and reconnaissance capabilities.",
-    image: raven12, category: "reconnaissance", year: "2026", status: "Active", isLatest: true,
+    image: raven1, category: "reconnaissance", year: "2026", status: "Active", isLatest: true,
     tags: ["Tactical", "Reconnaissance"],
     specs: [
       { label: "Weight", value: "13 kg" },
