@@ -18,6 +18,12 @@ import member1 from '../assets/images/Team/member1.png';
 import member2 from '../assets/images/Team/member2.png';
 import member7 from '../assets/images/Team/member7.png';
 
+// Images for new Blog 10
+import propHero from '../assets/images/Blog/blog/dronetopcover.jpeg';
+import motorComp from '../assets/images/Blog/blog/motor.jpeg';
+import motorProp from '../assets/images/Blog/blog/prop.jpeg';
+import batteryDist from '../assets/images/DetailedFeatures/Battery.jpeg';
+
 // ─── Blog 1 Imports ───
 import blog1Cover from '../assets/images/Blog/Blog_1/Blog_1cover.jpeg';
 import bolg1 from '../assets/images/Blog/Blog_1/Bolg1.jpeg';
@@ -503,116 +509,104 @@ The detected information can then be used for:</p>
   },
   {
     id: 10,
-    title: "Creating High-Resolution Aerial Maps for Autonomous Missions",
-    excerpt: "Accurate mapping is essential for mission awareness. Learn how UART generates geo-referenced aerial maps by combining onboard imagery, GPS data, and image stitching techniques.",
+    title: "From Design to Flight: Engineering the Propulsion System",
+    excerpt: "A UAV's performance depends on the harmony between its motors, propellers, and power system. Learn how UART engineered an efficient propulsion system for stable autonomous flight.",
     content: `
-<h2>Seeing the Bigger Picture</h2>
-<p>During an autonomous mission, a single aerial image only captures a small portion of the environment. To fully understand the operational area, the UAV must continuously collect and combine multiple images into one complete map.</p>
+<h2>Turning Electrical Energy into Flight</h2>
+<p>The propulsion system is responsible for generating the thrust that keeps a UAV airborne. Every motor, propeller, and battery contributes to the aircraft's stability, efficiency, and endurance.</p>
 
-<p>For the SUAS 2026 mission, mapping is more than just taking photographs. It enables operators to visualize the mission area, analyze potential risks, and support autonomous decision-making throughout the flight.</p>
+<p>For the SUAS 2026 platform, our objective was not simply to maximize thrust. Instead, we focused on achieving a balanced propulsion system capable of supporting autonomous navigation, aerial mapping, and onboard computing throughout the mission.</p>
 
-<p>Our mapping system was designed to create a seamless aerial view while maintaining geographical accuracy.</p>
-
-<h2>Why Mapping Matters</h2>
-<p>A high-quality aerial map provides valuable information before, during, and after a mission.</p>
-<p>Rather than relying on isolated images, the mapping system creates a unified representation of the entire search area.</p>
-<p>This supports several mission objectives, including:</p>
+<h2>Finding the Right Balance</h2>
+<p>Selecting propulsion components requires balancing several competing factors.</p>
+<p>Larger motors can generate more thrust, while smaller motors often improve agility. Similarly, propeller size influences both efficiency and flight characteristics.</p>
+<p>When evaluating different configurations, we considered:</p>
 <ul>
-  <li>Better situational awareness</li>
-  <li>Accurate target localization</li>
-  <li>Efficient mission planning</li>
-  <li>Post-flight mission analysis</li>
-  <li>Improved operational safety</li>
+  <li>Flight endurance</li>
+  <li>Stable hovering</li>
+  <li>Payload capacity</li>
+  <li>Power efficiency</li>
+  <li>Control responsiveness</li>
 </ul>
-<p>By combining multiple images into a single map, the UAV provides a clearer understanding of its surroundings.</p>
-<img src="${mapImg}" alt="Example of Individual Images vs Final Map" class="blog-section-img" />
+<p>Rather than optimizing for a single parameter, we selected components that provide reliable overall performance.</p>
 
-<h2>Capturing the Mission Area</h2>
-<p>As the UAV follows its autonomous flight path, the onboard camera continuously captures high-resolution images of the ground below.</p>
-<p>Each image is recorded together with important flight information such as:</p>
+<img src="\${motorComp}" alt="Motor Comparison" class="blog-section-img" />
+
+<h2>Selecting Motors and Propellers</h2>
+<p>The propulsion system combines brushless motors with large propellers to provide smooth and efficient flight.</p>
+<p>This combination offers several advantages:</p>
 <ul>
-  <li>GPS coordinates</li>
-  <li>Flight altitude</li>
-  <li>Camera orientation</li>
-  <li>Timestamp</li>
+  <li>High thrust efficiency</li>
+  <li>Lower power consumption</li>
+  <li>Stable autonomous hovering</li>
+  <li>Reduced vibration</li>
+  <li>Improved flight endurance</li>
 </ul>
-<p>This additional information allows every image to be placed in its correct geographical position during the mapping process.</p>
+<p>Careful component matching ensures that the propulsion system operates efficiently under varying mission conditions.</p>
 
+<img src="\${motorProp}" alt="Motor and Propeller Setup" class="blog-section-img" />
 
-<h2>Building the Map</h2>
-<p>Once the images have been collected, they are processed through an image stitching pipeline.
-Instead of treating each photograph separately, the system identifies overlapping regions between consecutive images and combines them into a single continuous map.
-The mapping process includes:</p>
+<h2>Managing Power Efficiently</h2>
+<p>Efficient propulsion is not only about generating thrust—it is also about using energy wisely.</p>
+<p>Battery capacity, motor efficiency, and propeller selection all influence how long the UAV can remain airborne.</p>
+<p>Our power strategy focuses on:</p>
 <ul>
-  <li>Feature detection</li>
-  <li>Image alignment</li>
-  <li>Homography estimation</li>
-  <li>Image blending</li>
-  <li>Exposure correction</li>
+  <li>Efficient energy usage</li>
+  <li>Balanced weight distribution</li>
+  <li>Reliable power delivery</li>
+  <li>Consistent flight performance</li>
+  <li>Safe operation</li>
 </ul>
-<p>These steps help produce a smooth and visually consistent aerial map with minimal distortion.</p>
-<img src="${mapImg}" alt="Image Stitching Pipeline Diagram" class="blog-section-img" />
+<p>This integrated approach helps maximize mission duration while maintaining stable flight.</p>
 
-<h2>Maintaining Geographic Accuracy</h2>
-<p>Creating a visually appealing map is important, but maintaining positional accuracy is equally critical.
-To improve map reliability, GPS information is incorporated throughout the mapping process. This allows the generated map to represent real-world locations more accurately and supports future mission planning.
-Our approach focuses on:</p>
+<img src="\${batteryDist}" alt="Battery and Power Distribution" class="blog-section-img" />
+
+<h2>Testing for Reliable Performance</h2>
+<p>Every propulsion system must be validated before deployment.</p>
+<p>Ground testing allows us to verify system performance under controlled conditions before autonomous flight begins.</p>
+<p>Our testing process includes:</p>
 <ul>
-  <li>Consistent image overlap</li>
-  <li>Stable camera positioning</li>
-  <li>GPS-assisted alignment</li>
-  <li>Reduced geometric distortion</li>
-  <li>Reliable map projection</li>
+  <li>Motor performance testing</li>
+  <li>Propeller balancing</li>
+  <li>Thrust verification</li>
+  <li>Power consumption analysis</li>
+  <li>Flight stability evaluation</li>
 </ul>
-<p>These considerations ensure the final map can be used confidently during mission analysis.</p>
-
-
-<h2>Supporting Autonomous Operations</h2>
-<p>The generated aerial map is more than a visual output—it becomes a valuable source of information for the overall autonomous system.</p>
-<p>The completed map can support:</p>
-<ul>
-  <li>Mission monitoring</li>
-  <li>Target verification</li>
-  <li>Search area analysis</li>
-  <li>Route planning</li>
-  <li>Operational reporting</li>
-</ul>
-<p>By integrating mapping with navigation and perception, the UAV gains a more comprehensive understanding of its operating environment.</p>
-<img src="${missionImg}" alt="Final Orthographic Map" class="blog-section-img" />
+<p>These tests provide valuable insights that help improve reliability and overall flight performance.</p>
 
 <h2>Looking Ahead</h2>
-<p>As onboard computing continues to improve, aerial mapping will become increasingly capable of supporting real-time autonomous operations.</p>
-<p>Future development will explore:</p>
+<p>Mechanical engineering is a continuous process of refinement.</p>
+<p>Future improvements to the propulsion system will explore:</p>
 <ul>
-  <li>Faster onboard map generation</li>
-  <li>Higher-resolution mapping</li>
-  <li>Improved stitching accuracy</li>
-  <li>Real-time map visualization</li>
-  <li>Integration with additional perception sensors</li>
+  <li>Higher-efficiency motors</li>
+  <li>Improved propeller optimization</li>
+  <li>Lightweight structural integration</li>
+  <li>Advanced vibration reduction</li>
+  <li>Better aerodynamic performance</li>
 </ul>
-<p>These improvements will further enhance the UAV's ability to operate safely and efficiently in complex environments.</p>
+<p>These developments will support longer flight times and more capable autonomous missions in future UART platforms.</p>
 
 <div class="about-authors-section">
   <h2>About the Authors</h2>
   <div class="author-card">
-    <img src="${israfilImg}" alt="MD. Israfil Hossain" class="author-photo" />
+    <img src="\${israfilImg}" alt="MD. Israfil Hossain" class="author-photo" />
     <div class="author-info">
       <h4>MD. Israfil Hossain</h4>
-      <p>MD. Israfil Hossain is a Research Member at the UIU Aerial Robotics Team (UART), contributing to autonomous systems development, computer vision research, and AI integration for the SUAS 2026 competition platform.</p>
+      <p>Research Member, UIU Aerial Robotics Team</p>
     </div>
   </div>
   <div class="author-card">
-    <img src="${biplobImg}" alt="Md. Biplob" class="author-photo" />
+    <img src="\${biplobImg}" alt="Md. Biplob" class="author-photo" />
     <div class="author-info">
       <h4>Md. Biplob</h4>
-      <p>Md. Biplob is a Research Member at the UIU Aerial Robotics Team (UART), working on autonomous flight systems, embedded software, and mission-critical subsystem integration for next-generation UAV platforms.</p>
+      <p>Research Member, UIU Aerial Robotics Team</p>
     </div>
   </div>
   <div class="author-card">
-    <img src="${faisalImg}" alt="Ifta Faisal" class="author-photo" />
+    <img src="\${faisalImg}" alt="Ifta Faisal" class="author-photo" />
     <div class="author-info">
       <h4>Ifta Faisal</h4>
-      <p>Ifta Faisal is a Research Member and Sub Team Lead of the Web &amp; Communication Team at the UIU Aerial Robotics Team (UART), contributing to mission software, ground control systems, and team communication infrastructure.</p>
+      <p>Research Member, UIU Aerial Robotics Team</p>
     </div>
   </div>
 </div>
@@ -620,10 +614,10 @@ Our approach focuses on:</p>
     author: "MD. Israfil Hossain • Md. Biplob • Ifta Faisal",
     role: "Research Members, UIU Aerial Robotics Team",
     authorImg: "",
-    date: "July 10, 2026",
+    date: "August 28, 2026",
     readTime: "9 min read",
-    category: "Research",
-    image: "", // TODO: Replace with actual mapping hero image
+    category: "Mechanical",
+    image: propHero,
   },
   {
     id: 11,
