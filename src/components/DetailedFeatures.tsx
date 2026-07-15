@@ -302,6 +302,13 @@ const DetailedFeatures = () => {
             <p className="text-slate-400 text-lg leading-relaxed max-w-lg mb-8">
               Every subsystem of Raven 1.0 is purpose-built for autonomous operations — from the carbon fiber skeleton to the AI compute stack.
             </p>
+            <Link to="/TestData">
+              <button className="inline-flex items-center gap-2 px-7 py-3.5 rounded-full bg-accent/10 border border-accent/40 text-accent font-bold text-sm hover:bg-accent/20 hover:border-accent/70 transition-all duration-300 group">
+                <Activity className="w-4 h-4" />
+                See Test Data
+                <ChevronRight className="w-4 h-4 group-hover:translate-x-1 transition-transform" />
+              </button>
+            </Link>
           </div>
 
           {/* Drone 360° interactive viewer */}

@@ -16,6 +16,7 @@ import Contact from './components/Contact';
 import JoinUs from './components/JoinUs';
 import Mentors from './components/Mentors';
 import DetailedFeatures from './components/DetailedFeatures';
+import TestData from './components/TestData';
 import Sponsor from './components/Sponsor';
 import SponsorProposal from './components/SponsorProposal';
 import Gallery from './components/Gallery';
@@ -95,6 +96,7 @@ const App = () => {
           <Route path="/blog" element={<Blog />} />
           <Route path="/blog/:id" element={<BlogDetail />} />
           <Route path="/DetailedFeatures" element={<DetailedFeatures />} />
+          <Route path="/TestData" element={<TestData />} />
           <Route path="/team" element={<Team />} />
           <Route path="/projects" element={<Projects />} />
           <Route path="/project/:id" element={<ProjectDetail />} />
