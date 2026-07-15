@@ -6,7 +6,7 @@ import ua from '../assets/images/news/UA1.jpeg';
 import recruit2 from '../assets/images/news/Recruit2.jpeg';
 import recruit1 from '../assets/images/news/Recruit1.jpeg';
 import vcvist from '../assets/images/news/VC_Vist_21_May.jpeg';
-import amprius from '../assets/images/News/amprius_news.jpeg';
+import amprius from '../assets/images/news/amprius_news.jpeg';
 import autodesk from '../assets/images/news/autodesk_1.jpg';
 import solidworks from '../assets/images/news/solidworks.jpg';
 import poster from '../assets/images/news/poster.png';
