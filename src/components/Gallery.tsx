@@ -1,14 +1,14 @@
 import React from "react";
 import { Eye } from 'lucide-react';
 
-import img2 from "../assets/gallery/Engine1.jpeg";
-import img3 from "../assets/gallery/drone2.jpeg";
-import img4 from "../assets/gallery/Vitol_1.jpeg";
-import img5 from "../assets/gallery/project2.jpeg";
-import img6 from "../assets/gallery/project3.jpeg";
-import img7 from "../assets/gallery/project5.jpeg";
-import img8 from "../assets/gallery/project7.jpeg";
-import img9 from "../assets/gallery/Engine2.jpeg";
+// import img2 from "../assets/gallery/Engine1.jpeg";
+// import img3 from "../assets/gallery/drone2.jpeg";
+// import img4 from "../assets/gallery/Vitol_1.jpeg";
+// import img5 from "../assets/gallery/project2.jpeg";
+// import img6 from "../assets/gallery/project3.jpeg";
+// import img7 from "../assets/gallery/project5.jpeg";
+// import img8 from "../assets/gallery/project7.jpeg";
+// import img9 from "../assets/gallery/Engine2.jpeg";
 import meeting_1 from "../assets/gallery/meeting_1.jpg";
 import meeting_2 from "../assets/gallery/meeting_2.jpg";
 import ramadan from "../assets/gallery/ramadan.jpeg";
@@ -22,11 +22,12 @@ import b8 from "../assets/images/Project/Raven1.0/B8.jpg";
 import b9 from "../assets/images/Project/Raven1.0/B9.jpg";
 import b10 from "../assets/images/Project/Raven1.0/B10.jpg";
 import b11 from "../assets/images/Project/Raven1.0/B11.jpg";
-import aether1 from "../assets/images/Project/Aether/Aether_1.jpg";
-import aether2 from "../assets/images/Project/Aether/Aether_2.jpg";
-import aether3 from "../assets/images/Project/Aether/Aether_3.jpg";
-import aether4 from "../assets/images/Project/Aether/Aether_4.jpg";
-import aether5 from "../assets/images/Project/Aether/Aether_5.jpg";
+import b14 from "../assets/images/Project/Raven1.0/B14.jpeg";
+// import aether1 from "../assets/images/Project/Aether/Aether_1.jpg";
+// import aether2 from "../assets/images/Project/Aether/Aether_2.jpg";
+// import aether3 from "../assets/images/Project/Aether/Aether_3.jpg";
+// import aether4 from "../assets/images/Project/Aether/Aether_4.jpg";
+// import aether5 from "../assets/images/Project/Aether/Aether_5.jpg";
 import b6 from "../assets/images/Project/Raven1.0/B6.jpg";
 import b7 from "../assets/images/Project/Raven1.0/B7.jpg";
 import b12 from "../assets/images/Project/Raven1.0/B12.jpg";
@@ -42,46 +43,46 @@ import d9 from "../assets/images/Project/Raven/D_9.jpg";
 import d10 from "../assets/images/Project/Raven/D_10.jpg";
 
 const galleryItems = [
-  {
-    image: img2,
-    title: "Drone Engine",
-    description: "Long Range Drone Engine.",
-  },
-  {
-    image: img3,
-    title: "Long Range Drone",
-    description: "Long range multifunctional drone.",
-  },
-  {
-    image: img4,
-    title: "VTOL",
-    description: "3D-printed VTOL drone design.",
-  },
-  {
-    image: img5,
-    title: "Cinewhoop",
-    description: "For high-speed indoor FPV drone & Video Graphy.",
-  },
-  {
-    image: img6,
-    title: "Mario 8",
-    description: "Compact FPV long range drone.",
-  },
-  {
-    image: img7,
-    title: "FPV",
-    description: "FPV drone for flying practice.",
-  },
-  {
-    image: img8,
-    title: "Fixed Wing",
-    description: "Long-range customized fixed wing.",
-  },
-  {
-    image: img9,
-    title: "Engine",
-    description: "Customized Drone Engine.",
-  },
+  // {
+  //   image: img2,
+  //   title: "Drone Engine",
+  //   description: "Long Range Drone Engine.",
+  // },
+  // {
+  //   image: img3,
+  //   title: "Long Range Drone",
+  //   description: "Long range multifunctional drone.",
+  // },
+  // {
+  //   image: img4,
+  //   title: "VTOL",
+  //   description: "3D-printed VTOL drone design.",
+  // },
+  // {
+  //   image: img5,
+  //   title: "Cinewhoop",
+  //   description: "For high-speed indoor FPV drone & Video Graphy.",
+  // },
+  // {
+  //   image: img6,
+  //   title: "Mario 8",
+  //   description: "Compact FPV long range drone.",
+  // },
+  // {
+  //   image: img7,
+  //   title: "FPV",
+  //   description: "FPV drone for flying practice.",
+  // },
+  // {
+  //   image: img8,
+  //   title: "Fixed Wing",
+  //   description: "Long-range customized fixed wing.",
+  // },
+  // {
+  //   image: img9,
+  //   title: "Engine",
+  //   description: "Customized Drone Engine.",
+  // },
   {
     image: meeting_1,
     title: "Training Session",
@@ -147,11 +148,16 @@ const galleryItems = [
     title: "Field Operation",
     description: "Operating the drone in the field.",
   },
-  { image: aether1, title: "Project Aether", description: "Aether on the field." },
-  { image: aether2, title: "Aether Setup", description: "Preparing Project Aether." },
-  { image: aether3, title: "Aether Ready", description: "Aether ready for flight." },
-  { image: aether4, title: "Aether Flight", description: "Aether taking off." },
-  { image: aether5, title: "Aether Display", description: "Aether showcased." },
+  {
+    image: b14,
+    title: "Raven 1.0 Field Operations",
+    description: "Operating Project Raven 1.0 in the field.",
+  },
+  // { image: aether1, title: "Project Aether", description: "Aether on the field." },
+  // { image: aether2, title: "Aether Setup", description: "Preparing Project Aether." },
+  // { image: aether3, title: "Aether Ready", description: "Aether ready for flight." },
+  // { image: aether4, title: "Aether Flight", description: "Aether taking off." },
+  // { image: aether5, title: "Aether Display", description: "Aether showcased." },
   { image: b6, title: "Raven Hardware", description: "Close up of Raven hardware." },
   { image: b7, title: "Raven Testing", description: "Testing Raven systems." },
   { image: b12, title: "Raven Showcase", description: "Raven 1.0 full view." },

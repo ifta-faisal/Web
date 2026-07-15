@@ -12,6 +12,8 @@ import solidworks from '../assets/images/news/solidworks.jpg';
 import poster from '../assets/images/news/poster.png';
 import puku from '../assets/images/news/puku.jpeg';
 import mayy23 from '../assets/images/news/mayy_23.jpeg';
+import jan19 from '../assets/images/news/jan_19.jpeg';
+import july10 from '../assets/images/news/july_10.JPG';
 
 export interface NewsItem {
   id: number;
@@ -47,6 +49,17 @@ export const newsItems: NewsItem[] = [
     image: poster,
     category: 'General',
     tags: ['suas', 'competition', 'achievement']
+  },
+  {
+    id: 16,
+    title: 'Visit from Professor Dr. Syafii, Universitas Andalas',
+    date: '10 July 2026',
+    source: 'UART',
+    description: 'We were highly honored to host Professor Dr. Syafii from Universitas Andalas, Indonesia. He visited our UIU Aerial Robotics Team and had a great time seeing our facilities and discussing our progress in autonomous aerial robotics.',
+    link: '#',
+    image: july10,
+    category: 'Visit',
+    tags: ['visit', 'international', 'university', 'collaboration']
   },
   {
     id: 11,
@@ -135,6 +148,17 @@ export const newsItems: NewsItem[] = [
     image: handson,
     category: 'Training',
     tags: ['training', 'flight-control', 'hands-on']
+  },
+  {
+    id: 15,
+    title: 'Interview Sessions for Recruitment 2026 Concluded',
+    date: '19 January 2026',
+    source: 'UART',
+    description: 'Our interview sessions for new member recruitment 2026 have finally come to an end! It was great meeting so many passionate and curious minds, hearing your ideas, and seeing the enthusiasm you bring to robotics and innovation. A special thanks to our guiding lights, Professor Dr. A.K.M. Muzahidul Islam, Assistant Professor Dr. Riasat Azim, and Lecturer Mr. Azizur Rahman Anik sir, for inspiring and supporting us throughout the interview sessions. We\'re excited to move forward with the selection process and can\'t wait to welcome new members who share our vision. Selected candidates will receive their confirmation email within the next two days. Stay tuned for updates on the next steps and upcoming events!',
+    link: '#',
+    image: jan19,
+    category: 'General',
+    tags: ['recruitment', 'interview', 'team', 'hiring']
   },
   {
     id: 4,
