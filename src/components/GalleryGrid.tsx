@@ -96,13 +96,11 @@ const GalleryGrid = () => {
         {allImages.slice(0, 8).map((item, i) => (
           <Link
             to="/gallery"
-            className="w-full aspect-video relative group overflow-hidden rounded-xl border border-white/5 hover:border-primary/30 shadow-lg transition-all duration-300"
+            className="w-full aspect-video relative overflow-hidden rounded-xl border border-white/5 shadow-lg transition-all duration-300"
             key={i}
             style={{ background: '#0d0b0a' }}
           >
-            <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
-            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
-            </div>
+            <img src={item.image} alt={item.title} className="w-full h-full object-cover" loading="lazy" />
           </Link>
         ))}
       </div>
@@ -110,7 +108,7 @@ const GalleryGrid = () => {
       <div className="mt-8 flex justify-center">
         <Link
           to="/gallery"
-          className="inline-block px-6 py-2.5 rounded-full bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/30 hover:bg-[#f97316]/20 hover:border-[#f97316]/50 transition-all font-semibold"
+          className="inline-block px-6 py-2.5 rounded-full bg-[#dc2626]/10 text-[#dc2626] border border-[#dc2626]/30 hover:bg-[#dc2626]/20 hover:border-[#dc2626]/50 transition-all font-semibold"
         >
           See More Images
         </Link>
