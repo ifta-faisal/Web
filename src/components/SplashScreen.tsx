@@ -9,9 +9,9 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
   // ─── Loading Configuration ───────────────────────────────────────
   // Increase delay or decrease step size to SLOW DOWN loading
   // Decrease delay or increase step size to SPEED UP loading
-  const LOADING_SPEED_DELAY = 20;   // ms between updates
-  const MIN_STEP = 0.8;             // minimum increment
-  const RANDOM_FACTOR = 1.8;        // random additional increment
+  const LOADING_SPEED_DELAY = 30;   // slower updates
+  const MIN_STEP = 0.5;             // smaller minimum increment
+  const RANDOM_FACTOR = 1.0;        // smaller random additional increment
   // ─── Scroll Lock ────────────────────────────────────────────────
   useLayoutEffect(() => {
     document.body.classList.add('no-scroll');
@@ -29,11 +29,11 @@ const SplashScreen = ({ onComplete }: { onComplete: () => void }) => {
       setProgress(prev => {
         if (prev >= 100) {
           clearInterval(interval);
-          // Auto-enter after a brief pause at 100%
+          // Pause at 100% 
           setTimeout(() => {
             setIsExiting(true);
-            setTimeout(() => { onComplete(); }, 900);
-          }, 600);
+            setTimeout(() => { onComplete(); }, 900); // 0.9s smooth exit transition
+          }, 800);
           return 100;
         }
         return prev + Math.random() * RANDOM_FACTOR + MIN_STEP;

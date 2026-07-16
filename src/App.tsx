@@ -99,9 +99,9 @@ const App = () => {
 
   return (
     <div className="atmosphere-right min-h-screen overflow-x-hidden">
+      <ScrollToTop />
+      {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
       <div className="cinematic-grid min-h-screen relative overflow-x-hidden w-full">
-        <ScrollToTop />
-        {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
         <Header />
         <Suspense fallback={<PageLoader />}>
           <Routes>

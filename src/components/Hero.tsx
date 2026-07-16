@@ -73,8 +73,19 @@ const StatCard = ({ value, label }: { value: string; label: string }) => {
 const Hero = () => {
   const videoRef = useRef<HTMLVideoElement>(null);
   const heroRef = useRef<HTMLElement>(null);
+  const video2ContainerRef = useRef<HTMLDivElement>(null);
+  const [isVideo2Visible, setIsVideo2Visible] = useState(false);
 
-
+  useEffect(() => {
+    const observer = new IntersectionObserver(([entry]) => {
+      if (entry.isIntersecting) {
+        setIsVideo2Visible(true);
+        observer.disconnect();
+      }
+    }, { rootMargin: '400px 0px' });
+    if (video2ContainerRef.current) observer.observe(video2ContainerRef.current);
+    return () => observer.disconnect();
+  }, []);
   // Parallax video on scroll
   useEffect(() => {
     const handleScroll = () => {
@@ -362,18 +373,22 @@ const Hero = () => {
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-14 lg:gap-20 items-center">
 
             {/* LEFT — smaller looping video (same, no chrome) */}
-            <div className="ju-reveal-left relative">
+            <div className="ju-reveal-left relative" ref={video2ContainerRef}>
               <div className="absolute -inset-6 pointer-events-none"
                 style={{ background: 'radial-gradient(ellipse, rgba(249,115,22,0.12) 0%, transparent 70%)', filter: 'blur(30px)' }} />
               <div className="relative" style={{ paddingBottom: '56.25%' }}>
-                <video
-                  src={vid2}
-                  autoPlay
-                  muted
-                  loop
-                  playsInline
-                  className="absolute inset-0 w-full h-full rounded-xl object-cover"
-                />
+                {isVideo2Visible ? (
+                  <video
+                    src={vid2}
+                    autoPlay
+                    muted
+                    loop
+                    playsInline
+                    className="absolute inset-0 w-full h-full rounded-xl object-cover"
+                  />
+                ) : (
+                  <div className="absolute inset-0 w-full h-full rounded-xl bg-slate-900/50 flex items-center justify-center border border-white/10" />
+                )}
                 <div className="absolute top-0 left-0 w-7 h-7 pointer-events-none z-10" style={{ borderTop: '2px solid rgba(249,115,22,0.6)', borderLeft: '2px solid rgba(249,115,22,0.6)' }} />
                 <div className="absolute top-0 right-0 w-7 h-7 pointer-events-none z-10" style={{ borderTop: '2px solid rgba(249,115,22,0.6)', borderRight: '2px solid rgba(249,115,22,0.6)' }} />
                 <div className="absolute bottom-0 left-0 w-7 h-7 pointer-events-none z-10" style={{ borderBottom: '2px solid rgba(249,115,22,0.6)', borderLeft: '2px solid rgba(249,115,22,0.6)' }} />
