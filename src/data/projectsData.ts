@@ -62,7 +62,7 @@ export const projectsData: ProjectData[] = [
     ],
     media: [raven1, raven2, raven3, raven4, raven6, raven8, raven9, raven10, raven11, raven12, raven14],
     docs: [
-      { title: "Aircraft", url: "#" },
+      { title: "Mechanical", url: "https://drive.google.com/file/d/1hQJqwpcT2bh652FQ4aKtwyOmYRSgaJOY/view?usp=sharing" },
       { title: "Payload", url: "#" },
       { title: "Avionics", url: "#" },
       { title: "Electrical", url: "https://drive.google.com/file/d/1usASKTKMacqBOxYKuqVPRMzcr5WAGc_z/view?usp=sharing" },

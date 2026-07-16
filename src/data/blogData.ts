@@ -17,6 +17,7 @@ import arpon from '../assets/images/Team/arpon.png';
 import member1 from '../assets/images/Team/member1.png';
 import member2 from '../assets/images/Team/member2.png';
 import member7 from '../assets/images/Team/member7.png';
+import probinImg from '../assets/images/Team/probin.png';
 
 // Images for new Blog 10
 import propHero from '../assets/images/Blog/blog/dronetopcover.jpeg';
@@ -352,24 +353,24 @@ Future iterations will focus on:</p>
     <img src="${israfilImg}" alt="MD. Israfil Hossain" class="author-photo" />
     <div class="author-info">
       <h4>MD. Israfil Hossain</h4>
-      <p>MD. Israfil Hossain is a Research Member at the UIU Aerial Robotics Team (UART), contributing to autonomous systems development, computer vision research, and AI integration for the SUAS 2026 competition platform.</p>
+      <p>MD. Israfil Hossain is a Research Member at the UIU Aerial Robotics Team (UART), contributing to  computer vision research, and AI integration for the SUAS 2026 competition platform.</p>
     </div>
   </div>
   <div class="author-card">
     <img src="${biplobImg}" alt="Md. Biplob" class="author-photo" />
     <div class="author-info">
       <h4>Md. Biplob</h4>
-      <p>Md. Biplob is a Research Member at the UIU Aerial Robotics Team (UART), working on autonomous flight systems, embedded software, and mission-critical subsystem integration for next-generation UAV platforms.</p>
+      <p>Md. Biplob is a Research Member at the UIU Aerial Robotics Team (UART), researching on  mission-critical subsystem integration for next-generation UAV platforms.</p>
     </div>
   </div>
   <div class="author-card">
-    <img src="${faisalImg}" alt="Ifta Faisal" class="author-photo" />
+    <img src="${probinImg}" alt="Probin Chandra Nath" class="author-photo" />
     <div class="author-info">
-      <h4>Ifta Faisal</h4>
-      <p>Ifta Faisal is a Research Member and Sub Team Lead of the Web &amp; Communication Team at the UIU Aerial Robotics Team (UART), contributing to mission software, ground control systems, and team communication infrastructure.</p>
+      <h4>Probin Chandra Nath</h4>
+      <p>Probin Chandra Nath is a Electrical Team Member  at the UIU Aerial Robotics Team (UART), contributing to electrical subsytem and power distribution sysytem for the SUAS 2026 competition platform.</p>
     </div>
   </div>
-</div>
+</div
 `,
     author: "MD. Israfil Hossain • Md. Biplob • Ifta Faisal",
     role: "Research Members, UIU Aerial Robotics Team",
