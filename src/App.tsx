@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
 import { Routes, Route, useLocation } from 'react-router-dom';
 import Lenis from 'lenis';
 import ScrollToTop from './components/ScrollToTop';
@@ -6,24 +6,26 @@ import SplashScreen from './components/SplashScreen';
 import Header from './components/Header';
 import Footer from './components/Footer';
 import Hero from './components/Hero';
-import NewsPage from './components/NewsPage';
-import Blog from './components/Blog';
-import BlogDetail from './components/BlogDetail';
-import Team from './components/Team';
-import Projects from './components/Projects';
-import ProjectDetail from './components/ProjectDetail';
-import Contact from './components/Contact';
-import JoinUs from './components/JoinUs';
-import Mentors from './components/Mentors';
-import DetailedFeatures from './components/DetailedFeatures';
-import TestData from './components/TestData';
-import Sponsor from './components/Sponsor';
-import SponsorProposal from './components/SponsorProposal';
-import Gallery from './components/Gallery';
-import PrivacyPolicy from './components/PrivacyPolicy';
-import CookiePolicy from './components/CookiePolicy';
-import TermsofService from './components/TermsofService';
 import ScrollToTopButton from './components/ScrollToTopButton';
+import PageLoader from './components/PageLoader';
+
+const NewsPage = lazy(() => import('./components/NewsPage'));
+const Blog = lazy(() => import('./components/Blog'));
+const BlogDetail = lazy(() => import('./components/BlogDetail'));
+const Team = lazy(() => import('./components/Team'));
+const Projects = lazy(() => import('./components/Projects'));
+const ProjectDetail = lazy(() => import('./components/ProjectDetail'));
+const Contact = lazy(() => import('./components/Contact'));
+const JoinUs = lazy(() => import('./components/JoinUs'));
+const Mentors = lazy(() => import('./components/Mentors'));
+const DetailedFeatures = lazy(() => import('./components/DetailedFeatures'));
+const TestData = lazy(() => import('./components/TestData'));
+const Sponsor = lazy(() => import('./components/Sponsor'));
+const SponsorProposal = lazy(() => import('./components/SponsorProposal'));
+const Gallery = lazy(() => import('./components/Gallery'));
+const PrivacyPolicy = lazy(() => import('./components/PrivacyPolicy'));
+const CookiePolicy = lazy(() => import('./components/CookiePolicy'));
+const TermsofService = lazy(() => import('./components/TermsofService'));
 
 const REVEAL_CLASSES = [
   '.ju-reveal:not(.ju-visible)',
@@ -101,27 +103,29 @@ const App = () => {
         <ScrollToTop />
         {showSplash && <SplashScreen onComplete={() => setShowSplash(false)} />}
         <Header />
-        <Routes>
-          <Route path="/" element={<Hero />} />
-          <Route path="/news" element={<NewsPage />} />
-          <Route path="/blog" element={<Blog />} />
-          <Route path="/blog/:id" element={<BlogDetail />} />
-          <Route path="/DetailedFeatures" element={<DetailedFeatures />} />
-          <Route path="/TestData" element={<TestData />} />
-          <Route path="/team" element={<Team />} />
-          <Route path="/projects" element={<Projects />} />
-          <Route path="/project/:id" element={<ProjectDetail />} />
-          <Route path="/contact" element={<Contact />} />
-          <Route path="/Gallery" element={<Gallery />} />
-          <Route path="/sponsor-proposal" element={<SponsorProposal />} />
-          <Route path="/sponsor" element={<Sponsor />} />
-          <Route path="/joinus" element={<JoinUs />} />
-          <Route path="/mentor" element={<Mentors />} />
-          <Route path="/advisors" element={<Mentors />} />
-          <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
-          <Route path="/CookiePolicy" element={<CookiePolicy />} />
-          <Route path="/TermsofService" element={<TermsofService />} />
-        </Routes>
+        <Suspense fallback={<PageLoader />}>
+          <Routes>
+            <Route path="/" element={<Hero />} />
+            <Route path="/news" element={<NewsPage />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/blog/:id" element={<BlogDetail />} />
+            <Route path="/DetailedFeatures" element={<DetailedFeatures />} />
+            <Route path="/TestData" element={<TestData />} />
+            <Route path="/team" element={<Team />} />
+            <Route path="/projects" element={<Projects />} />
+            <Route path="/project/:id" element={<ProjectDetail />} />
+            <Route path="/contact" element={<Contact />} />
+            <Route path="/Gallery" element={<Gallery />} />
+            <Route path="/sponsor-proposal" element={<SponsorProposal />} />
+            <Route path="/sponsor" element={<Sponsor />} />
+            <Route path="/joinus" element={<JoinUs />} />
+            <Route path="/mentor" element={<Mentors />} />
+            <Route path="/advisors" element={<Mentors />} />
+            <Route path="/PrivacyPolicy" element={<PrivacyPolicy />} />
+            <Route path="/CookiePolicy" element={<CookiePolicy />} />
+            <Route path="/TermsofService" element={<TermsofService />} />
+          </Routes>
+        </Suspense>
         <Footer />
         <ScrollToTopButton />
       </div>
