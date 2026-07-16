@@ -31,7 +31,7 @@ const MissionTimeline = () => {
       
       {/* Ambient glow */}
       <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] rounded-full pointer-events-none"
-        style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.05) 0%, transparent 70%)', filter: 'blur(80px)' }} />
+        style={{ background: 'radial-gradient(circle, rgba(249,115,22,0.05) 0%, transparent 70%)' }} />
 
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
         <div className="text-center mb-16">
@@ -44,13 +44,14 @@ const MissionTimeline = () => {
         </div>
 
         <div className="relative max-w-3xl mx-auto">
-          {/* Vertical line — animated height grow */}
+          {/* Vertical line — animated transform scaleY */}
           <div className="absolute left-[30px] sm:left-1/2 top-0 bottom-0 w-[1.5px] sm:-translate-x-1/2 overflow-hidden" style={{ background: 'rgba(249,115,22,0.1)' }}>
             <div
               ref={lineRef}
-              className="w-full transition-all duration-[1800ms] ease-spring"
+              className="w-full h-full transition-transform duration-[1800ms] ease-out"
               style={{
-                height: lineVisible ? '100%' : '0%',
+                transformOrigin: 'top',
+                transform: lineVisible ? 'scaleY(1)' : 'scaleY(0)',
                 background: 'linear-gradient(to bottom, #f97316, #dc2626, #f97316)',
                 boxShadow: '0 0 8px rgba(249,115,22,0.4)',
               }}
@@ -86,8 +87,7 @@ const MissionTimeline = () => {
                     <div
                       className="p-6 rounded-xl transition-all duration-400 group"
                       style={{
-                        background: 'rgba(15,23,42,0.75)',
-                        backdropFilter: 'blur(16px)',
+                        background: 'rgba(15,23,42,0.95)',
                         border: `1px solid ${isUpcoming ? 'rgba(255,255,255,0.25)' : 'rgba(249,115,22,0.15)'}`,
                       }}
                       onMouseEnter={e => {

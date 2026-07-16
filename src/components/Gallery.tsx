@@ -223,12 +223,6 @@ const Gallery = () => {
               >
                 <Eye className="w-5 h-5 stroke-[1.5] text-white" />
               </div>
-              <h3 className="text-white font-bold text-base mb-1 tracking-wide" style={{ fontFamily: "'Inter', sans-serif" }}>
-                {item.title}
-              </h3>
-              <p className="text-slate-300 text-xs leading-relaxed max-w-[90%]" style={{ fontFamily: "'Inter', sans-serif" }}>
-                {item.description}
-              </p>
             </div>
 
             {/* Subtle inner accent border on hover */}

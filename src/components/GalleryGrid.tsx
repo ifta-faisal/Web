@@ -22,6 +22,7 @@ import b8 from "../assets/images/Project/Raven1.0/B8.jpg";
 import b9 from "../assets/images/Project/Raven1.0/B9.jpg";
 import b10 from "../assets/images/Project/Raven1.0/B10.jpg";
 import b11 from "../assets/images/Project/Raven1.0/B11.jpg";
+import b14 from "../assets/images/Project/Raven1.0/B14.jpeg";
 // import aether1 from "../assets/images/Project/Aether/Aether_1.jpg";
 // import aether2 from "../assets/images/Project/Aether/Aether_2.jpg";
 // import aether3 from "../assets/images/Project/Aether/Aether_3.jpg";
@@ -45,8 +46,8 @@ const row1 = [
   // { image: img2,      title: "Drone Engine" },
   // { image: img3,      title: "Long Range Drone" },
   // { image: img4,      title: "Autonomous Drone" },
-  { image: meeting_1, title: "Training Session" },
-  { image: meeting_2, title: "Mentorship Session" },
+  { image: b14, title: "Raven 1.0 Operations" },
+  { image: d10, title: "Night Flight" },
   { image: b1, title: "Field Test at UIU" },
   { image: b2, title: "Drone on Field" },
   { image: b8, title: "Project ThunderBird" },
@@ -86,52 +87,33 @@ const row2 = [
   { image: d10, title: "Prototype Close-up" },
 ];
 
-/* Duplicate arrays so the marquee loops seamlessly */
-const track1 = [...row1, ...row1];
-const track2 = [...row2, ...row2];
+const allImages = [...row1, ...row2];
 
 const GalleryGrid = () => {
   return (
-    <section className="bg-transparent w-full overflow-hidden py-2 relative">
-      
-      {/* ── Row 1 → slides LEFT ── */}
-      <div className="gallery-marquee-row gallery-edge-fade overflow-hidden mb-4 relative z-10 w-full">
-        <div className="gallery-marquee-track-left">
-          {track1.map((item, i) => (
-            <Link
-              to="/gallery"
-              className="gallery-card-marquee block"
-              key={i}
-              style={{ background: '#0d0b0a' }}
-            >
-              <img src={item.image} alt={item.title} className="w-full h-full object-cover" loading="lazy" />
-              <div className="gallery-card-caption">
-                <h3 style={{ fontFamily: "'Inter', sans-serif" }}>{item.title}</h3>
-                <p style={{ fontFamily: "'Inter', sans-serif" }}>Click to view full photo gallery</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+    <section className="bg-transparent w-full py-8 px-4 sm:px-6 relative max-w-7xl mx-auto">
+      <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 sm:gap-6">
+        {allImages.slice(0, 8).map((item, i) => (
+          <Link
+            to="/gallery"
+            className="w-full aspect-video relative group overflow-hidden rounded-xl border border-white/5 hover:border-primary/30 shadow-lg transition-all duration-300"
+            key={i}
+            style={{ background: '#0d0b0a' }}
+          >
+            <img src={item.image} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500" loading="lazy" />
+            <div className="absolute inset-0 bg-black/60 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center p-4 text-center">
+            </div>
+          </Link>
+        ))}
       </div>
-
-      {/* ── Row 2 → slides RIGHT ── */}
-      <div className="gallery-marquee-row gallery-edge-fade overflow-hidden relative z-10 w-full">
-        <div className="gallery-marquee-track-right">
-          {track2.map((item, i) => (
-            <Link
-              to="/gallery"
-              className="gallery-card-marquee block"
-              key={i}
-              style={{ background: '#0d0b0a' }}
-            >
-              <img src={item.image} alt={item.title} className="w-full h-full object-cover" loading="lazy" />
-              <div className="gallery-card-caption">
-                <h3 style={{ fontFamily: "'Inter', sans-serif" }}>{item.title}</h3>
-                <p style={{ fontFamily: "'Inter', sans-serif" }}>Click to view full photo gallery</p>
-              </div>
-            </Link>
-          ))}
-        </div>
+      
+      <div className="mt-8 flex justify-center">
+        <Link
+          to="/gallery"
+          className="inline-block px-6 py-2.5 rounded-full bg-[#f97316]/10 text-[#f97316] border border-[#f97316]/30 hover:bg-[#f97316]/20 hover:border-[#f97316]/50 transition-all font-semibold"
+        >
+          See More Images
+        </Link>
       </div>
     </section>
   );
