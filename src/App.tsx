@@ -63,7 +63,6 @@ const App = () => {
         entries.forEach((entry) => {
           if (entry.isIntersecting) {
             entry.target.classList.add('ju-visible');
-            // Un-observe after reveal for performance
             observer.unobserve(entry.target);
           }
         });
@@ -71,15 +70,27 @@ const App = () => {
       { threshold: 0.1, rootMargin: '0px 0px -50px 0px' }
     );
 
-    const timer = setTimeout(() => {
+    const observeAll = () => {
       REVEAL_CLASSES.forEach((selector) => {
         document.querySelectorAll(selector).forEach((el) => observer.observe(el));
       });
-    }, 120);
+    };
+
+    // Initial scan — 500ms gives lazy-loaded sections time to mount
+    const timer = setTimeout(observeAll, 500);
+
+    // MutationObserver catches elements added later (React.lazy chunks)
+    const mutationObserver = new MutationObserver(() => observeAll());
+    mutationObserver.observe(document.body, { childList: true, subtree: true });
+
+    // Stop the MutationObserver after 5s (lazy chunks will be loaded by then)
+    const mutationTimer = setTimeout(() => mutationObserver.disconnect(), 5000);
 
     return () => {
       clearTimeout(timer);
+      clearTimeout(mutationTimer);
       observer.disconnect();
+      mutationObserver.disconnect();
       lenis.destroy();
     };
   }, [location.pathname]);

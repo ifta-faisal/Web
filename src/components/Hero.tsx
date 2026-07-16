@@ -140,16 +140,14 @@ const Hero = () => {
       {/* ===== 1. Hero Section – Cinematic Aerospace ===== */}
       <section ref={heroRef} id="home" className="relative min-h-screen flex flex-col overflow-hidden" style={{ background: 'transparent' }}>
 
-        {/* Background Video — deferred load: only plays after page is visible */}
+        {/* Background Video */}
         <video
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover z-0"
           style={{ transformOrigin: 'center center', willChange: 'transform' }}
           src={droneVideo}
-          muted loop playsInline
+          autoPlay muted loop playsInline
           preload="none"
-          poster=""
-          onCanPlay={e => (e.currentTarget as HTMLVideoElement).play().catch(() => {})}
         />
 
         {/* Atmospheric grid overlay */}
