@@ -1,60 +1,60 @@
-// import mentor1 from '../assets/images/Advisor/Mentor1.jpeg';
-// import vcImage from '../assets/images/Advisor/VC.jpg';
-// import projectImg from '../assets/images/Project/project1.jpeg';
+// import mentor1 from '../assets/images/Advisor/Mentor1.webp';
+// import vcImage from '../assets/images/Advisor/VC.webp';
+// import projectImg from '../assets/images/Project/project1.webp';
 
-import missionImg from '../assets/images/DetailedFeatures/mission_planning_ui.png';
-import mapImg from '../assets/images/DetailedFeatures/map.png';
-// import suasImg from '../assets/images/logo/suas.png';
-import israfilImg from '../assets/images/Team/israfil.png';
-import biplobImg from '../assets/images/Team/alfi.png';
-import faisalImg from '../assets/images/Team/member4.png';
-import member5 from '../assets/images/Team/member5.png';
-import member9 from '../assets/images/Team/member9.png';
-import adnan from '../assets/images/Team/adnan.png';
-import member3 from '../assets/images/Team/member3.png';
-import nusrat from '../assets/images/Team/nusrat.jpeg';
-import arpon from '../assets/images/Team/arpon.png';
-import member1 from '../assets/images/Team/member1.png';
-import member2 from '../assets/images/Team/member2.png';
-import member7 from '../assets/images/Team/member7.png';
-import probinImg from '../assets/images/Team/probin.png';
+import missionImg from '../assets/images/DetailedFeatures/mission_planning_ui.webp';
+import mapImg from '../assets/images/DetailedFeatures/map.webp';
+// import suasImg from '../assets/images/logo/suas.webp';
+import israfilImg from '../assets/images/Team/israfil.webp';
+import biplobImg from '../assets/images/Team/alfi.webp';
+import faisalImg from '../assets/images/Team/member4.webp';
+import member5 from '../assets/images/Team/member5.webp';
+import member9 from '../assets/images/Team/member9.webp';
+import adnan from '../assets/images/Team/adnan.webp';
+import member3 from '../assets/images/Team/member3.webp';
+import nusrat from '../assets/images/Team/nusrat.webp';
+import arpon from '../assets/images/Team/arpon.webp';
+import member1 from '../assets/images/Team/member1.webp';
+import member2 from '../assets/images/Team/member2.webp';
+import member7 from '../assets/images/Team/member7.webp';
+import probinImg from '../assets/images/Team/probin.webp';
 
 // Images for new Blog 10
-import propHero from '../assets/images/Blog/blog/dronetopcover.jpeg';
-import motorComp from '../assets/images/Blog/blog/motor.jpeg';
-import motorProp from '../assets/images/Blog/blog/prop.jpeg';
-import batteryDist from '../assets/images/DetailedFeatures/Battery.jpeg';
+import propHero from '../assets/images/Blog/blog/dronetopcover.webp';
+import motorComp from '../assets/images/Blog/blog/motor.webp';
+import motorProp from '../assets/images/Blog/blog/prop.webp';
+import batteryDist from '../assets/images/DetailedFeatures/Battery.webp';
 
 // ─── Blog 1 Imports ───
-import blog1Cover from '../assets/images/Blog/Blog_1/Blog_1cover.jpeg';
-import bolg1 from '../assets/images/Blog/Blog_1/Bolg1.jpeg';
-import blog2 from '../assets/images/Blog/Blog_1/Blog2.jpeg';
-import blog3 from '../assets/images/Blog/Blog_1/Blog3.jpeg';
-import blog4 from '../assets/images/Blog/Blog_1/Blog4.jpeg';
-import blog5 from '../assets/images/Blog/Blog_1/Blog5.jpeg';
-import blog6 from '../assets/images/Blog/Blog_1/Blog6.jpeg';
+import blog1Cover from '../assets/images/Blog/Blog_1/Blog_1cover.webp';
+import bolg1 from '../assets/images/Blog/Blog_1/Bolg1.webp';
+import blog2 from '../assets/images/Blog/Blog_1/Blog2.webp';
+import blog3 from '../assets/images/Blog/Blog_1/Blog3.webp';
+import blog4 from '../assets/images/Blog/Blog_1/Blog4.webp';
+import blog5 from '../assets/images/Blog/Blog_1/Blog5.webp';
+import blog6 from '../assets/images/Blog/Blog_1/Blog6.webp';
 
 // ─── Blog 2 Imports ───
-import blog2Cover from '../assets/images/Blog/Blog_2/Blog_2cover.jpeg';
-import b2Blog2 from '../assets/images/Blog/Blog_2/Blog2.jpeg';
-import b2Blog4 from '../assets/images/Blog/Blog_2/Blog4.png';
-import b2Blog5 from '../assets/images/Blog/Blog_2/Blog5.jpeg';
+import blog2Cover from '../assets/images/Blog/Blog_2/Blog_2cover.webp';
+import b2Blog2 from '../assets/images/Blog/Blog_2/Blog2.webp';
+import b2Blog4 from '../assets/images/Blog/Blog_2/Blog4.webp';
+import b2Blog5 from '../assets/images/Blog/Blog_2/Blog5.webp';
 
 // ─── Blog 3 Imports ───
-import blog3Cover from '../assets/images/Blog/3/Blog_3cover.png';
-import b3Blog3 from '../assets/images/Blog/3/Blog3.png';
+import blog3Cover from '../assets/images/Blog/3/Blog_3cover.webp';
+import b3Blog3 from '../assets/images/Blog/3/Blog3.webp';
 
 // ─── Blog 6 Imports ───
-import blog6Cover from '../assets/images/Blog/6/cover.jpeg';
-import b6OnBoard from '../assets/images/Blog/6/On_Board.jpeg';
-import b6Tele from '../assets/images/Blog/6/Tele.jpeg';
-import b6Groundstation from '../assets/images/Blog/6/groundstation.jpeg';
+import blog6Cover from '../assets/images/Blog/6/cover.webp';
+import b6OnBoard from '../assets/images/Blog/6/On_Board.webp';
+import b6Tele from '../assets/images/Blog/6/Tele.webp';
+import b6Groundstation from '../assets/images/Blog/6/groundstation.webp';
 
 // ─── Blog 7 Imports ───
-import blog7Cover from '../assets/images/Blog/7/cover.jpeg';
-import b7Blog1 from '../assets/images/Blog/7/blog1.png';
-import b7Blog2 from '../assets/images/Blog/7/blog2.jpeg';
-import b7Blog3 from '../assets/images/Blog/7/blog3.jpeg';
+import blog7Cover from '../assets/images/Blog/7/cover.webp';
+import b7Blog1 from '../assets/images/Blog/7/blog1.webp';
+import b7Blog2 from '../assets/images/Blog/7/blog2.webp';
+import b7Blog3 from '../assets/images/Blog/7/blog3.webp';
 
 export interface BlogPost {
   id: number;

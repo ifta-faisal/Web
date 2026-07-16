@@ -1,19 +1,19 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Link, useSearchParams } from "react-router-dom";
 import { ArrowLeft, Cpu, Wind, Radio, Eye, Shield, Zap, ChevronRight, MapPin, Navigation, CloudRain, Layers, Activity, Gauge, Map, Brain, Target } from "lucide-react";
-import img1 from "../assets/images/DetailedFeatures/B6.jpg";
-import jetson from "../assets/images/DetailedFeatures/jetson.png";
-import lidar from "../assets/images/DetailedFeatures/lidar.png";
-import droneImg from "../assets/images/DetailedFeatures/B6_png.png";
-import missionPlanningImg from "../assets/images/DetailedFeatures/map.png";
-import sysArchImg from "../assets/images/DetailedFeatures/system_architecture.png";
-import batteryImg from "../assets/images/DetailedFeatures/Battery.jpeg";
+import img1 from "../assets/images/DetailedFeatures/B6.webp";
+import jetson from "../assets/images/DetailedFeatures/jetson.webp";
+import lidar from "../assets/images/DetailedFeatures/lidar.webp";
+import droneImg from "../assets/images/DetailedFeatures/B6_png.webp";
+import missionPlanningImg from "../assets/images/DetailedFeatures/map.webp";
+import sysArchImg from "../assets/images/DetailedFeatures/system_architecture.webp";
+import batteryImg from "../assets/images/DetailedFeatures/Battery.webp";
 
 // Slideshow Images
-import imgD1 from "../assets/images/DetailedFeatures/B9.jpg";
-import imgD2 from "../assets/images/DetailedFeatures/B8.jpg";
-import imgD3 from "../assets/images/DetailedFeatures/B7.jpg";
-import imgD4 from "../assets/images/DetailedFeatures/B10.jpg";
+import imgD1 from "../assets/images/DetailedFeatures/B9.webp";
+import imgD2 from "../assets/images/DetailedFeatures/B8.webp";
+import imgD3 from "../assets/images/DetailedFeatures/B7.webp";
+import imgD4 from "../assets/images/DetailedFeatures/B10.webp";
 
 
 /* ── Intersection-observer hook for scroll-reveal ── */

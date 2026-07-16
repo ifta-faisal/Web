@@ -2,11 +2,11 @@ import React, { useRef, useEffect } from "react";
 import { Link } from "react-router-dom";
 import { ArrowLeft, Activity, Battery, MapPin, Radio, Cpu, ChevronRight } from "lucide-react";
 
-import motorImg from "../assets/images/Project/Raven1.0/TestData/motortest.png";
-import batteryImg from "../assets/images/Project/Raven1.0/TestData/Battery_voltage.jpeg";
-import flightPathImg from "../assets/images/Project/Raven1.0/TestData/Flight_Path_Overview.png";
-import commImg from "../assets/images/Project/Raven1.0/TestData/com_test.jpeg";
-import cpuImg from "../assets/images/Project/Raven1.0/TestData/cputest.jpeg";
+import motorImg from "../assets/images/Project/Raven1.0/TestData/motortest.webp";
+import batteryImg from "../assets/images/Project/Raven1.0/TestData/Battery_voltage.webp";
+import flightPathImg from "../assets/images/Project/Raven1.0/TestData/Flight_Path_Overview.webp";
+import commImg from "../assets/images/Project/Raven1.0/TestData/com_test.webp";
+import cpuImg from "../assets/images/Project/Raven1.0/TestData/cputest.webp";
 
 /* ── Scroll-reveal hook ── */
 function useReveal() {

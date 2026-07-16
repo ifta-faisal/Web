@@ -1,7 +1,7 @@
-import mentor1 from '../assets/images/Advisor/Mentor1.jpeg';
-import mentor2 from '../assets/images/Advisor/Mentor2.png';
-import mentor3 from '../assets/images/Advisor/Mentor3.jpeg';
-import vcImage from '../assets/images/Advisor/VC.png';
+import mentor1 from '../assets/images/Advisor/Mentor1.webp';
+import mentor2 from '../assets/images/Advisor/Mentor2.webp';
+import mentor3 from '../assets/images/Advisor/Mentor3.webp';
+import vcImage from '../assets/images/Advisor/VC.webp';
 
 export interface Advisor {
   id: string;

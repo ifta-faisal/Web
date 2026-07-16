@@ -1,9 +1,9 @@
 import React from 'react';
 import { Award, Trophy, Star, Zap } from 'lucide-react';
-import soildwork from '../assets/images/Sponsor/solidworks.png';
-import mathlab from '../assets/images/Sponsor/matlab.png';
-import autodesk from '../assets/images/Sponsor/autodesk.png';
-import amprius from '../assets/images/Sponsor/amprius.png';
+import soildwork from '../assets/images/Sponsor/solidworks.webp';
+import mathlab from '../assets/images/Sponsor/matlab.webp';
+import autodesk from '../assets/images/Sponsor/autodesk.webp';
+import amprius from '../assets/images/Sponsor/amprius.webp';
 
 const Achievements = () => {
   const achievements = [

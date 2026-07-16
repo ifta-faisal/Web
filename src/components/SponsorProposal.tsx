@@ -2,16 +2,16 @@ import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { Mail, Facebook, Youtube, Instagram, Linkedin, ArrowRight } from 'lucide-react';
 
 // Image imports — Vite bundles these correctly for production
-import jerseyFront from '../assets/images/Sponsor/UART_jersy_fornt.png';
-import jerseyBack from '../assets/images/Sponsor/UART_jersy_back.png';
-import jerseySleeve from '../assets/images/Sponsor/jersy_sleve.png';
-import droneBack from '../assets/images/Sponsor/drone_back.png';
-import droneFront from '../assets/images/Sponsor/drone_fornt.png';
-import droneFrontZoom from '../assets/images/Sponsor/drone_forn_zoom.png';
-import drone8 from '../assets/images/Sponsor/drone_8.png';
-import droneArm from '../assets/images/Sponsor/drone_arm.png';
-import droneRight from '../assets/images/Sponsor/drone_right.png';
-import droneLeft from '../assets/images/Sponsor/drone_left.png';
+import jerseyFront from '../assets/images/Sponsor/UART_jersy_fornt.webp';
+import jerseyBack from '../assets/images/Sponsor/UART_jersy_back.webp';
+import jerseySleeve from '../assets/images/Sponsor/jersy_sleve.webp';
+import droneBack from '../assets/images/Sponsor/drone_back.webp';
+import droneFront from '../assets/images/Sponsor/drone_fornt.webp';
+import droneFrontZoom from '../assets/images/Sponsor/drone_forn_zoom.webp';
+import drone8 from '../assets/images/Sponsor/drone_8.webp';
+import droneArm from '../assets/images/Sponsor/drone_arm.webp';
+import droneRight from '../assets/images/Sponsor/drone_right.webp';
+import droneLeft from '../assets/images/Sponsor/drone_left.webp';
 
 /* ── 3D Tilt Card ─────────────────────────────────────────────────────────── */
 interface TiltCardProps {

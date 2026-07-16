@@ -1,6 +1,6 @@
 import React from 'react';
 import { Mail, Phone, MapPin, Youtube, Facebook, Instagram, ChevronRight } from 'lucide-react';
-import Logo from '../assets/images/logo/UART_Logo.png';
+import Logo from '../assets/images/logo/UART_Logo.webp';
 import { Link } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
 

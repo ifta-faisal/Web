@@ -5,7 +5,7 @@ import { useNavigate } from 'react-router-dom';
 import { teamMembers } from '../data/teamData';
 import { projectsData } from '../data/projectsData';
 import { featured, mentors } from '../data/advisorsData';
-import workshop from "../assets/images/news/workshop.jpeg";
+import workshop from "../assets/images/news/workshop.webp";
 
 interface SearchResult {
   id: string;

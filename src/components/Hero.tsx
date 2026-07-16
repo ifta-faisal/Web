@@ -3,23 +3,23 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, ChevronLeft, ChevronRight, Calendar, CheckCircle2 } from 'lucide-react';
 import droneVideo from '../assets/video/Faysal2.mp4';
 import vid2 from '../assets/video/vid_2.mp4';
-import unitedGroupLogo from '../assets/images/Sponsor/united_group.png';
-import uiuLogo from '../assets/images/Sponsor/UIU_Logo.png';
-import droneImage from '../assets/images/DetailedFeatures/B6_png.png';
-import droneSpecsImg from '../assets/images/drone_specs.png';
-import suaslogo from '../assets/images/logo/suas.png';
-import soildwork from '../assets/images/Sponsor/solidworks.png';
-import mathlab from '../assets/images/Sponsor/matlab.png';
-import autodesk from '../assets/images/Sponsor/autodesk.png';
-import amprius from '../assets/images/Sponsor/amprius.png';
-import puku from '../assets/images/Sponsor/puku.png';
+import unitedGroupLogo from '../assets/images/Sponsor/united_group.webp';
+import uiuLogo from '../assets/images/Sponsor/UIU_Logo.webp';
+import droneImage from '../assets/images/DetailedFeatures/B6_png.webp';
+import droneSpecsImg from '../assets/images/drone_specs.webp';
+import suaslogo from '../assets/images/logo/suas.webp';
+import soildwork from '../assets/images/Sponsor/solidworks.webp';
+import mathlab from '../assets/images/Sponsor/matlab.webp';
+import autodesk from '../assets/images/Sponsor/autodesk.webp';
+import amprius from '../assets/images/Sponsor/amprius.webp';
+import puku from '../assets/images/Sponsor/puku.webp';
 import { newsItems } from '../data/newsData';
 
-// Import New Sections
-import DroneParts from './DroneParts';
-import MissionTimeline from './MissionTimeline';
-import GalleryVideo from './GalleryVideo';
-import GalleryGrid from './GalleryGrid';
+// Import New Sections — lazy loaded (below the fold, not needed for initial paint)
+const DroneParts = React.lazy(() => import('./DroneParts'));
+const MissionTimeline = React.lazy(() => import('./MissionTimeline'));
+const GalleryVideo = React.lazy(() => import('./GalleryVideo'));
+const GalleryGrid = React.lazy(() => import('./GalleryGrid'));
 
 // ─── Stat Counter Hook ──────────────────────────────
 function useCountUp(target: number, duration = 1800, start = false) {
@@ -135,17 +135,21 @@ const Hero = () => {
 
   // Removed auto-play interval
   return (
+    <React.Suspense fallback={null}>
     <div>
       {/* ===== 1. Hero Section – Cinematic Aerospace ===== */}
       <section ref={heroRef} id="home" className="relative min-h-screen flex flex-col overflow-hidden" style={{ background: 'transparent' }}>
 
-        {/* Background Video — parallax handled via JS */}
+        {/* Background Video — deferred load: only plays after page is visible */}
         <video
           ref={videoRef}
           className="absolute inset-0 w-full h-full object-cover z-0"
           style={{ transformOrigin: 'center center', willChange: 'transform' }}
           src={droneVideo}
-          autoPlay muted loop playsInline
+          muted loop playsInline
+          preload="none"
+          poster=""
+          onCanPlay={e => (e.currentTarget as HTMLVideoElement).play().catch(() => {})}
         />
 
         {/* Atmospheric grid overlay */}
@@ -866,6 +870,7 @@ const Hero = () => {
         </div>
       </section>
     </div>
+    </React.Suspense>
   );
 };
 

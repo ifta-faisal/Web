@@ -2,8 +2,8 @@ import React, { useState, useEffect, useRef } from 'react';
 import { PlayCircle, Youtube, ExternalLink, VolumeX } from 'lucide-react';
 
 // import droneVideo from '../assets/video/Drone_Fotage_1.mp4';
-// import droneImage from '../assets/images/drone.png';
-// import uaImage from '../assets/images/UA1.jpeg';
+// import droneImage from '../assets/images/drone.webp';
+// import uaImage from '../assets/images/UA1.webp';
 
 const GalleryVideo = () => {
     const youtubeVideos = [
