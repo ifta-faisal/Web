@@ -14,6 +14,7 @@ import autodesk from '../assets/images/Sponsor/autodesk.webp';
 import amprius from '../assets/images/Sponsor/amprius.webp';
 import puku from '../assets/images/Sponsor/puku.webp';
 import { newsItems } from '../data/newsData';
+import ScrollLazy from './ScrollLazy';
 
 // Import New Sections — lazy loaded (below the fold, not needed for initial paint)
 const DroneParts = React.lazy(() => import('./DroneParts'));
@@ -657,7 +658,9 @@ const Hero = () => {
       </section>
 
       {/* ===== Drone Parts ===== */}
-      <DroneParts />
+      <ScrollLazy minHeight="800px">
+        <DroneParts />
+      </ScrollLazy>
 
       {/* ===== 4. What We Do / Vision ===== */}
       <section id="what-we-do" className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
@@ -709,13 +712,16 @@ const Hero = () => {
 
 
       {/* ===== 6. Mission Timeline ===== */}
-      <MissionTimeline />
+      <ScrollLazy minHeight="600px">
+        <MissionTimeline />
+      </ScrollLazy>
 
 
 
       {/* ===== Gallery Grid ===== */}
-
-      <GalleryGrid />
+      <ScrollLazy minHeight="800px">
+        <GalleryGrid />
+      </ScrollLazy>
 
       {/* ===== 8. Sponsors Section — Marquee Ticker ===== */}
       <section id="sponsors" className="py-14 sm:py-20 md:py-24 bg-transparent relative overflow-hidden">
@@ -776,7 +782,9 @@ const Hero = () => {
       </section>
 
       {/* ===== Gallery Video ===== */}
-      <GalleryVideo />
+      <ScrollLazy minHeight="500px">
+        <GalleryVideo />
+      </ScrollLazy>
 
       {/* ===== 9. Latest News ===== */}
       <section id="recent-updates" className="py-14 sm:py-20 md:py-24 bg-transparent relative">

@@ -5,7 +5,7 @@ import Search from './Search';
 import { projectsData } from '../data/projectsData';
 import logoUrl from '../assets/images/logo/Logo UART SVG.svg';
 
-
+ 
 const Header = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [isSearchOpen, setIsSearchOpen] = useState(false);
