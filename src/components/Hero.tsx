@@ -6,7 +6,6 @@ import vid2 from '../assets/video/vid_2.mp4';
 import unitedGroupLogo from '../assets/images/Sponsor/united_group.webp';
 import uiuLogo from '../assets/images/Sponsor/UIU_Logo.webp';
 import droneImage from '../assets/images/DetailedFeatures/B6_png.webp';
-import droneSpecsImg from '../assets/images/drone_specs.webp';
 import suaslogo from '../assets/images/logo/suas.webp';
 import soildwork from '../assets/images/Sponsor/solidworks.webp';
 import mathlab from '../assets/images/Sponsor/matlab.webp';

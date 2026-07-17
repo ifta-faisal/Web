@@ -83,12 +83,8 @@ const App = () => {
     const mutationObserver = new MutationObserver(() => observeAll());
     mutationObserver.observe(document.body, { childList: true, subtree: true });
 
-    // Stop the MutationObserver after 5s (lazy chunks will be loaded by then)
-    const mutationTimer = setTimeout(() => mutationObserver.disconnect(), 5000);
-
     return () => {
       clearTimeout(timer);
-      clearTimeout(mutationTimer);
       observer.disconnect();
       mutationObserver.disconnect();
       lenis.destroy();

@@ -1,5 +1,6 @@
 import React from "react";
 import { Eye } from 'lucide-react';
+import ScrollLazy from './ScrollLazy';
 
 // import img2 from "../assets/gallery/Engine1.webp";
 // import img3 from "../assets/gallery/drone2.webp";
@@ -200,8 +201,8 @@ const Gallery = () => {
       {/* Gallery Grid - same style as GalleryGrid on the homepage */}
       <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 max-w-7xl mx-auto px-4 sm:px-6 relative z-10">
         {galleryItems.map((item, index) => (
+          <ScrollLazy key={index} minHeight="200px">
           <div
-            key={index}
             className="w-full aspect-video relative group overflow-hidden rounded-xl border border-white/5 hover:border-primary/30 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
             style={{ background: '#0d0b0a' }}
           >
@@ -231,6 +232,7 @@ const Gallery = () => {
               style={{ boxShadow: 'inset 0 0 0 1px rgba(249,115,22,0.4)' }}
             />
           </div>
+          </ScrollLazy>
         ))}
       </div>
       

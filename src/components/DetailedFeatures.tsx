@@ -1,5 +1,6 @@
 import React, { useEffect, useRef, useState, useCallback } from "react";
 import { Link, useSearchParams } from "react-router-dom";
+import ScrollLazy from './ScrollLazy';
 import { ArrowLeft, Cpu, Wind, Radio, Eye, Shield, Zap, ChevronRight, MapPin, Navigation, CloudRain, Layers, Activity, Gauge, Map, Brain, Target } from "lucide-react";
 import img1 from "../assets/images/DetailedFeatures/B6.webp";
 import jetson from "../assets/images/DetailedFeatures/jetson.webp";
@@ -402,6 +403,7 @@ const DetailedFeatures = () => {
       {/* ══════════════════════════════════════════════════
            MISSION PLANNING SECTION
       ══════════════════════════════════════════════════ */}
+      <ScrollLazy minHeight="600px">
       <section id="mission-planning" className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24">
         {/* Section header – centred */}
         <Reveal className="text-center mb-16">
@@ -457,10 +459,12 @@ const DetailedFeatures = () => {
           </div>
         </Reveal>
       </section>
+      </ScrollLazy>
 
       {/* ══════════════════════════════════════════════════
            SYSTEM ARCHITECTURE SECTION
       ══════════════════════════════════════════════════ */}
+      <ScrollLazy minHeight="800px">
       <section id="system-architecture" className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24">
         <Reveal className="text-center mb-16">
           <div className="section-label mb-3">Under The Hood</div>
@@ -514,10 +518,12 @@ const DetailedFeatures = () => {
           </div>
         </Reveal>
       </section>
+      </ScrollLazy>
 
       {/* ══════════════════════════════════════════════════
            PERFORMANCE COMPARISON TABLE
       ══════════════════════════════════════════════════ */}
+      <ScrollLazy minHeight="800px">
       <section id="performance" className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24">
         <Reveal className="text-center mb-14">
           <div className="section-label mb-3">How We Stack Up</div>
@@ -601,9 +607,11 @@ const DetailedFeatures = () => {
           </div>
         </Reveal>
       </section>
+      </ScrollLazy>
       {/* ══════════════════════════════════════════════════
            OPERATIONAL PROCEDURES (NEW MANTADORY SECTION)
       ══════════════════════════════════════════════════ */}
+      <ScrollLazy minHeight="800px">
       <section id="procedures" className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24 border-t border-white/5" role="region" aria-labelledby="mission-procedures-title">
         <Reveal className="text-center mb-16">
           <div className="section-label mb-3">Safety & Logistics</div>
@@ -676,10 +684,12 @@ const DetailedFeatures = () => {
           </Reveal>
         </div>
       </section>
+      </ScrollLazy>
 
       {/* ══════════════════════════════════════════════════
            DESIGN RATIONALE (TECHNICAL "WHY")
       ══════════════════════════════════════════════════ */}
+      <ScrollLazy minHeight="800px">
       <section id="rationale" className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-24 border-t border-white/5 bg-white/[0.01]">
         <Reveal className="grid grid-cols-1 lg:grid-cols-2 gap-16 items-center">
           <div>
@@ -726,6 +736,7 @@ const DetailedFeatures = () => {
           </div>
         </Reveal>
       </section>
+      </ScrollLazy>
 
       {/* ── OUTCOME / BRIDGING THE GAP ── */}
       <section className="relative z-10 px-6 sm:px-12 max-w-7xl mx-auto py-16">

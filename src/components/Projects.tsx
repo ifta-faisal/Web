@@ -3,6 +3,7 @@ import { Rocket, Zap, MapPin, Eye, ChevronRight, Calendar, Award, ArrowLeft, Use
 import { useSearchParams } from 'react-router-dom';
 import { projectsData } from '../data/projectsData';
 import { Link } from 'react-router-dom';
+import ScrollLazy from './ScrollLazy';
 
 const Projects = () => {
   const [searchParams, setSearchParams] = useSearchParams();
@@ -122,9 +123,9 @@ const Projects = () => {
 
         <div className="flex flex-col gap-4 sm:gap-6">
           {filteredProjects.map((project, index) => (
+            <ScrollLazy key={project.id} minHeight="200px">
             <Link
               to={`/project/${project.id}`}
-              key={project.id}
               onMouseEnter={() => setHoveredProject(project.id)}
               onMouseLeave={() => setHoveredProject(null)}
               className={`group flex flex-col md:flex-row ${
@@ -227,6 +228,7 @@ const Projects = () => {
                 </div>
               </div>
             </Link>
+            </ScrollLazy>
           ))}
         </div>
 

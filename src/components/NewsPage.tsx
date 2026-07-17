@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import { Search as SearchIcon, Calendar, X, SlidersHorizontal, User, Tag, Sparkles } from 'lucide-react';
 import { newsItems, NewsItem } from '../data/newsData';
+import ScrollLazy from './ScrollLazy';
 
 const CATEGORIES = ['All', 'Sponsorship', 'Workshop', 'Collaboration', 'Training', 'Visit', 'Recruiting', 'General'];
 
@@ -224,8 +225,8 @@ const NewsPage = () => {
               gap: '2rem',
             }}>
               {filteredNews.map((item, idx) => (
+                <ScrollLazy key={item.id} minHeight="300px">
                 <div
-                  key={item.id}
                   className="news-card-enter"
                   onClick={() => setSelectedNews(item)}
                   style={{
@@ -323,6 +324,7 @@ const NewsPage = () => {
                     </div>
                   </div>
                 </div>
+                </ScrollLazy>
               ))}
             </div>
           ) : (
