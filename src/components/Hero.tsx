@@ -158,7 +158,7 @@ const Hero = () => {
           style={{ transformOrigin: 'center center', willChange: 'transform' }}
           src={droneVideo}
           autoPlay muted loop playsInline
-          preload="none"
+         
         />
 
         {/* Atmospheric grid overlay */}

@@ -99,7 +99,7 @@ const TestSection: React.FC<TestSectionProps> = ({
         <img
           src={image}
           alt={imageAlt}
-          loading="lazy"
+         
           className="w-full object-contain"
         />
       </div>

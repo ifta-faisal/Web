@@ -219,7 +219,7 @@ const ProjectDetail = () => {
                             src={imgUrl}
                             alt={`${project.name} Media ${index + 1}`}
                             className="w-full h-full object-cover"
-                            loading="lazy"
+                           
                           />
                         </div>
                       );

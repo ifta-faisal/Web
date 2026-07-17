@@ -209,7 +209,7 @@ const Gallery = () => {
               src={item.image}
               alt={item.title}
               className="ju-reveal w-full h-full object-cover transition-transform duration-700 ease-in-out group-hover:scale-110"
-              loading="lazy"
+             
             />
 
             {/* Hover overlay — gradient + icon + detailed texts (same hover interaction as hero GalleryGrid) */}

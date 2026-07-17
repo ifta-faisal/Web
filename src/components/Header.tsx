@@ -93,7 +93,7 @@ const Header = () => {
               <img
                 src={logoUrl}
                 alt="UART Logo"
-                loading="lazy"
+               
                 className="w-32 sm:w-40 lg:w-44 xl:w-52 h-auto object-contain transition-all duration-300 group-hover:drop-shadow-[0_0_16px_rgba(249,115,22,0.6)]"
                 style={{ background: 'transparent', mixBlendMode: 'screen' }}
               />

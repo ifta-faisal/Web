@@ -100,7 +100,7 @@ const GalleryGrid = () => {
             key={i}
             style={{ background: '#0d0b0a' }}
           >
-            <img src={item.image} alt={item.title} className="w-full h-full object-cover" loading="lazy" />
+            <img src={item.image} alt={item.title} className="w-full h-full object-cover" />
           </Link>
         ))}
       </div>
