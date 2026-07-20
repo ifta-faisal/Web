@@ -92,6 +92,10 @@ const TiltCard: React.FC<TiltCardProps> = ({
 
 
 const SponsorProposal = () => {
+    useEffect(() => {
+        window.scrollTo(0, 0);
+    }, []);
+
     const GradientUnderline = () => (
         <div className="w-28 h-2 rounded-full bg-gradient-to-r from-primary to-accent mx-auto mt-2"></div>
     );

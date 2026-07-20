@@ -1,5 +1,5 @@
-import React from "react";
-import { Eye } from 'lucide-react';
+import React, { useState } from "react";
+import { Eye, X } from 'lucide-react';
 import ScrollLazy from './ScrollLazy';
 
 // import img2 from "../assets/gallery/Engine1.webp";
@@ -175,6 +175,8 @@ const galleryItems = [
 ];
 
 const Gallery = () => {
+  const [selectedImage, setSelectedImage] = useState<string | null>(null);
+
   return (
     <div className="min-h-screen bg-transparent text-white pt-32 pb-24 relative overflow-hidden">
       
@@ -205,6 +207,7 @@ const Gallery = () => {
           <div
             className="w-full aspect-video relative group overflow-hidden rounded-xl border border-white/5 hover:border-primary/30 shadow-lg hover:shadow-2xl transition-all duration-300 cursor-pointer"
             style={{ background: '#0d0b0a' }}
+            onClick={() => setSelectedImage(item.image)}
           >
             <img
               src={item.image}
@@ -236,6 +239,28 @@ const Gallery = () => {
         ))}
       </div>
       
+      {selectedImage && (
+        <div 
+          className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/90 backdrop-blur-sm"
+          onClick={() => setSelectedImage(null)}
+        >
+          <button 
+            className="absolute top-6 right-6 text-white/70 hover:text-white bg-white/10 hover:bg-white/20 p-2 rounded-full transition-all"
+            onClick={(e) => {
+              e.stopPropagation();
+              setSelectedImage(null);
+            }}
+          >
+            <X className="w-6 h-6" />
+          </button>
+          <img 
+            src={selectedImage} 
+            alt="Expanded view" 
+            className="max-w-full max-h-[90vh] object-contain rounded-lg shadow-2xl"
+            onClick={(e) => e.stopPropagation()}
+          />
+        </div>
+      )}
     </div>
   );
 };

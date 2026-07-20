@@ -65,20 +65,27 @@ const BlogDetail = () => {
             {post.title}
           </h1>
 
-          <div className="flex flex-wrap items-center justify-end gap-6 pb-8 border-b border-white/10">
-            <div className="flex items-center gap-6 text-sm text-slate-400 font-mono">
-              <div className="flex items-center gap-2"><Calendar className="w-4 h-4 text-primary" /> {post.date}</div>
-              <div className="flex items-center gap-2"><Clock className="w-4 h-4 text-primary" /> {post.readTime}</div>
+          <div className="flex flex-col gap-3 pb-8 border-b border-white/10 text-slate-300">
+            {post.excerpt && (
+              <div className="italic text-slate-400 my-1">
+                {post.excerpt}
+              </div>
+            )}
+            <div>
+              <span className="font-bold text-white">Author:</span> {post.author}
+            </div>
+            <div className="flex flex-wrap items-center gap-6 mt-2 text-sm text-slate-400 font-mono">
+              <div className="flex items-center gap-2">
+                <Calendar className="w-4 h-4 text-primary" /> {post.date}
+              </div>
+              <div className="flex items-center gap-2">
+                <Clock className="w-4 h-4 text-primary" /> {post.readTime}
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Featured Image */}
-        <div className="max-w-5xl mx-auto mb-16 rounded-3xl overflow-hidden border border-white/10 shadow-2xl">
-          <div className="aspect-[21/9] w-full">
-            <img src={post.image} alt={post.title} className="w-full h-full object-cover" />
-          </div>
-        </div>
+
 
         {/* Content Layout */}
         <div className="max-w-5xl mx-auto flex flex-col lg:flex-row gap-12 relative">

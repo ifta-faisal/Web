@@ -1,15 +1,25 @@
 import React, { useState } from 'react';
 import { Calendar, Clock, ArrowRight, BookOpen, CheckCircle, SlidersHorizontal } from 'lucide-react';
-import { Link } from 'react-router-dom';
+import { Link, useSearchParams } from 'react-router-dom';
 import { posts } from '../data/blogData';
 
-const categories = ['All', 'Leadership', 'Mechanical', 'Software', 'Electrical', 'Payload'];
+const categories = ['All', 'Leadership', 'Mechanical', 'Software', 'Electrical', 'Communication'];
 
 const Blog = () => {
   const [email, setEmail] = useState('');
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitted, setSubmitted] = useState(false);
-  const [activeCategory, setActiveCategory] = useState('All');
+  const [searchParams, setSearchParams] = useSearchParams();
+  const activeCategory = searchParams.get('category') || 'All';
+
+  const handleCategoryChange = (cat: string) => {
+    if (cat === 'All') {
+      searchParams.delete('category');
+      setSearchParams(searchParams);
+    } else {
+      setSearchParams({ category: cat });
+    }
+  };
 
   const filtered = activeCategory === 'All'
     ? posts
@@ -66,10 +76,10 @@ const Blog = () => {
           {categories.map(cat => (
             <button
               key={cat}
-              onClick={() => setActiveCategory(cat)}
+              onClick={() => handleCategoryChange(cat)}
               className={`px-4 py-2 rounded-full text-xs font-bold uppercase tracking-widest transition-all duration-200 border ${activeCategory === cat
-                  ? 'bg-primary border-primary text-white shadow-lg shadow-primary/20'
-                  : 'bg-transparent border-white/10 text-slate-400 hover:border-primary/50 hover:text-white'
+                ? 'bg-primary border-primary text-white shadow-lg shadow-primary/20'
+                : 'bg-transparent border-white/10 text-slate-400 hover:border-primary/50 hover:text-white'
                 }`}
             >
               {cat}

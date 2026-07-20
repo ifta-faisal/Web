@@ -7,14 +7,28 @@ const ScrollToTopButton = () => {
 
   useEffect(() => {
     const handleScroll = () => {
-      const scrollTop = window.scrollY;
-      const docHeight = document.documentElement.scrollHeight - window.innerHeight;
-      const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
-      setScrollPercent(percent);
-      setVisible(scrollTop > 300);
+      // More accurate document height calculation
+      const scrollTop = window.scrollY || document.documentElement.scrollTop;
+      const scrollHeight = Math.max(
+        document.body.scrollHeight,
+        document.documentElement.scrollHeight,
+        document.body.offsetHeight,
+        document.documentElement.offsetHeight
+      );
+      const docHeight = scrollHeight - window.innerHeight;
+      
+      const percent = docHeight > 0 ? Math.min(100, Math.max(0, (scrollTop / docHeight) * 100)) : 0;
+      
+      // Use requestAnimationFrame for smoother state updates
+      requestAnimationFrame(() => {
+        setScrollPercent(percent);
+        setVisible(scrollTop > 300);
+      });
     };
 
     window.addEventListener('scroll', handleScroll, { passive: true });
+    // Initial calculation on mount
+    handleScroll();
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
@@ -89,7 +103,7 @@ const ScrollToTopButton = () => {
           strokeLinecap="round"
           strokeDasharray={circumference}
           strokeDashoffset={strokeDashoffset}
-          style={{ transition: 'stroke-dashoffset 0.15s ease' }}
+          // Removed transition for real-time tracking
         />
       </svg>
 

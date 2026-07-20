@@ -42,7 +42,7 @@ export const projectsData: ProjectData[] = [
   {
     id: 11, name: "Raven 1.0",
     description: "Advanced tactical drone system named Raven 1.0.",
-    longDescription: "The Raven 1.0 project is an advanced tactical drone system featuring high maneuverability and reconnaissance capabilities.",
+    longDescription: "The UART UAV is designed around a simple philosophy: build a reliable, modular, and intelligent autonomous aerial platform. Every component is selected and integrated to maximize endurance, adaptability, and mission performance while remaining easy to maintain and upgrade.",
     image: raven1, category: "reconnaissance", year: "2026", status: "Active", isLatest: true,
     tags: ["Tactical", "Reconnaissance"],
     specs: [
@@ -88,7 +88,7 @@ export const projectsData: ProjectData[] = [
     ],
     media: [swarm1, swarm2, swarm3, swarm4, swarm5, swarm6, swarm7, swarm8, swarm9, swarm10],
     docs: [{ title: "ThunderBird System Details Report", url: "#" },],
-    videoUrl: "https://www.youtube.com/embed/dQw4w9WgXcQ"
+    videoUrl: "https://www.youtube.com/embed/Ie_odSa6jW0"
   },
   {
     id: 9, name: "AETHER",
