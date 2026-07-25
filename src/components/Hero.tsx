@@ -592,11 +592,11 @@ const Hero = () => {
           {/* Mobile stats (small screens) */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-10 lg:hidden ju-reveal">
             {[
-              { label: 'Max Weight', value: '6.8', unit: 'Kg' },
-              { label: 'Range', value: '20', unit: 'km' },
+              { label: 'Max Takeoff Weight', value: '13', unit: 'Kg' },
+              { label: 'Telemetry Range', value: '20', unit: 'km' },
               { label: 'Endurance', value: '50', unit: 'min' },
-              { label: 'Speed', value: '12', unit: 'm/s' },
-              { label: 'Altitude', value: '120', unit: 'm' },
+              { label: 'Cruise Speed', value: '12', unit: 'm/s' },
+              { label: 'Max Altitude(Tested)', value: '120', unit: 'm' },
               { label: 'Payload', value: '4', unit: 'kg' },
             ].map((s) => (
               <div key={s.label} className="text-center">
