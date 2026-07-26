@@ -1,5 +1,5 @@
 import React, { useState, useEffect, useRef } from 'react';
-import { ArrowRight, Globe, Wrench, CircuitBoard, Code, Camera, Lightbulb, Rocket, Handshake, BookOpen, Trophy, Link } from 'lucide-react';
+import { ArrowRight, Globe, Wrench, CircuitBoard, Code, Camera, Lightbulb, Rocket, Handshake, BookOpen, Trophy, Link, CheckCircle } from 'lucide-react';
 
 // ─── Sub-team data ─────────────────────────────────────────────────────────────
 const subTeams = [
@@ -685,12 +685,12 @@ const JoinUs = () => {
 
                       <div className="ju-accord-right-col">
                         {/* OPEN badge — orange bordered */}
-                        <span className="ju-accord-badge" style={{
+                        <span className="ju-accord-badge flex items-center gap-1" style={{
                           background: 'transparent',
                           color: '#fb923c',
                           border: '1px solid rgba(249,115,22,0.45)',
                         }}>
-                          ✅ OPEN
+                          <CheckCircle className="w-3.5 h-3.5" /> OPEN
                         </span>
                         {/* Chevron */}
                         <div className="ju-accord-chevron" style={{
