@@ -64,7 +64,7 @@ export const projectsData: ProjectData[] = [
     docs: [
       { title: "Mechanical", url: "https://drive.google.com/file/d/1hQJqwpcT2bh652FQ4aKtwyOmYRSgaJOY/view?usp=sharing" },
       { title: "Payload", url: "#" },
-      { title: "Avionics", url: "#" },
+      // { title: "Avionics", url: "#" },
       { title: "Electrical", url: "https://drive.google.com/file/d/1usASKTKMacqBOxYKuqVPRMzcr5WAGc_z/view?usp=sharing" },
       { title: "Communication", url: "#" },
       { title: "Software & Navigation", url: "#" },
