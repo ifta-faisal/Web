@@ -1,6 +1,6 @@
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 import { useParams, Link } from 'react-router-dom';
-import { ArrowLeft, ExternalLink, Play, FileText, ChevronRight, Activity } from 'lucide-react';
+import { ArrowLeft, ExternalLink, Play, FileText, ChevronRight, ChevronLeft, Activity, X } from 'lucide-react';
 import { projectsData } from '../data/projectsData';
 
 const ProjectDetail = () => {
@@ -9,6 +9,65 @@ const ProjectDetail = () => {
 
   const iframeRef = useRef<HTMLIFrameElement>(null);
   const videoRef = useRef<HTMLVideoElement>(null);
+  const [selectedMediaIndex, setSelectedMediaIndex] = useState<number | null>(null);
+  
+  const [touchStart, setTouchStart] = useState<number | null>(null);
+  const [touchEnd, setTouchEnd] = useState<number | null>(null);
+  const isSwiping = useRef(false);
+
+  const onTouchStart = (e: React.TouchEvent | React.MouseEvent) => {
+    setTouchEnd(null);
+    isSwiping.current = false;
+    if ('targetTouches' in e) {
+      setTouchStart(e.targetTouches[0].clientX);
+    } else {
+      setTouchStart((e as React.MouseEvent).clientX);
+    }
+  };
+
+  const onTouchMove = (e: React.TouchEvent | React.MouseEvent) => {
+    if (touchStart === null) return;
+    if ('targetTouches' in e) {
+      setTouchEnd(e.targetTouches[0].clientX);
+    } else {
+      setTouchEnd((e as React.MouseEvent).clientX);
+    }
+  };
+
+  const onTouchEnd = () => {
+    if (touchStart === null || touchEnd === null || !project?.media || selectedMediaIndex === null) {
+      setTouchStart(null);
+      setTouchEnd(null);
+      return;
+    }
+    const distance = touchStart - touchEnd;
+    const isLeftSwipe = distance > 50;
+    const isRightSwipe = distance < -50;
+    
+    if (isLeftSwipe) {
+      setSelectedMediaIndex((selectedMediaIndex + 1) % project.media.length);
+      isSwiping.current = true;
+    } else if (isRightSwipe) {
+      setSelectedMediaIndex((selectedMediaIndex - 1 + project.media.length) % project.media.length);
+      isSwiping.current = true;
+    }
+    setTouchStart(null);
+    setTouchEnd(null);
+  };
+
+  const handleNext = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedMediaIndex !== null && project?.media) {
+      setSelectedMediaIndex((selectedMediaIndex + 1) % project.media.length);
+    }
+  };
+
+  const handlePrev = (e: React.MouseEvent) => {
+    e.stopPropagation();
+    if (selectedMediaIndex !== null && project?.media) {
+      setSelectedMediaIndex((selectedMediaIndex - 1 + project.media.length) % project.media.length);
+    }
+  };
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -212,14 +271,15 @@ const ProjectDetail = () => {
                       return (
                         <div
                           key={i}
-                          className="gallery-card-marquee block"
+                          className="gallery-card-marquee block cursor-pointer group relative overflow-hidden rounded-xl"
                           style={{ background: '#0d0b0a' }}
+                          onClick={() => setSelectedMediaIndex(index)}
                         >
+                          <div className="absolute inset-0 bg-black/0 group-hover:bg-black/20 transition-all z-10 duration-300"></div>
                           <img
                             src={imgUrl}
                             alt={`${project.name} Media ${index + 1}`}
-                            className="w-full h-full object-cover"
-                           
+                            className="w-full h-full object-cover transform group-hover:scale-110 transition-transform duration-700"
                           />
                         </div>
                       );
@@ -274,6 +334,54 @@ const ProjectDetail = () => {
         )}
 
       </div>
+
+      {selectedMediaIndex !== null && project?.media && (
+        <div 
+          className="fixed inset-0 z-[100] flex items-center justify-center bg-black/90 p-4 sm:p-8 backdrop-blur-sm cursor-grab active:cursor-grabbing"
+          onClick={(e) => {
+            if (e.target === e.currentTarget && !isSwiping.current) {
+              setSelectedMediaIndex(null);
+            }
+            setTimeout(() => { isSwiping.current = false; }, 50);
+          }}
+          onTouchStart={onTouchStart}
+          onTouchMove={onTouchMove}
+          onTouchEnd={onTouchEnd}
+          onMouseDown={onTouchStart}
+          onMouseMove={onTouchMove}
+          onMouseUp={onTouchEnd}
+          onMouseLeave={onTouchEnd}
+        >
+          <button 
+            className="absolute top-6 right-6 text-white hover:text-primary transition-colors p-2 z-50 bg-black/50 rounded-full hover:bg-black/80"
+            onClick={() => setSelectedMediaIndex(null)}
+          >
+            <X className="w-8 h-8" />
+          </button>
+
+          <button 
+            className="absolute left-4 sm:left-8 text-white hover:text-primary transition-colors p-2 z-50 bg-black/50 rounded-full hover:bg-black/80 hidden sm:block"
+            onClick={handlePrev}
+          >
+            <ChevronLeft className="w-8 h-8" />
+          </button>
+
+          <img 
+            src={project.media[selectedMediaIndex]} 
+            alt="Selected Media Fullscreen" 
+            className="max-w-full max-h-full object-contain rounded-lg shadow-2xl transform scale-100 animate-[zoomIn_0.2s_ease-out] select-none" 
+            draggable={false}
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          <button 
+            className="absolute right-4 sm:right-8 text-white hover:text-primary transition-colors p-2 z-50 bg-black/50 rounded-full hover:bg-black/80 hidden sm:block"
+            onClick={handleNext}
+          >
+            <ChevronRight className="w-8 h-8" />
+          </button>
+        </div>
+      )}
     </div>
   );
 };

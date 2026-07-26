@@ -55,6 +55,12 @@ import blog7_img3 from '../assets/images/Blog/blog-07/blogimages7/photo_motor_wi
 import blog8_img0 from '../assets/images/Blog/blog-08/blogimages8/diagram_interconnection.jpeg';
 import blog8_img1 from '../assets/images/Blog/blog-08/blogimages8/photo_uav_top_gcs.jpeg';
 
+// ─── Blog 9 Imports ───
+import blog9_img1 from '../assets/images/Blog/blog-09/images/comm_photo_1.jpeg';
+import blog9_img2 from '../assets/images/Blog/blog-09/images/comm_photo_2.jpeg';
+import blog9_img3 from '../assets/images/Blog/blog-09/images/comm_photo_3.jpeg';
+import blog9_img4 from '../assets/images/Blog/blog-09/images/comm_photo_4.jpeg';
+
 
 export interface BlogPost {
   id: number;
@@ -364,7 +370,7 @@ export const postsRaw: BlogPost[] = [
       <img src="${member4}" alt="Ifta Faisal" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Ifta Faisal</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Communication Sub-Team Lead, UIU Aerial Robotics Team</div>
       </div>
     </div>
     <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
@@ -385,12 +391,53 @@ export const postsRaw: BlogPost[] = [
 </div>
 `,
     author: "Ifta Faisal • MD. Israfil Hossain • Md. Biplob",
-    role: "Research Member, UIU Aerial Robotics Team",
-    authorImg: "",
+    role: "Communication Sub-Team Lead, UIU Aerial Robotics Team",
+    authorImg: member4,
     date: "July 10, 2026",
     readTime: "9 min read",
     category: "Communication",
     image: blog8_img0,
+  },
+  {
+    id: 9,
+    title: "Staying Connected: Engineering Our Air-to-Ground Communication System",
+    excerpt: "An autonomous aircraft is only as trustworthy as its link to the ground. Here's how UART built a redundant telemetry and video pipeline for the SUAS 2026 UAV, and why we treat the radio link itself as a safety-critical subsystem.",
+    content: `
+<p><img src="${blog9_img1}" alt="Blog Image" class="blog-section-img" /></p><p><em>Bench-testing the aircraft's radio and antenna setup ahead of a range check.</em></p><h1><strong>Autonomy Doesn't Mean Disconnected</strong></h1><p>It's a common misconception that a fully autonomous aircraft doesn't need a strong link to the ground — that once it takes off and starts executing its mission plan, the radio link is a nice-to-have rather than a necessity. In practice, the opposite is true. Our ground control station needs a constant, trustworthy stream of telemetry to know the aircraft is healthy, and the aircraft needs to keep receiving mission updates and, if something goes wrong, an override command. A gap in that link doesn't just mean losing a live video feed for a few seconds; it means the team on the ground loses their only window into whether the autonomy stack is behaving the way it's supposed to.</p><p>For SUAS 2026, we treated the communication system as its own subsystem, engineered with the same seriousness as the flight controller or the perception pipeline, rather than as a default that comes bundled with off-the-shelf radios.</p><h1><strong>Two Links, Not One</strong></h1><p>Our aircraft actually carries two independent communication paths rather than a single radio doing everything. A dedicated telemetry radio link — built around RFD 900x units on both the air and ground side — carries flight telemetry, health data, and mission commands over a long-range, low-bandwidth channel that's built to stay connected even at distance and in less-than-ideal RF conditions. Separately, a SIYI UniRC7 Pro air-and-ground pairing handles the higher-bandwidth video and data feed from the onboard camera, routed through an onboard Ethernet switch alongside the companion computer's own data.</p><p>Splitting these two jobs across two separate radio systems was a deliberate choice. Telemetry is the one data stream we cannot afford to lose even for a moment, so it lives on the simplest, most robust link we could build. Video and high-bandwidth data are valuable for situational awareness, but if that link degrades under load or interference, we'd rather lose the video feed than have it compete with — and potentially disrupt — the telemetry channel keeping the ground station honestly informed about the aircraft's state.</p><h1><strong>Why Redundancy Here Isn't Optional</strong></h1><p>A single point of failure in the communication chain undermines every other subsystem we've written about in this series. If the telemetry link drops, the ground control station has no way to know whether the aircraft is still executing its mission correctly, whether the obstacle-avoidance system has been triggered, or whether a battery is discharging faster than expected. Because of that, we designed the two-radio architecture specifically so that a problem with the video link — interference, range, or a hardware fault — can never take telemetry down with it, and vice versa.</p><p>This is also why the antenna setup and radio placement on the airframe got more attention than we initially expected them to need. Radio performance is affected by antenna orientation relative to the ground station, by proximity to other onboard electronics, and by the aircraft's own frame acting as a partial obstruction depending on flight attitude — all things that are easy to overlook on a datasheet and only show up once you're testing range in the field.</p><p><img src="${blog9_img2}" alt="Blog Image" class="blog-section-img" /></p><p><em>Testing the radio and antenna configuration during a bench session.</em></p><h1><strong>From the Bench to the Field</strong></h1><p>Range and reliability testing for the communication system happened in stages. We started on the bench, confirming that both radio links held a clean connection at close range with the full electronics stack powered on — checking specifically for interference from the ESCs and motors, since switching power electronics are a common source of RF noise that doesn't show up until everything is running together. From there, we moved to controlled outdoor range tests, gradually increasing distance and checking for dropouts, latency spikes, and any correlation between orientation and signal quality.</p><p>This staged approach mirrors how we've tested every other subsystem in this series: never trusting a component because its datasheet says it should work, and always validating it against the actual conditions it will fly in.</p><p><img src="${blog9_img3}" alt="Blog Image" class="blog-section-img" /></p><p><em>A closer look at one of the communication modules during integration testing.</em></p><h1><strong>Feeding Back Into the Ground Control Station</strong></h1><p>The communication system doesn't exist in isolation — everything it carries feeds directly into the ground control station software described earlier in this series. Telemetry from the RFD 900x link populates the live status panels operators watch during a mission, while the SIYI video link feeds the camera view operators use to sanity-check what the onboard perception pipeline is reporting. Keeping both of these paths synchronized, so that what an operator sees on screen actually corresponds to what the aircraft is doing at that moment, has been an ongoing point of attention rather than something we solved once and moved on from.</p><p><img src="${blog9_img4}" alt="Blog Image" class="blog-section-img" /></p><p><em>Final checks on the communication hardware before a test flight.</em></p><h1><strong>What We're Still Testing</strong></h1><p>The current two-radio architecture has held up well through our range and interference testing so far, but we don't consider it finished. We're still characterizing exactly how much range margin we have under worst-case orientation, and we want more data on how the link behaves in the kind of RF-noisy environment a real competition site — with dozens of other teams' radios active at once — is likely to present. We're also evaluating whether a brief, automatic fallback behavior should trigger if the telemetry link drops for more than a few seconds mid-mission, rather than relying solely on the aircraft's onboard safety logic to handle that case silently.</p><p>None of this is dramatic engineering, and that's somewhat by design — a communication system that quietly works exactly as expected, every time, is the entire goal.</p>
+<div class="mt-12 pt-8 border-t border-white/10">
+  <h2 class="text-2xl font-bold text-white mb-6 uppercase tracking-wider" style="font-family: 'Bebas Neue', sans-serif">About the Authors</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
+      <img src="${member4}" alt="Ifta Faisal" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
+      <div>
+        <div class="font-bold text-white text-base leading-tight mb-0.5">Ifta Faisal</div>
+        <div class="text-xs text-slate-400">Communication Sub-Team Lead, UIU Aerial Robotics Team</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
+      <img src="${israfil}" alt="MD. Israfil Hossain" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
+      <div>
+        <div class="font-bold text-white text-base leading-tight mb-0.5">MD. Israfil Hossain</div>
+        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
+      <img src="${alfi}" alt="Md. Biplob" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
+      <div>
+        <div class="font-bold text-white text-base leading-tight mb-0.5">Md. Biplob</div>
+        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+      </div>
+    </div>
+  </div>
+</div>
+`,
+    author: "Ifta Faisal • MD. Israfil Hossain • Md. Biplob",
+    role: "Communication Sub-Team Lead, UIU Aerial Robotics Team",
+    authorImg: member4,
+    date: "July 21, 2026",
+    readTime: "9 min read",
+    category: "Communication",
+    image: blog9_img1,
   }
 ];
 
