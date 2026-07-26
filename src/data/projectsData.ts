@@ -76,7 +76,7 @@ export const projectsData: ProjectData[] = [
     id: 10, name: " ThunderBird",
     description: "Next-generation, visually guided UAV prototype engineered for cutting edge autonomous flight research..",
     longDescription: "Our design philosophy is not just about the vehicle itself, but about the mission it must serve. We believe a truly innovative aerial platform must be Built for adaptation.",
-    image: project10, category: "ai", year: "2026", status: "Active", isPrototype: true,
+    image: project10, category: "ai", year: "2026", status: "Completed", isPrototype: true,
     tags: ["AI", "Autonomous"],
     specs: [
       { label: "Weight", value: "2.5 kg" },

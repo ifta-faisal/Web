@@ -103,7 +103,7 @@ export const postsRaw: BlogPost[] = [
       <img src="${member4}" alt="Ifta Faisal" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Ifta Faisal</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Communication Sub-Team Lead, UIU Aerial Robotics Team</div>
       </div>
     </div>
   </div>
@@ -136,14 +136,14 @@ export const postsRaw: BlogPost[] = [
       <img src="${probin}" alt="Probin Chandra Nath" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Probin Nath</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Electrical Member, UIU Aerial Robotics Team</div>
       </div>
     </div>
     <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
       <img src="${shahad}" alt="Mobassir Hossain Shahad" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Mobassir Hossain Shahad</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Electrical Member, UIU Aerial Robotics Team</div>
       </div>
     </div>
   </div>
@@ -183,7 +183,7 @@ export const postsRaw: BlogPost[] = [
       <img src="${member9}" alt="Digonta Karmaker" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Digonta Karmaker</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Software Member, UIU Aerial Robotics Team</div>
       </div>
     </div>
   </div>
@@ -209,21 +209,21 @@ export const postsRaw: BlogPost[] = [
       <img src="${member9}" alt="Digonta Karmaker" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Digonta Karmaker</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Software & Navigation Team, UIU Aerial Robotics Team</div>
       </div>
     </div>
     <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
       <img src="${nusrat}" alt="Nusrat Jahan" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Nusrat Jahan</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Software & Navigation Team Member, UIU Aerial Robotics Team</div>
       </div>
     </div>
     <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
       <img src="${arpon}" alt="Md Shazan Mahmud Arpon" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Md Shazan Mahmud Arpon</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Software & Navigation Team Member, UIU Aerial Robotics Team</div>
       </div>
     </div>
   </div>
@@ -256,14 +256,14 @@ export const postsRaw: BlogPost[] = [
       <img src="${nusrat}" alt="Nusrat Jahan" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Nusrat Jahan</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Software & Navigation Member, UIU Aerial Robotics Team</div>
       </div>
     </div>
     <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
       <img src="${arpon}" alt="Md Shazan Mahmud Arpon" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Md Shazan Mahmud Arpon</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Software & Navigation Member, UIU Aerial Robotics Team</div>
       </div>
     </div>
   </div>
@@ -296,14 +296,14 @@ export const postsRaw: BlogPost[] = [
       <img src="${nusrat}" alt="Nusrat Jahan" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Nusrat Jahan</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Software & Navigation Member, UIU Aerial Robotics Team</div>
       </div>
     </div>
     <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
       <img src="${arpon}" alt="Md Shazan Mahmud Arpon" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Md Shazan Mahmud Arpon</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Software & Navigation Member, UIU Aerial Robotics Team</div>
       </div>
     </div>
   </div>
@@ -329,21 +329,21 @@ export const postsRaw: BlogPost[] = [
       <img src="${probin}" alt="Probin Nath" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Probin Nath</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Electrical Member, UIU Aerial Robotics Team</div>
       </div>
     </div>
     <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
       <img src="${anika}" alt="Anika Orthy" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Anika Orthy</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Electrical Member, UIU Aerial Robotics Team</div>
       </div>
     </div>
     <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
       <img src="${rashed}" alt="Abdur Rahman" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
       <div>
         <div class="font-bold text-white text-base leading-tight mb-0.5">Abdur Rahman</div>
-        <div class="text-xs text-slate-400">Research Member, UIU Aerial Robotics Team</div>
+        <div class="text-xs text-slate-400">Electrical Member, UIU Aerial Robotics Team</div>
       </div>
     </div>
   </div>

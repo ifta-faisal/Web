@@ -253,7 +253,7 @@ const Header = () => {
       >
         {/* Slide-in panel */}
         <div
-          className={`fixed top-0 right-0 w-4/5 max-w-xs sm:max-w-sm h-full shadow-2xl transform transition-transform duration-400 ease-spring`}
+          className={`fixed top-0 right-0 w-4/5 max-w-xs sm:max-w-sm h-full flex flex-col shadow-2xl transform transition-transform duration-400 ease-spring`}
           style={{
             background: 'rgba(15,23,42,0.96)',
             backdropFilter: 'blur(24px)',
@@ -263,7 +263,7 @@ const Header = () => {
           onClick={(e) => e.stopPropagation()}
         >
           {/* Mobile Menu Header */}
-          <div className="p-6 flex items-center justify-between" style={{ borderBottom: '1px solid rgba(249,115,22,0.15)' }}>
+          <div className="p-5 flex items-center justify-between flex-shrink-0" style={{ borderBottom: '1px solid rgba(249,115,22,0.15)' }}>
             <Link to="/" onClick={() => setIsMenuOpen(false)} className="flex items-center">
               <span className="font-black text-2xl text-primary uppercase tracking-tighter" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>
                 UART
@@ -278,8 +278,8 @@ const Header = () => {
             </button>
           </div>
 
-          {/* Mobile Menu Items — staggered slide-in (Mirrors Desktop Navbar) */}
-          <nav className="p-4 sm:p-6 space-y-1 text-sm sm:text-base overflow-y-auto">
+          {/* Mobile Menu Items */}
+          <nav className="flex-1 min-h-0 overflow-y-auto p-3 sm:p-4 space-y-0.5 text-sm sm:text-base">
             {navItems.map((item, index) =>
               item.hasDropdown ? (
                 <div key={item.name}>
