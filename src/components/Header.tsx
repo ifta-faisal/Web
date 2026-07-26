@@ -89,7 +89,11 @@ const Header = () => {
           <div className="flex justify-between items-center h-16">
 
             {/* Logo */}
-            <Link to="/" className="flex items-center space-x-2 group shrink-0">
+            <Link 
+              to="/" 
+              className="flex items-center space-x-2 group shrink-0"
+              onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+            >
               <img
                 src={logoUrl}
                 alt="UART Logo"
