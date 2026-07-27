@@ -142,6 +142,7 @@ const Footer = () => {
                 <li key={idx}>
                   <Link
                     to={link.href}
+                    onClick={() => window.scrollTo(0, 0)}
                     className="flex items-center gap-2 text-sm transition-all duration-300 group"
                     style={{ color: '#7A6E68', fontFamily: "'Inter', sans-serif" }}
                     onMouseEnter={e => e.currentTarget.style.color = '#f97316'}
@@ -168,6 +169,7 @@ const Footer = () => {
                 <li key={idx}>
                   <Link
                     to={project.href}
+                    onClick={() => window.scrollTo(0, 0)}
                     className="flex items-center gap-2 text-sm transition-all duration-300 group"
                     style={{ color: '#7A6E68', fontFamily: "'Inter', sans-serif" }}
                     onMouseEnter={e => e.currentTarget.style.color = '#f97316'}
@@ -255,6 +257,7 @@ const Footer = () => {
                 <Link
                   key={to}
                   to={to}
+                  onClick={() => window.scrollTo(0, 0)}
                   className="transition-colors duration-300"
                   style={{ color: '#4A4038', fontFamily: "'Inter', sans-serif" }}
                   onMouseEnter={e => e.currentTarget.style.color = '#f97316'}
