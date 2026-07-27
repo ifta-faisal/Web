@@ -463,6 +463,16 @@ const Hero = () => {
             <div className="hidden lg:flex flex-col justify-around py-10 pr-10 border-r ju-reveal-left"
               style={{ borderColor: 'rgba(255,255,255,0.08)', minWidth: '220px', flex: '0 0 220px' }}>
 
+              {/* Stat 0 */}
+              <div>
+                <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 mb-1"
+                  style={{ fontFamily: "'Inter', sans-serif" }}>Weight</p>
+                <p style={{ fontFamily: "'Bebas Neue', sans-serif", lineHeight: 1 }}>
+                  <span className="text-5xl" style={{ color: '#f97316' }}>7</span>
+                  <span className="text-2xl text-white ml-1">Kg</span>
+                </p>
+              </div>
+
               {/* Stat 1 */}
               <div>
                 <p className="text-[10px] font-bold tracking-[0.2em] uppercase text-slate-500 mb-1"
@@ -592,6 +602,7 @@ const Hero = () => {
           {/* Mobile stats (small screens) */}
           <div className="grid grid-cols-2 sm:grid-cols-3 gap-8 mt-10 lg:hidden ju-reveal">
             {[
+              { label: 'Weight', value: '7', unit: 'Kg' },
               { label: 'Max Takeoff Weight', value: '13', unit: 'Kg' },
               { label: 'Telemetry Range', value: '20', unit: 'km' },
               { label: 'Endurance', value: '50', unit: 'min' },
