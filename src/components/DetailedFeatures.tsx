@@ -194,7 +194,7 @@ const DetailedFeatures = () => {
       description:
         "The UART UAV features a hybrid structural architecture combining a precision-machined aluminum center frame with carbon fiber arms and structural plates. Designed for high strength, low weight, and modularity, the airframe supports both long-endurance autonomous missions and heavy-payload operations while maintaining exceptional rigidity and reliability.",
       bullets: [
-        "Operating Weight For SUAS: 6.8 kg",
+        "Operating Weight For SUAS Around: 7 kg",
         "Maximum Takeoff Weight (MTOW): 13 kg",
         "Precision-machined aluminum center frame",
         "Carbon fiber arms, top & bottom plates",
