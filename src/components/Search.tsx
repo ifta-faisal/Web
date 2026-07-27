@@ -130,6 +130,13 @@ const Search = ({ isOpen, onClose }: { isOpen: boolean; onClose: () => void }) =
     return () => window.removeEventListener('keydown', handleKeyDown);
   }, [isOpen, onClose]);
 
+  useEffect(() => {
+    if (!isOpen) {
+      setQuery('');
+      setResults([]);
+    }
+  }, [isOpen]);
+
   if (!isOpen) return null;
 
   return (
