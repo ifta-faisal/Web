@@ -174,12 +174,14 @@ const DetailedFeatures = () => {
   }, [searchParams]);
 
   const specs = [
+    { label: "Weight", value: "7", unit: "kg" },
     { label: "Max Takeoff Weight", value: "13", unit: "kg" },
     { label: "UAS Volume (Unfolded)", value: "14 x 23 x 23", unit: "in" },
     { label: "Flight Endurance", value: "50", unit: "min" },
     { label: "Telemetry Range", value: "20", unit: "km" },
     { label: "Camera Resolution", value: "4K", unit: "HD" },
     { label: "Cruise Speed", value: "12", unit: "m/s" },
+    { label: "Maximum Speed(Tested)", value: "20", unit: "m/s" },
     { label: "Tested Max Altitude", value: "120", unit: "m AGL" },
     { label: "MAXIMUM Payload Capacity", value: "4", unit: "kg" },
   ];

@@ -57,9 +57,11 @@ export const projectsData: ProjectData[] = [
     image: raven19, category: "reconnaissance", year: "2026", status: "Active", isLatest: true,
     tags: ["Tactical", "Reconnaissance"],
     specs: [
-      { label: "Weight", value: "13 kg" },
+      { label: "Weight", value: "7 kg" },
+      { label: "Max Takeoff Weight", value: "13 kg" },
       { label: "Dimensions(Unfolded)", value: "14×23×23 (L × W × H)" },
-      { label: "Maximum Speed", value: "15 m/s (Tested)" },
+      { label: "Maximum Speed", value: "20 m/s (Tested)" },
+      { label: "Cruise Speed", value: "12 m/s" },
       { label: "Flight Endurance", value: "Up to 50 minutes" },
       { label: "Propulsion System", value: "Electric Brushless Motors" },
       { label: "Power System", value: "Lithium-ion Battery" },
