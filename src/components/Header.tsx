@@ -36,11 +36,19 @@ const Header = () => {
   ];
 
   const [isHidden, setIsHidden] = useState(false);
+  const [isScrollHidden, setIsScrollHidden] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
       const currentScrollY = window.scrollY;
       setIsTop(currentScrollY <= 20);
+      
+      if (currentScrollY > lastScrollY && currentScrollY > 100) {
+        setIsScrollHidden(true);
+      } else if (currentScrollY < lastScrollY) {
+        setIsScrollHidden(false);
+      }
+      
       setLastScrollY(currentScrollY);
     };
 
@@ -71,7 +79,7 @@ const Header = () => {
       {/* Header */}
       <header
         className={`fixed top-0 left-0 right-0 z-50 transition-all duration-500 ease-spring ${
-          isHidden ? '-translate-y-full opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'
+          (isHidden || isScrollHidden) ? '-translate-y-full opacity-0 pointer-events-none' : 'translate-y-0 opacity-100'
         } ${
           isTop
             ? 'bg-transparent py-3 shadow-none'
