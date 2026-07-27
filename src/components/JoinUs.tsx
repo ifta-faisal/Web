@@ -808,11 +808,11 @@ const JoinUs = () => {
                     <div className="ju-form-row">
                       <div className="ju-form-group">
                         <label htmlFor="ju-fname">FIRST NAME *</label>
-                        <input id="ju-fname" name="first_name" type="text" placeholder="e.g. Mariam" required />
+                        <input id="ju-fname" name="first_name" type="text" placeholder="e.g. T M" required />
                       </div>
                       <div className="ju-form-group">
                         <label htmlFor="ju-lname">LAST NAME *</label>
-                        <input id="ju-lname" name="last_name" type="text" placeholder="e.g. Khan" required />
+                        <input id="ju-lname" name="last_name" type="text" placeholder="e.g. AL Anam" required />
                       </div>
                     </div>
                     <div className="ju-form-group">
