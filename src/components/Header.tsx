@@ -165,26 +165,30 @@ const Header = () => {
                         }}
                       >
                         <div className="p-2">
-                          <Link
+                          <NavLink
                             to="/projects"
                             onClick={() => setDropdownOpen(false)}
-                            className="flex items-center gap-2 px-3 py-2 rounded-lg text-xs text-primary font-bold uppercase tracking-widest hover:bg-primary/10 transition-colors mb-1"
+                            className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg text-xs font-bold uppercase tracking-widest hover:bg-primary/10 transition-colors mb-1 ${isActive ? 'text-primary bg-primary/10' : 'text-slate-300 hover:text-white'}`}
                             style={{ fontFamily: "'Inter', sans-serif", borderBottom: '1px solid rgba(249,115,22,0.15)' }}
                           >
                             All Projects
-                          </Link>
+                          </NavLink>
                           {projectsData.map((project) => (
-                            <Link
+                            <NavLink
                               key={project.id}
                               to={`/project/${project.id}`}
                               onClick={() => setDropdownOpen(false)}
-                              className="flex items-center gap-2 px-3 py-2 rounded-lg text-[11px] text-slate-300 hover:text-white hover:bg-white/5 transition-colors group/item"
+                              className={({ isActive }) => `flex items-center gap-2 px-3 py-2 rounded-lg text-[11px] hover:bg-white/5 transition-colors group/item ${isActive ? 'text-primary bg-white/5' : 'text-slate-300 hover:text-white'}`}
                               style={{ fontFamily: "'Inter', sans-serif" }}
                             >
-                              <span className="w-1.5 h-1.5 rounded-full bg-primary/50 group-hover/item:bg-primary transition-colors flex-shrink-0" />
-                              <span className="truncate">{project.name}</span>
-                              <span className="ml-auto text-[9px] text-slate-500 flex-shrink-0">{project.year}</span>
-                            </Link>
+                              {({ isActive }) => (
+                                <>
+                                  <span className={`w-1.5 h-1.5 rounded-full transition-colors flex-shrink-0 ${isActive ? 'bg-primary' : 'bg-primary/50 group-hover/item:bg-primary'}`} />
+                                  <span className="truncate">{project.name}</span>
+                                  <span className={`ml-auto text-[9px] flex-shrink-0 ${isActive ? 'text-primary' : 'text-slate-500'}`}>{project.year}</span>
+                                </>
+                              )}
+                            </NavLink>
                           ))}
                         </div>
                       </div>
@@ -308,7 +312,7 @@ const Header = () => {
                       <NavLink
                         to="/projects"
                         onClick={() => setIsMenuOpen(false)}
-                        className="flex items-center gap-2 px-4 py-2 text-xs text-primary font-bold uppercase tracking-widest hover:bg-primary/10 rounded-lg transition-colors"
+                        className={({ isActive }) => `flex items-center gap-2 px-4 py-2 text-xs font-bold uppercase tracking-widest rounded-lg transition-colors ${isActive ? 'text-primary bg-primary/10' : 'text-slate-300 hover:text-white hover:bg-white/5'}`}
                         style={{ fontFamily: "'Inter', sans-serif" }}
                       >
                         All Projects
@@ -318,11 +322,15 @@ const Header = () => {
                           key={project.id}
                           to={`/project/${project.id}`}
                           onClick={() => setIsMenuOpen(false)}
-                          className="flex items-center justify-between px-4 py-2.5 text-sm text-slate-300 hover:text-white hover:bg-white/5 rounded-lg transition-colors"
+                          className={({ isActive }) => `flex items-center justify-between px-4 py-2.5 text-sm rounded-lg transition-colors ${isActive ? 'text-primary bg-white/5' : 'text-slate-300 hover:text-white hover:bg-white/5'}`}
                           style={{ fontFamily: "'Inter', sans-serif" }}
                         >
-                          <span>{project.name}</span>
-                          <span className="text-[10px] text-slate-500">{project.year}</span>
+                          {({ isActive }) => (
+                            <>
+                              <span>{project.name}</span>
+                              <span className={`text-[10px] ${isActive ? 'text-primary' : 'text-slate-500'}`}>{project.year}</span>
+                            </>
+                          )}
                         </NavLink>
                       ))}
                     </div>
