@@ -63,11 +63,11 @@ export const projectsData: ProjectData[] = [
     media: [raven1, raven2, raven3, raven4, raven6, raven8, raven9, raven10, raven11, raven12, raven14],
     docs: [
       { title: "Mechanical", url: "https://drive.google.com/file/d/1hQJqwpcT2bh652FQ4aKtwyOmYRSgaJOY/view?usp=sharing" },
-      { title: "Payload", url: "#" },
+      { title: "Payload", url: "https://drive.google.com/file/d/1oqfpIVhmj32ziyJFiCOlsbaihHfy6LpC/view?usp=sharing" },
       // { title: "Avionics", url: "#" },
       { title: "Electrical", url: "https://drive.google.com/file/d/1usASKTKMacqBOxYKuqVPRMzcr5WAGc_z/view?usp=sharing" },
-      { title: "Communication", url: "#" },
-      { title: "Software & Navigation", url: "#" },
+      { title: "Communication", url: "https://drive.google.com/file/d/1PMgTPjvQkaNT2IRrN_VkESb19cUwfBTH/view?usp=sharing" },
+      { title: "Software & Navigation", url: "https://drive.google.com/file/d/1PwHOi7NPTePAvZb7EpsY1nCwab-812k_/view?usp=sharing" },
       { title: "Technical Design Report", url: "#" }
     ],
     videoUrl: "https://www.youtube.com/embed/I8id3VY7Vdg"
@@ -87,7 +87,7 @@ export const projectsData: ProjectData[] = [
       { label: "Power System", value: "Lithium-ion Battery" },
     ],
     media: [swarm1, swarm2, swarm3, swarm4, swarm5, swarm6, swarm7, swarm8, swarm9, swarm10],
-    docs: [{ title: "ThunderBird System Details Report", url: "#" },],
+    docs: [{ title: "ThunderBird System Details Report", url: "https://drive.google.com/file/d/1C1HlujV0kDY662_shUc4lJbijL9GGbxn/view?usp=sharing" },],
     videoUrl: "https://www.youtube.com/embed/Ie_odSa6jW0"
   },
   {
