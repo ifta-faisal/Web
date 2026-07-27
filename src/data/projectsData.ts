@@ -28,17 +28,17 @@ import raven9 from "../assets/images/Project/Raven1.0/B9.webp";
 import raven10 from "../assets/images/Project/Raven1.0/B10.webp";
 import raven11 from "../assets/images/Project/Raven1.0/B11.webp";
 import raven14 from "../assets/images/Project/Raven1.0/B14.webp";
-import ravenImg3077 from "../assets/images/Project/Raven1.0/IMG_3077.jpg";
-import ravenImg3079 from "../assets/images/Project/Raven1.0/IMG_3079.jpg";
-import ravenImg3086 from "../assets/images/Project/Raven1.0/IMG_3086.jpg";
-import ravenImg3096 from "../assets/images/Project/Raven1.0/IMG_3096.jpg";
-import ravenImg3097 from "../assets/images/Project/Raven1.0/IMG_3097.jpg";
-import ravenImg3100 from "../assets/images/Project/Raven1.0/IMG_3100.jpg";
-import ravenImg3106 from "../assets/images/Project/Raven1.0/IMG_3106.jpg";
-import ravenImg3109 from "../assets/images/Project/Raven1.0/IMG_3109.jpg";
-import ravenImg3111 from "../assets/images/Project/Raven1.0/IMG_3111.jpg";
-import ravenImg3116 from "../assets/images/Project/Raven1.0/IMG_3116.jpg";
-import ravenImg3129 from "../assets/images/Project/Raven1.0/IMG_3129.jpg";
+import raven16 from "../assets/images/Project/Raven1.0/B16.jpg";
+import raven17 from "../assets/images/Project/Raven1.0/B17.jpg";
+import raven18 from "../assets/images/Project/Raven1.0/B18.jpg";
+import raven19 from "../assets/images/Project/Raven1.0/B19.jpg";
+import raven20 from "../assets/images/Project/Raven1.0/B20.jpg";
+import raven21 from "../assets/images/Project/Raven1.0/B21.jpg";
+import raven22 from "../assets/images/Project/Raven1.0/B22.jpg";
+import raven23 from "../assets/images/Project/Raven1.0/B23.jpg";
+import raven24 from "../assets/images/Project/Raven1.0/B24.jpg";
+import raven25 from "../assets/images/Project/Raven1.0/B25.jpg";
+import raven26 from "../assets/images/Project/Raven1.0/B26.jpg";
 
 export interface ProjectSpec { label: string; value: string; }
 export interface ProjectDoc { title: string; url: string; }
@@ -71,7 +71,7 @@ export const projectsData: ProjectData[] = [
       { label: "Perception Sensors", value: "Siyi A8 Mini" },
       { label: "Software Environment", value: "Python,c++,Bash script" }
     ],
-    media: [raven1, raven2, raven3, raven4, raven6, raven8, raven9, raven10, raven11, raven12, raven14, ravenImg3077, ravenImg3079, ravenImg3086, ravenImg3096, ravenImg3097, ravenImg3100, ravenImg3106, ravenImg3109, ravenImg3111, ravenImg3116, ravenImg3129],
+    media: [raven1, raven2, raven3, raven4, raven6, raven8, raven9, raven10, raven11, raven12, raven14, raven16, raven17, raven18, raven19, raven20, raven21, raven22, raven23, raven24, raven25, raven26],
     docs: [
       { title: "Mechanical", url: "https://drive.google.com/file/d/1hQJqwpcT2bh652FQ4aKtwyOmYRSgaJOY/view?usp=sharing" },
       { title: "Payload", url: "https://drive.google.com/file/d/1oqfpIVhmj32ziyJFiCOlsbaihHfy6LpC/view?usp=sharing" },
