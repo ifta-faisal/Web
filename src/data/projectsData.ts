@@ -54,7 +54,7 @@ export const projectsData: ProjectData[] = [
     id: 11, name: "Raven 1.0",
     description: " An autonomous Unmanned Aerial Vehicle (UAV) developed for the SUAS 2026 competition.",
     longDescription: "The UART UAV is designed around a simple philosophy: build a reliable, modular, and intelligent autonomous aerial platform. Every component is selected and integrated to maximize endurance, adaptability, and mission performance while remaining easy to maintain and upgrade.",
-    image: raven1, category: "reconnaissance", year: "2026", status: "Active", isLatest: true,
+    image: raven19, category: "reconnaissance", year: "2026", status: "Active", isLatest: true,
     tags: ["Tactical", "Reconnaissance"],
     specs: [
       { label: "Weight", value: "13 kg" },
