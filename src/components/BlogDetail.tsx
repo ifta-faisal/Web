@@ -56,9 +56,9 @@ const BlogDetail = () => {
         {/* Article Header */}
         <div className="max-w-4xl mx-auto mb-16">
           <div className="flex items-center gap-3 mb-6">
-            <span className="px-3 py-1 bg-primary/20 border border-primary/30 text-primary text-[11px] font-bold tracking-[0.2em] uppercase rounded-full">
+            <div className="section-label">
               {post.category}
-            </span>
+            </div>
           </div>
 
           <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-black text-white leading-[1.1] mb-8 tracking-tight uppercase" style={{ fontFamily: "'Bebas Neue', sans-serif" }}>

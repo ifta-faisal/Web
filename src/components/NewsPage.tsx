@@ -101,15 +101,7 @@ const NewsPage = () => {
 
           {/* ——— Hero Header ——— */}
           <div style={{ textAlign: 'center', marginBottom: '4rem' }}>
-            <div style={{
-              display: 'inline-flex', alignItems: 'center', gap: '0.5rem',
-              padding: '0.4rem 1rem', borderRadius: '999px',
-              background: 'rgba(249,115,22,0.1)', border: '1px solid rgba(249,115,22,0.25)',
-              color: '#f97316', fontSize: '0.65rem', fontWeight: 800,
-              letterSpacing: '0.15em', textTransform: 'uppercase',
-              marginBottom: '1.2rem', fontFamily: "'Inter', sans-serif",
-            }}>
-              <Sparkles size={13} />
+            <div className="section-label mb-5">
               Live UART Broadcasts
             </div>
 

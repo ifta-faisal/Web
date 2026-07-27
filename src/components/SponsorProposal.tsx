@@ -228,7 +228,7 @@ const SponsorProposal = () => {
                 {/* ══ FINANCIAL BUDGET ═════════════════════════════════════════════════ */}
                 <section className="py-20 max-w-6xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="section-label mb-3 px-4 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-primary text-xs font-semibold inline-block">Estimated Costing</div>
+                        <div className="section-label mb-3">Estimated Costing</div>
                         <h2 className="text-4xl font-bold mb-4 text-white uppercase tracking-wider">PROJECT BUDGET</h2>
                         <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
                     </div>
@@ -353,7 +353,7 @@ const SponsorProposal = () => {
                 {/* ══ SPONSORSHIP TIERS ═════════════════════════════════════════════════ */}
                 <section className="py-20 max-w-7xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="section-label mb-3 px-4 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-primary text-xs font-semibold inline-block">Sponsorship Packages</div>
+                        <div className="section-label mb-3">Sponsorship Packages</div>
                         <h2 className="text-4xl font-bold mb-4 text-white uppercase tracking-wider">CHOOSE YOUR PARTNERSHIP</h2>
                         <div className="w-24 h-1 bg-gradient-to-r from-primary to-accent mx-auto"></div>
                     </div>
@@ -483,7 +483,7 @@ const SponsorProposal = () => {
                 {/* ══ PARTNER CATEGORIES ═══════════════════════════════════════════════ */}
                 <section className="py-20 max-w-6xl mx-auto">
                     <div className="text-center mb-16">
-                        <div className="section-label mb-3 px-4 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-primary text-xs font-semibold inline-block">Partner Ecosystem</div>
+                        <div className="section-label mb-3">Partner Ecosystem</div>
                         <h2 className="text-4xl font-bold mb-4 text-white uppercase tracking-wider">SPECIALIZED PARTNERSHIPS</h2>
                         <p className="text-slate-400 max-w-2xl mx-auto">We are seeking dedicated partners in key industries to help us scale our impact and ensure operational excellence.</p>
                     </div>

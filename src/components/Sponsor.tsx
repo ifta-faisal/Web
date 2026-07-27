@@ -88,9 +88,9 @@ const SponsorPage = () => {
 
                 {/* ══ HERO ══════════════════════════════════════════════════════════════ */}
                 <section className="text-center mb-20 ">
-                    <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-primary text-xs sm:text-sm font-semibold mb-6">
-                        <Shield className="w-3.5 h-3.5" /> Partnership Opportunities
-                    </span>
+                    <div className="section-label mb-6">
+                        Partnership Opportunities
+                    </div>
                     <h1 className="ju-reveal text-4xl sm:text-5xl md:text-6xl font-extrabold text-white mb-6 leading-tight">
                         Become a{' '}
                         <span className="bg-gradient-to-r from-primary via-[#f97316] to-primary text-transparent bg-clip-text">
@@ -133,9 +133,9 @@ const SponsorPage = () => {
                 {/* ══ CURRENT SPONSORS ══════════════════════════════════════════════════ */}
                 <section className="mb-16" style={{ animationDelay: '0.25s' }}>
                     <div className="text-center mb-10">
-                        <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-primary text-xs font-semibold mb-4">
-                            <Star className="w-3.5 h-3.5" /> Our Sponsors
-                        </span>
+                        <div className="section-label mb-4">
+                            Our Sponsors
+                        </div>
                         <h2 className="ju-reveal text-3xl sm:text-4xl font-extrabold text-white">
                             Proudly Supported{' '}
                             <span className="bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text">By</span>
@@ -179,9 +179,9 @@ const SponsorPage = () => {
                 {/* ══ SPONSORSHIP TIERS ═════════════════════════════════════════════════ */}
                 <section className="mb-16 " style={{ animationDelay: '0.3s' }}>
                     <div className="text-center mb-10">
-                        <span className="inline-flex items-center gap-2 px-4 py-1.5 bg-primary/20 border border-primary/40 rounded-full text-primary text-xs font-semibold mb-4">
-                            <Trophy className="w-3.5 h-3.5" /> Sponsorship Tiers
-                        </span>
+                        <div className="section-label mb-4">
+                            Sponsorship Tiers
+                        </div>
                         <h2 className="ju-reveal text-3xl sm:text-4xl font-extrabold text-white">
                             Choose Your{' '}
                             <span className="bg-gradient-to-r from-primary to-accent text-transparent bg-clip-text">Partnership Level</span>

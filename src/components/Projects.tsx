@@ -54,9 +54,8 @@ const Projects = () => {
       <div className="max-w-4xl mx-auto px-4 sm:px-6 relative z-10">
         {/* Section Header */}
         <div className="text-center mb-12 sm:mb-16">
-          <div className="inline-flex items-center space-x-2 px-3 sm:px-4 py-1 sm:py-2 bg-primary/20 backdrop-blur-sm border border-primary/30 rounded-full text-primary text-xs sm:text-sm font-semibold mb-4 sm:mb-6">
-            <Rocket className="w-3 h-3 sm:w-4 sm:h-4" />
-            <span>Our Innovation Lab</span>
+          <div className="section-label mb-4 sm:mb-6">
+            Our Innovation Lab
           </div>
           <h2 className="ju-reveal text-3xl sm:text-5xl md:text-6xl font-black text-white mb-4 sm:mb-6">
             Featured <span className="text-primary">Projects</span>

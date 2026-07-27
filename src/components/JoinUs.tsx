@@ -290,12 +290,7 @@ const JoinUs = () => {
 
         /* ══ SECTION HEADER ══════════════════════════════════════════ */
         .ju-section-header { text-align: center; margin-bottom: 4rem; }
-        .ju-section-tag {
-          display: inline-block; padding: .35rem 1rem; border-radius: 999px;
-          background: rgba(249,115,22,0.15); border: 1px solid rgba(249,115,22,0.4);
-          color: #fb923c; font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
-          margin-bottom: 1rem;
-        }
+        /* Removed ju-section-tag, using global section-label instead */
         .ju-section-title {
           font-size: clamp(1.8rem, 4.5vw, 3rem); font-weight: 900; color: #fff;
           text-transform: uppercase; letter-spacing: .01em; line-height: 1.15; margin-bottom: .75rem;
@@ -584,7 +579,7 @@ const JoinUs = () => {
             ))}
           </div>
           <div className={`ju-hero-content container ${heroVisible ? 'ju-hero-animate' : ''}`}>
-            <p className="ju-reveal ju-hero-eyebrow"> UIU AERIAL ROBOTICS TEAM RECRUITMENT 2027</p>
+            <p className="ju-reveal section-label mb-4">UIU AERIAL ROBOTICS TEAM RECRUITMENT 2027</p>
             <h1 className="ju-reveal ju-hero-title">
               UIU AERIAL ROBOTICS TEAM<br />
               <span className="ju-hero-highlight">IS RECRUITING!</span>
@@ -609,7 +604,7 @@ const JoinUs = () => {
         <section className=" ju-why section-padding" id="why-join">
           <div className="container">
             <div className="ju-section-header ju-reveal">
-              <span className="ju-section-tag">WHY JOIN US?</span>
+              <div className="section-label mb-4">WHY JOIN US?</div>
               <h2 className="ju-reveal ju-section-title">Build. Compete. Inspire.</h2>
               <p className="ju-reveal ju-section-sub">
                 Join a family of passionate engineers and creators pushing the boundaries of what's possible.
@@ -639,7 +634,7 @@ const JoinUs = () => {
         <section className=" ju-teams section-padding" id="teams">
           <div className="container">
             <div className="ju-section-header ju-reveal">
-              <span className="ju-section-tag">OPEN POSITIONS</span>
+              <div className="section-label mb-4">OPEN POSITIONS</div>
               <h2 className="ju-reveal ju-section-title">WE ARE LOOKING FOR MEMBERS<br />WITH THE FOLLOWING SKILLS</h2>
               <p className="ju-reveal ju-section-sub">Click any sub-team card to see what we’re looking for. Students from all UIU departments are welcome.</p>
             </div>
@@ -752,7 +747,7 @@ const JoinUs = () => {
         <section className=" ju-timeline section-padding" id="how-to-apply">
           <div className="container">
             <div className="ju-section-header ju-reveal">
-              <span className="ju-section-tag">APPLICATION PROCESS</span>
+              <div className="section-label mb-4">APPLICATION PROCESS</div>
               <h2 className="ju-reveal ju-section-title">HOW TO APPLY</h2>
             </div>
             <div className="ju-timeline-track ju-reveal">
@@ -776,7 +771,7 @@ const JoinUs = () => {
           <div className="container">
             <div className="ju-apply-inner ju-reveal">
               <div className="ju-apply-left">
-                <span className="ju-section-tag">JOIN THE CREW</span>
+                <div className="section-label mb-4">JOIN THE CREW</div>
                 <h2 className="ju-reveal ju-apply-title">READY TO MAKE<br /><span>HISTORY?</span></h2>
                 <p className="ju-reveal ju-apply-desc">
                   Fill out the form and one of our team leads will reach out to you within
