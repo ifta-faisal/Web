@@ -137,7 +137,7 @@ const ProjectDetail = () => {
           <img
             src={project.image}
             alt={project.name}
-            className="w-full h-full object-cover filter brightness-[0.3]"
+            className="w-full h-full object-cover filter brightness-[0.5]"
           />
           <div className="absolute inset-0 bg-gradient-to-t from-[#0a0a0a] via-transparent to-transparent" />
         </div>
