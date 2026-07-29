@@ -190,7 +190,7 @@ const DetailedFeatures = () => {
   const specs = [
     { label: "Weight", value: "7", unit: "kg" },
     { label: "Max Takeoff Weight", value: "13", unit: "kg" },
-    { label: "UAS Volume (Unfolded)", value: "14 x 23 x 23", unit: "in" },
+    { label: "UAS Volume (Unfolded)", value: "23 x 23 x 14", unit: "in" },
     { label: "Flight Endurance", value: "50", unit: "min" },
     { label: "Telemetry Range", value: "20", unit: "km" },
     { label: "Camera Resolution", value: "4K", unit: "HD" },

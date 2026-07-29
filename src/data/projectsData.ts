@@ -59,7 +59,7 @@ export const projectsData: ProjectData[] = [
     specs: [
       { label: "Weight", value: "7 kg" },
       { label: "Max Takeoff Weight", value: "13 kg" },
-      { label: "Dimensions(Unfolded)", value: "14×23×23 in (L × W × H)" },
+      { label: "Dimensions(Unfolded)", value: "23×23×14 in (L × W × H)" },
       { label: "Maximum Speed", value: "20 m/s (Tested)" },
       { label: "Cruise Speed", value: "12 m/s" },
       { label: "Flight Endurance", value: "Up to 50 minutes" },
