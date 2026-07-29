@@ -103,7 +103,7 @@ const Hero = () => {
   }, []);
 
   const aboutStats = [
-    { value: '8+', label: 'Years of Experience' },
+    { value: '3+', label: 'Years of Experience' },
     { value: '20+', label: 'Team Members' },
     { value: '6+', label: 'Completed Projects' },
     { value: '2+', label: 'Awards Won' },
@@ -297,7 +297,7 @@ const Hero = () => {
             {/* Text column — slides from left */}
             <div className="space-y-6 ju-reveal-left">
               <p className="text-base sm:text-lg text-slate-300 leading-relaxed" style={{ fontFamily: "'Inter', sans-serif" }}>
-                UIU Aerial Robotics Team was founded in 2024 by a group of engineering
+                UIU Aerial Robotics Team was founded by a group of engineering
                 students with a passion for aerial robotics and UAV technologies. Our
                 team has grown steadily and now includes members from a variety of
                 engineering disciplines.
