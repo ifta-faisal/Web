@@ -45,9 +45,9 @@ const subTeams = [
     ],
   },
   {
-    id: 'electronics',
+    id: 'electrical',
     icon: <CircuitBoard className="text-accent w-6 h-6" />,
-    label: 'ELECTRONICS SUB-TEAM',
+    label: 'ELECTRICAL SUB-TEAM',
     shortDesc: 'PCB design, circuits & embedded hardware',
     priority: 'OPEN',
     skills: [

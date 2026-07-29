@@ -95,7 +95,7 @@ export const projectsData: ProjectData[] = [
       { label: "Weight", value: "2.5 kg" },
       { label: "Communication", value: "900 MHz, 2.4 GHz, 5.8 GHz" },
       { label: "Endurance", value: "35 minutes" },
-      { label: "Onboard Computer", value: "Jetson Orin NX 16GB" },
+      { label: "Onboard Computer", value: "NVIDIA Jetson Orin NX 16GB" },
       { label: "Flight Controller", value: "CUAV X7+ Pro" },
       { label: "Power System", value: "Lithium-ion Battery" },
     ],

@@ -502,7 +502,7 @@ const DetailedFeatures = () => {
             <h3 className="text-white font-black text-xl mb-5">Integrated Hardware Ecosystem</h3>
             <div className="space-y-3">
               {[
-                { icon: Cpu, name: "NVIDIA Jetson Orin Nano", desc: "AI Brain & Mission Computer with onboard processing" },
+                { icon: Cpu, name: "NVIDIA Jetson Orin NX", desc: "AI Brain & Mission Computer with onboard processing" },
                 { icon: Radio, name: "Multi-Band Communications", desc: "900 MHz / 2.4 GHz / 5.8 GHz Long Range Radio" },
                 { icon: Eye, name: "Advanced Sensors", desc: "LiDAR, GPS and Camera sensors" },
                 { icon: Shield, name: "Flight Controller", desc: "Cube Orange+ for stability & navigation" },
