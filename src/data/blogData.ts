@@ -11,6 +11,8 @@ import member2 from '../assets/images/Team/member2.webp';
 import member3 from '../assets/images/Team/member3.webp';
 import member9 from '../assets/images/Team/member9.webp';
 import arpon from '../assets/images/Team/arpon.webp';
+import member5 from '../assets/images/Team/member5.webp';
+import adnan from '../assets/images/Team/adnan.webp';
 // Imports auto-generated from docs
 
 // ─── Blog 1 Imports ───
@@ -60,6 +62,22 @@ import blog9_img1 from '../assets/images/Blog/blog-09/images/comm_photo_1.jpeg';
 import blog9_img2 from '../assets/images/Blog/blog-09/images/comm_photo_2.jpeg';
 import blog9_img3 from '../assets/images/Blog/blog-09/images/comm_photo_3.jpeg';
 import blog9_img4 from '../assets/images/Blog/blog-09/images/comm_photo_4.jpeg';
+
+// ─── Blog 10 Imports ───
+import blog10_img0 from '../assets/images/Blog/blog-10/Blog10_Images/photo_uav_top_gcs.jpeg';
+import blog10_img1 from '../assets/images/Blog/blog-10/Blog10_Images/image4.png';
+import blog10_img2 from '../assets/images/Blog/blog-10/Blog10_Images/p1.png';
+import blog10_img3 from '../assets/images/Blog/blog-10/Blog10_Images/p2.PNG';
+import blog10_img4 from '../assets/images/Blog/blog-10/Blog10_Images/p3.PNG';
+import blog10_img5 from '../assets/images/Blog/blog-10/Blog10_Images/blog10_ws_1.jpeg';
+
+// ─── Blog 11 Imports ───
+import blog11_img0 from '../assets/images/Blog/blog-11/Blog09_Images/blog11_ws_1.jpeg';
+import blog11_img1 from '../assets/images/Blog/blog-11/Blog09_Images/blog11_ws_2.jpeg';
+import blog11_img2 from '../assets/images/Blog/blog-11/Blog09_Images/blog11_ws_3.jpeg';
+import blog11_img3 from '../assets/images/Blog/blog-11/Blog09_Images/blog11_ws_4.jpeg';
+import blog11_img4 from '../assets/images/Blog/blog-11/Blog09_Images/blog11_ws_5.jpeg';
+import blog11_img5 from '../assets/images/Blog/blog-11/Blog09_Images/blog11_ws_6.jpeg';
 
 
 export interface BlogPost {
@@ -152,7 +170,7 @@ export const postsRaw: BlogPost[] = [
     author: "T M AL Anam • Probin Nath • Mobassir Hossain Shahad",
     role: "Research Member, UIU Aerial Robotics Team",
     authorImg: "",
-    date: "July 10, 2026",
+    date: "June 10, 2026",
     readTime: "13 min read",
     category: "Electrical",
     image: blog2_img2,
@@ -192,7 +210,7 @@ export const postsRaw: BlogPost[] = [
     author: "Fahad Rahaman • Ahmed Junaed • Digonta Karmaker",
     role: "Research Member, UIU Aerial Robotics Team",
     authorImg: "",
-    date: "July 10, 2026",
+    date: "april 18, 2026",
     readTime: "11 min read",
     category: "Software",
     image: blog3_img0,
@@ -232,7 +250,7 @@ export const postsRaw: BlogPost[] = [
     author: "Digonta Karmaker • Nusrat Jahan • Md Shazan Mahmud Arpon",
     role: "Research Member, UIU Aerial Robotics Team",
     authorImg: "",
-    date: "July 10, 2026",
+    date: "May 25, 2026",
     readTime: "9 min read",
     category: "Software",
     image: blog4_img0,
@@ -272,7 +290,7 @@ export const postsRaw: BlogPost[] = [
     author: "Ahmed Junaed • Nusrat Jahan • Md Shazan Mahmud Arpon",
     role: "Research Member, UIU Aerial Robotics Team",
     authorImg: "",
-    date: "July 10, 2026",
+    date: "April 20, 2026",
     readTime: "8 min read",
     category: "Software",
     image: blog5_img0,
@@ -312,7 +330,7 @@ export const postsRaw: BlogPost[] = [
     author: "Fahad Rahaman • Nusrat Jahan • Md Shazan Mahmud Arpon",
     role: "Research Member, UIU Aerial Robotics Team",
     authorImg: "",
-    date: "July 10, 2026",
+    date: "June 29, 2026",
     readTime: "9 min read",
     category: "Software",
     image: blog6_img2,
@@ -352,7 +370,7 @@ export const postsRaw: BlogPost[] = [
     author: "Probin Nath • Anika Orthy • Abdur Rahman",
     role: "Research Member, UIU Aerial Robotics Team",
     authorImg: "",
-    date: "July 10, 2026",
+    date: "July 16, 2026",
     readTime: "12 min read",
     category: "Electrical",
     image: blog7_img3,
@@ -393,7 +411,7 @@ export const postsRaw: BlogPost[] = [
     author: "Ifta Faisal • MD. Israfil Hossain • Md. Biplob",
     role: "Communication Sub-Team Lead, UIU Aerial Robotics Team",
     authorImg: member4,
-    date: "July 10, 2026",
+    date: "July 20, 2026",
     readTime: "9 min read",
     category: "Communication",
     image: blog8_img0,
@@ -434,10 +452,92 @@ export const postsRaw: BlogPost[] = [
     author: "Ifta Faisal • MD. Israfil Hossain • Md. Biplob",
     role: "Communication Sub-Team Lead, UIU Aerial Robotics Team",
     authorImg: member4,
-    date: "July 21, 2026",
+    date: "June 26, 2026",
     readTime: "9 min read",
     category: "Communication",
     image: blog9_img1,
+  },
+  {
+    id: 10,
+    title: "Designing the Airframe: Building the Foundation of an Autonomous UAV",
+    excerpt: "An inside look at how the airframe balances structural strength, lightweight construction, modularity, and maintainability for autonomous missions.",
+    content: `
+<p><img src="${blog10_img0}" alt="Blog Image" class="blog-section-img" /></p><p><em>Early structural development of the quadcopter airframe, showing the central hub and arm geometry before hardware integration.</em></p><h1><strong>Every Autonomous Mission Starts with the Airframe</strong></h1><p>Before a single line of navigation code runs or a camera captures its first frame, the aircraft needs somewhere to put all of that hardware — and somewhere rigid enough that it keeps working after the fiftieth hard landing, not just the first. The airframe is the structural backbone of the UAV: it carries the propulsion system, the flight controller and companion computer, the battery, the sensor suite, and the payload mechanism, all while being the one component every other subsystem quite literally depends on. If the frame flexes under load, vibrates at the wrong frequency, or comes apart during a rough landing, none of the software sophistication elsewhere on the aircraft matters.</p><p>For our SUAS 2026 platform, the airframe requirements were shaped directly by the mission profile described in the first post of this series — an aircraft that has to hover stably for payload deployment, carry a companion computer and LiDAR without excess vibration, and survive a full competition season of repeated test flights without the team rebuilding it between runs. That meant starting the frame design from mission requirements rather than from an off-the-shelf kit and hoping everything would fit.</p><h1><strong>Balancing Strength and Weight</strong></h1><p>Every gram added to the frame is a gram subtracted from flight time, so weight and stiffness were in constant tension throughout the design process. We used lightweight composite and 3D-printed structural components wherever the load path allowed it, reserving heavier material only for the high-stress joints — the motor mounts and the arm-to-hub junctions — where flex would translate directly into instability or vibration at the sensors.</p><p>Getting this balance wrong in either direction causes real problems. Too much mass shortens endurance and slows the aircraft's response to obstacle-avoidance commands; too little stiffness lets the arms flex under motor torque, which shows up downstream as noisy IMU readings and a shakier video feed. We iterated through several arm cross-sections and hub designs on the bench, testing each for deflection under simulated thrust loads before committing to a layout, so that the final frame is as light as we could make it without giving up the rigidity the flight controller depends on.</p><p><img src="${blog10_img1}" alt="Blog Image" class="blog-section-img" /></p><p><em>The assembled airframe on the bench, showing the central hub, carbon arms, and motor mounts before final wiring.</em></p><h1><strong>Designed for Modularity</strong></h1><p>The same philosophy that shaped our software architecture — independent subsystems that can be debugged and replaced without taking down the rest of the aircraft — carried over directly into the mechanical design. Each major subsystem on the frame is mounted as its own module: the battery tray, the companion-computer plate, the payload bay, and the sensor mounts can all be removed, serviced, or swapped independently, without disturbing the rest of the airframe.</p><p>This mattered more than it might sound like on paper. During a competition season, something always needs attention between flights — a motor that's running hot, a bracket that cracked on a hard landing, a sensor that needs recalibrating. A frame built as one fused structure means every one of those fixes turns into a partial teardown. Ours doesn't: a cracked arm mount can be swapped in minutes, and a companion-computer upgrade doesn't require touching the payload bay at all.</p><p><img src="${blog10_img2}" alt="Blog Image" class="blog-section-img" /></p><p><em>Modular mounting points allow individual arms and subsystem trays to be removed and serviced independently.</em></p><h1><strong>Easy Transportation and Assembly</strong></h1><p>A competition-ready UAV also has to survive being packed into a car, carried across a field, and reassembled quickly at the flight line — and that requirement shaped the frame just as much as flight performance did. The arms fold or detach for transport, and every mechanical and electrical connection was designed around quick-release fittings and keyed connectors rather than fasteners that need tools.</p><p>In practice, that means the team can break the aircraft down after a test flight, drive it back to the lab, and have it back in the air the next day without a lengthy re-integration process. It also matters on competition day itself, when setup time is limited and there's no substitute for an airframe that goes from case to flight-ready in a predictable, repeatable sequence.</p><p><img src="${blog10_img3}" alt="Blog Image" class="blog-section-img" /></p><p><em>The airframe partially disassembled for transport, with arms detached and stowed alongside the central hub.</em></p><h1><strong>Supporting Autonomous Operations</strong></h1><p>Autonomy places demands on the airframe that a manually piloted aircraft never has to meet. Every autonomous decision the aircraft makes — where it thinks it is, what it detects below, whether an obstacle is closing in — starts with sensor data, and that data is only as good as the physical platform it's captured from. A frame that transmits motor vibration into the IMU or lets the camera mount shift mid-flight quietly corrupts the inputs that the navigation and perception pipelines depend on.</p><p>We designed the frame to be as rigid and vibration-isolated as the weight budget allowed, specifically so that the GPS, IMU, camera, and LiDAR data feeding the flight controller and companion computer stay clean under real flight loads, not just on a static bench test. A stable physical platform is what lets the rest of the autonomy stack trust its own sensors — without that trust, no amount of software tuning can make the aircraft behave predictably.</p><p><img src="${blog10_img4}" alt="Blog Image" class="blog-section-img" /></p><p><em>Close-up of a structural joint designed to minimize vibration transfer to the sensor mounts above.</em></p><h1><strong>Future Improvements</strong></h1><p>The current airframe is a solid foundation, not a finished design — which is exactly the attitude the rest of this series has taken toward the whole platform. We're already looking at further weight reduction through revised arm cross-sections, additional structural testing to push the strength-to-weight ratio further, and tighter integration between the frame and the subsystems that mount to it, so that future upgrades to the payload mechanism, sensor suite, or power system require even less rework of the surrounding structure.</p><p><img src="${blog10_img5}" alt="Blog Image" class="blog-section-img" /></p><p><em>The fully assembled airframe, ready for integration testing with propulsion, avionics, and payload systems installed.</em></p>
+<div class="mt-12 pt-8 border-t border-white/10">
+  <h2 class="text-2xl font-bold text-white mb-6 uppercase tracking-wider" style="font-family: 'Bebas Neue', sans-serif">About the Authors</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
+      <img src="${member5}" alt="Muktaderul Islam" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
+      <div>
+        <div class="font-bold text-white text-base leading-tight mb-0.5">Muktaderul Islam</div>
+        <div class="text-xs text-slate-400">Mechanical Sub-Team Lead, UIU Aerial Robotics Team</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
+      <img src="${member9}" alt="Digonta Karmaker" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
+      <div>
+        <div class="font-bold text-white text-base leading-tight mb-0.5">Digonta Karmaker</div>
+        <div class="text-xs text-slate-400">Mechanical Member, UIU Aerial Robotics Team</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
+      <img src="${adnan}" alt="Adnan Mohammad Salauddin" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
+      <div>
+        <div class="font-bold text-white text-base leading-tight mb-0.5">Adnan Mohammad Salauddin</div>
+        <div class="text-xs text-slate-400">Mechanical Member, UIU Aerial Robotics Team</div>
+      </div>
+    </div>
+  </div>
+</div>
+`,
+    author: "Muktaderul Islam • Digonta Karmaker • Adnan Mohammad Salauddin",
+    role: "Mechanical Sub-Team, UIU Aerial Robotics Team",
+    authorImg: member5,
+    date: "April 02, 2026",
+    readTime: "8 min read",
+    category: "Mechanical",
+    image: blog10_img1,
+  },
+  {
+    id: 11,
+    title: "Engineering a Reliable Payload Delivery Mechanism for Autonomous UAV Missions",
+    excerpt: "How a compact dual-spool payload deployment system improves accuracy, reliability, and mission safety during autonomous aerial operations.",
+    content: `
+<p><img src="${blog11_img0}" alt="Blog Image" class="blog-section-img" /></p><p><em>Early testing of the payload mechanism, evaluating stable hover behavior during deployment.</em></p><h1><strong>Why Payload Delivery Is More Challenging Than It Looks</strong></h1><p>One of the defining tasks in the SUAS mission is delivering a payload accurately to a designated location — on paper, a single line item next to mapping and target detection, but in practice one of the harder problems on the whole aircraft. The objective sounds simple: get something from the aircraft to the ground, at the right spot. Executing that consistently from a flying platform, with no one at the controls, is a different matter entirely.</p><p>The aircraft has to hold a stable hover in whatever wind is present that day, lower the payload smoothly enough that it doesn't swing into the airframe or drift off target, and do all of this while the flight controller is simultaneously managing position hold and the companion computer is still tracking the mission below. A payload mechanism that works perfectly on a bench, disconnected from all of that, can still fail in the air if it disturbs the aircraft's balance or reacts too slowly to matter.</p><h1><strong>Designing Around Simplicity and Reliability</strong></h1><p>Early in the design process we considered more elaborate release mechanisms — servo-actuated latches, multi-stage winches, spring-assisted drops — before settling on something considerably simpler. The final mechanism consists of two independently driven 50 mm spools, each powered directly by a dedicated gear motor, with no intermediate gearbox or clutch between the motor and the spool.</p><p>That direct-drive simplicity was a deliberate trade-off. Every additional moving part is another point of failure and another thing that can jam mid-mission, and a competition run doesn't pause for the team to troubleshoot a stuck mechanism mid-flight. By keeping the drivetrain as short as possible, we get a system that's easier to inspect, easier to repair between flights, and considerably more predictable under real-world wear than a more mechanically complex alternative would have been.</p><p><img src="${blog11_img1}" alt="Blog Image" class="blog-section-img" /></p><p><em>The dual-spool payload mechanism, showing the two independently driven gear motors and spool assembly.</em></p><h1><strong>A Controlled Descent Instead of a Free Fall</strong></h1><p>Simply dropping a payload from altitude is the easiest thing to build and the least reliable thing to fly. Instead, our mechanism lowers the payload gradually on its tether while the aircraft holds a stable hover overhead, giving the system time to damp out any swing before the payload reaches the ground.</p><p>This controlled-descent approach directly improves placement accuracy — a payload released in free fall inherits whatever drift or oscillation the aircraft has at that instant, while a slowly lowered payload settles into a much more predictable path. It also gives the mission software a window to abort or adjust if something looks wrong during deployment, rather than committing to an irreversible drop the moment the command is given.</p><p><img src="${blog11_img2}" alt="Blog Image" class="blog-section-img" /></p><p><em>The payload being lowered in a controlled descent during a hover test.</em></p><h1><strong>Compact Enough to Fit the Airframe</strong></h1><p>None of this is useful if the mechanism doesn't fit on the aircraft without compromising everything else. The payload module mounts beneath the lower chassis using lightweight PETG retaining frames, chosen specifically because they're easy to iterate on and cheap enough to reprint after a hard landing without holding up the rest of the team.</p><p>Placement mattered as much as the mechanism itself. Mounted low and central, the module keeps the aircraft's center of gravity close to where the airframe was designed around, while still leaving clearance for the landing gear and the downward-facing sensors used for mapping and target detection.</p><p><img src="${blog11_img3}" alt="Blog Image" class="blog-section-img" /></p><p><em>The payload module mounted beneath the airframe's lower chassis using PETG retaining frames.</em></p><h1><strong>From CAD Design to Physical Integration</strong></h1><p>Like every subsystem on this aircraft, the mechanism started in CAD long before it touched the airframe. We modeled the spool geometry, motor mounts, and tether routing digitally first, checking clearances against the rest of the airframe before committing to a physical build — a step that caught several interference issues with the landing gear and payload bay walls that would have been far more expensive to discover after fabrication.</p><p>Once the design cleared CAD review, integration testing on the physical aircraft verified the things a model can't fully predict: spool operation under real motor load, tether behavior during actual descent, and fit tolerances once every part had gone through fabrication rather than existing as an idealized digital surface.</p><p><img src="${blog11_img4}" alt="Blog Image" class="blog-section-img" /></p><p><em>The payload mechanism during integration testing on the physical airframe, verifying clearances and spool operation.</em></p><h1><strong>Built for Repeatable Mission Performance</strong></h1><p>A mechanism that works once isn't the same as one that works every time, and repeatability was the real target throughout this design process. The payload delivery system doesn't operate in isolation — it works as part of the complete autonomous platform, triggered by the mission software once the aircraft has confirmed it's in position, and it has to perform the same way on flight fifty as it did on flight one.</p><p>Balancing simplicity, weight, and deployment accuracy the way we did here is what makes that repeatability possible. A more complex mechanism might have offered marginally better precision in ideal conditions, but the direct-drive, dual-spool design has proven itself to be the version the team can trust to work the same way across an entire competition day, flight after flight.</p><p><img src="${blog11_img5}" alt="Blog Image" class="blog-section-img" /></p><p><em>The completed payload delivery system, integrated and ready for repeated mission testing.</em></p>
+<div class="mt-12 pt-8 border-t border-white/10">
+  <h2 class="text-2xl font-bold text-white mb-6 uppercase tracking-wider" style="font-family: 'Bebas Neue', sans-serif">About the Authors</h2>
+  <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
+    <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
+      <img src="${member9}" alt="Digonta Karmaker" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
+      <div>
+        <div class="font-bold text-white text-base leading-tight mb-0.5">Digonta Karmaker</div>
+        <div class="text-xs text-slate-400">Mechanical Member, UIU Aerial Robotics Team</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
+      <img src="${probin}" alt="Probin Chandra Nath" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
+      <div>
+        <div class="font-bold text-white text-base leading-tight mb-0.5">Probin Chandra Nath</div>
+        <div class="text-xs text-slate-400">Mechanical Member, UIU Aerial Robotics Team</div>
+      </div>
+    </div>
+    <div class="flex items-center gap-4 bg-white/5 p-4 rounded-xl border border-white/5">
+      <img src="${adnan}" alt="Adnan Mohammad Salauddin" class="w-16 h-16 shrink-0 rounded-full object-cover border-2 border-primary/50" />
+      <div>
+        <div class="font-bold text-white text-base leading-tight mb-0.5">Adnan Mohammad Salauddin</div>
+        <div class="text-xs text-slate-400">Mechanical Member, UIU Aerial Robotics Team</div>
+      </div>
+    </div>
+  </div>
+</div>
+`,
+    author: "Digonta Karmaker • Probin Chandra Nath • Adnan Mohammad Salauddin",
+    role: "Mechanical Sub-Team, UIU Aerial Robotics Team",
+    authorImg: member9,
+    date: "May 17, 2026",
+    readTime: "7 min read",
+    category: "Mechanical",
+    image: blog11_img1,
   }
 ];
 

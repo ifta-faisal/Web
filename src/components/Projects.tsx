@@ -240,8 +240,8 @@ const Projects = () => {
             { label: 'In Testing', value: projects.filter(p => p.status === 'Testing').length, icon: Eye }
           ].map((stat, index) => (
             <div key={index} className="text-center group">
-              <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-primary/10 rounded-full mb-2 sm:mb-3 group-hover:bg-primary/20 transition-colors">
-                <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-primary" />
+              <div className="inline-flex items-center justify-center w-10 h-10 sm:w-12 sm:h-12 bg-red-600/15 rounded-full mb-2 sm:mb-3 group-hover:bg-red-600/25 transition-colors">
+                <stat.icon className="w-5 h-5 sm:w-6 sm:h-6 text-red-500" />
               </div>
               <div className="text-2xl sm:text-3xl font-black text-white mb-0.5 sm:mb-1">{stat.value}</div>
               <div className="text-[9px] sm:text-sm text-gray-400 uppercase tracking-wide">{stat.label}</div>

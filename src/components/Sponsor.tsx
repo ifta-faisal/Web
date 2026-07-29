@@ -1,12 +1,13 @@
 import { Mail, Zap, Globe, Heart, Shield, Star, Trophy, Users, ArrowRight, CheckCircle } from 'lucide-react';
 import { Link } from 'react-router-dom';
-import unitedGroupLogo from '../assets/images/Sponsor/united_group.webp';
+import aboutenergy from '../assets/images/Sponsor/aboutenergy.png';
 import uiuLogo from '../assets/images/Sponsor/UIU_Logo.webp';
 import soildwork from '../assets/images/Sponsor/solidworks.webp';
 import mathlab from '../assets/images/Sponsor/matlab.webp';
 import autodesk from '../assets/images/Sponsor/autodesk.webp';
 import amprius from '../assets/images/Sponsor/amprius.webp';
 import puku from '../assets/images/Sponsor/puku.webp';
+
 
 const SponsorPage = () => {
     const benefits = [
@@ -144,18 +145,21 @@ const SponsorPage = () => {
                     <div className="flex flex-col items-center gap-12">
                         {/* Row 1 */}
                         <div className="flex flex-wrap justify-center items-center gap-16">
-                            {[
-                                { name: 'Amprius',      logo: amprius },
-                                { name: 'United Group', logo: unitedGroupLogo },
-                                { name: 'UIU',          logo: uiuLogo },
-                            ].map((s) => (
-                                <img
-                                    key={s.name}
-                                    src={s.logo}
-                                    alt={s.name}
-                                    className="h-20 max-w-[170px] object-contain opacity-75 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
-                                />
-                            ))}
+                            <img
+                                src={amprius}
+                                alt="Amprius"
+                                className="h-20 max-w-[170px] object-contain opacity-75 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
+                            />
+                            <img
+                                src={aboutenergy}
+                                alt="About Energy"
+                                className="h-24 max-w-[200px] object-contain opacity-75 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
+                            />
+                            <img
+                                src={uiuLogo}
+                                alt="UIU"
+                                className="h-20 max-w-[170px] object-contain opacity-75 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
+                            />
                         </div>
                         {/* Row 2 */}
                         <div className="flex flex-wrap justify-center items-center gap-16">
@@ -173,6 +177,7 @@ const SponsorPage = () => {
                                 />
                             ))}
                         </div>
+
                     </div>
                 </section>
 

@@ -76,9 +76,9 @@ export const projectsData: ProjectData[] = [
     media: [raven1, raven2, raven3, raven4, raven6, raven8, raven9, raven10, raven11, raven12, raven14, raven16, raven17, raven18, raven19, raven20, raven21, raven22, raven23, raven24, raven25, raven26],
     docs: [
       { title: "Mechanical", url: "https://drive.google.com/file/d/1hQJqwpcT2bh652FQ4aKtwyOmYRSgaJOY/view?usp=sharing" },
-      { title: "Payload", url: "https://drive.google.com/file/d/1oqfpIVhmj32ziyJFiCOlsbaihHfy6LpC/view?usp=sharing" },
+      { title: "Payload", url: "https://drive.google.com/file/d/18nwj1fJJucFo0JwKT4CIrr6Ujio__ce3/view?usp=sharing" },
       // { title: "Avionics", url: "#" },
-      { title: "Electrical", url: "https://drive.google.com/file/d/1usASKTKMacqBOxYKuqVPRMzcr5WAGc_z/view?usp=sharing" },
+      { title: "Electrical", url: "https://drive.google.com/file/d/1tn8LY9Dd8Gigprah1qoVBM8gkHYNQjVX/view?usp=sharing" },
       { title: "Communication", url: "https://drive.google.com/file/d/1PMgTPjvQkaNT2IRrN_VkESb19cUwfBTH/view?usp=sharing" },
       { title: "Software & Navigation", url: "https://drive.google.com/file/d/1PwHOi7NPTePAvZb7EpsY1nCwab-812k_/view?usp=sharing" },
       { title: "Technical Design Report", url: "#" }

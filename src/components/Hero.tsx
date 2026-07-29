@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { ArrowRight, Zap, ChevronLeft, ChevronRight, Calendar, CheckCircle2 } from 'lucide-react';
 import droneVideo from '../assets/video/Faysal2.mp4';
 import vid2 from '../assets/video/vid_2.mp4';
-import unitedGroupLogo from '../assets/images/Sponsor/united_group.webp';
+import aboutenergy from '../assets/images/Sponsor/aboutenergy.png';
 import uiuLogo from '../assets/images/Sponsor/UIU_Logo.webp';
 import droneImage from '../assets/images/DetailedFeatures/B6_png.webp';
 import suaslogo from '../assets/images/logo/suas.webp';
@@ -120,7 +120,7 @@ const Hero = () => {
 
   const sponsors = [
     { name: 'Amprius', logo: amprius },
-    { name: 'United Group', logo: unitedGroupLogo },
+    { name: 'About Energy', logo: aboutenergy },
     { name: 'UIU', logo: uiuLogo },
     { name: 'SolidWorks', logo: soildwork },
     { name: 'MATLAB', logo: mathlab },

@@ -160,6 +160,20 @@ const slideshowImages = [
 /* ═══════════════════════════════════════════════════ */
 const DetailedFeatures = () => {
   const [searchParams] = useSearchParams();
+  const [lightboxIndex, setLightboxIndex] = useState<number | null>(null);
+
+  // Close lightbox on Escape key
+  useEffect(() => {
+    const handleKey = (e: KeyboardEvent) => {
+      if (e.key === 'Escape') setLightboxIndex(null);
+      if (e.key === 'ArrowRight' && lightboxIndex !== null)
+        setLightboxIndex((lightboxIndex + 1) % slideshowImages.length);
+      if (e.key === 'ArrowLeft' && lightboxIndex !== null)
+        setLightboxIndex((lightboxIndex - 1 + slideshowImages.length) % slideshowImages.length);
+    };
+    window.addEventListener('keydown', handleKey);
+    return () => window.removeEventListener('keydown', handleKey);
+  }, [lightboxIndex]);
 
   useEffect(() => {
     const targetId = searchParams.get('id');
@@ -344,15 +358,16 @@ const DetailedFeatures = () => {
                 const index = i % slideshowImages.length;
                 return (
                   <div
-                    className="gallery-card-marquee block"
+                    className="gallery-card-marquee block cursor-pointer group relative overflow-hidden"
                     key={i}
                     style={{ background: '#0d0b0a' }}
+                    onClick={() => setLightboxIndex(index)}
                   >
+                    <div className="absolute inset-0 bg-black/0 group-hover:bg-black/25 transition-all z-10 duration-300" />
                     <img
                       src={src}
                       alt={`Aircraft Subsystem ${index + 1}`}
                       className="w-full h-full object-cover"
-                     
                     />
                   </div>
                 );
@@ -773,6 +788,60 @@ const DetailedFeatures = () => {
           transform: none;
         }
       `}</style>
+
+      {/* ── LIGHTBOX ── */}
+      {lightboxIndex !== null && (
+        <div
+          className="fixed inset-0 z-[9999] flex items-center justify-center bg-black/90 backdrop-blur-sm p-4"
+          onClick={() => setLightboxIndex(null)}
+        >
+          {/* Close */}
+          <button
+            className="absolute top-5 right-5 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white transition-all hover:scale-110 z-50"
+            onClick={(e) => { e.stopPropagation(); setLightboxIndex(null); }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2}><path strokeLinecap="round" strokeLinejoin="round" d="M6 18L18 6M6 6l12 12" /></svg>
+          </button>
+
+          {/* Prev */}
+          <button
+            className="absolute left-4 sm:left-8 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white transition-all hover:scale-110 z-50"
+            onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex - 1 + slideshowImages.length) % slideshowImages.length); }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M15 19l-7-7 7-7" /></svg>
+          </button>
+
+          {/* Image */}
+          <img
+            src={slideshowImages[lightboxIndex]}
+            alt={`Aircraft ${lightboxIndex + 1}`}
+            className="max-w-full max-h-[90vh] object-contain rounded-xl shadow-2xl select-none"
+            draggable={false}
+            onClick={(e) => e.stopPropagation()}
+          />
+
+          {/* Next */}
+          <button
+            className="absolute right-4 sm:right-8 w-10 h-10 flex items-center justify-center rounded-full bg-white/10 hover:bg-white/20 border border-white/10 text-white transition-all hover:scale-110 z-50"
+            onClick={(e) => { e.stopPropagation(); setLightboxIndex((lightboxIndex + 1) % slideshowImages.length); }}
+          >
+            <svg xmlns="http://www.w3.org/2000/svg" className="w-5 h-5" fill="none" viewBox="0 0 24 24" stroke="currentColor" strokeWidth={2.5}><path strokeLinecap="round" strokeLinejoin="round" d="M9 5l7 7-7 7" /></svg>
+          </button>
+
+          {/* Counter */}
+          <div className="absolute bottom-6 left-1/2 -translate-x-1/2 flex items-center gap-2">
+            {slideshowImages.map((_, i) => (
+              <button
+                key={i}
+                onClick={(e) => { e.stopPropagation(); setLightboxIndex(i); }}
+                className={`w-2 h-2 rounded-full transition-all ${
+                  i === lightboxIndex ? 'bg-primary scale-125' : 'bg-white/40 hover:bg-white/70'
+                }`}
+              />
+            ))}
+          </div>
+        </div>
+      )}
     </div>
   );
 };
