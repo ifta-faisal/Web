@@ -81,7 +81,7 @@ export const projectsData: ProjectData[] = [
       { title: "Electrical", url: "https://drive.google.com/file/d/1tn8LY9Dd8Gigprah1qoVBM8gkHYNQjVX/view?usp=sharing" },
       { title: "Communication", url: "https://drive.google.com/file/d/1PMgTPjvQkaNT2IRrN_VkESb19cUwfBTH/view?usp=sharing" },
       { title: "Software & Navigation", url: "https://drive.google.com/file/d/1PwHOi7NPTePAvZb7EpsY1nCwab-812k_/view?usp=sharing" },
-      { title: "Technical Design Report", url: "#" }
+      { title: "Technical Design Report", url: "https://drive.google.com/file/d/1SSGO5vE-0vY1f0wWve5q8pviWOegUh0c/view?usp=sharing" }
     ],
     videoUrl: "https://www.youtube.com/embed/I8id3VY7Vdg"
   },

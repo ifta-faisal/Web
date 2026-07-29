@@ -248,7 +248,7 @@ const TestData: React.FC = () => {
               Dive deeper into every subsystem — from the carbon fiber airframe to the onboard AI stack powering Raven 1.0.
             </p>
             <a
-              href="#"
+              href="https://drive.google.com/file/d/1SSGO5vE-0vY1f0wWve5q8pviWOegUh0c/view?usp=sharing"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center gap-2 btn-primary btn-pill group px-10 py-4"
