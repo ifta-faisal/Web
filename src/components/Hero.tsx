@@ -12,6 +12,7 @@ import mathlab from '../assets/images/Sponsor/matlab.webp';
 import autodesk from '../assets/images/Sponsor/autodesk.webp';
 import amprius from '../assets/images/Sponsor/amprius.webp';
 import puku from '../assets/images/Sponsor/puku.webp';
+import upgradeenergy from '../assets/images/Sponsor/upgradeenergy.png';
 import { newsItems } from '../data/newsData';
 import ScrollLazy from './ScrollLazy';
 
@@ -126,6 +127,7 @@ const Hero = () => {
     { name: 'MATLAB', logo: mathlab },
     { name: 'Autodesk', logo: autodesk },
     { name: 'Puku', logo: puku },
+    { name: 'Upgrade Energy', logo: upgradeenergy },
   ];
 
   const vehicleFeatures = [

@@ -7,6 +7,7 @@ import mathlab from '../assets/images/Sponsor/matlab.webp';
 import autodesk from '../assets/images/Sponsor/autodesk.webp';
 import amprius from '../assets/images/Sponsor/amprius.webp';
 import puku from '../assets/images/Sponsor/puku.webp';
+import upgradeenergy from '../assets/images/Sponsor/upgradeenergy.png';
 
 
 const SponsorPage = () => {
@@ -145,6 +146,11 @@ const SponsorPage = () => {
                     <div className="flex flex-col items-center gap-12">
                         {/* Row 1 */}
                         <div className="flex flex-wrap justify-center items-center gap-16">
+                            <img
+                                src={upgradeenergy}
+                                alt="Upgrade Energy"
+                                className="h-20 max-w-[170px] object-contain opacity-75 hover:opacity-100 hover:scale-110 transition-all duration-300 cursor-pointer"
+                            />
                             <img
                                 src={amprius}
                                 alt="Amprius"

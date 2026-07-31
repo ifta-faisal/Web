@@ -14,6 +14,8 @@ import puku from '../assets/images/news/puku.webp';
 import mayy23 from '../assets/images/news/mayy_23.webp';
 import jan19 from '../assets/images/news/jan_19.webp';
 import july10 from '../assets/images/news/july_10.webp';
+import upgrades from '../assets/images/news/Upgradesssss.png';
+import aboutEnergy from '../assets/images/news/About energy.png';
 
 export interface NewsItem {
   id: number;
@@ -28,6 +30,28 @@ export interface NewsItem {
 }
 
 export const newsItems: NewsItem[] = [
+  {
+    id: 18,
+    title: 'About Energy',
+    date: '30 July 2026',
+    source: 'UART',
+    description: 'Welcome to Our Valued Sponsor\n\nWe are proud to welcome our newest sponsor to the UIU Aerial Robotics Team (UART). Your support empowers our mission to innovate, build, and inspire the next generation of autonomous aerial systems.\n\nAt UART, we are committed to advancing autonomous aerospace navigation, intelligent pathfinding algorithms, and seamless hardware-software integration. With your partnership, we can continue transforming ambitious ideas into real-world engineering solutions while providing students with invaluable hands-on experience in cutting-edge robotics and aviation technologies.\n\nYour contribution is more than sponsorship—it is an investment in innovation, education, and the future of autonomous flight. Together, we look forward to achieving new milestones, driving technological excellence, and shaping the future of aerospace engineering.\n\nThank you for joining us on this exciting journey. Welcome to the UART family.',
+    link: '#',
+    image: aboutEnergy,
+    category: 'Sponsorship',
+    tags: ['energy', 'information']
+  },
+  {
+    id: 17,
+    title: 'Welcome Upgrade Energy — Our Official Technology Partner',
+    date: '31 July 2026',
+    source: 'UART',
+    description: 'We are proud to welcome Upgrade Energy as our official technology partner. This collaboration will help us integrate advanced energy solutions into our platforms, further strengthening our autonomous systems.\n\nOur team is actively involved in pushing the boundaries of autonomous aerospace navigation, intelligent pathfinding algorithms, and hardware-software integration. This update represents an important milestone in our mission timeline, fostering collaborative engineering education and next-generation autonomous flight systems.',
+    link: '#',
+    image: upgrades,
+    category: 'Sponsorship',
+    tags: ['partnership', 'technology', 'energy', 'collaboration', 'upgrade-energy']
+  },
   {
     id: 13,
     title: 'Welcome Puku AI — Our Official AI Partner',
